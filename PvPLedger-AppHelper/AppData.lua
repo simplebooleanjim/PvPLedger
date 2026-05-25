@@ -3,8 +3,8 @@
 --- DO NOT EDIT MANUALLY.
 PVL_AppHelperPendingSnapshots = PVL_AppHelperPendingSnapshots or {}
 PVL_AppHelperSyncInfo = {
-    lastSync = 1779742279,
-    generatedAt = "2026-05-25T20:51:19Z",
+    lastSync = 1779746984,
+    generatedAt = "2026-05-25T22:09:44Z",
     region = "US",
     source = "collector",
 }
