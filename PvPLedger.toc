@@ -1,0 +1,19 @@
+## Interface: 120000, 120001, 120100
+## Title: |cFF66CCFFPvPLedger|r
+## Notes: Hybrid PvP ladder intelligence — in-game observations plus imported ladder snapshots.
+## Author: Jake
+## Version: 0.3.1
+## SavedVariables: PvPLedgerDB, BlitzLedgerDB
+## SavedVariablesPerCharacter: PvPLedgerCharDB, BlitzLedgerCharDB
+
+Core/Constants.lua
+Core/Schema.lua
+Data/DataStore.lua
+Data/Parser.lua
+Data/LadderData_US_Blitz.lua
+Collector/InspectQueue.lua
+Collector/MatchCollector.lua
+UI/Widgets.lua
+UI/MainFrame.lua
+Core/Core.lua
+Core/Slash.lua

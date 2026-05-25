@@ -1,0 +1,23 @@
+# Battle.net API credentials
+.env
+collector/.env
+Collector/.env
+
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+.Python
+.venv/
+venv/
+
+# OS / editor
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+.idea/
+.vscode/
+
+# WoW local overrides (keep out of repo if you add these later)
+*.lua.bak
