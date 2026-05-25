@@ -2,9 +2,13 @@ name: Update ladder data
 
 on:
   schedule:
-    # Daily at 08:15 UTC — after typical Blizzard ladder maintenance windows.
-    - cron: "15 8 * * *"
+    # Every 15 minutes (UTC). GitHub may delay scheduled runs during high load.
+    - cron: "*/15 * * * *"
   workflow_dispatch:
+
+concurrency:
+  group: refresh-ladder-data
+  cancel-in-progress: false
 
 permissions:
   contents: write
