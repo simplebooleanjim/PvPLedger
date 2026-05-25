@@ -2,6 +2,43 @@
 --- @class PvPLedger
 local PVL = PvPLedger
 
+--- Returns true when a bracket uses one combined Blizzard imported ladder slug.
+--- @param bracket string|nil
+--- @return boolean
+function PVL.IsCombinedImportedBracket(bracket)
+    bracket = bracket or PVL.GetActiveBracketFilter()
+    for _, combinedBracket in ipairs(PVL.COMBINED_IMPORTED_BRACKETS) do
+        if bracket == combinedBracket then
+            return true
+        end
+    end
+
+    return false
+end
+
+--- Returns true when the active imported snapshot includes class/spec aggregates.
+--- @param bracket string|nil
+--- @return boolean
+function PVL.HasImportedSpecBreakdown(bracket)
+    local snapshot = PVL.GetImportedSnapshot(bracket)
+    if not snapshot or type(snapshot.bySpec) ~= "table" then
+        return false
+    end
+
+    for _ in pairs(snapshot.bySpec) do
+        return true
+    end
+
+    return false
+end
+
+--- Returns true when imported class/spec breakdown is unavailable for the bracket.
+--- @param bracket string|nil
+--- @return boolean
+function PVL.IsImportedSpecBreakdownMissing(bracket)
+    return PVL.IsCombinedImportedBracket(bracket) and not PVL.HasImportedSpecBreakdown(bracket)
+end
+
 --- Computes the total count from a bucket table keyed by rating ranges.
 --- @param buckets table<string, number>|nil
 --- @return number
@@ -35,6 +72,176 @@ end
 function PVL.GetImportedOverallAggregate()
     local snapshot = PVL.GetImportedSnapshot()
     return snapshot and snapshot.overall or nil
+end
+
+--- Returns imported class aggregate data.
+--- @param classToken string
+--- @return table|nil
+function PVL.GetImportedClassAggregate(classToken)
+    local snapshot = PVL.GetImportedSnapshot()
+    if not snapshot or not snapshot.byClass or not classToken then
+        return nil
+    end
+
+    return snapshot.byClass[classToken]
+end
+
+--- Builds a representation percentage for one class among all imported classes.
+--- @param classToken string
+--- @return number|nil
+function PVL.GetImportedClassRepresentation(classToken)
+    local snapshot = PVL.GetImportedSnapshot()
+    if not snapshot or not snapshot.byClass or not classToken then
+        return nil
+    end
+
+    local classRow = snapshot.byClass[classToken]
+    if not classRow or not classRow.listedCount then
+        return nil
+    end
+
+    local totalListed = 0
+    for _, row in pairs(snapshot.byClass) do
+        totalListed = totalListed + (row.listedCount or 0)
+    end
+
+    if totalListed <= 0 then
+        return nil
+    end
+
+    return (classRow.listedCount / totalListed) * 100
+end
+
+--- Returns imported class rows sorted by listed count.
+--- @return table[]
+function PVL.GetImportedClassRows()
+    local snapshot = PVL.GetImportedSnapshot()
+    if not snapshot or not snapshot.byClass then
+        return {}
+    end
+
+    local rows = {}
+    for classToken, row in pairs(snapshot.byClass) do
+        table.insert(rows, {
+            classToken = classToken,
+            displayName = PVL.CLASS_NAMES[classToken] or PVL.TitleCaseToken(classToken),
+            listedCount = row.listedCount or 0,
+            avgListedRating = row.avgListedRating,
+            medianListedRating = row.medianListedRating,
+            top100Avg = row.top100Avg,
+            highest = row.highest,
+            representation = PVL.GetImportedClassRepresentation(classToken),
+        })
+    end
+
+    table.sort(rows, function(a, b)
+        if a.listedCount == b.listedCount then
+            return a.classToken < b.classToken
+        end
+        return a.listedCount > b.listedCount
+    end)
+
+    return rows
+end
+
+--- Builds imported and observed detail metrics for one class with all specs selected.
+--- @param classToken string
+--- @return table|nil
+function PVL.BuildClassDetailSummary(classToken)
+    if not classToken then
+        return nil
+    end
+
+    local imported = PVL.GetImportedClassAggregate(classToken)
+    local specRows = PVL.GetFilteredImportedSpecRows(classToken, nil)
+    local observedRows = PVL.GetFilteredObservedSpecPercentages(classToken, nil)
+    local observedCount = 0
+    local observedPercentTotal = 0
+
+    for _, row in ipairs(observedRows) do
+        observedCount = observedCount + row.count
+        observedPercentTotal = observedPercentTotal + (row.percent or 0)
+    end
+
+    return {
+        classToken = classToken,
+        displayName = PVL.CLASS_NAMES[classToken] or PVL.TitleCaseToken(classToken),
+        imported = imported,
+        importedRepresentation = PVL.GetImportedClassRepresentation(classToken),
+        importedSpecRows = specRows,
+        observedCount = observedCount,
+        observedPercent = observedPercentTotal > 0 and observedPercentTotal or nil,
+        observedSpecRows = observedRows,
+    }
+end
+
+--- Returns one imported listed player row from the snapshot player index.
+--- @param name string
+--- @param realm string|nil
+--- @return table|nil
+function PVL.LookupListedPlayer(name, realm)
+    local snapshot = PVL.GetImportedSnapshot()
+    if not snapshot or not snapshot.players or not name or name == "" then
+        return nil
+    end
+
+    local playerKey = PVL.NormalizePlayerLookupKey(name, realm)
+    if playerKey == "" then
+        return nil
+    end
+
+    return snapshot.players[playerKey]
+end
+
+--- Returns how many imported listed players are present in the snapshot index.
+--- @return number
+function PVL.GetImportedPlayerCount()
+    local snapshot = PVL.GetImportedSnapshot()
+    if not snapshot or not snapshot.players then
+        return 0
+    end
+
+    local count = 0
+    for _ in pairs(snapshot.players) do
+        count = count + 1
+    end
+
+    return count
+end
+
+--- Counts how many observed match participants appear in the imported player index.
+--- @return number listedCount, number observedCount
+function PVL.CountListedObservedPlayers()
+    local db = PVL.GetDB()
+    if not db then
+        return 0, 0
+    end
+
+    local seen = {}
+    local observedCount = 0
+    local activeBracket = PVL.GetActiveBracketFilter()
+
+    for _, match in ipairs(db.observations.matches or {}) do
+        if match.bracket == activeBracket then
+            for _, participant in ipairs(match.roster or {}) do
+                local playerKey = PVL.MakePlayerKey(participant.name, participant.realm)
+                if playerKey ~= "" and not seen[playerKey] then
+                    seen[playerKey] = true
+                    observedCount = observedCount + 1
+                end
+            end
+        end
+    end
+
+    local listedCount = 0
+    for playerKey, _ in pairs(seen) do
+        local name, realm = PVL.ParsePlayerKey(playerKey)
+        if PVL.LookupListedPlayer(name, realm) then
+            listedCount = listedCount + 1
+        end
+    end
+
+    return listedCount, observedCount
 end
 
 --- Builds a simple representation percentage for one spec among all imported specs.
@@ -176,10 +383,11 @@ function PVL.GetClassFilterOptions()
     local options = {
         { label = "All Classes", value = nil },
     }
+    local formatClass = PVL.UI and PVL.UI.Format and PVL.UI.Format.ClassName
 
     for _, classToken in ipairs(PVL.CLASS_ORDER) do
         table.insert(options, {
-            label = PVL.CLASS_NAMES[classToken] or classToken,
+            label = formatClass and formatClass(classToken) or (PVL.CLASS_NAMES[classToken] or classToken),
             value = classToken,
         })
     end
@@ -194,25 +402,26 @@ function PVL.GetSpecFilterOptions(classToken)
     local options = {
         { label = "All Specs", value = nil },
     }
+    local formatSpec = PVL.UI and PVL.UI.Format and PVL.UI.Format.SpecName
+
+    local function addSpecOption(token, specToken)
+        local specKey = PVL.MakeSpecKey(token, specToken)
+        table.insert(options, {
+            label = formatSpec and formatSpec(specKey) or PVL.FormatSpecDisplayName(specKey),
+            value = specKey,
+        })
+    end
 
     if classToken and PVL.SPEC_KEYS_BY_CLASS[classToken] then
         for _, specToken in ipairs(PVL.SPEC_KEYS_BY_CLASS[classToken]) do
-            local specKey = PVL.MakeSpecKey(classToken, specToken)
-            table.insert(options, {
-                label = PVL.FormatSpecDisplayName(specKey),
-                value = specKey,
-            })
+            addSpecOption(classToken, specToken)
         end
         return options
     end
 
     for _, token in ipairs(PVL.CLASS_ORDER) do
         for _, specToken in ipairs(PVL.SPEC_KEYS_BY_CLASS[token] or {}) do
-            local specKey = PVL.MakeSpecKey(token, specToken)
-            table.insert(options, {
-                label = PVL.FormatSpecDisplayName(specKey),
-                value = specKey,
-            })
+            addSpecOption(token, specToken)
         end
     end
 
@@ -325,20 +534,54 @@ function PVL.GetFilteredImportedSpecRows(classToken, specKey)
     return rows
 end
 
+--- Returns the latest character rating and MMR for one bracket.
+--- @param bracket string|nil
+--- @return number|nil rating, number|nil mmr
+function PVL.GetCharacterRatingFields(bracket)
+    local charDb = PVL.GetCharDB()
+    if not charDb then
+        return nil, nil
+    end
+
+    if (bracket or PVL.GetActiveBracketFilter()) == PVL.BRACKETS.SHUFFLE then
+        return charDb.lastShuffleCR, charDb.lastShuffleMMR
+    end
+
+    if (bracket or PVL.GetActiveBracketFilter()) == PVL.BRACKETS.RBG then
+        return charDb.lastRbgCR, charDb.lastRbgMMR
+    end
+
+    if (bracket or PVL.GetActiveBracketFilter()) == PVL.BRACKETS.ARENA_2V2 then
+        return charDb.lastArena2v2CR, charDb.lastArena2v2MMR
+    end
+
+    if (bracket or PVL.GetActiveBracketFilter()) == PVL.BRACKETS.ARENA_3V3 then
+        return charDb.lastArena3v3CR, charDb.lastArena3v3MMR
+    end
+
+    return charDb.lastBlitzCR, charDb.lastBlitzMMR
+end
+
 --- Builds a short summary table for the main UI panel.
 --- @return table
 function PVL.BuildDashboardSummary()
-    local snapshot = PVL.GetImportedSnapshot()
-    local observedRows = PVL.GetObservedSpecPercentages()
-    local charDb = PVL.GetCharDB()
+    local bracket = PVL.GetActiveBracketFilter()
+    local snapshot = PVL.GetImportedSnapshot(bracket)
+    local observedRows = PVL.GetObservedSpecRows(bracket)
+    local playerCR, playerMMR = PVL.GetCharacterRatingFields(bracket)
+    local listedObservedCount, observedPlayerCount = PVL.CountListedObservedPlayers()
 
     return {
+        bracket = bracket,
         imported = snapshot,
         importedOverall = snapshot and snapshot.overall or nil,
+        importedPlayerCount = PVL.GetImportedPlayerCount(),
+        listedObservedCount = listedObservedCount,
+        observedPlayerCount = observedPlayerCount,
         observedTopSpecs = { observedRows[1], observedRows[2], observedRows[3] },
-        matchCount = #(PVL.GetObservedMatches() or {}),
-        playerCR = charDb and charDb.lastBlitzCR or nil,
-        playerMMR = charDb and charDb.lastBlitzMMR or nil,
-        standing = PVL.EstimateListedStanding(charDb and charDb.lastBlitzCR or nil),
+        matchCount = #(PVL.GetObservedMatches(bracket) or {}),
+        playerCR = playerCR,
+        playerMMR = playerMMR,
+        standing = PVL.EstimateListedStanding(playerCR),
     }
 end

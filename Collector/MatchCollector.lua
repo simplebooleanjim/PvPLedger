@@ -58,6 +58,11 @@ function MatchCollector.GetCurrentBracket()
     end
 
     if C_PvP.IsRatedArena and C_PvP.IsRatedArena() then
+        local opponents = GetNumArenaOpponents and GetNumArenaOpponents() or 0
+        if opponents == 1 then
+            return PVL.BRACKETS.ARENA_2V2
+        end
+
         return PVL.BRACKETS.ARENA_3V3
     end
 
@@ -76,7 +81,11 @@ function MatchCollector.ShouldCollectBracket(bracket)
         return false
     end
 
-    if bracket == PVL.BRACKETS.BLITZ then
+    if bracket == PVL.BRACKETS.BLITZ
+        or bracket == PVL.BRACKETS.SHUFFLE
+        or bracket == PVL.BRACKETS.RBG
+        or bracket == PVL.BRACKETS.ARENA_2V2
+        or bracket == PVL.BRACKETS.ARENA_3V3 then
         return true
     end
 
@@ -138,6 +147,8 @@ function MatchCollector.BuildParticipantFromScore(scoreInfo)
     local classToken = scoreInfo.classToken
     local specKey = PVL.NormalizeSpecKey(classToken, scoreInfo.talentSpec)
 
+    local listedPlayer = PVL.LookupListedPlayer(name, realm)
+
     return {
         name = name,
         realm = realm,
@@ -150,6 +161,8 @@ function MatchCollector.BuildParticipantFromScore(scoreInfo)
         postmatchMMR = scoreInfo.postmatchMMR,
         mmrChange = scoreInfo.mmrChange,
         isLocalPlayer = scoreInfo.guid and UnitGUID("player") == scoreInfo.guid or false,
+        listedRating = listedPlayer and listedPlayer.rating or nil,
+        listedRank = listedPlayer and listedPlayer.rank or nil,
     }
 end
 
@@ -204,8 +217,22 @@ function MatchCollector.OnMatchComplete()
     local charDb = PVL.GetCharDB()
 
     if localPlayer then
-        charDb.lastBlitzCR = localPlayer.rating
-        charDb.lastBlitzMMR = localPlayer.postmatchMMR or localPlayer.prematchMMR
+        if bracket == PVL.BRACKETS.SHUFFLE then
+            charDb.lastShuffleCR = localPlayer.rating
+            charDb.lastShuffleMMR = localPlayer.postmatchMMR or localPlayer.prematchMMR
+        elseif bracket == PVL.BRACKETS.RBG then
+            charDb.lastRbgCR = localPlayer.rating
+            charDb.lastRbgMMR = localPlayer.postmatchMMR or localPlayer.prematchMMR
+        elseif bracket == PVL.BRACKETS.ARENA_2V2 then
+            charDb.lastArena2v2CR = localPlayer.rating
+            charDb.lastArena2v2MMR = localPlayer.postmatchMMR or localPlayer.prematchMMR
+        elseif bracket == PVL.BRACKETS.ARENA_3V3 then
+            charDb.lastArena3v3CR = localPlayer.rating
+            charDb.lastArena3v3MMR = localPlayer.postmatchMMR or localPlayer.prematchMMR
+        else
+            charDb.lastBlitzCR = localPlayer.rating
+            charDb.lastBlitzMMR = localPlayer.postmatchMMR or localPlayer.prematchMMR
+        end
     end
 
     local matchRecord = {

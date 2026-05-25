@@ -33,6 +33,10 @@ local function RegisterSlashCommands()
 
         if command == "status" then
             Print(PVL.GetStatusText())
+            Print("Imported snapshots:")
+            for _, line in ipairs(PVL.GetImportedSnapshotStatusLines()) do
+                Print("  " .. line)
+            end
             return
         end
 
@@ -55,13 +59,21 @@ local function RegisterSlashCommands()
             return
         end
 
-        if command == "help" then
-            Print("Commands: toggle | show | hide | status | reload | enable | disable | help")
-            Print("Live ladder data: run collector/fetch_ladder.bat, then /reload")
+        if command == "prune" then
+            PVL.PruneImportedSnapshotPlayers()
+            PVL.LoadImportedSnapshotFromPack()
+            Print("Removed bulky imported player indexes from SavedVariables.")
             return
         end
 
-        Print("Commands: toggle | show | hide | status | reload | enable | disable | help")
+        if command == "help" then
+            Print("Commands: toggle | show | hide | status | reload | prune | enable | disable | help")
+            Print("Ladder data ships with the addon and refreshes when you update PvPLedger.")
+            Print("Use /pvl status to see snapshot dates for each bracket.")
+            return
+        end
+
+        Print("Commands: toggle | show | hide | status | reload | prune | enable | disable | help")
     end
 end
 

@@ -16,6 +16,7 @@ function PVL.GetDefaultDB()
             collectSpecs = true,
             collectNonBlitz = false,
             uiFilters = {
+                bracket = PVL.BRACKETS.BLITZ,
                 classToken = nil,
                 specKey = nil,
             },
@@ -25,9 +26,12 @@ function PVL.GetDefaultDB()
             players = {},
             specCounts = {},
         },
-        imported = nil,
     }
 end
+
+--- Runtime-only imported snapshots loaded from packaged ladder files.
+--- Intentionally not stored in SavedVariables to keep login fast.
+PVL.ImportedSnapshots = PVL.ImportedSnapshots or {}
 
 --- Returns a fresh per-character database table.
 --- @return table
@@ -36,6 +40,14 @@ function PVL.GetDefaultCharDB()
         version = PVL.DB_VERSION,
         lastBlitzCR = nil,
         lastBlitzMMR = nil,
+        lastShuffleCR = nil,
+        lastShuffleMMR = nil,
+        lastRbgCR = nil,
+        lastRbgMMR = nil,
+        lastArena2v2CR = nil,
+        lastArena2v2MMR = nil,
+        lastArena3v3CR = nil,
+        lastArena3v3MMR = nil,
     }
 end
 
@@ -51,10 +63,15 @@ function PVL.MigrateDB(db)
     db.meta = db.meta or defaults.meta
     db.settings = db.settings or defaults.settings
     db.settings.uiFilters = db.settings.uiFilters or defaults.settings.uiFilters
+    db.settings.uiFilters.bracket = db.settings.uiFilters.bracket or defaults.settings.uiFilters.bracket
     db.observations = db.observations or defaults.observations
     db.observations.matches = db.observations.matches or {}
     db.observations.players = db.observations.players or {}
     db.observations.specCounts = db.observations.specCounts or {}
+
+    if type(db.imported) == "table" then
+        db.imported = nil
+    end
 
     return db
 end
@@ -69,6 +86,14 @@ function PVL.MigrateCharDB(charDb)
     charDb.version = charDb.version or PVL.DB_VERSION
     charDb.lastBlitzCR = charDb.lastBlitzCR
     charDb.lastBlitzMMR = charDb.lastBlitzMMR
+    charDb.lastShuffleCR = charDb.lastShuffleCR
+    charDb.lastShuffleMMR = charDb.lastShuffleMMR
+    charDb.lastRbgCR = charDb.lastRbgCR
+    charDb.lastRbgMMR = charDb.lastRbgMMR
+    charDb.lastArena2v2CR = charDb.lastArena2v2CR
+    charDb.lastArena2v2MMR = charDb.lastArena2v2MMR
+    charDb.lastArena3v3CR = charDb.lastArena3v3CR
+    charDb.lastArena3v3MMR = charDb.lastArena3v3MMR
 
     return charDb
 end

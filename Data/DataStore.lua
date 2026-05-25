@@ -18,6 +18,24 @@ function PVL.MakePlayerKey(name, realm)
     return name
 end
 
+--- Builds a normalized player lookup key for imported ladder rows.
+--- @param name string
+--- @param realm string|nil
+--- @return string
+function PVL.NormalizePlayerLookupKey(name, realm)
+    if not name or name == "" then
+        return ""
+    end
+
+    local normalizedName = string.lower(name)
+    if not realm or realm == "" then
+        return normalizedName
+    end
+
+    local normalizedRealm = string.lower(realm):gsub("[^a-z0-9]", "")
+    return string.format("%s-%s", normalizedName, normalizedRealm)
+end
+
 --- Parses a player key into name and realm components.
 --- @param playerKey string
 --- @return string name, string|nil realm
@@ -161,34 +179,158 @@ function PVL.PruneMatches()
     end
 end
 
---- Attaches an imported ladder snapshot produced by the external collector.
---- @param snapshot table
-function PVL.SetImportedSnapshot(snapshot)
+--- Returns the active UI bracket filter.
+--- @return string
+function PVL.GetActiveBracketFilter()
     local db = PVL.GetDB()
-    if db then
-        db.imported = snapshot
+    local bracket = db and db.settings.uiFilters and db.settings.uiFilters.bracket
+    if bracket and PVL.BRACKET_NAMES[bracket] then
+        return bracket
+    end
+
+    return PVL.BRACKETS.BLITZ
+end
+
+--- Returns dropdown options for bracket filtering.
+--- @return table[]
+function PVL.GetBracketFilterOptions()
+    local options = {}
+
+    for _, bracket in ipairs(PVL.IMPORTED_BRACKETS) do
+        table.insert(options, {
+            label = PVL.BRACKET_NAMES[bracket] or bracket,
+            value = bracket,
+        })
+    end
+
+    return options
+end
+
+--- Strips bulky player lookup tables from imported snapshots before persistence.
+--- @param snapshot table
+--- @return table
+function PVL.CompactImportedSnapshot(snapshot)
+    if type(snapshot) ~= "table" then
+        return snapshot
+    end
+
+    local compact = {}
+    for key, value in pairs(snapshot) do
+        if key ~= "players" then
+            compact[key] = value
+        end
+    end
+
+    return compact
+end
+
+--- Removes player lookup tables from all imported snapshots.
+function PVL.PruneImportedSnapshotPlayers()
+    for bracket, snapshot in pairs(PVL.ImportedSnapshots or {}) do
+        if type(snapshot) == "table" and snapshot.players then
+            PVL.ImportedSnapshots[bracket] = PVL.CompactImportedSnapshot(snapshot)
+        end
     end
 end
 
---- Returns the currently loaded imported snapshot, if any.
---- @return table|nil
-function PVL.GetImportedSnapshot()
-    local db = PVL.GetDB()
-    return db and db.imported or nil
+--- Attaches an imported ladder snapshot produced by the external collector.
+--- @param snapshot table
+function PVL.SetImportedSnapshot(snapshot)
+    if not snapshot or not snapshot.bracket then
+        return
+    end
+
+    PVL.ImportedSnapshots = PVL.ImportedSnapshots or {}
+    PVL.ImportedSnapshots[snapshot.bracket] = PVL.CompactImportedSnapshot(snapshot)
 end
 
---- Returns observed Blitz matches optionally filtered by a minimum timestamp.
+--- Returns the imported snapshot for one bracket.
+--- @param bracket string|nil
+--- @return table|nil
+function PVL.GetImportedSnapshot(bracket)
+    local snapshots = PVL.ImportedSnapshots
+    if not snapshots then
+        return nil
+    end
+
+    return snapshots[bracket or PVL.GetActiveBracketFilter()]
+end
+
+--- Returns a readable age label for one ISO snapshot date.
+--- @param snapshotDate string|nil
+--- @return string
+function PVL.FormatSnapshotAge(snapshotDate)
+    if not snapshotDate then
+        return "unknown age"
+    end
+
+    local year, month, day = snapshotDate:match("^(%d%d%d%d)-(%d%d)-(%d%d)$")
+    if not year then
+        return snapshotDate
+    end
+
+    local snapshotTime = time({
+        year = tonumber(year),
+        month = tonumber(month),
+        day = tonumber(day),
+        hour = 12,
+    })
+
+    if not snapshotTime then
+        return snapshotDate
+    end
+
+    local ageDays = math.floor((time() - snapshotTime) / 86400)
+    if ageDays <= 0 then
+        return "today"
+    end
+
+    if ageDays == 1 then
+        return "1 day old"
+    end
+
+    return string.format("%d days old", ageDays)
+end
+
+--- Returns chat status lines for all packaged imported snapshots.
+--- @return string[]
+function PVL.GetImportedSnapshotStatusLines()
+    local lines = {}
+
+    for _, bracket in ipairs(PVL.IMPORTED_BRACKETS) do
+        local snapshot = PVL.GetImportedSnapshot(bracket)
+        local bracketName = PVL.BRACKET_NAMES[bracket] or bracket
+
+        if snapshot then
+            table.insert(lines, string.format(
+                "%s: %s (%s) — %s",
+                bracketName,
+                snapshot.snapshotDate or "unknown date",
+                PVL.FormatSnapshotAge(snapshot.snapshotDate),
+                snapshot.source or "unknown source"
+            ))
+        else
+            table.insert(lines, string.format("%s: not loaded", bracketName))
+        end
+    end
+
+    return lines
+end
+
+--- Returns observed matches for one bracket optionally filtered by timestamp.
+--- @param bracket string|nil
 --- @param sinceTimestamp number|nil
 --- @return table[]
-function PVL.GetObservedMatches(sinceTimestamp)
+function PVL.GetObservedMatches(bracket, sinceTimestamp)
     local db = PVL.GetDB()
     if not db then
         return {}
     end
 
+    local activeBracket = bracket or PVL.GetActiveBracketFilter()
     local results = {}
     for _, match in ipairs(db.observations.matches) do
-        if match.bracket == PVL.BRACKETS.BLITZ then
+        if match.bracket == activeBracket then
             if not sinceTimestamp or (match.timestamp and match.timestamp >= sinceTimestamp) then
                 table.insert(results, match)
             end
@@ -199,15 +341,30 @@ function PVL.GetObservedMatches(sinceTimestamp)
 end
 
 --- Returns total observed spec counts as an array of sortable rows.
+--- @param bracket string|nil
 --- @return table[]
-function PVL.GetObservedSpecRows()
+function PVL.GetObservedSpecRows(bracket)
     local db = PVL.GetDB()
     if not db then
         return {}
     end
 
+    local activeBracket = bracket or PVL.GetActiveBracketFilter()
+    local counts = {}
+
+    for _, match in ipairs(db.observations.matches) do
+        if match.bracket == activeBracket then
+            for _, participant in ipairs(match.roster or {}) do
+                local aggregateKey = PVL.MakeSpecKey(participant.class, participant.spec)
+                if aggregateKey then
+                    counts[aggregateKey] = (counts[aggregateKey] or 0) + 1
+                end
+            end
+        end
+    end
+
     local rows = {}
-    for specKey, count in pairs(db.observations.specCounts) do
+    for specKey, count in pairs(counts) do
         local classToken, specToken = specKey:match("^(.-)_(.+)$")
         table.insert(rows, {
             specKey = specKey,

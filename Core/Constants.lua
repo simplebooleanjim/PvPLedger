@@ -5,7 +5,7 @@ PvPLedger = PvPLedger or {}
 local PVL = PvPLedger
 
 PVL.ADDON_NAME = "PvPLedger"
-PVL.VERSION = "0.3.1"
+PVL.VERSION = "0.5.5"
 PVL.DB_VERSION = 1
 
 --- Bracket identifiers used throughout SavedVariables and imported ladder packs.
@@ -15,6 +15,40 @@ PVL.BRACKETS = {
     ARENA_3V3 = "arena3v3",
     ARENA_2V2 = "arena2v2",
     RBG = "rbg",
+}
+
+--- Brackets that support imported Battle.net ladder snapshots.
+PVL.IMPORTED_BRACKETS = {
+    PVL.BRACKETS.BLITZ,
+    PVL.BRACKETS.SHUFFLE,
+    PVL.BRACKETS.RBG,
+    PVL.BRACKETS.ARENA_2V2,
+    PVL.BRACKETS.ARENA_3V3,
+}
+
+--- Brackets that collect local match observations by default.
+PVL.DEFAULT_COLLECTED_BRACKETS = {
+    PVL.BRACKETS.BLITZ,
+    PVL.BRACKETS.SHUFFLE,
+    PVL.BRACKETS.RBG,
+    PVL.BRACKETS.ARENA_2V2,
+    PVL.BRACKETS.ARENA_3V3,
+}
+
+--- Human-readable bracket labels for UI dropdowns.
+PVL.BRACKET_NAMES = {
+    [PVL.BRACKETS.BLITZ] = "Battleground Blitz",
+    [PVL.BRACKETS.SHUFFLE] = "Solo Shuffle",
+    [PVL.BRACKETS.RBG] = "Rated Battlegrounds",
+    [PVL.BRACKETS.ARENA_2V2] = "Arena 2v2",
+    [PVL.BRACKETS.ARENA_3V3] = "Arena 3v3",
+}
+
+--- Imported brackets that use one combined Battle.net ladder slug from Blizzard.
+PVL.COMBINED_IMPORTED_BRACKETS = {
+    PVL.BRACKETS.RBG,
+    PVL.BRACKETS.ARENA_2V2,
+    PVL.BRACKETS.ARENA_3V3,
 }
 
 --- Supported ladder regions for imported snapshots.

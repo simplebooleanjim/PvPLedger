@@ -24,8 +24,8 @@ if %ERRORLEVEL%==0 (
   )
 )
 
-echo Fetching US Blitz ladder snapshot from Battle.net...
-%PYTHON% export_ladder.py --fetch-blizzard --region US --output "..\Data\LadderData_US_Blitz.lua"
+echo Fetching US Solo Shuffle ladder snapshot from Battle.net...
+%PYTHON% export_ladder.py --fetch-blizzard --bracket shuffle --region US --output "..\Data\LadderData_US_Shuffle.lua"
 if %ERRORLEVEL% NEQ 0 exit /b %ERRORLEVEL%
 
 echo.

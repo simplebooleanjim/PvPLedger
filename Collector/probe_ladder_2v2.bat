@@ -24,11 +24,10 @@ if %ERRORLEVEL%==0 (
   )
 )
 
-echo Fetching US Blitz ladder snapshot from Battle.net...
-%PYTHON% export_ladder.py --fetch-blizzard --region US --output "..\Data\LadderData_US_Blitz.lua"
-if %ERRORLEVEL% NEQ 0 exit /b %ERRORLEVEL%
+echo Probing US Arena 2v2 ladder availability on Battle.net...
+%PYTHON% export_ladder.py --probe-blizzard --bracket arena2v2 --region US
 
 echo.
-echo Done. Reload UI in WoW with /reload and run /pvl reload.
+echo Probe complete. If matchedCount looks good, run fetch_ladder_2v2.bat next.
 
 endlocal

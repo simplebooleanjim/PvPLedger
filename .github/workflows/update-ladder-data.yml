@@ -1,0 +1,37 @@
+name: Update ladder data
+
+on:
+  schedule:
+    # Daily at 08:15 UTC — after typical Blizzard ladder maintenance windows.
+    - cron: "15 8 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  refresh-us-ladders:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Fetch all US ladder snapshots
+        working-directory: Collector
+        env:
+          BNET_CLIENT_ID: ${{ secrets.BNET_CLIENT_ID }}
+          BNET_CLIENT_SECRET: ${{ secrets.BNET_CLIENT_SECRET }}
+        run: python fetch_all.py --region US --write-manifest
+
+      - name: Commit refreshed snapshot files
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: "chore(data): refresh US ladder snapshots"
+          file_pattern: "Data/LadderData_US_*.lua Data/ladder-manifest.json"
+          commit_user_name: github-actions[bot]
+          commit_user_email: 41898282+github-actions[bot]@users.noreply.github.com

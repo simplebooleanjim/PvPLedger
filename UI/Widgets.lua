@@ -57,7 +57,11 @@ end
 function UI.CreateSectionHeader(parent, text, point, font)
     local header = parent:CreateFontString(nil, "OVERLAY", font or "GameFontNormalLarge")
     header:SetPoint(unpack(point))
-    header:SetText(text)
+    if PVL.UI.Format and PVL.UI.Format.Header then
+        header:SetText(PVL.UI.Format.Header(text))
+    else
+        header:SetText(text)
+    end
     return header
 end
 
@@ -78,47 +82,68 @@ end
 --- Creates a scrollable text area for long spec lists.
 --- @param parent Frame
 --- @param name string
---- @param width number
 --- @param topAnchor Region
---- @param bottomLeftPoint table
+--- @param leftAnchor Region
+--- @param rightAnchor Region
+--- @param bottomAnchor Region|nil
+--- @param fixedHeight number|nil
 --- @return Frame scrollFrame, fun(text: string): nil setText
-function UI.CreateScrollableTextArea(parent, name, width, topAnchor, bottomLeftPoint)
+function UI.CreateScrollableTextArea(parent, name, topAnchor, leftAnchor, rightAnchor, bottomAnchor, fixedHeight)
     local scrollFrame = CreateFrame("ScrollFrame", name, parent, "UIPanelScrollFrameTemplate")
     scrollFrame:SetPoint("TOPLEFT", topAnchor, "BOTTOMLEFT", 0, -8)
-    scrollFrame:SetPoint(unpack(bottomLeftPoint))
-    scrollFrame:SetWidth(width)
+
+    if fixedHeight then
+        scrollFrame:SetHeight(fixedHeight)
+    elseif bottomAnchor then
+        scrollFrame:SetPoint("BOTTOMLEFT", leftAnchor, "BOTTOMLEFT", 0, 0)
+        scrollFrame:SetPoint("BOTTOMRIGHT", rightAnchor, "BOTTOMRIGHT", 0, 0)
+    end
 
     local scrollBar = scrollFrame.ScrollBar or _G[scrollFrame:GetName() .. "ScrollBar"]
     if scrollBar then
         scrollBar:ClearAllPoints()
-        scrollBar:SetPoint("TOPLEFT", scrollFrame, "TOPRIGHT", 4, -16)
-        scrollBar:SetPoint("BOTTOMLEFT", scrollFrame, "BOTTOMRIGHT", 4, 16)
+        scrollBar:SetPoint("TOPRIGHT", scrollFrame, "TOPRIGHT", -4, -18)
+        scrollBar:SetPoint("BOTTOMRIGHT", scrollFrame, "BOTTOMRIGHT", -4, 18)
     end
 
     local scrollChild = CreateFrame("Frame", name .. "Child", scrollFrame)
     scrollFrame:SetScrollChild(scrollChild)
 
-    local textWidth = width - 24
     local text = scrollChild:CreateFontString(nil, "ARTWORK", "GameFontHighlightSmall")
-    text:SetWidth(textWidth)
     text:SetJustifyH("LEFT")
     text:SetJustifyV("TOP")
-    text:SetPoint("TOPLEFT", scrollChild, "TOPLEFT", 0, 0)
+    text:SetPoint("TOPLEFT", scrollChild, "TOPLEFT", 6, -4)
+
+    local TEXT_INSET_X = 10
+    local SCROLLBAR_GUTTER = 28
 
     --- Updates the scroll area content and resets scroll position.
     --- @param content string
     local function SetText(content)
         text:SetText(content or "")
 
+        local frameWidth = scrollFrame:GetWidth() or 1
+        local textWidth = math.max(frameWidth - TEXT_INSET_X - SCROLLBAR_GUTTER, 1)
+        text:SetWidth(textWidth)
+
         local textHeight = text:GetStringHeight() or 1
         local frameHeight = scrollFrame:GetHeight() or 1
-        scrollChild:SetSize(textWidth, math.max(textHeight + 8, frameHeight))
+        scrollChild:SetSize(textWidth + TEXT_INSET_X, math.max(textHeight + 8, frameHeight))
 
         scrollFrame:SetVerticalScroll(0)
         if scrollFrame.UpdateScrollChildRect then
             scrollFrame:UpdateScrollChildRect()
         end
     end
+
+    scrollFrame:SetScript("OnSizeChanged", function()
+        local currentText = text:GetText()
+        if currentText and currentText ~= "" and not scrollFrame._pvlUpdating then
+            scrollFrame._pvlUpdating = true
+            SetText(currentText)
+            scrollFrame._pvlUpdating = false
+        end
+    end)
 
     return scrollFrame, SetText
 end

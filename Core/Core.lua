@@ -22,10 +22,21 @@ function PVL.MigrateLegacySavedVars()
     end
 end
 
---- Loads the packaged ladder snapshot into SavedVariables if present.
+--- Loads packaged ladder snapshots into SavedVariables if present.
 function PVL.LoadImportedSnapshotFromPack()
-    if type(PvPLedgerLadderData) == "table" then
+    if type(PvPLedgerLadderData) ~= "table" then
+        return
+    end
+
+    if PvPLedgerLadderData.snapshotId then
         PVL.SetImportedSnapshot(PvPLedgerLadderData)
+        return
+    end
+
+    for _, snapshot in pairs(PvPLedgerLadderData) do
+        if type(snapshot) == "table" and snapshot.snapshotId then
+            PVL.SetImportedSnapshot(snapshot)
+        end
     end
 end
 
@@ -53,14 +64,17 @@ end
 --- @return string
 function PVL.GetStatusText()
     local db = PVL.GetDB()
-    local snapshot = PVL.GetImportedSnapshot()
-    local matchCount = db and #(db.observations.matches or {}) or 0
-    local snapshotLabel = snapshot and snapshot.snapshotId or "none"
+    local bracket = PVL.GetActiveBracketFilter()
+    local snapshot = PVL.GetImportedSnapshot(bracket)
+    local matchCount = #(PVL.GetObservedMatches(bracket) or {})
+    local bracketName = PVL.BRACKET_NAMES[bracket] or bracket
 
     return string.format(
-        "matches=%d snapshot=%s enabled=%s",
+        "viewing=%s | matches=%d | snapshot=%s (%s) | enabled=%s",
+        bracketName,
         matchCount,
-        snapshotLabel,
+        snapshot and (snapshot.snapshotDate or snapshot.snapshotId or "loaded") or "none",
+        snapshot and PVL.FormatSnapshotAge(snapshot.snapshotDate) or "n/a",
         tostring(db.settings.enabled)
     )
 end

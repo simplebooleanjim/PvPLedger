@@ -24,11 +24,11 @@ if %ERRORLEVEL%==0 (
   )
 )
 
-echo Fetching US Blitz ladder snapshot from Battle.net...
-%PYTHON% export_ladder.py --fetch-blizzard --region US --output "..\Data\LadderData_US_Blitz.lua"
+echo Probing US Solo Shuffle ladder index on Battle.net...
+%PYTHON% export_ladder.py --probe-blizzard --bracket shuffle --region US
 if %ERRORLEVEL% NEQ 0 exit /b %ERRORLEVEL%
 
 echo.
-echo Done. Reload UI in WoW with /reload and run /pvl reload.
+echo Probe complete. If matchedCount looks good, run fetch_ladder_shuffle.bat next.
 
 endlocal

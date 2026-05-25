@@ -121,6 +121,16 @@ class BlizzardClient:
 
         return slugs
 
+    def list_blitz_leaderboard_slugs(self, season_id: int) -> list[str]:
+        """Return Battleground Blitz bracket slugs for one season."""
+
+        return self.list_bracket_leaderboard_slugs(season_id, "blitz")
+
+    def list_bracket_leaderboard_slugs(self, season_id: int, prefix: str) -> list[str]:
+        """Return leaderboard slugs for one bracket prefix such as blitz or shuffle."""
+
+        return filter_bracket_slugs(self.list_leaderboard_slugs(season_id), prefix)
+
     def fetch_leaderboard_entries(self, season_id: int, bracket_slug: str) -> list[dict[str, Any]]:
         """Fetch all entries for one bracket slug."""
 
@@ -135,3 +145,30 @@ def slug_from_leaderboard_href(href: str) -> str | None:
 
     match = re.search(r"/pvp-leaderboard/([^/?]+)", href)
     return match.group(1) if match else None
+
+
+def filter_blitz_slugs(slugs: list[str]) -> list[str]:
+    """Keep only Battleground Blitz bracket slugs from a season index."""
+
+    return filter_bracket_slugs(slugs, "blitz")
+
+
+def filter_bracket_slugs(slugs: list[str], prefix: str) -> list[str]:
+    """Keep only leaderboard slugs that belong to one bracket prefix."""
+
+    prefix = prefix.lower()
+    needle = f"{prefix}-"
+    return sorted(slug for slug in slugs if slug == prefix or slug.startswith(needle))
+
+
+def build_catalog_report(
+    available_slugs: set[str],
+    catalog_slugs: set[str],
+) -> dict[str, list[str]]:
+    """Compare known Blitz catalog slugs against a Battle.net season index."""
+
+    return {
+        "matched": sorted(available_slugs & catalog_slugs),
+        "missingFromApi": sorted(catalog_slugs - available_slugs),
+        "unknownInCatalog": sorted(available_slugs - catalog_slugs),
+    }
