@@ -13,12 +13,15 @@ function PVL.GetDefaultDB()
             lastLadderRefreshAt = nil,
             dataAddonInstalled = nil,
             dataAddonVersion = nil,
+            appHelperInstalled = nil,
+            appSyncGeneratedAt = nil,
         },
         settings = {
             enabled = true,
             collectSpecs = true,
             collectNonBlitz = false,
             autoRefreshLadderData = true,
+            shareMatchData = false,
             uiFilters = {
                 bracket = PVL.BRACKETS.BLITZ,
                 classToken = nil,
@@ -70,9 +73,14 @@ function PVL.MigrateDB(db)
     db.meta.lastLadderRefreshAt = db.meta.lastLadderRefreshAt
     db.meta.dataAddonInstalled = db.meta.dataAddonInstalled
     db.meta.dataAddonVersion = db.meta.dataAddonVersion
+    db.meta.appHelperInstalled = db.meta.appHelperInstalled
+    db.meta.appSyncGeneratedAt = db.meta.appSyncGeneratedAt
     db.settings = db.settings or defaults.settings
     if db.settings.autoRefreshLadderData == nil then
         db.settings.autoRefreshLadderData = defaults.settings.autoRefreshLadderData
+    end
+    if db.settings.shareMatchData == nil then
+        db.settings.shareMatchData = defaults.settings.shareMatchData
     end
     db.settings.uiFilters = db.settings.uiFilters or defaults.settings.uiFilters
     db.settings.uiFilters.bracket = db.settings.uiFilters.bracket or defaults.settings.uiFilters.bracket

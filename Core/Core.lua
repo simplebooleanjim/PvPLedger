@@ -24,7 +24,7 @@ end
 
 --- Loads packaged ladder snapshots into runtime memory if present.
 function PVL.LoadImportedSnapshotFromPack()
-    PVL.RefreshImportedLadderData({ loadDataAddon = false })
+    PVL.RefreshImportedLadderData({ loadDataAddon = false, loadAppHelper = false })
 end
 
 --- Initializes SavedVariables and starts runtime modules.
@@ -75,6 +75,7 @@ end
 local bootstrap = CreateFrame("Frame")
 bootstrap:RegisterEvent("ADDON_LOADED")
 bootstrap:RegisterEvent("PLAYER_LOGIN")
+bootstrap:RegisterEvent("PLAYER_LOGOUT")
 bootstrap:SetScript("OnEvent", function(_, event, arg1)
     if event == "ADDON_LOADED" and arg1 == PVL.ADDON_NAME then
         PVL.Init()
@@ -86,6 +87,10 @@ bootstrap:SetScript("OnEvent", function(_, event, arg1)
         end
         if PVL.UI then
             PVL.UI.Refresh()
+        end
+    elseif event == "PLAYER_LOGOUT" then
+        if PVL.SaveAppHelperExport then
+            PVL.SaveAppHelperExport()
         end
     end
 end)

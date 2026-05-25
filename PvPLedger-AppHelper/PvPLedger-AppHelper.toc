@@ -1,0 +1,10 @@
+## Interface: 120000, 120001, 120100
+## Title: |cFF66CCFFPvPLedger AppHelper|r
+## Notes: Bridge between PvPLedger Sync and the main addon. AppData.lua is written by the desktop sync app or collector.
+## Author: Jake
+## Version: 0.7.0
+## SavedVariables: PvPLedger_AppHelperDB
+## Dependencies: PvPLedger
+
+AppData.lua
+PvPLedger-AppHelper.lua

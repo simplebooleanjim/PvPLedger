@@ -2,7 +2,7 @@
 ## Title: |cFF66CCFFPvPLedger|r
 ## Notes: Hybrid PvP ladder intelligence — in-game observations plus imported ladder snapshots.
 ## Author: Jake
-## Version: 0.6.0
+## Version: 0.7.0
 ## SavedVariables: PvPLedgerDB, BlitzLedgerDB
 ## SavedVariablesPerCharacter: PvPLedgerCharDB, BlitzLedgerCharDB
 
@@ -10,6 +10,7 @@ Core/Constants.lua
 Core/Schema.lua
 Data/DataStore.lua
 Data/LadderLoader.lua
+Data/AppExport.lua
 Data/Parser.lua
 Data/LadderData_US_Blitz.lua
 Data/LadderData_US_Shuffle.lua

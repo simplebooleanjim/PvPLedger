@@ -5,7 +5,7 @@ PvPLedger = PvPLedger or {}
 local PVL = PvPLedger
 
 PVL.ADDON_NAME = "PvPLedger"
-PVL.VERSION = "0.6.0"
+PVL.VERSION = "0.7.0"
 PVL.DB_VERSION = 1
 
 --- Bracket identifiers used throughout SavedVariables and imported ladder packs.
@@ -62,6 +62,12 @@ PVL.DATA_ADDON_NAME = "PvPLedger-Data-US"
 
 --- GitHub folder users can install as a sibling addon for public data updates.
 PVL.DATA_ADDON_INSTALL_HINT = "Copy PvPLedger-Data-US into Interface/AddOns beside PvPLedger."
+
+--- Bridge addon written by PvPLedger Sync (TSM/Raider.io-style desktop sync).
+PVL.APP_HELPER_NAME = "PvPLedger-AppHelper"
+
+--- Install hint for the AppHelper + future desktop sync app.
+PVL.APP_HELPER_INSTALL_HINT = "Install PvPLedger-AppHelper and PvPLedger Sync for automatic ladder updates."
 
 --- Ordered class tokens for stable UI sorting.
 PVL.CLASS_ORDER = {

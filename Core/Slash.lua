@@ -40,21 +40,40 @@ local function RegisterSlashCommands()
             for _, line in ipairs(PVL.GetLadderUpdateStatusLines()) do
                 Print("  " .. line)
             end
+            if PVL.GetAppExportStatusLines then
+                for _, line in ipairs(PVL.GetAppExportStatusLines()) do
+                    Print("  " .. line)
+                end
+            end
             return
         end
 
         if command == "update" then
             local summary = PVL.RefreshImportedLadderData()
             PVL.UI.Refresh()
-            if summary.loadedDataAddon then
+            if summary.loadedAppHelper then
+                Print("Loaded PvPLedger-AppHelper and refreshed imported ladder snapshots.")
+            elseif summary.loadedDataAddon then
                 Print("Loaded PvPLedger-Data-US and refreshed imported ladder snapshots.")
-            elseif PVL.IsDataAddonInstalled() then
+            elseif PVL.IsAppHelperInstalled() or PVL.IsDataAddonInstalled() then
                 Print("Refreshed imported ladder snapshots from installed data sources.")
             else
                 Print("Refreshed bundled ladder snapshots.")
-                Print(PVL.DATA_ADDON_INSTALL_HINT)
+                Print(PVL.APP_HELPER_INSTALL_HINT)
             end
             Print("If you updated addon files on disk, run /reload to pick up the new files.")
+            return
+        end
+
+        if command == "share on" or command == "export on" then
+            PVL.GetDB().settings.shareMatchData = true
+            Print("Match export enabled for PvPLedger Sync.")
+            return
+        end
+
+        if command == "share off" or command == "export off" then
+            PVL.GetDB().settings.shareMatchData = false
+            Print("Match export disabled.")
             return
         end
 
@@ -85,14 +104,15 @@ local function RegisterSlashCommands()
         end
 
         if command == "help" then
-            Print("Commands: toggle | show | hide | status | update | reload | prune | enable | disable | help")
-            Print("Install PvPLedger-Data-US beside PvPLedger for fresher ladder data between main-addon releases.")
-            Print("Use /pvl update after your addon manager updates the data addon, then /reload if needed.")
+            Print("Commands: toggle | show | hide | status | update | reload | share on|off | enable | disable | help")
+            Print("Install PvPLedger-AppHelper + PvPLedger Sync for automatic ladder updates.")
+            Print("Use /pvl share on to queue match exports for the desktop sync app.")
+            Print("Use /pvl update after sync updates AppData.lua, then /reload if needed.")
             Print("Use /pvl status to see snapshot dates and active data source per bracket.")
             return
         end
 
-        Print("Commands: toggle | show | hide | status | update | reload | prune | enable | disable | help")
+        Print("Commands: toggle | show | hide | status | update | reload | share on|off | enable | disable | help")
     end
 end
 

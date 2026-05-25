@@ -251,6 +251,10 @@ function MatchCollector.OnMatchComplete()
     PVL.StoreMatch(matchRecord)
     db.meta.lastMatchAt = matchRecord.timestamp
 
+    if PVL.QueueMatchExport then
+        PVL.QueueMatchExport(matchRecord)
+    end
+
     MatchCollector.activeMatch = nil
     if PVL.UI and PVL.UI.Refresh then
         PVL.UI.Refresh()

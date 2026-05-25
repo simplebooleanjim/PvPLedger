@@ -18,11 +18,13 @@ from datetime import date
 from pathlib import Path
 
 from export_ladder import default_output_path, fetch_and_write_snapshot, load_env_file
+from render_app_data import write_app_helper_app_data
 from spec_catalog import SUPPORTED_BRACKETS
 
 DEFAULT_BRACKETS: tuple[str, ...] = SUPPORTED_BRACKETS
 DATA_ADDON_DIR_NAME = "PvPLedger-Data-US"
 DATA_ADDON_TOC_NAME = "PvPLedger-Data-US.toc"
+APP_HELPER_DIR_NAME = "PvPLedger-AppHelper"
 
 
 def parse_args() -> argparse.Namespace:
@@ -161,6 +163,13 @@ def main() -> int:
 
     if args.sync_data_addon:
         sync_data_addon(data_dir=args.data_dir, results=results)
+
+    app_helper_path = write_app_helper_app_data(
+        data_dir=args.data_dir,
+        region=args.region,
+        addon_dir=args.data_dir.parent / APP_HELPER_DIR_NAME,
+    )
+    print(f"Wrote AppHelper bridge data to {app_helper_path.resolve()}")
 
     print(json.dumps({"region": args.region.upper(), "results": results}, indent=2))
     return 0

@@ -1,0 +1,4 @@
+# PvPLedger Sync uses Python stdlib only for v0.1.
+# Optional future deps:
+# pystray
+# pillow

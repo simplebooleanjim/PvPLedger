@@ -1,6 +1,6 @@
 --- Loads bundled and companion data-addon ladder snapshots with merge precedence.
 --- WoW addons cannot fetch HTTP URLs, so public updates ship via the optional
---- PvPLedger-Data-US companion addon refreshed by GitHub Actions.
+--- PvPLedger-Data-US companion addon or PvPLedger-AppHelper + desktop sync app.
 --- @class PvPLedger
 local PVL = PvPLedger
 
@@ -8,9 +8,12 @@ local PVL = PvPLedger
 PVL.LADDER_DATA_SOURCES = {
     BUNDLED = "bundled",
     DATA_ADDON = "data-addon",
+    DESKTOP_APP = "desktop-app",
 }
 
 PVL._bundledLadderData = PVL._bundledLadderData or {}
+PVL._appHelperSnapshots = PVL._appHelperSnapshots or {}
+PVL._appSyncInfo = PVL._appSyncInfo or nil
 PVL._snapshotSources = PVL._snapshotSources or {}
 
 --- Parses an ISO snapshot date into a unix timestamp.
@@ -86,6 +89,88 @@ function PVL.IsDataAddonLoaded()
     end
 
     return C_AddOns.IsAddOnLoaded(PVL.DATA_ADDON_NAME)
+end
+
+--- Returns true when the AppHelper bridge addon is installed.
+--- @return boolean
+function PVL.IsAppHelperInstalled()
+    if not C_AddOns or not C_AddOns.DoesAddOnExist then
+        return false
+    end
+
+    return C_AddOns.DoesAddOnExist(PVL.APP_HELPER_NAME)
+end
+
+--- Returns true when the AppHelper bridge addon is loaded.
+--- @return boolean
+function PVL.IsAppHelperLoaded()
+    if not C_AddOns or not C_AddOns.IsAddOnLoaded then
+        return false
+    end
+
+    return C_AddOns.IsAddOnLoaded(PVL.APP_HELPER_NAME)
+end
+
+--- Attempts to load the AppHelper bridge addon written by PvPLedger Sync.
+--- @return boolean loaded
+--- @return string|nil reason
+function PVL.TryLoadAppHelper()
+    if not PVL.IsAppHelperInstalled() then
+        return false, "PvPLedger-AppHelper is not installed."
+    end
+
+    if PVL.IsAppHelperLoaded() then
+        return true, "already loaded"
+    end
+
+    local loaded, reason = C_AddOns.LoadAddOn(PVL.APP_HELPER_NAME)
+    if not loaded then
+        return false, reason or "failed to load PvPLedger-AppHelper"
+    end
+
+    return true, "loaded"
+end
+
+--- Applies ladder snapshots pushed by PvPLedger-AppHelper/AppData.lua.
+--- @param snapshots table<string, table>
+--- @param syncInfo table|nil
+function PVL.ApplyAppSyncSnapshots(snapshots, syncInfo)
+    if type(snapshots) ~= "table" then
+        return
+    end
+
+    PVL._appHelperSnapshots = PVL._appHelperSnapshots or {}
+    for bracket, snapshot in pairs(snapshots) do
+        if type(snapshot) == "table" and snapshot.snapshotId then
+            PVL._appHelperSnapshots[bracket] = snapshot
+        end
+    end
+
+    PVL._appSyncInfo = syncInfo
+
+    local db = PVL.GetDB()
+    if db and db.meta then
+        db.meta.appHelperInstalled = true
+        db.meta.appSyncGeneratedAt = syncInfo and syncInfo.generatedAt or nil
+    end
+end
+
+--- Returns sync metadata supplied by the desktop app through AppHelper.
+--- @return table|nil
+function PVL.GetAppSyncInfo()
+    return PVL._appSyncInfo
+end
+
+--- Returns metadata for the AppHelper bridge addon.
+--- @return string|nil version
+--- @return string|nil title
+function PVL.GetAppHelperMetadata()
+    if not PVL.IsAppHelperInstalled() or not C_AddOns or not C_AddOns.GetAddOnMetadata then
+        return nil, nil
+    end
+
+    return C_AddOns.GetAddOnMetadata(PVL.APP_HELPER_NAME, "Version"),
+        C_AddOns.GetAddOnMetadata(PVL.APP_HELPER_NAME, "Title")
 end
 
 --- Returns metadata for the optional US data companion addon.
@@ -169,6 +254,26 @@ function PVL.ReadLadderSnapshotFromGlobal(bracket)
     return nil
 end
 
+--- Chooses the newest snapshot from multiple candidate sources.
+--- @param candidates table[]
+--- @return table|nil snapshot
+--- @return string|nil source
+function PVL.PickBestSnapshot(candidates)
+    local bestSnapshot = nil
+    local bestSource = nil
+
+    for _, candidate in ipairs(candidates) do
+        local snapshot = candidate.snapshot
+        local source = candidate.source
+        if snapshot and PVL.IsSnapshotNewer(snapshot, bestSnapshot) then
+            bestSnapshot = snapshot
+            bestSource = source
+        end
+    end
+
+    return bestSnapshot, bestSource
+end
+
 --- Chooses the newest snapshot between bundled and companion sources.
 --- @param bracket string
 --- @param bundled table|nil
@@ -219,11 +324,19 @@ function PVL.RefreshImportedLadderData(options)
     local summary = {
         loadedDataAddon = false,
         dataAddonReason = nil,
+        loadedAppHelper = false,
+        appHelperReason = nil,
         updatedBrackets = {},
         sources = {},
     }
 
     PVL.CaptureBundledLadderData()
+
+    if options.loadAppHelper ~= false then
+        local loaded, reason = PVL.TryLoadAppHelper()
+        summary.loadedAppHelper = loaded
+        summary.appHelperReason = reason
+    end
 
     if options.loadDataAddon ~= false then
         local loaded, reason = PVL.TryLoadDataAddon()
@@ -235,9 +348,11 @@ function PVL.RefreshImportedLadderData(options)
     PVL._snapshotSources = {}
 
     for _, bracket in ipairs(PVL.IMPORTED_BRACKETS) do
-        local bundled = PVL._bundledLadderData[bracket]
-        local remote = PVL.ReadLadderSnapshotFromGlobal(bracket)
-        local snapshot, source = PVL.PickSnapshotForBracket(bracket, bundled, remote)
+        local snapshot, source = PVL.PickBestSnapshot({
+            { snapshot = PVL._bundledLadderData[bracket], source = PVL.LADDER_DATA_SOURCES.BUNDLED },
+            { snapshot = PVL.ReadLadderSnapshotFromGlobal(bracket), source = PVL.LADDER_DATA_SOURCES.DATA_ADDON },
+            { snapshot = PVL._appHelperSnapshots[bracket], source = PVL.LADDER_DATA_SOURCES.DESKTOP_APP },
+        })
 
         if snapshot then
             PVL.SetImportedSnapshot(snapshot)
@@ -252,6 +367,8 @@ function PVL.RefreshImportedLadderData(options)
         db.meta.lastLadderRefreshAt = time()
         db.meta.dataAddonInstalled = PVL.IsDataAddonInstalled()
         db.meta.dataAddonVersion = select(1, PVL.GetDataAddonMetadata())
+        db.meta.appHelperInstalled = PVL.IsAppHelperInstalled()
+        db.meta.appSyncGeneratedAt = PVL.GetAppSyncInfo() and PVL.GetAppSyncInfo().generatedAt or nil
     end
 
     return summary
@@ -261,6 +378,23 @@ end
 --- @return string[]
 function PVL.GetLadderUpdateStatusLines()
     local lines = {}
+
+    if PVL.IsAppHelperInstalled() then
+        local version = select(1, PVL.GetAppHelperMetadata())
+        local syncInfo = PVL.GetAppSyncInfo()
+        local loadedText = PVL.IsAppHelperLoaded() and "loaded" or "installed, not loaded yet"
+        table.insert(lines, string.format(
+            "AppHelper: PvPLedger-AppHelper (%s) — %s",
+            version or "unknown version",
+            loadedText
+        ))
+        if syncInfo and syncInfo.generatedAt then
+            table.insert(lines, string.format("Desktop sync payload: %s", syncInfo.generatedAt))
+        end
+    else
+        table.insert(lines, "AppHelper: not installed.")
+        table.insert(lines, PVL.APP_HELPER_INSTALL_HINT)
+    end
 
     if PVL.IsDataAddonInstalled() then
         local version = select(1, PVL.GetDataAddonMetadata())
