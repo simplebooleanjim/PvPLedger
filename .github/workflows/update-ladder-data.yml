@@ -33,7 +33,7 @@ jobs:
         run: python fetch_all.py --region US --write-manifest
 
       - name: Commit refreshed snapshot files
-        uses: stefanzweifel/git-auto-commit-action@v5
+        uses: stefanzweifel/git-auto-commit-action@v7
         with:
           commit_message: "chore(data): refresh US ladder snapshots"
           file_pattern: "Data/LadderData_US_*.lua Data/ladder-manifest.json"
