@@ -12,6 +12,7 @@ from __future__ import annotations
 
 import argparse
 import json
+import shutil
 import sys
 from datetime import date
 from pathlib import Path
@@ -20,6 +21,8 @@ from export_ladder import default_output_path, fetch_and_write_snapshot, load_en
 from spec_catalog import SUPPORTED_BRACKETS
 
 DEFAULT_BRACKETS: tuple[str, ...] = SUPPORTED_BRACKETS
+DATA_ADDON_DIR_NAME = "PvPLedger-Data-US"
+DATA_ADDON_TOC_NAME = "PvPLedger-Data-US.toc"
 
 
 def parse_args() -> argparse.Namespace:
@@ -51,6 +54,12 @@ def parse_args() -> argparse.Namespace:
         help="Join Seramate class/spec data for arena and RBG brackets.",
     )
     parser.add_argument("--write-manifest", action="store_true", help="Write Data/ladder-manifest.json metadata.")
+    parser.add_argument(
+        "--sync-data-addon",
+        action=argparse.BooleanOptionalAction,
+        default=True,
+        help="Mirror refreshed snapshots into the PvPLedger-Data-US companion addon folder.",
+    )
     return parser.parse_args()
 
 
@@ -74,6 +83,52 @@ def write_manifest(*, data_dir: Path, region: str, results: list[dict]) -> Path:
     manifest_path = data_dir / "ladder-manifest.json"
     manifest_path.write_text(json.dumps(manifest, indent=2) + "\n", encoding="utf-8")
     return manifest_path
+
+
+def default_data_addon_dir(data_dir: Path) -> Path:
+    """Return the companion data-addon directory shipped beside the main addon."""
+
+    return data_dir.parent / DATA_ADDON_DIR_NAME
+
+
+def write_data_addon_toc(*, addon_dir: Path, version: str) -> Path:
+    """Write the companion addon TOC with a date-based version string."""
+
+    toc_path = addon_dir / DATA_ADDON_TOC_NAME
+    toc_text = f"""## Interface: 120000, 120001, 120100
+## Title: |cFF66CCFFPvPLedger Data (US)|r
+## Notes: Frequently updated US ladder snapshots for PvPLedger. Keep this addon updated via your addon manager for fresh ladder data without updating the main addon.
+## Author: Jake
+## Version: {version}
+## Dependencies: PvPLedger
+
+LadderData_US_Blitz.lua
+LadderData_US_Shuffle.lua
+LadderData_US_Rbg.lua
+LadderData_US_Arena2v2.lua
+LadderData_US_Arena3v3.lua
+"""
+    toc_path.write_text(toc_text, encoding="utf-8")
+    return toc_path
+
+
+def sync_data_addon(*, data_dir: Path, results: list[dict]) -> Path:
+    """Copy refreshed snapshot Lua files into the companion data-addon folder."""
+
+    addon_dir = default_data_addon_dir(data_dir)
+    addon_dir.mkdir(parents=True, exist_ok=True)
+
+    copied_files: list[str] = []
+    for result in results:
+        source = Path(result["output"])
+        destination = addon_dir / source.name
+        shutil.copy2(source, destination)
+        copied_files.append(destination.name)
+
+    version = date.today().strftime("%Y.%m.%d")
+    write_data_addon_toc(addon_dir=addon_dir, version=version)
+    print(f"Synced {len(copied_files)} snapshot file(s) to {addon_dir.resolve()}")
+    return addon_dir
 
 
 def main() -> int:
@@ -103,6 +158,9 @@ def main() -> int:
     if args.write_manifest:
         manifest_path = write_manifest(data_dir=args.data_dir, region=args.region, results=results)
         print(f"Wrote manifest to {manifest_path.resolve()}")
+
+    if args.sync_data_addon:
+        sync_data_addon(data_dir=args.data_dir, results=results)
 
     print(json.dumps({"region": args.region.upper(), "results": results}, indent=2))
     return 0

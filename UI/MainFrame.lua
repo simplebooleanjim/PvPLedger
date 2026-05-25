@@ -456,29 +456,28 @@ function UI.BuildImportedListText(classToken, specKey)
     local bracket = PVL.GetActiveBracketFilter()
     local snapshot = PVL.GetImportedSnapshot(bracket)
     if not snapshot then
-        local fileHint = "Collector/fetch_ladder.bat"
-        if bracket == PVL.BRACKETS.SHUFFLE then
-            fileHint = "Collector/fetch_ladder_shuffle.bat"
-        elseif bracket == PVL.BRACKETS.RBG then
-            fileHint = "Collector/fetch_ladder_rbg.bat"
-        elseif bracket == PVL.BRACKETS.ARENA_2V2 then
-            fileHint = "Collector/fetch_ladder_2v2.bat"
-        elseif bracket == PVL.BRACKETS.ARENA_3V3 then
-            fileHint = "Collector/fetch_ladder_3v3.bat"
+        if PVL.IsDataAddonInstalled() then
+            return Format.Muted("No imported ladder snapshot loaded. Try /pvl update, then /reload.")
         end
-        return Format.Muted(string.format("Run %s, then /reload.", fileHint))
+
+        return Format.Muted(string.format(
+            "No imported ladder snapshot loaded. Install PvPLedger-Data-US or update PvPLedger, then /reload."
+        ))
     end
 
+    local sourceLabel = PVL.GetSnapshotSource(bracket) or "unknown"
     local lines = {
         string.format("%s  %s", Format.Label("Snapshot"), Format.Colorize(Format.COLORS.SOURCE, snapshot.snapshotId or "unknown")),
         string.format(
-            "%s  %s   %s  %s   %s  %s",
+            "%s  %s   %s  %s   %s  %s   %s  %s",
             Format.Label("Source:"),
             Format.Colorize(Format.COLORS.SOURCE, snapshot.source or "unknown"),
             Format.Label("Region:"),
             Format.Colorize(Format.COLORS.SOURCE, snapshot.region or "US"),
             Format.Label("Date:"),
-            Format.Colorize(Format.COLORS.SOURCE, snapshot.snapshotDate or "unknown")
+            Format.Colorize(Format.COLORS.SOURCE, snapshot.snapshotDate or "unknown"),
+            Format.Label("Loaded from:"),
+            Format.Colorize(Format.COLORS.SOURCE, sourceLabel)
         ),
         "",
     }

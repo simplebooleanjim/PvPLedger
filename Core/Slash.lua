@@ -37,13 +37,31 @@ local function RegisterSlashCommands()
             for _, line in ipairs(PVL.GetImportedSnapshotStatusLines()) do
                 Print("  " .. line)
             end
+            for _, line in ipairs(PVL.GetLadderUpdateStatusLines()) do
+                Print("  " .. line)
+            end
+            return
+        end
+
+        if command == "update" then
+            local summary = PVL.RefreshImportedLadderData()
+            PVL.UI.Refresh()
+            if summary.loadedDataAddon then
+                Print("Loaded PvPLedger-Data-US and refreshed imported ladder snapshots.")
+            elseif PVL.IsDataAddonInstalled() then
+                Print("Refreshed imported ladder snapshots from installed data sources.")
+            else
+                Print("Refreshed bundled ladder snapshots.")
+                Print(PVL.DATA_ADDON_INSTALL_HINT)
+            end
+            Print("If you updated addon files on disk, run /reload to pick up the new files.")
             return
         end
 
         if command == "reload" then
             PVL.LoadImportedSnapshotFromPack()
             PVL.UI.Refresh()
-            Print("Reloaded imported ladder snapshot.")
+            Print("Reloaded bundled ladder snapshots.")
             return
         end
 
@@ -67,13 +85,14 @@ local function RegisterSlashCommands()
         end
 
         if command == "help" then
-            Print("Commands: toggle | show | hide | status | reload | prune | enable | disable | help")
-            Print("Ladder data ships with the addon and refreshes when you update PvPLedger.")
-            Print("Use /pvl status to see snapshot dates for each bracket.")
+            Print("Commands: toggle | show | hide | status | update | reload | prune | enable | disable | help")
+            Print("Install PvPLedger-Data-US beside PvPLedger for fresher ladder data between main-addon releases.")
+            Print("Use /pvl update after your addon manager updates the data addon, then /reload if needed.")
+            Print("Use /pvl status to see snapshot dates and active data source per bracket.")
             return
         end
 
-        Print("Commands: toggle | show | hide | status | reload | prune | enable | disable | help")
+        Print("Commands: toggle | show | hide | status | update | reload | prune | enable | disable | help")
     end
 end
 

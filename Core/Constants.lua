@@ -5,7 +5,7 @@ PvPLedger = PvPLedger or {}
 local PVL = PvPLedger
 
 PVL.ADDON_NAME = "PvPLedger"
-PVL.VERSION = "0.5.5"
+PVL.VERSION = "0.6.0"
 PVL.DB_VERSION = 1
 
 --- Bracket identifiers used throughout SavedVariables and imported ladder packs.
@@ -56,6 +56,12 @@ PVL.REGIONS = {
     US = "US",
     EU = "EU",
 }
+
+--- Optional companion addon that ships frequently refreshed US ladder snapshots.
+PVL.DATA_ADDON_NAME = "PvPLedger-Data-US"
+
+--- GitHub folder users can install as a sibling addon for public data updates.
+PVL.DATA_ADDON_INSTALL_HINT = "Copy PvPLedger-Data-US into Interface/AddOns beside PvPLedger."
 
 --- Ordered class tokens for stable UI sorting.
 PVL.CLASS_ORDER = {

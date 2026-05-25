@@ -302,12 +302,14 @@ function PVL.GetImportedSnapshotStatusLines()
         local bracketName = PVL.BRACKET_NAMES[bracket] or bracket
 
         if snapshot then
+            local sourceLabel = PVL.GetSnapshotSource(bracket) or "unknown"
             table.insert(lines, string.format(
-                "%s: %s (%s) — %s",
+                "%s: %s (%s) — %s [%s]",
                 bracketName,
                 snapshot.snapshotDate or "unknown date",
                 PVL.FormatSnapshotAge(snapshot.snapshotDate),
-                snapshot.source or "unknown source"
+                snapshot.source or "unknown source",
+                sourceLabel
             ))
         else
             table.insert(lines, string.format("%s: not loaded", bracketName))

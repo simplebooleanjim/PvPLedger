@@ -22,22 +22,9 @@ function PVL.MigrateLegacySavedVars()
     end
 end
 
---- Loads packaged ladder snapshots into SavedVariables if present.
+--- Loads packaged ladder snapshots into runtime memory if present.
 function PVL.LoadImportedSnapshotFromPack()
-    if type(PvPLedgerLadderData) ~= "table" then
-        return
-    end
-
-    if PvPLedgerLadderData.snapshotId then
-        PVL.SetImportedSnapshot(PvPLedgerLadderData)
-        return
-    end
-
-    for _, snapshot in pairs(PvPLedgerLadderData) do
-        if type(snapshot) == "table" and snapshot.snapshotId then
-            PVL.SetImportedSnapshot(snapshot)
-        end
-    end
+    PVL.RefreshImportedLadderData({ loadDataAddon = false })
 end
 
 --- Initializes SavedVariables and starts runtime modules.
@@ -47,7 +34,12 @@ function PVL.Init()
     PvPLedgerDB = PVL.MigrateDB(PvPLedgerDB or PVL.GetDefaultDB())
     PvPLedgerCharDB = PVL.MigrateCharDB(PvPLedgerCharDB or PVL.GetDefaultCharDB())
 
-    PVL.LoadImportedSnapshotFromPack()
+    PVL.CaptureBundledLadderData()
+    if PVL.GetDB().settings.autoRefreshLadderData then
+        PVL.RefreshImportedLadderData()
+    else
+        PVL.LoadImportedSnapshotFromPack()
+    end
 
     if PVL.InspectQueue then
         PVL.InspectQueue.Init()
@@ -87,7 +79,11 @@ bootstrap:SetScript("OnEvent", function(_, event, arg1)
     if event == "ADDON_LOADED" and arg1 == PVL.ADDON_NAME then
         PVL.Init()
     elseif event == "PLAYER_LOGIN" then
-        PVL.LoadImportedSnapshotFromPack()
+        if PVL.GetDB().settings.autoRefreshLadderData then
+            PVL.RefreshImportedLadderData()
+        else
+            PVL.LoadImportedSnapshotFromPack()
+        end
         if PVL.UI then
             PVL.UI.Refresh()
         end
