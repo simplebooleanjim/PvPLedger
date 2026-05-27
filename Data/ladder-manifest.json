@@ -6,7 +6,7 @@
       "snapshotId": "us-blitz-s41-2026-05-27",
       "source": "blizzard-api",
       "season": 41,
-      "listedPlayers": 36463,
+      "listedPlayers": 36476,
       "file": "LadderData_US_Blitz.lua"
     },
     "shuffle": {
@@ -34,7 +34,7 @@
       "snapshotId": "us-arena3v3-s41-2026-05-27",
       "source": "blizzard-api+seramate",
       "season": 41,
-      "listedPlayers": 1000,
+      "listedPlayers": 1004,
       "file": "LadderData_US_Arena3v3.lua"
     }
   }
