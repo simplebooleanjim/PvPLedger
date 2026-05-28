@@ -219,9 +219,9 @@ PvPLedgerLadderData.rbg = {
         },
         ["SHAMAN"] = {
             listedCount = 32,
-            avgListedRating = 1835.3,
+            avgListedRating = 1829.3,
             medianListedRating = 1779,
-            top100Avg = 1835.3,
+            top100Avg = 1829.3,
             highest = 2391,
             buckets = {
                 ["1600-1699"] = 7,
@@ -726,15 +726,15 @@ PvPLedgerLadderData.rbg = {
             },
         },
         ["SHAMAN_ELEMENTAL"] = {
-            listedCount = 10,
-            avgListedRating = 1910.7,
-            medianListedRating = 1865.5,
-            top100Avg = 1910.7,
+            listedCount = 11,
+            avgListedRating = 1906.3,
+            medianListedRating = 1862,
+            top100Avg = 1906.3,
             highest = 2391,
             buckets = {
                 ["1600-1699"] = 2,
                 ["1700-1799"] = 1,
-                ["1800-1899"] = 3,
+                ["1800-1899"] = 4,
                 ["1900-1999"] = 2,
                 ["2100-2199"] = 1,
                 ["2300-2399"] = 1,
@@ -755,15 +755,15 @@ PvPLedgerLadderData.rbg = {
             },
         },
         ["SHAMAN_RESTORATION"] = {
-            listedCount = 9,
-            avgListedRating = 1752.4,
-            medianListedRating = 1740,
-            top100Avg = 1752.4,
-            highest = 1862,
+            listedCount = 8,
+            avgListedRating = 1738.8,
+            medianListedRating = 1726.0,
+            top100Avg = 1738.8,
+            highest = 1831,
             buckets = {
                 ["1600-1699"] = 3,
                 ["1700-1799"] = 3,
-                ["1800-1899"] = 3,
+                ["1800-1899"] = 2,
             },
         },
         ["WARLOCK_AFFLICTION"] = {
@@ -3613,7 +3613,7 @@ PvPLedgerLadderData.rbg = {
         },
         ["guanwu-moonguard"] = {
             displayName = "Guanwu-moon-guard",
-            specKey = "SHAMAN_RESTORATION",
+            specKey = "SHAMAN_ELEMENTAL",
             rating = 1862,
             rank = 413,
             wins = 45,
