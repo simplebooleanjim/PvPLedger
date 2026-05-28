@@ -49,6 +49,22 @@ function PVL.Init()
         PVL.MatchCollector.Init()
     end
 
+    if PVL.CombatLogCollector then
+        PVL.CombatLogCollector.Init()
+    end
+
+    if PVL.RatedInfo then
+        PVL.RatedInfo.Init()
+    end
+
+    if PVL.CrHistory then
+        PVL.CrHistory.Init()
+    end
+
+    if PVL.RegisterSettingsPanel then
+        PVL.RegisterSettingsPanel()
+    end
+
     print(string.format("|cff66ccffPvPLedger|r v%s loaded. Type |cffFFFF00/pvl|r for commands.", PVL.VERSION))
 end
 

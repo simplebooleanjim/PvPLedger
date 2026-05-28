@@ -29,6 +29,19 @@ function PVL.GetAppHelperDB()
     return appDb
 end
 
+--- Enables or disables match export sharing with PvPLedger Sync.
+--- @param enabled boolean
+function PVL.SetShareMatchData(enabled)
+    local db = PVL.GetDB()
+    db.settings.shareMatchData = enabled and true or false
+end
+
+--- Returns whether match export sharing is enabled.
+--- @return boolean
+function PVL.IsShareMatchDataEnabled()
+    return PVL.GetDB().settings.shareMatchData == true
+end
+
 --- Builds a compact match payload suitable for desktop app upload.
 --- @param matchRecord table
 --- @return table|nil
@@ -47,6 +60,7 @@ function PVL.BuildMatchExportRecord(matchRecord)
             rating = participant.rating,
             ratingChange = participant.ratingChange,
             faction = participant.faction,
+            team = participant.team,
             isLocalPlayer = participant.isLocalPlayer,
         })
     end
@@ -61,7 +75,42 @@ function PVL.BuildMatchExportRecord(matchRecord)
         playerCRAfter = matchRecord.playerCRAfter,
         playerMMRBefore = matchRecord.playerMMRBefore,
         playerMMRAfter = matchRecord.playerMMRAfter,
+        playerMMRKind = matchRecord.playerMMRKind,
+        combatSummary = PVL.BuildCombatExportSummary(matchRecord.combatSummary),
         roster = roster,
+    }
+end
+
+--- Builds a compact combat summary payload for export.
+--- @param combatSummary table|nil
+--- @return table|nil
+function PVL.BuildCombatExportSummary(combatSummary)
+    if type(combatSummary) ~= "table" then
+        return nil
+    end
+
+    local players = {}
+    for _, row in ipairs(combatSummary.players or {}) do
+        table.insert(players, {
+            name = row.name,
+            class = row.class,
+            spec = row.spec,
+            team = row.team,
+            isLocalPlayer = row.isLocalPlayer,
+            damage = row.damage,
+            healing = row.healing,
+            damageTaken = row.damageTaken,
+            interrupts = row.interrupts,
+            ccApplied = row.ccApplied,
+            ccTaken = row.ccTaken,
+            deaths = row.deaths,
+        })
+    end
+
+    return {
+        duration = combatSummary.duration,
+        killEvents = combatSummary.killEvents,
+        players = players,
     }
 end
 
@@ -74,11 +123,17 @@ function PVL.QueueMatchExport(matchRecord)
     end
 
     local exportRecord = PVL.BuildMatchExportRecord(matchRecord)
-    if not exportRecord then
+    if not exportRecord or not exportRecord.matchId then
         return
     end
 
     local appDb = PVL.GetAppHelperDB()
+    for _, pending in ipairs(appDb.export.pendingMatches) do
+        if pending.matchId == exportRecord.matchId then
+            return
+        end
+    end
+
     table.insert(appDb.export.pendingMatches, exportRecord)
 
     while #appDb.export.pendingMatches > PVL.MAX_EXPORT_MATCHES do
@@ -86,6 +141,49 @@ function PVL.QueueMatchExport(matchRecord)
     end
 
     appDb.export.lastMatchAt = exportRecord.timestamp
+end
+
+--- Removes uploaded matches from the export queue after Sync confirms ingestion.
+--- @param ack table
+--- @return number removedCount
+function PVL.ApplyExportAck(ack)
+    if type(ack) ~= "table" or type(ack.uploadedMatchIds) ~= "table" then
+        return 0
+    end
+
+    local appDb = PVL.GetAppHelperDB()
+    if ack.batchId and appDb.export.lastAckBatchId == ack.batchId then
+        return 0
+    end
+
+    local uploadedIds = {}
+    for _, matchId in ipairs(ack.uploadedMatchIds) do
+        if matchId then
+            uploadedIds[tostring(matchId)] = true
+        end
+    end
+
+    if not next(uploadedIds) then
+        return 0
+    end
+
+    local kept = {}
+    local removedCount = 0
+    for _, matchRecord in ipairs(appDb.export.pendingMatches or {}) do
+        local matchId = matchRecord and matchRecord.matchId and tostring(matchRecord.matchId)
+        if matchId and uploadedIds[matchId] then
+            removedCount = removedCount + 1
+        else
+            table.insert(kept, matchRecord)
+        end
+    end
+
+    appDb.export.pendingMatches = kept
+    appDb.export.lastAckAt = time()
+    appDb.export.lastAckBatchId = ack.batchId
+    appDb.export.lastAckUploadedAt = ack.uploadedAt
+    appDb.export.lastAckRemovedCount = removedCount
+    return removedCount
 end
 
 --- Persists export metadata for the desktop sync app to read from WTF.
@@ -108,7 +206,7 @@ function PVL.GetAppExportStatusLines()
     local db = PVL.GetDB()
 
     if not db or not db.settings.shareMatchData then
-        table.insert(lines, "Match export: disabled (opt in via settings).")
+        table.insert(lines, "Match export: disabled (enable in Options > AddOns > PvPLedger).")
         return lines
     end
 
@@ -120,6 +218,14 @@ function PVL.GetAppExportStatusLines()
         table.insert(lines, string.format(
             "Last queued match: %s",
             date("%Y-%m-%d %H:%M", appDb.export.lastMatchAt)
+        ))
+    end
+
+    if appDb.export.lastAckAt then
+        table.insert(lines, string.format(
+            "Last upload ack: %s (%d cleared).",
+            date("%Y-%m-%d %H:%M", appDb.export.lastAckAt),
+            appDb.export.lastAckRemovedCount or 0
         ))
     end
 

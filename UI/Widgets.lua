@@ -5,6 +5,65 @@ local PVL = PvPLedger
 PVL.UI = PVL.UI or {}
 local UI = PVL.UI
 
+--- Shows or hides a scroll frame scrollbar when content does not overflow.
+--- @param scrollFrame ScrollFrame|nil
+--- @return boolean needsScroll
+function UI.UpdateScrollBarVisibility(scrollFrame)
+    if not scrollFrame then
+        return false
+    end
+
+    if scrollFrame.UpdateScrollChildRect then
+        scrollFrame:UpdateScrollChildRect()
+    end
+
+    local scrollBar = scrollFrame.ScrollBar or _G[scrollFrame:GetName() .. "ScrollBar"]
+    local scrollChild = scrollFrame.GetScrollChild and scrollFrame:GetScrollChild()
+    local needsScroll = false
+
+    local scrollRange = scrollFrame.GetVerticalScrollRange and scrollFrame:GetVerticalScrollRange()
+    if type(scrollRange) == "number" then
+        needsScroll = scrollRange > 0.5
+    elseif scrollChild then
+        local frameHeight = scrollFrame:GetHeight() or 0
+        local contentHeight = scrollChild:GetHeight() or 0
+        needsScroll = contentHeight > (frameHeight + 1)
+    end
+
+    if scrollBar then
+        if needsScroll then
+            scrollBar:Show()
+        else
+            scrollBar:Hide()
+            scrollFrame:SetVerticalScroll(0)
+        end
+    end
+
+    return needsScroll
+end
+
+--- Registers one frame to close when the player presses Escape.
+--- @param frame Frame
+function UI.RegisterEscapeToClose(frame)
+    if not frame or not frame.GetName then
+        return
+    end
+
+    local frameName = frame:GetName()
+    if not frameName then
+        return
+    end
+
+    UISpecialFrames = UISpecialFrames or {}
+    for _, registeredName in ipairs(UISpecialFrames) do
+        if registeredName == frameName then
+            return
+        end
+    end
+
+    table.insert(UISpecialFrames, frameName)
+end
+
 --- Creates a Blizzard-style dropdown bound to an option list.
 --- @param parent Frame
 --- @param name string
@@ -87,8 +146,9 @@ end
 --- @param rightAnchor Region
 --- @param bottomAnchor Region|nil
 --- @param fixedHeight number|nil
+--- @param fixedWidth number|nil
 --- @return Frame scrollFrame, fun(text: string): nil setText
-function UI.CreateScrollableTextArea(parent, name, topAnchor, leftAnchor, rightAnchor, bottomAnchor, fixedHeight)
+function UI.CreateScrollableTextArea(parent, name, topAnchor, leftAnchor, rightAnchor, bottomAnchor, fixedHeight, fixedWidth)
     local scrollFrame = CreateFrame("ScrollFrame", name, parent, "UIPanelScrollFrameTemplate")
     scrollFrame:SetPoint("TOPLEFT", topAnchor, "BOTTOMLEFT", 0, -8)
 
@@ -97,6 +157,10 @@ function UI.CreateScrollableTextArea(parent, name, topAnchor, leftAnchor, rightA
     elseif bottomAnchor then
         scrollFrame:SetPoint("BOTTOMLEFT", leftAnchor, "BOTTOMLEFT", 0, 0)
         scrollFrame:SetPoint("BOTTOMRIGHT", rightAnchor, "BOTTOMRIGHT", 0, 0)
+    end
+
+    if fixedWidth then
+        scrollFrame:SetWidth(fixedWidth)
     end
 
     local scrollBar = scrollFrame.ScrollBar or _G[scrollFrame:GetName() .. "ScrollBar"]
@@ -114,8 +178,8 @@ function UI.CreateScrollableTextArea(parent, name, topAnchor, leftAnchor, rightA
     text:SetJustifyV("TOP")
     text:SetPoint("TOPLEFT", scrollChild, "TOPLEFT", 6, -4)
 
-    local TEXT_INSET_X = 10
-    local SCROLLBAR_GUTTER = 28
+    local TEXT_INSET_X = 8
+    local SCROLLBAR_GUTTER = 24
 
     --- Updates the scroll area content and resets scroll position.
     --- @param content string
@@ -134,6 +198,7 @@ function UI.CreateScrollableTextArea(parent, name, topAnchor, leftAnchor, rightA
         if scrollFrame.UpdateScrollChildRect then
             scrollFrame:UpdateScrollChildRect()
         end
+        UI.UpdateScrollBarVisibility(scrollFrame)
     end
 
     scrollFrame:SetScript("OnSizeChanged", function()

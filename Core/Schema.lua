@@ -19,6 +19,7 @@ function PVL.GetDefaultDB()
         settings = {
             enabled = true,
             collectSpecs = true,
+            collectCombatSummary = true,
             collectNonBlitz = false,
             autoRefreshLadderData = true,
             shareMatchData = false,
@@ -26,6 +27,7 @@ function PVL.GetDefaultDB()
                 bracket = PVL.BRACKETS.BLITZ,
                 classToken = nil,
                 specKey = nil,
+                combatStat = PVL.DEFAULT_COMBAT_ANALYSIS_STAT,
             },
         },
         observations = {
@@ -47,14 +49,21 @@ function PVL.GetDefaultCharDB()
         version = PVL.DB_VERSION,
         lastBlitzCR = nil,
         lastBlitzMMR = nil,
+        lastBlitzMMRKind = nil,
         lastShuffleCR = nil,
         lastShuffleMMR = nil,
+        lastShuffleMMRKind = nil,
         lastRbgCR = nil,
         lastRbgMMR = nil,
+        lastRbgMMRKind = nil,
         lastArena2v2CR = nil,
         lastArena2v2MMR = nil,
+        lastArena2v2MMRKind = nil,
         lastArena3v3CR = nil,
         lastArena3v3MMR = nil,
+        lastArena3v3MMRKind = nil,
+        crHistory = {},
+        crHistoryBackfilled = false,
     }
 end
 
@@ -82,8 +91,14 @@ function PVL.MigrateDB(db)
     if db.settings.shareMatchData == nil then
         db.settings.shareMatchData = defaults.settings.shareMatchData
     end
+    if db.settings.collectCombatSummary == nil then
+        db.settings.collectCombatSummary = defaults.settings.collectCombatSummary
+    end
     db.settings.uiFilters = db.settings.uiFilters or defaults.settings.uiFilters
     db.settings.uiFilters.bracket = db.settings.uiFilters.bracket or defaults.settings.uiFilters.bracket
+    if db.settings.uiFilters.combatStat == nil then
+        db.settings.uiFilters.combatStat = defaults.settings.uiFilters.combatStat
+    end
     db.observations = db.observations or defaults.observations
     db.observations.matches = db.observations.matches or {}
     db.observations.players = db.observations.players or {}
@@ -106,14 +121,21 @@ function PVL.MigrateCharDB(charDb)
     charDb.version = charDb.version or PVL.DB_VERSION
     charDb.lastBlitzCR = charDb.lastBlitzCR
     charDb.lastBlitzMMR = charDb.lastBlitzMMR
+    charDb.lastBlitzMMRKind = charDb.lastBlitzMMRKind
     charDb.lastShuffleCR = charDb.lastShuffleCR
     charDb.lastShuffleMMR = charDb.lastShuffleMMR
+    charDb.lastShuffleMMRKind = charDb.lastShuffleMMRKind
     charDb.lastRbgCR = charDb.lastRbgCR
     charDb.lastRbgMMR = charDb.lastRbgMMR
+    charDb.lastRbgMMRKind = charDb.lastRbgMMRKind
     charDb.lastArena2v2CR = charDb.lastArena2v2CR
     charDb.lastArena2v2MMR = charDb.lastArena2v2MMR
+    charDb.lastArena2v2MMRKind = charDb.lastArena2v2MMRKind
     charDb.lastArena3v3CR = charDb.lastArena3v3CR
     charDb.lastArena3v3MMR = charDb.lastArena3v3MMR
+    charDb.lastArena3v3MMRKind = charDb.lastArena3v3MMRKind
+    charDb.crHistory = charDb.crHistory or {}
+    charDb.crHistoryBackfilled = charDb.crHistoryBackfilled == true
 
     return charDb
 end

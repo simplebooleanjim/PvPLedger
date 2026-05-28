@@ -131,6 +131,63 @@ function Format.StatLine(label, valueText)
     return string.format("%s  %s", Format.Label(label), valueText)
 end
 
+--- Returns a compact combat stat amount for match detail tables.
+--- @param value number|nil
+--- @return string
+function Format.CombatAmount(value)
+    if value == nil or value <= 0 then
+        return Format.Muted("--")
+    end
+
+    if value >= 1000000 then
+        return Format.Colorize(Format.COLORS.COUNT, string.format("%.1fM", value / 1000000))
+    end
+
+    if value >= 1000 then
+        return Format.Colorize(Format.COLORS.COUNT, string.format("%.1fK", value / 1000))
+    end
+
+    return Format.Count(value)
+end
+
+--- Returns a Details-style total amount label for combat meters.
+--- @param value number|nil
+--- @return string
+function Format.CombatMeterAmount(value)
+    if value == nil or value <= 0 then
+        return "0"
+    end
+
+    if value >= 1000000 then
+        return string.format("%.2fM", value / 1000000)
+    end
+
+    if value >= 1000 then
+        return string.format("%.2fK", value / 1000)
+    end
+
+    return tostring(math.floor(value))
+end
+
+--- Returns a Details-style per-second rate label for combat meters.
+--- @param value number|nil
+--- @return string
+function Format.CombatMeterRate(value)
+    if value == nil or value <= 0 then
+        return "0"
+    end
+
+    if value >= 1000000 then
+        return string.format("%.2fM", value / 1000000)
+    end
+
+    if value >= 1000 then
+        return string.format("%.1fK", value / 1000)
+    end
+
+    return string.format("%.0f", value)
+end
+
 --- Returns a readable spec label with the class name colorized.
 --- @param specKey string|nil
 --- @return string

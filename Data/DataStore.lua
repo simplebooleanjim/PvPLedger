@@ -342,6 +342,51 @@ function PVL.GetObservedMatches(bracket, sinceTimestamp)
     return results
 end
 
+--- Returns one stored match observation by match id.
+--- @param matchId string|nil
+--- @return table|nil
+function PVL.GetMatchById(matchId)
+    if not matchId or matchId == "" then
+        return nil
+    end
+
+    local db = PVL.GetDB()
+    if not db or type(db.observations) ~= "table" then
+        return nil
+    end
+
+    for index = #db.observations.matches, 1, -1 do
+        local match = db.observations.matches[index]
+        if match and match.matchId == matchId then
+            return match
+        end
+    end
+
+    return nil
+end
+
+--- Returns observed matches for one bracket, newest first.
+--- @param bracket string|nil
+--- @param limit number|nil
+--- @return table[]
+function PVL.GetRecentMatches(bracket, limit)
+    local matches = PVL.GetObservedMatches(bracket)
+    table.sort(matches, function(a, b)
+        return (a.timestamp or 0) > (b.timestamp or 0)
+    end)
+
+    if not limit or #matches <= limit then
+        return matches
+    end
+
+    local results = {}
+    for index = 1, limit do
+        results[index] = matches[index]
+    end
+
+    return results
+end
+
 --- Returns total observed spec counts as an array of sortable rows.
 --- @param bracket string|nil
 --- @return table[]

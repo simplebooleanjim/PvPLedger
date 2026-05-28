@@ -1,0 +1,12 @@
+# Public community ingest API (Cloudflare Worker).
+#
+# 1. Deploy Server/cloudflare (see README.md) and note your worker URL.
+# 2. Copy this file to release-config.json (gitignored) and fill in values.
+# 3. Rebuild PvPLedger-Setup.exe — the installer bakes these into sync-config.json.
+#
+# Do NOT commit release-config.json (contains the upload token).
+
+{
+  "upload_url": "https://pvpledger-ingest.YOUR_SUBDOMAIN.workers.dev/api/v1/exports",
+  "upload_token": "replace-with-long-random-token"
+}

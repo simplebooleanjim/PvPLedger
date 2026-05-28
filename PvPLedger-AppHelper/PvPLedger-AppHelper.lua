@@ -15,4 +15,18 @@ function APP_HELPER.ProcessPendingSnapshots()
     PvPLedger.ApplyAppSyncSnapshots(PVL_AppHelperPendingSnapshots, PVL_AppHelperSyncInfo)
 end
 
+--- Clears uploaded matches from the export queue after Sync confirms ingestion.
+function APP_HELPER.ProcessExportAck()
+    if not PvPLedger or not PvPLedger.ApplyExportAck then
+        return
+    end
+
+    if type(PVL_AppHelperExportAck) ~= "table" then
+        return
+    end
+
+    PvPLedger.ApplyExportAck(PVL_AppHelperExportAck)
+end
+
 APP_HELPER.ProcessPendingSnapshots()
+APP_HELPER.ProcessExportAck()

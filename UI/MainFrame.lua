@@ -7,16 +7,34 @@ local UI = PVL.UI
 local Format = UI.Format
 
 UI.frame = UI.frame or nil
-local UI_LAYOUT_VERSION = 6
+local UI_LAYOUT_VERSION = 20
 
 local FRAME_WIDTH = 720
-local FRAME_HEIGHT = 560
-local PADDING = 16
+local FRAME_HEIGHT = 580
+local PADDING = 20
+local FILTER_LABEL_X = 16
+local FILTER_ROW_Y = -34
+local DROPDOWN_MENU_INSET = 16
 local COLUMN_GAP = 12
 local COLUMN_WIDTH = math.floor((FRAME_WIDTH - (PADDING * 2) - COLUMN_GAP) / 2)
 local CONTENT_WIDTH = FRAME_WIDTH - (PADDING * 2)
-local DETAIL_SCROLL_HEIGHT = 118
+local TRIPLE_COL_GAP_TOTAL = COLUMN_GAP * 2
+local TRIPLE_COL_WIDTH = math.floor((CONTENT_WIDTH - TRIPLE_COL_GAP_TOTAL) / 3)
+local MIDDLE_SECTION_HEIGHT = 212
+local MATCH_DROPDOWN_HEIGHT = 28
 local BOTTOM_SECTION_GAP = 12
+local TOP_SECTION_Y = -78
+
+--- Returns the left edge X offset for one of the three top content columns.
+--- @param columnIndex number 1=left, 2=middle, 3=right
+--- @return number
+function UI.GetTopColumnOffset(columnIndex)
+    if columnIndex <= 1 then
+        return PADDING
+    end
+
+    return PADDING + ((columnIndex - 1) * (TRIPLE_COL_WIDTH + COLUMN_GAP))
+end
 
 --- Returns persisted UI filter settings.
 --- @return table
@@ -31,6 +49,7 @@ end
 function UI.SetBracketFilter(bracket)
     local filters = UI.GetFilters()
     filters.bracket = bracket
+    filters.selectedMatchId = nil
     UI.Refresh()
 end
 
@@ -85,12 +104,14 @@ function UI.CreateMainFrame()
     frame:SetScript("OnDragStop", frame.StopMovingOrSizing)
     frame:Hide()
 
+    UI.RegisterEscapeToClose(frame)
+
     frame.title = frame:CreateFontString(nil, "OVERLAY", "GameFontHighlight")
     frame.title:SetPoint("TOP", frame.TitleBg, "TOP", 0, -3)
     frame.title:SetText("PvPLedger")
 
     frame.bracketLabel = frame:CreateFontString(nil, "OVERLAY", "GameFontNormal")
-    frame.bracketLabel:SetPoint("TOPLEFT", frame, "TOPLEFT", 16, -34)
+    frame.bracketLabel:SetPoint("TOPLEFT", frame, "TOPLEFT", FILTER_LABEL_X, FILTER_ROW_Y)
     frame.bracketLabel:SetText("Bracket")
 
     frame.bracketDropdown, frame.refreshBracketDropdown = UI.CreateDropdown(
@@ -108,7 +129,7 @@ function UI.CreateMainFrame()
             UI.SetBracketFilter(option.value)
         end
     )
-    frame.bracketDropdown:SetPoint("TOPLEFT", frame.bracketLabel, "BOTTOMLEFT", -16, -2)
+    frame.bracketDropdown:SetPoint("TOPLEFT", frame.bracketLabel, "BOTTOMLEFT", -DROPDOWN_MENU_INSET, -2)
 
     frame.classLabel = frame:CreateFontString(nil, "OVERLAY", "GameFontNormal")
     frame.classLabel:SetPoint("LEFT", frame.bracketLabel, "LEFT", 190, 0)
@@ -132,7 +153,7 @@ function UI.CreateMainFrame()
             end
         end
     )
-    frame.classDropdown:SetPoint("TOPLEFT", frame.classLabel, "BOTTOMLEFT", -16, -2)
+    frame.classDropdown:SetPoint("TOPLEFT", frame.classLabel, "BOTTOMLEFT", -DROPDOWN_MENU_INSET, -2)
 
     frame.specLabel = frame:CreateFontString(nil, "OVERLAY", "GameFontNormal")
     frame.specLabel:SetPoint("LEFT", frame.classLabel, "LEFT", 170, 0)
@@ -156,38 +177,81 @@ function UI.CreateMainFrame()
             UI.SetSpecFilter(option.value)
         end
     )
-    frame.specDropdown:SetPoint("TOPLEFT", frame.specLabel, "BOTTOMLEFT", -16, -2)
+    frame.specDropdown:SetPoint("TOPLEFT", frame.specLabel, "BOTTOMLEFT", -DROPDOWN_MENU_INSET, -2)
 
     frame.regionLabel = frame:CreateFontString(nil, "OVERLAY", "GameFontHighlightSmall")
-    frame.regionLabel:SetPoint("TOPRIGHT", frame, "TOPRIGHT", -36, -34)
+    frame.regionLabel:SetPoint("TOPRIGHT", frame, "TOPRIGHT", -36, FILTER_ROW_Y)
     frame.regionLabel:SetJustifyH("RIGHT")
 
-    frame.summary = UI.CreateBodyText(frame, CONTENT_WIDTH, { "TOPLEFT", frame.classDropdown, "BOTTOMLEFT", 16, -12 })
+    frame.summaryHeader = frame:CreateFontString(nil, "OVERLAY", "GameFontNormalLarge")
+    frame.summaryHeader:SetPoint("TOPLEFT", frame, "TOPLEFT", UI.GetTopColumnOffset(1), TOP_SECTION_Y)
+    frame.summaryHeader:SetText(Format.Header("Overview"))
 
-    frame.detailHeader = UI.CreateSectionHeader(frame, "Spec Detail", { "TOPLEFT", frame.summary, "BOTTOMLEFT", 0, -12 })
-
-    frame.detailScroll, frame.setDetailCardText = UI.CreateScrollableTextArea(
+    frame.summaryScroll, frame.setSummaryText = UI.CreateScrollableTextArea(
         frame,
-        "PvPLedgerDetailScroll",
-        frame.detailHeader,
+        "PvPLedgerSummaryScroll",
+        frame.summaryHeader,
         frame,
         frame,
         nil,
-        DETAIL_SCROLL_HEIGHT
+        MIDDLE_SECTION_HEIGHT,
+        TRIPLE_COL_WIDTH
     )
-    frame.detailScroll:SetPoint("LEFT", frame, "LEFT", PADDING, 0)
-    frame.detailScroll:SetPoint("RIGHT", frame, "RIGHT", -PADDING, 0)
+    frame.summaryScroll:ClearAllPoints()
+    frame.summaryScroll:SetPoint("TOPLEFT", frame.summaryHeader, "BOTTOMLEFT", 0, -8)
+    frame.summaryScroll:SetSize(TRIPLE_COL_WIDTH, MIDDLE_SECTION_HEIGHT)
 
-    frame.observedHeader = UI.CreateSectionHeader(
+    frame.crHistoryHeader = frame:CreateFontString(nil, "OVERLAY", "GameFontNormalLarge")
+    frame.crHistoryHeader:SetPoint("TOPLEFT", frame, "TOPLEFT", UI.GetTopColumnOffset(2), TOP_SECTION_Y)
+    frame.crHistoryHeader:SetText(Format.Header(PVL.LABELS.CR_HISTORY))
+
+    frame.crHistoryScroll, frame.setCrHistoryText = UI.CreateScrollableTextArea(
         frame,
-        "Observed Spec Frequency",
-        { "TOPLEFT", frame.detailScroll, "BOTTOMLEFT", 0, -BOTTOM_SECTION_GAP }
+        "PvPLedgerCrHistoryScroll",
+        frame.crHistoryHeader,
+        frame,
+        frame,
+        nil,
+        MIDDLE_SECTION_HEIGHT,
+        TRIPLE_COL_WIDTH
+    )
+    frame.crHistoryScroll:ClearAllPoints()
+    frame.crHistoryScroll:SetPoint("TOPLEFT", frame.crHistoryHeader, "BOTTOMLEFT", 0, -8)
+    frame.crHistoryScroll:SetSize(TRIPLE_COL_WIDTH, MIDDLE_SECTION_HEIGHT)
+
+    frame.specDetailHeader = frame:CreateFontString(nil, "OVERLAY", "GameFontNormalLarge")
+    frame.specDetailHeader:SetPoint("TOPLEFT", frame, "TOPLEFT", UI.GetTopColumnOffset(3), TOP_SECTION_Y)
+    frame.specDetailHeader:SetText(Format.Header("Spec Detail"))
+
+    frame.specDetailScroll, frame.setSpecDetailText = UI.CreateScrollableTextArea(
+        frame,
+        "PvPLedgerSpecDetailScroll",
+        frame.specDetailHeader,
+        frame,
+        frame,
+        nil,
+        MIDDLE_SECTION_HEIGHT,
+        TRIPLE_COL_WIDTH
+    )
+    frame.specDetailScroll:ClearAllPoints()
+    frame.specDetailScroll:SetPoint("TOPLEFT", frame.specDetailHeader, "BOTTOMLEFT", 0, -8)
+    frame.specDetailScroll:SetSize(TRIPLE_COL_WIDTH, MIDDLE_SECTION_HEIGHT)
+
+    frame.topRowBottom = CreateFrame("Frame", nil, frame)
+    frame.topRowBottom:SetPoint("TOPLEFT", frame.summaryScroll, "BOTTOMLEFT", 0, -4)
+    frame.topRowBottom:SetPoint("TOPRIGHT", frame.specDetailScroll, "BOTTOMRIGHT", 0, -4)
+    frame.topRowBottom:SetHeight(1)
+
+    frame.matchDetailHeader = UI.CreateSectionHeader(
+        frame,
+        "Match Detail",
+        { "TOPLEFT", frame.topRowBottom, "BOTTOMLEFT", 0, -BOTTOM_SECTION_GAP }
     )
 
-    frame.importedHeader = UI.CreateSectionHeader(
+    frame.combatAnalysisHeader = UI.CreateSectionHeader(
         frame,
-        "Imported Ladder Snapshot",
-        { "TOPLEFT", frame.observedHeader, "TOPLEFT", COLUMN_WIDTH + COLUMN_GAP, 0 }
+        "Combat Analysis",
+        { "TOPLEFT", frame.matchDetailHeader, "TOPLEFT", COLUMN_WIDTH + COLUMN_GAP, 0 }
     )
 
     frame.leftColumnBottom = CreateFrame("Frame", nil, frame)
@@ -200,20 +264,55 @@ function UI.CreateMainFrame()
     frame.rightColumnBottom:SetPoint("LEFT", frame, "CENTER", COLUMN_GAP / 2, 0)
     frame.rightColumnBottom:SetHeight(1)
 
-    frame.specListScroll, frame.setObservedListText = UI.CreateScrollableTextArea(
+    frame.matchDropdown, frame.refreshMatchDropdown = UI.CreateDropdown(
         frame,
-        "PvPLedgerObservedScroll",
-        frame.observedHeader,
+        "PvPLedgerMatchDropdown",
+        COLUMN_WIDTH - 8,
+        function()
+            return UI.GetRecentMatchOptions()
+        end,
+        function()
+            return UI.GetSelectedMatchIndex()
+        end,
+        function(_, option)
+            UI.SetSelectedMatchId(option.value)
+        end
+    )
+    frame.matchDropdown:SetPoint("TOPLEFT", frame.matchDetailHeader, "BOTTOMLEFT", -DROPDOWN_MENU_INSET, -2)
+
+    frame.matchDetailScroll, frame.setMatchDetailText = UI.CreateScrollableTextArea(
+        frame,
+        "PvPLedgerMatchDetailScroll",
+        frame.matchDropdown,
         frame.leftColumnBottom,
         frame.leftColumnBottom,
         frame.leftColumnBottom
     )
+    frame.matchDetailScroll:ClearAllPoints()
+    frame.matchDetailScroll:SetPoint("TOPLEFT", frame.matchDropdown, "BOTTOMLEFT", DROPDOWN_MENU_INSET, -6)
+    frame.matchDetailScroll:SetPoint("BOTTOMLEFT", frame.leftColumnBottom, "BOTTOMLEFT", 0, 0)
+    frame.matchDetailScroll:SetPoint("BOTTOMRIGHT", frame.leftColumnBottom, "BOTTOMRIGHT", 0, 0)
 
-    frame.importedListScroll, frame.setImportedListText = UI.CreateScrollableTextArea(
+    frame.combatStatDropdown, frame.refreshCombatStatDropdown = UI.CreateDropdown(
         frame,
-        "PvPLedgerImportedScroll",
-        frame.importedHeader,
-        frame.rightColumnBottom,
+        "PvPLedgerCombatStatDropdown",
+        COLUMN_WIDTH - 8,
+        function()
+            return UI.GetCombatStatOptions()
+        end,
+        function()
+            return UI.GetSelectedCombatStatIndex()
+        end,
+        function(_, option)
+            UI.SetCombatStat(option.value)
+        end
+    )
+    frame.combatStatDropdown:SetPoint("TOPLEFT", frame.combatAnalysisHeader, "BOTTOMLEFT", -DROPDOWN_MENU_INSET, -2)
+
+    frame.combatMeterScroll, frame.updateCombatMeter = UI.CreateCombatMeterPanel(
+        frame,
+        "PvPLedgerCombatMeterScroll",
+        frame.combatStatDropdown,
         frame.rightColumnBottom,
         frame.rightColumnBottom
     )
@@ -236,8 +335,12 @@ function UI.BuildSummaryText(summary)
         Format.Header(bracketName)
     ))
     table.insert(lines, Format.StatLine("Matches tracked", Format.Count(summary.matchCount)))
-    table.insert(lines, Format.StatLine("Your listed CR", Format.Rating(summary.playerCR)))
-    table.insert(lines, Format.StatLine("Your observed MMR", Format.Rating(summary.playerMMR)))
+    table.insert(lines, Format.StatLine(PVL.LABELS.CURRENT_CR, Format.Rating(summary.playerCurrentCR)))
+    table.insert(lines, Format.StatLine("Last match CR", Format.Rating(summary.playerCR)))
+    table.insert(lines, Format.StatLine(
+        PVL.GetObservedMmrLabel(summary.bracket, summary.playerMMRKind),
+        Format.Rating(summary.playerMMR)
+    ))
 
     if summary.standing then
         table.insert(lines, Format.StatLine(
@@ -277,11 +380,73 @@ function UI.BuildSummaryText(summary)
     return table.concat(lines, "\n")
 end
 
---- Builds text for the detail card from class/spec filters.
+--- Builds CR history text for the detail panel.
+--- @param bracket string|nil
+--- @return string
+function UI.BuildCrHistoryText(bracket)
+    if not PVL.CrHistory then
+        return Format.Muted("CR history is unavailable.")
+    end
+
+    bracket = bracket or PVL.GetActiveBracketFilter()
+    local summary = PVL.CrHistory.BuildSummary(bracket)
+    local lines = {
+        Format.StatLine(PVL.LABELS.CR_PEAK, Format.Rating(summary.peakCr)),
+        Format.StatLine(PVL.LABELS.CR_LOW, Format.Rating(summary.lowCr)),
+        Format.StatLine(PVL.LABELS.CR_NET_7D, PVL.CrHistory.FormatDelta(summary.net7d)),
+        Format.StatLine(PVL.LABELS.CR_NET_SESSION, PVL.CrHistory.FormatDelta(summary.netSession)),
+        Format.StatLine(
+            "Session record",
+            string.format(
+                "%s-%s  (%s games)",
+                Format.Count(summary.winsSession),
+                Format.Count(summary.lossesSession),
+                Format.Count(summary.gamesSession)
+            )
+        ),
+        "",
+    }
+
+    if #summary.recentEntries == 0 then
+        table.insert(lines, Format.Muted("No CR history recorded for this bracket yet."))
+        table.insert(lines, Format.Muted("Play rated games or open the PvP queue menu to start tracking."))
+        return table.concat(lines, "\n")
+    end
+
+    table.insert(lines, Format.Label("Recent activity"))
+    table.insert(lines, "")
+
+    for _, entry in ipairs(summary.recentEntries) do
+        if entry.source == "match" then
+            local resultLabel = entry.won == true and Format.Colorize("FF40C040", "W")
+                or (entry.won == false and Format.Colorize("FFFF4040", "L") or Format.Muted("-"))
+            table.insert(lines, string.format(
+                "%s  %s  %s -> %s  (%s)  %s",
+                Format.Muted(PVL.CrHistory.FormatTimestamp(entry.timestamp)),
+                Format.Muted("match"),
+                Format.Rating(entry.crBefore),
+                Format.Rating(entry.cr),
+                PVL.CrHistory.FormatDelta(entry.delta),
+                resultLabel
+            ))
+        else
+            table.insert(lines, string.format(
+                "%s  %s  %s",
+                Format.Muted(PVL.CrHistory.FormatTimestamp(entry.timestamp)),
+                Format.Muted(PVL.CrHistory.GetEntryTypeLabel(entry)),
+                Format.Rating(entry.cr)
+            ))
+        end
+    end
+
+    return table.concat(lines, "\n")
+end
+
+--- Builds text for the spec detail panel from class/spec filters.
 --- @param classToken string|nil
 --- @param specKey string|nil
 --- @return string
-function UI.BuildDetailCardText(classToken, specKey)
+function UI.BuildSpecDetailPanelText(classToken, specKey)
     if specKey then
         return UI.BuildSpecDetailText(specKey)
     end
@@ -291,6 +456,57 @@ function UI.BuildDetailCardText(classToken, specKey)
     end
 
     return UI.BuildOverviewDetailText()
+end
+
+--- Builds the combined spec detail and imported ladder snapshot panel.
+--- @param classToken string|nil
+--- @param specKey string|nil
+--- @return string
+function UI.BuildCombinedSpecLadderText(classToken, specKey)
+    local lines = {
+        UI.BuildSpecDetailPanelText(classToken, specKey),
+        "",
+        Format.Header("Imported Ladder Snapshot"),
+        "",
+        UI.BuildImportedListText(classToken, specKey),
+    }
+
+    return table.concat(lines, "\n")
+end
+
+--- Updates the top-row detail panels.
+--- @param frame Frame
+--- @param filters table
+function UI.UpdateDetailPanels(frame, filters)
+    local bracket = filters.bracket or PVL.GetActiveBracketFilter()
+
+    frame.summaryHeader:SetText(Format.Header("Overview"))
+    frame.crHistoryHeader:SetText(Format.Header(PVL.LABELS.CR_HISTORY))
+    frame.specDetailHeader:SetText(Format.Header("Spec Detail"))
+    frame.setCrHistoryText(UI.BuildCrHistoryText(bracket))
+    frame.setSpecDetailText(UI.BuildCombinedSpecLadderText(filters.classToken, filters.specKey))
+end
+
+--- Updates the bottom match review panels for the selected match.
+--- @param frame Frame
+--- @param filters table
+function UI.UpdateMatchDetailPanel(frame, filters)
+    local bracket = filters.bracket or PVL.GetActiveBracketFilter()
+    local selectedMatch = UI.ResolveSelectedMatch(bracket)
+
+    frame.setMatchDetailText(UI.BuildMatchDetailText(selectedMatch))
+
+    local statDef = UI.GetCombatStatDefinition(filters.combatStat)
+    if frame.updateCombatMeter then
+        frame.updateCombatMeter(selectedMatch, statDef)
+    end
+
+    if frame.refreshMatchDropdown then
+        frame.refreshMatchDropdown()
+    end
+    if frame.refreshCombatStatDropdown then
+        frame.refreshCombatStatDropdown()
+    end
 end
 
 --- Builds text when all classes and all specs are selected.
@@ -424,30 +640,6 @@ function UI.BuildSpecDetailText(specKey)
     return table.concat(lines, "\n")
 end
 
---- Builds the observed spec list for the current filters.
---- @param classToken string|nil
---- @param specKey string|nil
---- @return string
-function UI.BuildObservedListText(classToken, specKey)
-    local observed = PVL.GetFilteredObservedSpecPercentages(classToken, specKey)
-    if #observed == 0 then
-        if classToken or specKey then
-            return Format.Muted("No observed specs match the current filters yet.")
-        end
-        return Format.Muted(string.format(
-            "Play %s matches to populate this panel.",
-            PVL.BRACKET_NAMES[PVL.GetActiveBracketFilter()] or "PvP"
-        ))
-    end
-
-    local lines = {}
-    for _, row in ipairs(observed) do
-        table.insert(lines, Format.SpecListLine(row.specKey, row.count, row.percent))
-    end
-
-    return table.concat(lines, "\n")
-end
-
 --- Builds the imported snapshot list for the current filters.
 --- @param classToken string|nil
 --- @param specKey string|nil
@@ -547,8 +739,7 @@ function UI.Toggle()
     if frame:IsShown() then
         frame:Hide()
     else
-        UI.Refresh()
-        frame:Show()
+        UI.Show()
     end
 end
 
@@ -567,6 +758,12 @@ function UI.Refresh()
     if frame.refreshSpecDropdown then
         frame.refreshSpecDropdown()
     end
+    if frame.refreshMatchDropdown then
+        frame.refreshMatchDropdown()
+    end
+    if frame.refreshCombatStatDropdown then
+        frame.refreshCombatStatDropdown()
+    end
 
     if summary.imported then
         frame.regionLabel:SetText(string.format(
@@ -579,15 +776,21 @@ function UI.Refresh()
         frame.regionLabel:SetText(string.format("Region: -- | Bracket: %s", bracketName))
     end
 
-    frame.summary:SetText(UI.BuildSummaryText(summary))
-    frame.setDetailCardText(UI.BuildDetailCardText(filters.classToken, filters.specKey))
-    frame.setObservedListText(UI.BuildObservedListText(filters.classToken, filters.specKey))
-    frame.setImportedListText(UI.BuildImportedListText(filters.classToken, filters.specKey))
+    frame.setSummaryText(UI.BuildSummaryText(summary))
+    UI.UpdateDetailPanels(frame, filters)
+    UI.UpdateMatchDetailPanel(frame, filters)
 end
 
 --- Shows the main frame.
 function UI.Show()
     local frame = UI.CreateMainFrame()
+    if PVL.RatedInfo then
+        PVL.RatedInfo.RequestUpdate()
+        PVL.RatedInfo.RefreshAll()
+    end
+    if PVL.CrHistory then
+        PVL.CrHistory.RecordAllSnapshots()
+    end
     UI.Refresh()
     frame:Show()
 end

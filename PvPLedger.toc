@@ -3,12 +3,14 @@
 ## Notes: Hybrid PvP ladder intelligence — in-game observations plus imported ladder snapshots.
 ## Author: Jake
 ## Version: 0.7.0
+## IconTexture: Interface\AddOns\PvPLedger\Media\Icon.tga
 ## SavedVariables: PvPLedgerDB, BlitzLedgerDB
 ## SavedVariablesPerCharacter: PvPLedgerCharDB, BlitzLedgerCharDB
 
 Core/Constants.lua
 Core/Schema.lua
 Data/DataStore.lua
+Data/CrHistory.lua
 Data/LadderLoader.lua
 Data/AppExport.lua
 Data/Parser.lua
@@ -18,9 +20,14 @@ Data/LadderData_US_Rbg.lua
 Data/LadderData_US_Arena2v2.lua
 Data/LadderData_US_Arena3v3.lua
 Collector/InspectQueue.lua
+Collector/CombatLogCollector.lua
 Collector/MatchCollector.lua
+Collector/RatedInfo.lua
 UI/Widgets.lua
 UI/Format.lua
+UI/MatchDetail.lua
+UI/CombatMeter.lua
+UI/Settings.lua
 UI/MainFrame.lua
 Core/Core.lua
 Core/Slash.lua

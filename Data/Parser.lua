@@ -534,32 +534,80 @@ function PVL.GetFilteredImportedSpecRows(classToken, specKey)
     return rows
 end
 
---- Returns the latest character rating and MMR for one bracket.
+--- Returns true when a bracket exposes team average MMR on the score screen.
 --- @param bracket string|nil
---- @return number|nil rating, number|nil mmr
-function PVL.GetCharacterRatingFields(bracket)
-    local charDb = PVL.GetCharDB()
-    if not charDb then
+--- @return boolean
+function PVL.IsTeamObservedMmrBracket(bracket)
+    bracket = bracket or PVL.GetActiveBracketFilter()
+    return PVL.TEAM_OBSERVED_MMR_BRACKETS[bracket] == true
+end
+
+--- Returns true when a stored MMR value looks populated.
+--- @param value number|nil
+--- @return boolean
+function PVL.IsValidObservedMmr(value)
+    return type(value) == "number" and value > 0
+end
+
+--- Returns the UI label for the observed MMR field for one bracket.
+--- @param bracket string|nil
+--- @param mmrKind string|nil
+--- @return string
+function PVL.GetObservedMmrLabel(bracket, mmrKind)
+    if mmrKind == "team" or (not mmrKind and PVL.IsTeamObservedMmrBracket(bracket)) then
+        return PVL.LABELS.TEAM_AVG_MMR
+    end
+
+    return PVL.LABELS.PERSONAL_MMR
+end
+
+--- Normalizes stored MMR values and infers kind for legacy rows.
+--- @param mmr number|nil
+--- @param mmrKind string|nil
+--- @param bracket string
+--- @return number|nil, string|nil
+function PVL.NormalizeObservedMmrFields(mmr, mmrKind, bracket)
+    if not PVL.IsValidObservedMmr(mmr) then
         return nil, nil
     end
 
-    if (bracket or PVL.GetActiveBracketFilter()) == PVL.BRACKETS.SHUFFLE then
-        return charDb.lastShuffleCR, charDb.lastShuffleMMR
+    if not mmrKind then
+        if PVL.IsTeamObservedMmrBracket(bracket) then
+            mmrKind = "team"
+        else
+            mmrKind = "personal"
+        end
     end
 
-    if (bracket or PVL.GetActiveBracketFilter()) == PVL.BRACKETS.RBG then
-        return charDb.lastRbgCR, charDb.lastRbgMMR
+    return mmr, mmrKind
+end
+
+--- Returns the latest character rating and MMR for one bracket.
+--- @param bracket string|nil
+--- @return number|nil rating, number|nil mmr, string|nil mmrKind
+function PVL.GetCharacterRatingFields(bracket)
+    local charDb = PVL.GetCharDB()
+    if not charDb then
+        return nil, nil, nil
     end
 
-    if (bracket or PVL.GetActiveBracketFilter()) == PVL.BRACKETS.ARENA_2V2 then
-        return charDb.lastArena2v2CR, charDb.lastArena2v2MMR
+    local activeBracket = bracket or PVL.GetActiveBracketFilter()
+    local rating, mmr, mmrKind
+
+    if activeBracket == PVL.BRACKETS.SHUFFLE then
+        rating, mmr, mmrKind = charDb.lastShuffleCR, charDb.lastShuffleMMR, charDb.lastShuffleMMRKind
+    elseif activeBracket == PVL.BRACKETS.RBG then
+        rating, mmr, mmrKind = charDb.lastRbgCR, charDb.lastRbgMMR, charDb.lastRbgMMRKind
+    elseif activeBracket == PVL.BRACKETS.ARENA_2V2 then
+        rating, mmr, mmrKind = charDb.lastArena2v2CR, charDb.lastArena2v2MMR, charDb.lastArena2v2MMRKind
+    elseif activeBracket == PVL.BRACKETS.ARENA_3V3 then
+        rating, mmr, mmrKind = charDb.lastArena3v3CR, charDb.lastArena3v3MMR, charDb.lastArena3v3MMRKind
+    else
+        rating, mmr, mmrKind = charDb.lastBlitzCR, charDb.lastBlitzMMR, charDb.lastBlitzMMRKind
     end
 
-    if (bracket or PVL.GetActiveBracketFilter()) == PVL.BRACKETS.ARENA_3V3 then
-        return charDb.lastArena3v3CR, charDb.lastArena3v3MMR
-    end
-
-    return charDb.lastBlitzCR, charDb.lastBlitzMMR
+    mmr, mmrKind = PVL.NormalizeObservedMmrFields(mmr, mmrKind, activeBracket)
+    return rating, mmr, mmrKind
 end
 
 --- Builds a short summary table for the main UI panel.
@@ -568,7 +616,8 @@ function PVL.BuildDashboardSummary()
     local bracket = PVL.GetActiveBracketFilter()
     local snapshot = PVL.GetImportedSnapshot(bracket)
     local observedRows = PVL.GetObservedSpecRows(bracket)
-    local playerCR, playerMMR = PVL.GetCharacterRatingFields(bracket)
+    local playerCR, playerMMR, playerMMRKind = PVL.GetCharacterRatingFields(bracket)
+    local playerCurrentCR = PVL.RatedInfo and PVL.RatedInfo.GetCurrentRating(bracket) or nil
     local listedObservedCount, observedPlayerCount = PVL.CountListedObservedPlayers()
 
     return {
@@ -581,7 +630,9 @@ function PVL.BuildDashboardSummary()
         observedTopSpecs = { observedRows[1], observedRows[2], observedRows[3] },
         matchCount = #(PVL.GetObservedMatches(bracket) or {}),
         playerCR = playerCR,
+        playerCurrentCR = playerCurrentCR,
         playerMMR = playerMMR,
-        standing = PVL.EstimateListedStanding(playerCR),
+        playerMMRKind = playerMMRKind,
+        standing = PVL.EstimateListedStanding(playerCurrentCR or playerCR),
     }
 end

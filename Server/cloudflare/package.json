@@ -1,0 +1,14 @@
+{
+  "name": "pvpledger-ingest",
+  "private": true,
+  "version": "0.7.0",
+  "description": "Public match export ingest API for PvPLedger Sync",
+  "scripts": {
+    "deploy": "wrangler deploy",
+    "dev": "wrangler dev",
+    "tail": "wrangler tail"
+  },
+  "devDependencies": {
+    "wrangler": "^4.0.0"
+  }
+}

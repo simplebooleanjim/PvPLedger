@@ -66,14 +66,20 @@ local function RegisterSlashCommands()
         end
 
         if command == "share on" or command == "export on" then
-            PVL.GetDB().settings.shareMatchData = true
+            PVL.SetShareMatchData(true)
             Print("Match export enabled for PvPLedger Sync.")
+            if PVL.UI and PVL.UI.Refresh then
+                PVL.UI.Refresh()
+            end
             return
         end
 
         if command == "share off" or command == "export off" then
-            PVL.GetDB().settings.shareMatchData = false
+            PVL.SetShareMatchData(false)
             Print("Match export disabled.")
+            if PVL.UI and PVL.UI.Refresh then
+                PVL.UI.Refresh()
+            end
             return
         end
 
@@ -103,16 +109,64 @@ local function RegisterSlashCommands()
             return
         end
 
+        if command == "debug score" then
+            if PVL.MatchCollector and PVL.MatchCollector.PrintScoreDebug then
+                PVL.MatchCollector.PrintScoreDebug()
+            end
+            return
+        end
+
+        if command == "debug rated" then
+            if PVL.RatedInfo and PVL.RatedInfo.PrintDebug then
+                PVL.RatedInfo.PrintDebug()
+            end
+            return
+        end
+
+        if command == "history" or command == "cr" then
+            if PVL.CrHistory and PVL.CrHistory.PrintHistory then
+                PVL.CrHistory.PrintHistory()
+            end
+            return
+        end
+
+        if command == "match" or command:match("^match ") then
+            local bracket = PVL.GetActiveBracketFilter()
+            local arg = command == "match" and "last" or strtrim(command:sub(7))
+            local matchRecord = nil
+
+            if arg == "" or arg == "last" then
+                matchRecord = PVL.GetRecentMatches(bracket, 1)[1]
+            else
+                local index = tonumber(arg)
+                if index then
+                    matchRecord = PVL.GetRecentMatches(bracket, index)[index]
+                else
+                    matchRecord = PVL.GetMatchById(arg)
+                end
+            end
+
+            if not matchRecord then
+                Print("No match found for the current bracket.")
+                return
+            end
+
+            if PVL.UI then
+                PVL.UI.SetSelectedMatchId(matchRecord.matchId)
+                PVL.UI.Show()
+            end
+            return
+        end
+
         if command == "help" then
-            Print("Commands: toggle | show | hide | status | update | reload | share on|off | enable | disable | help")
+            Print("Commands: toggle | show | hide | status | update | reload | share on|off | debug score | debug rated | history | match | enable | disable | help")
             Print("Install PvPLedger-AppHelper + PvPLedger Sync for automatic ladder updates.")
-            Print("Use /pvl share on to queue match exports for the desktop sync app.")
-            Print("Use /pvl update after sync updates AppData.lua, then /reload if needed.")
+            Print("Enable match export in Options > AddOns > PvPLedger, or use /pvl share on.")
             Print("Use /pvl status to see snapshot dates and active data source per bracket.")
             return
         end
 
-        Print("Commands: toggle | show | hide | status | update | reload | share on|off | enable | disable | help")
+        Print("Commands: toggle | show | hide | status | update | reload | share on|off | debug score | debug rated | history | match | enable | disable | help")
     end
 end
 

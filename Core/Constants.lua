@@ -121,6 +121,14 @@ PVL.SPEC_KEYS_BY_CLASS = {
     WARRIOR = { "ARMS", "FURY", "PROTECTION" },
 }
 
+--- Brackets where the post-game score screen shows team average MMR, not personal MMR.
+PVL.TEAM_OBSERVED_MMR_BRACKETS = {
+    [PVL.BRACKETS.ARENA_2V2] = true,
+    [PVL.BRACKETS.ARENA_3V3] = true,
+    [PVL.BRACKETS.RBG] = true,
+    [PVL.BRACKETS.BLITZ] = true,
+}
+
 --- UI copy that keeps ladder wording honest about data limits.
 PVL.LABELS = {
     LISTED_AVG = "Average listed rating",
@@ -128,6 +136,52 @@ PVL.LABELS = {
     TOP100_AVG = "Top-100 listed average",
     REPRESENTATION = "Top-ladder representation",
     OBSERVED = "Observed in your matches",
+    TEAM_AVG_MMR = "Team avg MMR",
+    PERSONAL_MMR = "Your MMR",
+    CURRENT_CR = "Current CR",
+    CR_HISTORY = "CR History",
+    CR_PEAK = "Peak CR",
+    CR_LOW = "Low CR",
+    CR_NET_7D = "Net CR (7 days)",
+    CR_NET_SESSION = "Net CR (session)",
+}
+
+--- Maximum CR history points retained per character.
+PVL.MAX_CR_HISTORY = 1000
+
+--- Number of recent CR history rows shown in the main UI panel.
+PVL.CR_HISTORY_UI_LIMIT = 15
+
+PVL.COMBAT_ANALYSIS_STATS = {
+    { value = "damage", label = "Damage Done", field = "damage", useCombatAmount = true, rateLabel = "DPS" },
+    { value = "healing", label = "Healing Done", field = "healing", useCombatAmount = true, rateLabel = "HPS" },
+    { value = "damageTaken", label = "Damage Taken", field = "damageTaken", useCombatAmount = true, rateLabel = "DTPS" },
+    { value = "interrupts", label = "Interrupts", field = "interrupts", useCombatAmount = false, rateLabel = "/min" },
+    { value = "ccApplied", label = "CC Applied", field = "ccApplied", useCombatAmount = false, rateLabel = "/min" },
+    { value = "ccTaken", label = "CC Taken", field = "ccTaken", useCombatAmount = false, rateLabel = "/min" },
+    { value = "deaths", label = "Deaths", field = "deaths", useCombatAmount = false, rateLabel = "/min" },
+}
+
+PVL.DEFAULT_COMBAT_ANALYSIS_STAT = "damage"
+
+--- Number of recent matches shown in the match detail dropdown.
+PVL.MATCH_HISTORY_UI_LIMIT = 25
+
+--- Maps PvPLedger bracket ids to GetPersonalRatedInfo index values.
+PVL.RATED_INFO_INDEX_BY_BRACKET = {
+    [PVL.BRACKETS.ARENA_2V2] = 1,
+    [PVL.BRACKETS.ARENA_3V3] = 2,
+    [PVL.BRACKETS.RBG] = 4,
+    [PVL.BRACKETS.SHUFFLE] = 7,
+    [PVL.BRACKETS.BLITZ] = 9,
+}
+
+--- Players per team for brackets that use roster constraint team assignment.
+PVL.TEAM_SIZE_BY_BRACKET = {
+    [PVL.BRACKETS.BLITZ] = 8,
+    [PVL.BRACKETS.RBG] = 10,
+    [PVL.BRACKETS.ARENA_2V2] = 2,
+    [PVL.BRACKETS.ARENA_3V3] = 3,
 }
 
 --- Maximum number of match rows retained locally before pruning oldest entries.

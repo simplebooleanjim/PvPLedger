@@ -3,8 +3,10 @@
 ## Notes: Bridge between PvPLedger Sync and the main addon. AppData.lua is written by the desktop sync app or collector.
 ## Author: Jake
 ## Version: 0.7.0
+## IconTexture: Interface\AddOns\PvPLedger-AppHelper\Media\Icon.tga
 ## SavedVariables: PvPLedger_AppHelperDB
 ## Dependencies: PvPLedger
 
 AppData.lua
+ExportAck.lua
 PvPLedger-AppHelper.lua

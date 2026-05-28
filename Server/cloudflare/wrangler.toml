@@ -1,0 +1,14 @@
+name = "pvpledger-ingest"
+main = "src/index.js"
+compatibility_date = "2024-09-23"
+
+# Create the bucket once: npx wrangler r2 bucket create pvpledger-exports
+[[r2_buckets]]
+binding = "EXPORTS_BUCKET"
+bucket_name = "pvpledger-exports"
+
+# Set the upload token as a secret (never commit it):
+#   npx wrangler secret put INGEST_TOKEN
+
+[observability]
+enabled = true
