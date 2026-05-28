@@ -12,7 +12,7 @@ from urllib import error, request
 
 from .config import SyncConfig, default_config_path, save_config
 from .export_ack import write_export_ack
-from .github_exports import upload_exports_to_github
+from .github_exports import GitHubReconcileResult, reconcile_github_exports, upload_exports_to_github
 from .saved_vars import (
     find_app_helper_saved_vars,
     get_export_metadata,
@@ -34,6 +34,7 @@ class UploadResult:
     destination: str = ""
     github_batch_path: str = ""
     github_dump_path: str = ""
+    github_reconcile: GitHubReconcileResult | None = None
 
 
 def default_export_spool_dir() -> Path:
@@ -60,6 +61,130 @@ def resolve_export_spool_dir(config: SyncConfig) -> Path:
     if config.export_spool_dir:
         return Path(config.export_spool_dir)
     return default_export_spool_dir()
+
+
+def load_local_batch_payload(path: Path) -> dict[str, Any] | None:
+    """
+    Load one local export batch JSON file.
+
+    Parameters
+    ----------
+    path:
+        Path to a `batch-*.json` export file.
+
+    Returns
+    -------
+    dict[str, Any] | None
+        Parsed batch payload when valid.
+    """
+
+    try:
+        payload = json.loads(path.read_text(encoding="utf-8"))
+    except (OSError, json.JSONDecodeError):
+        return None
+
+    if not isinstance(payload, dict) or not payload.get("batchId"):
+        return None
+    return payload
+
+
+def iter_local_batch_payloads(config: SyncConfig) -> list[dict[str, Any]]:
+    """
+    Collect de-duplicated export batches stored locally on disk.
+
+    Parameters
+    ----------
+    config:
+        Active sync configuration.
+
+    Returns
+    -------
+    list[dict[str, Any]]
+        Local batch payloads sorted by upload timestamp.
+    """
+
+    from .ingest_server import default_ingest_dir
+
+    roots = (
+        resolve_export_spool_dir(config),
+        default_ingest_dir(),
+    )
+    by_batch_id: dict[str, tuple[float, dict[str, Any]]] = {}
+    for root in roots:
+        if not root.exists():
+            continue
+        for path in root.glob("**/batch-*.json"):
+            payload = load_local_batch_payload(path)
+            if not payload:
+                continue
+            batch_id = str(payload.get("batchId", "")).strip()
+            if not batch_id:
+                continue
+            mtime = path.stat().st_mtime
+            existing = by_batch_id.get(batch_id)
+            if existing is None or mtime > existing[0]:
+                by_batch_id[batch_id] = (mtime, payload)
+
+    payloads = [entry[1] for entry in by_batch_id.values()]
+    payloads.sort(key=lambda row: row.get("uploadedAt") or "")
+    return payloads
+
+
+def _finalize_upload_result(
+    *,
+    config: SyncConfig,
+    result: UploadResult,
+) -> UploadResult:
+    """
+    Run GitHub reconciliation and attach the summary to one upload result.
+
+    Parameters
+    ----------
+    config:
+        Active sync configuration.
+    result:
+        Upload result to finalize.
+
+    Returns
+    -------
+    UploadResult
+        Upload result with GitHub reconciliation details attached.
+    """
+
+    local_payloads = iter_local_batch_payloads(config)
+    reconcile = reconcile_github_exports(config, payloads=local_payloads)
+    result.github_reconcile = reconcile
+
+    if reconcile.dump_repaired and not result.github_dump_path:
+        result.github_dump_path = reconcile.dump_path
+
+    if (
+        not result.uploaded
+        and (reconcile.uploaded_batches > 0 or reconcile.dump_repaired)
+    ):
+        result.uploaded = True
+        result.reason = reconcile.reason
+        return result
+
+    return result
+
+
+def sync_github_exports(config: SyncConfig) -> GitHubReconcileResult:
+    """
+    Verify local export batches against GitHub and upload any missing files.
+
+    Parameters
+    ----------
+    config:
+        Active sync configuration.
+
+    Returns
+    -------
+    GitHubReconcileResult
+        GitHub reconciliation summary.
+    """
+
+    return reconcile_github_exports(config, payloads=iter_local_batch_payloads(config))
 
 
 def _utc_now() -> str:
@@ -252,7 +377,14 @@ def upload_exports(config: SyncConfig, *, force: bool = False) -> UploadResult:
 
     saved_vars_path = find_app_helper_saved_vars(Path(config.wow_addons_dir))
     if not saved_vars_path:
-        return UploadResult(uploaded=False, reason="No PvPLedger_AppHelper SavedVariables file found yet.")
+        return _finalize_upload_result(
+            config=config,
+            result=UploadResult(
+                uploaded=False,
+                reason="No PvPLedger_AppHelper SavedVariables file found yet.",
+                match_count=0,
+            ),
+        )
 
     try:
         document = load_app_helper_saved_vars(saved_vars_path)
@@ -273,10 +405,13 @@ def upload_exports(config: SyncConfig, *, force: bool = False) -> UploadResult:
     )
 
     if not pending_matches:
-        return UploadResult(
-            uploaded=False,
-            reason="No pending match exports to upload.",
-            match_count=0,
+        return _finalize_upload_result(
+            config=config,
+            result=UploadResult(
+                uploaded=False,
+                reason="No pending match exports to upload.",
+                match_count=0,
+            ),
         )
 
     batch_id = uuid.uuid4().hex
@@ -336,14 +471,17 @@ def upload_exports(config: SyncConfig, *, force: bool = False) -> UploadResult:
     config.last_export_batch_id = batch_id
     save_config(config)
 
-    return UploadResult(
-        uploaded=True,
-        reason=f"Uploaded {len(uploaded_match_ids)} match export(s).",
-        match_count=len(uploaded_match_ids),
-        batch_id=batch_id,
-        spool_path=str(spool_path),
-        export_ack_path=str(export_ack_path),
-        destination=destination,
-        github_batch_path=github_batch_path,
-        github_dump_path=github_dump_path,
+    return _finalize_upload_result(
+        config=config,
+        result=UploadResult(
+            uploaded=True,
+            reason=f"Uploaded {len(uploaded_match_ids)} match export(s).",
+            match_count=len(uploaded_match_ids),
+            batch_id=batch_id,
+            spool_path=str(spool_path),
+            export_ack_path=str(export_ack_path),
+            destination=destination,
+            github_batch_path=github_batch_path,
+            github_dump_path=github_dump_path,
+        ),
     )

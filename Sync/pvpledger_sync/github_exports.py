@@ -26,6 +26,26 @@ class GitHubExportResult:
     dump_path: str = ""
 
 
+@dataclass
+class GitHubReconcileResult:
+    """Outcome of reconciling local export batches against GitHub."""
+
+    checked_batches: int = 0
+    uploaded_batches: int = 0
+    already_synced_batches: int = 0
+    failed_batches: int = 0
+    dump_repaired: bool = False
+    dump_path: str = ""
+    errors: list[str] | None = None
+    reason: str = ""
+
+    def __post_init__(self) -> None:
+        """Normalize optional list fields."""
+
+        if self.errors is None:
+            self.errors = []
+
+
 def empty_match_dump() -> dict[str, Any]:
     """Return an empty consolidated match dump document."""
 
@@ -160,6 +180,252 @@ def resolve_github_export_root(config: SyncConfig) -> str:
 
     export_path = (config.github_export_path or DEFAULT_GITHUB_EXPORT_PATH).strip().strip("/")
     return export_path or DEFAULT_GITHUB_EXPORT_PATH
+
+
+def resolve_github_batch_repo_path(config: SyncConfig, batch_id: str) -> str:
+    """
+    Build the repository path for one export batch file.
+
+    Parameters
+    ----------
+    config:
+        Active sync configuration.
+    batch_id:
+        Export batch identifier.
+
+    Returns
+    -------
+    str
+        Repository-relative batch JSON path.
+    """
+
+    export_root = resolve_github_export_root(config)
+    return f"{export_root}/batches/batch-{batch_id}.json"
+
+
+def resolve_github_dump_repo_path(config: SyncConfig) -> str:
+    """Return the repository path for the consolidated match dump file."""
+
+    export_root = resolve_github_export_root(config)
+    return f"{export_root}/{MATCH_DUMP_FILENAME}"
+
+
+def match_ids_from_payload(payload: dict[str, Any]) -> set[str]:
+    """
+    Extract match IDs from one export batch payload.
+
+    Parameters
+    ----------
+    payload:
+        Export batch payload.
+
+    Returns
+    -------
+    set[str]
+        Unique match IDs contained in the payload.
+    """
+
+    match_ids: set[str] = set()
+    for match in payload.get("matches") or []:
+        if isinstance(match, dict) and match.get("matchId"):
+            match_ids.add(str(match["matchId"]))
+    return match_ids
+
+
+def match_ids_from_dump(dump: dict[str, Any]) -> set[str]:
+    """
+    Extract match IDs from one consolidated dump document.
+
+    Parameters
+    ----------
+    dump:
+        Consolidated match dump payload.
+
+    Returns
+    -------
+    set[str]
+        Unique match IDs contained in the dump.
+    """
+
+    return match_ids_from_payload({"matches": dump.get("matches") or []})
+
+
+def github_batch_exists(config: SyncConfig, batch_id: str) -> bool:
+    """
+    Return True when one export batch file already exists on GitHub.
+
+    Parameters
+    ----------
+    config:
+        Active sync configuration.
+    batch_id:
+        Export batch identifier.
+
+    Returns
+    -------
+    bool
+        True when the batch file is present in the configured repository.
+    """
+
+    token = config.resolved_github_token()
+    if not token:
+        return False
+
+    sha, _ = get_repo_file(
+        repo=config.repo,
+        branch=config.branch,
+        path=resolve_github_batch_repo_path(config, batch_id),
+        token=token,
+    )
+    return sha is not None
+
+
+def ensure_github_match_dump(config: SyncConfig, payloads: list[dict[str, Any]]) -> bool:
+    """
+    Repair the consolidated GitHub dump when local batches contain missing matches.
+
+    Parameters
+    ----------
+    config:
+        Active sync configuration.
+    payloads:
+        Local export batch payloads to reconcile into the dump.
+
+    Returns
+    -------
+    bool
+        True when the dump file was updated on GitHub.
+    """
+
+    token = config.resolved_github_token()
+    if not token or not payloads:
+        return False
+
+    expected_ids: set[str] = set()
+    for payload in payloads:
+        expected_ids.update(match_ids_from_payload(payload))
+    if not expected_ids:
+        return False
+
+    dump_path = resolve_github_dump_repo_path(config)
+    dump_sha, dump_text = get_repo_file(
+        repo=config.repo,
+        branch=config.branch,
+        path=dump_path,
+        token=token,
+    )
+    if dump_text:
+        try:
+            existing_dump = json.loads(dump_text)
+        except json.JSONDecodeError:
+            existing_dump = empty_match_dump()
+    else:
+        existing_dump = empty_match_dump()
+
+    if not isinstance(existing_dump, dict):
+        existing_dump = empty_match_dump()
+
+    missing_ids = expected_ids - match_ids_from_dump(existing_dump)
+    if not missing_ids:
+        return False
+
+    merged_dump = existing_dump
+    for payload in sorted(payloads, key=lambda row: row.get("uploadedAt") or ""):
+        merged_dump = merge_match_dump(merged_dump, payload)
+
+    dump_json = json.dumps(merged_dump, indent=2) + "\n"
+    put_repo_file(
+        repo=config.repo,
+        branch=config.branch,
+        path=dump_path,
+        content=dump_json,
+        message=(
+            f"PvPLedger Sync: repair match dump ({len(missing_ids)} missing match(es) restored)"
+        ),
+        token=token,
+        sha=dump_sha,
+    )
+    return True
+
+
+def reconcile_github_exports(
+    config: SyncConfig,
+    *,
+    payloads: list[dict[str, Any]] | None = None,
+) -> GitHubReconcileResult:
+    """
+    Verify local export batches against GitHub and upload any missing files.
+
+    Parameters
+    ----------
+    config:
+        Active sync configuration.
+    payloads:
+        Optional preloaded local batch payloads. When omitted, the local spool
+        and ingest directories are scanned automatically.
+
+    Returns
+    -------
+    GitHubReconcileResult
+        Reconciliation summary.
+    """
+
+    if not config.github_export_enabled:
+        return GitHubReconcileResult(reason="GitHub export disabled in sync config.")
+
+    token = config.resolved_github_token()
+    if not token:
+        return GitHubReconcileResult(reason="GitHub export skipped (no token configured).")
+
+    if payloads is None:
+        from .uploader import iter_local_batch_payloads
+
+        payloads = iter_local_batch_payloads(config)
+
+    if not payloads:
+        return GitHubReconcileResult(reason="No local export batches to reconcile.")
+
+    result = GitHubReconcileResult(checked_batches=len(payloads))
+    for payload in payloads:
+        batch_id = str(payload.get("batchId", "")).strip()
+        if not batch_id:
+            result.failed_batches += 1
+            result.errors.append("Skipped one local batch with no batchId.")
+            continue
+
+        if github_batch_exists(config, batch_id):
+            result.already_synced_batches += 1
+            continue
+
+        try:
+            upload_result = upload_exports_to_github(config, payload)
+            if upload_result.uploaded:
+                result.uploaded_batches += 1
+            else:
+                result.failed_batches += 1
+                result.errors.append(f"{batch_id}: {upload_result.reason}")
+        except ValueError as exc:
+            result.failed_batches += 1
+            result.errors.append(f"{batch_id}: {exc}")
+
+    try:
+        if ensure_github_match_dump(config, payloads):
+            result.dump_repaired = True
+            result.dump_path = resolve_github_dump_repo_path(config)
+    except ValueError as exc:
+        result.failed_batches += 1
+        result.errors.append(f"dump repair: {exc}")
+
+    result.reason = (
+        f"Checked {result.checked_batches} local batch(es): "
+        f"{result.uploaded_batches} uploaded, "
+        f"{result.already_synced_batches} already on GitHub."
+    )
+    if result.dump_repaired:
+        result.reason += " Match dump repaired."
+    if result.failed_batches:
+        result.reason += f" {result.failed_batches} failed."
+    return result
 
 
 def upload_exports_to_github(config: SyncConfig, payload: dict[str, Any]) -> GitHubExportResult:

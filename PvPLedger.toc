@@ -26,6 +26,7 @@ Collector/RatedInfo.lua
 UI/Widgets.lua
 UI/Format.lua
 UI/MatchDetail.lua
+UI/LadderView.lua
 UI/CombatMeter.lua
 UI/Settings.lua
 UI/MainFrame.lua

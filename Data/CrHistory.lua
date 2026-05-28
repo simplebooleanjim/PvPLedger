@@ -8,6 +8,7 @@ local CrHistory = PVL.CrHistory
 CrHistory.frame = CrHistory.frame or nil
 CrHistory.sessionStartedAt = CrHistory.sessionStartedAt or nil
 CrHistory.sessionStartCrByBracket = CrHistory.sessionStartCrByBracket or {}
+CrHistory.snapshotSuppressUntilByBracket = CrHistory.snapshotSuppressUntilByBracket or {}
 
 --- Returns the per-character CR history table.
 --- @return table
@@ -194,7 +195,7 @@ function CrHistory.RecordMatch(matchRecord)
         end
     end
 
-    return CrHistory.RecordEntry({
+    local recorded = CrHistory.RecordEntry({
         timestamp = matchRecord.timestamp or time(),
         bracket = matchRecord.bracket,
         cr = crAfter,
@@ -203,6 +204,43 @@ function CrHistory.RecordMatch(matchRecord)
         won = matchRecord.won,
         source = "match",
         matchId = matchRecord.matchId,
+    })
+
+    if recorded then
+        CrHistory.snapshotSuppressUntilByBracket[matchRecord.bracket] = (
+            matchRecord.timestamp or time()
+        ) + (PVL.CR_SNAPSHOT_SUPPRESS_SECONDS or 120)
+    end
+
+    return recorded
+end
+
+--- Returns true when a live CR snapshot should be skipped for one bracket.
+--- @param bracket string
+--- @param cr number
+--- @return boolean
+function CrHistory.ShouldSkipSnapshot(bracket, cr)
+    if not bracket or not CrHistory.IsValidCr(cr) then
+        return true
+    end
+
+    local suppressUntil = CrHistory.snapshotSuppressUntilByBracket[bracket]
+    if suppressUntil and time() < suppressUntil then
+        local latest = CrHistory.GetLatestEntry(bracket)
+        if latest and latest.source == "match" then
+            if latest.cr == cr then
+                return true
+            end
+            if latest.timestamp and (time() - latest.timestamp) <= (PVL.CR_SNAPSHOT_SUPPRESS_SECONDS or 120) then
+                return true
+            end
+        end
+    end
+
+    return CrHistory.IsDuplicateSnapshot({
+        bracket = bracket,
+        cr = cr,
+        source = "cr",
     })
 end
 
@@ -213,6 +251,10 @@ end
 --- @return boolean
 function CrHistory.RecordSnapshot(bracket, cr, timestamp)
     if not bracket or not CrHistory.IsValidCr(cr) then
+        return false
+    end
+
+    if CrHistory.ShouldSkipSnapshot(bracket, cr) then
         return false
     end
 

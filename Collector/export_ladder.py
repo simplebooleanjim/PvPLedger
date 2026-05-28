@@ -237,6 +237,14 @@ def make_player_lookup_key(name: str, realm: str = "") -> str:
     return f"{normalized_name}-{normalize_realm_key(realm)}"
 
 
+def format_player_display_name(name: str, realm: str = "") -> str:
+    """Preserve Battle.net player and realm casing for UI display."""
+
+    if realm:
+        return f"{name}-{realm}"
+    return name
+
+
 def build_player_index(players: list[PlayerRow]) -> dict[str, dict[str, Any]]:
     """Build a compact player lookup keyed by normalized Name-Realm for the addon."""
 
@@ -245,6 +253,7 @@ def build_player_index(players: list[PlayerRow]) -> dict[str, dict[str, Any]]:
         player_key = make_player_lookup_key(player.name, player.realm)
         existing = index.get(player_key)
         candidate = {
+            "displayName": format_player_display_name(player.name, player.realm),
             "specKey": player.spec_key,
             "rating": player.rating,
             "rank": player.rank,
@@ -615,6 +624,7 @@ def render_lua_snapshot(
         row = player_index[player_key]
         lines.extend([
             f'        ["{escape_lua_string(player_key)}"] = {{',
+            f'            displayName = "{escape_lua_string(row["displayName"])}",',
             f'            specKey = "{row["specKey"]}",',
             f"            rating = {row['rating']},",
             f"            rank = {row['rank']},",

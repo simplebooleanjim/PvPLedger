@@ -18,12 +18,13 @@ from .config import (
     load_config,
     save_config,
 )
-from .downloader import local_app_data_source, local_manifest_source, sync_app_data
-from .exporter import scan_exports
+from .downloader import inspect_installed_app_data, local_app_data_source, local_manifest_source, sync_app_data
+from .exporter import scan_exports_for_config
+from .github_exports import GitHubReconcileResult
 from .ingest_server import default_ingest_dir, default_upload_url, ensure_ingest_server_running, run_ingest_server_forever
 from .manifest import fetch_manifest, format_github_error
 from .startup import install_startup, is_startup_installed, uninstall_startup
-from .uploader import resolve_export_spool_dir, upload_exports
+from .uploader import resolve_export_spool_dir, sync_github_exports, upload_exports
 
 
 def parse_args() -> argparse.Namespace:
@@ -52,6 +53,11 @@ def parse_args() -> argparse.Namespace:
 
     upload_parser = subparsers.add_parser("upload-exports", help="Upload pending match exports to the configured destination.")
     upload_parser.add_argument("--force", action="store_true", help="Upload even when export upload is disabled.")
+
+    subparsers.add_parser(
+        "sync-github-exports",
+        help="Verify local export batches and backfill any missing GitHub uploads.",
+    )
 
     auth_parser = subparsers.add_parser("auth", help="Save or clear a GitHub token for private repo sync.")
     auth_parser.add_argument("--token", type=str, default="", help="GitHub personal access token.")
@@ -139,7 +145,11 @@ def cmd_status() -> int:
     if local_app_data_source().exists():
         print(f"Local fallback AppData: {local_app_data_source()}")
 
-    export_scan = scan_exports(config.wow_addons_dir) if config.wow_addons_dir else None
+    if config.wow_addons_dir:
+        _, installed_status = inspect_installed_app_data(config)
+        print(installed_status)
+
+    export_scan = scan_exports_for_config(config) if config.wow_addons_dir else None
     if export_scan:
         print(f"Export scan: {export_scan.note}")
         if export_scan.found:
@@ -164,6 +174,9 @@ def cmd_sync(force: bool = False, local_only: bool = False) -> int:
         print(f"Manifest date: {result.manifest_generated_date}")
     if result.app_data_path:
         print(f"AppData path: {result.app_data_path}")
+    if result.player_index_count >= 0 and config.wow_addons_dir:
+        _, installed_status = inspect_installed_app_data(config)
+        print(installed_status)
     return 0 if result.updated or result.reason.startswith("Already up to date") else 1
 
 
@@ -186,7 +199,7 @@ def cmd_scan_exports() -> int:
         print("Sync is not initialized. Run: python -m pvpledger_sync init")
         return 1
 
-    result = scan_exports(config.wow_addons_dir)
+    result = scan_exports_for_config(config)
     print(result.note)
     if result.found:
         print(f"SavedVariables: {result.path}")
@@ -205,16 +218,49 @@ def cmd_upload_exports(args: argparse.Namespace) -> int:
     result = upload_exports(config, force=args.force)
     print(result.reason)
     if result.uploaded:
-        print(f"Batch ID: {result.batch_id}")
-        print(f"Destination: {result.destination}")
+        if result.batch_id:
+            print(f"Batch ID: {result.batch_id}")
+        if result.destination:
+            print(f"Destination: {result.destination}")
         if result.github_batch_path:
             print(f"GitHub batch: {result.github_batch_path}")
         if result.github_dump_path:
             print(f"GitHub dump: {result.github_dump_path}")
-        print(f"Spool file: {result.spool_path}")
-        print(f"ExportAck: {result.export_ack_path}")
+        if result.spool_path:
+            print(f"Spool file: {result.spool_path}")
+        if result.export_ack_path:
+            print(f"ExportAck: {result.export_ack_path}")
+    reconcile = result.github_reconcile
+    if reconcile and reconcile.checked_batches:
+        print(f"GitHub reconcile: {reconcile.reason}")
+        if reconcile.dump_repaired and reconcile.dump_path:
+            print(f"GitHub dump repaired: {reconcile.dump_path}")
+        for error in reconcile.errors:
+            print(f"GitHub reconcile error: {error}")
+
+    if result.uploaded:
         return 0
-    return 0 if result.reason.startswith("No pending") else 1
+    if result.reason.startswith("No pending"):
+        return 0
+    return 1
+
+
+def cmd_sync_github_exports() -> int:
+    """Verify local export batches and backfill missing GitHub uploads."""
+
+    config = load_config()
+    reconcile = sync_github_exports(config)
+    print(reconcile.reason)
+    if reconcile.dump_repaired and reconcile.dump_path:
+        print(f"GitHub dump repaired: {reconcile.dump_path}")
+    for error in reconcile.errors:
+        print(f"GitHub reconcile error: {error}")
+
+    if reconcile.failed_batches:
+        return 1
+    if reconcile.uploaded_batches or reconcile.dump_repaired or reconcile.already_synced_batches:
+        return 0
+    return 0
 
 
 def cmd_auth(args: argparse.Namespace) -> int:
@@ -327,6 +373,8 @@ def main() -> int:
         return cmd_scan_exports()
     if args.command == "upload-exports":
         return cmd_upload_exports(args)
+    if args.command == "sync-github-exports":
+        return cmd_sync_github_exports()
     if args.command == "auth":
         return cmd_auth(args)
     if args.command == "upload-auth":

@@ -7,7 +7,7 @@ local UI = PVL.UI
 local Format = UI.Format
 
 UI.frame = UI.frame or nil
-local UI_LAYOUT_VERSION = 20
+local UI_LAYOUT_VERSION = 22
 
 local FRAME_WIDTH = 720
 local FRAME_HEIGHT = 580
@@ -24,6 +24,9 @@ local MIDDLE_SECTION_HEIGHT = 212
 local MATCH_DROPDOWN_HEIGHT = 28
 local BOTTOM_SECTION_GAP = 12
 local TOP_SECTION_Y = -78
+local VIEW_LADDER_BUTTON_WIDTH = 88
+local VIEW_LADDER_BUTTON_HEIGHT = 22
+local FRAME_RIGHT_INSET = 36
 
 --- Returns the left edge X offset for one of the three top content columns.
 --- @param columnIndex number 1=left, 2=middle, 3=right
@@ -162,7 +165,7 @@ function UI.CreateMainFrame()
     frame.specDropdown, frame.refreshSpecDropdown = UI.CreateDropdown(
         frame,
         "PvPLedgerSpecDropdown",
-        220,
+        188,
         function()
             return PVL.GetSpecFilterOptions(UI.GetFilters().classToken)
         end,
@@ -179,8 +182,19 @@ function UI.CreateMainFrame()
     )
     frame.specDropdown:SetPoint("TOPLEFT", frame.specLabel, "BOTTOMLEFT", -DROPDOWN_MENU_INSET, -2)
 
+    frame.viewLadderButton = CreateFrame("Button", "PvPLedgerViewLadderButton", frame, "UIPanelButtonTemplate")
+    frame.viewLadderButton:SetSize(VIEW_LADDER_BUTTON_WIDTH, VIEW_LADDER_BUTTON_HEIGHT)
+    frame.viewLadderButton:SetPoint("TOP", frame.specDropdown, "TOP", 0, 0)
+    frame.viewLadderButton:SetPoint("RIGHT", frame, "RIGHT", -FRAME_RIGHT_INSET, 0)
+    frame.viewLadderButton:SetText("View Ladder")
+    frame.viewLadderButton:SetScript("OnClick", function()
+        if UI.LadderView then
+            UI.LadderView.Show()
+        end
+    end)
+
     frame.regionLabel = frame:CreateFontString(nil, "OVERLAY", "GameFontHighlightSmall")
-    frame.regionLabel:SetPoint("TOPRIGHT", frame, "TOPRIGHT", -36, FILTER_ROW_Y)
+    frame.regionLabel:SetPoint("BOTTOMRIGHT", frame.viewLadderButton, "TOPRIGHT", 0, 6)
     frame.regionLabel:SetJustifyH("RIGHT")
 
     frame.summaryHeader = frame:CreateFontString(nil, "OVERLAY", "GameFontNormalLarge")
@@ -779,6 +793,10 @@ function UI.Refresh()
     frame.setSummaryText(UI.BuildSummaryText(summary))
     UI.UpdateDetailPanels(frame, filters)
     UI.UpdateMatchDetailPanel(frame, filters)
+
+    if UI.LadderView and UI.LadderView.frame and UI.LadderView.frame:IsShown() then
+        UI.LadderView.Refresh()
+    end
 end
 
 --- Shows the main frame.
@@ -787,9 +805,6 @@ function UI.Show()
     if PVL.RatedInfo then
         PVL.RatedInfo.RequestUpdate()
         PVL.RatedInfo.RefreshAll()
-    end
-    if PVL.CrHistory then
-        PVL.CrHistory.RecordAllSnapshots()
     end
     UI.Refresh()
     frame:Show()

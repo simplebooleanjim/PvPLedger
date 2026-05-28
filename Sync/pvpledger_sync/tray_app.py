@@ -11,14 +11,22 @@ import pystray
 from pystray import MenuItem as Item
 
 from .config import SyncConfig, default_config_path, load_config
-from .downloader import sync_app_data
-from .exporter import scan_exports
+from .downloader import inspect_installed_app_data, sync_app_data
+from .exporter import scan_exports_for_config
 from .icons import build_tray_icon
 from .ingest_server import default_ingest_dir, ensure_ingest_server_running
 from .notify import notify
 from .single_instance import try_acquire_single_instance
 from .startup import is_startup_installed
 from .uploader import upload_exports
+
+
+_SILENT_EXPORT_REASONS = frozenset(
+    {
+        "No pending match exports to upload.",
+        "No PvPLedger_AppHelper SavedVariables file found yet.",
+    }
+)
 
 
 class TrayApp:
@@ -58,7 +66,61 @@ class TrayApp:
         self._config = load_config()
         self._set_status(result.reason)
         if result.updated:
-            notify("PvPLedger Sync", "Ladder data updated.")
+            if result.player_index_count > 0:
+                notify("PvPLedger Sync", result.reason)
+            else:
+                notify(
+                    "PvPLedger Sync",
+                    "Ladder aggregates synced, but View Ladder is still empty.\n"
+                    "The published snapshot does not include player names yet.",
+                )
+        elif result.reason.startswith("Already up to date"):
+            _, installed_status = inspect_installed_app_data(self._config)
+            if "empty" in installed_status.lower():
+                self._set_status(f"{result.reason} {installed_status}")
+
+    def _is_idle_export_state(
+        self,
+        *,
+        result,
+        scan,
+        reconcile,
+    ) -> bool:
+        """
+        Return True when export upload has nothing actionable to report.
+
+        Parameters
+        ----------
+        result:
+            Upload attempt result from the uploader.
+        scan:
+            SavedVariables scan summary.
+        reconcile:
+            Optional GitHub reconciliation summary.
+
+        Returns
+        -------
+        bool
+            True when the tray should stay quiet.
+        """
+
+        if scan.pending_matches:
+            return False
+        if result.match_count > 0:
+            return False
+        if reconcile and reconcile.uploaded_batches > 0:
+            return False
+        if reconcile and reconcile.failed_batches:
+            return False
+        if result.reason in _SILENT_EXPORT_REASONS:
+            return True
+        if (
+            reconcile
+            and reconcile.checked_batches > 0
+            and reconcile.already_synced_batches == reconcile.checked_batches
+        ):
+            return True
+        return False
 
     def _run_export_upload(self) -> None:
         """Upload pending match exports and update tray state."""
@@ -69,15 +131,35 @@ class TrayApp:
 
         result = upload_exports(self._config)
         self._config = load_config()
-        if result.uploaded:
-            self._set_status(result.reason)
-            notify("PvPLedger Sync", result.reason)
+        reconcile = result.github_reconcile
+        backfilled = bool(
+            reconcile
+            and (reconcile.uploaded_batches > 0 or reconcile.dump_repaired)
+        )
+        scan = scan_exports_for_config(self._config)
+
+        if result.uploaded and (result.match_count > 0 or backfilled):
+            message = result.reason if result.match_count > 0 else reconcile.reason if reconcile else result.reason
+            self._set_status(message)
+            notify("PvPLedger Sync", message)
             return
 
-        scan = scan_exports(self._config.wow_addons_dir)
         if scan.pending_matches:
             self._set_status(scan.note)
-        elif result.reason != "No pending match exports to upload.":
+            return
+
+        if scan.awaiting_reload_matches and result.reason in _SILENT_EXPORT_REASONS:
+            return
+
+        if backfilled and reconcile:
+            self._set_status(reconcile.reason)
+            notify("PvPLedger Sync", reconcile.reason)
+            return
+
+        if self._is_idle_export_state(result=result, scan=scan, reconcile=reconcile):
+            return
+
+        if result.reason:
             self._set_status(result.reason)
 
     def _run_cycle(self, *, force_sync: bool = False) -> None:

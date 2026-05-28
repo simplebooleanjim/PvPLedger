@@ -193,10 +193,11 @@ function PVL.LookupListedPlayer(name, realm)
     return snapshot.players[playerKey]
 end
 
---- Returns how many imported listed players are present in the snapshot index.
+--- Returns how many imported listed players are present in the snapshot player index.
+--- @param bracket string|nil
 --- @return number
-function PVL.GetImportedPlayerCount()
-    local snapshot = PVL.GetImportedSnapshot()
+function PVL.GetImportedPlayerCount(bracket)
+    local snapshot = PVL.GetImportedSnapshot(bracket)
     if not snapshot or not snapshot.players then
         return 0
     end
@@ -207,6 +208,103 @@ function PVL.GetImportedPlayerCount()
     end
 
     return count
+end
+
+--- Formats one normalized player lookup key for UI display.
+--- @param playerKey string|nil
+--- @param row table|nil Optional imported player row with a preserved displayName.
+--- @return string
+function PVL.FormatPlayerKeyDisplay(playerKey, row)
+    if row and row.displayName and row.displayName ~= "" then
+        return row.displayName
+    end
+
+    if not playerKey or playerKey == "" then
+        return "--"
+    end
+
+    local name, realm = PVL.ParsePlayerKey(playerKey)
+    local displayName = PVL.TitleCaseToken(name)
+    if realm and realm ~= "" then
+        return string.format("%s-%s", displayName, PVL.TitleCaseToken(realm))
+    end
+
+    return displayName
+end
+
+--- Returns true when one imported player row matches class/spec filters.
+--- @param row table
+--- @param classToken string|nil
+--- @param specKey string|nil
+--- @return boolean
+local function ImportedPlayerMatchesFilters(row, classToken, specKey)
+    if specKey then
+        return row.specKey == specKey
+    end
+
+    if classToken then
+        local rowClass = row.specKey and row.specKey:match("^(.-)_")
+        return rowClass == classToken
+    end
+
+    return true
+end
+
+--- Returns imported ladder player rows filtered by bracket/class/spec.
+--- @param bracket string|nil
+--- @param classToken string|nil
+--- @param specKey string|nil
+--- @param limit number|nil
+--- @return table[]
+function PVL.GetFilteredImportedLadderPlayers(bracket, classToken, specKey, limit)
+    bracket = bracket or PVL.GetActiveBracketFilter()
+    limit = limit or PVL.LADDER_VIEW_LIMIT
+
+    local snapshot = PVL.GetImportedSnapshot(bracket)
+    if not snapshot or not snapshot.players then
+        return {}
+    end
+
+    local rows = {}
+    for playerKey, row in pairs(snapshot.players) do
+        if type(row) == "table" and ImportedPlayerMatchesFilters(row, classToken, specKey) then
+            table.insert(rows, {
+                playerKey = playerKey,
+                displayName = PVL.FormatPlayerKeyDisplay(playerKey, row),
+                specKey = row.specKey,
+                rating = row.rating,
+                rank = row.rank,
+                wins = row.wins,
+                losses = row.losses,
+            })
+        end
+    end
+
+    table.sort(rows, function(left, right)
+        local leftRank = left.rank or 999999
+        local rightRank = right.rank or 999999
+        if leftRank ~= rightRank then
+            return leftRank < rightRank
+        end
+
+        local leftRating = left.rating or 0
+        local rightRating = right.rating or 0
+        if leftRating ~= rightRating then
+            return leftRating > rightRating
+        end
+
+        return (left.displayName or "") < (right.displayName or "")
+    end)
+
+    if #rows > limit then
+        local trimmed = {}
+        for index = 1, limit do
+            trimmed[index] = rows[index]
+        end
+        return trimmed
+    end
+
+    return rows
 end
 
 --- Counts how many observed match participants appear in the imported player index.
@@ -348,6 +446,28 @@ function PVL.FormatPercent(value)
     return string.format("%.1f%%", value)
 end
 
+--- Returns the UTF-8 byte length of the character starting at one position.
+--- @param str string
+--- @param startIndex number|nil
+--- @return number
+function PVL.Utf8CharByteLength(str, startIndex)
+    startIndex = startIndex or 1
+    local byte = str:byte(startIndex)
+    if not byte then
+        return 0
+    end
+
+    if byte >= 0xF0 then
+        return 4
+    elseif byte >= 0xE0 then
+        return 3
+    elseif byte >= 0xC0 then
+        return 2
+    end
+
+    return 1
+end
+
 --- Converts a token such as DEVASTATION into title case.
 --- @param token string|nil
 --- @return string
@@ -357,7 +477,14 @@ function PVL.TitleCaseToken(token)
     end
 
     local lower = string.lower(token)
-    return string.upper(string.sub(lower, 1, 1)) .. string.sub(lower, 2)
+    local firstLength = PVL.Utf8CharByteLength(lower, 1)
+    if firstLength <= 0 then
+        return lower
+    end
+
+    local first = lower:sub(1, firstLength)
+    local rest = lower:sub(firstLength + 1)
+    return string.upper(first) .. rest
 end
 
 --- Returns a readable label for a CLASS_SPEC key.
@@ -624,7 +751,7 @@ function PVL.BuildDashboardSummary()
         bracket = bracket,
         imported = snapshot,
         importedOverall = snapshot and snapshot.overall or nil,
-        importedPlayerCount = PVL.GetImportedPlayerCount(),
+        importedPlayerCount = PVL.GetImportedPlayerCount(bracket),
         listedObservedCount = listedObservedCount,
         observedPlayerCount = observedPlayerCount,
         observedTopSpecs = { observedRows[1], observedRows[2], observedRows[3] },

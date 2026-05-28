@@ -206,7 +206,7 @@ function PVL.GetBracketFilterOptions()
     return options
 end
 
---- Strips bulky player lookup tables from imported snapshots before persistence.
+--- Strips bulky player lookup tables from imported snapshots to reduce runtime memory.
 --- @param snapshot table
 --- @return table
 function PVL.CompactImportedSnapshot(snapshot)
@@ -241,7 +241,7 @@ function PVL.SetImportedSnapshot(snapshot)
     end
 
     PVL.ImportedSnapshots = PVL.ImportedSnapshots or {}
-    PVL.ImportedSnapshots[snapshot.bracket] = PVL.CompactImportedSnapshot(snapshot)
+    PVL.ImportedSnapshots[snapshot.bracket] = snapshot
 end
 
 --- Returns the imported snapshot for one bracket.

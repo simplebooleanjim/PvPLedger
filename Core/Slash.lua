@@ -105,7 +105,7 @@ local function RegisterSlashCommands()
         if command == "prune" then
             PVL.PruneImportedSnapshotPlayers()
             PVL.LoadImportedSnapshotFromPack()
-            Print("Removed bulky imported player indexes from SavedVariables.")
+            Print("Removed imported player indexes from runtime memory. Run /pvl refresh to reload ladder data.")
             return
         end
 

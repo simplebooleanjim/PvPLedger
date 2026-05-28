@@ -25,7 +25,7 @@ if %ERRORLEVEL%==0 (
 )
 
 echo Fetching all US ladder snapshots from Battle.net...
-%PYTHON% fetch_all.py --region US --write-manifest
+%PYTHON% fetch_all.py --region US --write-manifest --include-players
 if %ERRORLEVEL% NEQ 0 exit /b %ERRORLEVEL%
 
 echo.

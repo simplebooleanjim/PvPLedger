@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import json
+import re
 from dataclasses import dataclass
 from datetime import datetime, timezone
 from pathlib import Path
@@ -10,6 +11,8 @@ from urllib.error import HTTPError, URLError
 
 from .config import SyncConfig, save_config
 from .manifest import RemoteManifest, fetch_app_data, fetch_manifest, manifest_is_newer
+
+_PLAYER_INDEX_PATTERN = re.compile(r'\bspecKey = "')
 
 
 @dataclass
@@ -21,6 +24,48 @@ class SyncResult:
     manifest_generated_date: str = ""
     app_data_path: str = ""
     source: str = ""
+    player_index_count: int = 0
+
+
+def count_players_in_app_data(content: str) -> int:
+    """
+    Count indexed player rows in one AppData.lua payload.
+
+    Parameters
+    ----------
+    content:
+        Raw AppData.lua text.
+
+    Returns
+    -------
+    int
+        Number of Name-Realm player entries found.
+    """
+
+    return len(_PLAYER_INDEX_PATTERN.findall(content))
+
+
+def describe_player_index_status(player_count: int) -> str:
+    """
+    Build a short status line for the ladder player index.
+
+    Parameters
+    ----------
+    player_count:
+        Number of indexed players in AppData.lua.
+
+    Returns
+    -------
+    str
+        Human-readable status for CLI and tray output.
+    """
+
+    if player_count <= 0:
+        return (
+            "View Ladder player index: empty. The next ladder refresh must run with "
+            "--include-players before View Ladder can list names."
+        )
+    return f"View Ladder player index: {player_count:,} players."
 
 
 def repo_root_dir() -> Path:
@@ -73,18 +118,29 @@ def finalize_sync(
     app_data_path: Path,
     manifest_generated_date: str,
     source: str,
+    content: str,
 ) -> SyncResult:
     """Persist sync metadata after AppData.lua was written."""
 
+    player_index_count = count_players_in_app_data(content)
     config.last_manifest_generated_date = manifest_generated_date
     config.last_app_data_sync_at = datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
     save_config(config)
+    reason = f"AppData.lua updated from {source}."
+    if player_index_count <= 0:
+        reason = (
+            f"{reason} Ladder aggregates synced, but the player list is still empty. "
+            "View Ladder needs a ladder refresh with --include-players."
+        )
+    else:
+        reason = f"{reason} {describe_player_index_status(player_index_count)}"
     return SyncResult(
         updated=True,
-        reason=f"AppData.lua updated from {source}.",
+        reason=reason,
         manifest_generated_date=manifest_generated_date,
         app_data_path=str(app_data_path),
         source=source,
+        player_index_count=player_index_count,
     )
 
 
@@ -118,6 +174,7 @@ def sync_app_data_from_local(config: SyncConfig, *, force: bool = False) -> Sync
         app_data_path=config.app_data_path,
         manifest_generated_date=manifest.generated_date,
         source="local-repo",
+        content=content,
     )
 
 
@@ -145,6 +202,7 @@ def sync_app_data_from_remote(config: SyncConfig, *, force: bool = False) -> Syn
         app_data_path=config.app_data_path,
         manifest_generated_date=manifest.generated_date,
         source="github",
+        content=app_data,
     )
 
 
@@ -178,3 +236,30 @@ def sync_app_data(config: SyncConfig, *, force: bool = False, local_only: bool =
                 f"GitHub sync failed ({exc}) and local fallback also failed: {local_result.reason}"
             ),
         )
+
+
+def inspect_installed_app_data(config: SyncConfig) -> tuple[int, str]:
+    """
+    Read the installed AppHelper AppData.lua and summarize player index coverage.
+
+    Parameters
+    ----------
+    config:
+        Loaded sync configuration.
+
+    Returns
+    -------
+    tuple[int, str]
+        Player count and a short status line for CLI/tray output.
+    """
+
+    path = config.app_data_path
+    if not path.exists():
+        return 0, "Installed AppData.lua: not found."
+
+    content = path.read_text(encoding="utf-8")
+    if not validate_app_data(content):
+        return 0, "Installed AppData.lua: invalid bridge payload."
+
+    player_count = count_players_in_app_data(content)
+    return player_count, describe_player_index_status(player_count)

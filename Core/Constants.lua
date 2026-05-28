@@ -152,6 +152,12 @@ PVL.MAX_CR_HISTORY = 1000
 --- Number of recent CR history rows shown in the main UI panel.
 PVL.CR_HISTORY_UI_LIMIT = 15
 
+--- Maximum listed players shown in the ladder browser panel.
+PVL.LADDER_VIEW_LIMIT = 1000
+
+--- Seconds to suppress redundant queue-screen CR snapshots after a match entry.
+PVL.CR_SNAPSHOT_SUPPRESS_SECONDS = 120
+
 PVL.COMBAT_ANALYSIS_STATS = {
     { value = "damage", label = "Damage Done", field = "damage", useCombatAmount = true, rateLabel = "DPS" },
     { value = "healing", label = "Healing Done", field = "healing", useCombatAmount = true, rateLabel = "HPS" },

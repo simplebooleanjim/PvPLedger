@@ -30,7 +30,7 @@ jobs:
         env:
           BNET_CLIENT_ID: ${{ secrets.BNET_CLIENT_ID }}
           BNET_CLIENT_SECRET: ${{ secrets.BNET_CLIENT_SECRET }}
-        run: python fetch_all.py --region US --write-manifest
+        run: python fetch_all.py --region US --write-manifest --include-players
 
       - name: Commit refreshed snapshot files
         uses: stefanzweifel/git-auto-commit-action@v7

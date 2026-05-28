@@ -62,6 +62,12 @@ def parse_args() -> argparse.Namespace:
         default=True,
         help="Mirror refreshed snapshots into the PvPLedger-Data-US companion addon folder.",
     )
+    parser.add_argument(
+        "--include-players",
+        action=argparse.BooleanOptionalAction,
+        default=True,
+        help="Include a Name-Realm player lookup table in each ladder snapshot.",
+    )
     return parser.parse_args()
 
 
@@ -154,6 +160,7 @@ def main() -> int:
             enrich_seramate=args.enrich_seramate,
             request_delay=args.request_delay,
             seramate_delay=args.seramate_delay,
+            include_players=args.include_players,
         )
         results.append(result)
 

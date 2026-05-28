@@ -143,10 +143,17 @@ function MatchCollector.OnMatchActive()
     end
 
     MatchCollector.pendingComplete = nil
+    local startCr = nil
+    if PVL.RatedInfo then
+        PVL.RatedInfo.RefreshAll()
+        startCr = MatchCollector.GetAccessibleNumber(PVL.RatedInfo.GetCurrentRating(bracket))
+    end
+
     MatchCollector.activeMatch = {
         bracket = bracket,
         startedAt = time(),
         mapID = C_Map.GetBestMapForUnit("player"),
+        playerCrBefore = startCr,
     }
 
     if PVL.CombatLogCollector then
@@ -891,6 +898,7 @@ function MatchCollector.OnMatchComplete()
 
     MatchCollector.pendingComplete = {
         bracket = bracket,
+        playerCrBefore = MatchCollector.activeMatch and MatchCollector.activeMatch.playerCrBefore or nil,
     }
     MatchCollector.ScheduleCompleteAttempt(1)
 end
@@ -913,14 +921,74 @@ function MatchCollector.TryFinalizeMatchComplete(attempt)
     end
 
     MatchCollector.pendingComplete = nil
-    MatchCollector.FinalizeMatchComplete(pending.bracket, roster, localPlayer)
+    MatchCollector.FinalizeMatchComplete(
+        pending.bracket,
+        roster,
+        localPlayer,
+        pending.playerCrBefore
+    )
+end
+
+--- Returns match CR fields using pre-match queue CR plus scoreboard rating change.
+--- @param localPlayer table|nil
+--- @param bracket string|nil
+--- @param matchStartCr number|nil CR captured from the PvP queue menu at match start.
+--- @return number|nil crBefore
+--- @return number|nil crAfter
+function MatchCollector.ResolveMatchCrFields(localPlayer, bracket, matchStartCr)
+    if not localPlayer then
+        return MatchCollector.GetAccessibleNumber(matchStartCr), MatchCollector.GetAccessibleNumber(matchStartCr)
+    end
+
+    local ratingChange = MatchCollector.GetAccessibleNumber(localPlayer.ratingChange)
+    local scoreboardAfter = MatchCollector.GetAccessibleNumber(localPlayer.rating)
+    local scoreboardBefore = nil
+    if scoreboardAfter and ratingChange then
+        scoreboardBefore = scoreboardAfter - ratingChange
+    end
+
+    local crBefore = MatchCollector.GetAccessibleNumber(matchStartCr)
+    local crAfter = nil
+
+    if crBefore and ratingChange then
+        crAfter = crBefore + ratingChange
+    end
+
+    if PVL.RatedInfo then
+        PVL.RatedInfo.RefreshAll()
+        local ratedAfter = MatchCollector.GetAccessibleNumber(PVL.RatedInfo.GetCurrentRating(bracket))
+        if ratedAfter then
+            if crBefore and ratingChange then
+                -- Keep start CR + scoreboard delta when we captured a trusted pre-match rating.
+                crAfter = crBefore + ratingChange
+            else
+                crAfter = ratedAfter
+                if ratingChange then
+                    crBefore = ratedAfter - ratingChange
+                end
+            end
+        end
+    end
+
+    if not crBefore then
+        crBefore = scoreboardBefore
+    end
+    if not crAfter then
+        crAfter = scoreboardAfter
+    end
+    if crBefore and ratingChange and not crAfter then
+        crAfter = crBefore + ratingChange
+    end
+
+    return crBefore, crAfter
 end
 
 --- Persists a completed match and updates character rating context.
 --- @param bracket string|nil
 --- @param roster table[]
 --- @param localPlayer table|nil
-function MatchCollector.FinalizeMatchComplete(bracket, roster, localPlayer)
+--- @param matchStartCr number|nil
+function MatchCollector.FinalizeMatchComplete(bracket, roster, localPlayer, matchStartCr)
     local db = PVL.GetDB()
     if not db or not db.settings.enabled then
         return
@@ -933,26 +1001,32 @@ function MatchCollector.FinalizeMatchComplete(bracket, roster, localPlayer)
 
     local charDb = PVL.GetCharDB()
     local mmrAfter, mmrBefore, mmrKind = MatchCollector.ResolveObservedMmr(localPlayer, bracket)
+    local playerCrBefore, playerCrAfter = MatchCollector.ResolveMatchCrFields(
+        localPlayer,
+        bracket,
+        matchStartCr
+    )
 
     if localPlayer then
+        local storedCr = playerCrAfter or localPlayer.rating
         if bracket == PVL.BRACKETS.SHUFFLE then
-            charDb.lastShuffleCR = localPlayer.rating
+            charDb.lastShuffleCR = storedCr
             charDb.lastShuffleMMR = mmrAfter
             charDb.lastShuffleMMRKind = mmrKind
         elseif bracket == PVL.BRACKETS.RBG then
-            charDb.lastRbgCR = localPlayer.rating
+            charDb.lastRbgCR = storedCr
             charDb.lastRbgMMR = mmrAfter
             charDb.lastRbgMMRKind = mmrKind
         elseif bracket == PVL.BRACKETS.ARENA_2V2 then
-            charDb.lastArena2v2CR = localPlayer.rating
+            charDb.lastArena2v2CR = storedCr
             charDb.lastArena2v2MMR = mmrAfter
             charDb.lastArena2v2MMRKind = mmrKind
         elseif bracket == PVL.BRACKETS.ARENA_3V3 then
-            charDb.lastArena3v3CR = localPlayer.rating
+            charDb.lastArena3v3CR = storedCr
             charDb.lastArena3v3MMR = mmrAfter
             charDb.lastArena3v3MMRKind = mmrKind
         else
-            charDb.lastBlitzCR = localPlayer.rating
+            charDb.lastBlitzCR = storedCr
             charDb.lastBlitzMMR = mmrAfter
             charDb.lastBlitzMMRKind = mmrKind
         end
@@ -983,8 +1057,8 @@ function MatchCollector.FinalizeMatchComplete(bracket, roster, localPlayer)
         timestamp = time(),
         mapID = MatchCollector.activeMatch and MatchCollector.activeMatch.mapID or C_Map.GetBestMapForUnit("player"),
         won = MatchCollector.ResolveLocalMatchWon(localPlayer),
-        playerCRBefore = localPlayer and localPlayer.rating and (localPlayer.rating - (localPlayer.ratingChange or 0)) or nil,
-        playerCRAfter = localPlayer and localPlayer.rating or nil,
+        playerCRBefore = playerCrBefore,
+        playerCRAfter = playerCrAfter,
         playerMMRBefore = mmrBefore,
         playerMMRAfter = mmrAfter,
         playerMMRKind = mmrKind,
@@ -1016,7 +1090,6 @@ function MatchCollector.FinalizeMatchComplete(bracket, roster, localPlayer)
 
     if PVL.RatedInfo then
         PVL.RatedInfo.RequestUpdate()
-        PVL.RatedInfo.RefreshAll()
     end
 
     if PVL.UI and PVL.UI.Refresh then

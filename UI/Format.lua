@@ -188,6 +188,24 @@ function Format.CombatMeterRate(value)
     return string.format("%.0f", value)
 end
 
+--- Returns a player name wrapped in its class color when spec/class is known.
+--- @param displayName string|nil
+--- @param specKey string|nil
+--- @return string
+function Format.PlayerName(displayName, specKey)
+    displayName = displayName or "--"
+    if not specKey then
+        return displayName
+    end
+
+    local classToken = specKey:match("^(.-)_")
+    if not classToken then
+        return displayName
+    end
+
+    return Format.Colorize(Format.GetClassColorHex(classToken), displayName)
+end
+
 --- Returns a readable spec label with the class name colorized.
 --- @param specKey string|nil
 --- @return string
