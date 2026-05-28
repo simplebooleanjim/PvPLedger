@@ -2,6 +2,9 @@
   "schemaVersion": 1,
   "updatedAt": null,
   "source": "pvpledger-sync",
+  "region": null,
+  "character": null,
+  "addonVersion": null,
   "matchCount": 0,
   "matches": []
 }
