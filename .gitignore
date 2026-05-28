@@ -21,3 +21,8 @@ Thumbs.db
 
 # WoW local overrides (keep out of repo if you add these later)
 *.lua.bak
+
+# PyInstaller (Sync installer build)
+Sync/build/
+Sync/dist/
+Sync/release-config.json

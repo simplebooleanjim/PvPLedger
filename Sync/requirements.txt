@@ -1,4 +1,7 @@
-# PvPLedger Sync uses Python stdlib only for v0.1.
-# Optional future deps:
-# pystray
-# pillow
+pystray>=0.19.5
+pillow>=10.0.0
+winotify>=1.1.0
+slpp>=1.2.3
+
+# Build tooling (installer.exe)
+pyinstaller>=6.0.0
