@@ -50,6 +50,13 @@ LISTED_RANK_CAP = 1000
 TITLE_CUTOFF_PERCENTILES: tuple[float, ...] = (0.1, 0.5, 1.0, 3.0)
 RATED_POPULATION_FLOOR = 1000
 
+# Per-spec Rank 1 titles (Solo Shuffle / Battleground Blitz) are awarded to at
+# least a handful of players per specialization even when 0.1% of that spec's
+# population would round to fewer. Blizzard guarantees a minimum number of Rank 1
+# slots per spec, so the per-spec 0.1% cutoff is floored to this many ranks.
+PER_SPEC_RANK1_MIN_SLOTS = 3
+PER_SPEC_RANK1_PERCENTILE = 0.1
+
 
 @dataclass
 class PlayerRow:
@@ -63,6 +70,7 @@ class PlayerRow:
     wins: int = 0
     losses: int = 0
     rank: int = 0
+    faction: str = ""
 
 
 @dataclass
@@ -211,6 +219,7 @@ def compute_title_cutoffs(
     all_ratings: list[int],
     percentiles: tuple[float, ...] = TITLE_CUTOFF_PERCENTILES,
     floor: int = RATED_POPULATION_FLOOR,
+    rank_floors: dict[float, int] | None = None,
 ) -> list[dict[str, Any]]:
     """Compute the rating threshold for each seasonal title percentile.
 
@@ -222,6 +231,8 @@ def compute_title_cutoffs(
     :param all_ratings: Every ranked player's rating from the full leaderboard.
     :param percentiles: Top-percent thresholds to evaluate (e.g. 0.1 for 0.1%).
     :param floor: Minimum rating counted toward the rated population.
+    :param rank_floors: Optional minimum cutoff rank per percentile, e.g.
+        ``{0.1: 3}`` to guarantee at least 3 Rank 1 slots. Clamped to population.
     :return: One ``{pct, rank, rating}`` entry per percentile, or an empty list
         when no rated players are present.
     """
@@ -237,6 +248,10 @@ def compute_title_cutoffs(
     cutoffs: list[dict[str, Any]] = []
     for percentile in percentiles:
         rank = max(1, math.ceil((percentile / 100.0) * population))
+        if rank_floors:
+            minimum = rank_floors.get(percentile)
+            if minimum:
+                rank = max(rank, minimum)
         rank = min(rank, population)
         cutoffs.append({
             "pct": percentile,
@@ -244,6 +259,45 @@ def compute_title_cutoffs(
             "rating": population_ratings[rank - 1],
         })
     return cutoffs
+
+
+def compute_spec_cutoffs(
+    spec_ratings: dict[str, list[int]],
+    percentiles: tuple[float, ...] = TITLE_CUTOFF_PERCENTILES,
+    floor: int = RATED_POPULATION_FLOOR,
+) -> dict[str, dict[str, Any]]:
+    """Compute per-specialization title cutoffs for per-spec brackets.
+
+    Solo Shuffle and Battleground Blitz award Rank 1 titles to the top N% of
+    *each specialization's* own ladder, not the combined ladder. This builds a
+    cutoff table keyed by spec so the addon can resolve the threshold for the
+    player's current spec.
+
+    :param spec_ratings: Mapping of ``spec_key`` to that spec's full rating list.
+    :param percentiles: Top-percent thresholds to evaluate (e.g. 0.1 for 0.1%).
+    :param floor: Minimum rating counted toward each spec's rated population.
+    :return: Mapping of ``spec_key`` to ``{population, cutoffs}``, skipping specs
+        with no rated players at or above ``floor``.
+    """
+
+    rank_floors = {PER_SPEC_RANK1_PERCENTILE: PER_SPEC_RANK1_MIN_SLOTS}
+    result: dict[str, dict[str, Any]] = {}
+    for spec_key, ratings in spec_ratings.items():
+        if not spec_key:
+            continue
+        cutoffs = compute_title_cutoffs(
+            ratings,
+            percentiles=percentiles,
+            floor=floor,
+            rank_floors=rank_floors,
+        )
+        if not cutoffs:
+            continue
+        result[spec_key] = {
+            "population": rated_population(ratings, floor=floor),
+            "cutoffs": cutoffs,
+        }
+    return result
 
 
 def aggregate_by_class(spec_aggs: dict[str, SpecAggregate]) -> dict[str, SpecAggregate]:
@@ -317,6 +371,7 @@ def build_player_index(players: list[PlayerRow]) -> dict[str, dict[str, Any]]:
             "rank": player.rank,
             "wins": player.wins,
             "losses": player.losses,
+            "faction": player.faction,
         }
 
         if existing is None or player.rating > existing["rating"]:
@@ -414,6 +469,21 @@ def parse_savedvars_lua(path: Path) -> dict[str, Any]:
     return {"rawLength": len(match.group(1)), "path": str(path)}
 
 
+def entry_faction(entry: dict[str, Any]) -> str:
+    """Return the player's faction ("HORDE"/"ALLIANCE") from a leaderboard entry.
+
+    :param entry: Raw Battle.net leaderboard entry.
+    :return: Uppercase faction token, or "" when unknown.
+    """
+
+    faction = entry.get("faction")
+    if isinstance(faction, dict):
+        faction_type = faction.get("type")
+        if faction_type in ("HORDE", "ALLIANCE"):
+            return faction_type
+    return ""
+
+
 def entry_to_player_row(entry: dict[str, Any], spec_definition) -> PlayerRow | None:
     """Convert one Battle.net leaderboard entry into a PlayerRow."""
 
@@ -438,6 +508,7 @@ def entry_to_player_row(entry: dict[str, Any], spec_definition) -> PlayerRow | N
         wins=wins,
         losses=losses,
         rank=rank,
+        faction=entry_faction(entry),
     )
 
 
@@ -465,6 +536,7 @@ def entry_to_rbg_player_row(entry: dict[str, Any]) -> PlayerRow | None:
         wins=wins,
         losses=losses,
         rank=rank,
+        faction=entry_faction(entry),
     )
 
 
@@ -489,11 +561,12 @@ def fetch_blizzard_single_ladder_players(
     api_slug: str,
     region: str,
     season_id: int | None = None,
-) -> tuple[list[PlayerRow], int, list[str], list[int]]:
+) -> tuple[list[PlayerRow], int, list[str], list[int], dict[str, list[int]]]:
     """Fetch listed players from one combined bracket leaderboard such as RBG.
 
-    :return: ``(listed_players, season_id, fetched_slugs, all_ratings)`` where
-        ``all_ratings`` covers the full ladder for title-cutoff math.
+    :return: ``(listed_players, season_id, fetched_slugs, all_ratings, spec_ratings)``
+        where ``all_ratings`` covers the full combined ladder for title-cutoff math
+        and ``spec_ratings`` is empty (combined ladders have no per-spec cutoffs).
     """
 
     client = create_blizzard_client(region)
@@ -513,7 +586,7 @@ def fetch_blizzard_single_ladder_players(
     if not players:
         raise BlizzardApiError(f"No listed {bracket} players fetched from Battle.net.")
 
-    return players, resolved_season_id, [api_slug], all_ratings
+    return players, resolved_season_id, [api_slug], all_ratings, {}
 
 
 def fetch_blizzard_bracket_players(
@@ -523,11 +596,12 @@ def fetch_blizzard_bracket_players(
     season_id: int | None = None,
     request_delay: float = 0.15,
     max_specs: int | None = None,
-) -> tuple[list[PlayerRow], int, list[str], list[int]]:
+) -> tuple[list[PlayerRow], int, list[str], list[int], dict[str, list[int]]]:
     """Fetch listed players for all known specs in one bracket from Battle.net.
 
-    :return: ``(listed_players, season_id, fetched_slugs, all_ratings)`` where
-        ``all_ratings`` pools the full ladder across specs for title-cutoff math.
+    :return: ``(listed_players, season_id, fetched_slugs, all_ratings, spec_ratings)``
+        where ``all_ratings`` pools the full ladder across specs and ``spec_ratings``
+        maps each ``spec_key`` to its own full rating list for per-spec cutoffs.
     """
 
     bracket = bracket.lower()
@@ -551,6 +625,7 @@ def fetch_blizzard_bracket_players(
     fetched_slugs: list[str] = []
     skipped_slugs: list[str] = []
     all_ratings: list[int] = []
+    spec_ratings: dict[str, list[int]] = {}
 
     for index, spec_definition in enumerate(specs, start=1):
         api_slug = spec_definition.api_slug
@@ -562,7 +637,9 @@ def fetch_blizzard_bracket_players(
         print(f"[{index}/{len(specs)}] fetch {api_slug}...")
         entries = client.fetch_leaderboard_entries(resolved_season_id, api_slug)
         fetched_slugs.append(api_slug)
-        all_ratings.extend(collect_entry_ratings(entries))
+        entry_ratings = collect_entry_ratings(entries)
+        all_ratings.extend(entry_ratings)
+        spec_ratings.setdefault(spec_definition.spec_key, []).extend(entry_ratings)
 
         for entry in entries:
             player = entry_to_player_row(entry, spec_definition)
@@ -580,7 +657,7 @@ def fetch_blizzard_bracket_players(
             f"and that {bracket} bracket slugs match spec_catalog.py."
         )
 
-    return players, resolved_season_id, fetched_slugs, all_ratings
+    return players, resolved_season_id, fetched_slugs, all_ratings, spec_ratings
 
 
 def fetch_blizzard_blitz_players(
@@ -589,7 +666,7 @@ def fetch_blizzard_blitz_players(
     season_id: int | None = None,
     request_delay: float = 0.15,
     max_specs: int | None = None,
-) -> tuple[list[PlayerRow], int, list[str], list[int]]:
+) -> tuple[list[PlayerRow], int, list[str], list[int], dict[str, list[int]]]:
     """Fetch listed Blitz players for all known specs from Battle.net."""
 
     return fetch_blizzard_bracket_players(
@@ -611,11 +688,14 @@ def render_lua_snapshot(
     include_players: bool = False,
     title_cutoffs: list[dict[str, Any]] | None = None,
     rated_population_count: int | None = None,
+    spec_cutoffs: dict[str, dict[str, Any]] | None = None,
 ) -> str:
     """Render a compact Lua snapshot file for the addon.
 
     :param title_cutoffs: Seasonal title percentile thresholds for ``overall``.
     :param rated_population_count: Full rated population used for percentiles.
+    :param spec_cutoffs: Per-spec title cutoffs for per-spec brackets (Shuffle,
+        Blitz), keyed by ``spec_key`` -> ``{population, cutoffs}``.
     """
 
     spec_aggs, overall = aggregate_players(players)
@@ -675,6 +755,29 @@ def render_lua_snapshot(
             "            },",
         ])
     lines.append("        },")
+
+    if spec_cutoffs:
+        lines.append("        specCutoffs = {")
+        for spec_key in sorted(spec_cutoffs):
+            spec_entry = spec_cutoffs[spec_key]
+            lines.extend([
+                f'            ["{spec_key}"] = {{',
+                f"                population = {spec_entry['population']},",
+                "                cutoffs = {",
+            ])
+            for cutoff in spec_entry["cutoffs"]:
+                lines.extend([
+                    "                    {",
+                    f'                        pct = {lua_number(cutoff["pct"])},',
+                    f'                        rank = {cutoff["rank"]},',
+                    f'                        rating = {cutoff["rating"]},',
+                    "                    },",
+                ])
+            lines.extend([
+                "                },",
+                "            },",
+            ])
+        lines.append("        },")
 
     lines.extend([
         "    },",
@@ -737,6 +840,7 @@ def render_lua_snapshot(
             f"            rank = {row['rank']},",
             f"            wins = {row['wins']},",
             f"            losses = {row['losses']},",
+            f'            faction = "{row["faction"]}",',
             "        },",
         ])
 
@@ -798,7 +902,7 @@ def fetch_and_write_snapshot(
     """Fetch one bracket from Battle.net and write a compact Lua snapshot file."""
 
     bracket = bracket.lower()
-    players, season, fetched_slugs, all_ratings = fetch_blizzard_bracket_players(
+    players, season, fetched_slugs, all_ratings, spec_ratings = fetch_blizzard_bracket_players(
         bracket=bracket,
         region=region,
         season_id=season_id,
@@ -842,6 +946,14 @@ def fetch_and_write_snapshot(
         f"from {population} rated players (>= {RATED_POPULATION_FLOOR})."
     )
 
+    spec_cutoffs = None
+    if bracket in PER_SPEC_BRACKETS and spec_ratings:
+        spec_cutoffs = compute_spec_cutoffs(spec_ratings)
+        print(
+            f"Per-spec cutoffs: computed for {len(spec_cutoffs)} specialization(s) "
+            f"(Rank 1 titles are awarded per spec for {bracket})."
+        )
+
     lua_text = render_lua_snapshot(
         region=region,
         bracket=bracket,
@@ -851,6 +963,7 @@ def fetch_and_write_snapshot(
         include_players=include_players,
         title_cutoffs=title_cutoffs,
         rated_population_count=population,
+        spec_cutoffs=spec_cutoffs,
     )
     output.parent.mkdir(parents=True, exist_ok=True)
     output.write_text(lua_text, encoding="utf-8")
@@ -954,6 +1067,7 @@ def main() -> None:
                 wins=int(row.get("wins", 0)),
                 losses=int(row.get("losses", 0)),
                 rank=int(row.get("rank", 0)),
+                faction=str(row.get("faction", "")),
             )
             for row in payload
         ]

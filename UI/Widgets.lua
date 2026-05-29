@@ -5,6 +5,44 @@ local PVL = PvPLedger
 PVL.UI = PVL.UI or {}
 local UI = PVL.UI
 
+--- Texture path for the PvPLedger brand logo (shipped as a TGA under Media/).
+UI.LOGO_TEXTURE = "Interface\\AddOns\\PvPLedger\\Media\\PvPLedgerLogo"
+
+--- Stamps the PvPLedger logo onto a window's title bar for consistent branding.
+--- @param frame Frame Window created from a Basic frame template.
+--- @param size number|nil Logo edge size in pixels (default 22).
+--- @return Texture logo The created brand texture.
+function UI.AddWindowLogo(frame, size)
+    size = size or 22
+
+    local logo = frame:CreateTexture(nil, "OVERLAY")
+    logo:SetTexture(UI.LOGO_TEXTURE)
+    logo:SetSize(size, size)
+    logo:SetPoint("TOPLEFT", frame, "TOPLEFT", 6, -2)
+
+    frame.brandLogo = logo
+    return logo
+end
+
+--- Adds a large, faint centered logo watermark behind a window's content.
+--- Anchored to the frame's inset so it sits above the dark backdrop but below
+--- the scrolling text, giving each page subtle branding without hurting reading.
+--- @param frame Frame Window created from a Basic frame template.
+--- @param size number|nil Watermark edge size in pixels (default 240).
+--- @param alpha number|nil Opacity 0-1 (default 0.08).
+--- @return Texture watermark The created watermark texture.
+function UI.AddWindowWatermark(frame, size, alpha)
+    local host = frame.Inset or frame
+    local watermark = host:CreateTexture(nil, "ARTWORK")
+    watermark:SetTexture(UI.LOGO_TEXTURE)
+    watermark:SetSize(size or 240, size or 240)
+    watermark:SetPoint("CENTER", host, "CENTER", 0, 0)
+    watermark:SetAlpha(alpha or 0.08)
+
+    frame.watermark = watermark
+    return watermark
+end
+
 --- Shows or hides a scroll frame scrollbar when content does not overflow.
 --- @param scrollFrame ScrollFrame|nil
 --- @return boolean needsScroll

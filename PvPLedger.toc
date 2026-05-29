@@ -32,5 +32,6 @@ UI/TitleView.lua
 UI/CombatMeter.lua
 UI/Settings.lua
 UI/MainFrame.lua
+UI/MinimapButton.lua
 Core/Core.lua
 Core/Slash.lua

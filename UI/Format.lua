@@ -189,6 +189,49 @@ function Format.CombatMeterRate(value)
     return string.format("%.0f", value)
 end
 
+--- Faction crest texture paths keyed by normalized faction name.
+Format.FACTION_ICONS = {
+    Alliance = "Interface\\WorldStateFrame\\AllianceIcon",
+    Horde = "Interface\\WorldStateFrame\\HordeIcon",
+}
+
+--- Returns an inline gold-star icon marking end-of-season feats of strength.
+--- Uses a texture rather than a Unicode star, which the default WoW font cannot
+--- render (it would show as a blank "missing glyph" box).
+--- @param size number|nil Icon edge size in pixels (default 12).
+--- @return string
+function Format.FeatIcon(size)
+    size = size or 12
+    return string.format("|TInterface\\COMMON\\FavoritesIcon:%d:%d|t", size, size)
+end
+
+--- Returns an inline faction crest icon for a player faction token.
+--- Accepts "HORDE"/"ALLIANCE" or "Horde"/"Alliance"; returns "" when unknown.
+--- @param faction string|nil Faction token.
+--- @param size number|nil Icon edge size in pixels (default 14).
+--- @return string
+function Format.FactionIcon(faction, size)
+    if not faction or faction == "" then
+        return ""
+    end
+
+    size = size or 14
+    local key
+    local upper = string.upper(faction)
+    if upper == "HORDE" then
+        key = "Horde"
+    elseif upper == "ALLIANCE" then
+        key = "Alliance"
+    end
+
+    local texture = key and Format.FACTION_ICONS[key]
+    if not texture then
+        return ""
+    end
+
+    return string.format("|T%s:%d:%d|t ", texture, size, size)
+end
+
 --- Returns a player name wrapped in its class color when spec/class is known.
 --- @param displayName string|nil
 --- @param specKey string|nil

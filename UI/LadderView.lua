@@ -10,7 +10,7 @@ UI.LadderView = UI.LadderView or {}
 local LadderView = UI.LadderView
 
 LadderView.frame = LadderView.frame or nil
-local LADDER_VIEW_LAYOUT_VERSION = 1
+local LADDER_VIEW_LAYOUT_VERSION = 2
 
 local FRAME_WIDTH = 560
 local FRAME_HEIGHT = 520
@@ -48,7 +48,7 @@ function LadderView.BuildText(filters)
     }
 
     if not snapshot then
-        table.insert(lines, Format.Muted("No imported ladder snapshot is loaded for this bracket."))
+        table.insert(lines, Format.Muted("No ladder data is loaded for this bracket."))
         return table.concat(lines, "\n")
     end
 
@@ -128,10 +128,11 @@ function LadderView.BuildText(filters)
             recordText = Format.Muted(string.format("%s-%s", Format.Count(row.wins or 0), Format.Count(row.losses or 0)))
         end
 
+        local nameText = Format.FactionIcon(row.faction) .. Format.PlayerName(row.displayName, row.specKey)
         table.insert(lines, string.format(
             "%s  %s  %s  %s  %s",
             Format.Muted(tostring(row.rank or "--")),
-            Format.PlayerName(row.displayName, row.specKey),
+            nameText,
             specLabel,
             Format.Rating(row.rating),
             recordText
@@ -165,9 +166,12 @@ function LadderView.CreateFrame()
 
     UI.RegisterEscapeToClose(frame)
 
+    UI.AddWindowLogo(frame)
+    UI.AddWindowWatermark(frame)
+
     frame.title = frame:CreateFontString(nil, "OVERLAY", "GameFontHighlight")
     frame.title:SetPoint("TOP", frame.TitleBg, "TOP", 0, -3)
-    frame.title:SetText("Imported Ladder")
+    frame.title:SetText("Ladder")
 
     frame.header = frame:CreateFontString(nil, "OVERLAY", "GameFontNormal")
     frame.header:SetPoint("TOPLEFT", frame, "TOPLEFT", PADDING, -34)
@@ -206,10 +210,28 @@ function LadderView.Refresh()
     frame.setText(LadderView.BuildText(filters))
 end
 
+--- Positions the ladder window to the right of the main window when possible.
+function LadderView.PositionDefault()
+    local frame = LadderView.frame
+    if not frame then
+        return
+    end
+
+    frame:ClearAllPoints()
+    local main = PVL.UI and PVL.UI.frame
+    if main and main:IsShown() then
+        frame:SetPoint("TOPLEFT", main, "TOPRIGHT", 8, 0)
+    else
+        frame:SetPoint("CENTER", UIParent, "CENTER", 360, 0)
+    end
+end
+
 --- Shows the ladder browser window.
 function LadderView.Show()
     LadderView.Refresh()
+    LadderView.PositionDefault()
     LadderView.frame:Show()
+    LadderView.frame:Raise()
 end
 
 --- Hides the ladder browser window.

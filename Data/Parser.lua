@@ -286,6 +286,7 @@ function PVL.GetFilteredImportedLadderPlayers(bracket, classToken, specKey, limi
                 rank = row.rank,
                 wins = row.wins,
                 losses = row.losses,
+                faction = row.faction,
             })
         end
     end

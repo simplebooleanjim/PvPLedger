@@ -108,12 +108,12 @@ PVL.TITLE_DEFINITIONS = {
         {
             id = "gladiator",
             name = "Gladiator",
-            kind = "percentile",
-            percentile = 0.5,
+            kind = "rating",
+            rating = 2400,
             wins = 50,
             color = C.GLADIATOR,
             feat = true,
-            note = "Top 0.5% of 3v3, plus 50 wins at Elite (2400+).",
+            note = "Win 50 games at Elite (2400+) on the 3v3 ladder; not a percentile.",
         },
         {
             id = "rank1",
@@ -123,7 +123,7 @@ PVL.TITLE_DEFINITIONS = {
             wins = 150,
             color = C.RANK_ONE,
             feat = true,
-            note = "Top 0.1% of 3v3 at season end, 150 wins required.",
+            note = "Top 0.1% of the overall 3v3 ladder at season end, 150 wins required.",
         },
     }),
 
@@ -148,7 +148,7 @@ PVL.TITLE_DEFINITIONS = {
             wins = 50,
             color = C.RANK_ONE,
             feat = true,
-            note = "Top 0.1% of Solo Shuffle at season end, 50 wins required.",
+            note = "Top 0.1% of your specialization's Solo Shuffle ladder (at least the top few per spec), 50 wins required.",
         },
     }),
 
@@ -188,7 +188,7 @@ PVL.TITLE_DEFINITIONS = {
             wins = 50,
             color = C.HERO,
             feat = true,
-            note = "Top 0.5% of the Battleground Blitz ladder, 50 wins required.",
+            note = "Top 0.5% of your specialization's Battleground Blitz ladder, 50 wins required.",
         },
         {
             id = "rank1",
@@ -200,7 +200,7 @@ PVL.TITLE_DEFINITIONS = {
             wins = 50,
             color = C.RANK_ONE,
             feat = true,
-            note = "Top 0.1% of Battleground Blitz at season end, 50 wins required.",
+            note = "Top 0.1% of your specialization's Battleground Blitz ladder (at least the top few per spec), 50 wins required.",
         },
     }),
 }
@@ -239,6 +239,78 @@ local function FindSnapshotTitleCutoff(snapshot, percentile)
     end
 
     return nil
+end
+
+--- Returns true when the snapshot ships per-specialization cutoffs.
+--- Solo Shuffle and Battleground Blitz award Rank 1 titles per spec, so their
+--- snapshots include ``overall.specCutoffs`` keyed by spec.
+--- @param snapshot table|nil Imported ladder snapshot.
+--- @return boolean
+local function SnapshotHasSpecCutoffs(snapshot)
+    local overall = snapshot and snapshot.overall
+    return overall ~= nil and type(overall.specCutoffs) == "table"
+end
+
+--- Finds the per-spec cutoff entry for one percentile within one spec.
+--- @param snapshot table|nil Imported ladder snapshot.
+--- @param specKey string|nil Player spec key (e.g. "WARRIOR_FURY").
+--- @param percentile number Top-percent threshold (e.g. 0.1).
+--- @return table|nil cutoff { pct, rank, rating }, number|nil specPopulation
+local function FindSpecTitleCutoff(snapshot, specKey, percentile)
+    if not specKey then
+        return nil, nil
+    end
+
+    local overall = snapshot and snapshot.overall
+    local specCutoffs = overall and overall.specCutoffs
+    if type(specCutoffs) ~= "table" then
+        return nil, nil
+    end
+
+    local specEntry = specCutoffs[specKey]
+    if type(specEntry) ~= "table" or type(specEntry.cutoffs) ~= "table" then
+        return nil, nil
+    end
+
+    for _, entry in ipairs(specEntry.cutoffs) do
+        if entry.pct and math.abs(entry.pct - percentile) < 0.001 then
+            return entry, specEntry.population
+        end
+    end
+
+    return nil, specEntry.population
+end
+
+--- Resolves the player's current specialization key and localized name.
+--- The key matches the collector format (``CLASS_SPEC``, e.g. "WARRIOR_FURY")
+--- so it can be matched against per-spec cutoff data.
+--- @return string|nil specKey, string|nil specName
+function PVL.GetPlayerSpecInfo()
+    if not GetSpecialization or not GetSpecializationInfo or not UnitClass then
+        return nil, nil
+    end
+
+    local specIndex = GetSpecialization()
+    if not specIndex then
+        return nil, nil
+    end
+
+    local _, classToken = UnitClass("player")
+    if not classToken then
+        return nil, nil
+    end
+
+    local _, specName = GetSpecializationInfo(specIndex)
+    if not specName or specName == "" then
+        return nil, nil
+    end
+
+    local specToken = PVL.NormalizeSpecKey(classToken, specName)
+    if not specToken then
+        return nil, specName
+    end
+
+    return PVL.MakeSpecKey(classToken, specToken), specName
 end
 
 --- Interpolates the rating at one ladder rank from known (rank, rating) points.
@@ -309,16 +381,36 @@ function PVL.EstimateRatingAtRank(snapshot, bracket, targetRank)
 end
 
 --- Resolves the rating threshold for one title in one bracket.
+---
+--- Solo Shuffle and Battleground Blitz award percentile titles per
+--- specialization, so for those brackets the player's own spec cutoff is used
+--- when available. Combined brackets (Arena, RBG) use the single-ladder cutoff.
 --- @param snapshot table|nil Imported ladder snapshot.
 --- @param def table Title definition.
 --- @param bracket string Bracket id.
+--- @param specKey string|nil Player spec key, for per-spec brackets.
 --- @return number|nil rating, string source, number|nil rank
-function PVL.ResolveTitleCutoffRating(snapshot, def, bracket)
+function PVL.ResolveTitleCutoffRating(snapshot, def, bracket, specKey)
     if def.kind == "rating" then
         return def.rating, "fixed", nil
     end
 
-    -- Percentile titles: prefer the collector's exact cutoff.
+    local perSpec = not PVL.IsCombinedImportedBracket(bracket)
+
+    -- Per-spec brackets: the title is awarded against the player's own spec
+    -- ladder, so prefer the per-spec cutoff over the combined ladder number.
+    if perSpec and SnapshotHasSpecCutoffs(snapshot) then
+        local specCutoff = FindSpecTitleCutoff(snapshot, specKey, def.percentile)
+        if specCutoff and specCutoff.rating then
+            return specCutoff.rating, "exact-spec", specCutoff.rank
+        end
+
+        -- Data supports per-spec cutoffs but this spec is missing or unknown.
+        return nil, "needs-spec", nil
+    end
+
+    -- Combined brackets (or legacy snapshots without per-spec data): prefer the
+    -- collector's exact combined cutoff.
     local exact = FindSnapshotTitleCutoff(snapshot, def.percentile)
     if exact and exact.rating then
         return exact.rating, "exact", exact.rank
@@ -371,9 +463,15 @@ function PVL.BuildTitleCutoffRows(bracket)
     local playerRating = PVL.GetPlayerRatingForTitles(bracket)
     local definitions = PVL.TITLE_DEFINITIONS[bracket] or {}
 
+    local perSpec = not PVL.IsCombinedImportedBracket(bracket)
+    local specKey, specName = nil, nil
+    if perSpec then
+        specKey, specName = PVL.GetPlayerSpecInfo()
+    end
+
     local rows = {}
     for _, def in ipairs(definitions) do
-        local rating, source, rank = PVL.ResolveTitleCutoffRating(snapshot, def, bracket)
+        local rating, source, rank = PVL.ResolveTitleCutoffRating(snapshot, def, bracket, specKey)
         local achieved = nil
         local gap = nil
 
@@ -393,18 +491,64 @@ function PVL.BuildTitleCutoffRows(bracket)
         })
     end
 
+    local overall = snapshot and snapshot.overall
+    local specPopulation = nil
+    if perSpec and specKey and overall and type(overall.specCutoffs) == "table" then
+        local specEntry = overall.specCutoffs[specKey]
+        if type(specEntry) == "table" then
+            specPopulation = specEntry.population
+        end
+    end
+
     local context = {
         bracket = bracket,
         snapshot = snapshot,
         faction = faction,
         playerRating = playerRating,
-        ratedPopulation = snapshot and snapshot.overall and snapshot.overall.ratedPopulation or nil,
-        hasExactCutoffs = snapshot
-            and snapshot.overall
-            and type(snapshot.overall.titleCutoffs) == "table"
-            and #snapshot.overall.titleCutoffs > 0
+        perSpec = perSpec,
+        specKey = specKey,
+        specName = specName,
+        specPopulation = specPopulation,
+        ratedPopulation = overall and overall.ratedPopulation or nil,
+        hasSpecCutoffs = overall and type(overall.specCutoffs) == "table" or false,
+        hasExactCutoffs = overall
+            and type(overall.titleCutoffs) == "table"
+            and #overall.titleCutoffs > 0
             or false,
     }
 
     return rows, context
+end
+
+--- Builds prestige title cutoff rows for an arbitrary specialization.
+---
+--- Unlike ``BuildTitleCutoffRows`` this omits the player's own rating, gap, and
+--- achievement state. It is used to look up the cutoffs for the spec selected in
+--- the main window (e.g. to estimate a friend's titles without the addon). Only
+--- percentile cutoffs and feat-of-strength titles are included, since the fixed
+--- Combatant–Elite tiers are identical for every spec.
+--- @param bracket string Bracket id.
+--- @param specKey string|nil Spec key to resolve cutoffs for (per-spec brackets).
+--- @return table rows (def, name, cutoffRating, source, rank)
+function PVL.BuildSpecTitleCutoffRows(bracket, specKey)
+    local snapshot = PVL.GetImportedSnapshot(bracket)
+    local definitions = PVL.TITLE_DEFINITIONS[bracket] or {}
+
+    local rows = {}
+    for _, def in ipairs(definitions) do
+        if def.kind == "percentile" or def.feat then
+            local rating, source, rank = PVL.ResolveTitleCutoffRating(snapshot, def, bracket, specKey)
+            table.insert(rows, {
+                def = def,
+                -- Faction-neutral name: the cutoff rating is faction-independent,
+                -- and the looked-up spec may belong to either faction.
+                name = PVL.GetTitleName(def, nil),
+                cutoffRating = rating,
+                source = source,
+                rank = rank,
+            })
+        end
+    end
+
+    return rows
 end

@@ -23,6 +23,10 @@ function PVL.GetDefaultDB()
             collectNonBlitz = false,
             autoRefreshLadderData = true,
             shareMatchData = false,
+            minimap = {
+                hide = false,
+                position = 220,
+            },
             uiFilters = {
                 bracket = PVL.BRACKETS.BLITZ,
                 classToken = nil,
@@ -93,6 +97,13 @@ function PVL.MigrateDB(db)
     end
     if db.settings.collectCombatSummary == nil then
         db.settings.collectCombatSummary = defaults.settings.collectCombatSummary
+    end
+    db.settings.minimap = db.settings.minimap or defaults.settings.minimap
+    if db.settings.minimap.hide == nil then
+        db.settings.minimap.hide = defaults.settings.minimap.hide
+    end
+    if db.settings.minimap.position == nil then
+        db.settings.minimap.position = defaults.settings.minimap.position
     end
     db.settings.uiFilters = db.settings.uiFilters or defaults.settings.uiFilters
     db.settings.uiFilters.bracket = db.settings.uiFilters.bracket or defaults.settings.uiFilters.bracket

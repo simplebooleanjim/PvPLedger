@@ -7,7 +7,7 @@ local UI = PVL.UI
 local Format = UI.Format
 
 UI.frame = UI.frame or nil
-local UI_LAYOUT_VERSION = 22
+local UI_LAYOUT_VERSION = 24
 
 local FRAME_WIDTH = 720
 local FRAME_HEIGHT = 580
@@ -109,6 +109,9 @@ function UI.CreateMainFrame()
 
     UI.RegisterEscapeToClose(frame)
 
+    UI.AddWindowLogo(frame)
+    UI.AddWindowWatermark(frame, 280)
+
     frame.title = frame:CreateFontString(nil, "OVERLAY", "GameFontHighlight")
     frame.title:SetPoint("TOP", frame.TitleBg, "TOP", 0, -3)
     frame.title:SetText("PvPLedger")
@@ -195,7 +198,7 @@ function UI.CreateMainFrame()
 
     frame.viewTitlesButton = CreateFrame("Button", "PvPLedgerViewTitlesButton", frame, "UIPanelButtonTemplate")
     frame.viewTitlesButton:SetSize(VIEW_LADDER_BUTTON_WIDTH, VIEW_LADDER_BUTTON_HEIGHT)
-    frame.viewTitlesButton:SetPoint("TOPRIGHT", frame.viewLadderButton, "TOPLEFT", -6, 0)
+    frame.viewTitlesButton:SetPoint("TOPRIGHT", frame.viewLadderButton, "BOTTOMRIGHT", 0, -4)
     frame.viewTitlesButton:SetText("Titles")
     frame.viewTitlesButton:SetScript("OnClick", function()
         if UI.TitleView then
@@ -420,7 +423,7 @@ function UI.BuildSummaryText(summary)
         ))
     else
         table.insert(lines, "")
-        table.insert(lines, Format.Muted("No imported ladder snapshot loaded."))
+        table.insert(lines, Format.Muted("No ladder data loaded."))
     end
 
     return table.concat(lines, "\n")
@@ -512,7 +515,7 @@ function UI.BuildCombinedSpecLadderText(classToken, specKey)
     local lines = {
         UI.BuildSpecDetailPanelText(classToken, specKey),
         "",
-        Format.Header("Imported Ladder Snapshot"),
+        Format.Header("Ladder Snapshot"),
         "",
         UI.BuildImportedListText(classToken, specKey),
     }
@@ -695,11 +698,11 @@ function UI.BuildImportedListText(classToken, specKey)
     local snapshot = PVL.GetImportedSnapshot(bracket)
     if not snapshot then
         if PVL.IsDataAddonInstalled() then
-            return Format.Muted("No imported ladder snapshot loaded. Try /pvl update, then /reload.")
+            return Format.Muted("No ladder data loaded. Try /pvl update, then /reload.")
         end
 
         return Format.Muted(string.format(
-            "No imported ladder snapshot loaded. Install PvPLedger-Data-US or update PvPLedger, then /reload."
+            "No ladder data loaded. Install PvPLedger-Data-US or update PvPLedger, then /reload."
         ))
     end
 

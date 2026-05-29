@@ -38,6 +38,13 @@ local function RegisterSlashCommands()
             return
         end
 
+        if command == "options" or command == "config" or command == "settings" then
+            if PVL.OpenSettings then
+                PVL.OpenSettings()
+            end
+            return
+        end
+
         if command == "status" then
             Print(PVL.GetStatusText())
             Print("Imported snapshots:")
@@ -166,7 +173,7 @@ local function RegisterSlashCommands()
         end
 
         if command == "help" then
-            Print("Commands: toggle | show | hide | titles | status | update | refresh | reload | share on|off | debug score | debug rated | history | match | enable | disable | help")
+            Print("Commands: toggle | show | hide | titles | options | status | update | refresh | reload | share on|off | debug score | debug rated | history | match | enable | disable | help")
             Print("Use /pvl titles to see estimated rating cutoffs for seasonal titles (Rank 1, Gladiator, Hero).")
             Print("Install PvPLedger-AppHelper + PvPLedger Sync for automatic ladder updates.")
             Print("Enable match export in Options > AddOns > PvPLedger, or use /pvl share on.")
@@ -174,7 +181,7 @@ local function RegisterSlashCommands()
             return
         end
 
-        Print("Commands: toggle | show | hide | titles | status | update | refresh | reload | share on|off | debug score | debug rated | history | match | enable | disable | help")
+        Print("Commands: toggle | show | hide | titles | options | status | update | refresh | reload | share on|off | debug score | debug rated | history | match | enable | disable | help")
     end
 end
 
