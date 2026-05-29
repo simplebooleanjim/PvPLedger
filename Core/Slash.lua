@@ -26,6 +26,13 @@ local function RegisterSlashCommands()
             return
         end
 
+        if command == "titles" or command == "cutoffs" then
+            if PVL.UI and PVL.UI.TitleView then
+                PVL.UI.TitleView.Show()
+            end
+            return
+        end
+
         if command == "hide" then
             PVL.UI.Hide()
             return
@@ -48,7 +55,7 @@ local function RegisterSlashCommands()
             return
         end
 
-        if command == "update" then
+        if command == "update" or command == "refresh" then
             local summary = PVL.RefreshImportedLadderData()
             PVL.UI.Refresh()
             if summary.loadedAppHelper then
@@ -105,7 +112,7 @@ local function RegisterSlashCommands()
         if command == "prune" then
             PVL.PruneImportedSnapshotPlayers()
             PVL.LoadImportedSnapshotFromPack()
-            Print("Removed imported player indexes from runtime memory. Run /pvl refresh to reload ladder data.")
+            Print("Removed imported player indexes from runtime memory. Run /pvl update to reload ladder data.")
             return
         end
 
@@ -159,14 +166,15 @@ local function RegisterSlashCommands()
         end
 
         if command == "help" then
-            Print("Commands: toggle | show | hide | status | update | reload | share on|off | debug score | debug rated | history | match | enable | disable | help")
+            Print("Commands: toggle | show | hide | titles | status | update | refresh | reload | share on|off | debug score | debug rated | history | match | enable | disable | help")
+            Print("Use /pvl titles to see estimated rating cutoffs for seasonal titles (Rank 1, Gladiator, Hero).")
             Print("Install PvPLedger-AppHelper + PvPLedger Sync for automatic ladder updates.")
             Print("Enable match export in Options > AddOns > PvPLedger, or use /pvl share on.")
             Print("Use /pvl status to see snapshot dates and active data source per bracket.")
             return
         end
 
-        Print("Commands: toggle | show | hide | status | update | reload | share on|off | debug score | debug rated | history | match | enable | disable | help")
+        Print("Commands: toggle | show | hide | titles | status | update | refresh | reload | share on|off | debug score | debug rated | history | match | enable | disable | help")
     end
 end
 

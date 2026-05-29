@@ -10,7 +10,14 @@ from pathlib import Path
 from urllib.error import HTTPError, URLError
 
 from .config import SyncConfig, save_config
-from .manifest import RemoteManifest, fetch_app_data, fetch_manifest, manifest_is_newer
+from .manifest import (
+    RemoteManifest,
+    fetch_app_data,
+    fetch_app_data_generated_at,
+    fetch_manifest,
+    manifest_is_newer,
+    read_app_data_generated_at,
+)
 
 _PLAYER_INDEX_PATTERN = re.compile(r'\bspecKey = "')
 
@@ -94,6 +101,66 @@ def load_local_manifest() -> RemoteManifest:
         region=str(payload.get("region", "US")),
         generated_date=str(payload.get("generatedDate", "")),
         brackets=dict(payload.get("brackets", {})),
+        generated_at=str(payload.get("generatedAt", "")),
+    )
+
+
+def read_installed_app_data_generated_at(config: SyncConfig) -> str:
+    """Return the generatedAt timestamp from the installed AppData.lua header."""
+
+    path = config.app_data_path
+    if not path.exists():
+        return ""
+
+    header = path.read_text(encoding="utf-8", errors="ignore")[:4096]
+    return read_app_data_generated_at(header)
+
+
+def should_sync_local_payload(config: SyncConfig, *, force: bool) -> bool:
+    """Return True when the local repository AppData.lua should be copied."""
+
+    if force:
+        return True
+
+    source_path = local_app_data_source()
+    if not source_path.exists():
+        return False
+
+    installed_generated_at = read_installed_app_data_generated_at(config)
+    local_generated_at = read_app_data_generated_at(
+        source_path.read_text(encoding="utf-8", errors="ignore")[:4096]
+    )
+    if not installed_generated_at:
+        return True
+    if not local_generated_at:
+        return manifest_is_newer(load_local_manifest(), config.last_manifest_generated_date)
+
+    return local_generated_at > installed_generated_at
+
+
+def should_sync_remote_payload(config: SyncConfig, manifest: RemoteManifest, *, force: bool) -> bool:
+    """Return True when a remote AppData.lua download should run."""
+
+    if force:
+        return True
+
+    installed_generated_at = read_installed_app_data_generated_at(config)
+    remote_generated_at = manifest.generated_at
+    if not remote_generated_at:
+        try:
+            remote_generated_at = fetch_app_data_generated_at(
+                repo=config.repo,
+                branch=config.branch,
+                token=config.resolved_github_token(),
+            )
+        except (HTTPError, URLError, TimeoutError, ValueError, json.JSONDecodeError):
+            remote_generated_at = ""
+
+    return manifest_is_newer(
+        manifest,
+        config.last_manifest_generated_date,
+        installed_app_data_generated_at=installed_generated_at,
+        remote_app_data_generated_at=remote_generated_at,
     )
 
 
@@ -123,7 +190,10 @@ def finalize_sync(
     """Persist sync metadata after AppData.lua was written."""
 
     player_index_count = count_players_in_app_data(content)
-    config.last_manifest_generated_date = manifest_generated_date
+    config.last_manifest_generated_date = (
+        read_app_data_generated_at(content)
+        or manifest_generated_date
+    )
     config.last_app_data_sync_at = datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
     save_config(config)
     reason = f"AppData.lua updated from {source}."
@@ -155,7 +225,7 @@ def sync_app_data_from_local(config: SyncConfig, *, force: bool = False) -> Sync
         )
 
     manifest = load_local_manifest()
-    if not force and not manifest_is_newer(manifest, config.last_manifest_generated_date):
+    if not should_sync_local_payload(config, force=force):
         return SyncResult(
             updated=False,
             reason="Already up to date (local repo).",
@@ -183,10 +253,12 @@ def sync_app_data_from_remote(config: SyncConfig, *, force: bool = False) -> Syn
 
     token = config.resolved_github_token()
     manifest = fetch_manifest(repo=config.repo, branch=config.branch, token=token)
-    if not force and not manifest_is_newer(manifest, config.last_manifest_generated_date):
+    if not should_sync_remote_payload(config, manifest, force=force):
+        installed_generated_at = read_installed_app_data_generated_at(config)
+        detail = installed_generated_at or "unknown timestamp"
         return SyncResult(
             updated=False,
-            reason="Already up to date.",
+            reason=f"Already up to date (installed payload: {detail}).",
             manifest_generated_date=manifest.generated_date,
             app_data_path=str(config.app_data_path),
             source="github",
@@ -217,7 +289,7 @@ def sync_app_data(config: SyncConfig, *, force: bool = False, local_only: bool =
 
     try:
         return sync_app_data_from_remote(config, force=force)
-    except (HTTPError, URLError, TimeoutError, json.JSONDecodeError) as exc:
+    except (HTTPError, URLError, TimeoutError, json.JSONDecodeError, ValueError) as exc:
         local_result = sync_app_data_from_local(config, force=force)
         if local_result.updated or local_result.reason == "Already up to date (local repo).":
             if not local_result.updated:

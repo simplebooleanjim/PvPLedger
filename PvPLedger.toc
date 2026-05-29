@@ -14,6 +14,7 @@ Data/CrHistory.lua
 Data/LadderLoader.lua
 Data/AppExport.lua
 Data/Parser.lua
+Data/TitleCutoffs.lua
 Data/LadderData_US_Blitz.lua
 Data/LadderData_US_Shuffle.lua
 Data/LadderData_US_Rbg.lua
@@ -27,6 +28,7 @@ UI/Widgets.lua
 UI/Format.lua
 UI/MatchDetail.lua
 UI/LadderView.lua
+UI/TitleView.lua
 UI/CombatMeter.lua
 UI/Settings.lua
 UI/MainFrame.lua

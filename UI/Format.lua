@@ -18,6 +18,7 @@ Format.COLORS = {
     HEADER = "FFFFCC00",
     STANDING = "FF40C040",
     SOURCE = "FFAAAAAA",
+    WARNING = "FFFF8800",
 }
 
 --- Wraps text in a WoW color escape sequence.

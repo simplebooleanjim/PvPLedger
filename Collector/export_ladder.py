@@ -21,7 +21,7 @@ import re
 import statistics
 import time
 from dataclasses import dataclass, field
-from datetime import date
+from datetime import date, datetime, timezone
 from pathlib import Path
 from typing import Any
 
@@ -41,6 +41,14 @@ from spec_catalog import (
 # Battle.net returns every ranked player per spec bracket; the official listed
 # ladder only includes the top 1000 players shown on Blizzard's site.
 LISTED_RANK_CAP = 1000
+
+# Seasonal title cutoffs (Rank 1, Gladiator, Hero, etc.) are percentiles of the
+# full rated population, not just the listed top 1000. The collector has the
+# complete leaderboard at fetch time, so it derives these before truncation.
+# Percentages follow Blizzard's published methodology: top X% of players rated
+# at or above RATED_POPULATION_FLOOR.
+TITLE_CUTOFF_PERCENTILES: tuple[float, ...] = (0.1, 0.5, 1.0, 3.0)
+RATED_POPULATION_FLOOR = 1000
 
 
 @dataclass
@@ -185,6 +193,56 @@ def build_cutoffs(players: list[PlayerRow]) -> list[dict[str, Any]]:
                 "rank": rank,
                 "rating": ranked[rank - 1].rating,
             })
+    return cutoffs
+
+
+def rated_population(all_ratings: list[int], floor: int = RATED_POPULATION_FLOOR) -> int:
+    """Count rated players at or above the population floor.
+
+    :param all_ratings: Every ranked player's rating from the full leaderboard.
+    :param floor: Minimum rating counted toward the rated population.
+    :return: Number of players at or above ``floor``.
+    """
+
+    return sum(1 for rating in all_ratings if rating >= floor)
+
+
+def compute_title_cutoffs(
+    all_ratings: list[int],
+    percentiles: tuple[float, ...] = TITLE_CUTOFF_PERCENTILES,
+    floor: int = RATED_POPULATION_FLOOR,
+) -> list[dict[str, Any]]:
+    """Compute the rating threshold for each seasonal title percentile.
+
+    The cutoff rating for a percentile is the rating held by the player at the
+    cutoff rank, where the cutoff rank is that percentile of the full rated
+    population (players at or above ``floor``). This mirrors how Blizzard awards
+    Rank 1, Gladiator, and Hero of the Alliance/Horde titles at season end.
+
+    :param all_ratings: Every ranked player's rating from the full leaderboard.
+    :param percentiles: Top-percent thresholds to evaluate (e.g. 0.1 for 0.1%).
+    :param floor: Minimum rating counted toward the rated population.
+    :return: One ``{pct, rank, rating}`` entry per percentile, or an empty list
+        when no rated players are present.
+    """
+
+    population_ratings = sorted(
+        (rating for rating in all_ratings if rating >= floor),
+        reverse=True,
+    )
+    population = len(population_ratings)
+    if population == 0:
+        return []
+
+    cutoffs: list[dict[str, Any]] = []
+    for percentile in percentiles:
+        rank = max(1, math.ceil((percentile / 100.0) * population))
+        rank = min(rank, population)
+        cutoffs.append({
+            "pct": percentile,
+            "rank": rank,
+            "rating": population_ratings[rank - 1],
+        })
     return cutoffs
 
 
@@ -410,14 +468,33 @@ def entry_to_rbg_player_row(entry: dict[str, Any]) -> PlayerRow | None:
     )
 
 
+def collect_entry_ratings(entries: list[dict[str, Any]]) -> list[int]:
+    """Extract every valid rating from raw leaderboard entries before truncation.
+
+    :param entries: Raw Battle.net leaderboard entries (all ranks).
+    :return: Integer ratings for every entry that reports one.
+    """
+
+    ratings: list[int] = []
+    for entry in entries:
+        rating = entry.get("rating")
+        if isinstance(rating, (int, float)):
+            ratings.append(int(rating))
+    return ratings
+
+
 def fetch_blizzard_single_ladder_players(
     *,
     bracket: str,
     api_slug: str,
     region: str,
     season_id: int | None = None,
-) -> tuple[list[PlayerRow], int, list[str]]:
-    """Fetch listed players from one combined bracket leaderboard such as RBG."""
+) -> tuple[list[PlayerRow], int, list[str], list[int]]:
+    """Fetch listed players from one combined bracket leaderboard such as RBG.
+
+    :return: ``(listed_players, season_id, fetched_slugs, all_ratings)`` where
+        ``all_ratings`` covers the full ladder for title-cutoff math.
+    """
 
     client = create_blizzard_client(region)
     resolved_season_id = season_id or client.get_current_pvp_season_id()
@@ -430,12 +507,13 @@ def fetch_blizzard_single_ladder_players(
 
     print(f"fetch {api_slug}...")
     entries = client.fetch_leaderboard_entries(resolved_season_id, api_slug)
+    all_ratings = collect_entry_ratings(entries)
     players = [row for entry in entries if (row := entry_to_rbg_player_row(entry))]
 
     if not players:
         raise BlizzardApiError(f"No listed {bracket} players fetched from Battle.net.")
 
-    return players, resolved_season_id, [api_slug]
+    return players, resolved_season_id, [api_slug], all_ratings
 
 
 def fetch_blizzard_bracket_players(
@@ -445,8 +523,12 @@ def fetch_blizzard_bracket_players(
     season_id: int | None = None,
     request_delay: float = 0.15,
     max_specs: int | None = None,
-) -> tuple[list[PlayerRow], int, list[str]]:
-    """Fetch listed players for all known specs in one bracket from Battle.net."""
+) -> tuple[list[PlayerRow], int, list[str], list[int]]:
+    """Fetch listed players for all known specs in one bracket from Battle.net.
+
+    :return: ``(listed_players, season_id, fetched_slugs, all_ratings)`` where
+        ``all_ratings`` pools the full ladder across specs for title-cutoff math.
+    """
 
     bracket = bracket.lower()
     if is_single_ladder_bracket(bracket):
@@ -468,6 +550,7 @@ def fetch_blizzard_bracket_players(
     players: list[PlayerRow] = []
     fetched_slugs: list[str] = []
     skipped_slugs: list[str] = []
+    all_ratings: list[int] = []
 
     for index, spec_definition in enumerate(specs, start=1):
         api_slug = spec_definition.api_slug
@@ -479,6 +562,7 @@ def fetch_blizzard_bracket_players(
         print(f"[{index}/{len(specs)}] fetch {api_slug}...")
         entries = client.fetch_leaderboard_entries(resolved_season_id, api_slug)
         fetched_slugs.append(api_slug)
+        all_ratings.extend(collect_entry_ratings(entries))
 
         for entry in entries:
             player = entry_to_player_row(entry, spec_definition)
@@ -496,7 +580,7 @@ def fetch_blizzard_bracket_players(
             f"and that {bracket} bracket slugs match spec_catalog.py."
         )
 
-    return players, resolved_season_id, fetched_slugs
+    return players, resolved_season_id, fetched_slugs, all_ratings
 
 
 def fetch_blizzard_blitz_players(
@@ -505,7 +589,7 @@ def fetch_blizzard_blitz_players(
     season_id: int | None = None,
     request_delay: float = 0.15,
     max_specs: int | None = None,
-) -> tuple[list[PlayerRow], int, list[str]]:
+) -> tuple[list[PlayerRow], int, list[str], list[int]]:
     """Fetch listed Blitz players for all known specs from Battle.net."""
 
     return fetch_blizzard_bracket_players(
@@ -525,13 +609,20 @@ def render_lua_snapshot(
     players: list[PlayerRow],
     source: str,
     include_players: bool = False,
+    title_cutoffs: list[dict[str, Any]] | None = None,
+    rated_population_count: int | None = None,
 ) -> str:
-    """Render a compact Lua snapshot file for the addon."""
+    """Render a compact Lua snapshot file for the addon.
+
+    :param title_cutoffs: Seasonal title percentile thresholds for ``overall``.
+    :param rated_population_count: Full rated population used for percentiles.
+    """
 
     spec_aggs, overall = aggregate_players(players)
     class_aggs = aggregate_by_class(spec_aggs) if spec_aggs else {}
     player_index = build_player_index(players) if include_players else {}
     snapshot_id = f"{region.lower()}-{bracket}-s{season}-{date.today().isoformat()}"
+    generated_at = datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
 
     lines = [
         "--- Imported ladder snapshot generated by PvPLedger collector.",
@@ -542,6 +633,7 @@ def render_lua_snapshot(
         f'    bracket = "{bracket}",',
         f"    season = {season},",
         f'    snapshotDate = "{date.today().isoformat()}",',
+        f'    generatedAt = "{generated_at}",',
         f'    source = "{source}",',
         "    overall = {",
         f"        listedCount = {overall['listedCount']},",
@@ -568,8 +660,23 @@ def render_lua_snapshot(
     for bucket, count in sorted(overall["buckets"].items()):
         lines.append(f'            ["{bucket}"] = {count},')
 
+    lines.append("        },")
+
+    if rated_population_count is not None:
+        lines.append(f"        ratedPopulation = {rated_population_count},")
+
+    lines.append("        titleCutoffs = {")
+    for cutoff in (title_cutoffs or []):
+        lines.extend([
+            "            {",
+            f'                pct = {lua_number(cutoff["pct"])},',
+            f'                rank = {cutoff["rank"]},',
+            f'                rating = {cutoff["rating"]},',
+            "            },",
+        ])
+    lines.append("        },")
+
     lines.extend([
-        "        },",
         "    },",
         "    byClass = {",
     ])
@@ -691,7 +798,7 @@ def fetch_and_write_snapshot(
     """Fetch one bracket from Battle.net and write a compact Lua snapshot file."""
 
     bracket = bracket.lower()
-    players, season, fetched_slugs = fetch_blizzard_bracket_players(
+    players, season, fetched_slugs, all_ratings = fetch_blizzard_bracket_players(
         bracket=bracket,
         region=region,
         season_id=season_id,
@@ -728,6 +835,13 @@ def fetch_and_write_snapshot(
             f"across {len(fetched_slugs)} specs for {bracket} season {season} ({region.upper()})."
         )
 
+    title_cutoffs = compute_title_cutoffs(all_ratings)
+    population = rated_population(all_ratings)
+    print(
+        f"Title cutoffs: {len(title_cutoffs)} percentile threshold(s) computed "
+        f"from {population} rated players (>= {RATED_POPULATION_FLOOR})."
+    )
+
     lua_text = render_lua_snapshot(
         region=region,
         bracket=bracket,
@@ -735,6 +849,8 @@ def fetch_and_write_snapshot(
         players=players,
         source=source,
         include_players=include_players,
+        title_cutoffs=title_cutoffs,
+        rated_population_count=population,
     )
     output.parent.mkdir(parents=True, exist_ok=True)
     output.write_text(lua_text, encoding="utf-8")
@@ -845,6 +961,7 @@ def main() -> None:
         players = load_sample_players()
 
     include_players = args.include_players
+    sample_ratings = [player.rating for player in players]
     lua_text = render_lua_snapshot(
         region=args.region,
         bracket=args.bracket,
@@ -852,6 +969,8 @@ def main() -> None:
         players=players,
         source=source,
         include_players=include_players,
+        title_cutoffs=compute_title_cutoffs(sample_ratings),
+        rated_population_count=rated_population(sample_ratings),
     )
 
     args.output.parent.mkdir(parents=True, exist_ok=True)

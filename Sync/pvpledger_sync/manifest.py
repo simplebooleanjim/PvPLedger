@@ -4,10 +4,13 @@ from __future__ import annotations
 
 import base64
 import json
+import re
 import urllib.error
 import urllib.request
 from dataclasses import dataclass
 from typing import Any
+
+_APP_DATA_GENERATED_AT_PATTERN = re.compile(r'generatedAt = "([^"]+)"')
 
 
 @dataclass
@@ -17,6 +20,7 @@ class RemoteManifest:
     region: str
     generated_date: str
     brackets: dict[str, dict[str, Any]]
+    generated_at: str = ""
 
 
 def manifest_raw_url(*, repo: str, branch: str) -> str:
@@ -75,9 +79,14 @@ def fetch_repo_file_text(*, repo: str, branch: str, path: str, token: str = "") 
         )
         content = payload.get("content")
         encoding = payload.get("encoding")
-        if not content or encoding != "base64":
-            raise ValueError(f"Unexpected GitHub API response for {path}.")
-        return base64.b64decode(content).decode("utf-8")
+        if content and encoding == "base64":
+            return base64.b64decode(content).decode("utf-8")
+
+        download_url = payload.get("download_url")
+        if download_url:
+            return fetch_text(str(download_url), token=token, timeout=120.0)
+
+        raise ValueError(f"Unexpected GitHub API response for {path}.")
 
     if path.endswith(".json"):
         return fetch_text(manifest_raw_url(repo=repo, branch=branch), token=token)
@@ -109,6 +118,7 @@ def fetch_manifest(*, repo: str, branch: str, token: str = "") -> RemoteManifest
         region=str(payload.get("region", "US")),
         generated_date=str(payload.get("generatedDate", "")),
         brackets=dict(payload.get("brackets", {})),
+        generated_at=str(payload.get("generatedAt", "")),
     )
 
 
@@ -125,8 +135,56 @@ def fetch_app_data(*, repo: str, branch: str, token: str = "") -> str:
     return fetch_text(app_data_raw_url(repo=repo, branch=branch), token=token)
 
 
-def manifest_is_newer(remote: RemoteManifest, last_generated_date: str) -> bool:
-    """Return True when the remote manifest is newer than the cached sync state."""
+def read_app_data_generated_at(content: str) -> str:
+    """Extract the AppData payload timestamp from one AppData.lua header."""
+
+    match = _APP_DATA_GENERATED_AT_PATTERN.search(content)
+    return match.group(1) if match else ""
+
+
+def fetch_app_data_generated_at(*, repo: str, branch: str, token: str = "") -> str:
+    """Fetch only the AppData.lua header and return its generatedAt timestamp."""
+
+    url = app_data_raw_url(repo=repo, branch=branch)
+    request = urllib.request.Request(
+        url,
+        headers={
+            **build_request_headers(token=token),
+            "Range": "bytes=0-4095",
+        },
+    )
+    try:
+        with urllib.request.urlopen(request, timeout=30.0) as response:
+            header = response.read(4096).decode("utf-8", errors="ignore")
+    except urllib.error.HTTPError as exc:
+        if exc.code != 416:
+            raise
+        header = fetch_text(url, token=token, timeout=30.0)[:4096]
+
+    return read_app_data_generated_at(header)
+
+
+def manifest_is_newer(
+    remote: RemoteManifest,
+    last_generated_date: str,
+    *,
+    installed_app_data_generated_at: str = "",
+    remote_app_data_generated_at: str = "",
+) -> bool:
+    """Return True when the remote ladder payload is newer than the cached sync state."""
+
+    remote_generated_at = remote.generated_at or remote_app_data_generated_at
+    if remote_generated_at and installed_app_data_generated_at:
+        if remote_generated_at > installed_app_data_generated_at:
+            return True
+        if remote_generated_at == installed_app_data_generated_at:
+            return False
+
+    if remote.generated_date and last_generated_date:
+        if remote.generated_date > last_generated_date:
+            return True
+        if remote.generated_date < last_generated_date:
+            return False
 
     if not remote.generated_date:
         return True

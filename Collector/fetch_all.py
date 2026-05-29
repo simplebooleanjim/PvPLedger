@@ -14,7 +14,7 @@ import argparse
 import json
 import shutil
 import sys
-from datetime import date
+from datetime import date, datetime, timezone
 from pathlib import Path
 
 from export_ladder import default_output_path, fetch_and_write_snapshot, load_env_file
@@ -77,6 +77,7 @@ def write_manifest(*, data_dir: Path, region: str, results: list[dict]) -> Path:
     manifest = {
         "region": region.upper(),
         "generatedDate": date.today().isoformat(),
+        "generatedAt": datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"),
         "brackets": {
             result["bracket"]: {
                 "snapshotId": result["snapshotId"],

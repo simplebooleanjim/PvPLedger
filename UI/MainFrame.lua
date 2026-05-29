@@ -193,6 +193,16 @@ function UI.CreateMainFrame()
         end
     end)
 
+    frame.viewTitlesButton = CreateFrame("Button", "PvPLedgerViewTitlesButton", frame, "UIPanelButtonTemplate")
+    frame.viewTitlesButton:SetSize(VIEW_LADDER_BUTTON_WIDTH, VIEW_LADDER_BUTTON_HEIGHT)
+    frame.viewTitlesButton:SetPoint("TOPRIGHT", frame.viewLadderButton, "TOPLEFT", -6, 0)
+    frame.viewTitlesButton:SetText("Titles")
+    frame.viewTitlesButton:SetScript("OnClick", function()
+        if UI.TitleView then
+            UI.TitleView.Show()
+        end
+    end)
+
     frame.regionLabel = frame:CreateFontString(nil, "OVERLAY", "GameFontHighlightSmall")
     frame.regionLabel:SetPoint("BOTTOMRIGHT", frame.viewLadderButton, "TOPRIGHT", 0, 6)
     frame.regionLabel:SetJustifyH("RIGHT")
@@ -359,8 +369,26 @@ function UI.BuildSummaryText(summary)
     if summary.standing then
         table.insert(lines, Format.StatLine(
             "Estimated standing",
-            Format.Colorize(Format.COLORS.STANDING, summary.standing.cutoffLabel)
+            Format.Colorize(Format.COLORS.STANDING, PVL.FormatStandingLabel(summary.standing))
         ))
+
+        if summary.standing.isEstimated and summary.standing.estimatedRank and not summary.standing.isListed then
+            if summary.ladderStalenessLines and #summary.ladderStalenessLines > 0 then
+                table.insert(lines, Format.Muted(
+                    "You are not in the loaded snapshot. Fresher ladder data may be available."
+                ))
+            else
+                table.insert(lines, Format.Muted(
+                    "Based on imported ladder CRs. You are not in this snapshot yet."
+                ))
+            end
+        end
+    end
+
+    if summary.ladderStalenessLines then
+        for _, hintLine in ipairs(summary.ladderStalenessLines) do
+            table.insert(lines, Format.Colorize(Format.COLORS.WARNING, hintLine))
+        end
     end
 
     if summary.importedOverall then
@@ -386,6 +414,10 @@ function UI.BuildSummaryText(summary)
         table.insert(lines, Format.StatLine(PVL.LABELS.LISTED_AVG, Format.Rating(summary.importedOverall.avgListedRating)))
         table.insert(lines, Format.StatLine(PVL.LABELS.LISTED_MEDIAN, Format.Rating(summary.importedOverall.medianListedRating)))
         table.insert(lines, Format.StatLine(PVL.LABELS.TOP100_AVG, Format.Rating(summary.importedOverall.top100Avg)))
+        table.insert(lines, Format.StatLine(
+            "Loaded from",
+            Format.Colorize(Format.COLORS.SOURCE, PVL.FormatLadderSourceLabel(PVL.GetSnapshotSource(summary.bracket)))
+        ))
     else
         table.insert(lines, "")
         table.insert(lines, Format.Muted("No imported ladder snapshot loaded."))
@@ -683,10 +715,15 @@ function UI.BuildImportedListText(classToken, specKey)
             Format.Label("Date:"),
             Format.Colorize(Format.COLORS.SOURCE, snapshot.snapshotDate or "unknown"),
             Format.Label("Loaded from:"),
-            Format.Colorize(Format.COLORS.SOURCE, sourceLabel)
+            Format.Colorize(Format.COLORS.SOURCE, PVL.FormatLadderSourceLabel(sourceLabel))
         ),
         "",
     }
+
+    for _, hintLine in ipairs(PVL.GetLadderStalenessLines(bracket)) do
+        table.insert(lines, Format.Colorize(Format.COLORS.WARNING, hintLine))
+    end
+    table.insert(lines, "")
 
     local specRows = PVL.GetFilteredImportedSpecRows(classToken, specKey)
     if PVL.IsImportedSpecBreakdownMissing(bracket) then
@@ -796,6 +833,10 @@ function UI.Refresh()
 
     if UI.LadderView and UI.LadderView.frame and UI.LadderView.frame:IsShown() then
         UI.LadderView.Refresh()
+    end
+
+    if UI.TitleView and UI.TitleView.frame and UI.TitleView.frame:IsShown() then
+        UI.TitleView.Refresh()
     end
 end
 

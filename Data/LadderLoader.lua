@@ -68,7 +68,236 @@ function PVL.IsSnapshotNewer(candidate, baseline)
         return candidateId > baselineId
     end
 
+    local candidateGenerated = PVL.ParseIsoTimestamp(candidate.generatedAt)
+    local baselineGenerated = PVL.ParseIsoTimestamp(baseline.generatedAt)
+    if candidateGenerated and baselineGenerated then
+        return candidateGenerated > baselineGenerated
+    end
+
     return false
+end
+
+--- Returns a unix timestamp for one ISO-8601 UTC timestamp string.
+--- @param isoTimestamp string|nil
+--- @return number|nil
+function PVL.ParseIsoTimestamp(isoTimestamp)
+    if not isoTimestamp then
+        return nil
+    end
+
+    local year, month, day, hour, minute, second = isoTimestamp:match(
+        "^(%d%d%d%d)-(%d%d)-(%d%d)T(%d%d):(%d%d):(%d%d)"
+    )
+    if not year then
+        return nil
+    end
+
+    return time({
+        year = tonumber(year),
+        month = tonumber(month),
+        day = tonumber(day),
+        hour = tonumber(hour),
+        min = tonumber(minute),
+        sec = tonumber(second),
+    })
+end
+
+--- Returns a readable age label for one sync payload timestamp.
+--- @param isoTimestamp string|nil
+--- @return string
+function PVL.FormatSyncAge(isoTimestamp)
+    local syncTime = PVL.ParseIsoTimestamp(isoTimestamp)
+    if not syncTime then
+        return "unknown age"
+    end
+
+    local ageSeconds = math.max(0, time() - syncTime)
+    if ageSeconds < 3600 then
+        local minutes = math.max(1, math.floor(ageSeconds / 60))
+        if minutes == 1 then
+            return "1 minute"
+        end
+        return string.format("%d minutes", minutes)
+    end
+
+    if ageSeconds < 86400 then
+        local hours = math.max(1, math.floor(ageSeconds / 3600))
+        if hours == 1 then
+            return "1 hour"
+        end
+        return string.format("%d hours", hours)
+    end
+
+    return PVL.FormatSnapshotAge(isoTimestamp:sub(1, 10))
+end
+
+--- Returns a readable label for one ladder snapshot source key.
+--- @param source string|nil
+--- @return string
+function PVL.FormatLadderSourceLabel(source)
+    if source == PVL.LADDER_DATA_SOURCES.DESKTOP_APP then
+        return "PvPLedger Sync"
+    end
+
+    if source == PVL.LADDER_DATA_SOURCES.DATA_ADDON then
+        return "PvPLedger-Data-US"
+    end
+
+    if source == PVL.LADDER_DATA_SOURCES.BUNDLED then
+        return "bundled addon files"
+    end
+
+    return source or "unknown"
+end
+
+--- Counts indexed player rows in one imported snapshot.
+--- @param snapshot table|nil
+--- @return number
+function PVL.CountSnapshotPlayers(snapshot)
+    if not snapshot or type(snapshot.players) ~= "table" then
+        return 0
+    end
+
+    local count = 0
+    for _ in pairs(snapshot.players) do
+        count = count + 1
+    end
+
+    return count
+end
+
+--- Returns ladder snapshot candidates available for one bracket.
+--- @param bracket string
+--- @return table[]
+function PVL.GetLadderSnapshotCandidates(bracket)
+    PVL.CaptureBundledLadderData()
+
+    return {
+        { snapshot = PVL._bundledLadderData[bracket], source = PVL.LADDER_DATA_SOURCES.BUNDLED },
+        { snapshot = PVL.ReadLadderSnapshotFromGlobal(bracket), source = PVL.LADDER_DATA_SOURCES.DATA_ADDON },
+        { snapshot = PVL._appHelperSnapshots[bracket], source = PVL.LADDER_DATA_SOURCES.DESKTOP_APP },
+    }
+end
+
+--- Returns user-facing hint lines when fresher ladder data is available elsewhere.
+--- @param bracket string|nil
+--- @return string[]
+function PVL.GetLadderStalenessLines(bracket)
+    bracket = bracket or PVL.GetActiveBracketFilter()
+    local lines = {}
+    local activeSnapshot = PVL.GetImportedSnapshot(bracket)
+    local activeSource = PVL.GetSnapshotSource(bracket)
+
+    if not activeSnapshot then
+        return lines
+    end
+
+    local idealSnapshot, idealSource = PVL.PickBestSnapshot(PVL.GetLadderSnapshotCandidates(bracket))
+    local activePlayerCount = PVL.CountSnapshotPlayers(activeSnapshot)
+    local idealPlayerCount = PVL.CountSnapshotPlayers(idealSnapshot)
+
+    if idealSnapshot and idealSource and activeSource and idealSource ~= activeSource then
+        table.insert(lines, string.format(
+            "Fresher ladder data is available from %s. Run /pvl update or /reload.",
+            PVL.FormatLadderSourceLabel(idealSource)
+        ))
+    elseif idealSnapshot
+        and idealSource == activeSource
+        and idealSnapshot ~= activeSnapshot
+        and idealPlayerCount > activePlayerCount then
+        table.insert(lines, string.format(
+            "The loaded snapshot looks incomplete (%s indexed vs %s available). Run /pvl update.",
+            PVL.FormatRating(activePlayerCount),
+            PVL.FormatRating(idealPlayerCount)
+        ))
+    end
+
+    if activeSource == PVL.LADDER_DATA_SOURCES.BUNDLED
+        and PVL.IsAppHelperInstalled()
+        and not PVL.IsAppHelperLoaded()
+        and PVL._appHelperSnapshots[bracket] then
+        table.insert(lines, "PvPLedger-AppHelper is installed but not loaded yet. /reload to use synced ladder data.")
+    end
+
+    if activeSource == PVL.LADDER_DATA_SOURCES.BUNDLED
+        and not PVL._appHelperSnapshots[bracket]
+        and not PVL.ReadLadderSnapshotFromGlobal(bracket) then
+        table.insert(lines, "Using bundled ladder files only. Install PvPLedger Sync or PvPLedger-Data-US for automatic same-day refreshes.")
+    end
+
+    local syncInfo = PVL.GetAppSyncInfo()
+    local syncGeneratedAt = syncInfo and syncInfo.generatedAt or nil
+    local syncTime = PVL.ParseIsoTimestamp(syncGeneratedAt)
+    if syncTime and activeSource == PVL.LADDER_DATA_SOURCES.DESKTOP_APP then
+        local ageSeconds = time() - syncTime
+        if ageSeconds > (45 * 60) then
+            table.insert(lines, string.format(
+                "Desktop sync payload is %s old. Run PvPLedger Sync > Sync ladder now, then /pvl update and /reload.",
+                PVL.FormatSyncAge(syncGeneratedAt)
+            ))
+        end
+    end
+
+    if UnitName and PVL.LookupPlayerInSnapshot then
+        local name = UnitName("player")
+        local realm = GetRealmName and GetRealmName() or ""
+        local listedInActive = PVL.LookupPlayerInSnapshot(activeSnapshot, name, realm)
+        local listedInIdeal = idealSnapshot and PVL.LookupPlayerInSnapshot(idealSnapshot, name, realm) or nil
+
+        if not listedInActive and listedInIdeal then
+            table.insert(lines, string.format(
+                "Your character is listed in %s but not the currently loaded snapshot. Run /pvl update.",
+                PVL.FormatLadderSourceLabel(idealSource)
+            ))
+        end
+    end
+
+    return lines
+end
+
+--- Returns a numeric priority for one ladder snapshot source when dates tie.
+--- @param source string|nil
+--- @return number
+function PVL.GetSnapshotSourcePriority(source)
+    if source == PVL.LADDER_DATA_SOURCES.DESKTOP_APP then
+        return 3
+    end
+
+    if source == PVL.LADDER_DATA_SOURCES.DATA_ADDON then
+        return 2
+    end
+
+    if source == PVL.LADDER_DATA_SOURCES.BUNDLED then
+        return 1
+    end
+
+    return 0
+end
+
+--- Returns true when the candidate snapshot should replace the baseline.
+--- @param candidate table|nil
+--- @param baseline table|nil
+--- @param candidateSource string|nil
+--- @param baselineSource string|nil
+--- @return boolean
+function PVL.ShouldPreferSnapshot(candidate, baseline, candidateSource, baselineSource)
+    if not candidate then
+        return false
+    end
+
+    if not baseline then
+        return true
+    end
+
+    if PVL.IsSnapshotNewer(candidate, baseline) then
+        return true
+    end
+
+    if PVL.IsSnapshotNewer(baseline, candidate) then
+        return false
+    end
+
+    return PVL.GetSnapshotSourcePriority(candidateSource) > PVL.GetSnapshotSourcePriority(baselineSource)
 end
 
 --- Returns true when the optional US data companion addon is installed.
@@ -265,7 +494,7 @@ function PVL.PickBestSnapshot(candidates)
     for _, candidate in ipairs(candidates) do
         local snapshot = candidate.snapshot
         local source = candidate.source
-        if snapshot and PVL.IsSnapshotNewer(snapshot, bestSnapshot) then
+        if snapshot and PVL.ShouldPreferSnapshot(snapshot, bestSnapshot, source, bestSource) then
             bestSnapshot = snapshot
             bestSource = source
         end
@@ -415,6 +644,10 @@ function PVL.GetLadderUpdateStatusLines()
             "Last refresh: %s",
             date("%Y-%m-%d %H:%M", db.meta.lastLadderRefreshAt)
         ))
+    end
+
+    for _, hintLine in ipairs(PVL.GetLadderStalenessLines(PVL.GetActiveBracketFilter())) do
+        table.insert(lines, string.format("Stale data: %s", hintLine))
     end
 
     return lines

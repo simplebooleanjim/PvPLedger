@@ -96,6 +96,15 @@ function LadderView.BuildText(filters)
         snapshot.snapshotDate or "--",
         PVL.GetSnapshotSource(bracket) or snapshot.source or "unknown"
     )))
+    table.insert(lines, Format.Muted(string.format(
+        "Loaded from: %s",
+        PVL.FormatLadderSourceLabel(PVL.GetSnapshotSource(bracket))
+    )))
+
+    for _, hintLine in ipairs(PVL.GetLadderStalenessLines(bracket)) do
+        table.insert(lines, Format.Colorize(Format.COLORS.WARNING, hintLine))
+    end
+
     table.insert(lines, "")
     table.insert(lines, string.format(
         "%s  %s  %s  %s  %s",

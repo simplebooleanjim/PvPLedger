@@ -62,7 +62,14 @@ class TrayApp:
             notify("PvPLedger Sync", "Run init before syncing.")
             return
 
-        result = sync_app_data(self._config, force=force)
+        try:
+            result = sync_app_data(self._config, force=force)
+        except Exception as exc:  # noqa: BLE001
+            message = f"Ladder sync failed: {exc}"
+            self._set_status(message)
+            notify("PvPLedger Sync", message)
+            return
+
         self._config = load_config()
         self._set_status(result.reason)
         if result.updated:
