@@ -6,7 +6,7 @@ PvPLedgerLadderData.rbg = {
     bracket = "rbg",
     season = 41,
     snapshotDate = "2026-05-29",
-    generatedAt = "2026-05-29T21:29:04Z",
+    generatedAt = "2026-05-29T22:54:01Z",
     source = "blizzard-api+seramate",
     overall = {
         listedCount = 1009,
@@ -224,9 +224,9 @@ PvPLedgerLadderData.rbg = {
         },
         ["ROGUE"] = {
             listedCount = 92,
-            avgListedRating = 1937.1,
-            medianListedRating = 1903.0,
-            top100Avg = 1937.1,
+            avgListedRating = 1948.3,
+            medianListedRating = 1917,
+            top100Avg = 1948.3,
             highest = 2568,
             buckets = {
                 ["1600-1699"] = 11,
@@ -698,11 +698,11 @@ PvPLedgerLadderData.rbg = {
             },
         },
         ["ROGUE_ASSASSINATION"] = {
-            listedCount = 14,
-            avgListedRating = 1911.2,
-            medianListedRating = 1903.0,
-            top100Avg = 1911.2,
-            highest = 2284,
+            listedCount = 15,
+            avgListedRating = 1953.5,
+            medianListedRating = 1917,
+            top100Avg = 1953.5,
+            highest = 2545,
             buckets = {
                 ["1600-1699"] = 1,
                 ["1700-1799"] = 4,
@@ -710,6 +710,7 @@ PvPLedgerLadderData.rbg = {
                 ["1900-1999"] = 3,
                 ["2000-2099"] = 2,
                 ["2200-2299"] = 2,
+                ["2500-2599"] = 1,
             },
         },
         ["ROGUE_OUTLAW"] = {
@@ -725,10 +726,10 @@ PvPLedgerLadderData.rbg = {
             },
         },
         ["ROGUE_SUBTLETY"] = {
-            listedCount = 75,
-            avgListedRating = 1902.4,
-            medianListedRating = 1804,
-            top100Avg = 1902.4,
+            listedCount = 74,
+            avgListedRating = 1893.7,
+            medianListedRating = 1802.0,
+            top100Avg = 1893.7,
             highest = 2568,
             buckets = {
                 ["1600-1699"] = 10,
@@ -740,7 +741,7 @@ PvPLedgerLadderData.rbg = {
                 ["2200-2299"] = 3,
                 ["2300-2399"] = 2,
                 ["2400-2499"] = 3,
-                ["2500-2599"] = 3,
+                ["2500-2599"] = 2,
             },
         },
         ["SHAMAN_ELEMENTAL"] = {
@@ -2023,7 +2024,7 @@ PvPLedgerLadderData.rbg = {
         },
         ["chadxr-jaedenar"] = {
             displayName = "Chadxr-jaedenar",
-            specKey = "ROGUE_SUBTLETY",
+            specKey = "ROGUE_ASSASSINATION",
             rating = 2545,
             rank = 11,
             wins = 92,
