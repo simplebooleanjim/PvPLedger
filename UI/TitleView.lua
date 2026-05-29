@@ -157,6 +157,8 @@ function TitleView.BuildText(bracket)
     end
 
     table.insert(lines, "")
+    table.insert(lines, Format.Divider(456))
+    table.insert(lines, "")
 
     for _, row in ipairs(rows) do
         local nameText = Format.Colorize(row.def.color or Format.COLORS.COUNT, row.name)
@@ -177,6 +179,7 @@ function TitleView.BuildText(bracket)
     TitleView.AppendSelectedSpecSection(lines, bracket, context)
 
     table.insert(lines, "")
+    table.insert(lines, Format.Divider(456))
     table.insert(lines, Format.FeatIcon() .. " " .. Format.Muted("End-of-season feat of strength (awarded at the final cutoff)."))
     table.insert(lines, Format.Muted("Cutoffs move as the ladder shifts; treat them as live estimates."))
 
@@ -217,7 +220,8 @@ function TitleView.AppendSelectedSpecSection(lines, bracket, context)
     end
 
     table.insert(lines, "")
-    table.insert(lines, Format.Muted("Selected spec — ") .. Format.SpecName(selectedSpecKey))
+    table.insert(lines, Format.Divider(456))
+    table.insert(lines, Format.SectionLabel("Selected spec") .. "  " .. Format.SpecName(selectedSpecKey))
     table.insert(lines, Format.Muted("    Estimated title cutoffs for this spec (e.g. to check a friend)."))
 
     local hasAny = false

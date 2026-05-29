@@ -853,6 +853,7 @@ function PVL.BuildDashboardSummary()
         observedPlayerCount = observedPlayerCount,
         observedTopSpecs = { observedRows[1], observedRows[2], observedRows[3] },
         matchCount = #(PVL.GetObservedMatches(bracket) or {}),
+        seasonRecord = PVL.RatedInfo and PVL.RatedInfo.GetSeasonRecord(bracket) or nil,
         playerCR = playerCR,
         playerCurrentCR = playerCurrentCR,
         playerMMR = playerMMR,

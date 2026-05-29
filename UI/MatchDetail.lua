@@ -324,13 +324,23 @@ function UI.FormatParticipantName(participant)
     return name
 end
 
---- Formats one participant name with spec/class on the same line.
+--- Formats one participant name with a class icon and short spec on one line.
+--- Mirrors the Ladder rows: a fixed-width class icon, the class-colored name,
+--- then the spec word only (class already shown by the icon and name color).
 --- @param participant table
 --- @return string
 function UI.FormatParticipantNameLine(participant)
     local nameText = UI.FormatParticipantName(participant)
-    local specText = UI.FormatParticipantSpec(participant)
-    return string.format("%s  %s", nameText, specText)
+    local iconText = Format.ClassIcon(participant.class)
+
+    local specText
+    if participant.spec and participant.class then
+        specText = Format.SpecShortName(string.format("%s_%s", participant.class, participant.spec))
+    else
+        specText = UI.FormatParticipantSpec(participant)
+    end
+
+    return string.format("%s%s  %s", iconText, nameText, specText)
 end
 
 --- Formats one participant spec label for compact tables.
@@ -364,13 +374,25 @@ function UI.FormatParticipantRatingDelta(participant)
     return sign .. tostring(participant.ratingChange)
 end
 
+--- Formats one roster row with player identity and rating on a single line.
+--- @param participant table
+--- @return string
+function UI.FormatParticipantRosterLine(participant)
+    return string.format(
+        "%s  %s  %s",
+        UI.FormatParticipantNameLine(participant),
+        Format.Rating(participant.rating),
+        UI.FormatParticipantRatingDelta(participant)
+    )
+end
+
 --- Appends one team roster block with CR and rating change.
 --- @param lines string[]
 --- @param title string
 --- @param participants table[]
 function UI.AppendMatchRosterBlock(lines, title, participants)
-    table.insert(lines, Format.Label(title))
-    table.insert(lines, "")
+    table.insert(lines, Format.SectionLabel(title))
+    table.insert(lines, Format.Divider(300))
 
     if #participants == 0 then
         table.insert(lines, Format.Muted("No players recorded."))
@@ -378,15 +400,8 @@ function UI.AppendMatchRosterBlock(lines, title, participants)
         return
     end
 
-    table.insert(lines, Format.Muted("Player           CR      Change"))
-
     for _, participant in ipairs(participants) do
-        table.insert(lines, string.format(
-            "  %s  %s  %s",
-            UI.FormatParticipantNameLine(participant),
-            Format.Rating(participant.rating),
-            UI.FormatParticipantRatingDelta(participant)
-        ))
+        table.insert(lines, UI.FormatParticipantRosterLine(participant))
     end
 
     table.insert(lines, "")
@@ -509,8 +524,8 @@ end
 --- @param combatSummary table
 --- @param statDef table
 function UI.AppendMatchCombatTeamBlock(lines, title, participants, combatSummary, statDef)
-    table.insert(lines, Format.Label(title))
-    table.insert(lines, "")
+    table.insert(lines, Format.SectionLabel(title))
+    table.insert(lines, Format.Divider(300))
 
     if #participants == 0 then
         table.insert(lines, Format.Muted("No players recorded."))
@@ -551,8 +566,8 @@ function UI.BuildMatchDetailText(matchRecord)
 
     local lines = {}
     local bracketName = PVL.BRACKET_NAMES[matchRecord.bracket] or matchRecord.bracket or "PvP"
-    local resultLabel = matchRecord.won == true and Format.Colorize("FF40C040", "Victory")
-        or (matchRecord.won == false and Format.Colorize("FFFF4040", "Defeat") or Format.Muted("Result unknown"))
+    local resultLabel = matchRecord.won == true and Format.Colorize(Format.COLORS.POSITIVE, "Victory")
+        or (matchRecord.won == false and Format.Colorize(Format.COLORS.NEGATIVE, "Defeat") or Format.Muted("Result unknown"))
     local timestampText = PVL.CrHistory and PVL.CrHistory.FormatTimestamp(matchRecord.timestamp) or "--"
     local mapLabel = UI.GetMatchMapLabel(matchRecord)
     local combatSummary = matchRecord.combatSummary
@@ -645,8 +660,8 @@ function UI.BuildMatchCombatAnalysisText(matchRecord, statId)
     )
 
     if #(combatSummary.killEvents or {}) > 0 then
-        table.insert(lines, Format.Label("Kill order"))
-        table.insert(lines, "")
+        table.insert(lines, Format.SectionLabel("Kill order"))
+        table.insert(lines, Format.Divider(300))
 
         for _, killEvent in ipairs(combatSummary.killEvents) do
             local elapsedMinutes = math.floor((killEvent.elapsed or 0) / 60)

@@ -6,7 +6,7 @@ PVL.RatedInfo = PVL.RatedInfo or {}
 local RatedInfo = PVL.RatedInfo
 
 RatedInfo.frame = RatedInfo.frame or nil
-RatedInfo.currentRatingByBracket = RatedInfo.currentRatingByBracket or {}
+RatedInfo.ratedInfoByBracket = RatedInfo.ratedInfoByBracket or {}
 RatedInfo.requestPending = RatedInfo.requestPending or false
 
 local LOGIN_REFRESH_SECONDS = 1.5
@@ -34,10 +34,10 @@ function RatedInfo.GetRatedInfoIndex(bracket)
     return PVL.RATED_INFO_INDEX_BY_BRACKET[bracket]
 end
 
---- Reads the current CR for one bracket from client rated-info cache.
+--- Reads rated PvP stats for one bracket from the client (same source as the PvP UI).
 --- @param bracket string|nil
---- @return number|nil
-function RatedInfo.ReadCurrentRating(bracket)
+--- @return table|nil info `{ rating, seasonBest, seasonPlayed, seasonWon, seasonLost, winPct, ... }`
+function RatedInfo.ReadPersonalRatedInfo(bracket)
     if not GetPersonalRatedInfo then
         return nil
     end
@@ -47,21 +47,41 @@ function RatedInfo.ReadCurrentRating(bracket)
         return nil
     end
 
-    local rating = select(1, GetPersonalRatedInfo(index))
-    rating = GetAccessibleNumber(rating)
-    if rating == nil then
-        return nil
-    end
+    local rating, seasonBest, weeklyBest, seasonPlayed, seasonWon, weeklyPlayed, weeklyWon, cap =
+        GetPersonalRatedInfo(index)
 
-    return rating
+    seasonPlayed = GetAccessibleNumber(seasonPlayed) or 0
+    seasonWon = GetAccessibleNumber(seasonWon) or 0
+    local seasonLost = math.max(seasonPlayed - seasonWon, 0)
+
+    return {
+        rating = GetAccessibleNumber(rating),
+        seasonBest = GetAccessibleNumber(seasonBest),
+        weeklyBest = GetAccessibleNumber(weeklyBest),
+        seasonPlayed = seasonPlayed,
+        seasonWon = seasonWon,
+        seasonLost = seasonLost,
+        weeklyPlayed = GetAccessibleNumber(weeklyPlayed) or 0,
+        weeklyWon = GetAccessibleNumber(weeklyWon) or 0,
+        cap = GetAccessibleNumber(cap),
+        winPct = seasonPlayed > 0 and ((seasonWon / seasonPlayed) * 100) or nil,
+    }
 end
 
---- Refreshes cached current CR values for all supported brackets.
+--- Reads the current CR for one bracket from client rated-info cache.
+--- @param bracket string|nil
+--- @return number|nil
+function RatedInfo.ReadCurrentRating(bracket)
+    local info = RatedInfo.ReadPersonalRatedInfo(bracket)
+    return info and info.rating or nil
+end
+
+--- Refreshes cached rated-info values for all supported brackets.
 function RatedInfo.RefreshAll()
-    RatedInfo.currentRatingByBracket = RatedInfo.currentRatingByBracket or {}
+    RatedInfo.ratedInfoByBracket = {}
 
     for bracket in pairs(PVL.RATED_INFO_INDEX_BY_BRACKET) do
-        RatedInfo.currentRatingByBracket[bracket] = RatedInfo.ReadCurrentRating(bracket)
+        RatedInfo.ratedInfoByBracket[bracket] = RatedInfo.ReadPersonalRatedInfo(bracket)
     end
 end
 
@@ -74,20 +94,46 @@ function RatedInfo.RefreshAndNotify()
     end
 end
 
+--- Returns cached rated-info for one bracket, reading from the client when needed.
+--- @param bracket string|nil
+--- @return table|nil
+function RatedInfo.GetRatedInfo(bracket)
+    bracket = bracket or PVL.GetActiveBracketFilter()
+    RatedInfo.ratedInfoByBracket = RatedInfo.ratedInfoByBracket or {}
+
+    local info = RatedInfo.ratedInfoByBracket[bracket]
+    if info == nil then
+        info = RatedInfo.ReadPersonalRatedInfo(bracket)
+        RatedInfo.ratedInfoByBracket[bracket] = info
+    end
+
+    return info
+end
+
 --- Returns the cached current CR for one bracket.
 --- @param bracket string|nil
 --- @return number|nil
 function RatedInfo.GetCurrentRating(bracket)
-    bracket = bracket or PVL.GetActiveBracketFilter()
-    RatedInfo.currentRatingByBracket = RatedInfo.currentRatingByBracket or {}
+    local info = RatedInfo.GetRatedInfo(bracket)
+    return info and info.rating or nil
+end
 
-    local rating = RatedInfo.currentRatingByBracket[bracket]
-    if rating == nil then
-        rating = RatedInfo.ReadCurrentRating(bracket)
-        RatedInfo.currentRatingByBracket[bracket] = rating
+--- Returns the current season win/loss record for one bracket from the PvP rated menu.
+--- @param bracket string|nil
+--- @return table|nil record `{ wins, losses, games, winPct, seasonBest }`
+function RatedInfo.GetSeasonRecord(bracket)
+    local info = RatedInfo.GetRatedInfo(bracket)
+    if not info or not info.seasonPlayed or info.seasonPlayed <= 0 then
+        return nil
     end
 
-    return rating
+    return {
+        wins = info.seasonWon,
+        losses = info.seasonLost,
+        games = info.seasonPlayed,
+        winPct = info.winPct,
+        seasonBest = info.seasonBest,
+    }
 end
 
 --- Asks the client to refresh rated PvP stats from the server.
@@ -160,13 +206,16 @@ function RatedInfo.PrintDebug()
     print("|cff66ccffPvPLedger|r rated-info debug:")
     for _, bracket in ipairs(PVL.DEFAULT_COLLECTED_BRACKETS) do
         local index = RatedInfo.GetRatedInfoIndex(bracket)
-        local rating = RatedInfo.GetCurrentRating(bracket)
+        local info = RatedInfo.GetRatedInfo(bracket)
         local bracketName = PVL.BRACKET_NAMES[bracket] or bracket
         print(string.format(
-            "  %s index=%s currentCR=%s",
+            "  %s index=%s currentCR=%s season=%s-%s (%.1f%%)",
             bracketName,
             tostring(index),
-            tostring(rating or "nil")
+            tostring(info and info.rating or "nil"),
+            tostring(info and info.seasonWon or 0),
+            tostring(info and info.seasonLost or 0),
+            info and info.winPct or 0
         ))
     end
 end

@@ -362,6 +362,20 @@ function UI.BuildSummaryText(summary)
         Format.Header(bracketName)
     ))
     table.insert(lines, Format.StatLine("Matches tracked", Format.Count(summary.matchCount)))
+
+    if summary.seasonRecord then
+        table.insert(lines, Format.StatLine(
+            PVL.LABELS.SEASON_RECORD,
+            Format.WinLossRecord(summary.seasonRecord.wins, summary.seasonRecord.losses)
+        ))
+        table.insert(lines, Format.StatLine(
+            PVL.LABELS.SEASON_WIN_RATE,
+            Format.WinPercent(summary.seasonRecord.wins, summary.seasonRecord.losses)
+        ))
+    else
+        table.insert(lines, Format.Muted("No rated games this season for this bracket."))
+    end
+
     table.insert(lines, Format.StatLine(PVL.LABELS.CURRENT_CR, Format.Rating(summary.playerCurrentCR)))
     table.insert(lines, Format.StatLine("Last match CR", Format.Rating(summary.playerCR)))
     table.insert(lines, Format.StatLine(
@@ -396,14 +410,19 @@ function UI.BuildSummaryText(summary)
 
     if summary.importedOverall then
         table.insert(lines, "")
-        table.insert(lines, string.format(
-            "%s  %s",
-            Format.Label("Snapshot:"),
-            Format.Colorize(Format.COLORS.SOURCE, string.format(
-                "%s (%s)",
-                summary.imported.source or "unknown",
-                summary.imported.snapshotDate or "unknown"
-            ))
+        table.insert(lines, Format.Divider(190))
+        table.insert(lines, Format.SectionLabel("Ladder snapshot"))
+        table.insert(lines, Format.StatLine(
+            "Source",
+            Format.Colorize(Format.COLORS.SOURCE, summary.imported.source or "unknown")
+        ))
+        table.insert(lines, Format.StatLine(
+            "Snapshot date",
+            Format.Colorize(Format.COLORS.SOURCE, summary.imported.snapshotDate or "unknown")
+        ))
+        table.insert(lines, Format.StatLine(
+            "Loaded from",
+            Format.Colorize(Format.COLORS.SOURCE, PVL.FormatLadderSourceLabel(PVL.GetSnapshotSource(summary.bracket)))
         ))
         if summary.importedPlayerCount and summary.importedPlayerCount > 0 then
             table.insert(lines, Format.StatLine("Indexed players", Format.Count(summary.importedPlayerCount)))
@@ -414,13 +433,8 @@ function UI.BuildSummaryText(summary)
                 string.format("%s / %s", Format.Count(summary.listedObservedCount or 0), Format.Count(summary.observedPlayerCount))
             ))
         end
-        table.insert(lines, Format.StatLine(PVL.LABELS.LISTED_AVG, Format.Rating(summary.importedOverall.avgListedRating)))
-        table.insert(lines, Format.StatLine(PVL.LABELS.LISTED_MEDIAN, Format.Rating(summary.importedOverall.medianListedRating)))
-        table.insert(lines, Format.StatLine(PVL.LABELS.TOP100_AVG, Format.Rating(summary.importedOverall.top100Avg)))
-        table.insert(lines, Format.StatLine(
-            "Loaded from",
-            Format.Colorize(Format.COLORS.SOURCE, PVL.FormatLadderSourceLabel(PVL.GetSnapshotSource(summary.bracket)))
-        ))
+        table.insert(lines, "")
+        Format.AppendImportedRatingStats(lines, summary.importedOverall)
     else
         table.insert(lines, "")
         table.insert(lines, Format.Muted("No ladder data loaded."))
@@ -447,10 +461,9 @@ function UI.BuildCrHistoryText(bracket)
         Format.StatLine(
             "Session record",
             string.format(
-                "%s-%s  (%s games)",
-                Format.Count(summary.winsSession),
-                Format.Count(summary.lossesSession),
-                Format.Count(summary.gamesSession)
+                "%s  %s",
+                Format.WinLossRecord(summary.winsSession, summary.lossesSession),
+                Format.Muted(string.format("(%s games)", Format.Count(summary.gamesSession)))
             )
         ),
         "",
@@ -462,30 +475,12 @@ function UI.BuildCrHistoryText(bracket)
         return table.concat(lines, "\n")
     end
 
-    table.insert(lines, Format.Label("Recent activity"))
+    table.insert(lines, Format.Divider(190))
+    table.insert(lines, Format.SectionLabel("Recent activity"))
     table.insert(lines, "")
 
     for _, entry in ipairs(summary.recentEntries) do
-        if entry.source == "match" then
-            local resultLabel = entry.won == true and Format.Colorize("FF40C040", "W")
-                or (entry.won == false and Format.Colorize("FFFF4040", "L") or Format.Muted("-"))
-            table.insert(lines, string.format(
-                "%s  %s  %s -> %s  (%s)  %s",
-                Format.Muted(PVL.CrHistory.FormatTimestamp(entry.timestamp)),
-                Format.Muted("match"),
-                Format.Rating(entry.crBefore),
-                Format.Rating(entry.cr),
-                PVL.CrHistory.FormatDelta(entry.delta),
-                resultLabel
-            ))
-        else
-            table.insert(lines, string.format(
-                "%s  %s  %s",
-                Format.Muted(PVL.CrHistory.FormatTimestamp(entry.timestamp)),
-                Format.Muted(PVL.CrHistory.GetEntryTypeLabel(entry)),
-                Format.Rating(entry.cr)
-            ))
-        end
+        table.insert(lines, Format.RecentActivityLine(entry))
     end
 
     return table.concat(lines, "\n")
@@ -507,22 +502,6 @@ function UI.BuildSpecDetailPanelText(classToken, specKey)
     return UI.BuildOverviewDetailText()
 end
 
---- Builds the combined spec detail and imported ladder snapshot panel.
---- @param classToken string|nil
---- @param specKey string|nil
---- @return string
-function UI.BuildCombinedSpecLadderText(classToken, specKey)
-    local lines = {
-        UI.BuildSpecDetailPanelText(classToken, specKey),
-        "",
-        Format.Header("Ladder Snapshot"),
-        "",
-        UI.BuildImportedListText(classToken, specKey),
-    }
-
-    return table.concat(lines, "\n")
-end
-
 --- Updates the top-row detail panels.
 --- @param frame Frame
 --- @param filters table
@@ -531,9 +510,17 @@ function UI.UpdateDetailPanels(frame, filters)
 
     frame.summaryHeader:SetText(Format.Header("Overview"))
     frame.crHistoryHeader:SetText(Format.Header(PVL.LABELS.CR_HISTORY))
-    frame.specDetailHeader:SetText(Format.Header("Spec Detail"))
+
+    local specHeader = Format.Header("Class Breakdown")
+    if filters.specKey then
+        local classToken = filters.specKey:match("^(.-)_")
+        specHeader = Format.ClassIcon(classToken) .. Format.SpecShortName(filters.specKey)
+    elseif filters.classToken then
+        specHeader = Format.ClassIcon(filters.classToken) .. Format.ClassName(filters.classToken)
+    end
+    frame.specDetailHeader:SetText(specHeader)
     frame.setCrHistoryText(UI.BuildCrHistoryText(bracket))
-    frame.setSpecDetailText(UI.BuildCombinedSpecLadderText(filters.classToken, filters.specKey))
+    frame.setSpecDetailText(UI.BuildSpecDetailPanelText(filters.classToken, filters.specKey))
 end
 
 --- Updates the bottom match review panels for the selected match.
@@ -563,10 +550,7 @@ end
 function UI.BuildOverviewDetailText()
     local bracket = PVL.GetActiveBracketFilter()
     local classRows = PVL.GetImportedClassRows()
-    local lines = {
-        Format.Header("All Classes"),
-        "",
-    }
+    local lines = {}
 
     if PVL.IsImportedSpecBreakdownMissing(bracket) then
         local bracketName = PVL.BRACKET_NAMES[bracket] or "This bracket"
@@ -586,13 +570,17 @@ function UI.BuildOverviewDetailText()
         return table.concat(lines, "\n")
     end
 
-    table.insert(lines, Format.Label("Listed ladder by class"))
+    table.insert(lines, Format.SectionLabel("Listed ladder by class"))
     table.insert(lines, "")
 
-    for _, row in ipairs(classRows) do
-        local header, stats = Format.ClassOverviewLines(row)
+    for index, row in ipairs(classRows) do
+        local header, shareLine, statsLine = Format.ClassOverviewLines(row)
         table.insert(lines, header)
-        table.insert(lines, stats)
+        table.insert(lines, shareLine)
+        table.insert(lines, statsLine)
+        if index < #classRows then
+            table.insert(lines, "")
+        end
     end
 
     table.insert(lines, "")
@@ -610,13 +598,10 @@ function UI.BuildClassDetailText(classToken)
         return Format.Muted("No detail available for the selected class.")
     end
 
-    local lines = {
-        string.format("%s  %s", Format.ClassName(classToken, detail.displayName), Format.Label("All Specs")),
-        "",
-    }
+    local lines = {}
 
     if detail.imported then
-        Format.AppendImportedStats(lines, detail.imported, detail.importedRepresentation)
+        Format.AppendImportedStats(lines, detail.imported, detail.importedRepresentation, true)
     elseif PVL.IsImportedSpecBreakdownMissing() then
         table.insert(lines, Format.Muted(string.format(
             "No imported class breakdown for %s.",
@@ -628,9 +613,20 @@ function UI.BuildClassDetailText(classToken)
 
     if detail.importedSpecRows and #detail.importedSpecRows > 0 then
         table.insert(lines, "")
-        table.insert(lines, Format.Label("Listed specs"))
-        for _, row in ipairs(detail.importedSpecRows) do
-            table.insert(lines, Format.SpecListLine(row.specKey, row.listedCount, nil, row.avgListedRating))
+        table.insert(lines, Format.SectionLabel("Listed specs"))
+        for specIndex, row in ipairs(detail.importedSpecRows) do
+            local header, shareLine, statsLine = Format.SpecOverviewLines(
+                row.specKey,
+                row.listedCount,
+                row.avgListedRating,
+                row.representation
+            )
+            table.insert(lines, header)
+            table.insert(lines, shareLine)
+            table.insert(lines, statsLine)
+            if specIndex < #detail.importedSpecRows then
+                table.insert(lines, "")
+            end
         end
     end
 
@@ -642,7 +638,7 @@ function UI.BuildClassDetailText(classToken)
 
     if detail.observedSpecRows and #detail.observedSpecRows > 0 then
         table.insert(lines, "")
-        table.insert(lines, Format.Label("Observed specs"))
+        table.insert(lines, Format.SectionLabel("Observed specs"))
         for _, row in ipairs(detail.observedSpecRows) do
             table.insert(lines, Format.SpecListLine(row.specKey, row.count, row.percent))
         end
@@ -664,13 +660,10 @@ function UI.BuildSpecDetailText(specKey)
         return Format.Muted("No detail available for the selected spec.")
     end
 
-    local lines = {
-        Format.SpecName(specKey),
-        "",
-    }
+    local lines = {}
 
     if detail.imported then
-        Format.AppendImportedStats(lines, detail.imported, detail.importedRepresentation)
+        Format.AppendImportedStats(lines, detail.imported, detail.importedRepresentation, true)
     elseif PVL.IsImportedSpecBreakdownMissing() then
         table.insert(lines, Format.Muted(string.format(
             "%s has one combined imported ladder without per-spec breakdown.",
@@ -685,104 +678,6 @@ function UI.BuildSpecDetailText(specKey)
         PVL.LABELS.OBSERVED,
         string.format("%s  %s", Format.Count(detail.observedCount), Format.Percent(detail.observedPercent))
     ))
-
-    return table.concat(lines, "\n")
-end
-
---- Builds the imported snapshot list for the current filters.
---- @param classToken string|nil
---- @param specKey string|nil
---- @return string
-function UI.BuildImportedListText(classToken, specKey)
-    local bracket = PVL.GetActiveBracketFilter()
-    local snapshot = PVL.GetImportedSnapshot(bracket)
-    if not snapshot then
-        if PVL.IsDataAddonInstalled() then
-            return Format.Muted("No ladder data loaded. Try /pvl update, then /reload.")
-        end
-
-        return Format.Muted(string.format(
-            "No ladder data loaded. Install PvPLedger-Data-US or update PvPLedger, then /reload."
-        ))
-    end
-
-    local sourceLabel = PVL.GetSnapshotSource(bracket) or "unknown"
-    local lines = {
-        string.format("%s  %s", Format.Label("Snapshot"), Format.Colorize(Format.COLORS.SOURCE, snapshot.snapshotId or "unknown")),
-        string.format(
-            "%s  %s   %s  %s   %s  %s   %s  %s",
-            Format.Label("Source:"),
-            Format.Colorize(Format.COLORS.SOURCE, snapshot.source or "unknown"),
-            Format.Label("Region:"),
-            Format.Colorize(Format.COLORS.SOURCE, snapshot.region or "US"),
-            Format.Label("Date:"),
-            Format.Colorize(Format.COLORS.SOURCE, snapshot.snapshotDate or "unknown"),
-            Format.Label("Loaded from:"),
-            Format.Colorize(Format.COLORS.SOURCE, PVL.FormatLadderSourceLabel(sourceLabel))
-        ),
-        "",
-    }
-
-    for _, hintLine in ipairs(PVL.GetLadderStalenessLines(bracket)) do
-        table.insert(lines, Format.Colorize(Format.COLORS.WARNING, hintLine))
-    end
-    table.insert(lines, "")
-
-    local specRows = PVL.GetFilteredImportedSpecRows(classToken, specKey)
-    if PVL.IsImportedSpecBreakdownMissing(bracket) then
-        local bracketName = PVL.BRACKET_NAMES[bracket] or "This bracket"
-        table.insert(lines, Format.Muted(string.format("%s uses one combined ladder on Battle.net.", bracketName)))
-        table.insert(lines, Format.Muted("Imported class/spec breakdown is not available for this bracket."))
-        if snapshot.overall then
-            table.insert(lines, Format.StatLine("Listed players", Format.Count(snapshot.overall.listedCount)))
-            table.insert(lines, Format.StatLine("Average rating", Format.Rating(snapshot.overall.avgListedRating)))
-        end
-        return table.concat(lines, "\n")
-    end
-
-    if not classToken and not specKey then
-        local classRows = PVL.GetImportedClassRows()
-        if #classRows == 0 then
-            table.insert(lines, Format.Muted("No imported class breakdown is available for this bracket."))
-            return table.concat(lines, "\n")
-        end
-
-        table.insert(lines, Format.Label("Listed ladder by class"))
-        table.insert(lines, "")
-        for _, row in ipairs(classRows) do
-            local header, stats = Format.ClassSnapshotLines(row)
-            table.insert(lines, header)
-            table.insert(lines, stats)
-        end
-        return table.concat(lines, "\n")
-    end
-
-    if classToken and not specKey then
-        local classRow = PVL.GetImportedClassAggregate(classToken)
-        if classRow then
-            table.insert(lines, string.format(
-                "%s  %s",
-                Format.ClassName(classToken),
-                Format.Label("all specs")
-            ))
-            table.insert(lines, string.format(
-                "    %s listed   avg %s   share %s",
-                Format.Count(classRow.listedCount),
-                Format.Rating(classRow.avgListedRating),
-                Format.Percent(PVL.GetImportedClassRepresentation(classToken))
-            ))
-            table.insert(lines, "")
-        end
-    end
-
-    if #specRows == 0 then
-        table.insert(lines, Format.Muted("No imported listed-ladder rows match the current filters."))
-        return table.concat(lines, "\n")
-    end
-
-    for _, row in ipairs(specRows) do
-        table.insert(lines, Format.SpecImportedLine(row.specKey, row.listedCount, row.avgListedRating, row.representation))
-    end
 
     return table.concat(lines, "\n")
 end

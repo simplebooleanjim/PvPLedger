@@ -110,6 +110,17 @@ function CombatMeter.CreateHeaderRow(parent)
     header.rateLabel:SetWidth(CombatMeter.RATE_WIDTH)
     header.rateLabel:SetJustifyH("RIGHT")
 
+    -- Match the section-label gold used across the text panels.
+    header.rankText:SetTextColor(0.847, 0.698, 0.353)
+    header.statLabel:SetTextColor(0.847, 0.698, 0.353)
+    header.rateLabel:SetTextColor(0.847, 0.698, 0.353)
+
+    header.divider = header:CreateTexture(nil, "ARTWORK")
+    header.divider:SetColorTexture(122 / 255, 104 / 255, 62 / 255, 0.85)
+    header.divider:SetHeight(1)
+    header.divider:SetPoint("BOTTOMLEFT", header, "BOTTOMLEFT", 0, 0)
+    header.divider:SetPoint("BOTTOMRIGHT", header, "BOTTOMRIGHT", 0, 0)
+
     return header
 end
 
@@ -328,8 +339,8 @@ function UI.CreateCombatMeterPanel(parent, name, topAnchor, bottomLeft, bottomRi
         self.headerRow:ClearAllPoints()
         self.headerRow:SetPoint("TOPLEFT", self.content, "TOPLEFT", 0, -yOffset)
         self.headerRow:SetPoint("RIGHT", self.content, "RIGHT", 0, 0)
-        self.headerRow.statLabel:SetText(statDef.label)
-        self.headerRow.rateLabel:SetText(statDef.rateLabel or (statDef.useCombatAmount and "DPS" or "/min"))
+        self.headerRow.statLabel:SetText(string.upper(statDef.label))
+        self.headerRow.rateLabel:SetText(string.upper(statDef.rateLabel or (statDef.useCombatAmount and "DPS" or "/min")))
         self.headerRow:Show()
         yOffset = yOffset + CombatMeter.HEADER_HEIGHT + CombatMeter.ROW_GAP
 

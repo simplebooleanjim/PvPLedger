@@ -108,6 +108,36 @@ function CrHistory.PruneRedundantSnapshots()
     end
 end
 
+--- Returns true when a CR-only row should be hidden from recent activity UI.
+--- Snapshots are dropped when a nearby match already shows the same CR, or when a
+--- newer displayed row already carries that rating.
+--- @param entry table
+--- @param entries table[] Newest-first entries for the active bracket.
+--- @param index number Index of entry inside entries.
+--- @return boolean
+function CrHistory.ShouldSkipCrOnlyForDisplay(entry, entries, index)
+    if not CrHistory.IsCrOnlyEntry(entry) then
+        return false
+    end
+
+    for otherIndex, other in ipairs(entries) do
+        if otherIndex ~= index
+            and other.source == "match"
+            and other.cr == entry.cr
+            and entry.timestamp
+            and other.timestamp
+            and math.abs(entry.timestamp - other.timestamp) <= 300 then
+            return true
+        end
+    end
+
+    if index > 1 and entries[index - 1].cr == entry.cr then
+        return true
+    end
+
+    return false
+end
+
 --- Returns recent CR history rows with redundant snapshots collapsed for display.
 --- @param entries table[]
 --- @param limit number|nil
@@ -119,15 +149,10 @@ function CrHistory.FilterRecentEntriesForDisplay(entries, limit)
     for index, entry in ipairs(entries) do
         if not CrHistory.IsValidCr(entry.cr) then
             -- Skip invalid rows left over from older builds.
+        elseif CrHistory.ShouldSkipCrOnlyForDisplay(entry, entries, index) then
+            -- Skip redundant rating checks already represented by a match row.
         else
-            local newerEntry = index > 1 and entries[index - 1] or nil
-            local skip = CrHistory.IsCrOnlyEntry(entry)
-                and newerEntry
-                and newerEntry.cr == entry.cr
-
-            if not skip then
-                table.insert(filtered, entry)
-            end
+            table.insert(filtered, entry)
         end
 
         if #filtered >= limit then

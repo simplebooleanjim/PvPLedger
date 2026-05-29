@@ -144,6 +144,8 @@ PVL.LABELS = {
     CR_LOW = "Low CR",
     CR_NET_7D = "Net CR (7 days)",
     CR_NET_SESSION = "Net CR (session)",
+    SEASON_RECORD = "Season record",
+    SEASON_WIN_RATE = "Season win rate",
 }
 
 --- Maximum CR history points retained per character.
