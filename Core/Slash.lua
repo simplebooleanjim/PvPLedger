@@ -123,7 +123,7 @@ local function RegisterSlashCommands()
             return
         end
 
-        if command == "debug score" then
+        if command == "debug score" or command == "debug match" or command == "debug combat" then
             if PVL.MatchCollector and PVL.MatchCollector.PrintScoreDebug then
                 PVL.MatchCollector.PrintScoreDebug()
             end

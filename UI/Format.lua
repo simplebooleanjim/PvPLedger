@@ -21,6 +21,7 @@ Format.COLORS = {
     WARNING = "FFFFA53C",
     SECTION = "FFD8B25A",
     ACCENT = "FFFFDD8A",
+    LINK = "FF66CCFF",
     POSITIVE = "FF54D98C",
     NEGATIVE = "FFF26D6D",
 }
@@ -441,6 +442,21 @@ function Format.CombatMeterRate(value)
     return string.format("%.0f", value)
 end
 
+--- Returns a per-minute rate label for count-based combat meter stats.
+--- @param value number|nil
+--- @return string
+function Format.CombatMeterCountRate(value)
+    if value == nil or value <= 0 then
+        return "0"
+    end
+
+    if value >= 10 then
+        return string.format("%.1f", value)
+    end
+
+    return string.format("%.2f", value)
+end
+
 --- Faction crest texture paths keyed by normalized faction name.
 Format.FACTION_ICONS = {
     Alliance = "Interface\\WorldStateFrame\\AllianceIcon",
@@ -482,6 +498,20 @@ function Format.FactionIcon(faction, size)
     end
 
     return string.format("|T%s:%d:%d|t ", texture, size, size)
+end
+
+--- Returns a player name styled as a clickable armory link.
+--- Uses class color when known, otherwise the addon link accent.
+--- @param displayName string|nil
+--- @param specKey string|nil
+--- @return string
+function Format.PlayerLinkName(displayName, specKey)
+    displayName = displayName or "--"
+    if specKey then
+        return Format.PlayerName(displayName, specKey)
+    end
+
+    return Format.Colorize(Format.COLORS.LINK, displayName)
 end
 
 --- Returns a player name wrapped in its class color when spec/class is known.

@@ -8,6 +8,7 @@
 ## SavedVariablesPerCharacter: PvPLedgerCharDB, BlitzLedgerCharDB
 
 Core/Constants.lua
+Core/Armory.lua
 Core/Schema.lua
 Data/DataStore.lua
 Data/CrHistory.lua

@@ -146,6 +146,8 @@ PVL.LABELS = {
     CR_NET_SESSION = "Net CR (session)",
     SEASON_RECORD = "Season record",
     SEASON_WIN_RATE = "Season win rate",
+    ROUND_RECORD = "Round record",
+    ROUND_WIN_RATE = "Round win rate",
 }
 
 --- Maximum CR history points retained per character.
@@ -153,6 +155,9 @@ PVL.MAX_CR_HISTORY = 1000
 
 --- Number of recent CR history rows shown in the main UI panel.
 PVL.CR_HISTORY_UI_LIMIT = 15
+
+--- Number of arena rounds played in one rated Solo Shuffle match.
+PVL.SHUFFLE_ROUNDS_PER_MATCH = 6
 
 --- Maximum listed players shown in the ladder browser panel.
 PVL.LADDER_VIEW_LIMIT = 1000
@@ -164,10 +169,9 @@ PVL.COMBAT_ANALYSIS_STATS = {
     { value = "damage", label = "Damage Done", field = "damage", useCombatAmount = true, rateLabel = "DPS" },
     { value = "healing", label = "Healing Done", field = "healing", useCombatAmount = true, rateLabel = "HPS" },
     { value = "damageTaken", label = "Damage Taken", field = "damageTaken", useCombatAmount = true, rateLabel = "DTPS" },
-    { value = "interrupts", label = "Interrupts", field = "interrupts", useCombatAmount = false, rateLabel = "/min" },
-    { value = "ccApplied", label = "CC Applied", field = "ccApplied", useCombatAmount = false, rateLabel = "/min" },
-    { value = "ccTaken", label = "CC Taken", field = "ccTaken", useCombatAmount = false, rateLabel = "/min" },
-    { value = "deaths", label = "Deaths", field = "deaths", useCombatAmount = false, rateLabel = "/min" },
+    { value = "interrupts", label = "Interrupts", field = "interrupts", useCombatAmount = false, rateLabel = "Per min" },
+    { value = "dispels", label = "Dispels", field = "dispels", useCombatAmount = false, rateLabel = "Per min" },
+    { value = "deaths", label = "Deaths", field = "deaths", useCombatAmount = false, rateLabel = "Per min" },
 }
 
 PVL.DEFAULT_COMBAT_ANALYSIS_STAT = "damage"

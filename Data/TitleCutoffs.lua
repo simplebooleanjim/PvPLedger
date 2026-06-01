@@ -79,6 +79,9 @@ end
 
 local C = PVL.TITLE_COLORS
 
+--- Current-season rating required for the Elite title in all brackets.
+PVL.ELITE_RATING = 2300
+
 --- Fixed rating tiers shared by every bracket (Combatant through Elite).
 --- @return table[]
 local function BuildFixedRatingTiers()
@@ -87,7 +90,7 @@ local function BuildFixedRatingTiers()
         { id = "challenger", name = "Challenger", kind = "rating", rating = 1400, color = C.CHALLENGER },
         { id = "rival", name = "Rival", kind = "rating", rating = 1800, color = C.RIVAL },
         { id = "duelist", name = "Duelist", kind = "rating", rating = 2100, color = C.DUELIST },
-        { id = "elite", name = "Elite", kind = "rating", rating = 2400, color = C.ELITE },
+        { id = "elite", name = "Elite", kind = "rating", rating = PVL.ELITE_RATING, color = C.ELITE },
     }
 end
 
@@ -109,11 +112,11 @@ PVL.TITLE_DEFINITIONS = {
             id = "gladiator",
             name = "Gladiator",
             kind = "rating",
-            rating = 2400,
+            rating = PVL.ELITE_RATING,
             wins = 50,
             color = C.GLADIATOR,
             feat = true,
-            note = "Win 50 games at Elite (2400+) on the 3v3 ladder; not a percentile.",
+            note = "Win 50 games at Elite (2300+) on the 3v3 ladder; not a percentile.",
         },
         {
             id = "rank1",
@@ -134,11 +137,11 @@ PVL.TITLE_DEFINITIONS = {
             id = "legend",
             name = "Legend",
             kind = "rating",
-            rating = 2400,
+            rating = PVL.ELITE_RATING,
             wins = 100,
             color = C.LEGEND,
             feat = true,
-            note = "100 Solo Shuffle round wins at Elite (2400+).",
+            note = "100 Solo Shuffle round wins at Elite (2300+).",
         },
         {
             id = "rank1",
@@ -179,18 +182,6 @@ PVL.TITLE_DEFINITIONS = {
 
     [PVL.BRACKETS.BLITZ] = WithFixedTiers({
         {
-            id = "hero",
-            name = function(faction)
-                return FactionTitle("Hero of the Alliance", "Hero of the Horde", faction)
-            end,
-            kind = "percentile",
-            percentile = 0.5,
-            wins = 50,
-            color = C.HERO,
-            feat = true,
-            note = "Top 0.5% of your specialization's Battleground Blitz ladder, 50 wins required.",
-        },
-        {
             id = "rank1",
             name = function(faction)
                 return FactionTitle("Rank 1: Prized Marshal", "Rank 1: Prized Warlord", faction)
@@ -200,7 +191,7 @@ PVL.TITLE_DEFINITIONS = {
             wins = 50,
             color = C.RANK_ONE,
             feat = true,
-            note = "Top 0.1% of your specialization's Battleground Blitz ladder (at least the top few per spec), 50 wins required.",
+            note = "Top 0.1% of your specialization's Battleground Blitz ladder (at least the top few per spec), 50 wins required. Blitz has no Hero title.",
         },
     }),
 }

@@ -101,8 +101,7 @@ function PVL.BuildCombatExportSummary(combatSummary)
             healing = row.healing,
             damageTaken = row.damageTaken,
             interrupts = row.interrupts,
-            ccApplied = row.ccApplied,
-            ccTaken = row.ccTaken,
+            dispels = row.dispels,
             deaths = row.deaths,
         })
     end

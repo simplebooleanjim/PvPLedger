@@ -68,6 +68,7 @@ function PVL.GetDefaultCharDB()
         lastArena3v3MMRKind = nil,
         crHistory = {},
         crHistoryBackfilled = false,
+        pendingCombatSession = nil,
     }
 end
 
@@ -110,6 +111,10 @@ function PVL.MigrateDB(db)
     if db.settings.uiFilters.combatStat == nil then
         db.settings.uiFilters.combatStat = defaults.settings.uiFilters.combatStat
     end
+    if db.settings.uiFilters.combatStat == "ccApplied"
+        or db.settings.uiFilters.combatStat == "ccTaken" then
+        db.settings.uiFilters.combatStat = "dispels"
+    end
     db.observations = db.observations or defaults.observations
     db.observations.matches = db.observations.matches or {}
     db.observations.players = db.observations.players or {}
@@ -147,6 +152,7 @@ function PVL.MigrateCharDB(charDb)
     charDb.lastArena3v3MMRKind = charDb.lastArena3v3MMRKind
     charDb.crHistory = charDb.crHistory or {}
     charDb.crHistoryBackfilled = charDb.crHistoryBackfilled == true
+    charDb.pendingCombatSession = charDb.pendingCombatSession
 
     return charDb
 end

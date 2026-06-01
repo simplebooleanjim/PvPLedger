@@ -47,6 +47,9 @@ function PVL.Init()
 
     if PVL.MatchCollector then
         PVL.MatchCollector.Init()
+        if PVL.MatchCollector.EnsureMatchTracking then
+            PVL.MatchCollector.EnsureMatchTracking()
+        end
     end
 
     if PVL.CombatLogCollector then

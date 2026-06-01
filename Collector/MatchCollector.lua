@@ -8,9 +8,15 @@ local MatchCollector = PVL.MatchCollector
 MatchCollector.frame = MatchCollector.frame or nil
 MatchCollector.activeMatch = MatchCollector.activeMatch or nil
 MatchCollector.pendingComplete = MatchCollector.pendingComplete or nil
+MatchCollector.lastLifecyclePhase = MatchCollector.lastLifecyclePhase or "inactive"
+MatchCollector.syncTicker = MatchCollector.syncTicker or nil
 
 local COMPLETE_RETRY_SECONDS = 0.25
 local COMPLETE_MAX_ATTEMPTS = 12
+local LIFECYCLE_SYNC_SECONDS = 2
+local SESSION_RUNTIME_TOLERANCE_MS = 30000
+local MATCH_FINGERPRINT_DEDUP_SECONDS = 3600
+local MATCH_FINGERPRINT_MIN_NAMES = 4
 
 --- Returns true when an MMR reading looks populated by the client.
 --- Arena often returns 0 for hidden personal MMR fields instead of nil.
@@ -37,6 +43,846 @@ function MatchCollector.GetAccessibleNumber(value)
     return tonumber(value)
 end
 
+--- Returns true when addon code can read one GUID value.
+--- @param guid any
+--- @return boolean
+function MatchCollector.CanUseGuid(guid)
+    if PVL.CombatLogCollector and PVL.CombatLogCollector.CanUseGuid then
+        return PVL.CombatLogCollector.CanUseGuid(guid)
+    end
+
+    if guid == nil then
+        return false
+    end
+
+    if issecretvalue and issecretvalue(guid) then
+        return canaccessvalue and canaccessvalue(guid) or false
+    end
+
+    return type(guid) == "string" and guid ~= ""
+end
+
+--- Returns a readable GUID when the client allows addon access.
+--- @param guid any
+--- @return string|nil
+function MatchCollector.GetAccessibleGuid(guid)
+    if not MatchCollector.CanUseGuid(guid) then
+        return nil
+    end
+
+    return guid
+end
+
+--- Compares two GUID values without touching secret strings the addon cannot read.
+--- @param left any
+--- @param right any
+--- @return boolean
+function MatchCollector.GuidsEqual(left, right)
+    if not MatchCollector.CanUseGuid(left) or not MatchCollector.CanUseGuid(right) then
+        return false
+    end
+
+    local ok, same = pcall(function()
+        return left == right
+    end)
+
+    return ok and same == true
+end
+
+--- Returns true when two roster rows refer to the same player.
+--- @param left table|nil
+--- @param right table|nil
+--- @return boolean
+function MatchCollector.ParticipantsMatch(left, right)
+    if type(left) ~= "table" or type(right) ~= "table" then
+        return false
+    end
+
+    if MatchCollector.GuidsEqual(left.guid, right.guid) then
+        return true
+    end
+
+    local leftName = PVL.GetAccessibleString(left.name)
+    local rightName = PVL.GetAccessibleString(right.name)
+    if leftName and rightName then
+        local ok, same = pcall(function()
+            return leftName == rightName
+        end)
+        return ok and same == true
+    end
+
+    return false
+end
+
+--- Returns the normalized PvP match lifecycle phase for the current client state.
+--- Uses C_PvP.GetActiveMatchState when available, with IsMatchActive/IsMatchComplete fallbacks.
+--- @return "inactive"|"waiting"|"startup"|"engaged"|"postround"|"complete"
+function MatchCollector.GetMatchLifecyclePhase()
+    if C_PvP and C_PvP.GetActiveMatchState then
+        local state = C_PvP.GetActiveMatchState()
+        if Enum and Enum.PvPMatchState then
+            if state == Enum.PvPMatchState.Inactive then
+                return "inactive"
+            end
+            if state == Enum.PvPMatchState.Waiting then
+                return "waiting"
+            end
+            if state == Enum.PvPMatchState.StartUp then
+                return "startup"
+            end
+            if state == Enum.PvPMatchState.Engaged then
+                return "engaged"
+            end
+            if state == Enum.PvPMatchState.PostRound then
+                return "postround"
+            end
+            if state == Enum.PvPMatchState.Complete then
+                return "complete"
+            end
+        end
+
+        if state == 0 then
+            return "inactive"
+        end
+        if state == 1 then
+            return "waiting"
+        end
+        if state == 2 then
+            return "startup"
+        end
+        if state == 3 then
+            return "engaged"
+        end
+        if state == 4 then
+            return "postround"
+        end
+        if state == 5 then
+            return "complete"
+        end
+    end
+
+    if C_PvP and C_PvP.IsMatchComplete and C_PvP.IsMatchComplete() then
+        return "complete"
+    end
+
+    if C_PvP and C_PvP.IsMatchActive and C_PvP.IsMatchActive() then
+        return "engaged"
+    end
+
+    return "inactive"
+end
+
+--- Returns true when live combat-log collection should run for one lifecycle phase.
+--- @param phase string|nil
+--- @return boolean
+function MatchCollector.ShouldCollectCombatForPhase(phase)
+    return phase == "waiting"
+        or phase == "startup"
+        or phase == "engaged"
+        or phase == "postround"
+end
+
+--- Returns true when the player is inside a PvP instance that PvPLedger tracks.
+--- @return boolean
+function MatchCollector.IsInCollectiblePvpInstance()
+    if C_PvP then
+        if C_PvP.IsBattleground and C_PvP.IsBattleground() then
+            return true
+        end
+
+        if C_PvP.IsArena and C_PvP.IsArena() then
+            return true
+        end
+
+        if C_PvP.IsMatchActive and C_PvP.IsMatchActive() then
+            return true
+        end
+    end
+
+    local inInstance, instanceType = IsInInstance()
+    if not inInstance then
+        return false
+    end
+
+    return instanceType == "pvp" or instanceType == "arena" or instanceType == "scenario"
+end
+
+--- Returns the best instance type label for the current PvP context.
+--- @return string|nil
+function MatchCollector.GetCollectibleInstanceType()
+    local inInstance, instanceType = IsInInstance()
+    if inInstance and instanceType and instanceType ~= "none" then
+        return instanceType
+    end
+
+    if C_PvP and C_PvP.IsArena and C_PvP.IsArena() then
+        return "arena"
+    end
+
+    if C_PvP and C_PvP.IsBattleground and C_PvP.IsBattleground() then
+        return "pvp"
+    end
+
+    if MatchCollector.IsInCollectiblePvpInstance() then
+        return "pvp"
+    end
+
+    return instanceType
+end
+
+--- Returns the battleground/arena runtime in milliseconds when available.
+--- @return number
+function MatchCollector.GetBattlefieldRuntimeMs()
+    if not GetBattlefieldInstanceRunTime then
+        return 0
+    end
+
+    return MatchCollector.GetAccessibleNumber(GetBattlefieldInstanceRunTime()) or 0
+end
+
+--- Builds a stable session key for the current PvP instance.
+--- @param bracket string|nil
+--- @return string|nil sessionKey
+--- @return string|nil instanceType
+--- @return number|nil instanceMapID
+--- @return number runtimeMs
+function MatchCollector.BuildMatchSessionKey(bracket)
+    if not MatchCollector.IsInCollectiblePvpInstance() then
+        local _, instanceType = IsInInstance()
+        return nil, instanceType, nil, MatchCollector.GetBattlefieldRuntimeMs()
+    end
+
+    local instanceType = MatchCollector.GetCollectibleInstanceType() or "pvp"
+    local instanceMapID = select(8, GetInstanceInfo()) or C_Map.GetBestMapForUnit("player")
+    local runtimeMs = MatchCollector.GetBattlefieldRuntimeMs()
+    local sessionKey = string.format(
+        "%s:%s:%s",
+        bracket or "unknown",
+        instanceType or "none",
+        tostring(instanceMapID or 0)
+    )
+
+    return sessionKey, instanceType, instanceMapID, runtimeMs
+end
+
+--- Returns true when roster fingerprinting is reliable for one bracket.
+--- Solo Shuffle rosters change every round, so name matching is disabled there.
+--- @param bracket string|nil
+--- @return boolean
+function MatchCollector.SupportsRosterFingerprint(bracket)
+    return bracket ~= PVL.BRACKETS.SHUFFLE
+end
+
+--- Normalizes one scoreboard player name for roster comparisons.
+--- @param name string|nil
+--- @return string|nil
+function MatchCollector.NormalizeRosterName(name)
+    if PVL.CombatLogCollector and PVL.CombatLogCollector.NormalizeName then
+        return PVL.CombatLogCollector.NormalizeName(name)
+    end
+
+    name = PVL.GetAccessibleString(name)
+    if not name then
+        return nil
+    end
+
+    local ok, shortName = pcall(Ambiguate, name, "none")
+    if not ok or not shortName then
+        return nil
+    end
+
+    local baseName = shortName:match("^(.-)%-.+$") or shortName
+    return string.lower(baseName)
+end
+
+--- Builds a sorted roster name key from scoreboard participants.
+--- @param roster table[]|nil
+--- @return string|nil nameKey, number validCount
+function MatchCollector.BuildRosterNameKey(roster)
+    local names = {}
+
+    for _, participant in ipairs(roster or {}) do
+        local nameKey = MatchCollector.NormalizeRosterName(participant.name)
+        if nameKey then
+            table.insert(names, nameKey)
+        end
+    end
+
+    if #names == 0 then
+        return nil, 0
+    end
+
+    table.sort(names)
+    return table.concat(names, "|"), #names
+end
+
+--- Returns the minimum roster size required before trusting one fingerprint.
+--- @param bracket string|nil
+--- @return number
+function MatchCollector.GetFingerprintMinRosterSize(bracket)
+    local teamSize = MatchCollector.GetBracketTeamSize(bracket)
+    if teamSize and teamSize >= MATCH_FINGERPRINT_MIN_NAMES then
+        return teamSize
+    end
+
+    if bracket == PVL.BRACKETS.ARENA_2V2 then
+        return 4
+    end
+
+    if bracket == PVL.BRACKETS.ARENA_3V3 then
+        return 6
+    end
+
+    return MATCH_FINGERPRINT_MIN_NAMES
+end
+
+--- Builds a stable fingerprint from bracket, exact roster names, and pre-match CR/MMR.
+--- @param bracket string|nil
+--- @param roster table[]|nil
+--- @param playerCrBefore number|nil
+--- @param playerMmrBefore number|nil
+--- @return string|nil
+function MatchCollector.BuildMatchFingerprint(bracket, roster, playerCrBefore, playerMmrBefore)
+    if not MatchCollector.SupportsRosterFingerprint(bracket) then
+        return nil
+    end
+
+    local nameKey, validCount = MatchCollector.BuildRosterNameKey(roster)
+    if not nameKey or validCount < MatchCollector.GetFingerprintMinRosterSize(bracket) then
+        return nil
+    end
+
+    local parts = { bracket or "unknown", nameKey }
+    local crBefore = MatchCollector.GetAccessibleNumber(playerCrBefore)
+    if crBefore and crBefore > 0 then
+        table.insert(parts, "cr:" .. math.floor(crBefore + 0.5))
+    end
+
+    local mmrBefore = MatchCollector.GetAccessibleNumber(playerMmrBefore)
+    if MatchCollector.IsValidMmr(mmrBefore) then
+        table.insert(parts, "mmr:" .. math.floor(mmrBefore + 0.5))
+    end
+
+    return table.concat(parts, ":")
+end
+
+--- Returns a live scoreboard fingerprint for the current match when enough names are visible.
+--- @param bracket string|nil
+--- @param playerCrBefore number|nil
+--- @param playerMmrBefore number|nil
+--- @return string|nil
+function MatchCollector.TryBuildLiveMatchFingerprint(bracket, playerCrBefore, playerMmrBefore)
+    if not MatchCollector.SupportsRosterFingerprint(bracket) then
+        return nil
+    end
+
+    local roster = MatchCollector.CollectScoreboard()
+    if #roster == 0 then
+        return nil
+    end
+
+    playerCrBefore = playerCrBefore
+        or (MatchCollector.activeMatch and MatchCollector.activeMatch.playerCrBefore)
+
+    if not playerMmrBefore then
+        playerMmrBefore = MatchCollector.CollectFriendlyTeamMmr()
+        if not MatchCollector.IsValidMmr(playerMmrBefore) then
+            local localPlayer = MatchCollector.CollectLocalPlayerScore()
+            playerMmrBefore = localPlayer and localPlayer.prematchMMR
+        end
+    end
+
+    return MatchCollector.BuildMatchFingerprint(
+        bracket,
+        roster,
+        playerCrBefore,
+        playerMmrBefore
+    )
+end
+
+--- Updates the active match fingerprint when the scoreboard exposes enough player names.
+--- @return string|nil
+function MatchCollector.RefreshActiveMatchFingerprint()
+    if not MatchCollector.activeMatch then
+        return nil
+    end
+
+    local fingerprint = MatchCollector.TryBuildLiveMatchFingerprint(
+        MatchCollector.activeMatch.bracket,
+        MatchCollector.activeMatch.playerCrBefore,
+        MatchCollector.activeMatch.playerMmrBefore
+    )
+    if fingerprint then
+        MatchCollector.activeMatch.rosterFingerprint = fingerprint
+    end
+
+    return fingerprint
+end
+
+--- Returns true when two fingerprints describe the same observed match.
+--- @param fingerprintA string|nil
+--- @param fingerprintB string|nil
+--- @return boolean
+function MatchCollector.MatchesSameMatchFingerprint(fingerprintA, fingerprintB)
+    return type(fingerprintA) == "string"
+        and fingerprintA ~= ""
+        and fingerprintA == fingerprintB
+end
+
+--- Returns true when one candidate match matches a stored or active observation.
+--- @param bracket string|nil
+--- @param roster table[]|nil
+--- @param playerCrBefore number|nil
+--- @param playerMmrBefore number|nil
+--- @param reference table|nil
+--- @return boolean
+function MatchCollector.IsSameObservedMatch(bracket, roster, playerCrBefore, playerMmrBefore, reference)
+    if type(reference) ~= "table" then
+        return false
+    end
+
+    local referenceFingerprint = reference.rosterFingerprint
+        or reference.matchFingerprint
+        or MatchCollector.BuildMatchFingerprint(
+            reference.bracket or bracket,
+            reference.roster,
+            reference.playerCRBefore or reference.playerCrBefore,
+            reference.playerMMRBefore or reference.playerMmrBefore
+        )
+    local candidateFingerprint = MatchCollector.BuildMatchFingerprint(
+        bracket,
+        roster,
+        playerCrBefore,
+        playerMmrBefore
+    )
+
+    return MatchCollector.MatchesSameMatchFingerprint(referenceFingerprint, candidateFingerprint)
+end
+
+--- Returns true when the current scoreboard still describes the active match context.
+--- @param activeMatch table|nil
+--- @param bracket string|nil
+--- @return boolean
+function MatchCollector.ShouldTreatAsSameActiveMatch(activeMatch, bracket)
+    if type(activeMatch) ~= "table" or activeMatch.bracket ~= bracket then
+        return false
+    end
+
+    if not activeMatch.rosterFingerprint then
+        MatchCollector.RefreshActiveMatchFingerprint()
+    end
+
+    local liveFingerprint = MatchCollector.TryBuildLiveMatchFingerprint(
+        bracket,
+        activeMatch.playerCrBefore,
+        activeMatch.playerMmrBefore
+    )
+    if not liveFingerprint or not activeMatch.rosterFingerprint then
+        return false
+    end
+
+    return MatchCollector.MatchesSameMatchFingerprint(liveFingerprint, activeMatch.rosterFingerprint)
+end
+
+--- Returns a recently stored match with the same roster fingerprint, if any.
+--- @param bracket string|nil
+--- @param roster table[]|nil
+--- @param playerCrBefore number|nil
+--- @param playerMmrBefore number|nil
+--- @param maxAgeSeconds number|nil
+--- @return table|nil
+function MatchCollector.FindRecentDuplicateMatch(bracket, roster, playerCrBefore, playerMmrBefore, maxAgeSeconds)
+    local fingerprint = MatchCollector.BuildMatchFingerprint(
+        bracket,
+        roster,
+        playerCrBefore,
+        playerMmrBefore
+    )
+    if not fingerprint then
+        return nil
+    end
+
+    local db = PVL.GetDB()
+    if not db or type(db.observations) ~= "table" then
+        return nil
+    end
+
+    maxAgeSeconds = maxAgeSeconds or MATCH_FINGERPRINT_DEDUP_SECONDS
+    local now = time()
+    for index = #db.observations.matches, 1, -1 do
+        local match = db.observations.matches[index]
+        if match.bracket == bracket
+            and match.timestamp
+            and (now - match.timestamp) <= maxAgeSeconds
+            and MatchCollector.IsSameObservedMatch(
+                bracket,
+                roster,
+                playerCrBefore,
+                playerMmrBefore,
+                match
+            ) then
+            return match
+        end
+    end
+
+    return nil
+end
+
+--- Returns a simple completeness score for one stored combat summary.
+--- @param combatSummary table|nil
+--- @return number
+function MatchCollector.ScoreCombatSummary(combatSummary)
+    local score = 0
+    for _, row in ipairs(combatSummary and combatSummary.players or {}) do
+        score = score + (row.damage or 0) + (row.healing or 0) + (row.damageTaken or 0)
+        score = score + ((row.interrupts or 0) * 1000)
+    end
+    return score
+end
+
+--- Updates one stored match when a duplicate finalize captured richer combat data.
+--- @param existing table|nil
+--- @param incoming table|nil
+--- @return table|nil
+function MatchCollector.UpdateStoredMatchIfBetter(existing, incoming)
+    if type(existing) ~= "table" or type(incoming) ~= "table" then
+        return existing
+    end
+
+    local existingScore = MatchCollector.ScoreCombatSummary(existing.combatSummary)
+    local incomingScore = MatchCollector.ScoreCombatSummary(incoming.combatSummary)
+    if incoming.combatSummary and incomingScore >= existingScore then
+        existing.combatSummary = incoming.combatSummary
+    end
+
+    return existing
+end
+
+--- Returns the persisted combat session for the current character, if any.
+--- @return table|nil
+function MatchCollector.GetPendingCombatSession()
+    local charDb = PVL.GetCharDB()
+    if type(charDb) ~= "table" then
+        return nil
+    end
+
+    return charDb.pendingCombatSession
+end
+
+--- Clears any persisted in-progress combat session for the current character.
+function MatchCollector.ClearPendingCombatSession()
+    local charDb = PVL.GetCharDB()
+    if type(charDb) ~= "table" then
+        return
+    end
+
+    charDb.pendingCombatSession = nil
+end
+
+--- Returns true when a saved combat session belongs to the current instance.
+--- @param sessionKey string|nil
+--- @param runtimeMs number|nil
+--- @param rosterFingerprint string|nil
+--- @param playerCrBefore number|nil
+--- @return boolean
+function MatchCollector.CanResumeCombatSession(sessionKey, runtimeMs, rosterFingerprint, playerCrBefore)
+    local pending = MatchCollector.GetPendingCombatSession()
+    if type(pending) ~= "table" or not pending.sessionKey or not sessionKey then
+        return false
+    end
+
+    if pending.sessionKey == sessionKey then
+        runtimeMs = runtimeMs or 0
+        local minRuntimeMs = pending.minRuntimeMs or 0
+        if runtimeMs + SESSION_RUNTIME_TOLERANCE_MS < minRuntimeMs then
+            return false
+        end
+
+        return true
+    end
+
+    if not MatchCollector.SupportsRosterFingerprint(pending.bracket) then
+        return false
+    end
+
+    if not MatchCollector.MatchesSameMatchFingerprint(rosterFingerprint, pending.rosterFingerprint) then
+        return false
+    end
+
+    local pendingCr = MatchCollector.GetAccessibleNumber(pending.playerCrBefore)
+    local compareCr = MatchCollector.GetAccessibleNumber(playerCrBefore)
+    if pendingCr and compareCr and pendingCr ~= compareCr then
+        return false
+    end
+
+    return true
+end
+
+--- Builds the active-match context used by scoreboard and combat-log collectors.
+--- @param bracket string|nil
+--- @param resumePending boolean|nil
+--- @return table|nil
+function MatchCollector.BuildActiveMatchContext(bracket, resumePending)
+    local sessionKey, instanceType, instanceMapID, runtimeMs = MatchCollector.BuildMatchSessionKey(bracket)
+    if not sessionKey then
+        return nil
+    end
+
+    local pending = resumePending and MatchCollector.GetPendingCombatSession() or nil
+
+    local startCr = nil
+    if PVL.RatedInfo then
+        PVL.RatedInfo.RefreshAll()
+        startCr = MatchCollector.GetAccessibleNumber(PVL.RatedInfo.GetCurrentRating(bracket))
+    end
+
+    local startMmr = MatchCollector.CollectFriendlyTeamMmr()
+    if not MatchCollector.IsValidMmr(startMmr) then
+        local localPlayer = MatchCollector.CollectLocalPlayerScore()
+        startMmr = localPlayer and localPlayer.prematchMMR
+    end
+
+    local rosterFingerprint = MatchCollector.TryBuildLiveMatchFingerprint(bracket, startCr, startMmr)
+    local canResume = pending and MatchCollector.CanResumeCombatSession(
+        sessionKey,
+        runtimeMs,
+        rosterFingerprint,
+        startCr
+    ) or false
+
+    local context = {
+        bracket = bracket,
+        sessionKey = sessionKey,
+        instanceType = instanceType,
+        instanceMapID = instanceMapID,
+        runtimeMs = runtimeMs,
+        minRuntimeMs = canResume and pending.minRuntimeMs or runtimeMs,
+        startedAt = canResume and pending.startedAt or time(),
+        mapID = C_Map.GetBestMapForUnit("player"),
+        playerCrBefore = canResume and pending.playerCrBefore or startCr,
+        playerMmrBefore = canResume and pending.playerMmrBefore or startMmr,
+        rosterFingerprint = canResume and pending.rosterFingerprint or rosterFingerprint,
+        resumedFromSession = canResume,
+        segmentCount = canResume and ((pending.segmentCount or 1) + 1) or 1,
+    }
+
+    return context
+end
+
+--- Stops lifecycle polling when no match work remains.
+function MatchCollector.StopLifecycleSync()
+    if MatchCollector.syncTicker then
+        MatchCollector.syncTicker:Cancel()
+        MatchCollector.syncTicker = nil
+    end
+end
+
+--- Polls match lifecycle state to recover from missed enter/leave events.
+function MatchCollector.StartLifecycleSync()
+    if MatchCollector.syncTicker or not C_Timer or not C_Timer.NewTicker then
+        return
+    end
+
+    MatchCollector.syncTicker = C_Timer.NewTicker(LIFECYCLE_SYNC_SECONDS, function()
+        MatchCollector.SyncMatchLifecycle()
+    end)
+end
+
+--- Reconciles match enter/leave/combat collection using client lifecycle APIs.
+function MatchCollector.SyncMatchLifecycle()
+    local db = PVL.GetDB()
+    if not db or not db.settings.enabled then
+        MatchCollector.StopLifecycleSync()
+        return
+    end
+
+    local phase = MatchCollector.GetMatchLifecyclePhase()
+    local previousPhase = MatchCollector.lastLifecyclePhase or "inactive"
+    MatchCollector.lastLifecyclePhase = phase
+
+    if phase == "inactive" then
+        MatchCollector.HandleMatchInactive(previousPhase)
+        MatchCollector.StopLifecycleSync()
+        return
+    end
+
+    MatchCollector.StartLifecycleSync()
+
+    if phase == "complete" then
+        MatchCollector.HandleMatchCompletePhase()
+        return
+    end
+
+    if MatchCollector.ShouldCollectCombatForPhase(phase) then
+        MatchCollector.OnMatchEngaged()
+        MatchCollector.EnsureCombatLogStarted()
+        if PVL.CombatLogCollector and PVL.CombatLogCollector.TryLiveSync then
+            pcall(PVL.CombatLogCollector.TryLiveSync)
+        end
+        return
+    end
+
+    if phase == "waiting" or phase == "startup" then
+        MatchCollector.OnMatchWaiting()
+        MatchCollector.EnsureCombatLogStarted()
+        if PVL.CombatLogCollector and PVL.CombatLogCollector.TryLiveSync then
+            pcall(PVL.CombatLogCollector.TryLiveSync)
+        end
+    end
+end
+
+--- Ensures match and combat-log tracking are active when the client reports a live PvP match.
+function MatchCollector.EnsureMatchTracking()
+    MatchCollector.SyncMatchLifecycle()
+end
+
+--- Prepares match metadata while the instance is loading or players are waiting to start.
+function MatchCollector.OnMatchWaiting()
+    local db = PVL.GetDB()
+    if not db or not db.settings.enabled then
+        return
+    end
+
+    local bracket = MatchCollector.InferCollectibleBracket()
+    if not MatchCollector.ShouldCollectBracket(bracket) then
+        return
+    end
+
+    local context = MatchCollector.BuildActiveMatchContext(bracket, true)
+    if not context then
+        return
+    end
+
+    MatchCollector.pendingComplete = nil
+    if MatchCollector.activeMatch then
+        MatchCollector.RefreshActiveMatchFingerprint()
+        if MatchCollector.activeMatch.sessionKey == context.sessionKey
+            or MatchCollector.ShouldTreatAsSameActiveMatch(MatchCollector.activeMatch, bracket) then
+            MatchCollector.activeMatch.runtimeMs = context.runtimeMs
+            MatchCollector.activeMatch.minRuntimeMs = math.min(
+                MatchCollector.activeMatch.minRuntimeMs or context.runtimeMs,
+                context.runtimeMs
+            )
+            if context.rosterFingerprint and not MatchCollector.activeMatch.rosterFingerprint then
+                MatchCollector.activeMatch.rosterFingerprint = context.rosterFingerprint
+            end
+            if PVL.CombatLogCollector
+                and PVL.CombatLogCollector.IsEnabled()
+                and not PVL.CombatLogCollector.active then
+                PVL.CombatLogCollector.StartMatch(MatchCollector.activeMatch)
+            end
+            return
+        end
+    end
+
+    MatchCollector.activeMatch = context
+
+    if PVL.CombatLogCollector
+        and PVL.CombatLogCollector.IsEnabled()
+        and not PVL.CombatLogCollector.active then
+        PVL.CombatLogCollector.StartMatch(MatchCollector.activeMatch)
+    end
+end
+
+--- Arms scoreboard and combat-log collection once the match is actively running.
+function MatchCollector.OnMatchEngaged()
+    local db = PVL.GetDB()
+    if not db or not db.settings.enabled then
+        return
+    end
+
+    local bracket = MatchCollector.InferCollectibleBracket()
+    if not MatchCollector.ShouldCollectBracket(bracket) then
+        MatchCollector.activeMatch = nil
+        if PVL.CombatLogCollector then
+            PVL.CombatLogCollector.StopMatch(true)
+        end
+        MatchCollector.ClearPendingCombatSession()
+        return
+    end
+
+    MatchCollector.pendingComplete = nil
+    local resumePending = true
+    if MatchCollector.activeMatch
+        and MatchCollector.activeMatch.sessionKey then
+        local sessionKey, _, _, runtimeMs = MatchCollector.BuildMatchSessionKey(bracket)
+        if sessionKey == MatchCollector.activeMatch.sessionKey then
+            if PVL.CombatLogCollector
+                and PVL.CombatLogCollector.IsEnabled()
+                and not PVL.CombatLogCollector.active then
+                PVL.CombatLogCollector.StartMatch(MatchCollector.activeMatch)
+            end
+            return
+        end
+
+        MatchCollector.RefreshActiveMatchFingerprint()
+        if MatchCollector.ShouldTreatAsSameActiveMatch(MatchCollector.activeMatch, bracket) then
+            MatchCollector.activeMatch.runtimeMs = runtimeMs
+            MatchCollector.activeMatch.minRuntimeMs = math.min(
+                MatchCollector.activeMatch.minRuntimeMs or runtimeMs,
+                runtimeMs
+            )
+            MatchCollector.activeMatch.segmentCount = (MatchCollector.activeMatch.segmentCount or 1) + 1
+            if PVL.CombatLogCollector then
+                PVL.CombatLogCollector.StartMatch(MatchCollector.activeMatch)
+            end
+            return
+        end
+
+        resumePending = false
+    end
+
+    local context = MatchCollector.BuildActiveMatchContext(bracket, resumePending)
+    if not context then
+        return
+    end
+
+    MatchCollector.activeMatch = context
+
+    if PVL.CombatLogCollector then
+        PVL.CombatLogCollector.StartMatch(context)
+    end
+
+    if db.settings.collectSpecs and PVL.InspectQueue then
+        PVL.InspectQueue.EnqueueMatchRoster(function(participant)
+            MatchCollector.MergeLiveSpec(participant)
+        end)
+    end
+end
+
+--- Handles a definitive leave when the client reports the match is over.
+--- @param previousPhase string|nil
+function MatchCollector.HandleMatchInactive(previousPhase)
+    if previousPhase == "inactive" or previousPhase == "complete" then
+        return
+    end
+
+    if MatchCollector.activeMatch and PVL.CombatLogCollector then
+        MatchCollector.PersistActiveCombatSession()
+    elseif PVL.CombatLogCollector and PVL.CombatLogCollector.active then
+        MatchCollector.PersistActiveCombatSession()
+    end
+
+    MatchCollector.activeMatch = nil
+
+    -- Keep pending combat sessions until FinalizeMatchComplete consumes them.
+    -- Leaving the instance makes BuildMatchSessionKey return nil, which previously
+    -- caused CanResumeCombatSession to fail and wiped captured combat data.
+end
+
+--- Ensures post-match finalization runs even when PVP_MATCH_COMPLETE was missed.
+function MatchCollector.HandleMatchCompletePhase()
+    if MatchCollector.pendingComplete then
+        return
+    end
+
+    if MatchCollector.activeMatch and PVL.CombatLogCollector then
+        MatchCollector.PersistActiveCombatSession()
+    end
+
+    MatchCollector.OnMatchComplete()
+end
+
 --- Initializes the event-driven match collector.
 function MatchCollector.Init()
     if MatchCollector.frame then
@@ -48,6 +894,10 @@ function MatchCollector.Init()
     frame:RegisterEvent("PVP_MATCH_ACTIVE")
     frame:RegisterEvent("PVP_MATCH_COMPLETE")
     frame:RegisterEvent("PLAYER_ENTERING_WORLD")
+    frame:RegisterEvent("ZONE_CHANGED_NEW_AREA")
+    frame:RegisterEvent("PLAYER_REGEN_DISABLED")
+    frame:RegisterEvent("PLAYER_LOGOUT")
+    frame:RegisterEvent("LOADING_SCREEN_DISABLED")
     frame:SetScript("OnEvent", function(_, event, ...)
         MatchCollector.OnEvent(event, ...)
     end)
@@ -60,15 +910,28 @@ end
 function MatchCollector.OnEvent(event)
     if event == "PLAYER_LOGIN" then
         PVL.LoadImportedSnapshotFromPack()
+        MatchCollector.SyncMatchLifecycle()
+        MatchCollector.EnsureCombatLogStarted()
     elseif event == "PVP_MATCH_ACTIVE" then
-        MatchCollector.OnMatchActive()
+        MatchCollector.SyncMatchLifecycle()
+        MatchCollector.EnsureCombatLogStarted()
     elseif event == "PVP_MATCH_COMPLETE" then
+        MatchCollector.PersistActiveCombatSession()
         MatchCollector.OnMatchComplete()
-    elseif event == "PLAYER_ENTERING_WORLD" then
-        if C_PvP and C_PvP.IsMatchActive and C_PvP.IsMatchActive() then
-            MatchCollector.OnMatchActive()
-        end
+    elseif event == "PLAYER_LOGOUT" then
+        MatchCollector.PersistActiveCombatSession()
+    elseif event == "PLAYER_ENTERING_WORLD"
+        or event == "ZONE_CHANGED_NEW_AREA"
+        or event == "PLAYER_REGEN_DISABLED"
+        or event == "LOADING_SCREEN_DISABLED" then
+        MatchCollector.SyncMatchLifecycle()
+        MatchCollector.EnsureCombatLogStarted()
     end
+end
+
+--- Back-compat alias for event handlers that still call the old match-start hook.
+function MatchCollector.OnMatchActive()
+    MatchCollector.SyncMatchLifecycle()
 end
 
 --- Returns the current bracket identifier, or nil when unsupported.
@@ -84,6 +947,10 @@ function MatchCollector.GetCurrentBracket()
 
     if C_PvP.IsRatedSoloShuffle and C_PvP.IsRatedSoloShuffle() then
         return PVL.BRACKETS.SHUFFLE
+    end
+
+    if C_PvP.IsRatedBGBlitz and C_PvP.IsRatedBGBlitz() then
+        return PVL.BRACKETS.BLITZ
     end
 
     if C_PvP.IsRatedArena and C_PvP.IsRatedArena() then
@@ -106,6 +973,75 @@ function MatchCollector.GetCurrentBracket()
     return nil
 end
 
+--- Returns the best bracket guess when C_PvP helpers are unavailable.
+--- @return string|nil
+function MatchCollector.InferCollectibleBracket()
+    local bracket = MatchCollector.GetCurrentBracket()
+    if bracket then
+        return bracket
+    end
+
+    if not MatchCollector.IsInCollectiblePvpInstance() then
+        return nil
+    end
+
+    local instanceType = MatchCollector.GetCollectibleInstanceType() or "pvp"
+
+    if instanceType == "arena" then
+        if C_PvP.IsRatedSoloShuffle and C_PvP.IsRatedSoloShuffle() then
+            return PVL.BRACKETS.SHUFFLE
+        end
+
+        if C_PvP.IsRatedArena and C_PvP.IsRatedArena() and GetBattlefieldArenaFaction and C_PvP.GetTeamInfo then
+            local factionIndex = GetBattlefieldArenaFaction()
+            local teamInfo = C_PvP.GetTeamInfo(factionIndex)
+            local teamSize = teamInfo and teamInfo.size or 0
+            if teamSize > 0 and teamSize <= 2 then
+                return PVL.BRACKETS.ARENA_2V2
+            end
+        end
+
+        return PVL.BRACKETS.ARENA_3V3
+    end
+
+    if instanceType == "pvp" or instanceType == "scenario" or instanceType == "none" then
+        if C_PvP.IsRatedBGBlitz and C_PvP.IsRatedBGBlitz() then
+            return PVL.BRACKETS.BLITZ
+        end
+
+        if C_PvP.IsRatedBattleground and C_PvP.IsRatedBattleground() then
+            return PVL.BRACKETS.RBG
+        end
+
+        return PVL.BRACKETS.BLITZ
+    end
+
+    return nil
+end
+
+--- Ensures combat-log capture is armed for the current PvP instance.
+function MatchCollector.EnsureCombatLogStarted()
+    MatchCollector.RefreshActiveMatchFingerprint()
+    if not PVL.CombatLogCollector or not PVL.CombatLogCollector.ArmForCurrentInstance then
+        return
+    end
+
+    PVL.CombatLogCollector.ArmForCurrentInstance()
+end
+
+--- Persists any in-progress combat session before match metadata is cleared.
+function MatchCollector.PersistActiveCombatSession()
+    MatchCollector.RefreshActiveMatchFingerprint()
+    if not PVL.CombatLogCollector or not PVL.CombatLogCollector.PersistPendingSession then
+        return
+    end
+
+    local matchContext = MatchCollector.activeMatch or PVL.CombatLogCollector.matchContext
+    if matchContext then
+        PVL.CombatLogCollector.PersistPendingSession(matchContext)
+    end
+end
+
 --- Returns whether the current bracket should be collected based on settings.
 --- @param bracket string|nil
 --- @return boolean
@@ -126,47 +1062,6 @@ function MatchCollector.ShouldCollectBracket(bracket)
     return db and db.settings.collectNonBlitz or false
 end
 
---- Begins tracking a newly active match shell.
-function MatchCollector.OnMatchActive()
-    local db = PVL.GetDB()
-    if not db or not db.settings.enabled then
-        return
-    end
-
-    local bracket = MatchCollector.GetCurrentBracket()
-    if not MatchCollector.ShouldCollectBracket(bracket) then
-        MatchCollector.activeMatch = nil
-        if PVL.CombatLogCollector then
-            PVL.CombatLogCollector.StopMatch()
-        end
-        return
-    end
-
-    MatchCollector.pendingComplete = nil
-    local startCr = nil
-    if PVL.RatedInfo then
-        PVL.RatedInfo.RefreshAll()
-        startCr = MatchCollector.GetAccessibleNumber(PVL.RatedInfo.GetCurrentRating(bracket))
-    end
-
-    MatchCollector.activeMatch = {
-        bracket = bracket,
-        startedAt = time(),
-        mapID = C_Map.GetBestMapForUnit("player"),
-        playerCrBefore = startCr,
-    }
-
-    if PVL.CombatLogCollector then
-        PVL.CombatLogCollector.StartMatch(MatchCollector.activeMatch)
-    end
-
-    if db.settings.collectSpecs and PVL.InspectQueue then
-        PVL.InspectQueue.EnqueueMatchRoster(function(participant)
-            MatchCollector.MergeLiveSpec(participant)
-        end)
-    end
-end
-
 --- Merges a live inspect result into the active match cache by player name.
 --- @param participant table
 function MatchCollector.MergeLiveSpec(participant)
@@ -178,22 +1073,122 @@ function MatchCollector.MergeLiveSpec(participant)
     MatchCollector.activeMatch.liveSpecs[participant.name] = participant.spec
 end
 
+--- Returns true when a lowercase label matches any keyword fragment.
+--- @param label string|nil
+--- @param keywords string[]
+--- @return boolean
+function MatchCollector.ScoreboardStatMatches(label, keywords)
+    label = PVL.GetAccessibleString(label)
+    if not label then
+        return false
+    end
+
+    for _, keyword in ipairs(keywords) do
+        local ok, matched = pcall(function()
+            return label:find(keyword, 1, true) ~= nil
+        end)
+        if ok and matched then
+            return true
+        end
+    end
+
+    return false
+end
+
+--- Parses extended PvP scoreboard stats when Blizzard exposes them.
+--- Battleground Blitz does not include kick counts on the scoreboard; those come from the combat log.
+--- @param stats table[]|nil
+--- @return table
+function MatchCollector.ParseScoreboardStats(stats)
+    local parsed = {
+        interrupts = 0,
+        dispels = 0,
+        deaths = 0,
+    }
+
+    if type(stats) ~= "table" then
+        return parsed
+    end
+
+    for _, stat in ipairs(stats) do
+        local value = MatchCollector.GetAccessibleNumber(stat.pvpStatValue) or 0
+        if value <= 0 then
+            -- Skip empty rows.
+        else
+            local statName = PVL.GetAccessibleString(stat.name) or ""
+            local statTooltip = PVL.GetAccessibleString(stat.tooltip) or ""
+            local statIcon = PVL.GetAccessibleString(stat.iconName) or ""
+            local blobOk, blob = pcall(function()
+                return string.lower(string.format(
+                    "%s %s %s",
+                    statName,
+                    statTooltip,
+                    statIcon
+                ))
+            end)
+            if not blobOk or not blob then
+                blob = ""
+            end
+
+            if MatchCollector.ScoreboardStatMatches(blob, {
+                "interrupt",
+                "kick",
+                "counterspell",
+                "pummel",
+                "spell lock",
+                "skull bash",
+                "rebuke",
+                "wind shear",
+            }) then
+                parsed.interrupts = parsed.interrupts + value
+            elseif MatchCollector.ScoreboardStatMatches(blob, {
+                "dispel",
+                "purify",
+                "cleanse",
+                "mass dispel",
+                "offensive dispel",
+            }) then
+                parsed.dispels = parsed.dispels + value
+            end
+        end
+    end
+
+    return parsed
+end
+
 --- Builds one participant row from scoreboard data.
 --- @param scoreInfo table
 --- @return table|nil
 function MatchCollector.BuildParticipantFromScore(scoreInfo)
-    if not scoreInfo or not scoreInfo.name then
+    if type(scoreInfo) ~= "table" then
         return nil
     end
 
-    local name, realm = Ambiguate(scoreInfo.name, "none"):match("^(.-)%-(.+)$")
-    if not name then
-        name = Ambiguate(scoreInfo.name, "none")
-        realm = nil
+    local rawName = PVL.GetAccessibleString(scoreInfo.name)
+    if not rawName then
+        return nil
+    end
+
+    local name
+    local realm
+    local parseOk
+    parseOk, name, realm = pcall(function()
+        local parsedName, parsedRealm = Ambiguate(rawName, "none"):match("^(.-)%-(.+)$")
+        if parsedName then
+            return parsedName, parsedRealm
+        end
+        return Ambiguate(rawName, "none"), nil
+    end)
+    if not parseOk or not name then
+        return nil
     end
 
     local classToken = scoreInfo.classToken
-    local specKey = PVL.NormalizeSpecKey(classToken, scoreInfo.talentSpec)
+    local specKey = nil
+    local accessibleSpec = PVL.GetAccessibleString(scoreInfo.talentSpec)
+    if accessibleSpec ~= nil then
+        specKey = PVL.NormalizeSpecKey(classToken, accessibleSpec)
+    end
     local listedPlayer = PVL.LookupListedPlayer(name, realm)
 
     local prematchMMR = MatchCollector.GetAccessibleNumber(scoreInfo.prematchMMR)
@@ -213,6 +1208,9 @@ function MatchCollector.BuildParticipantFromScore(scoreInfo)
         prematchMMR = nil
     end
 
+    local scoreboardStats = MatchCollector.ParseScoreboardStats(scoreInfo.stats)
+    local deaths = MatchCollector.GetAccessibleNumber(scoreInfo.deaths) or scoreboardStats.deaths or 0
+
     return {
         name = name,
         realm = realm,
@@ -225,9 +1223,12 @@ function MatchCollector.BuildParticipantFromScore(scoreInfo)
         postmatchMMR = postmatchMMR,
         mmrChange = mmrChange,
         isLocalPlayer = MatchCollector.IsLocalPlayerScore(scoreInfo),
-        guid = scoreInfo.guid,
+        guid = MatchCollector.GetAccessibleGuid(scoreInfo.guid),
         damageDone = MatchCollector.GetAccessibleNumber(scoreInfo.damageDone),
         healingDone = MatchCollector.GetAccessibleNumber(scoreInfo.healingDone),
+        interrupts = scoreboardStats.interrupts,
+        dispels = scoreboardStats.dispels,
+        deaths = deaths,
         listedRating = listedPlayer and listedPlayer.rating or nil,
         listedRank = listedPlayer and listedPlayer.rank or nil,
     }
@@ -241,11 +1242,13 @@ function MatchCollector.IsLocalPlayerScore(scoreInfo)
         return false
     end
 
-    if scoreInfo.guid and UnitGUID("player") == scoreInfo.guid then
+    local playerGuid = UnitGUID and UnitGUID("player")
+    if MatchCollector.GuidsEqual(playerGuid, scoreInfo.guid) then
         return true
     end
 
-    if not scoreInfo.name or not UnitFullName then
+    local scoreName = PVL.GetAccessibleString(scoreInfo.name)
+    if not scoreName or not UnitFullName then
         return false
     end
 
@@ -254,9 +1257,18 @@ function MatchCollector.IsLocalPlayerScore(scoreInfo)
         return false
     end
 
-    local scoreName = Ambiguate(scoreInfo.name, "none")
+    local ambiguateOk, scoreShortName = pcall(Ambiguate, scoreName, "none")
+    if not ambiguateOk or not scoreShortName then
+        return false
+    end
+
     local playerFullName = playerRealm and (playerName .. "-" .. playerRealm) or playerName
-    if scoreName == Ambiguate(playerFullName, "none") or scoreName == playerName then
+    local playerShortOk, playerShortName = pcall(Ambiguate, playerFullName, "none")
+    if playerShortOk and scoreShortName == playerShortName then
+        return true
+    end
+
+    if scoreShortName == playerName then
         return true
     end
 
@@ -323,13 +1335,18 @@ function MatchCollector.GetCombatLogTeamRow(participant, combatPlayers)
         return nil
     end
 
-    if participant.guid and combatPlayers[participant.guid] then
-        return combatPlayers[participant.guid]
+    local participantGuid = MatchCollector.GetAccessibleGuid(participant.guid)
+    if participantGuid and combatPlayers[participantGuid] then
+        return combatPlayers[participantGuid]
     end
 
     for _, row in pairs(combatPlayers) do
-        if participant.name and row.name == participant.name then
-            return row
+        if participant.name and row.name then
+            local participantKey = PVL.CombatLogCollector and PVL.CombatLogCollector.NormalizeName(participant.name)
+            local rowKey = PVL.CombatLogCollector and PVL.CombatLogCollector.NormalizeName(row.name)
+            if participantKey and rowKey and participantKey == rowKey then
+                return row
+            end
         end
     end
 
@@ -351,11 +1368,18 @@ function MatchCollector.GetStoredCombatSummaryTeam(participant, matchRecord)
     end
 
     for _, row in ipairs(combatSummary.players or {}) do
-        if participant.guid and row.guid == participant.guid then
+        if MatchCollector.GuidsEqual(participant.guid, row.guid) then
             return row.team
         end
-        if participant.name and row.name == participant.name then
-            return row.team
+        local participantName = PVL.GetAccessibleString(participant.name)
+        local rowName = PVL.GetAccessibleString(row.name)
+        if participantName and rowName then
+            local ok, same = pcall(function()
+                return participantName == rowName
+            end)
+            if ok and same then
+                return row.team
+            end
         end
     end
 
@@ -394,10 +1418,7 @@ function MatchCollector.RosterContainsParticipant(participants, target)
     end
 
     for _, participant in ipairs(participants or {}) do
-        if target.guid and participant.guid == target.guid then
-            return true
-        end
-        if target.name and participant.name == target.name then
+        if MatchCollector.ParticipantsMatch(participant, target) then
             return true
         end
     end
@@ -415,10 +1436,7 @@ function MatchCollector.RemoveParticipantFromList(participants, target)
     end
 
     for index, participant in ipairs(participants or {}) do
-        if target.guid and participant.guid == target.guid then
-            return table.remove(participants, index)
-        end
-        if target.name and participant.name == target.name then
+        if MatchCollector.ParticipantsMatch(participant, target) then
             return table.remove(participants, index)
         end
     end
@@ -551,7 +1569,6 @@ function MatchCollector.AssignTeamsByConstraint(roster, localPlayer, won, bracke
             participant.team = "friendly"
         elseif participant.team ~= "friendly" and participant.team ~= "enemy" then
             participant.team = MatchCollector.InferTeamFromRatingChange(participant, localPlayer, bracket)
-                or MatchCollector.InferTeamFromFaction(participant, bracket)
                 or "enemy"
         end
     end
@@ -591,6 +1608,22 @@ function MatchCollector.InferTeamFromRatingChange(participant, localPlayer, brac
     end
 
     if localChange == 0 and participantChange == 0 then
+        return nil
+    end
+
+    if localChange == 0 and participantChange > 0 then
+        return "enemy"
+    end
+
+    if localChange == 0 and participantChange < 0 then
+        return "friendly"
+    end
+
+    if localChange > 0 and participantChange == 0 then
+        return "enemy"
+    end
+
+    if localChange < 0 and participantChange == 0 then
         return "friendly"
     end
 
@@ -613,22 +1646,128 @@ function MatchCollector.InferTeamFromRatingChange(participant, localPlayer, brac
     return nil
 end
 
---- Infers team membership from BG faction when other signals are unavailable.
+--- Returns true when one bracket uses win/loss plus rating-change team assignment.
+--- @param bracket string|nil
+--- @return boolean
+function MatchCollector.UsesRatingTeamSplit(bracket)
+    return bracket == PVL.BRACKETS.RBG or bracket == PVL.BRACKETS.BLITZ
+end
+
+--- Resolves whether the local player won using stored match data when available.
+--- @param matchRecord table|nil
+--- @param localPlayer table|nil
+--- @return boolean|nil
+function MatchCollector.ResolveMatchWon(matchRecord, localPlayer)
+    if type(matchRecord) == "table" and matchRecord.won ~= nil then
+        return matchRecord.won
+    end
+
+    if type(localPlayer) == "table" and localPlayer.ratingChange ~= nil then
+        if localPlayer.ratingChange > 0 then
+            return true
+        end
+        if localPlayer.ratingChange < 0 then
+            return false
+        end
+    end
+
+    if type(matchRecord) == "table"
+        and matchRecord.playerCRBefore
+        and matchRecord.playerCRAfter then
+        local delta = matchRecord.playerCRAfter - matchRecord.playerCRBefore
+        if delta > 0 then
+            return true
+        end
+        if delta < 0 then
+            return false
+        end
+    end
+
+    return MatchCollector.ResolveLocalMatchWon(localPlayer)
+end
+
+--- Resolves one participant's team from match outcome and rating-change buckets.
+--- Cross-faction Blitz uses this instead of faction because team membership is not
+--- tied to Alliance/Horde on the scoreboard.
 --- @param participant table
+--- @param localPlayer table|nil
+--- @param won boolean|nil
 --- @param bracket string|nil
 --- @return string|nil
-function MatchCollector.InferTeamFromFaction(participant, bracket)
-    if bracket ~= PVL.BRACKETS.RBG and bracket ~= PVL.BRACKETS.BLITZ then
+function MatchCollector.ResolveParticipantTeamByRating(participant, localPlayer, won, bracket)
+    if type(participant) ~= "table" then
         return nil
     end
 
-    local participantFaction = MatchCollector.NormalizeScoreboardFaction(participant.faction)
-    local playerFaction = UnitFactionGroup and UnitFactionGroup("player")
-    if not participantFaction or not playerFaction then
+    if participant.isLocalPlayer then
+        return "friendly"
+    end
+
+    if type(localPlayer) ~= "table" then
         return nil
     end
 
-    return participantFaction == playerFaction and "friendly" or "enemy"
+    if won == true or won == false then
+        local bucket = MatchCollector.GetRatingChangeBucket(participant)
+        if bucket == "gain" then
+            return won and "friendly" or "enemy"
+        end
+        if bucket == "loss" then
+            return won and "enemy" or "friendly"
+        end
+        if bucket == "neutral" then
+            if won == true then
+                return "enemy"
+            end
+            if won == false then
+                return "friendly"
+            end
+            if MatchCollector.GetRatingChangeBucket(localPlayer) == "neutral" then
+                return "friendly"
+            end
+            return nil
+        end
+    end
+
+    return MatchCollector.InferTeamFromRatingChange(participant, localPlayer, bracket)
+end
+
+--- Assigns teams from match outcome and per-player rating change for Blitz/RBG.
+--- @param roster table[]|nil
+--- @param localPlayer table|nil
+--- @param won boolean|nil
+--- @param bracket string|nil
+function MatchCollector.AssignTeamsByRatingChange(roster, localPlayer, won, bracket)
+    localPlayer = localPlayer or MatchCollector.FindLocalParticipant(roster)
+    if not localPlayer then
+        return
+    end
+
+    if won == nil then
+        won = MatchCollector.ResolveLocalMatchWon(localPlayer)
+    end
+
+    for _, participant in ipairs(roster or {}) do
+        participant.team = MatchCollector.ResolveParticipantTeamByRating(
+            participant,
+            localPlayer,
+            won,
+            bracket
+        ) or "enemy"
+    end
+end
+
+--- Returns true when a roster has enough players for fixed-size constraint assignment.
+--- @param roster table[]|nil
+--- @param bracket string|nil
+--- @return boolean
+function MatchCollector.RosterLooksCompleteForTeamSplit(roster, bracket)
+    local teamSize = MatchCollector.GetBracketTeamSize(bracket)
+    if not teamSize then
+        return false
+    end
+
+    return #(roster or {}) >= (teamSize * 2)
 end
 
 --- Assigns friendly/enemy team labels to all roster rows before saving a match.
@@ -641,7 +1780,15 @@ function MatchCollector.AssignRosterTeams(roster, localPlayer, bracket, won)
         return
     end
 
-    if MatchCollector.UsesConstraintTeamSplit(bracket) then
+    localPlayer = localPlayer or MatchCollector.FindLocalParticipant(roster)
+
+    if MatchCollector.UsesRatingTeamSplit(bracket) then
+        MatchCollector.AssignTeamsByRatingChange(roster, localPlayer, won, bracket)
+        return
+    end
+
+    if MatchCollector.UsesConstraintTeamSplit(bracket)
+        and MatchCollector.RosterLooksCompleteForTeamSplit(roster, bracket) then
         MatchCollector.AssignTeamsByConstraint(roster, localPlayer, won, bracket)
     end
 end
@@ -665,7 +1812,18 @@ function MatchCollector.GetParticipantTeam(participant, roster, localPlayer, mat
     localPlayer = localPlayer or MatchCollector.FindLocalParticipant(roster)
     local bracket = matchRecord and matchRecord.bracket or nil
 
-    if MatchCollector.UsesConstraintTeamSplit(bracket) then
+    if MatchCollector.UsesRatingTeamSplit(bracket) then
+        local won = MatchCollector.ResolveMatchWon(matchRecord, localPlayer)
+        return MatchCollector.ResolveParticipantTeamByRating(
+            participant,
+            localPlayer,
+            won,
+            bracket
+        ) or "enemy"
+    end
+
+    if MatchCollector.UsesConstraintTeamSplit(bracket)
+        and MatchCollector.RosterLooksCompleteForTeamSplit(roster, bracket) then
         if type(matchRecord) == "table" then
             if not matchRecord._teamsResolved then
                 MatchCollector.AssignTeamsByConstraint(
@@ -696,7 +1854,7 @@ function MatchCollector.GetParticipantTeam(participant, roster, localPlayer, mat
         return storedTeam
     end
 
-    return MatchCollector.InferTeamFromFaction(participant, bracket)
+    return "enemy"
 end
 
 --- Returns the local player's scoreboard row when available.
@@ -816,13 +1974,7 @@ function MatchCollector.MergeLocalPlayerIntoRoster(roster, localPlayer)
     end
 
     for _, participant in ipairs(roster or {}) do
-        if localPlayer.guid and participant.guid == localPlayer.guid then
-            participant.isLocalPlayer = true
-            participant.team = "friendly"
-            return
-        end
-
-        if localPlayer.name and participant.name == localPlayer.name then
+        if MatchCollector.ParticipantsMatch(participant, localPlayer) then
             participant.isLocalPlayer = true
             participant.team = "friendly"
             return
@@ -850,10 +2002,6 @@ function MatchCollector.ScoreboardLooksReady(localPlayer, roster, bracket, attem
 
         if attempt and attempt >= COMPLETE_MAX_ATTEMPTS then
             return localPlayer ~= nil or #roster > 0
-        end
-
-        if localPlayer and localPlayer.rating and #roster >= teamSize then
-            return true
         end
 
         return false
@@ -889,11 +2037,19 @@ function MatchCollector.OnMatchComplete()
         return
     end
 
-    local bracket = MatchCollector.activeMatch and MatchCollector.activeMatch.bracket or MatchCollector.GetCurrentBracket()
+    local bracket = MatchCollector.activeMatch and MatchCollector.activeMatch.bracket
+        or MatchCollector.GetCurrentBracket()
+        or MatchCollector.InferCollectibleBracket()
     if not MatchCollector.ShouldCollectBracket(bracket) then
         MatchCollector.activeMatch = nil
         MatchCollector.pendingComplete = nil
         return
+    end
+
+    if MatchCollector.activeMatch and PVL.CombatLogCollector then
+        MatchCollector.PersistActiveCombatSession()
+    elseif PVL.CombatLogCollector and PVL.CombatLogCollector.active then
+        MatchCollector.PersistActiveCombatSession()
     end
 
     MatchCollector.pendingComplete = {
@@ -915,6 +2071,12 @@ function MatchCollector.TryFinalizeMatchComplete(attempt)
     local localPlayer = MatchCollector.CollectLocalPlayerScore()
     MatchCollector.MergeLocalPlayerIntoRoster(roster, localPlayer)
     localPlayer = MatchCollector.FindLocalParticipant(roster) or localPlayer
+
+    if PVL.CombatLogCollector and PVL.CombatLogCollector.SyncFromDamageMeter then
+        pcall(PVL.CombatLogCollector.SyncFromDamageMeter)
+        pcall(MatchCollector.PersistActiveCombatSession)
+    end
+
     if not MatchCollector.ScoreboardLooksReady(localPlayer, roster, pending.bracket, attempt) and attempt < COMPLETE_MAX_ATTEMPTS then
         MatchCollector.ScheduleCompleteAttempt(attempt + 1)
         return
@@ -1041,7 +2203,11 @@ function MatchCollector.FinalizeMatchComplete(bracket, roster, localPlayer, matc
 
     local combatSummary = nil
     if PVL.CombatLogCollector then
-        combatSummary = PVL.CombatLogCollector.BuildSummary(roster)
+        pcall(MatchCollector.PersistActiveCombatSession)
+        local ok, result = pcall(PVL.CombatLogCollector.BuildSummary, roster)
+        if ok then
+            combatSummary = result
+        end
     end
     if not combatSummary and #roster > 0 and PVL.UI and PVL.UI.ResolveMatchCombatSummary then
         combatSummary = PVL.UI.ResolveMatchCombatSummary({
@@ -1051,8 +2217,43 @@ function MatchCollector.FinalizeMatchComplete(bracket, roster, localPlayer, matc
         })
     end
 
+    local matchFingerprint = MatchCollector.BuildMatchFingerprint(
+        bracket,
+        roster,
+        playerCrBefore,
+        mmrBefore
+    )
+    local duplicateMatch = MatchCollector.FindRecentDuplicateMatch(
+        bracket,
+        roster,
+        playerCrBefore,
+        mmrBefore,
+        MATCH_FINGERPRINT_DEDUP_SECONDS
+    )
+    if duplicateMatch then
+        MatchCollector.UpdateStoredMatchIfBetter(duplicateMatch, {
+            combatSummary = combatSummary,
+            roster = roster,
+        })
+
+        MatchCollector.activeMatch = nil
+        MatchCollector.ClearPendingCombatSession()
+        MatchCollector.StopLifecycleSync()
+        MatchCollector.lastLifecyclePhase = "inactive"
+
+        if PVL.UI and PVL.UI.GetFilters then
+            PVL.UI.GetFilters().selectedMatchId = duplicateMatch.matchId
+        end
+        if PVL.UI and PVL.UI.Refresh then
+            pcall(PVL.UI.Refresh)
+        end
+        return
+    end
+
     local matchRecord = {
         matchId = MatchCollector.BuildMatchId(bracket, roster),
+        matchFingerprint = matchFingerprint,
+        rosterFingerprint = matchFingerprint,
         bracket = bracket,
         timestamp = time(),
         mapID = MatchCollector.activeMatch and MatchCollector.activeMatch.mapID or C_Map.GetBestMapForUnit("player"),
@@ -1087,13 +2288,16 @@ function MatchCollector.FinalizeMatchComplete(bracket, roster, localPlayer, matc
     end
 
     MatchCollector.activeMatch = nil
+    MatchCollector.ClearPendingCombatSession()
+    MatchCollector.StopLifecycleSync()
+    MatchCollector.lastLifecyclePhase = "inactive"
 
     if PVL.RatedInfo then
         PVL.RatedInfo.RequestUpdate()
     end
 
     if PVL.UI and PVL.UI.Refresh then
-        PVL.UI.Refresh()
+        pcall(PVL.UI.Refresh)
     end
 end
 
@@ -1118,15 +2322,66 @@ end
 
 --- Prints current scoreboard debug details to chat.
 function MatchCollector.PrintScoreDebug()
-    local bracket = MatchCollector.activeMatch and MatchCollector.activeMatch.bracket or MatchCollector.GetCurrentBracket()
+    local bracket = MatchCollector.activeMatch and MatchCollector.activeMatch.bracket
+        or MatchCollector.InferCollectibleBracket()
     local localPlayer = MatchCollector.CollectLocalPlayerScore()
     local teamMmr = MatchCollector.CollectFriendlyTeamMmr()
+    local phase = MatchCollector.GetMatchLifecyclePhase()
+    local sessionKey = MatchCollector.BuildMatchSessionKey(bracket)
+    local pending = MatchCollector.GetPendingCombatSession()
+    local runtimeMs = MatchCollector.GetBattlefieldRuntimeMs()
 
-    print(string.format("|cff66ccffPvPLedger|r score debug: bracket=%s scores=%d matchComplete=%s",
+    print(string.format("|cff66ccffPvPLedger|r score debug: bracket=%s phase=%s scores=%d matchComplete=%s",
         tostring(bracket),
+        tostring(phase),
         GetNumBattlefieldScores and GetNumBattlefieldScores() or 0,
         tostring(C_PvP.IsMatchComplete and C_PvP.IsMatchComplete() or false)
     ))
+
+    print(string.format("  sessionKey=%s runtimeMs=%s activeMatch=%s fingerprint=%s",
+        tostring(sessionKey),
+        tostring(runtimeMs),
+        tostring(MatchCollector.activeMatch ~= nil),
+        tostring(MatchCollector.activeMatch and MatchCollector.activeMatch.rosterFingerprint or "nil")
+    ))
+
+    if pending then
+        local pendingPlayers = 0
+        for _ in pairs(pending.players or {}) do
+            pendingPlayers = pendingPlayers + 1
+        end
+        print(string.format("  pendingSession key=%s segments=%s events=%s interrupts=%s players=%s savedAt=%s",
+            tostring(pending.sessionKey),
+            tostring(pending.segmentCount or 1),
+            tostring(pending.eventCount or 0),
+            tostring(pending.interruptCount or 0),
+            tostring(pendingPlayers),
+            tostring(pending.savedAt or "nil")
+        ))
+    else
+        print("  pendingSession=nil")
+    end
+
+    if PVL.CombatLogCollector then
+        print(string.format("  combatLog active=%s events=%s interrupts=%s segments=%s shouldTrack=%s inBg=%s inArena=%s matchActive=%s",
+            tostring(PVL.CombatLogCollector.active),
+            tostring(PVL.CombatLogCollector.eventCount or 0),
+            tostring(PVL.CombatLogCollector.interruptCount or 0),
+            tostring(PVL.CombatLogCollector.segmentCount or 1),
+            tostring(PVL.CombatLogCollector.ShouldTrackCombatLog and PVL.CombatLogCollector.ShouldTrackCombatLog() or false),
+            tostring(C_PvP and C_PvP.IsBattleground and C_PvP.IsBattleground() or false),
+            tostring(C_PvP and C_PvP.IsArena and C_PvP.IsArena() or false),
+            tostring(C_PvP and C_PvP.IsMatchActive and C_PvP.IsMatchActive() or false)
+        ))
+        print(string.format("  combatContext sessionKey=%s lastInterrupt=%s dataSource=%s damageMeter=%s synced=%s liveSync=%s",
+            tostring(PVL.CombatLogCollector.matchContext and PVL.CombatLogCollector.matchContext.sessionKey),
+            tostring(PVL.CombatLogCollector.lastInterruptName or "none"),
+            tostring(PVL.CombatLogCollector.GetDataSourceLabel and PVL.CombatLogCollector.GetDataSourceLabel() or "unknown"),
+            tostring(PVL.CombatLogCollector.IsDamageMeterAvailable and PVL.CombatLogCollector.IsDamageMeterAvailable() or false),
+            tostring(PVL.CombatLogCollector.damageMeterSynced == true),
+            tostring(PVL.CombatLogCollector.liveSyncTicker ~= nil)
+        ))
+    end
 
     if localPlayer then
         print(string.format("  CR=%s (%+d) prematchMMR=%s postmatchMMR=%s mmrChange=%s",
