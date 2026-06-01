@@ -6,7 +6,7 @@ PvPLedgerLadderData.rbg = {
     bracket = "rbg",
     season = 41,
     snapshotDate = "2026-06-01",
-    generatedAt = "2026-06-01T13:12:49Z",
+    generatedAt = "2026-06-01T19:01:18Z",
     source = "blizzard-api+seramate",
     overall = {
         listedCount = 1002,
@@ -82,9 +82,9 @@ PvPLedgerLadderData.rbg = {
         },
         ["DEMONHUNTER"] = {
             listedCount = 50,
-            avgListedRating = 1843.0,
-            medianListedRating = 1802,
-            top100Avg = 1843.0,
+            avgListedRating = 1873.3,
+            medianListedRating = 1807.0,
+            top100Avg = 1873.3,
             highest = 2401,
             buckets = {
                 ["1600-1699"] = 1,
@@ -330,10 +330,10 @@ PvPLedgerLadderData.rbg = {
             },
         },
         ["DEMONHUNTER_DEVOURER"] = {
-            listedCount = 23,
-            avgListedRating = 1873.8,
-            medianListedRating = 1802,
-            top100Avg = 1873.8,
+            listedCount = 22,
+            avgListedRating = 1859.2,
+            medianListedRating = 1799.0,
+            top100Avg = 1859.2,
             highest = 2230,
             buckets = {
                 ["1600-1699"] = 1,
@@ -341,7 +341,7 @@ PvPLedgerLadderData.rbg = {
                 ["1800-1899"] = 4,
                 ["1900-1999"] = 2,
                 ["2000-2099"] = 2,
-                ["2100-2199"] = 3,
+                ["2100-2199"] = 2,
                 ["2200-2299"] = 1,
             },
         },
@@ -361,14 +361,15 @@ PvPLedgerLadderData.rbg = {
             },
         },
         ["DEMONHUNTER_VENGEANCE"] = {
-            listedCount = 3,
-            avgListedRating = 1773,
-            medianListedRating = 1708,
-            top100Avg = 1773,
-            highest = 1906,
+            listedCount = 4,
+            avgListedRating = 1878.5,
+            medianListedRating = 1807.0,
+            top100Avg = 1878.5,
+            highest = 2195,
             buckets = {
                 ["1700-1799"] = 2,
                 ["1900-1999"] = 1,
+                ["2100-2199"] = 1,
             },
         },
         ["DRUID_BALANCE"] = {
@@ -3949,7 +3950,7 @@ PvPLedgerLadderData.rbg = {
         },
         ["greentat-laughingskull"] = {
             displayName = "Greentat-laughing-skull",
-            specKey = "DEMONHUNTER_DEVOURER",
+            specKey = "DEMONHUNTER_VENGEANCE",
             rating = 2195,
             rank = 95,
             wins = 93,
