@@ -47,12 +47,37 @@ function RatedInfo.ReadPersonalRatedInfo(bracket)
         return nil
     end
 
-    local rating, seasonBest, weeklyBest, seasonPlayed, seasonWon, weeklyPlayed, weeklyWon, cap =
+    local rating, seasonBest, weeklyBest, seasonPlayed, seasonWon, weeklyPlayed, weeklyWon,
+        value8, value9, value10, value11, value12, value13, value14, value15, value16 =
         GetPersonalRatedInfo(index)
+
+    local lastWeeksBest, hasWon, pvpTier, ranking, roundsSeasonPlayed, roundsSeasonWon,
+        roundsWeeklyPlayed, roundsWeeklyWon, cap
+
+    if bracket == PVL.BRACKETS.SHUFFLE then
+        lastWeeksBest = value8
+        hasWon = value9
+        pvpTier = value10
+        ranking = value11
+        roundsSeasonPlayed = value12
+        roundsSeasonWon = value13
+        roundsWeeklyPlayed = value14
+        roundsWeeklyWon = value15
+        cap = value16
+    else
+        cap = value8
+    end
 
     seasonPlayed = GetAccessibleNumber(seasonPlayed) or 0
     seasonWon = GetAccessibleNumber(seasonWon) or 0
     local seasonLost = math.max(seasonPlayed - seasonWon, 0)
+    roundsSeasonPlayed = GetAccessibleNumber(roundsSeasonPlayed) or 0
+    roundsSeasonWon = GetAccessibleNumber(roundsSeasonWon) or 0
+    roundsWeeklyPlayed = GetAccessibleNumber(roundsWeeklyPlayed) or 0
+    roundsWeeklyWon = GetAccessibleNumber(roundsWeeklyWon) or 0
+    local roundsSeasonLost = math.max(roundsSeasonPlayed - roundsSeasonWon, 0)
+
+    cap = GetAccessibleNumber(cap)
 
     return {
         rating = GetAccessibleNumber(rating),
@@ -63,8 +88,18 @@ function RatedInfo.ReadPersonalRatedInfo(bracket)
         seasonLost = seasonLost,
         weeklyPlayed = GetAccessibleNumber(weeklyPlayed) or 0,
         weeklyWon = GetAccessibleNumber(weeklyWon) or 0,
-        cap = GetAccessibleNumber(cap),
+        lastWeeksBest = GetAccessibleNumber(lastWeeksBest),
+        hasWon = hasWon,
+        pvpTier = pvpTier,
+        ranking = GetAccessibleNumber(ranking),
+        roundsSeasonPlayed = roundsSeasonPlayed,
+        roundsSeasonWon = roundsSeasonWon,
+        roundsSeasonLost = roundsSeasonLost,
+        roundsWeeklyPlayed = roundsWeeklyPlayed,
+        roundsWeeklyWon = roundsWeeklyWon,
+        cap = cap,
         winPct = seasonPlayed > 0 and ((seasonWon / seasonPlayed) * 100) or nil,
+        roundWinPct = roundsSeasonPlayed > 0 and ((roundsSeasonWon / roundsSeasonPlayed) * 100) or nil,
     }
 end
 
@@ -119,11 +154,35 @@ function RatedInfo.GetCurrentRating(bracket)
 end
 
 --- Returns the current season win/loss record for one bracket from the PvP rated menu.
+--- Solo Shuffle uses round totals; other brackets use match totals.
 --- @param bracket string|nil
---- @return table|nil record `{ wins, losses, games, winPct, seasonBest }`
+--- @return table|nil record `{ wins, losses, games, winPct, seasonBest, unit }`
 function RatedInfo.GetSeasonRecord(bracket)
     local info = RatedInfo.GetRatedInfo(bracket)
-    if not info or not info.seasonPlayed or info.seasonPlayed <= 0 then
+    if not info then
+        return nil
+    end
+
+    if bracket == PVL.BRACKETS.SHUFFLE then
+        local roundsPlayed = info.roundsSeasonPlayed or 0
+        local roundsWon = info.roundsSeasonWon or 0
+        if roundsPlayed <= 0 then
+            return nil
+        end
+
+        return {
+            wins = roundsWon,
+            losses = info.roundsSeasonLost or math.max(roundsPlayed - roundsWon, 0),
+            games = roundsPlayed,
+            winPct = info.roundWinPct,
+            seasonBest = info.seasonBest,
+            unit = "round",
+            matchesPlayed = info.seasonPlayed,
+            matchesWon = info.seasonWon,
+        }
+    end
+
+    if not info.seasonPlayed or info.seasonPlayed <= 0 then
         return nil
     end
 
@@ -133,6 +192,7 @@ function RatedInfo.GetSeasonRecord(bracket)
         games = info.seasonPlayed,
         winPct = info.winPct,
         seasonBest = info.seasonBest,
+        unit = "match",
     }
 end
 
@@ -208,14 +268,28 @@ function RatedInfo.PrintDebug()
         local index = RatedInfo.GetRatedInfoIndex(bracket)
         local info = RatedInfo.GetRatedInfo(bracket)
         local bracketName = PVL.BRACKET_NAMES[bracket] or bracket
-        print(string.format(
-            "  %s index=%s currentCR=%s season=%s-%s (%.1f%%)",
-            bracketName,
-            tostring(index),
-            tostring(info and info.rating or "nil"),
-            tostring(info and info.seasonWon or 0),
-            tostring(info and info.seasonLost or 0),
-            info and info.winPct or 0
-        ))
+        if bracket == PVL.BRACKETS.SHUFFLE then
+            print(string.format(
+                "  %s index=%s currentCR=%s rounds=%s-%s (%.1f%%) matches=%s-%s",
+                bracketName,
+                tostring(index),
+                tostring(info and info.rating or "nil"),
+                tostring(info and info.roundsSeasonWon or 0),
+                tostring(info and info.roundsSeasonLost or 0),
+                info and info.roundWinPct or 0,
+                tostring(info and info.seasonWon or 0),
+                tostring(info and info.seasonLost or 0)
+            ))
+        else
+            print(string.format(
+                "  %s index=%s currentCR=%s season=%s-%s (%.1f%%)",
+                bracketName,
+                tostring(index),
+                tostring(info and info.rating or "nil"),
+                tostring(info and info.seasonWon or 0),
+                tostring(info and info.seasonLost or 0),
+                info and info.winPct or 0
+            ))
+        end
     end
 end

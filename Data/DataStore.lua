@@ -2,16 +2,55 @@
 --- @class PvPLedger
 local PVL = PvPLedger
 
+--- Returns a readable string when the client allows addon access.
+--- Midnight scoreboard fields such as spec names may be secret in instanced PvP.
+--- @param value any
+--- @return string|nil
+function PVL.GetAccessibleString(value)
+    if value == nil then
+        return nil
+    end
+
+    if issecretvalue and issecretvalue(value) then
+        if canaccessvalue and canaccessvalue(value) then
+            return value
+        end
+        return nil
+    end
+
+    if type(value) ~= "string" then
+        return nil
+    end
+
+    local emptyOk, isEmpty = pcall(function()
+        return value == ""
+    end)
+    if not emptyOk or isEmpty then
+        return nil
+    end
+
+    return value
+end
+
+--- Returns true when addon code can safely read one string value.
+--- @param value any
+--- @return boolean
+function PVL.CanUseString(value)
+    return PVL.GetAccessibleString(value) ~= nil
+end
+
 --- Builds a stable player key from name and realm.
 --- @param name string
 --- @param realm string|nil
 --- @return string
 function PVL.MakePlayerKey(name, realm)
-    if not name or name == "" then
+    name = PVL.GetAccessibleString(name)
+    if name == nil then
         return ""
     end
 
-    if realm and realm ~= "" then
+    realm = PVL.GetAccessibleString(realm)
+    if realm ~= nil then
         return string.format("%s-%s", name, realm)
     end
 
@@ -23,12 +62,14 @@ end
 --- @param realm string|nil
 --- @return string
 function PVL.NormalizePlayerLookupKey(name, realm)
-    if not name or name == "" then
+    name = PVL.GetAccessibleString(name)
+    if name == nil then
         return ""
     end
 
     local normalizedName = string.lower(name)
-    if not realm or realm == "" then
+    realm = PVL.GetAccessibleString(realm)
+    if realm == nil then
         return normalizedName
     end
 
@@ -57,7 +98,13 @@ end
 --- @param specKey string
 --- @return string|nil
 function PVL.MakeSpecKey(classToken, specKey)
-    if not classToken or not specKey then
+    if classToken == nil or specKey == nil then
+        return nil
+    end
+
+    classToken = PVL.GetAccessibleString(classToken) or classToken
+    specKey = PVL.GetAccessibleString(specKey)
+    if specKey == nil then
         return nil
     end
 
@@ -65,15 +112,35 @@ function PVL.MakeSpecKey(classToken, specKey)
 end
 
 --- Normalizes a spec display name from scoreboard data into a spec key.
+--- Scoreboard talentSpec values are often secret in instanced PvP; callers should
+--- expect nil when Blizzard withholds the string from addon code.
 --- @param classToken string
---- @param specName string|nil
+--- @param specName string|nil Already filtered through GetAccessibleString when possible.
 --- @return string|nil
 function PVL.NormalizeSpecKey(classToken, specName)
-    if not classToken or not specName or specName == "" then
+    if classToken == nil then
         return nil
     end
 
-    local normalized = specName:upper():gsub("%s+", "")
+    specName = PVL.GetAccessibleString(specName)
+    if specName == nil then
+        return nil
+    end
+
+    local ok, normalized = pcall(function()
+        return specName:upper():gsub("%s+", "")
+    end)
+    if not ok or normalized == nil then
+        return nil
+    end
+
+    local emptyOk, isEmpty = pcall(function()
+        return normalized == ""
+    end)
+    if not emptyOk or isEmpty then
+        return nil
+    end
+
     local specs = PVL.SPEC_KEYS_BY_CLASS[classToken]
     if not specs then
         return normalized
@@ -121,7 +188,7 @@ end
 --- @param timestamp number
 function PVL.UpdatePlayerObservation(participant, timestamp)
     local db = PVL.GetDB()
-    if not db or not participant or not participant.name then
+    if not db or not participant or not PVL.CanUseString(participant.name) then
         return
     end
 

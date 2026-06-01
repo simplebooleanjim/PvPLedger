@@ -194,7 +194,7 @@ function CombatMeter.UpdateRow(row, rank, entry, maxAmount, duration, statDef)
     if statDef.useCombatAmount and duration and duration > 0 then
         row.rateText:SetText(Format.CombatMeterRate(entry.amount / duration))
     elseif duration and duration > 0 then
-        row.rateText:SetText(Format.CombatMeterRate((entry.amount * 60) / duration))
+        row.rateText:SetText(Format.CombatMeterCountRate((entry.amount * 60) / duration))
     else
         row.rateText:SetText("--")
     end
@@ -323,7 +323,8 @@ function UI.CreateCombatMeterPanel(parent, name, topAnchor, bottomLeft, bottomRi
 
         self:ClearRows()
 
-        local maxAmount = entries[1].amount or 0
+        local topAmount = entries[1].amount or 0
+        local maxAmount = topAmount
         if maxAmount <= 0 then
             maxAmount = 1
         end
@@ -358,12 +359,22 @@ function UI.CreateCombatMeterPanel(parent, name, topAnchor, bottomLeft, bottomRi
             yOffset = yOffset + CombatMeter.ROW_HEIGHT + CombatMeter.ROW_GAP
         end
 
-        if not hasTotals then
+        if not hasTotals and statDef.useCombatAmount then
             yOffset = self:ShowNotice(
                 "Combat totals unavailable for this saved match. New games after /reload will populate these bars.",
                 yOffset,
                 contentWidth
             )
+        elseif topAmount <= 0 then
+            local message = "No " .. string.lower(statDef.label) .. " recorded for this match."
+            if not statDef.useCombatAmount then
+                local summary = matchRecord.combatSummary
+                if summary and summary.combatLogCaptured ~= true then
+                    message = "Kicks and dispels are tracked from Blizzard combat data during live matches. "
+                        .. "Enable combat recording in settings, /reload, then play a new match."
+                end
+            end
+            yOffset = self:ShowNotice(message, yOffset, contentWidth)
         end
 
         local contentHeight = math.max(yOffset + 4, self.scrollFrame:GetHeight() or 1)

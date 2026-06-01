@@ -268,7 +268,9 @@ end
 --- @return table[]
 function PVL.GetFilteredImportedLadderPlayers(bracket, classToken, specKey, limit)
     bracket = bracket or PVL.GetActiveBracketFilter()
-    limit = limit or PVL.LADDER_VIEW_LIMIT
+    if limit == nil then
+        limit = PVL.LADDER_VIEW_LIMIT
+    end
 
     local snapshot = PVL.GetImportedSnapshot(bracket)
     if not snapshot or not snapshot.players then
@@ -307,7 +309,7 @@ function PVL.GetFilteredImportedLadderPlayers(bracket, classToken, specKey, limi
         return (left.displayName or "") < (right.displayName or "")
     end)
 
-    if #rows > limit then
+    if type(limit) == "number" and limit > 0 and #rows > limit then
         local trimmed = {}
         for index = 1, limit do
             trimmed[index] = rows[index]
@@ -424,30 +426,86 @@ function PVL.GetListedCharacterRow(bracket)
     return PVL.LookupListedPlayer(name, realm, bracket)
 end
 
+--- Returns a safe numeric rating for ladder comparisons.
+--- @param rating any
+--- @return number|nil
+local function GetAccessibleRating(rating)
+    if rating == nil then
+        return nil
+    end
+
+    if issecretvalue and issecretvalue(rating) then
+        if canaccessvalue and not canaccessvalue(rating) then
+            return nil
+        end
+    end
+
+    return tonumber(rating)
+end
+
+--- Returns true when one imported listed row matches optional class/spec filters.
+--- @param row table|nil
+--- @param classToken string|nil
+--- @param specKey string|nil
+--- @return boolean
+local function ListedRowMatchesFilters(row, classToken, specKey)
+    if not row then
+        return false
+    end
+
+    return ImportedPlayerMatchesFilters(row, classToken, specKey)
+end
+
+--- Returns true when two CR values should be treated as the same rating.
+--- @param left number|nil
+--- @param right number|nil
+--- @return boolean
+local function RatingsMatch(left, right)
+    left = GetAccessibleRating(left)
+    right = GetAccessibleRating(right)
+    if not left or not right then
+        return false
+    end
+
+    return math.abs(left - right) < 1
+end
+
 --- Estimates overall ladder rank by counting imported players above a rating.
 --- @param rating number|nil
 --- @param bracket string|nil
+--- @param classToken string|nil
+--- @param specKey string|nil
 --- @return number|nil estimatedRank
 --- @return number ladderSize
-function PVL.EstimateRankFromImportedLadder(rating, bracket)
+function PVL.EstimateRankFromImportedLadder(rating, bracket, classToken, specKey)
+    rating = GetAccessibleRating(rating)
     if not rating then
         return nil, 0
     end
 
     bracket = bracket or PVL.GetActiveBracketFilter()
-    local rows = PVL.GetFilteredImportedLadderPlayers(bracket, nil, nil, 100000)
-    if #rows == 0 then
+    local snapshot = PVL.GetImportedSnapshot(bracket)
+    if not snapshot or not snapshot.players then
         return nil, 0
     end
 
     local higherCount = 0
-    for _, row in ipairs(rows) do
-        if row.rating and row.rating > rating then
-            higherCount = higherCount + 1
+    local ladderSize = 0
+    for _, row in pairs(snapshot.players) do
+        if type(row) == "table" and ImportedPlayerMatchesFilters(row, classToken, specKey) then
+            ladderSize = ladderSize + 1
+            local rowRating = GetAccessibleRating(row.rating)
+            if rowRating and rowRating > rating then
+                higherCount = higherCount + 1
+            end
         end
     end
 
-    return higherCount + 1, #rows
+    if ladderSize == 0 then
+        return nil, 0
+    end
+
+    return higherCount + 1, ladderSize
 end
 
 --- Builds a display label for an estimated or listed ladder standing.
@@ -458,13 +516,17 @@ function PVL.FormatStandingLabel(standing)
         return "Unlisted"
     end
 
+    if standing.estimatedRank and standing.isEstimated ~= false then
+        local prefix = standing.isEstimated and "~" or ""
+        return string.format("%s#%s", prefix, PVL.FormatRating(standing.estimatedRank))
+    end
+
     if standing.listedRank then
         return string.format("#%s", PVL.FormatRating(standing.listedRank))
     end
 
     if standing.estimatedRank then
-        local prefix = standing.isEstimated and "~" or ""
-        return string.format("%s#%s", prefix, PVL.FormatRating(standing.estimatedRank))
+        return string.format("#%s", PVL.FormatRating(standing.estimatedRank))
     end
 
     return standing.cutoffLabel or "Unlisted"
@@ -473,45 +535,72 @@ end
 --- Compares the current character rating against imported ladder rows and cutoffs.
 --- @param rating number|nil
 --- @param bracket string|nil
+--- @param classToken string|nil
+--- @param specKey string|nil
 --- @return table|nil
-function PVL.EstimateListedStanding(rating, bracket)
+function PVL.EstimateListedStanding(rating, bracket, classToken, specKey)
     bracket = bracket or PVL.GetActiveBracketFilter()
+    local accessibleRating = GetAccessibleRating(rating)
+    if not accessibleRating and PVL.MatchCollector and PVL.MatchCollector.GetAccessibleNumber then
+        accessibleRating = PVL.MatchCollector.GetAccessibleNumber(rating)
+    end
+
     local snapshot = PVL.GetImportedSnapshot(bracket)
     local overall = snapshot and snapshot.overall or nil
-    if not overall or not rating then
+    if not accessibleRating then
         return nil
     end
 
     local standing = {
-        rating = rating,
+        rating = accessibleRating,
         cutoffLabel = "Unlisted",
         isEstimated = true,
     }
 
-    for _, cutoff in ipairs(overall.cutoffs or {}) do
-        if rating >= cutoff.rating then
-            standing.cutoffLabel = cutoff.label
-            standing.rankThreshold = cutoff.rank
+    if overall then
+        for _, cutoff in ipairs(overall.cutoffs or {}) do
+            local cutoffRating = GetAccessibleRating(cutoff.rating)
+            if cutoffRating and accessibleRating >= cutoffRating then
+                standing.cutoffLabel = cutoff.label
+                standing.rankThreshold = cutoff.rank
+            end
         end
     end
 
     local listedRow = PVL.GetListedCharacterRow(bracket)
-    if listedRow and listedRow.rank then
-        standing.listedRank = listedRow.rank
-        standing.isEstimated = false
+    if listedRow and ListedRowMatchesFilters(listedRow, classToken, specKey) then
         standing.isListed = true
-        return standing
+        standing.snapshotRank = listedRow.rank
+        standing.snapshotRating = listedRow.rating
     end
 
-    local estimatedRank, ladderSize = PVL.EstimateRankFromImportedLadder(rating, bracket)
+    local estimatedRank, ladderSize = PVL.EstimateRankFromImportedLadder(
+        accessibleRating,
+        bracket,
+        classToken,
+        specKey
+    )
     if estimatedRank then
         standing.estimatedRank = estimatedRank
         standing.ladderSize = ladderSize
-        standing.isListed = false
+
+        if listedRow
+            and ListedRowMatchesFilters(listedRow, classToken, specKey)
+            and listedRow.rank
+            and RatingsMatch(listedRow.rating, accessibleRating) then
+            standing.listedRank = listedRow.rank
+            standing.isEstimated = false
+        end
 
         if ladderSize > 0 and estimatedRank > ladderSize then
             standing.cutoffLabel = string.format("Below #%s", PVL.FormatRating(ladderSize))
         end
+    elseif listedRow
+        and ListedRowMatchesFilters(listedRow, classToken, specKey)
+        and listedRow.rank then
+        standing.listedRank = listedRow.rank
+        standing.isEstimated = false
+        standing.isListed = true
     end
 
     return standing
@@ -835,14 +924,21 @@ function PVL.GetCharacterRatingFields(bracket)
 end
 
 --- Builds a short summary table for the main UI panel.
+--- @param filters table|nil Optional UI filter state with classToken/specKey.
 --- @return table
-function PVL.BuildDashboardSummary()
+function PVL.BuildDashboardSummary(filters)
     local bracket = PVL.GetActiveBracketFilter()
+    filters = filters or {}
+    local classToken = filters.classToken
+    local specKey = filters.specKey
+
     local snapshot = PVL.GetImportedSnapshot(bracket)
     local observedRows = PVL.GetObservedSpecRows(bracket)
     local playerCR, playerMMR, playerMMRKind = PVL.GetCharacterRatingFields(bracket)
     local playerCurrentCR = PVL.RatedInfo and PVL.RatedInfo.GetCurrentRating(bracket) or nil
     local listedObservedCount, observedPlayerCount = PVL.CountListedObservedPlayers()
+
+    local standing = PVL.EstimateListedStanding(playerCurrentCR or playerCR, bracket, classToken, specKey)
 
     return {
         bracket = bracket,
@@ -858,7 +954,7 @@ function PVL.BuildDashboardSummary()
         playerCurrentCR = playerCurrentCR,
         playerMMR = playerMMR,
         playerMMRKind = playerMMRKind,
-        standing = PVL.EstimateListedStanding(playerCurrentCR or playerCR, bracket),
+        standing = standing,
         ladderStalenessLines = PVL.GetLadderStalenessLines(bracket),
     }
 end

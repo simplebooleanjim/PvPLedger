@@ -69,7 +69,7 @@ function PVL.RegisterSettingsPanel()
         db.settings,
         "Record match combat stats",
         true,
-        "Silently capture per-player damage, healing, interrupts, CC, and kills for later review."
+        "Silently capture per-player damage, healing, interrupts, CC, and kills from the live combat log for later review."
     )
 
     RegisterBoolean(

@@ -363,15 +363,33 @@ function UI.BuildSummaryText(summary)
     ))
     table.insert(lines, Format.StatLine("Matches tracked", Format.Count(summary.matchCount)))
 
+    local recordLabel = PVL.LABELS.SEASON_RECORD
+    local winRateLabel = PVL.LABELS.SEASON_WIN_RATE
+    if summary.bracket == PVL.BRACKETS.SHUFFLE then
+        recordLabel = PVL.LABELS.ROUND_RECORD
+        winRateLabel = PVL.LABELS.ROUND_WIN_RATE
+    end
+
     if summary.seasonRecord then
         table.insert(lines, Format.StatLine(
-            PVL.LABELS.SEASON_RECORD,
+            recordLabel,
             Format.WinLossRecord(summary.seasonRecord.wins, summary.seasonRecord.losses)
         ))
         table.insert(lines, Format.StatLine(
-            PVL.LABELS.SEASON_WIN_RATE,
+            winRateLabel,
             Format.WinPercent(summary.seasonRecord.wins, summary.seasonRecord.losses)
         ))
+        if summary.bracket == PVL.BRACKETS.SHUFFLE
+            and summary.seasonRecord.matchesPlayed
+            and summary.seasonRecord.matchesPlayed > 0 then
+            table.insert(lines, Format.StatLine(
+                "Matches played",
+                Format.WinLossRecord(
+                    summary.seasonRecord.matchesWon or 0,
+                    math.max((summary.seasonRecord.matchesPlayed or 0) - (summary.seasonRecord.matchesWon or 0), 0)
+                )
+            ))
+        end
     else
         table.insert(lines, Format.Muted("No rated games this season for this bracket."))
     end
@@ -383,12 +401,19 @@ function UI.BuildSummaryText(summary)
         Format.Rating(summary.playerMMR)
     ))
 
+    local standingLabel = "--"
     if summary.standing then
-        table.insert(lines, Format.StatLine(
-            "Estimated standing",
-            Format.Colorize(Format.COLORS.STANDING, PVL.FormatStandingLabel(summary.standing))
-        ))
+        standingLabel = PVL.FormatStandingLabel(summary.standing)
+    elseif (summary.playerCurrentCR or summary.playerCR) and PVL.GetImportedSnapshot(summary.bracket) then
+        standingLabel = "Unlisted"
+    end
 
+    table.insert(lines, Format.StatLine(
+        "Estimated standing",
+        Format.Colorize(Format.COLORS.STANDING, standingLabel)
+    ))
+
+    if summary.standing then
         if summary.standing.isEstimated and summary.standing.estimatedRank and not summary.standing.isListed then
             if summary.ladderStalenessLines and #summary.ladderStalenessLines > 0 then
                 table.insert(lines, Format.Muted(
@@ -399,6 +424,15 @@ function UI.BuildSummaryText(summary)
                     "Based on imported ladder CRs. You are not in this snapshot yet."
                 ))
             end
+        elseif summary.standing.isEstimated
+            and summary.standing.isListed
+            and summary.standing.snapshotRank
+            and summary.standing.snapshotRating then
+            table.insert(lines, Format.Muted(string.format(
+                "Snapshot rank #%s at %s CR; estimate uses your current rating.",
+                PVL.FormatRating(summary.standing.snapshotRank),
+                PVL.FormatRating(summary.standing.snapshotRating)
+            )))
         end
     end
 
@@ -696,7 +730,7 @@ end
 function UI.Refresh()
     local frame = UI.CreateMainFrame()
     local filters = UI.GetFilters()
-    local summary = PVL.BuildDashboardSummary()
+    local summary = PVL.BuildDashboardSummary(filters)
 
     if frame.refreshBracketDropdown then
         frame.refreshBracketDropdown()

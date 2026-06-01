@@ -103,6 +103,10 @@ end
 --- @param statId string|nil
 --- @return table
 function UI.GetCombatStatDefinition(statId)
+    if statId == "ccApplied" or statId == "ccTaken" then
+        statId = "dispels"
+    end
+
     for _, stat in ipairs(PVL.COMBAT_ANALYSIS_STATS) do
         if stat.value == statId then
             return stat
@@ -116,7 +120,11 @@ end
 --- @return string
 function UI.GetSelectedCombatStat()
     local filters = UI.GetFilters()
-    return filters.combatStat or PVL.DEFAULT_COMBAT_ANALYSIS_STAT
+    local statId = filters.combatStat or PVL.DEFAULT_COMBAT_ANALYSIS_STAT
+    if statId == "ccApplied" or statId == "ccTaken" then
+        return "dispels"
+    end
+    return statId
 end
 
 --- Stores the selected combat analysis stat and refreshes the UI.
@@ -144,6 +152,18 @@ function UI.GetCombatStatValue(combatRow, statDef, participant)
     end
 
     local value = combatRow and tonumber(combatRow[statDef.field]) or 0
+    if not statDef.useCombatAmount and value > 0 then
+        local countStatMax = {
+            interrupts = 100,
+            dispels = 100,
+            deaths = 50,
+        }
+        local maxValue = countStatMax[statDef.field]
+        if maxValue and value > maxValue then
+            value = 0
+        end
+    end
+
     if value > 0 or not participant then
         return value or 0
     end
@@ -154,6 +174,10 @@ function UI.GetCombatStatValue(combatRow, statDef, participant)
 
     if statDef.field == "healing" and participant.healingDone then
         return participant.healingDone
+    end
+
+    if participant[statDef.field] then
+        return participant[statDef.field]
     end
 
     return value or 0
@@ -225,8 +249,15 @@ function UI.GetCombatRowForParticipant(combatSummary, participant)
         if participant.guid and row.guid == participant.guid then
             return row
         end
-        if participant.name and row.name == participant.name then
-            return row
+        if participant.name and row.name then
+            local normalize = PVL.CombatLogCollector and PVL.CombatLogCollector.NormalizeName
+            if normalize then
+                if normalize(participant.name) == normalize(row.name) then
+                    return row
+                end
+            elseif row.name == participant.name then
+                return row
+            end
         end
     end
 
@@ -245,8 +276,7 @@ function UI.MatchHasStoredCombatTotals(matchRecord, combatSummary)
                 or (row.healing or 0) > 0
                 or (row.damageTaken or 0) > 0
                 or (row.interrupts or 0) > 0
-                or (row.ccApplied or 0) > 0
-                or (row.ccTaken or 0) > 0
+                or (row.dispels or 0) > 0
                 or (row.deaths or 0) > 0 then
                 return true
             end
@@ -254,7 +284,11 @@ function UI.MatchHasStoredCombatTotals(matchRecord, combatSummary)
     end
 
     for _, participant in ipairs(matchRecord and matchRecord.roster or {}) do
-        if (participant.damageDone or 0) > 0 or (participant.healingDone or 0) > 0 then
+        if (participant.damageDone or 0) > 0
+            or (participant.healingDone or 0) > 0
+            or (participant.interrupts or 0) > 0
+            or (participant.dispels or 0) > 0
+            or (participant.deaths or 0) > 0 then
             return true
         end
     end
@@ -296,10 +330,9 @@ function UI.ResolveMatchCombatSummary(matchRecord)
             damage = participant.damageDone or 0,
             healing = participant.healingDone or 0,
             damageTaken = 0,
-            interrupts = 0,
-            ccApplied = 0,
-            ccTaken = 0,
-            deaths = 0,
+            interrupts = participant.interrupts or 0,
+            dispels = participant.dispels or 0,
+            deaths = participant.deaths or 0,
         })
     end
 
