@@ -6,7 +6,7 @@ PvPLedgerLadderData.rbg = {
     bracket = "rbg",
     season = 41,
     snapshotDate = "2026-06-02",
-    generatedAt = "2026-06-02T12:30:55Z",
+    generatedAt = "2026-06-02T17:06:24Z",
     source = "blizzard-api+seramate",
     overall = {
         listedCount = 1001,
@@ -157,9 +157,9 @@ PvPLedgerLadderData.rbg = {
         },
         ["MAGE"] = {
             listedCount = 41,
-            avgListedRating = 1913.0,
+            avgListedRating = 1902.7,
             medianListedRating = 1899,
-            top100Avg = 1913.0,
+            top100Avg = 1902.7,
             highest = 2352,
             buckets = {
                 ["1600-1699"] = 2,
@@ -548,25 +548,24 @@ PvPLedgerLadderData.rbg = {
             },
         },
         ["MAGE_FIRE"] = {
-            listedCount = 8,
-            avgListedRating = 2015.9,
-            medianListedRating = 2007.5,
-            top100Avg = 2015.9,
-            highest = 2352,
+            listedCount = 7,
+            avgListedRating = 1967.9,
+            medianListedRating = 1994,
+            top100Avg = 1967.9,
+            highest = 2172,
             buckets = {
                 ["1700-1799"] = 1,
                 ["1900-1999"] = 3,
                 ["2000-2099"] = 2,
                 ["2100-2199"] = 1,
-                ["2300-2399"] = 1,
             },
         },
         ["MAGE_FROST"] = {
-            listedCount = 30,
-            avgListedRating = 1821,
-            medianListedRating = 1782.0,
-            top100Avg = 1821,
-            highest = 2215,
+            listedCount = 31,
+            avgListedRating = 1838.1,
+            medianListedRating = 1784,
+            top100Avg = 1838.1,
+            highest = 2352,
             buckets = {
                 ["1600-1699"] = 2,
                 ["1700-1799"] = 14,
@@ -575,6 +574,7 @@ PvPLedgerLadderData.rbg = {
                 ["2000-2099"] = 1,
                 ["2100-2199"] = 1,
                 ["2200-2299"] = 1,
+                ["2300-2399"] = 1,
             },
         },
         ["MONK_BREWMASTER"] = {
@@ -9557,7 +9557,7 @@ PvPLedgerLadderData.rbg = {
         },
         ["zenzoh-tichondrius"] = {
             displayName = "Zenzoh-tichondrius",
-            specKey = "MAGE_FIRE",
+            specKey = "MAGE_FROST",
             rating = 2352,
             rank = 42,
             wins = 86,
