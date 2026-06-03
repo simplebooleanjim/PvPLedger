@@ -6,7 +6,7 @@ PvPLedgerLadderData.rbg = {
     bracket = "rbg",
     season = 41,
     snapshotDate = "2026-06-03",
-    generatedAt = "2026-06-03T19:07:48Z",
+    generatedAt = "2026-06-03T22:06:48Z",
     source = "blizzard-api+seramate",
     overall = {
         listedCount = 1001,
@@ -98,9 +98,9 @@ PvPLedgerLadderData.rbg = {
         },
         ["DRUID"] = {
             listedCount = 157,
-            avgListedRating = 1944.0,
-            medianListedRating = 1874.0,
-            top100Avg = 1944.0,
+            avgListedRating = 1938.2,
+            medianListedRating = 1887.5,
+            top100Avg = 1938.2,
             highest = 2580,
             buckets = {
                 ["1600-1699"] = 6,
@@ -392,10 +392,10 @@ PvPLedgerLadderData.rbg = {
             },
         },
         ["DRUID_FERAL"] = {
-            listedCount = 19,
-            avgListedRating = 1954.6,
-            medianListedRating = 1861,
-            top100Avg = 1954.6,
+            listedCount = 20,
+            avgListedRating = 1984.1,
+            medianListedRating = 1888.0,
+            top100Avg = 1984.1,
             highest = 2580,
             buckets = {
                 ["1700-1799"] = 7,
@@ -404,7 +404,7 @@ PvPLedgerLadderData.rbg = {
                 ["2000-2099"] = 2,
                 ["2100-2199"] = 2,
                 ["2200-2299"] = 2,
-                ["2500-2599"] = 1,
+                ["2500-2599"] = 2,
             },
         },
         ["DRUID_GUARDIAN"] = {
@@ -423,11 +423,11 @@ PvPLedgerLadderData.rbg = {
             },
         },
         ["DRUID_RESTORATION"] = {
-            listedCount = 11,
-            avgListedRating = 2017.5,
-            medianListedRating = 1922,
-            top100Avg = 2017.5,
-            highest = 2545,
+            listedCount = 10,
+            avgListedRating = 1964.8,
+            medianListedRating = 1903.0,
+            top100Avg = 1964.8,
+            highest = 2436,
             buckets = {
                 ["1700-1799"] = 2,
                 ["1800-1899"] = 3,
@@ -435,7 +435,6 @@ PvPLedgerLadderData.rbg = {
                 ["2000-2099"] = 1,
                 ["2100-2199"] = 2,
                 ["2400-2499"] = 1,
-                ["2500-2599"] = 1,
             },
         },
         ["EVOKER_AUGMENTATION"] = {
@@ -6038,7 +6037,7 @@ PvPLedgerLadderData.rbg = {
         },
         ["moxie-moonguard"] = {
             displayName = "Moxie-moon-guard",
-            specKey = "DRUID_RESTORATION",
+            specKey = "DRUID_FERAL",
             rating = 2545,
             rank = 12,
             wins = 60,
