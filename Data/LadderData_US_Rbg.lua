@@ -6,7 +6,7 @@ PvPLedgerLadderData.rbg = {
     bracket = "rbg",
     season = 41,
     snapshotDate = "2026-06-06",
-    generatedAt = "2026-06-06T13:44:20Z",
+    generatedAt = "2026-06-06T15:02:21Z",
     source = "blizzard-api+seramate",
     overall = {
         listedCount = 1005,
@@ -65,9 +65,9 @@ PvPLedgerLadderData.rbg = {
     byClass = {
         ["DEATHKNIGHT"] = {
             listedCount = 52,
-            avgListedRating = 1889.9,
+            avgListedRating = 1885.1,
             medianListedRating = 1867,
-            top100Avg = 1889.9,
+            top100Avg = 1885.1,
             highest = 2392,
             buckets = {
                 ["1600-1699"] = 1,
@@ -309,24 +309,24 @@ PvPLedgerLadderData.rbg = {
             },
         },
         ["DEATHKNIGHT_FROST"] = {
-            listedCount = 16,
-            avgListedRating = 1880.5,
-            medianListedRating = 1810.0,
-            top100Avg = 1880.5,
+            listedCount = 15,
+            avgListedRating = 1857.5,
+            medianListedRating = 1797,
+            top100Avg = 1857.5,
             highest = 2237,
             buckets = {
                 ["1700-1799"] = 8,
                 ["1800-1899"] = 4,
                 ["1900-1999"] = 1,
                 ["2100-2199"] = 1,
-                ["2200-2299"] = 2,
+                ["2200-2299"] = 1,
             },
         },
         ["DEATHKNIGHT_UNHOLY"] = {
-            listedCount = 35,
-            avgListedRating = 1922.3,
-            medianListedRating = 1868,
-            top100Avg = 1922.3,
+            listedCount = 36,
+            avgListedRating = 1930.7,
+            medianListedRating = 1871.5,
+            top100Avg = 1930.7,
             highest = 2392,
             buckets = {
                 ["1600-1699"] = 1,
@@ -335,7 +335,7 @@ PvPLedgerLadderData.rbg = {
                 ["1900-1999"] = 5,
                 ["2000-2099"] = 2,
                 ["2100-2199"] = 3,
-                ["2200-2299"] = 3,
+                ["2200-2299"] = 4,
                 ["2300-2399"] = 1,
             },
         },
@@ -7611,7 +7611,7 @@ PvPLedgerLadderData.rbg = {
         },
         ["runehurtz-tichondrius"] = {
             displayName = "Runehurtz-tichondrius",
-            specKey = "DEATHKNIGHT_FROST",
+            specKey = "DEATHKNIGHT_UNHOLY",
             rating = 2225,
             rank = 95,
             wins = 52,
