@@ -6,7 +6,7 @@ PvPLedgerLadderData.rbg = {
     bracket = "rbg",
     season = 41,
     snapshotDate = "2026-06-08",
-    generatedAt = "2026-06-08T21:09:27Z",
+    generatedAt = "2026-06-08T22:51:57Z",
     source = "blizzard-api+seramate",
     overall = {
         listedCount = 1002,
@@ -199,13 +199,13 @@ PvPLedgerLadderData.rbg = {
             },
         },
         ["PRIEST"] = {
-            listedCount = 161,
-            avgListedRating = 1913.8,
-            medianListedRating = 1871,
+            listedCount = 162,
+            avgListedRating = 1913.0,
+            medianListedRating = 1870.5,
             top100Avg = 1914.6,
             highest = 2649,
             buckets = {
-                ["1700-1799"] = 48,
+                ["1700-1799"] = 49,
                 ["1800-1899"] = 45,
                 ["1900-1999"] = 21,
                 ["2000-2099"] = 16,
@@ -632,13 +632,13 @@ PvPLedgerLadderData.rbg = {
             },
         },
         ["PRIEST_DISCIPLINE"] = {
-            listedCount = 101,
-            avgListedRating = 1938.8,
-            medianListedRating = 1871,
+            listedCount = 102,
+            avgListedRating = 1936.5,
+            medianListedRating = 1870.5,
             top100Avg = 1941.1,
             highest = 2649,
             buckets = {
-                ["1700-1799"] = 29,
+                ["1700-1799"] = 30,
                 ["1800-1899"] = 28,
                 ["1900-1999"] = 12,
                 ["2000-2099"] = 9,
@@ -3138,7 +3138,7 @@ PvPLedgerLadderData.rbg = {
         },
         ["elusha-sargeras"] = {
             displayName = "Elusha-sargeras",
-            specKey = "",
+            specKey = "PRIEST_DISCIPLINE",
             rating = 1701,
             rank = 981,
             wins = 26,
