@@ -6,7 +6,7 @@ PvPLedgerLadderData.rbg = {
     bracket = "rbg",
     season = 41,
     snapshotDate = "2026-06-11",
-    generatedAt = "2026-06-11T14:57:11Z",
+    generatedAt = "2026-06-11T18:16:46Z",
     source = "blizzard-api+seramate",
     overall = {
         listedCount = 1001,
@@ -254,9 +254,9 @@ PvPLedgerLadderData.rbg = {
         },
         ["WARLOCK"] = {
             listedCount = 32,
-            avgListedRating = 1855.5,
-            medianListedRating = 1835.5,
-            top100Avg = 1855.5,
+            avgListedRating = 1893.5,
+            medianListedRating = 1840.8,
+            top100Avg = 1893.5,
             highest = 2429,
             buckets = {
                 ["1700-1799"] = 8,
@@ -790,24 +790,14 @@ PvPLedgerLadderData.rbg = {
                 ["2400-2499"] = 1,
             },
         },
-        ["WARLOCK_DEMONOLOGY"] = {
-            listedCount = 1,
-            avgListedRating = 1770,
-            medianListedRating = 1770,
-            top100Avg = 1770,
-            highest = 1770,
-            buckets = {
-                ["1700-1799"] = 1,
-            },
-        },
         ["WARLOCK_DESTRUCTION"] = {
-            listedCount = 11,
-            avgListedRating = 1884.2,
-            medianListedRating = 1857,
-            top100Avg = 1884.2,
+            listedCount = 12,
+            avgListedRating = 1874.7,
+            medianListedRating = 1846.0,
+            top100Avg = 1874.7,
             highest = 2037,
             buckets = {
-                ["1700-1799"] = 2,
+                ["1700-1799"] = 3,
                 ["1800-1899"] = 4,
                 ["1900-1999"] = 3,
                 ["2000-2099"] = 2,
@@ -7188,7 +7178,7 @@ PvPLedgerLadderData.rbg = {
         },
         ["quitxman-tichondrius"] = {
             displayName = "Quitxman-tichondrius",
-            specKey = "WARLOCK_DEMONOLOGY",
+            specKey = "WARLOCK_DESTRUCTION",
             rating = 1770,
             rank = 780,
             wins = 28,
