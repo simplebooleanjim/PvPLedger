@@ -54,21 +54,27 @@ function PVL.GetDefaultCharDB()
         lastBlitzCR = nil,
         lastBlitzMMR = nil,
         lastBlitzMMRKind = nil,
+        lastBlitzPersonalMMR = nil,
         lastShuffleCR = nil,
         lastShuffleMMR = nil,
         lastShuffleMMRKind = nil,
+        lastShufflePersonalMMR = nil,
         lastRbgCR = nil,
         lastRbgMMR = nil,
         lastRbgMMRKind = nil,
+        lastRbgPersonalMMR = nil,
         lastArena2v2CR = nil,
         lastArena2v2MMR = nil,
         lastArena2v2MMRKind = nil,
+        lastArena2v2PersonalMMR = nil,
         lastArena3v3CR = nil,
         lastArena3v3MMR = nil,
         lastArena3v3MMRKind = nil,
+        lastArena3v3PersonalMMR = nil,
         crHistory = {},
         crHistoryBackfilled = false,
         pendingCombatSession = nil,
+        combatSegmentArchive = {},
     }
 end
 
@@ -138,21 +144,27 @@ function PVL.MigrateCharDB(charDb)
     charDb.lastBlitzCR = charDb.lastBlitzCR
     charDb.lastBlitzMMR = charDb.lastBlitzMMR
     charDb.lastBlitzMMRKind = charDb.lastBlitzMMRKind
+    charDb.lastBlitzPersonalMMR = charDb.lastBlitzPersonalMMR
     charDb.lastShuffleCR = charDb.lastShuffleCR
     charDb.lastShuffleMMR = charDb.lastShuffleMMR
     charDb.lastShuffleMMRKind = charDb.lastShuffleMMRKind
+    charDb.lastShufflePersonalMMR = charDb.lastShufflePersonalMMR
     charDb.lastRbgCR = charDb.lastRbgCR
     charDb.lastRbgMMR = charDb.lastRbgMMR
     charDb.lastRbgMMRKind = charDb.lastRbgMMRKind
+    charDb.lastRbgPersonalMMR = charDb.lastRbgPersonalMMR
     charDb.lastArena2v2CR = charDb.lastArena2v2CR
     charDb.lastArena2v2MMR = charDb.lastArena2v2MMR
     charDb.lastArena2v2MMRKind = charDb.lastArena2v2MMRKind
+    charDb.lastArena2v2PersonalMMR = charDb.lastArena2v2PersonalMMR
     charDb.lastArena3v3CR = charDb.lastArena3v3CR
     charDb.lastArena3v3MMR = charDb.lastArena3v3MMR
     charDb.lastArena3v3MMRKind = charDb.lastArena3v3MMRKind
+    charDb.lastArena3v3PersonalMMR = charDb.lastArena3v3PersonalMMR
     charDb.crHistory = charDb.crHistory or {}
     charDb.crHistoryBackfilled = charDb.crHistoryBackfilled == true
     charDb.pendingCombatSession = charDb.pendingCombatSession
+    charDb.combatSegmentArchive = charDb.combatSegmentArchive or {}
 
     return charDb
 end

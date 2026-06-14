@@ -34,10 +34,7 @@ class SyncConfig:
     ingest_host: str = DEFAULT_INGEST_HOST
     ingest_port: int = DEFAULT_INGEST_PORT
     ingest_dir: str = ""
-    github_token: str = ""
     upload_token: str = ""
-    github_export_enabled: bool = True
-    github_export_path: str = "Data/match-exports"
     last_manifest_generated_date: str = ""
     last_app_data_sync_at: str = ""
     last_export_upload_at: str = ""
@@ -68,18 +65,6 @@ class SyncConfig:
         """Return the ExportAck.lua path written after export upload."""
 
         return self.app_helper_dir / "ExportAck.lua"
-
-    def resolved_github_token(self) -> str:
-        """Return the configured GitHub token, including environment overrides."""
-
-        for value in (
-            self.github_token,
-            os.environ.get("PVL_GITHUB_TOKEN", ""),
-            os.environ.get("GITHUB_TOKEN", ""),
-        ):
-            if value:
-                return value.strip()
-        return ""
 
     def resolved_upload_token(self) -> str:
         """Return the configured upload token, including environment overrides."""

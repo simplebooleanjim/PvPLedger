@@ -31,6 +31,10 @@ echo Generating brand assets...
 %PYTHON% ..\Media\generate_brand_assets.py
 if %ERRORLEVEL% NEQ 0 exit /b %ERRORLEVEL%
 
+echo Preparing friend installer addon bundle...
+%PYTHON% build\prepare_friend_bundle.py
+if %ERRORLEVEL% NEQ 0 exit /b %ERRORLEVEL%
+
 echo Building PvPLedger-Sync.exe...
 %PYTHON% -m PyInstaller --noconfirm --distpath "%BUILD_DIST%" --workpath "%BUILD_WORK%" build\pvpledger_sync.spec
 if %ERRORLEVEL% NEQ 0 exit /b %ERRORLEVEL%

@@ -25,13 +25,73 @@ def installer_icon_path() -> Path:
     return Path(__file__).resolve().parent.parent / "assets" / "PvPLedger.ico"
 
 
+def replace_addon_directory(source: Path, destination: Path) -> None:
+    """
+    Replace one AddOns subdirectory with a bundled copy.
+
+    Parameters
+    ----------
+    source:
+        Bundled addon directory inside the installer resources.
+    destination:
+        Target path under the user's WoW AddOns folder.
+    """
+
+    if not source.exists():
+        raise FileNotFoundError(f"Missing bundled addon: {source}")
+
+    if destination.exists():
+        shutil.rmtree(destination)
+    shutil.copytree(source, destination)
+
+
+def install_bundled_addons(addons_path: Path) -> list[str]:
+    """
+    Install all bundled PvPLedger addon folders into one AddOns directory.
+
+    Parameters
+    ----------
+    addons_path:
+        Path to the user's WoW ``Interface/AddOns`` directory.
+
+    Returns
+    -------
+    list[str]
+        Human-readable names of addons that were installed.
+    """
+
+    installed: list[str] = []
+
+    main_addon_source = resource_path("PvPLedger")
+    if main_addon_source.exists():
+        replace_addon_directory(main_addon_source, addons_path / "PvPLedger")
+        installed.append("PvPLedger")
+
+    app_helper_source = resource_path("PvPLedger-AppHelper")
+    if app_helper_source.exists():
+        replace_addon_directory(app_helper_source, addons_path / "PvPLedger-AppHelper")
+        installed.append("PvPLedger-AppHelper")
+
+    data_addon_source = resource_path("PvPLedger-Data-US")
+    if data_addon_source.exists():
+        replace_addon_directory(data_addon_source, addons_path / "PvPLedger-Data-US")
+        installed.append("PvPLedger-Data-US")
+
+    if not installed:
+        raise FileNotFoundError(
+            "No bundled addons were found. Rebuild with build_installer.bat first."
+        )
+
+    return installed
+
+
 class InstallerApp:
     """Simple Tkinter installer for PvPLedger Sync."""
 
     def __init__(self) -> None:
         self.root = tk.Tk()
-        self.root.title("PvPLedger Sync Setup")
-        self.root.geometry("620x420")
+        self.root.title("PvPLedger Setup")
+        self.root.geometry("640x460")
         self.root.resizable(False, False)
 
         detected = detect_wow_addons_dir()
@@ -58,16 +118,18 @@ class InstallerApp:
 
         ttk.Label(
             frame,
-            text="PvPLedger Sync Setup",
+            text="PvPLedger Setup",
             font=("Segoe UI", 16, "bold"),
         ).pack(anchor="w")
         ttk.Label(
             frame,
             text=(
-                "This installs the PvPLedger AppHelper bridge and background sync app.\n"
-                "You still need the main PvPLedger addon from CurseForge/Wago/GitHub."
+                "Installs PvPLedger, the AppHelper bridge, optional US ladder data, "
+                "and the background sync app.\n"
+                "After install: enable the addons in WoW, then /reload when Sync says "
+                "ladder data updated."
             ),
-            wraplength=560,
+            wraplength=580,
         ).pack(anchor="w", pady=(8, 16))
 
         path_row = ttk.Frame(frame)
@@ -86,7 +148,7 @@ class InstallerApp:
             anchor="w",
         )
 
-        ttk.Label(frame, textvariable=self.status, wraplength=560).pack(anchor="w", pady=(16, 8))
+        ttk.Label(frame, textvariable=self.status, wraplength=580).pack(anchor="w", pady=(16, 8))
 
         button_row = ttk.Frame(frame)
         button_row.pack(fill="x", pady=(12, 0))
@@ -105,10 +167,15 @@ class InstallerApp:
 
         addons_path = Path(self.addons_dir.get().strip())
         if not addons_path.exists():
-            messagebox.showerror("PvPLedger Sync", "Please choose a valid WoW AddOns folder.")
+            messagebox.showerror("PvPLedger Setup", "Please choose a valid WoW AddOns folder.")
             return
 
         try:
+            self.status.set("Installing PvPLedger addons...")
+            self.root.update_idletasks()
+
+            installed_addons = install_bundled_addons(addons_path)
+
             self.status.set("Installing PvPLedger Sync...")
             self.root.update_idletasks()
 
@@ -123,36 +190,38 @@ class InstallerApp:
                 )
             shutil.copy2(sync_source, sync_exe)
 
-            app_helper_source = resource_path("PvPLedger-AppHelper")
-            if not app_helper_source.exists():
-                raise FileNotFoundError(f"Missing bundled AppHelper addon: {app_helper_source}")
-
-            app_helper_target = addons_path / "PvPLedger-AppHelper"
-            if app_helper_target.exists():
-                shutil.rmtree(app_helper_target)
-            shutil.copytree(app_helper_source, app_helper_target)
-
-            config = apply_config_defaults(SyncConfig(wow_addons_dir=str(addons_path)))
+            config = apply_config_defaults(
+                SyncConfig(
+                    wow_addons_dir=str(addons_path),
+                    export_enabled=True,
+                    ingest_enabled=False,
+                )
+            )
             save_config(config)
 
             if self.run_at_login.get():
                 install_startup()
 
+            addon_list = ", ".join(installed_addons)
             self.status.set("Installation complete.")
             messagebox.showinfo(
-                "PvPLedger Sync",
+                "PvPLedger Setup",
                 (
                     "Installation complete.\n\n"
-                    f"AppHelper installed to:\n{app_helper_target}\n\n"
+                    f"Addons installed: {addon_list}\n"
                     f"Sync app installed to:\n{sync_exe}\n\n"
-                    "Enable PvPLedger + PvPLedger AppHelper in WoW, then /reload."
+                    "Next steps:\n"
+                    "1. Enable PvPLedger + PvPLedger-AppHelper in WoW\n"
+                    "2. Leave PvPLedger Sync running in the tray\n"
+                    "3. /reload after Sync notifies you that ladder data updated\n\n"
+                    "Match exports upload automatically after games — no tokens to configure."
                 ),
             )
 
             if self.launch_now.get():
                 subprocess.Popen([str(sync_exe)], shell=False)  # noqa: S603
         except Exception as exc:  # noqa: BLE001 - installer should show the real error to the user
-            messagebox.showerror("PvPLedger Sync", f"Installation failed:\n{exc}")
+            messagebox.showerror("PvPLedger Setup", f"Installation failed:\n{exc}")
             self.status.set(f"Installation failed: {exc}")
 
     def run(self) -> None:

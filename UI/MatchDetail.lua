@@ -23,32 +23,61 @@ end
 
 --- Returns the match record currently selected for the active bracket.
 --- @param bracket string|nil
+--- @param filters table|nil Optional `{ classToken, specKey }` player-spec filters.
 --- @return table|nil
-function UI.ResolveSelectedMatch(bracket)
+function UI.ResolveSelectedMatch(bracket, filters)
     bracket = bracket or PVL.GetActiveBracketFilter()
+    filters = filters or (PVL.GetPersonalTrackingFilters and PVL.GetPersonalTrackingFilters() or nil)
+
+    if filters and filters.specUnavailable then
+        return nil
+    end
+
     local selectedId = UI.GetSelectedMatchId()
     if selectedId then
         local selectedMatch = PVL.GetMatchById(selectedId)
-        if selectedMatch and selectedMatch.bracket == bracket then
+        if selectedMatch
+            and selectedMatch.bracket == bracket
+            and PVL.MatchMatchesPlayerSpecFilter(
+                selectedMatch,
+                filters and filters.classToken or nil,
+                filters and filters.specKey or nil
+            ) then
             return selectedMatch
         end
     end
 
-    local recentMatches = PVL.GetRecentMatches(bracket, 1)
+    local recentMatches = PVL.GetRecentMatches(bracket, 1, filters)
     return recentMatches[1]
 end
 
 --- Returns dropdown options for recent matches in one bracket.
 --- @param bracket string|nil
+--- @param filters table|nil Optional `{ classToken, specKey }` player-spec filters.
 --- @return table[]
-function UI.GetRecentMatchOptions(bracket)
+function UI.GetRecentMatchOptions(bracket, filters)
     bracket = bracket or PVL.GetActiveBracketFilter()
-    local matches = PVL.GetRecentMatches(bracket, PVL.MATCH_HISTORY_UI_LIMIT)
+    filters = filters or (PVL.GetPersonalTrackingFilters and PVL.GetPersonalTrackingFilters() or nil)
+    local matches = {}
+
+    if not filters or not filters.specUnavailable then
+        matches = PVL.GetRecentMatches(bracket, PVL.MATCH_HISTORY_UI_LIMIT, filters) or {}
+    end
     local options = {}
 
     if #matches == 0 then
+        local emptyLabel = "No matches recorded"
+        if filters and filters.specUnavailable then
+            emptyLabel = "Select a specialization"
+        elseif filters and filters.specKey then
+            emptyLabel = string.format(
+                "No %s matches recorded",
+                PVL.UI and PVL.UI.Format and PVL.UI.Format.SpecShortName(filters.specKey) or filters.specKey
+            )
+        end
+
         table.insert(options, {
-            label = "No matches recorded",
+            label = emptyLabel,
             value = nil,
         })
         return options
@@ -69,10 +98,11 @@ end
 
 --- Returns the selected index for the recent match dropdown.
 --- @param bracket string|nil
+--- @param filters table|nil Optional `{ classToken, specKey }` player-spec filters.
 --- @return number
-function UI.GetSelectedMatchIndex(bracket)
-    local options = UI.GetRecentMatchOptions(bracket)
-    local selectedMatch = UI.ResolveSelectedMatch(bracket)
+function UI.GetSelectedMatchIndex(bracket, filters)
+    local options = UI.GetRecentMatchOptions(bracket, filters)
+    local selectedMatch = UI.ResolveSelectedMatch(bracket, filters)
     if not selectedMatch or not selectedMatch.matchId then
         return 1
     end
@@ -151,6 +181,44 @@ function UI.GetCombatStatValue(combatRow, statDef, participant)
         return 0
     end
 
+    if participant then
+        if statDef.field == "damage" and participant.damageDone ~= nil then
+            return participant.damageDone
+        end
+
+        if statDef.field == "healing" and participant.healingDone ~= nil then
+            return participant.healingDone
+        end
+
+        if statDef.field == "interrupts" then
+            local scoreboardValue = participant.interrupts
+            local meterValue = combatRow and combatRow.interrupts or 0
+            if scoreboardValue ~= nil and scoreboardValue > 0 then
+                return scoreboardValue
+            end
+            if meterValue > 0 then
+                return meterValue
+            end
+            return scoreboardValue or 0
+        end
+
+        if statDef.field == "dispels" then
+            local scoreboardValue = participant.dispels
+            local meterValue = combatRow and combatRow.dispels or 0
+            if scoreboardValue ~= nil and scoreboardValue > 0 then
+                return scoreboardValue
+            end
+            if meterValue > 0 then
+                return meterValue
+            end
+            return scoreboardValue or 0
+        end
+
+        if statDef.field == "deaths" and participant.deaths ~= nil then
+            return participant.deaths
+        end
+    end
+
     local value = combatRow and tonumber(combatRow[statDef.field]) or 0
     if not statDef.useCombatAmount and value > 0 then
         local countStatMax = {
@@ -162,22 +230,6 @@ function UI.GetCombatStatValue(combatRow, statDef, participant)
         if maxValue and value > maxValue then
             value = 0
         end
-    end
-
-    if value > 0 or not participant then
-        return value or 0
-    end
-
-    if statDef.field == "damage" and participant.damageDone then
-        return participant.damageDone
-    end
-
-    if statDef.field == "healing" and participant.healingDone then
-        return participant.healingDone
-    end
-
-    if participant[statDef.field] then
-        return participant[statDef.field]
     end
 
     return value or 0
@@ -296,21 +348,61 @@ function UI.MatchHasStoredCombatTotals(matchRecord, combatSummary)
     return false
 end
 
---- Returns a combat summary for display, synthesizing roster rows when needed.
+--- Returns true when one roster row includes end-of-match scoreboard combat totals.
+--- @param participant table|nil
+--- @return boolean
+function UI.ParticipantHasScoreboardCombatTotals(participant)
+    if type(participant) ~= "table" then
+        return false
+    end
+
+    return participant.damageDone ~= nil
+        or participant.healingDone ~= nil
+        or participant.interrupts ~= nil
+        or participant.dispels ~= nil
+        or participant.deaths ~= nil
+end
+
+--- Returns true when a match roster includes scoreboard combat totals.
 --- @param matchRecord table|nil
---- @return table|nil
-function UI.ResolveMatchCombatSummary(matchRecord)
+--- @return boolean
+function UI.RosterHasScoreboardCombatTotals(matchRecord)
     if type(matchRecord) ~= "table" then
+        return false
+    end
+
+    for _, participant in ipairs(matchRecord.roster or {}) do
+        if UI.ParticipantHasScoreboardCombatTotals(participant) then
+            return true
+        end
+    end
+
+    return false
+end
+
+--- Builds a display combat summary from scoreboard roster rows.
+--- @param matchRecord table
+--- @return table|nil
+function UI.BuildScoreboardCombatSummary(matchRecord)
+    local roster = matchRecord.roster or {}
+    if #roster == 0 then
         return nil
     end
 
-    if type(matchRecord.combatSummary) == "table" and #(matchRecord.combatSummary.players or {}) > 0 then
-        return matchRecord.combatSummary
-    end
+    local storedSummary = matchRecord.combatSummary or {}
+    local storedByGuid = {}
+    local storedByName = {}
 
-    local roster = matchRecord.roster or {}
-    if #roster == 0 then
-        return matchRecord.combatSummary
+    for _, row in ipairs(storedSummary.players or {}) do
+        if row.guid then
+            storedByGuid[row.guid] = row
+        end
+        local nameKey = PVL.CombatLogCollector
+            and PVL.CombatLogCollector.NormalizeName
+            and PVL.CombatLogCollector.NormalizeName(row.name)
+        if nameKey then
+            storedByName[nameKey] = row
+        end
     end
 
     local players = {}
@@ -318,6 +410,11 @@ function UI.ResolveMatchCombatSummary(matchRecord)
         local team = participant.team
         if PVL.MatchCollector and PVL.MatchCollector.GetParticipantTeam then
             team = PVL.MatchCollector.GetParticipantTeam(participant, roster, nil, matchRecord) or team
+        end
+
+        local storedRow = participant.guid and storedByGuid[participant.guid] or nil
+        if not storedRow and participant.name and PVL.CombatLogCollector and PVL.CombatLogCollector.NormalizeName then
+            storedRow = storedByName[PVL.CombatLogCollector.NormalizeName(participant.name)]
         end
 
         table.insert(players, {
@@ -329,20 +426,47 @@ function UI.ResolveMatchCombatSummary(matchRecord)
             isLocalPlayer = participant.isLocalPlayer,
             damage = participant.damageDone or 0,
             healing = participant.healingDone or 0,
-            damageTaken = 0,
-            interrupts = participant.interrupts or 0,
-            dispels = participant.dispels or 0,
-            deaths = participant.deaths or 0,
+            damageTaken = storedRow and storedRow.damageTaken or 0,
+            interrupts = PVL.CombatLogCollector
+                and PVL.CombatLogCollector.ResolveSupplementCount
+                and PVL.CombatLogCollector.ResolveSupplementCount(participant.interrupts, storedRow and storedRow.interrupts)
+                or (participant.interrupts or 0),
+            dispels = PVL.CombatLogCollector
+                and PVL.CombatLogCollector.ResolveSupplementCount
+                and PVL.CombatLogCollector.ResolveSupplementCount(participant.dispels, storedRow and storedRow.dispels)
+                or (participant.dispels or 0),
+            deaths = participant.deaths or (storedRow and storedRow.deaths) or 0,
         })
     end
 
     return {
-        startedAt = matchRecord.timestamp,
-        endedAt = matchRecord.timestamp,
-        duration = matchRecord.combatSummary and matchRecord.combatSummary.duration or nil,
-        killEvents = matchRecord.combatSummary and matchRecord.combatSummary.killEvents or {},
+        startedAt = storedSummary.startedAt or matchRecord.timestamp,
+        endedAt = storedSummary.endedAt or matchRecord.timestamp,
+        duration = storedSummary.duration,
+        killEvents = storedSummary.killEvents or {},
         players = players,
+        dataSource = "scoreboard",
+        combatLogCaptured = true,
     }
+end
+
+--- Returns a combat summary for display, synthesizing roster rows when needed.
+--- @param matchRecord table|nil
+--- @return table|nil
+function UI.ResolveMatchCombatSummary(matchRecord)
+    if type(matchRecord) ~= "table" then
+        return nil
+    end
+
+    if UI.RosterHasScoreboardCombatTotals(matchRecord) then
+        return UI.BuildScoreboardCombatSummary(matchRecord)
+    end
+
+    if type(matchRecord.combatSummary) == "table" and #(matchRecord.combatSummary.players or {}) > 0 then
+        return matchRecord.combatSummary
+    end
+
+    return UI.BuildScoreboardCombatSummary(matchRecord) or matchRecord.combatSummary
 end
 
 --- Formats one participant name using their class color when available.

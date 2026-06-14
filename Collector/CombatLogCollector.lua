@@ -31,11 +31,19 @@ local DAMAGE_METER_SYNC_TYPES = {
     [Enum and Enum.DamageMeterType and Enum.DamageMeterType.DamageTaken or 7] = "damageTaken",
     [Enum and Enum.DamageMeterType and Enum.DamageMeterType.Deaths or 9] = "deaths",
 }
+local DAMAGE_METER_SCOREBOARD_SUPPLEMENT_TYPES = {
+    [Enum and Enum.DamageMeterType and Enum.DamageMeterType.DamageTaken or 7] = "damageTaken",
+}
+local SUPPLEMENT_COUNT_FIELDS = { "interrupts", "dispels", "deaths", "damageTaken" }
 local DAMAGE_METER_TYPE_INTERRUPTS = Enum and Enum.DamageMeterType and Enum.DamageMeterType.Interrupts or 5
 local DAMAGE_METER_TYPE_DISPELS = Enum and Enum.DamageMeterType and Enum.DamageMeterType.Dispels or 6
 local MERGE_COUNT_FIELDS = { "interrupts", "dispels", "deaths" }
 local MERGE_AMOUNT_FIELDS = { "damage", "healing", "damageTaken" }
 local COMBATLOG_OBJECT_TYPE_PLAYER = 0x00000400
+local DAMAGE_METER_SESSION_EXPIRED = Enum and Enum.DamageMeterSessionType and Enum.DamageMeterSessionType.Expired or 2
+local MATCH_WINDOW_TOLERANCE_SECONDS = 45
+local MAX_COMBAT_SEGMENT_ARCHIVE = 32
+local SEGMENT_ARCHIVE_MAX_AGE_SECONDS = 3 * 3600
 
 local DAMAGE_SUBEVENTS = {
     SWING_DAMAGE = 12,
@@ -369,11 +377,13 @@ function CombatLogCollector.ApplyInterruptCountFromSource(source, sessionType, s
         return false
     end
 
-    local row = CombatLogCollector.GetPlayerRow(
-        source.sourceGUID,
-        name,
-        source.isLocalPlayer and COMBATLOG_OBJECT_TYPE_PLAYER or nil
-    )
+    local creditGuid = lookupGUID or source.sourceGUID
+    local flags = nil
+    if source.isLocalPlayer or CombatLogCollector.IsAccessibleName(name) then
+        flags = COMBATLOG_OBJECT_TYPE_PLAYER
+    end
+
+    local row = CombatLogCollector.GetPlayerRow(creditGuid, name, flags)
     if not row then
         return false
     end
@@ -463,11 +473,13 @@ function CombatLogCollector.ApplyDispelCountFromSource(source, sessionType, sess
         return false
     end
 
-    local row = CombatLogCollector.GetPlayerRow(
-        source.sourceGUID,
-        name,
-        source.isLocalPlayer and COMBATLOG_OBJECT_TYPE_PLAYER or nil
-    )
+    local creditGuid = lookupGUID or source.sourceGUID
+    local flags = nil
+    if source.isLocalPlayer or CombatLogCollector.IsAccessibleName(name) then
+        flags = COMBATLOG_OBJECT_TYPE_PLAYER
+    end
+
+    local row = CombatLogCollector.GetPlayerRow(creditGuid, name, flags)
     if not row then
         return false
     end
@@ -515,18 +527,27 @@ function CombatLogCollector.ForEachDamageMeterSource(session, callback)
         return
     end
 
+    local visited = {}
+    local function visitSource(source)
+        if type(source) ~= "table" or visited[source] then
+            return
+        end
+
+        visited[source] = true
+        callback(source)
+    end
+
     local countOk, sourceCount = pcall(function()
         return #sources
     end)
-    if not countOk or not sourceCount or sourceCount <= 0 then
-        return
+    if countOk and sourceCount and sourceCount > 0 then
+        for index = 1, sourceCount do
+            visitSource(sources[index])
+        end
     end
 
-    for index = 1, sourceCount do
-        local source = sources[index]
-        if type(source) == "table" then
-            callback(source)
-        end
+    for _, source in pairs(sources) do
+        visitSource(source)
     end
 end
 
@@ -869,6 +890,852 @@ function CombatLogCollector.MergePlayerMaps(destination, source)
     end
 end
 
+--- Replaces combat amount fields in one player map from an authoritative meter snapshot.
+--- @param destination table
+--- @param source table|nil
+function CombatLogCollector.ReplaceCombatAmountsFromMeter(destination, source)
+    if type(destination) ~= "table" or type(source) ~= "table" then
+        return
+    end
+
+    local function replaceRow(destinationRow, sourceRow)
+        for _, field in ipairs(MERGE_AMOUNT_FIELDS) do
+            local amount = sourceRow[field]
+            if amount and amount > 0 then
+                destinationRow[field] = amount
+            end
+        end
+
+        for _, field in ipairs(MERGE_COUNT_FIELDS) do
+            local amount = sourceRow[field]
+            if amount and amount > 0 then
+                destinationRow[field] = amount
+            end
+        end
+
+        if sourceRow.name and sourceRow.name ~= "" then
+            destinationRow.name = sourceRow.name
+        end
+
+        if sourceRow.team == "friendly" or sourceRow.team == "enemy" then
+            destinationRow.team = sourceRow.team
+        end
+    end
+
+    for storageKey, sourceRow in pairs(source) do
+        local destinationRow = destination[storageKey]
+        if destinationRow then
+            replaceRow(destinationRow, sourceRow)
+        else
+            local matchedKey = nil
+            local sourceNameKey = sourceRow.name and CombatLogCollector.NormalizeName(sourceRow.name) or nil
+            if sourceNameKey then
+                for key, row in pairs(destination) do
+                    if row.name and CombatLogCollector.NormalizeName(row.name) == sourceNameKey then
+                        matchedKey = key
+                        break
+                    end
+                end
+            end
+
+            if matchedKey then
+                replaceRow(destination[matchedKey], sourceRow)
+            else
+                destination[storageKey] = CombatLogCollector.ClonePlayerRow(sourceRow)
+            end
+        end
+    end
+end
+
+--- Merges one source player map into a destination map using per-field maximums.
+--- @param destination table
+--- @param source table|nil
+function CombatLogCollector.MergePlayerMapsMax(destination, source)
+    for guid, row in pairs(source or {}) do
+        local existing = destination[guid]
+        if not existing then
+            destination[guid] = CombatLogCollector.ClonePlayerRow(row)
+        else
+            for _, field in ipairs(MERGE_AMOUNT_FIELDS) do
+                existing[field] = math.max(existing[field] or 0, row[field] or 0)
+            end
+            for _, field in ipairs(MERGE_COUNT_FIELDS) do
+                existing[field] = math.max(existing[field] or 0, row[field] or 0)
+            end
+            if row.name and row.name ~= "" then
+                existing.name = row.name
+            end
+            if row.team == "friendly" or row.team == "enemy" then
+                existing.team = row.team
+            end
+        end
+    end
+end
+
+--- Fills only missing combat amount fields from one archived snapshot map.
+--- @param destination table
+--- @param source table|nil
+function CombatLogCollector.MergePlayerMapsFillGaps(destination, source)
+    if type(destination) ~= "table" or type(source) ~= "table" then
+        return
+    end
+
+    local function fillGaps(destinationRow, sourceRow)
+        for _, field in ipairs(MERGE_AMOUNT_FIELDS) do
+            local amount = sourceRow[field]
+            if amount and amount > 0 and (not destinationRow[field] or destinationRow[field] <= 0) then
+                destinationRow[field] = amount
+            end
+        end
+
+        for _, field in ipairs(MERGE_COUNT_FIELDS) do
+            local amount = sourceRow[field]
+            if amount and amount > 0 and (not destinationRow[field] or destinationRow[field] <= 0) then
+                destinationRow[field] = amount
+            end
+        end
+
+        if (not destinationRow.name or destinationRow.name == "") and sourceRow.name then
+            destinationRow.name = sourceRow.name
+        end
+
+        if destinationRow.team ~= "friendly"
+            and destinationRow.team ~= "enemy"
+            and (sourceRow.team == "friendly" or sourceRow.team == "enemy") then
+            destinationRow.team = sourceRow.team
+        end
+    end
+
+    for storageKey, sourceRow in pairs(source) do
+        local destinationRow = destination[storageKey]
+        if destinationRow then
+            fillGaps(destinationRow, sourceRow)
+        else
+            local matchedKey = nil
+            local sourceNameKey = sourceRow.name and CombatLogCollector.NormalizeName(sourceRow.name) or nil
+            if sourceNameKey then
+                for key, row in pairs(destination) do
+                    if row.name and CombatLogCollector.NormalizeName(row.name) == sourceNameKey then
+                        matchedKey = key
+                        break
+                    end
+                end
+            end
+
+            if matchedKey then
+                fillGaps(destination[matchedKey], sourceRow)
+            else
+                destination[storageKey] = CombatLogCollector.ClonePlayerRow(sourceRow)
+            end
+        end
+    end
+end
+
+--- Returns the authoritative unix match window from battlefield runtime and fallbacks.
+--- @param matchContext table|nil
+--- @return table window `{ startedAt, endedAt, durationSeconds }`
+function CombatLogCollector.ResolveMatchWindow(matchContext)
+    local endedAt = time()
+    local durationSeconds = nil
+    local matchCollector = PVL.MatchCollector
+
+    if matchCollector and matchCollector.GetBattlefieldRuntimeMs then
+        local runtimeMs = matchCollector.GetBattlefieldRuntimeMs()
+        if runtimeMs and runtimeMs > 0 then
+            durationSeconds = math.floor(runtimeMs / 1000)
+        end
+    end
+
+    if (not durationSeconds or durationSeconds <= 0) and type(matchContext) == "table" then
+        local runtimeMs = matchContext.runtimeMs or matchContext.minRuntimeMs
+        if runtimeMs and runtimeMs > 0 then
+            durationSeconds = math.floor(runtimeMs / 1000)
+        end
+    end
+
+    if (not durationSeconds or durationSeconds <= 0) and CombatLogCollector.startedAt then
+        durationSeconds = math.max(0, endedAt - CombatLogCollector.startedAt)
+    end
+
+    if (not durationSeconds or durationSeconds <= 0)
+        and CombatLogCollector.IsDamageMeterAvailable()
+        and C_DamageMeter.GetSessionDurationSeconds then
+        local ok, seconds = pcall(C_DamageMeter.GetSessionDurationSeconds, DAMAGE_METER_SESSION_OVERALL)
+        if ok and seconds and seconds > 0 then
+            durationSeconds = math.floor(seconds)
+        end
+    end
+
+    local startedAt = CombatLogCollector.startedAt
+    if durationSeconds and durationSeconds > 0 then
+        startedAt = endedAt - durationSeconds
+    end
+
+    return {
+        startedAt = startedAt,
+        endedAt = endedAt,
+        durationSeconds = durationSeconds,
+    }
+end
+
+--- Prunes old archived combat snapshots from the per-character database.
+--- @param archive table[]|nil
+function CombatLogCollector.PruneCombatSegmentArchive(archive)
+    if type(archive) ~= "table" then
+        return
+    end
+
+    local cutoff = time() - SEGMENT_ARCHIVE_MAX_AGE_SECONDS
+    local kept = {}
+    for _, snapshot in ipairs(archive) do
+        if type(snapshot) == "table" and snapshot.savedAt and snapshot.savedAt >= cutoff then
+            table.insert(kept, snapshot)
+        end
+    end
+
+    while #kept > MAX_COMBAT_SEGMENT_ARCHIVE do
+        table.remove(kept, 1)
+    end
+
+    for index = 1, #kept do
+        archive[index] = kept[index]
+    end
+    for index = #kept + 1, #archive do
+        archive[index] = nil
+    end
+end
+
+--- Archives the current in-memory combat buffer for later match-window merging.
+--- @param matchContext table|nil
+function CombatLogCollector.ArchiveSegmentSnapshot(matchContext)
+    local charDb = PVL.GetCharDB()
+    if type(charDb) ~= "table" then
+        return
+    end
+
+    charDb.combatSegmentArchive = charDb.combatSegmentArchive or {}
+    local hasPlayers = CombatLogCollector.players and next(CombatLogCollector.players) ~= nil
+    if not hasPlayers and CombatLogCollector.damageMeterSynced ~= true then
+        return
+    end
+
+    table.insert(charDb.combatSegmentArchive, {
+        savedAt = time(),
+        startedAt = CombatLogCollector.startedAt,
+        bracket = matchContext and matchContext.bracket or nil,
+        sessionKey = matchContext and matchContext.sessionKey or nil,
+        runtimeMs = matchContext and matchContext.runtimeMs or nil,
+        segmentCount = CombatLogCollector.segmentCount or 1,
+        eventCount = CombatLogCollector.eventCount or 0,
+        damageMeterSynced = CombatLogCollector.damageMeterSynced == true,
+        players = CombatLogCollector.ClonePlayerMap(CombatLogCollector.players),
+    })
+
+    CombatLogCollector.PruneCombatSegmentArchive(charDb.combatSegmentArchive)
+end
+
+--- Returns true when one archived snapshot falls inside a resolved match window.
+--- @param snapshot table
+--- @param window table
+--- @param bracket string|nil
+--- @return boolean
+function CombatLogCollector.SnapshotMatchesMatchWindow(snapshot, window, bracket)
+    if type(snapshot) ~= "table" or type(window) ~= "table" then
+        return false
+    end
+
+    if bracket and snapshot.bracket and snapshot.bracket ~= bracket then
+        return false
+    end
+
+    local savedAt = snapshot.savedAt
+    if not savedAt then
+        return false
+    end
+
+    local startedAt = window.startedAt
+    local endedAt = window.endedAt or time()
+    if startedAt then
+        return savedAt >= (startedAt - MATCH_WINDOW_TOLERANCE_SECONDS)
+            and savedAt <= (endedAt + MATCH_WINDOW_TOLERANCE_SECONDS)
+    end
+
+    return true
+end
+
+--- Merges archived combat snapshots that fall inside one match window.
+--- @param window table
+--- @param bracket string|nil
+--- @return number mergedCount
+function CombatLogCollector.MergeArchivedSnapshotsForWindow(window, bracket)
+    local charDb = PVL.GetCharDB()
+    if type(charDb) ~= "table" or type(charDb.combatSegmentArchive) ~= "table" then
+        return 0
+    end
+
+    local mergedCount = 0
+    local remaining = {}
+
+    for _, snapshot in ipairs(charDb.combatSegmentArchive) do
+        if CombatLogCollector.SnapshotMatchesMatchWindow(snapshot, window, bracket) then
+            CombatLogCollector.MergePlayerMapsFillGaps(CombatLogCollector.players, snapshot.players)
+            mergedCount = mergedCount + 1
+        else
+            table.insert(remaining, snapshot)
+        end
+    end
+
+    charDb.combatSegmentArchive = remaining
+    return mergedCount
+end
+
+--- Returns true when one roster participant has end-of-match scoreboard combat totals.
+--- @param participant table|nil
+--- @return boolean
+function CombatLogCollector.ParticipantHasScoreboardCombatTotals(participant)
+    if type(participant) ~= "table" then
+        return false
+    end
+
+    return participant.damageDone ~= nil
+        or participant.healingDone ~= nil
+        or participant.interrupts ~= nil
+        or participant.dispels ~= nil
+        or participant.deaths ~= nil
+end
+
+--- Returns true when a roster has scoreboard combat totals for at least one player.
+--- @param roster table[]|nil
+--- @return boolean
+function CombatLogCollector.RosterHasScoreboardCombatTotals(roster)
+    for _, participant in ipairs(roster or {}) do
+        if CombatLogCollector.ParticipantHasScoreboardCombatTotals(participant) then
+            return true
+        end
+    end
+
+    return false
+end
+
+--- Finds one tracked meter row for a roster participant.
+--- @param participant table
+--- @param meterPlayers table|nil
+--- @return table|nil
+function CombatLogCollector.LookupMeterRowForParticipant(participant, meterPlayers)
+    if type(participant) ~= "table" or type(meterPlayers) ~= "table" then
+        return nil
+    end
+
+    if participant.guid and meterPlayers[participant.guid] then
+        return meterPlayers[participant.guid]
+    end
+
+    local nameKey = CombatLogCollector.NormalizeName(participant.name)
+    if nameKey and meterPlayers["name:" .. nameKey] then
+        return meterPlayers["name:" .. nameKey]
+    end
+
+    if nameKey then
+        for _, row in pairs(meterPlayers) do
+            if row.name and CombatLogCollector.NormalizeName(row.name) == nameKey then
+                return row
+            end
+        end
+    end
+
+    return nil
+end
+
+--- Returns interrupt/dispel count for one GUID from a damage meter session source.
+--- @param guid string|nil
+--- @param meterType number
+--- @param sessionId number|nil
+--- @param sessionTypes number[]|nil
+--- @return number
+function CombatLogCollector.FetchMeterCountForGuid(guid, meterType, sessionId, sessionTypes)
+    if not CombatLogCollector.CanUseGuid(guid) or not CombatLogCollector.IsDamageMeterAvailable() then
+        return 0
+    end
+
+    local function readSourceAmount(source)
+        if type(source) ~= "table" then
+            return 0
+        end
+
+        local amount = CombatLogCollector.GetDamageMeterInterruptCount(source)
+        if (not amount or amount <= 0) and type(source.combatSpells) == "table" then
+            amount = CombatLogCollector.SumDamageMeterInterruptSpellCount(source)
+        end
+
+        return amount or 0
+    end
+
+    if sessionId then
+        if type(C_DamageMeter.GetCombatSessionSourceFromID) == "function" then
+            local ok, source = pcall(C_DamageMeter.GetCombatSessionSourceFromID, sessionId, meterType, guid)
+            if ok then
+                local amount = readSourceAmount(source)
+                if amount > 0 then
+                    return amount
+                end
+            end
+        end
+    end
+
+    for _, sessionType in ipairs(sessionTypes or {}) do
+        if type(C_DamageMeter.GetCombatSessionSourceFromType) == "function" then
+            local ok, source = pcall(C_DamageMeter.GetCombatSessionSourceFromType, sessionType, meterType, guid)
+            if ok then
+                local amount = readSourceAmount(source)
+                if amount > 0 then
+                    return amount
+                end
+            end
+        end
+    end
+
+    return 0
+end
+
+--- Returns interrupt/dispel count for one roster participant from damage meter sessions.
+--- @param participant table
+--- @param meterType number
+--- @param sessionId number|nil
+--- @param sessionTypes number[]|nil
+--- @return number
+function CombatLogCollector.FetchMeterCountForParticipant(participant, meterType, sessionId, sessionTypes)
+    if type(participant) ~= "table" then
+        return 0
+    end
+
+    local guidCount = CombatLogCollector.FetchMeterCountForGuid(
+        participant.guid,
+        meterType,
+        sessionId,
+        sessionTypes
+    )
+    if guidCount > 0 then
+        return guidCount
+    end
+
+    local nameKey = participant.name and CombatLogCollector.NormalizeName(participant.name)
+    if not nameKey then
+        if participant.isLocalPlayer then
+            local localGuid = UnitGUID and UnitGUID("player")
+            return CombatLogCollector.FetchMeterCountForGuid(localGuid, meterType, sessionId, sessionTypes)
+        end
+        return 0
+    end
+
+    local sessions = {}
+    if sessionId then
+        local session = CombatLogCollector.GetDamageMeterSessionById(sessionId, meterType)
+        if session then
+            table.insert(sessions, session)
+        end
+    else
+        for _, sessionType in ipairs(sessionTypes or {}) do
+            local session = CombatLogCollector.GetDamageMeterSession(sessionType, meterType)
+            if session then
+                table.insert(sessions, session)
+            end
+        end
+    end
+
+    local best = 0
+    for _, session in ipairs(sessions) do
+        CombatLogCollector.ForEachDamageMeterSource(session, function(source)
+            if participant.isLocalPlayer and source.isLocalPlayer then
+                local amount = CombatLogCollector.GetDamageMeterInterruptCount(source) or 0
+                if amount > best then
+                    best = amount
+                end
+                return
+            end
+
+            local sourceName = CombatLogCollector.GetDamageMeterSourceName(source)
+            if sourceName and CombatLogCollector.NormalizeName(sourceName) == nameKey then
+                local amount = CombatLogCollector.GetDamageMeterInterruptCount(source) or 0
+                if amount > best then
+                    best = amount
+                end
+            end
+        end)
+    end
+
+    return best
+end
+
+--- Upserts supplemental meter counts for one roster participant.
+--- @param destination table
+--- @param participant table
+--- @param interrupts number|nil
+--- @param dispels number|nil
+function CombatLogCollector.UpsertSupplementRowForParticipant(destination, participant, interrupts, dispels)
+    if type(destination) ~= "table" or type(participant) ~= "table" then
+        return
+    end
+
+    interrupts = tonumber(interrupts) or 0
+    dispels = tonumber(dispels) or 0
+    if interrupts <= 0 and dispels <= 0 then
+        return
+    end
+
+    local row = CombatLogCollector.LookupMeterRowForParticipant(participant, destination)
+    if not row then
+        local storageKey = participant.guid
+        local nameKey = participant.name and CombatLogCollector.NormalizeName(participant.name)
+        if not storageKey and nameKey then
+            storageKey = "name:" .. nameKey
+        end
+        if not storageKey then
+            return
+        end
+
+        row = {
+            guid = participant.guid,
+            name = participant.name,
+            team = participant.team,
+            interrupts = 0,
+            dispels = 0,
+            damageTaken = 0,
+            deaths = 0,
+        }
+        destination[storageKey] = row
+    end
+
+    row.interrupts = math.max(row.interrupts or 0, interrupts)
+    row.dispels = math.max(row.dispels or 0, dispels)
+    if participant.name and participant.name ~= "" then
+        row.name = participant.name
+    end
+    if participant.guid then
+        row.guid = participant.guid
+    end
+end
+
+--- Pulls per-player interrupt/dispel totals using roster GUIDs and names.
+--- @param roster table[]|nil
+--- @param window table|nil
+--- @param destination table
+--- @return boolean synced
+function CombatLogCollector.FetchSupplementCountsForRoster(roster, window, destination)
+    if not CombatLogCollector.IsDamageMeterAvailable() or type(destination) ~= "table" then
+        return false
+    end
+
+    local synced = false
+    local targetDuration = window and window.durationSeconds or nil
+    local bestSessionId = CombatLogCollector.SelectBestDamageMeterSessionId(targetDuration)
+    local sessionTypes = { DAMAGE_METER_SESSION_OVERALL, DAMAGE_METER_SESSION_CURRENT }
+
+    for _, participant in ipairs(roster or {}) do
+        local interrupts = CombatLogCollector.FetchMeterCountForParticipant(
+            participant,
+            DAMAGE_METER_TYPE_INTERRUPTS,
+            bestSessionId,
+            bestSessionId and nil or sessionTypes
+        )
+        local dispels = CombatLogCollector.FetchMeterCountForParticipant(
+            participant,
+            DAMAGE_METER_TYPE_DISPELS,
+            bestSessionId,
+            bestSessionId and nil or sessionTypes
+        )
+
+        if interrupts > 0 or dispels > 0 then
+            CombatLogCollector.UpsertSupplementRowForParticipant(destination, participant, interrupts, dispels)
+            synced = true
+        end
+    end
+
+    return synced
+end
+
+--- Imports one damage meter session id into a destination player map.
+--- @param sessionId number
+--- @param destination table
+--- @param meterTypes table|nil Optional meter-type map; defaults to all tracked stats.
+--- @return boolean synced
+function CombatLogCollector.ImportDamageMeterSessionId(sessionId, destination, meterTypes)
+    if not sessionId or type(destination) ~= "table" then
+        return false
+    end
+
+    meterTypes = meterTypes or DAMAGE_METER_SYNC_TYPES
+    local previousPlayers = CombatLogCollector.players
+    CombatLogCollector.players = destination
+    local synced = false
+
+    for meterType, fieldName in pairs(meterTypes) do
+        local session = CombatLogCollector.GetDamageMeterSessionById(sessionId, meterType)
+        CombatLogCollector.ForEachDamageMeterSource(session, function(source)
+            if CombatLogCollector.ApplyDamageMeterSource(source, fieldName) then
+                synced = true
+            end
+        end)
+    end
+
+    CombatLogCollector.players = destination
+    if CombatLogCollector.SyncInterruptsFromDamageMeter(nil, sessionId) then
+        synced = true
+    end
+
+    if CombatLogCollector.SyncDispelsFromDamageMeter(nil, sessionId) then
+        synced = true
+    end
+
+    CombatLogCollector.players = previousPlayers
+    return synced
+end
+
+--- Returns the best available supplemental count, preferring scoreboard values.
+--- @param scoreboardValue number|nil
+--- @param meterValue number|nil
+--- @return number
+function CombatLogCollector.ResolveSupplementCount(scoreboardValue, meterValue)
+    local scoreboard = tonumber(scoreboardValue) or 0
+    local meter = tonumber(meterValue) or 0
+    if scoreboard > 0 then
+        return scoreboard
+    end
+
+    return meter
+end
+
+--- Copies supplemental combat fields from one player map into another.
+--- @param destination table
+--- @param source table|nil
+function CombatLogCollector.ImportSupplementFieldsFromPlayerMap(destination, source)
+    if type(destination) ~= "table" or type(source) ~= "table" then
+        return
+    end
+
+    local function upsertRow(sourceRow)
+        local destinationRow = nil
+        if sourceRow.guid and destination[sourceRow.guid] then
+            destinationRow = destination[sourceRow.guid]
+        end
+
+        local nameKey = sourceRow.name and CombatLogCollector.NormalizeName(sourceRow.name) or nil
+        if not destinationRow and nameKey and destination["name:" .. nameKey] then
+            destinationRow = destination["name:" .. nameKey]
+        end
+
+        if not destinationRow and nameKey then
+            for key, row in pairs(destination) do
+                if row.name and CombatLogCollector.NormalizeName(row.name) == nameKey then
+                    destinationRow = row
+                    break
+                end
+            end
+        end
+
+        if not destinationRow then
+            local storageKey = sourceRow.guid or (nameKey and ("name:" .. nameKey) or nil)
+            if not storageKey then
+                return
+            end
+
+            destinationRow = CombatLogCollector.ClonePlayerRow(sourceRow) or {
+                guid = sourceRow.guid,
+                name = sourceRow.name,
+                team = sourceRow.team,
+            }
+            destination[storageKey] = destinationRow
+        end
+
+        for _, field in ipairs(SUPPLEMENT_COUNT_FIELDS) do
+            destinationRow[field] = math.max(destinationRow[field] or 0, sourceRow[field] or 0)
+        end
+
+        if sourceRow.name and sourceRow.name ~= "" then
+            destinationRow.name = sourceRow.name
+        end
+
+        if sourceRow.team == "friendly" or sourceRow.team == "enemy" then
+            destinationRow.team = sourceRow.team
+        end
+    end
+
+    for _, row in pairs(source) do
+        if type(row) == "table" then
+            upsertRow(row)
+        end
+    end
+end
+
+--- Imports scoreboard supplement stats from the best damage meter session.
+--- @param window table|nil
+--- @param destination table
+--- @return boolean synced
+function CombatLogCollector.SyncDamageMeterSupplementForWindow(window, destination)
+    if not CombatLogCollector.IsDamageMeterAvailable() or type(destination) ~= "table" then
+        return false
+    end
+
+    local previousPlayers = CombatLogCollector.players
+    CombatLogCollector.players = destination
+    local synced = false
+    local targetDuration = window and window.durationSeconds or nil
+    local bestSessionId = CombatLogCollector.SelectBestDamageMeterSessionId(targetDuration)
+
+    if bestSessionId then
+        if CombatLogCollector.ImportDamageMeterSessionId(
+            bestSessionId,
+            destination,
+            DAMAGE_METER_SCOREBOARD_SUPPLEMENT_TYPES
+        ) then
+            synced = true
+        end
+
+        CombatLogCollector.players = destination
+        if CombatLogCollector.SyncInterruptsFromDamageMeter(nil, bestSessionId) then
+            synced = true
+        end
+
+        if CombatLogCollector.SyncDispelsFromDamageMeter(nil, bestSessionId) then
+            synced = true
+        end
+    else
+        for _, sessionType in ipairs({ DAMAGE_METER_SESSION_OVERALL, DAMAGE_METER_SESSION_CURRENT }) do
+            if CombatLogCollector.ImportDamageMeterSessionType(
+                sessionType,
+                destination,
+                DAMAGE_METER_SCOREBOARD_SUPPLEMENT_TYPES
+            ) then
+                synced = true
+            end
+
+            CombatLogCollector.players = destination
+            if CombatLogCollector.SyncInterruptsFromDamageMeter(sessionType, nil) then
+                synced = true
+            end
+
+            if CombatLogCollector.SyncDispelsFromDamageMeter(sessionType, nil) then
+                synced = true
+            end
+        end
+    end
+
+    CombatLogCollector.players = previousPlayers
+    return synced
+end
+
+--- Returns the damage meter session id that best matches one match duration.
+--- @param targetDuration number|nil
+--- @return number|nil sessionId
+function CombatLogCollector.SelectBestDamageMeterSessionId(targetDuration)
+    if not C_DamageMeter or type(C_DamageMeter.GetAvailableCombatSessions) ~= "function" then
+        return nil
+    end
+
+    local ok, sessions = pcall(C_DamageMeter.GetAvailableCombatSessions)
+    if not ok or type(sessions) ~= "table" or #sessions == 0 then
+        return nil
+    end
+
+    local bestSessionId = nil
+    local bestDuration = -1
+    local bestDelta = nil
+
+    for _, session in ipairs(sessions) do
+        local sessionId = session.sessionID or session.sessionId
+        local duration = CombatLogCollector.GetAccessibleNumber(session.durationSeconds) or 0
+        if sessionId and duration > 0 then
+            if targetDuration and targetDuration > 0 then
+                local delta = math.abs(duration - targetDuration)
+                if bestDelta == nil
+                    or delta < bestDelta
+                    or (delta == bestDelta and duration > bestDuration) then
+                    bestDelta = delta
+                    bestDuration = duration
+                    bestSessionId = sessionId
+                end
+            elseif duration > bestDuration then
+                bestDuration = duration
+                bestSessionId = sessionId
+            end
+        end
+    end
+
+    return bestSessionId
+end
+
+--- Imports one damage meter session type into a destination player map.
+--- @param sessionType number
+--- @param destination table
+--- @param meterTypes table|nil Optional meter-type map; defaults to all tracked stats.
+--- @return boolean synced
+function CombatLogCollector.ImportDamageMeterSessionType(sessionType, destination, meterTypes)
+    if type(destination) ~= "table" then
+        return false
+    end
+
+    meterTypes = meterTypes or DAMAGE_METER_SYNC_TYPES
+    local previousPlayers = CombatLogCollector.players
+    CombatLogCollector.players = destination
+    local synced = false
+
+    for meterType, fieldName in pairs(meterTypes) do
+        local session = CombatLogCollector.GetDamageMeterSession(sessionType, meterType)
+        CombatLogCollector.ForEachDamageMeterSource(session, function(source)
+            if CombatLogCollector.ApplyDamageMeterSource(source, fieldName) then
+                synced = true
+            end
+        end)
+    end
+
+    CombatLogCollector.players = destination
+    if CombatLogCollector.SyncInterruptsFromDamageMeter(sessionType, nil) then
+        synced = true
+    end
+
+    if CombatLogCollector.SyncDispelsFromDamageMeter(sessionType, nil) then
+        synced = true
+    end
+
+    CombatLogCollector.players = previousPlayers
+    return synced
+end
+
+--- Syncs one authoritative damage meter snapshot for a resolved match window.
+--- Uses a single best session to avoid double-counting overlapping Blizzard sessions.
+--- @param window table|nil
+--- @return boolean synced
+function CombatLogCollector.SyncDamageMeterSessionsForWindow(window)
+    if not CombatLogCollector.IsDamageMeterAvailable() then
+        return false
+    end
+
+    local targetDuration = window and window.durationSeconds or nil
+    local meterPlayers = {}
+    local synced = false
+    local bestSessionId = CombatLogCollector.SelectBestDamageMeterSessionId(targetDuration)
+
+    if bestSessionId then
+        synced = CombatLogCollector.ImportDamageMeterSessionId(bestSessionId, meterPlayers)
+    end
+
+    if next(meterPlayers) == nil then
+        synced = CombatLogCollector.ImportDamageMeterSessionType(DAMAGE_METER_SESSION_OVERALL, meterPlayers) or synced
+    end
+
+    if next(meterPlayers) ~= nil then
+        CombatLogCollector.ReplaceCombatAmountsFromMeter(CombatLogCollector.players, meterPlayers)
+        CombatLogCollector.damageMeterSynced = true
+
+        local interruptTotal = 0
+        for _, row in pairs(CombatLogCollector.players) do
+            interruptTotal = interruptTotal + (row.interrupts or 0)
+        end
+        CombatLogCollector.interruptCount = interruptTotal
+    end
+
+    return synced
+end
+
 --- Returns a resumable pending session for one match context when available.
 --- @param matchContext table|nil
 --- @return table|nil
@@ -948,6 +1815,8 @@ function CombatLogCollector.PersistPendingSession(matchContext)
         killEvents = CombatLogCollector.CloneKillEvents(CombatLogCollector.killEvents),
         savedAt = time(),
     }
+
+    CombatLogCollector.ArchiveSegmentSnapshot(matchContext)
 end
 
 --- Returns a copy of one kill-event list.
@@ -1535,29 +2404,26 @@ end
 --- @return table
 function CombatLogCollector.BuildPlayerSummaryRow(guid, combatRow, participant)
     local team = CombatLogCollector.ResolveParticipantTeam(participant, combatRow and combatRow.team)
-    local damage = combatRow and combatRow.damage or 0
-    local healing = combatRow and combatRow.healing or 0
+    local damage = 0
+    local healing = 0
+    local interrupts = 0
+    local dispels = 0
+    local deaths = 0
     local damageTaken = combatRow and combatRow.damageTaken or 0
-    local interrupts = combatRow and combatRow.interrupts or 0
-    local dispels = combatRow and combatRow.dispels or 0
-    local deaths = combatRow and combatRow.deaths or 0
 
     if participant then
-        if participant.damageDone and participant.damageDone > damage then
-            damage = participant.damageDone
-        end
-        if participant.healingDone and participant.healingDone > healing then
-            healing = participant.healingDone
-        end
-        if participant.interrupts and participant.interrupts > interrupts then
-            interrupts = participant.interrupts
-        end
-        if participant.dispels and participant.dispels > dispels then
-            dispels = participant.dispels
-        end
-        if participant.deaths and participant.deaths > deaths then
-            deaths = participant.deaths
-        end
+        damage = participant.damageDone or 0
+        healing = participant.healingDone or 0
+        interrupts = CombatLogCollector.ResolveSupplementCount(participant.interrupts, combatRow and combatRow.interrupts)
+        dispels = CombatLogCollector.ResolveSupplementCount(participant.dispels, combatRow and combatRow.dispels)
+        deaths = CombatLogCollector.ResolveSupplementCount(participant.deaths, combatRow and combatRow.deaths)
+        damageTaken = CombatLogCollector.ResolveSupplementCount(nil, combatRow and combatRow.damageTaken)
+    else
+        damage = combatRow and combatRow.damage or 0
+        healing = combatRow and combatRow.healing or 0
+        interrupts = combatRow and combatRow.interrupts or 0
+        dispels = combatRow and combatRow.dispels or 0
+        deaths = combatRow and combatRow.deaths or 0
     end
 
     return {
@@ -1609,14 +2475,32 @@ end
 
 --- Builds a compact export-friendly combat summary for one match.
 --- @param roster table[]|nil
+--- @param matchContext table|nil Active match metadata used to resolve the match window.
 --- @return table|nil
-function CombatLogCollector.BuildSummary(roster)
-    CombatLogCollector.RestorePendingSession()
-    if CombatLogCollector.IsDamageMeterAvailable() then
-        CombatLogCollector.SyncFromDamageMeter()
+function CombatLogCollector.BuildSummary(roster, matchContext)
+    matchContext = matchContext or CombatLogCollector.matchContext
+    roster = roster or {}
+
+    local window = CombatLogCollector.ResolveMatchWindow(matchContext)
+    local meterSupplement = {}
+    local supplementSynced = false
+    local matchCollector = PVL.MatchCollector
+    local pending = matchCollector and matchCollector.GetPendingCombatSession and matchCollector.GetPendingCombatSession()
+
+    if pending and pending.players then
+        CombatLogCollector.ImportSupplementFieldsFromPlayerMap(meterSupplement, pending.players)
     end
-    local endedAt = time()
-    local duration = CombatLogCollector.startedAt and math.max(0, endedAt - CombatLogCollector.startedAt) or nil
+
+    if CombatLogCollector.IsDamageMeterAvailable() then
+        supplementSynced = CombatLogCollector.SyncDamageMeterSupplementForWindow(window, meterSupplement) or supplementSynced
+        supplementSynced = CombatLogCollector.FetchSupplementCountsForRoster(roster, window, meterSupplement) or supplementSynced
+    end
+
+    local endedAt = window.endedAt or time()
+    local duration = window.durationSeconds
+    if (not duration or duration <= 0) and CombatLogCollector.startedAt then
+        duration = math.max(0, endedAt - CombatLogCollector.startedAt)
+    end
     if (not duration or duration <= 0)
         and CombatLogCollector.IsDamageMeterAvailable()
         and C_DamageMeter
@@ -1626,68 +2510,18 @@ function CombatLogCollector.BuildSummary(roster)
             duration = seconds
         end
     end
-    local rosterByGuid = {}
-    local rosterByName = {}
-    local includedGuids = {}
 
-    for _, participant in ipairs(roster or {}) do
-        if participant.guid then
-            rosterByGuid[participant.guid] = participant
-        end
-        local nameKey = CombatLogCollector.NormalizeName(participant.name)
-        if nameKey then
-            rosterByName[nameKey] = participant
-        end
-    end
-
-    local capturedEventCount = CombatLogCollector.eventCount or 0
-    local capturedInterruptCount = CombatLogCollector.interruptCount or 0
-    local damageMeterCaptured = CombatLogCollector.damageMeterSynced == true
-    local dataSource = CombatLogCollector.GetDataSourceLabel()
+    local useScoreboard = CombatLogCollector.RosterHasScoreboardCombatTotals(roster)
+    local dataSource = useScoreboard and "scoreboard" or CombatLogCollector.GetDataSourceLabel()
     local playerRows = {}
-    for storageKey, row in pairs(CombatLogCollector.players) do
-        includedGuids[storageKey] = true
-        local participant = rosterByGuid[storageKey]
-        if not participant and type(storageKey) == "string" and storageKey:find("^name:") then
-            participant = rosterByName[storageKey:sub(6)]
-        end
-        if not participant and row.name then
-            participant = rosterByName[CombatLogCollector.NormalizeName(row.name)]
-        end
 
-        local rowGuid = row.guid
-        if not rowGuid and type(storageKey) == "string" and not storageKey:find("^name:") then
-            rowGuid = storageKey
-        end
-
-        table.insert(playerRows, CombatLogCollector.BuildPlayerSummaryRow(rowGuid, row, participant))
-    end
-
-    for _, participant in ipairs(roster or {}) do
-        local guid = participant.guid
-        if guid then
-            if not includedGuids[guid] then
-                includedGuids[guid] = true
-                table.insert(playerRows, CombatLogCollector.BuildPlayerSummaryRow(guid, nil, participant))
-            end
-        elseif participant.name then
-            local existing = false
-            local participantKey = CombatLogCollector.NormalizeName(participant.name)
-            for _, row in ipairs(playerRows) do
-                if participant.guid and row.guid == participant.guid then
-                    existing = true
-                    break
-                end
-                if participantKey and CombatLogCollector.NormalizeName(row.name) == participantKey then
-                    existing = true
-                    break
-                end
-            end
-
-            if not existing then
-                table.insert(playerRows, CombatLogCollector.BuildPlayerSummaryRow(nil, nil, participant))
-            end
-        end
+    for _, participant in ipairs(roster) do
+        local meterRow = CombatLogCollector.LookupMeterRowForParticipant(participant, meterSupplement)
+        table.insert(playerRows, CombatLogCollector.BuildPlayerSummaryRow(
+            participant.guid,
+            meterRow,
+            participant
+        ))
     end
 
     table.sort(playerRows, function(a, b)
@@ -1709,18 +2543,17 @@ function CombatLogCollector.BuildSummary(roster)
     end
 
     local summary = {
-        startedAt = CombatLogCollector.startedAt,
+        startedAt = window.startedAt or CombatLogCollector.startedAt,
         endedAt = endedAt,
         duration = duration,
-        killEvents = CombatLogCollector.killEvents,
+        killEvents = CombatLogCollector.killEvents or {},
         players = playerRows,
-        combatLogCaptured = capturedEventCount > 0
-            or damageMeterCaptured
-            or capturedInterruptCount > 0,
+        combatLogCaptured = useScoreboard or supplementSynced or (pending and pending.players ~= nil),
         dataSource = dataSource,
-        eventCount = capturedEventCount,
-        interruptCount = capturedInterruptCount,
+        eventCount = 0,
+        interruptCount = 0,
         segmentCount = CombatLogCollector.segmentCount or 1,
+        matchWindowResolved = window.durationSeconds ~= nil,
     }
 
     CombatLogCollector.StopMatch(true)

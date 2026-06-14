@@ -81,25 +81,52 @@ function UI.UpdateScrollBarVisibility(scrollFrame)
 end
 
 --- Registers one frame to close when the player presses Escape.
+--- Closing any PvPLedger window also closes the rest via ``UI.CloseAll()``.
 --- @param frame Frame
 function UI.RegisterEscapeToClose(frame)
-    if not frame or not frame.GetName then
+    if not frame then
         return
     end
 
-    local frameName = frame:GetName()
-    if not frameName then
-        return
-    end
+    local frameName = frame.GetName and frame:GetName()
+    if frameName then
+        UISpecialFrames = UISpecialFrames or {}
+        local alreadyRegistered = false
+        for _, registeredName in ipairs(UISpecialFrames) do
+            if registeredName == frameName then
+                alreadyRegistered = true
+                break
+            end
+        end
 
-    UISpecialFrames = UISpecialFrames or {}
-    for _, registeredName in ipairs(UISpecialFrames) do
-        if registeredName == frameName then
-            return
+        if not alreadyRegistered then
+            table.insert(UISpecialFrames, frameName)
         end
     end
 
-    table.insert(UISpecialFrames, frameName)
+    if frame.CloseButton and not frame.CloseButton._pvlCloseAllHooked then
+        frame.CloseButton._pvlCloseAllHooked = true
+        frame.CloseButton:SetScript("OnClick", function()
+            if UI.CloseAll then
+                UI.CloseAll()
+            else
+                frame:Hide()
+            end
+        end)
+    end
+
+    if not frame._pvlEscapeHooked then
+        frame._pvlEscapeHooked = true
+        frame:HookScript("OnHide", function()
+            if UI._closingAll or not UI.CloseAll then
+                return
+            end
+
+            if UI.AnyWindowShown and UI.AnyWindowShown() then
+                UI.CloseAll()
+            end
+        end)
+    end
 end
 
 --- Creates a Blizzard-style dropdown bound to an option list.

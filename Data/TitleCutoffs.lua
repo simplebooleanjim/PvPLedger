@@ -197,6 +197,256 @@ PVL.TITLE_DEFINITIONS = {
 }
 
 -- ---------------------------------------------------------------------------
+-- Seasonal title achievement tracking (Blitz Strategist, Shuffle Legend, ...)
+-- ---------------------------------------------------------------------------
+
+--- Achievement id for "Strategist: Midnight Season 1" (Battleground Blitz).
+PVL.STRATEGIST_ACHIEVEMENT_ID = 61194
+
+--- Achievement id for "Legend: Midnight Season 1" (Solo Shuffle).
+PVL.LEGEND_ACHIEVEMENT_ID = 61190
+
+--- Bracket-specific seasonal achievements that can be pinned to the objectives tracker.
+--- placement:
+---   before_rank1 - insert a dedicated row before the Rank 1 feat line
+---   title_row    - replace the matching title definition row with a clickable tracker row
+PVL.SEASON_ACHIEVEMENT_BY_BRACKET = {
+    [PVL.BRACKETS.BLITZ] = {
+        achievementId = PVL.STRATEGIST_ACHIEVEMENT_ID,
+        defaultRequired = 25,
+        fallbackName = "Strategist",
+        defId = "strategist",
+        color = PVL.TITLE_COLORS.ELITE,
+        placement = "before_rank1",
+        ruleDetail = "rated Blitz matches",
+    },
+    [PVL.BRACKETS.SHUFFLE] = {
+        achievementId = PVL.LEGEND_ACHIEVEMENT_ID,
+        defaultRequired = 100,
+        fallbackName = "Legend",
+        defId = "legend",
+        titleDefId = "legend",
+        color = PVL.TITLE_COLORS.LEGEND,
+        placement = "title_row",
+        ruleDetail = "rated Solo Shuffle rounds",
+    },
+}
+
+--- Returns the seasonal achievement config for one bracket, if any.
+--- @param bracket string|nil
+--- @return table|nil
+function PVL.GetBracketSeasonAchievement(bracket)
+    if not bracket then
+        return nil
+    end
+
+    return PVL.SEASON_ACHIEVEMENT_BY_BRACKET[bracket]
+end
+
+--- Returns the content-tracking type id for achievements.
+--- @return number
+function PVL.GetAchievementTrackingType()
+    if Enum and Enum.ContentTrackingType and Enum.ContentTrackingType.Achievement then
+        return Enum.ContentTrackingType.Achievement
+    end
+
+    return 2
+end
+
+--- Returns the manual stop type for content tracking toggles.
+--- @return number
+function PVL.GetContentTrackingStopManual()
+    if Enum and Enum.ContentTrackingStopType and Enum.ContentTrackingStopType.Manual then
+        return Enum.ContentTrackingStopType.Manual
+    end
+
+    return 2
+end
+
+--- Returns true when one achievement is pinned to the objectives tracker.
+--- @param achievementId number
+--- @return boolean
+function PVL.IsAchievementTracked(achievementId)
+    if not achievementId or not C_ContentTracking or not C_ContentTracking.IsTracking then
+        return false
+    end
+
+    local ok, tracked = pcall(
+        C_ContentTracking.IsTracking,
+        PVL.GetAchievementTrackingType(),
+        achievementId
+    )
+    return ok and tracked == true
+end
+
+--- Toggles one achievement on the in-game objectives tracker.
+--- @param achievementId number
+--- @return boolean success
+--- @return string|nil message
+function PVL.ToggleAchievementTracking(achievementId)
+    if not achievementId then
+        return false, "Achievement id is missing."
+    end
+
+    if not C_ContentTracking or not C_ContentTracking.ToggleTracking then
+        return false, "Content tracking is unavailable in this client."
+    end
+
+    local ok, err = pcall(
+        C_ContentTracking.ToggleTracking,
+        PVL.GetAchievementTrackingType(),
+        achievementId,
+        PVL.GetContentTrackingStopManual()
+    )
+    if not ok then
+        return false, "Could not toggle achievement tracking."
+    end
+
+    if err and Enum and Enum.ContentTrackingError then
+        if err == Enum.ContentTrackingError.MaxTracked then
+            return false, "Too many objectives are already tracked."
+        end
+        if err == Enum.ContentTrackingError.Untrackable then
+            return false, "This achievement cannot be tracked right now."
+        end
+    end
+
+    return true, nil
+end
+
+--- Returns a readable number from achievement criteria fields.
+--- @param value any
+--- @return number|nil
+local function GetAccessibleAchievementNumber(value)
+    if PVL.MatchCollector and PVL.MatchCollector.GetAccessibleNumber then
+        return PVL.MatchCollector.GetAccessibleNumber(value)
+    end
+
+    return tonumber(value)
+end
+
+--- Returns win progress for one seasonal achievement.
+--- @param achievementId number
+--- @param defaultRequired number|nil
+--- @return number|nil current
+--- @return number|nil required
+--- @return boolean completed
+function PVL.GetAchievementProgress(achievementId, defaultRequired)
+    defaultRequired = defaultRequired or 25
+
+    if GetAchievementInfo then
+        -- GetAchievementInfo returns: id, name, points, completed, ...
+        -- When wrapped in pcall, "completed" is the fifth value (not points).
+        local ok, _, _, _, completed = pcall(GetAchievementInfo, achievementId)
+        if ok and completed == true then
+            return defaultRequired, defaultRequired, true
+        end
+    end
+
+    if GetAchievementNumCriteria and GetAchievementCriteriaInfo then
+        local countOk, numCriteria = pcall(GetAchievementNumCriteria, achievementId)
+        if countOk and numCriteria and numCriteria > 0 then
+            local bestCurrent = nil
+            local bestRequired = nil
+            local bestCompleted = false
+
+            for index = 1, numCriteria do
+                local criteriaOk, _, _, criteriaCompleted, quantity, reqQuantity = pcall(
+                    GetAchievementCriteriaInfo,
+                    achievementId,
+                    index
+                )
+                local requiredCount = GetAccessibleAchievementNumber(reqQuantity)
+                if criteriaOk and requiredCount and requiredCount > 0 then
+                    local currentCount = GetAccessibleAchievementNumber(quantity) or 0
+                    local isBetterCriterion = not bestRequired or requiredCount >= bestRequired
+                    if isBetterCriterion then
+                        bestRequired = requiredCount
+                        bestCurrent = currentCount
+                        bestCompleted = criteriaCompleted == true or currentCount >= requiredCount
+                    end
+                end
+            end
+
+            if bestRequired then
+                return bestCurrent or 0, bestRequired, bestCompleted
+            end
+        end
+    end
+
+    return nil, defaultRequired, false
+end
+
+--- Returns the display name for one achievement when available.
+--- @param achievementId number
+--- @param fallbackName string|nil
+--- @return string
+function PVL.GetAchievementDisplayName(achievementId, fallbackName)
+    if GetAchievementInfo and achievementId then
+        local ok, _, name = pcall(GetAchievementInfo, achievementId)
+        if ok and name and name ~= "" then
+            return name
+        end
+    end
+
+    return fallbackName or "Season achievement"
+end
+
+--- Returns true when the Strategist achievement is pinned to the objectives tracker.
+--- @return boolean
+function PVL.IsStrategistTracked()
+    return PVL.IsAchievementTracked(PVL.STRATEGIST_ACHIEVEMENT_ID)
+end
+
+--- Toggles the Strategist achievement on the in-game objectives tracker.
+--- @return boolean success
+--- @return string|nil message
+function PVL.ToggleStrategistTracking()
+    return PVL.ToggleAchievementTracking(PVL.STRATEGIST_ACHIEVEMENT_ID)
+end
+
+--- Returns Strategist win progress while at Elite rank for the current season.
+--- @return number|nil current
+--- @return number|nil required
+--- @return boolean completed
+function PVL.GetStrategistProgress()
+    return PVL.GetAchievementProgress(PVL.STRATEGIST_ACHIEVEMENT_ID, 25)
+end
+
+--- Returns the display name for the Strategist achievement when available.
+--- @return string
+function PVL.GetStrategistAchievementName()
+    return PVL.GetAchievementDisplayName(PVL.STRATEGIST_ACHIEVEMENT_ID, "Strategist")
+end
+
+--- Returns true when the Legend achievement is pinned to the objectives tracker.
+--- @return boolean
+function PVL.IsLegendTracked()
+    return PVL.IsAchievementTracked(PVL.LEGEND_ACHIEVEMENT_ID)
+end
+
+--- Toggles the Legend achievement on the in-game objectives tracker.
+--- @return boolean success
+--- @return string|nil message
+function PVL.ToggleLegendTracking()
+    return PVL.ToggleAchievementTracking(PVL.LEGEND_ACHIEVEMENT_ID)
+end
+
+--- Returns Legend win progress while at Elite rank for the current season.
+--- @return number|nil current
+--- @return number|nil required
+--- @return boolean completed
+function PVL.GetLegendProgress()
+    return PVL.GetAchievementProgress(PVL.LEGEND_ACHIEVEMENT_ID, 100)
+end
+
+--- Returns the display name for the Legend achievement when available.
+--- @return string
+function PVL.GetLegendAchievementName()
+    return PVL.GetAchievementDisplayName(PVL.LEGEND_ACHIEVEMENT_ID, "Legend")
+end
+
+-- ---------------------------------------------------------------------------
 -- Cutoff rating resolution
 -- ---------------------------------------------------------------------------
 

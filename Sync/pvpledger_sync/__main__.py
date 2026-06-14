@@ -20,11 +20,10 @@ from .config import (
 )
 from .downloader import inspect_installed_app_data, local_app_data_source, local_manifest_source, sync_app_data
 from .exporter import scan_exports_for_config
-from .github_exports import GitHubReconcileResult
 from .ingest_server import default_ingest_dir, default_upload_url, ensure_ingest_server_running, run_ingest_server_forever
 from .manifest import fetch_manifest, format_github_error
 from .startup import install_startup, is_startup_installed, uninstall_startup
-from .uploader import resolve_export_spool_dir, sync_github_exports, upload_exports
+from .uploader import resolve_export_spool_dir, upload_exports
 
 
 def parse_args() -> argparse.Namespace:
@@ -53,15 +52,6 @@ def parse_args() -> argparse.Namespace:
 
     upload_parser = subparsers.add_parser("upload-exports", help="Upload pending match exports to the configured destination.")
     upload_parser.add_argument("--force", action="store_true", help="Upload even when export upload is disabled.")
-
-    subparsers.add_parser(
-        "sync-github-exports",
-        help="Verify local export batches and backfill any missing GitHub uploads.",
-    )
-
-    auth_parser = subparsers.add_parser("auth", help="Save or clear a GitHub token for private repo sync.")
-    auth_parser.add_argument("--token", type=str, default="", help="GitHub personal access token.")
-    auth_parser.add_argument("--clear", action="store_true", help="Remove the saved GitHub token.")
 
     upload_auth_parser = subparsers.add_parser(
         "upload-auth",
@@ -106,9 +96,6 @@ def cmd_status() -> int:
     print(f"Config: {default_config_path()}")
     print(f"WoW AddOns: {config.wow_addons_dir or '(not set)'}")
     print(f"Repo: {config.repo}@{config.branch}")
-    print(f"GitHub token: {'configured' if config.resolved_github_token() else 'not set'}")
-    print(f"GitHub match dump: {'enabled' if config.github_export_enabled else 'disabled'}")
-    print(f"GitHub dump path: {config.github_export_path or 'Data/match-exports'}")
     print(f"Last manifest date: {config.last_manifest_generated_date or '(never)'}")
     print(f"Last AppData sync: {config.last_app_data_sync_at or '(never)'}")
     print(f"Export upload: {'enabled' if config.export_enabled else 'disabled'}")
@@ -129,14 +116,11 @@ def cmd_status() -> int:
         manifest = fetch_manifest(
             repo=config.repo,
             branch=config.branch,
-            token=config.resolved_github_token(),
         )
         print(f"Remote manifest date: {manifest.generated_date}")
         print(f"Remote brackets: {', '.join(sorted(manifest.brackets))}")
     except Exception as exc:  # noqa: BLE001 - CLI status should show network failures clearly
         print(f"Remote manifest: unavailable ({format_github_error(exc)})")
-        if not config.resolved_github_token():
-            print("Tip: private repos need a token. Run: run_sync.bat auth --token YOUR_TOKEN")
         if local_manifest_source().exists():
             print(f"Local fallback manifest: {local_manifest_source()}")
         else:
@@ -222,70 +206,16 @@ def cmd_upload_exports(args: argparse.Namespace) -> int:
             print(f"Batch ID: {result.batch_id}")
         if result.destination:
             print(f"Destination: {result.destination}")
-        if result.github_batch_path:
-            print(f"GitHub batch: {result.github_batch_path}")
-        if result.github_dump_path:
-            print(f"GitHub dump: {result.github_dump_path}")
         if result.spool_path:
             print(f"Spool file: {result.spool_path}")
         if result.export_ack_path:
             print(f"ExportAck: {result.export_ack_path}")
-    reconcile = result.github_reconcile
-    if reconcile and reconcile.checked_batches:
-        print(f"GitHub reconcile: {reconcile.reason}")
-        if reconcile.dump_repaired and reconcile.dump_path:
-            print(f"GitHub dump repaired: {reconcile.dump_path}")
-        for error in reconcile.errors:
-            print(f"GitHub reconcile error: {error}")
 
     if result.uploaded:
         return 0
     if result.reason.startswith("No pending"):
         return 0
     return 1
-
-
-def cmd_sync_github_exports() -> int:
-    """Verify local export batches and backfill missing GitHub uploads."""
-
-    config = load_config()
-    reconcile = sync_github_exports(config)
-    print(reconcile.reason)
-    if reconcile.dump_repaired and reconcile.dump_path:
-        print(f"GitHub dump repaired: {reconcile.dump_path}")
-    for error in reconcile.errors:
-        print(f"GitHub reconcile error: {error}")
-
-    if reconcile.failed_batches:
-        return 1
-    if reconcile.uploaded_batches or reconcile.dump_repaired or reconcile.already_synced_batches:
-        return 0
-    return 0
-
-
-def cmd_auth(args: argparse.Namespace) -> int:
-    """Save or clear the GitHub token used for private repository sync."""
-
-    config = load_config()
-    if args.clear:
-        config.github_token = ""
-        save_config(config)
-        print("Cleared saved GitHub token.")
-        return 0
-
-    token = args.token.strip()
-    if not token:
-        print("Pass --token YOUR_GITHUB_TOKEN or use --clear.")
-        print("Create a token at: https://github.com/settings/tokens")
-        print("Required scope: read access for ladder sync; write access for match dump uploads.")
-        print("Classic token: repo. Fine-grained: Contents read/write on this repository.")
-        return 1
-
-    config.github_token = token
-    path = save_config(config)
-    print(f"Saved GitHub token to {path}")
-    print("Token stored locally in your AppData config. Do not share this file.")
-    return 0
 
 
 def cmd_upload_auth(args: argparse.Namespace) -> int:
@@ -373,10 +303,6 @@ def main() -> int:
         return cmd_scan_exports()
     if args.command == "upload-exports":
         return cmd_upload_exports(args)
-    if args.command == "sync-github-exports":
-        return cmd_sync_github_exports()
-    if args.command == "auth":
-        return cmd_auth(args)
     if args.command == "upload-auth":
         return cmd_upload_auth(args)
     if args.command == "tray":

@@ -386,22 +386,100 @@ function PVL.GetImportedSnapshotStatusLines()
     return lines
 end
 
---- Returns observed matches for one bracket optionally filtered by timestamp.
+--- Returns the local player's spec key from one stored match record.
+--- @param matchRecord table|nil
+--- @return string|nil
+function PVL.GetMatchPlayerSpec(matchRecord)
+    if type(matchRecord) ~= "table" then
+        return nil
+    end
+
+    if matchRecord.playerSpec then
+        return matchRecord.playerSpec
+    end
+
+    for _, participant in ipairs(matchRecord.roster or {}) do
+        if participant.isLocalPlayer and participant.spec then
+            if participant.spec:find("_", 1, true) then
+                return participant.spec
+            end
+
+            return PVL.MakeSpecKey(participant.class, participant.spec)
+        end
+    end
+
+    return nil
+end
+
+--- Returns true when a player spec key matches class/spec UI filters.
+--- @param playerSpec string|nil
+--- @param classToken string|nil
+--- @param specKey string|nil
+--- @return boolean
+function PVL.PlayerSpecMatchesFilter(playerSpec, classToken, specKey)
+    if specKey then
+        return playerSpec == specKey
+    end
+
+    if classToken then
+        if not playerSpec then
+            return false
+        end
+
+        return playerSpec:match("^(.-)_") == classToken
+    end
+
+    return true
+end
+
+--- Returns true when one stored match matches class/spec UI filters.
+--- @param matchRecord table|nil
+--- @param classToken string|nil
+--- @param specKey string|nil
+--- @return boolean
+function PVL.MatchMatchesPlayerSpecFilter(matchRecord, classToken, specKey)
+    if not classToken and not specKey then
+        return true
+    end
+
+    return PVL.PlayerSpecMatchesFilter(PVL.GetMatchPlayerSpec(matchRecord), classToken, specKey)
+end
+
+--- Backfills playerSpec on stored matches that predate per-spec tracking.
+function PVL.BackfillMatchPlayerSpecs()
+    local db = PVL.GetDB()
+    if not db or type(db.observations) ~= "table" then
+        return
+    end
+
+    for _, match in ipairs(db.observations.matches or {}) do
+        if type(match) == "table" and not match.playerSpec then
+            match.playerSpec = PVL.GetMatchPlayerSpec(match)
+        end
+    end
+end
+
+--- Returns observed matches for one bracket optionally filtered by timestamp and player spec.
 --- @param bracket string|nil
 --- @param sinceTimestamp number|nil
+--- @param filters table|nil Optional `{ classToken, specKey }` player-spec filters.
 --- @return table[]
-function PVL.GetObservedMatches(bracket, sinceTimestamp)
+function PVL.GetObservedMatches(bracket, sinceTimestamp, filters)
     local db = PVL.GetDB()
     if not db then
         return {}
     end
 
     local activeBracket = bracket or PVL.GetActiveBracketFilter()
+    local classToken = filters and filters.classToken or nil
+    local specKey = filters and filters.specKey or nil
     local results = {}
     for _, match in ipairs(db.observations.matches) do
         if match.bracket == activeBracket then
             if not sinceTimestamp or (match.timestamp and match.timestamp >= sinceTimestamp) then
-                table.insert(results, match)
+                if PVL.MatchMatchesPlayerSpecFilter(match, classToken, specKey) then
+                    table.insert(results, match)
+                end
             end
         end
     end
@@ -435,9 +513,10 @@ end
 --- Returns observed matches for one bracket, newest first.
 --- @param bracket string|nil
 --- @param limit number|nil
+--- @param filters table|nil Optional `{ classToken, specKey }` player-spec filters.
 --- @return table[]
-function PVL.GetRecentMatches(bracket, limit)
-    local matches = PVL.GetObservedMatches(bracket)
+function PVL.GetRecentMatches(bracket, limit, filters)
+    local matches = PVL.GetObservedMatches(bracket, nil, filters)
     table.sort(matches, function(a, b)
         return (a.timestamp or 0) > (b.timestamp or 0)
     end)

@@ -73,13 +73,15 @@ class TrayApp:
         self._config = load_config()
         self._set_status(result.reason)
         if result.updated:
+            reload_hint = "\n/reload in WoW to apply the latest ladder data."
             if result.player_index_count > 0:
-                notify("PvPLedger Sync", result.reason)
+                notify("PvPLedger Sync", f"{result.reason}{reload_hint}")
             else:
                 notify(
                     "PvPLedger Sync",
                     "Ladder aggregates synced, but View Ladder is still empty.\n"
-                    "The published snapshot does not include player names yet.",
+                    "The published snapshot does not include player names yet."
+                    f"{reload_hint}",
                 )
         elif result.reason.startswith("Already up to date"):
             _, installed_status = inspect_installed_app_data(self._config)
@@ -91,7 +93,6 @@ class TrayApp:
         *,
         result,
         scan,
-        reconcile,
     ) -> bool:
         """
         Return True when export upload has nothing actionable to report.
@@ -102,8 +103,6 @@ class TrayApp:
             Upload attempt result from the uploader.
         scan:
             SavedVariables scan summary.
-        reconcile:
-            Optional GitHub reconciliation summary.
 
         Returns
         -------
@@ -115,17 +114,7 @@ class TrayApp:
             return False
         if result.match_count > 0:
             return False
-        if reconcile and reconcile.uploaded_batches > 0:
-            return False
-        if reconcile and reconcile.failed_batches:
-            return False
         if result.reason in _SILENT_EXPORT_REASONS:
-            return True
-        if (
-            reconcile
-            and reconcile.checked_batches > 0
-            and reconcile.already_synced_batches == reconcile.checked_batches
-        ):
             return True
         return False
 
@@ -138,17 +127,11 @@ class TrayApp:
 
         result = upload_exports(self._config)
         self._config = load_config()
-        reconcile = result.github_reconcile
-        backfilled = bool(
-            reconcile
-            and (reconcile.uploaded_batches > 0 or reconcile.dump_repaired)
-        )
         scan = scan_exports_for_config(self._config)
 
-        if result.uploaded and (result.match_count > 0 or backfilled):
-            message = result.reason if result.match_count > 0 else reconcile.reason if reconcile else result.reason
-            self._set_status(message)
-            notify("PvPLedger Sync", message)
+        if result.uploaded and result.match_count > 0:
+            self._set_status(result.reason)
+            notify("PvPLedger Sync", result.reason)
             return
 
         if scan.pending_matches:
@@ -158,12 +141,7 @@ class TrayApp:
         if scan.awaiting_reload_matches and result.reason in _SILENT_EXPORT_REASONS:
             return
 
-        if backfilled and reconcile:
-            self._set_status(reconcile.reason)
-            notify("PvPLedger Sync", reconcile.reason)
-            return
-
-        if self._is_idle_export_state(result=result, scan=scan, reconcile=reconcile):
+        if self._is_idle_export_state(result=result, scan=scan):
             return
 
         if result.reason:

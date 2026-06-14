@@ -76,6 +76,8 @@ function PVL.BuildMatchExportRecord(matchRecord)
         playerMMRBefore = matchRecord.playerMMRBefore,
         playerMMRAfter = matchRecord.playerMMRAfter,
         playerMMRKind = matchRecord.playerMMRKind,
+        playerPersonalMMRBefore = matchRecord.playerPersonalMMRBefore,
+        playerPersonalMMRAfter = matchRecord.playerPersonalMMRAfter,
         combatSummary = PVL.BuildCombatExportSummary(matchRecord.combatSummary),
         roster = roster,
     }

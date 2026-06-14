@@ -154,10 +154,18 @@ function RatedInfo.GetCurrentRating(bracket)
 end
 
 --- Returns the current season win/loss record for one bracket from the PvP rated menu.
---- Solo Shuffle uses round totals; other brackets use match totals.
+--- Battleground Blitz and Solo Shuffle report stats for the player's current specialization
+--- (same source as the Conquest frame tooltip). Solo Shuffle uses round totals; Blitz uses
+--- match totals. Other brackets are not returned here because their rated menu stats are not
+--- spec-scoped in the same way.
 --- @param bracket string|nil
---- @return table|nil record `{ wins, losses, games, winPct, seasonBest, unit }`
+--- @return table|nil record `{ wins, losses, games, winPct, seasonBest, unit, perSpec }`
 function RatedInfo.GetSeasonRecord(bracket)
+    bracket = bracket or PVL.GetActiveBracketFilter()
+    if bracket ~= PVL.BRACKETS.BLITZ and bracket ~= PVL.BRACKETS.SHUFFLE then
+        return nil
+    end
+
     local info = RatedInfo.GetRatedInfo(bracket)
     if not info then
         return nil
@@ -179,6 +187,7 @@ function RatedInfo.GetSeasonRecord(bracket)
             unit = "round",
             matchesPlayed = info.seasonPlayed,
             matchesWon = info.seasonWon,
+            perSpec = true,
         }
     end
 
@@ -193,6 +202,7 @@ function RatedInfo.GetSeasonRecord(bracket)
         winPct = info.winPct,
         seasonBest = info.seasonBest,
         unit = "match",
+        perSpec = true,
     }
 end
 

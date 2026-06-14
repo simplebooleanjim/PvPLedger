@@ -923,22 +923,169 @@ function PVL.GetCharacterRatingFields(bracket)
     return rating, mmr, mmrKind
 end
 
---- Builds a short summary table for the main UI panel.
---- @param filters table|nil Optional UI filter state with classToken/specKey.
+--- Returns the cached personal MMR field name for one bracket.
+--- @param bracket string|nil
+--- @return string|nil
+function PVL.GetPersonalMmrFieldName(bracket)
+    bracket = bracket or PVL.GetActiveBracketFilter()
+
+    if bracket == PVL.BRACKETS.SHUFFLE then
+        return "lastShufflePersonalMMR"
+    elseif bracket == PVL.BRACKETS.RBG then
+        return "lastRbgPersonalMMR"
+    elseif bracket == PVL.BRACKETS.ARENA_2V2 then
+        return "lastArena2v2PersonalMMR"
+    elseif bracket == PVL.BRACKETS.ARENA_3V3 then
+        return "lastArena3v3PersonalMMR"
+    elseif bracket == PVL.BRACKETS.BLITZ then
+        return "lastBlitzPersonalMMR"
+    end
+
+    return nil
+end
+
+--- Returns the latest cached personal MMR for one bracket.
+--- @param bracket string|nil
+--- @return number|nil
+function PVL.GetCharacterPersonalMmr(bracket)
+    local charDb = PVL.GetCharDB()
+    if not charDb then
+        return nil
+    end
+
+    local fieldName = PVL.GetPersonalMmrFieldName(bracket)
+    if not fieldName then
+        return nil
+    end
+
+    local personalMmr = charDb[fieldName]
+    if PVL.IsValidObservedMmr(personalMmr) then
+        return personalMmr
+    end
+
+    return nil
+end
+
+--- Resolves personal MMR from one stored match record.
+--- @param matchRecord table|nil
+--- @return number|nil
+function PVL.ResolveMatchPersonalMmr(matchRecord)
+    if not matchRecord then
+        return nil
+    end
+
+    if PVL.IsValidObservedMmr(matchRecord.playerPersonalMMRAfter) then
+        return matchRecord.playerPersonalMMRAfter
+    end
+
+    for _, participant in ipairs(matchRecord.roster or {}) do
+        if participant.isLocalPlayer then
+            if PVL.IsValidObservedMmr(participant.postmatchMMR) then
+                return participant.postmatchMMR
+            end
+            if PVL.IsValidObservedMmr(participant.prematchMMR) then
+                return participant.prematchMMR
+            end
+            break
+        end
+    end
+
+    if matchRecord.playerMMRKind == "personal" and PVL.IsValidObservedMmr(matchRecord.playerMMRAfter) then
+        return matchRecord.playerMMRAfter
+    end
+
+    return nil
+end
+
+--- Builds class/spec filters for personal match-tracking panels.
+--- Always reflects the logged-in character's current specialization.
 --- @return table
-function PVL.BuildDashboardSummary(filters)
+function PVL.GetPersonalTrackingFilters()
+    local specKey, specName = PVL.GetPlayerSpecInfo()
+    local filters = {
+        specName = specName,
+        specFiltered = true,
+        specUnavailable = specKey == nil,
+    }
+
+    if specKey then
+        filters.specKey = specKey
+        filters.classToken = specKey:match("^(.-)_")
+    end
+
+    return filters
+end
+
+--- Builds a win/loss record from stored match observations.
+--- @param matches table[]
+--- @param bracket string|nil
+--- @return table|nil
+function PVL.BuildObservedSeasonRecord(matches, bracket)
+    if not matches or #matches == 0 then
+        return nil
+    end
+
+    local wins = 0
+    local losses = 0
+    for _, match in ipairs(matches) do
+        if match.won == true then
+            wins = wins + 1
+        elseif match.won == false then
+            losses = losses + 1
+        end
+    end
+
+    local games = wins + losses
+    if games <= 0 then
+        return nil
+    end
+
+    return {
+        wins = wins,
+        losses = losses,
+        games = games,
+        winPct = (wins / games) * 100,
+        unit = bracket == PVL.BRACKETS.SHUFFLE and "round" or "match",
+        source = "observed",
+    }
+end
+
+--- Builds a short summary table for the main UI overview panel.
+--- Personal stats always reflect the player's current specialization.
+--- @return table
+function PVL.BuildDashboardSummary()
     local bracket = PVL.GetActiveBracketFilter()
-    filters = filters or {}
+    local filters = PVL.GetPersonalTrackingFilters()
     local classToken = filters.classToken
     local specKey = filters.specKey
 
     local snapshot = PVL.GetImportedSnapshot(bracket)
     local observedRows = PVL.GetObservedSpecRows(bracket)
     local playerCR, playerMMR, playerMMRKind = PVL.GetCharacterRatingFields(bracket)
+    local playerPersonalMMR = PVL.GetCharacterPersonalMmr(bracket)
     local playerCurrentCR = PVL.RatedInfo and PVL.RatedInfo.GetCurrentRating(bracket) or nil
     local listedObservedCount, observedPlayerCount = PVL.CountListedObservedPlayers()
+    local filteredMatches = {}
+    local recentFilteredMatch = nil
 
-    local standing = PVL.EstimateListedStanding(playerCurrentCR or playerCR, bracket, classToken, specKey)
+    if specKey then
+        filteredMatches = PVL.GetObservedMatches(bracket, nil, filters) or {}
+        local recentFilteredMatches = PVL.GetRecentMatches(bracket, 1, filters) or {}
+        recentFilteredMatch = recentFilteredMatches[1]
+    end
+
+    if recentFilteredMatch then
+        playerCR = recentFilteredMatch.playerCRAfter or playerCR
+        playerMMR = recentFilteredMatch.playerMMRAfter or playerMMR
+        playerMMRKind = recentFilteredMatch.playerMMRKind or playerMMRKind
+        playerPersonalMMR = PVL.ResolveMatchPersonalMmr(recentFilteredMatch) or playerPersonalMMR
+        playerCurrentCR = recentFilteredMatch.playerCRAfter or playerCurrentCR
+    end
+
+    local standingCr = playerCurrentCR or playerCR
+    local standing = PVL.EstimateListedStanding(standingCr, bracket, classToken, specKey)
+    local seasonRecord = PVL.BuildObservedSeasonRecord(filteredMatches, bracket)
+    local blizzardSeasonRecord = PVL.RatedInfo and PVL.RatedInfo.GetSeasonRecord(bracket) or nil
 
     return {
         bracket = bracket,
@@ -948,13 +1095,20 @@ function PVL.BuildDashboardSummary(filters)
         listedObservedCount = listedObservedCount,
         observedPlayerCount = observedPlayerCount,
         observedTopSpecs = { observedRows[1], observedRows[2], observedRows[3] },
-        matchCount = #(PVL.GetObservedMatches(bracket) or {}),
-        seasonRecord = PVL.RatedInfo and PVL.RatedInfo.GetSeasonRecord(bracket) or nil,
+        matchCount = #filteredMatches,
+        seasonRecord = seasonRecord,
+        blizzardSeasonRecord = blizzardSeasonRecord,
         playerCR = playerCR,
         playerCurrentCR = playerCurrentCR,
         playerMMR = playerMMR,
         playerMMRKind = playerMMRKind,
+        playerPersonalMMR = playerPersonalMMR,
         standing = standing,
         ladderStalenessLines = PVL.GetLadderStalenessLines(bracket),
+        specFiltered = filters.specFiltered,
+        specUnavailable = filters.specUnavailable,
+        specKey = specKey,
+        classToken = classToken,
+        specName = filters.specName,
     }
 end

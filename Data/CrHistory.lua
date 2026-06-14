@@ -25,6 +25,32 @@ function CrHistory.IsValidCr(value)
     return type(value) == "number" and value > 0
 end
 
+--- Returns true when one CR history row matches class/spec player filters.
+--- @param entry table|nil
+--- @param classToken string|nil
+--- @param specKey string|nil
+--- @return boolean
+function CrHistory.EntryMatchesPlayerSpecFilter(entry, classToken, specKey)
+    if not classToken and not specKey then
+        return true
+    end
+
+    if not entry then
+        return false
+    end
+
+    if CrHistory.IsCrOnlyEntry(entry) then
+        return false
+    end
+
+    local playerSpec = entry.playerSpec
+    if not playerSpec and entry.matchId and PVL.GetMatchById then
+        playerSpec = PVL.GetMatchPlayerSpec(PVL.GetMatchById(entry.matchId))
+    end
+
+    return PVL.PlayerSpecMatchesFilter(playerSpec, classToken, specKey)
+end
+
 --- Returns the most recent history entry for one bracket.
 --- @param bracket string
 --- @return table|nil
@@ -229,6 +255,7 @@ function CrHistory.RecordMatch(matchRecord)
         won = matchRecord.won,
         source = "match",
         matchId = matchRecord.matchId,
+        playerSpec = matchRecord.playerSpec or (PVL.GetMatchPlayerSpec and PVL.GetMatchPlayerSpec(matchRecord) or nil),
     })
 
     if recorded then
@@ -317,17 +344,41 @@ function CrHistory.BeginSession()
     end
 end
 
+--- Backfills playerSpec on stored CR history rows from linked match records.
+function CrHistory.BackfillEntryPlayerSpecs()
+    if PVL.BackfillMatchPlayerSpecs then
+        PVL.BackfillMatchPlayerSpecs()
+    end
+
+    local history = CrHistory.GetHistoryTable()
+    for _, entry in ipairs(history) do
+        if type(entry) == "table"
+            and entry.source == "match"
+            and not entry.playerSpec
+            and entry.matchId
+            and PVL.GetMatchById then
+            entry.playerSpec = PVL.GetMatchPlayerSpec(PVL.GetMatchById(entry.matchId))
+        end
+    end
+end
+
 --- Imports CR points from stored match observations once per character.
 function CrHistory.BackfillFromMatches()
     local charDb = PVL.GetCharDB()
     if not charDb or charDb.crHistoryBackfilled then
+        CrHistory.BackfillEntryPlayerSpecs()
         return
     end
 
     local db = PVL.GetDB()
     if not db or type(db.observations) ~= "table" then
         charDb.crHistoryBackfilled = true
+        CrHistory.BackfillEntryPlayerSpecs()
         return
+    end
+
+    if PVL.BackfillMatchPlayerSpecs then
+        PVL.BackfillMatchPlayerSpecs()
     end
 
     for _, match in ipairs(db.observations.matches or {}) do
@@ -335,24 +386,30 @@ function CrHistory.BackfillFromMatches()
     end
 
     charDb.crHistoryBackfilled = true
+    CrHistory.BackfillEntryPlayerSpecs()
 end
 
 --- Returns CR history entries for one bracket, newest first.
 --- @param bracket string|nil
 --- @param limit number|nil
+--- @param filters table|nil Optional `{ classToken, specKey }` player-spec filters.
 --- @return table[]
-function CrHistory.GetEntriesForBracket(bracket, limit)
+function CrHistory.GetEntriesForBracket(bracket, limit, filters)
     bracket = bracket or PVL.GetActiveBracketFilter()
     limit = limit or PVL.MAX_CR_HISTORY
+    local classToken = filters and filters.classToken or nil
+    local specKey = filters and filters.specKey or nil
 
     local results = {}
     local history = CrHistory.GetHistoryTable()
     for index = #history, 1, -1 do
         local entry = history[index]
         if entry and entry.bracket == bracket then
-            table.insert(results, entry)
-            if #results >= limit then
-                break
+            if CrHistory.EntryMatchesPlayerSpecFilter(entry, classToken, specKey) then
+                table.insert(results, entry)
+                if #results >= limit then
+                    break
+                end
             end
         end
     end
@@ -397,11 +454,29 @@ end
 
 --- Builds summary stats for one bracket's CR history.
 --- @param bracket string|nil
+--- @param filters table|nil Optional `{ classToken, specKey }` player-spec filters.
 --- @return table
-function CrHistory.BuildSummary(bracket)
+function CrHistory.BuildSummary(bracket, filters)
     bracket = bracket or PVL.GetActiveBracketFilter()
-    local entries = CrHistory.GetEntriesForBracket(bracket, PVL.MAX_CR_HISTORY)
+    filters = filters or (PVL.GetPersonalTrackingFilters and PVL.GetPersonalTrackingFilters() or {})
+    local classToken = filters.classToken
+    local specKey = filters.specKey
+    local specFiltered = filters.specFiltered == true or classToken ~= nil or specKey ~= nil
+    local entries = {}
+
+    if filters.specUnavailable then
+        entries = {}
+    elseif specKey or classToken then
+        entries = CrHistory.GetEntriesForBracket(bracket, PVL.MAX_CR_HISTORY, filters)
+    else
+        entries = CrHistory.GetEntriesForBracket(bracket, PVL.MAX_CR_HISTORY)
+    end
+
     local currentCr = PVL.RatedInfo and PVL.RatedInfo.GetCurrentRating(bracket) or nil
+
+    if specFiltered and entries[1] and CrHistory.IsValidCr(entries[1].cr) then
+        currentCr = entries[1].cr
+    end
 
     local summary = {
         bracket = bracket,
@@ -415,16 +490,19 @@ function CrHistory.BuildSummary(bracket)
         winsSession = 0,
         lossesSession = 0,
         recentEntries = {},
+        specFiltered = specFiltered,
+        specUnavailable = filters.specUnavailable,
+        specKey = specKey,
+        classToken = classToken,
     }
 
     local sevenDaysAgo = time() - (7 * 86400)
     local sessionStartedAt = CrHistory.sessionStartedAt or time()
     local baseline7d = nil
 
-    local history = CrHistory.GetHistoryTable()
-    for index = 1, #history do
-        local entry = history[index]
-        if entry and entry.bracket == bracket and entry.timestamp and entry.timestamp >= sevenDaysAgo then
+    for index = #entries, 1, -1 do
+        local entry = entries[index]
+        if entry.timestamp and entry.timestamp >= sevenDaysAgo then
             if CrHistory.IsValidCr(entry.crBefore or entry.cr) then
                 baseline7d = entry.crBefore or entry.cr
                 break
@@ -444,7 +522,21 @@ function CrHistory.BuildSummary(bracket)
         summary.net7d = currentCr - baseline7d
     end
 
-    local sessionStartCr = CrHistory.sessionStartCrByBracket[bracket]
+    local sessionStartCr = nil
+    if specFiltered then
+        for index = 1, #entries do
+            local entry = entries[index]
+            if entry.timestamp and entry.timestamp <= sessionStartedAt then
+                if CrHistory.IsValidCr(entry.cr) then
+                    sessionStartCr = entry.cr
+                    break
+                end
+            end
+        end
+    else
+        sessionStartCr = CrHistory.sessionStartCrByBracket[bracket]
+    end
+
     if CrHistory.IsValidCr(sessionStartCr) and CrHistory.IsValidCr(currentCr) then
         summary.netSession = currentCr - sessionStartCr
     end
@@ -462,7 +554,7 @@ function CrHistory.BuildSummary(bracket)
 
     summary.recentEntries = CrHistory.FilterRecentEntriesForDisplay(entries, PVL.CR_HISTORY_UI_LIMIT)
 
-    if CrHistory.IsValidCr(currentCr) then
+    if not specFiltered and CrHistory.IsValidCr(currentCr) then
         summary.peakCr = summary.peakCr and math.max(summary.peakCr, currentCr) or currentCr
         summary.lowCr = summary.lowCr and math.min(summary.lowCr, currentCr) or currentCr
     end

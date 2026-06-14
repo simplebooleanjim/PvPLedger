@@ -85,6 +85,23 @@ function UI.SetSpecFilter(specKey)
     UI.Refresh()
 end
 
+--- Registers events that should refresh personal panels when the player changes spec.
+function UI.EnsureSpecRefreshEvents()
+    if UI.specRefreshFrame then
+        return
+    end
+
+    local frame = CreateFrame("Frame")
+    frame:RegisterEvent("PLAYER_SPECIALIZATION_CHANGED")
+    frame:SetScript("OnEvent", function()
+        if UI.frame and UI.frame:IsShown() and UI.Refresh then
+            UI.Refresh()
+        end
+    end)
+
+    UI.specRefreshFrame = frame
+end
+
 --- Creates and returns the addon's primary UI frame.
 --- @return Frame
 function UI.CreateMainFrame()
@@ -296,10 +313,10 @@ function UI.CreateMainFrame()
         "PvPLedgerMatchDropdown",
         COLUMN_WIDTH - 8,
         function()
-            return UI.GetRecentMatchOptions()
+            return UI.GetRecentMatchOptions(nil, PVL.GetPersonalTrackingFilters())
         end,
         function()
-            return UI.GetSelectedMatchIndex()
+            return UI.GetSelectedMatchIndex(nil, PVL.GetPersonalTrackingFilters())
         end,
         function(_, option)
             UI.SetSelectedMatchId(option.value)
@@ -346,6 +363,7 @@ function UI.CreateMainFrame()
 
     frame.layoutVersion = UI_LAYOUT_VERSION
     UI.frame = frame
+    UI.EnsureSpecRefreshEvents()
     return frame
 end
 
@@ -361,19 +379,49 @@ function UI.BuildSummaryText(summary)
         Format.Label("Bracket:"),
         Format.Header(bracketName)
     ))
+
+    if summary.specUnavailable then
+        table.insert(lines, Format.Muted("Unable to detect your current specialization."))
+    elseif summary.specKey then
+        table.insert(lines, Format.StatLine("Current spec", Format.SpecShortName(summary.specKey)))
+    end
+
     table.insert(lines, Format.StatLine("Matches tracked", Format.Count(summary.matchCount)))
 
-    local recordLabel = PVL.LABELS.SEASON_RECORD
-    local winRateLabel = PVL.LABELS.SEASON_WIN_RATE
+    if summary.blizzardSeasonRecord then
+        local blizzardLabel = "Blizzard season"
+        if summary.bracket == PVL.BRACKETS.SHUFFLE then
+            blizzardLabel = "Blizzard season rounds"
+        end
+
+        local specSuffix = summary.specKey and (" (" .. Format.SpecShortName(summary.specKey) .. ")") or ""
+        table.insert(lines, Format.StatLine(
+            blizzardLabel .. specSuffix,
+            string.format(
+                "%s  %s  %s",
+                Format.WinLossRecord(summary.blizzardSeasonRecord.wins, summary.blizzardSeasonRecord.losses),
+                Format.WinPercent(summary.blizzardSeasonRecord.wins, summary.blizzardSeasonRecord.losses),
+                Format.Muted(string.format("(%s %s)", Format.Count(summary.blizzardSeasonRecord.games), summary.blizzardSeasonRecord.unit or "match"))
+            )
+        ))
+    end
+
+    local recordLabel = "Tracked spec record"
+    local winRateLabel = "Tracked spec win rate"
     if summary.bracket == PVL.BRACKETS.SHUFFLE then
-        recordLabel = PVL.LABELS.ROUND_RECORD
-        winRateLabel = PVL.LABELS.ROUND_WIN_RATE
+        recordLabel = "Tracked spec rounds"
+        winRateLabel = "Tracked spec round win rate"
     end
 
     if summary.seasonRecord then
+        local specSuffix = summary.specKey and (" (" .. Format.SpecShortName(summary.specKey) .. ")") or ""
         table.insert(lines, Format.StatLine(
-            recordLabel,
-            Format.WinLossRecord(summary.seasonRecord.wins, summary.seasonRecord.losses)
+            recordLabel .. specSuffix,
+            string.format(
+                "%s  %s",
+                Format.WinLossRecord(summary.seasonRecord.wins, summary.seasonRecord.losses),
+                Format.Muted(string.format("(%s logged)", Format.Count(summary.matchCount)))
+            )
         ))
         table.insert(lines, Format.StatLine(
             winRateLabel,
@@ -390,16 +438,27 @@ function UI.BuildSummaryText(summary)
                 )
             ))
         end
-    else
-        table.insert(lines, Format.Muted("No rated games this season for this bracket."))
+    elseif summary.specUnavailable then
+        table.insert(lines, Format.Muted("Select a specialization to view personal stats."))
+    elseif summary.specKey then
+        table.insert(lines, Format.Muted(string.format(
+            "No tracked matches on %s in this bracket yet.",
+            Format.SpecShortName(summary.specKey)
+        )))
     end
 
-    table.insert(lines, Format.StatLine(PVL.LABELS.CURRENT_CR, Format.Rating(summary.playerCurrentCR)))
-    table.insert(lines, Format.StatLine("Last match CR", Format.Rating(summary.playerCR)))
-    table.insert(lines, Format.StatLine(
-        PVL.GetObservedMmrLabel(summary.bracket, summary.playerMMRKind),
-        Format.Rating(summary.playerMMR)
-    ))
+    table.insert(lines, Format.StatLine("Latest spec CR", Format.Rating(summary.playerCurrentCR)))
+
+    if summary.playerMMRKind == "team" then
+        if PVL.IsValidObservedMmr(summary.playerPersonalMMR) then
+            table.insert(lines, Format.StatLine(PVL.LABELS.PERSONAL_MMR, Format.Rating(summary.playerPersonalMMR)))
+        end
+        if PVL.IsValidObservedMmr(summary.playerMMR) then
+            table.insert(lines, Format.StatLine(PVL.LABELS.TEAM_AVG_MMR, Format.Rating(summary.playerMMR)))
+        end
+    elseif PVL.IsValidObservedMmr(summary.playerMMR) then
+        table.insert(lines, Format.StatLine(PVL.LABELS.PERSONAL_MMR, Format.Rating(summary.playerMMR)))
+    end
 
     local standingLabel = "--"
     if summary.standing then
@@ -479,14 +538,16 @@ end
 
 --- Builds CR history text for the detail panel.
 --- @param bracket string|nil
+--- @param filters table|nil Optional `{ classToken, specKey }` player-spec filters.
 --- @return string
-function UI.BuildCrHistoryText(bracket)
+function UI.BuildCrHistoryText(bracket, filters)
     if not PVL.CrHistory then
         return Format.Muted("CR history is unavailable.")
     end
 
     bracket = bracket or PVL.GetActiveBracketFilter()
-    local summary = PVL.CrHistory.BuildSummary(bracket)
+    filters = filters or PVL.GetPersonalTrackingFilters()
+    local summary = PVL.CrHistory.BuildSummary(bracket, filters)
     local lines = {
         Format.StatLine(PVL.LABELS.CR_PEAK, Format.Rating(summary.peakCr)),
         Format.StatLine(PVL.LABELS.CR_LOW, Format.Rating(summary.lowCr)),
@@ -504,8 +565,17 @@ function UI.BuildCrHistoryText(bracket)
     }
 
     if #summary.recentEntries == 0 then
-        table.insert(lines, Format.Muted("No CR history recorded for this bracket yet."))
-        table.insert(lines, Format.Muted("Play rated games or open the PvP queue menu to start tracking."))
+        if summary.specUnavailable then
+            table.insert(lines, Format.Muted("Select a specialization to view CR history."))
+        elseif summary.specKey then
+            table.insert(lines, Format.Muted(string.format(
+                "No CR history recorded for %s in this bracket yet.",
+                Format.SpecShortName(summary.specKey)
+            )))
+        else
+            table.insert(lines, Format.Muted("No CR history recorded for this bracket yet."))
+            table.insert(lines, Format.Muted("Play rated games or open the PvP queue menu to start tracking."))
+        end
         return table.concat(lines, "\n")
     end
 
@@ -536,37 +606,53 @@ function UI.BuildSpecDetailPanelText(classToken, specKey)
     return UI.BuildOverviewDetailText()
 end
 
+--- Appends the current player spec label to one section header.
+--- @param headerText string
+--- @param personalFilters table
+--- @return string
+function UI.AppendPlayerSpecHeader(headerText, personalFilters)
+    if personalFilters.specKey then
+        return headerText .. "  " .. Format.SpecShortName(personalFilters.specKey)
+    end
+
+    return headerText
+end
+
 --- Updates the top-row detail panels.
 --- @param frame Frame
---- @param filters table
-function UI.UpdateDetailPanels(frame, filters)
-    local bracket = filters.bracket or PVL.GetActiveBracketFilter()
+--- @param ladderFilters table Ladder/class breakdown filters from the UI dropdowns.
+--- @param personalFilters table Player-spec filters for personal tracking panels.
+function UI.UpdateDetailPanels(frame, ladderFilters, personalFilters)
+    local bracket = ladderFilters.bracket or PVL.GetActiveBracketFilter()
 
-    frame.summaryHeader:SetText(Format.Header("Overview"))
-    frame.crHistoryHeader:SetText(Format.Header(PVL.LABELS.CR_HISTORY))
+    frame.summaryHeader:SetText(UI.AppendPlayerSpecHeader(Format.Header("Overview"), personalFilters))
+    frame.crHistoryHeader:SetText(UI.AppendPlayerSpecHeader(Format.Header(PVL.LABELS.CR_HISTORY), personalFilters))
 
     local specHeader = Format.Header("Class Breakdown")
-    if filters.specKey then
-        local classToken = filters.specKey:match("^(.-)_")
-        specHeader = Format.ClassIcon(classToken) .. Format.SpecShortName(filters.specKey)
-    elseif filters.classToken then
-        specHeader = Format.ClassIcon(filters.classToken) .. Format.ClassName(filters.classToken)
+    if ladderFilters.specKey then
+        local classToken = ladderFilters.specKey:match("^(.-)_")
+        specHeader = Format.ClassIcon(classToken) .. Format.SpecShortName(ladderFilters.specKey)
+    elseif ladderFilters.classToken then
+        specHeader = Format.ClassIcon(ladderFilters.classToken) .. Format.ClassName(ladderFilters.classToken)
     end
     frame.specDetailHeader:SetText(specHeader)
-    frame.setCrHistoryText(UI.BuildCrHistoryText(bracket))
-    frame.setSpecDetailText(UI.BuildSpecDetailPanelText(filters.classToken, filters.specKey))
+    frame.setCrHistoryText(UI.BuildCrHistoryText(bracket, personalFilters))
+    frame.setSpecDetailText(UI.BuildSpecDetailPanelText(ladderFilters.classToken, ladderFilters.specKey))
 end
 
 --- Updates the bottom match review panels for the selected match.
 --- @param frame Frame
---- @param filters table
-function UI.UpdateMatchDetailPanel(frame, filters)
-    local bracket = filters.bracket or PVL.GetActiveBracketFilter()
-    local selectedMatch = UI.ResolveSelectedMatch(bracket)
+--- @param ladderFilters table Ladder/class breakdown filters from the UI dropdowns.
+--- @param personalFilters table Player-spec filters for personal tracking panels.
+function UI.UpdateMatchDetailPanel(frame, ladderFilters, personalFilters)
+    local bracket = ladderFilters.bracket or PVL.GetActiveBracketFilter()
+    local selectedMatch = UI.ResolveSelectedMatch(bracket, personalFilters)
 
+    frame.matchDetailHeader:SetText(UI.AppendPlayerSpecHeader(Format.Header("Match Detail"), personalFilters))
+    frame.combatAnalysisHeader:SetText(UI.AppendPlayerSpecHeader(Format.Header("Combat Analysis"), personalFilters))
     frame.setMatchDetailText(UI.BuildMatchDetailText(selectedMatch))
 
-    local statDef = UI.GetCombatStatDefinition(filters.combatStat)
+    local statDef = UI.GetCombatStatDefinition(ladderFilters.combatStat)
     if frame.updateCombatMeter then
         frame.updateCombatMeter(selectedMatch, statDef)
     end
@@ -716,21 +802,63 @@ function UI.BuildSpecDetailText(specKey)
     return table.concat(lines, "\n")
 end
 
---- Toggles the main frame visibility.
-function UI.Toggle()
-    local frame = UI.CreateMainFrame()
-    if frame:IsShown() then
-        frame:Hide()
-    else
-        UI.Show()
+--- Returns whether any PvPLedger window is currently visible.
+--- @return boolean
+function UI.AnyWindowShown()
+    if UI.frame and UI.frame:IsShown() then
+        return true
     end
+
+    if UI.LadderView and UI.LadderView.frame and UI.LadderView.frame:IsShown() then
+        return true
+    end
+
+    if UI.TitleView and UI.TitleView.frame and UI.TitleView.frame:IsShown() then
+        return true
+    end
+
+    return false
+end
+
+--- Hides every PvPLedger window (main, ladder, title cutoffs).
+function UI.CloseAll()
+    if UI._closingAll then
+        return
+    end
+
+    UI._closingAll = true
+
+    if UI.TitleView and UI.TitleView.Hide then
+        UI.TitleView.Hide()
+    end
+
+    if UI.LadderView and UI.LadderView.Hide then
+        UI.LadderView.Hide()
+    end
+
+    if UI.frame then
+        UI.frame:Hide()
+    end
+
+    UI._closingAll = false
+end
+
+--- Toggles all PvPLedger windows: closes everything when any are open, otherwise opens the main window.
+function UI.Toggle()
+    if UI.AnyWindowShown() then
+        UI.CloseAll()
+        return
+    end
+
+    UI.Show()
 end
 
 --- Refreshes all text regions and dropdowns from current database state.
 function UI.Refresh()
     local frame = UI.CreateMainFrame()
-    local filters = UI.GetFilters()
-    local summary = PVL.BuildDashboardSummary(filters)
+    local ladderFilters = UI.GetFilters()
+    local personalFilters = PVL.GetPersonalTrackingFilters()
+    local summary = PVL.BuildDashboardSummary()
 
     if frame.refreshBracketDropdown then
         frame.refreshBracketDropdown()
@@ -760,8 +888,8 @@ function UI.Refresh()
     end
 
     frame.setSummaryText(UI.BuildSummaryText(summary))
-    UI.UpdateDetailPanels(frame, filters)
-    UI.UpdateMatchDetailPanel(frame, filters)
+    UI.UpdateDetailPanels(frame, ladderFilters, personalFilters)
+    UI.UpdateMatchDetailPanel(frame, ladderFilters, personalFilters)
 
     if UI.LadderView and UI.LadderView.frame and UI.LadderView.frame:IsShown() then
         UI.LadderView.Refresh()
@@ -783,9 +911,7 @@ function UI.Show()
     frame:Show()
 end
 
---- Hides the main frame.
+--- Hides every PvPLedger window.
 function UI.Hide()
-    if UI.frame then
-        UI.frame:Hide()
-    end
+    UI.CloseAll()
 end

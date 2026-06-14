@@ -151,7 +151,6 @@ def should_sync_remote_payload(config: SyncConfig, manifest: RemoteManifest, *, 
             remote_generated_at = fetch_app_data_generated_at(
                 repo=config.repo,
                 branch=config.branch,
-                token=config.resolved_github_token(),
             )
         except (HTTPError, URLError, TimeoutError, ValueError, json.JSONDecodeError):
             remote_generated_at = ""
@@ -251,8 +250,7 @@ def sync_app_data_from_local(config: SyncConfig, *, force: bool = False) -> Sync
 def sync_app_data_from_remote(config: SyncConfig, *, force: bool = False) -> SyncResult:
     """Download AppData.lua from GitHub."""
 
-    token = config.resolved_github_token()
-    manifest = fetch_manifest(repo=config.repo, branch=config.branch, token=token)
+    manifest = fetch_manifest(repo=config.repo, branch=config.branch)
     if not should_sync_remote_payload(config, manifest, force=force):
         installed_generated_at = read_installed_app_data_generated_at(config)
         detail = installed_generated_at or "unknown timestamp"
@@ -264,7 +262,7 @@ def sync_app_data_from_remote(config: SyncConfig, *, force: bool = False) -> Syn
             source="github",
         )
 
-    app_data = fetch_app_data(repo=config.repo, branch=config.branch, token=token)
+    app_data = fetch_app_data(repo=config.repo, branch=config.branch)
     if not validate_app_data(app_data):
         return SyncResult(updated=False, reason="Downloaded AppData.lua did not look valid.")
 

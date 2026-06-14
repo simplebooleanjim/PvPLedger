@@ -1118,12 +1118,28 @@ function MatchCollector.ParseScoreboardStats(stats)
             local statName = PVL.GetAccessibleString(stat.name) or ""
             local statTooltip = PVL.GetAccessibleString(stat.tooltip) or ""
             local statIcon = PVL.GetAccessibleString(stat.iconName) or ""
+            local columnName = ""
+            local columnTooltip = ""
+            local columnTitle = ""
+
+            if stat.pvpStatID and C_PvP and C_PvP.GetMatchPVPStatColumn then
+                local columnOk, column = pcall(C_PvP.GetMatchPVPStatColumn, stat.pvpStatID)
+                if columnOk and type(column) == "table" then
+                    columnName = PVL.GetAccessibleString(column.name) or ""
+                    columnTooltip = PVL.GetAccessibleString(column.tooltip) or ""
+                    columnTitle = PVL.GetAccessibleString(column.tooltipTitle) or ""
+                end
+            end
+
             local blobOk, blob = pcall(function()
                 return string.lower(string.format(
-                    "%s %s %s",
+                    "%s %s %s %s %s %s",
                     statName,
                     statTooltip,
-                    statIcon
+                    statIcon,
+                    columnName,
+                    columnTooltip,
+                    columnTitle
                 ))
             end)
             if not blobOk or not blob then
@@ -1149,6 +1165,11 @@ function MatchCollector.ParseScoreboardStats(stats)
                 "offensive dispel",
             }) then
                 parsed.dispels = parsed.dispels + value
+            elseif MatchCollector.ScoreboardStatMatches(blob, {
+                "death",
+                "killing blow",
+            }) then
+                parsed.deaths = parsed.deaths + value
             end
         end
     end
@@ -1928,6 +1949,30 @@ function MatchCollector.FindLocalParticipant(roster)
     return nil
 end
 
+--- Resolves personal MMR from one scoreboard participant row.
+--- @param localPlayer table|nil
+--- @return number|nil mmrAfter, number|nil mmrBefore
+function MatchCollector.ResolvePersonalMmr(localPlayer)
+    if not localPlayer then
+        return nil, nil
+    end
+
+    local personalAfter = nil
+    local personalBefore = nil
+
+    if MatchCollector.IsValidMmr(localPlayer.postmatchMMR) then
+        personalAfter = localPlayer.postmatchMMR
+    elseif MatchCollector.IsValidMmr(localPlayer.prematchMMR) then
+        personalAfter = localPlayer.prematchMMR
+    end
+
+    if MatchCollector.IsValidMmr(localPlayer.prematchMMR) then
+        personalBefore = localPlayer.prematchMMR
+    end
+
+    return personalAfter, personalBefore
+end
+
 --- Resolves the MMR value shown on the post-game score screen for one match.
 --- Arena, RBG, and Blitz expose team average MMR; Shuffle exposes personal MMR.
 --- @param localPlayer table|nil
@@ -1943,21 +1988,7 @@ function MatchCollector.ResolveObservedMmr(localPlayer, bracket)
         return nil, nil, nil
     end
 
-    local personalAfter = nil
-    local personalBefore = nil
-
-    if localPlayer then
-        if MatchCollector.IsValidMmr(localPlayer.postmatchMMR) then
-            personalAfter = localPlayer.postmatchMMR
-        elseif MatchCollector.IsValidMmr(localPlayer.prematchMMR) then
-            personalAfter = localPlayer.prematchMMR
-        end
-
-        if MatchCollector.IsValidMmr(localPlayer.prematchMMR) then
-            personalBefore = localPlayer.prematchMMR
-        end
-    end
-
+    local personalAfter, personalBefore = MatchCollector.ResolvePersonalMmr(localPlayer)
     if personalAfter then
         return personalAfter, personalBefore, "personal"
     end
@@ -2074,6 +2105,9 @@ function MatchCollector.TryFinalizeMatchComplete(attempt)
 
     if PVL.CombatLogCollector and PVL.CombatLogCollector.SyncFromDamageMeter then
         pcall(PVL.CombatLogCollector.SyncFromDamageMeter)
+    end
+
+    if PVL.CombatLogCollector then
         pcall(MatchCollector.PersistActiveCombatSession)
     end
 
@@ -2163,6 +2197,7 @@ function MatchCollector.FinalizeMatchComplete(bracket, roster, localPlayer, matc
 
     local charDb = PVL.GetCharDB()
     local mmrAfter, mmrBefore, mmrKind = MatchCollector.ResolveObservedMmr(localPlayer, bracket)
+    local personalMmrAfter, personalMmrBefore = MatchCollector.ResolvePersonalMmr(localPlayer)
     local playerCrBefore, playerCrAfter = MatchCollector.ResolveMatchCrFields(
         localPlayer,
         bracket,
@@ -2171,26 +2206,32 @@ function MatchCollector.FinalizeMatchComplete(bracket, roster, localPlayer, matc
 
     if localPlayer then
         local storedCr = playerCrAfter or localPlayer.rating
+        local storedPersonalMmr = personalMmrAfter
         if bracket == PVL.BRACKETS.SHUFFLE then
             charDb.lastShuffleCR = storedCr
             charDb.lastShuffleMMR = mmrAfter
             charDb.lastShuffleMMRKind = mmrKind
+            charDb.lastShufflePersonalMMR = storedPersonalMmr
         elseif bracket == PVL.BRACKETS.RBG then
             charDb.lastRbgCR = storedCr
             charDb.lastRbgMMR = mmrAfter
             charDb.lastRbgMMRKind = mmrKind
+            charDb.lastRbgPersonalMMR = storedPersonalMmr
         elseif bracket == PVL.BRACKETS.ARENA_2V2 then
             charDb.lastArena2v2CR = storedCr
             charDb.lastArena2v2MMR = mmrAfter
             charDb.lastArena2v2MMRKind = mmrKind
+            charDb.lastArena2v2PersonalMMR = storedPersonalMmr
         elseif bracket == PVL.BRACKETS.ARENA_3V3 then
             charDb.lastArena3v3CR = storedCr
             charDb.lastArena3v3MMR = mmrAfter
             charDb.lastArena3v3MMRKind = mmrKind
+            charDb.lastArena3v3PersonalMMR = storedPersonalMmr
         else
             charDb.lastBlitzCR = storedCr
             charDb.lastBlitzMMR = mmrAfter
             charDb.lastBlitzMMRKind = mmrKind
+            charDb.lastBlitzPersonalMMR = storedPersonalMmr
         end
     end
 
@@ -2204,7 +2245,8 @@ function MatchCollector.FinalizeMatchComplete(bracket, roster, localPlayer, matc
     local combatSummary = nil
     if PVL.CombatLogCollector then
         pcall(MatchCollector.PersistActiveCombatSession)
-        local ok, result = pcall(PVL.CombatLogCollector.BuildSummary, roster)
+        local matchContext = MatchCollector.activeMatch or PVL.CombatLogCollector.matchContext
+        local ok, result = pcall(PVL.CombatLogCollector.BuildSummary, roster, matchContext)
         if ok then
             combatSummary = result
         end
@@ -2250,6 +2292,12 @@ function MatchCollector.FinalizeMatchComplete(bracket, roster, localPlayer, matc
         return
     end
 
+    local playerSpec = nil
+    if localPlayer then
+        playerSpec = PVL.GetMatchPlayerSpec({ roster = { localPlayer } })
+            or PVL.MakeSpecKey(localPlayer.class, localPlayer.spec)
+    end
+
     local matchRecord = {
         matchId = MatchCollector.BuildMatchId(bracket, roster),
         matchFingerprint = matchFingerprint,
@@ -2258,11 +2306,14 @@ function MatchCollector.FinalizeMatchComplete(bracket, roster, localPlayer, matc
         timestamp = time(),
         mapID = MatchCollector.activeMatch and MatchCollector.activeMatch.mapID or C_Map.GetBestMapForUnit("player"),
         won = MatchCollector.ResolveLocalMatchWon(localPlayer),
+        playerSpec = playerSpec,
         playerCRBefore = playerCrBefore,
         playerCRAfter = playerCrAfter,
         playerMMRBefore = mmrBefore,
         playerMMRAfter = mmrAfter,
         playerMMRKind = mmrKind,
+        playerPersonalMMRBefore = personalMmrBefore,
+        playerPersonalMMRAfter = personalMmrAfter,
         roster = roster,
         combatSummary = combatSummary,
     }

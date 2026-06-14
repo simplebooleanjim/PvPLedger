@@ -106,7 +106,7 @@ export default {
 
     if (path === "/api/v1/exports" && request.method === "POST") {
       const authFailure = authorizeRequest(request, env.INGEST_TOKEN);
-      if authFailure) {
+      if (authFailure) {
         return authFailure;
       }
 

@@ -2,7 +2,6 @@
 
 from __future__ import annotations
 
-import base64
 import json
 import re
 import urllib.error
@@ -35,12 +34,6 @@ def app_data_raw_url(*, repo: str, branch: str) -> str:
     return f"https://raw.githubusercontent.com/{repo}/{branch}/PvPLedger-AppHelper/AppData.lua"
 
 
-def github_api_contents_url(*, repo: str, branch: str, path: str) -> str:
-    """Build the GitHub Contents API URL for one repository file."""
-
-    return f"https://api.github.com/repos/{repo}/contents/{path}?ref={branch}"
-
-
 def build_request_headers(*, token: str = "") -> dict[str, str]:
     """Build HTTP headers for GitHub requests."""
 
@@ -69,51 +62,10 @@ def fetch_text(url: str, *, token: str = "", timeout: float = 30.0) -> str:
         return response.read().decode("utf-8")
 
 
-def fetch_repo_file_text(*, repo: str, branch: str, path: str, token: str = "") -> str:
-    """Fetch one repository file, using the GitHub API when authenticated."""
+def fetch_manifest(*, repo: str, branch: str) -> RemoteManifest:
+    """Download and parse the remote ladder manifest from the public repo."""
 
-    if token:
-        payload = fetch_json(
-            github_api_contents_url(repo=repo, branch=branch, path=path),
-            token=token,
-        )
-        content = payload.get("content")
-        encoding = payload.get("encoding")
-        if content and encoding == "base64":
-            return base64.b64decode(content).decode("utf-8")
-
-        download_url = payload.get("download_url")
-        if download_url:
-            return fetch_text(str(download_url), token=token, timeout=120.0)
-
-        raise ValueError(f"Unexpected GitHub API response for {path}.")
-
-    if path.endswith(".json"):
-        return fetch_text(manifest_raw_url(repo=repo, branch=branch), token=token)
-    if path.endswith("AppData.lua"):
-        return fetch_text(app_data_raw_url(repo=repo, branch=branch), token=token)
-
-    return fetch_text(
-        f"https://raw.githubusercontent.com/{repo}/{branch}/{path}",
-        token=token,
-    )
-
-
-def fetch_manifest(*, repo: str, branch: str, token: str = "") -> RemoteManifest:
-    """Download and parse the remote ladder manifest."""
-
-    if token:
-        payload = json.loads(
-            fetch_repo_file_text(
-                repo=repo,
-                branch=branch,
-                path="Data/ladder-manifest.json",
-                token=token,
-            )
-        )
-    else:
-        payload = fetch_json(manifest_raw_url(repo=repo, branch=branch), token=token)
-
+    payload = fetch_json(manifest_raw_url(repo=repo, branch=branch))
     return RemoteManifest(
         region=str(payload.get("region", "US")),
         generated_date=str(payload.get("generatedDate", "")),
@@ -122,17 +74,10 @@ def fetch_manifest(*, repo: str, branch: str, token: str = "") -> RemoteManifest
     )
 
 
-def fetch_app_data(*, repo: str, branch: str, token: str = "") -> str:
-    """Download AppHelper AppData.lua from GitHub."""
+def fetch_app_data(*, repo: str, branch: str) -> str:
+    """Download AppHelper AppData.lua from the public repo."""
 
-    if token:
-        return fetch_repo_file_text(
-            repo=repo,
-            branch=branch,
-            path="PvPLedger-AppHelper/AppData.lua",
-            token=token,
-        )
-    return fetch_text(app_data_raw_url(repo=repo, branch=branch), token=token)
+    return fetch_text(app_data_raw_url(repo=repo, branch=branch))
 
 
 def read_app_data_generated_at(content: str) -> str:
@@ -142,14 +87,14 @@ def read_app_data_generated_at(content: str) -> str:
     return match.group(1) if match else ""
 
 
-def fetch_app_data_generated_at(*, repo: str, branch: str, token: str = "") -> str:
+def fetch_app_data_generated_at(*, repo: str, branch: str) -> str:
     """Fetch only the AppData.lua header and return its generatedAt timestamp."""
 
     url = app_data_raw_url(repo=repo, branch=branch)
     request = urllib.request.Request(
         url,
         headers={
-            **build_request_headers(token=token),
+            **build_request_headers(),
             "Range": "bytes=0-4095",
         },
     )
@@ -159,7 +104,7 @@ def fetch_app_data_generated_at(*, repo: str, branch: str, token: str = "") -> s
     except urllib.error.HTTPError as exc:
         if exc.code != 416:
             raise
-        header = fetch_text(url, token=token, timeout=30.0)[:4096]
+        header = fetch_text(url, timeout=30.0)[:4096]
 
     return read_app_data_generated_at(header)
 
@@ -197,11 +142,6 @@ def format_github_error(exc: Exception) -> str:
     """Return a concise GitHub error message for CLI output."""
 
     if isinstance(exc, urllib.error.HTTPError):
-        if exc.code in {401, 403}:
-            return (
-                f"{exc} — check your GitHub token scopes "
-                "(ladder sync needs Contents read; match dump upload needs Contents write)."
-            )
         if exc.code == 404:
-            return f"{exc} — repo/path not found, or token lacks access to this private repo."
+            return f"{exc} — repo/path not found. Check repo and branch settings."
     return str(exc)
