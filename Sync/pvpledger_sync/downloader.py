@@ -10,6 +10,7 @@ from pathlib import Path
 from urllib.error import HTTPError, URLError
 
 from .config import SyncConfig, save_config
+from .i18n import t
 from .manifest import (
     RemoteManifest,
     fetch_app_data,
@@ -28,6 +29,7 @@ class SyncResult:
 
     updated: bool
     reason: str
+    reason_key: str = ""
     manifest_generated_date: str = ""
     app_data_path: str = ""
     source: str = ""
@@ -68,11 +70,8 @@ def describe_player_index_status(player_count: int) -> str:
     """
 
     if player_count <= 0:
-        return (
-            "View Ladder player index: empty. The next ladder refresh must run with "
-            "--include-players before View Ladder can list names."
-        )
-    return f"View Ladder player index: {player_count:,} players."
+        return t("SYNC.PLAYER_INDEX_EMPTY")
+    return t("SYNC.PLAYER_INDEX_COUNT", count=f"{player_count:,}")
 
 
 def repo_root_dir() -> Path:
@@ -81,22 +80,52 @@ def repo_root_dir() -> Path:
     return Path(__file__).resolve().parent.parent.parent
 
 
-def local_app_data_source() -> Path:
-    """Return the repo-local AppData.lua used as an offline fallback."""
+def regional_manifest_path(region: str) -> Path:
+    """Return the repo-local ladder manifest path for one region."""
 
-    return repo_root_dir() / "PvPLedger-AppHelper" / "AppData.lua"
+    return repo_root_dir() / "Data" / regional_manifest_filename(region)
 
 
-def local_manifest_source() -> Path:
+def regional_app_data_path(region: str) -> Path:
+    """Return the repo-local AppHelper bridge path for one region."""
+
+    return repo_root_dir() / "PvPLedger-AppHelper" / regional_app_data_filename(region)
+
+
+def regional_manifest_filename(region: str) -> str:
+    """Return the ladder manifest filename for one region."""
+
+    region_upper = region.upper()
+    if region_upper == "US":
+        return "ladder-manifest.json"
+    return f"ladder-manifest-{region_upper}.json"
+
+
+def regional_app_data_filename(region: str) -> str:
+    """Return the AppHelper bridge filename for one region."""
+
+    region_upper = region.upper()
+    if region_upper == "US":
+        return "AppData.lua"
+    return f"AppData-{region_upper}.lua"
+
+
+def local_app_data_source(region: str = "US") -> Path:
+    """Return the repo-local AppData bridge file used as an offline fallback."""
+
+    return regional_app_data_path(region)
+
+
+def local_manifest_source(region: str = "US") -> Path:
     """Return the repo-local ladder manifest used as an offline fallback."""
 
-    return repo_root_dir() / "Data" / "ladder-manifest.json"
+    return regional_manifest_path(region)
 
 
-def load_local_manifest() -> RemoteManifest:
+def load_local_manifest(region: str = "US") -> RemoteManifest:
     """Load ladder-manifest.json from the local repository checkout."""
 
-    payload = json.loads(local_manifest_source().read_text(encoding="utf-8"))
+    payload = json.loads(local_manifest_source(region).read_text(encoding="utf-8"))
     return RemoteManifest(
         region=str(payload.get("region", "US")),
         generated_date=str(payload.get("generatedDate", "")),
@@ -122,7 +151,7 @@ def should_sync_local_payload(config: SyncConfig, *, force: bool) -> bool:
     if force:
         return True
 
-    source_path = local_app_data_source()
+    source_path = local_app_data_source(config.region)
     if not source_path.exists():
         return False
 
@@ -133,7 +162,7 @@ def should_sync_local_payload(config: SyncConfig, *, force: bool) -> bool:
     if not installed_generated_at:
         return True
     if not local_generated_at:
-        return manifest_is_newer(load_local_manifest(), config.last_manifest_generated_date)
+        return manifest_is_newer(load_local_manifest(config.region), config.last_manifest_generated_date)
 
     return local_generated_at > installed_generated_at
 
@@ -151,6 +180,7 @@ def should_sync_remote_payload(config: SyncConfig, manifest: RemoteManifest, *, 
             remote_generated_at = fetch_app_data_generated_at(
                 repo=config.repo,
                 branch=config.branch,
+                region=config.region,
             )
         except (HTTPError, URLError, TimeoutError, ValueError, json.JSONDecodeError):
             remote_generated_at = ""
@@ -175,7 +205,10 @@ def atomic_write_text(path: Path, content: str) -> None:
 def validate_app_data(content: str) -> bool:
     """Return True when AppData.lua contains the expected bridge payload."""
 
-    return "PVL_AppHelperPendingSnapshots" in content
+    return (
+        "PVL_AppHelperPendingSnapshots" in content
+        or "PVL_AppHelperPendingSnapshotsByRegion" in content
+    )
 
 
 def finalize_sync(
@@ -195,17 +228,15 @@ def finalize_sync(
     )
     config.last_app_data_sync_at = datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
     save_config(config)
-    reason = f"AppData.lua updated from {source}."
+    reason = t("SYNC.APPDATA_UPDATED_FROM", source=source)
     if player_index_count <= 0:
-        reason = (
-            f"{reason} Ladder aggregates synced, but the player list is still empty. "
-            "View Ladder needs a ladder refresh with --include-players."
-        )
+        reason = f"{reason} {t('SYNC.LADDER_AGGREGATES_NO_PLAYERS')}"
     else:
         reason = f"{reason} {describe_player_index_status(player_index_count)}"
     return SyncResult(
         updated=True,
         reason=reason,
+        reason_key="SYNC.APPDATA_UPDATED",
         manifest_generated_date=manifest_generated_date,
         app_data_path=str(app_data_path),
         source=source,
@@ -216,18 +247,20 @@ def finalize_sync(
 def sync_app_data_from_local(config: SyncConfig, *, force: bool = False) -> SyncResult:
     """Copy AppData.lua from the local PvPLedger repository checkout."""
 
-    source_path = local_app_data_source()
+    source_path = local_app_data_source(config.region)
     if not source_path.exists():
         return SyncResult(
             updated=False,
-            reason=f"Local AppData source not found: {source_path}",
+            reason=t("SYNC.LOCAL_SOURCE_NOT_FOUND", path=source_path),
+            reason_key="SYNC.LOCAL_SOURCE_NOT_FOUND",
         )
 
-    manifest = load_local_manifest()
+    manifest = load_local_manifest(config.region)
     if not should_sync_local_payload(config, force=force):
         return SyncResult(
             updated=False,
-            reason="Already up to date (local repo).",
+            reason=t("SYNC.ALREADY_UP_TO_DATE_LOCAL"),
+            reason_key="SYNC.ALREADY_UP_TO_DATE_LOCAL",
             manifest_generated_date=manifest.generated_date,
             app_data_path=str(config.app_data_path),
             source="local-repo",
@@ -235,7 +268,11 @@ def sync_app_data_from_local(config: SyncConfig, *, force: bool = False) -> Sync
 
     content = source_path.read_text(encoding="utf-8")
     if not validate_app_data(content):
-        return SyncResult(updated=False, reason="Local AppData.lua did not look valid.")
+        return SyncResult(
+            updated=False,
+            reason=t("SYNC.LOCAL_APPDATA_INVALID"),
+            reason_key="SYNC.LOCAL_APPDATA_INVALID",
+        )
 
     atomic_write_text(config.app_data_path, content)
     return finalize_sync(
@@ -250,21 +287,34 @@ def sync_app_data_from_local(config: SyncConfig, *, force: bool = False) -> Sync
 def sync_app_data_from_remote(config: SyncConfig, *, force: bool = False) -> SyncResult:
     """Download AppData.lua from GitHub."""
 
-    manifest = fetch_manifest(repo=config.repo, branch=config.branch)
+    manifest = fetch_manifest(repo=config.repo, branch=config.branch, region=config.region)
     if not should_sync_remote_payload(config, manifest, force=force):
         installed_generated_at = read_installed_app_data_generated_at(config)
         detail = installed_generated_at or "unknown timestamp"
         return SyncResult(
             updated=False,
-            reason=f"Already up to date (installed payload: {detail}).",
+            reason=t("SYNC.ALREADY_UP_TO_DATE_INSTALLED", detail=detail),
+            reason_key="SYNC.ALREADY_UP_TO_DATE_INSTALLED",
             manifest_generated_date=manifest.generated_date,
             app_data_path=str(config.app_data_path),
             source="github",
         )
 
-    app_data = fetch_app_data(repo=config.repo, branch=config.branch)
+    app_data = fetch_app_data(repo=config.repo, branch=config.branch, region=config.region)
     if not validate_app_data(app_data):
-        return SyncResult(updated=False, reason="Downloaded AppData.lua did not look valid.")
+        return SyncResult(
+            updated=False,
+            reason=t("SYNC.DOWNLOADED_INVALID"),
+            reason_key="SYNC.DOWNLOADED_INVALID",
+        )
+
+    expected_region = f'region = "{config.region.upper()}"'
+    if expected_region not in app_data[:4096]:
+        return SyncResult(
+            updated=False,
+            reason=t("SYNC.REGION_MISMATCH", region=config.region.upper()),
+            reason_key="SYNC.REGION_MISMATCH",
+        )
 
     atomic_write_text(config.app_data_path, app_data)
     return finalize_sync(
@@ -280,7 +330,11 @@ def sync_app_data(config: SyncConfig, *, force: bool = False, local_only: bool =
     """Sync AppData.lua from GitHub, falling back to the local repo when remote is unavailable."""
 
     if not config.wow_addons_dir:
-        return SyncResult(updated=False, reason="WoW AddOns directory is not configured.")
+        return SyncResult(
+            updated=False,
+            reason=t("SYNC.ADDONS_NOT_CONFIGURED"),
+            reason_key="SYNC.ADDONS_NOT_CONFIGURED",
+        )
 
     if local_only:
         return sync_app_data_from_local(config, force=force)
@@ -289,22 +343,29 @@ def sync_app_data(config: SyncConfig, *, force: bool = False, local_only: bool =
         return sync_app_data_from_remote(config, force=force)
     except (HTTPError, URLError, TimeoutError, json.JSONDecodeError, ValueError) as exc:
         local_result = sync_app_data_from_local(config, force=force)
-        if local_result.updated or local_result.reason == "Already up to date (local repo).":
+        if local_result.updated or local_result.reason_key == "SYNC.ALREADY_UP_TO_DATE_LOCAL":
             if not local_result.updated:
-                local_result.reason = (
-                    f"{local_result.reason} GitHub was unavailable ({exc}); used local repo copy."
+                local_result.reason = t(
+                    "SYNC.GITHUB_UNAVAILABLE_LOCAL",
+                    reason=local_result.reason,
+                    error=exc,
                 )
             else:
-                local_result.reason = (
-                    f"{local_result.reason} GitHub was unavailable ({exc}); used local repo copy."
+                local_result.reason = t(
+                    "SYNC.GITHUB_UNAVAILABLE_LOCAL",
+                    reason=local_result.reason,
+                    error=exc,
                 )
             return local_result
 
         return SyncResult(
             updated=False,
-            reason=(
-                f"GitHub sync failed ({exc}) and local fallback also failed: {local_result.reason}"
+            reason=t(
+                "SYNC.GITHUB_AND_LOCAL_FAILED",
+                error=exc,
+                reason=local_result.reason,
             ),
+            reason_key="SYNC.GITHUB_AND_LOCAL_FAILED",
         )
 
 
@@ -325,11 +386,11 @@ def inspect_installed_app_data(config: SyncConfig) -> tuple[int, str]:
 
     path = config.app_data_path
     if not path.exists():
-        return 0, "Installed AppData.lua: not found."
+        return 0, t("SYNC.INSTALLED_NOT_FOUND")
 
     content = path.read_text(encoding="utf-8")
     if not validate_app_data(content):
-        return 0, "Installed AppData.lua: invalid bridge payload."
+        return 0, t("SYNC.INSTALLED_INVALID")
 
     player_count = count_players_in_app_data(content)
     return player_count, describe_player_index_status(player_count)

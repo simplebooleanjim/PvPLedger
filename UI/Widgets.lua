@@ -8,6 +8,15 @@ local UI = PVL.UI
 --- Texture path for the PvPLedger brand logo (shipped as a TGA under Media/).
 UI.LOGO_TEXTURE = "Interface\\AddOns\\PvPLedger\\Media\\PvPLedgerLogo"
 
+--- Default Blizzard body font for multiline panels.
+UI.BODY_FONT = "GameFontHighlightSmall"
+
+--- Extra pixels between lines when using the default UI font (avoids overlap with inline icons).
+UI.BODY_LINE_SPACING = 4
+
+--- Bottom padding added to scroll child height after measuring text.
+UI.SCROLL_TEXT_PADDING_Y = 16
+
 --- Stamps the PvPLedger logo onto a window's title bar for consistent branding.
 --- @param frame Frame Window created from a Basic frame template.
 --- @param size number|nil Logo edge size in pixels (default 22).
@@ -81,12 +90,18 @@ function UI.UpdateScrollBarVisibility(scrollFrame)
 end
 
 --- Registers one frame to close when the player presses Escape.
---- Closing any PvPLedger window also closes the rest via ``UI.CloseAll()``.
 --- @param frame Frame
-function UI.RegisterEscapeToClose(frame)
+--- @param closeAll boolean|nil When true (default), dismissing this window also closes every PvPLedger window.
+function UI.RegisterEscapeToClose(frame, closeAll)
     if not frame then
         return
     end
+
+    if closeAll == nil then
+        closeAll = true
+    end
+
+    frame._pvlCloseAllOnDismiss = closeAll
 
     local frameName = frame.GetName and frame:GetName()
     if frameName then
@@ -104,10 +119,10 @@ function UI.RegisterEscapeToClose(frame)
         end
     end
 
-    if frame.CloseButton and not frame.CloseButton._pvlCloseAllHooked then
-        frame.CloseButton._pvlCloseAllHooked = true
+    if frame.CloseButton and not frame.CloseButton._pvlCloseHooked then
+        frame.CloseButton._pvlCloseHooked = true
         frame.CloseButton:SetScript("OnClick", function()
-            if UI.CloseAll then
+            if frame._pvlCloseAllOnDismiss and UI.CloseAll then
                 UI.CloseAll()
             else
                 frame:Hide()
@@ -118,7 +133,7 @@ function UI.RegisterEscapeToClose(frame)
     if not frame._pvlEscapeHooked then
         frame._pvlEscapeHooked = true
         frame:HookScript("OnHide", function()
-            if UI._closingAll or not UI.CloseAll then
+            if UI._closingAll or not frame._pvlCloseAllOnDismiss or not UI.CloseAll then
                 return
             end
 
@@ -146,7 +161,7 @@ function UI.CreateDropdown(parent, name, width, getOptions, getSelectedIndex, on
         local options = getOptions()
         local selectedIndex = getSelectedIndex()
         local selectedOption = options[selectedIndex]
-        local label = selectedOption and selectedOption.label or "Select"
+        local label = selectedOption and selectedOption.label or PVL.L("UI.DROPDOWN.SELECT")
 
         UIDropDownMenu_SetSelectedID(dropdown, selectedIndex)
         UIDropDownMenu_SetText(dropdown, label)
@@ -172,6 +187,15 @@ function UI.CreateDropdown(parent, name, width, getOptions, getSelectedIndex, on
     return dropdown, Refresh
 end
 
+--- Applies the standard body font and line spacing to one FontString.
+--- @param fontString FontString
+function UI.ApplyBodyFont(fontString)
+    fontString:SetFontObject(UI.BODY_FONT or "GameFontHighlightSmall")
+    if fontString.SetSpacing then
+        fontString:SetSpacing(UI.BODY_LINE_SPACING or 0)
+    end
+end
+
 --- Creates a labeled section header font string.
 --- @param parent Frame
 --- @param text string
@@ -195,7 +219,8 @@ end
 --- @param point table
 --- @return FontString
 function UI.CreateBodyText(parent, width, point)
-    local body = parent:CreateFontString(nil, "OVERLAY", "GameFontHighlightSmall")
+    local body = parent:CreateFontString(nil, "OVERLAY", UI.BODY_FONT or "GameFontHighlightSmall")
+    UI.ApplyBodyFont(body)
     body:SetPoint(unpack(point))
     body:SetWidth(width)
     body:SetJustifyH("LEFT")
@@ -238,7 +263,8 @@ function UI.CreateScrollableTextArea(parent, name, topAnchor, leftAnchor, rightA
     local scrollChild = CreateFrame("Frame", name .. "Child", scrollFrame)
     scrollFrame:SetScrollChild(scrollChild)
 
-    local text = scrollChild:CreateFontString(nil, "ARTWORK", "GameFontHighlightSmall")
+    local text = scrollChild:CreateFontString(nil, "ARTWORK", UI.BODY_FONT or "GameFontHighlightSmall")
+    UI.ApplyBodyFont(text)
     text:SetJustifyH("LEFT")
     text:SetJustifyV("TOP")
     text:SetPoint("TOPLEFT", scrollChild, "TOPLEFT", 6, -4)
@@ -257,7 +283,7 @@ function UI.CreateScrollableTextArea(parent, name, topAnchor, leftAnchor, rightA
 
         local textHeight = text:GetStringHeight() or 1
         local frameHeight = scrollFrame:GetHeight() or 1
-        scrollChild:SetSize(textWidth + TEXT_INSET_X, math.max(textHeight + 8, frameHeight))
+        scrollChild:SetSize(textWidth + TEXT_INSET_X, math.max(textHeight + (UI.SCROLL_TEXT_PADDING_Y or 8), frameHeight))
 
         scrollFrame:SetVerticalScroll(0)
         if scrollFrame.UpdateScrollChildRect then

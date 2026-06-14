@@ -51,16 +51,16 @@ end
 --- @param hordeName string Title shown to Horde players.
 --- @param faction string|nil Resolved player faction.
 --- @return string
-local function FactionTitle(allianceName, hordeName, faction)
+local function FactionTitle(allianceKey, hordeKey, faction)
     if faction == "Horde" then
-        return hordeName
+        return PVL.L(hordeKey)
     end
 
     if faction == "Alliance" then
-        return allianceName
+        return PVL.L(allianceKey)
     end
 
-    return string.format("%s / %s", allianceName, hordeName)
+    return PVL.L("TITLE.FACTION_DUAL", PVL.L(allianceKey), PVL.L(hordeKey))
 end
 
 -- ---------------------------------------------------------------------------
@@ -86,11 +86,11 @@ PVL.ELITE_RATING = 2300
 --- @return table[]
 local function BuildFixedRatingTiers()
     return {
-        { id = "combatant", name = "Combatant", kind = "rating", rating = 1000, color = C.COMBATANT },
-        { id = "challenger", name = "Challenger", kind = "rating", rating = 1400, color = C.CHALLENGER },
-        { id = "rival", name = "Rival", kind = "rating", rating = 1800, color = C.RIVAL },
-        { id = "duelist", name = "Duelist", kind = "rating", rating = 2100, color = C.DUELIST },
-        { id = "elite", name = "Elite", kind = "rating", rating = PVL.ELITE_RATING, color = C.ELITE },
+        { id = "combatant", locKey = "TITLE.COMBATANT", name = "Combatant", kind = "rating", rating = 1000, color = C.COMBATANT },
+        { id = "challenger", locKey = "TITLE.CHALLENGER", name = "Challenger", kind = "rating", rating = 1400, color = C.CHALLENGER },
+        { id = "rival", locKey = "TITLE.RIVAL", name = "Rival", kind = "rating", rating = 1800, color = C.RIVAL },
+        { id = "duelist", locKey = "TITLE.DUELIST", name = "Duelist", kind = "rating", rating = 2100, color = C.DUELIST },
+        { id = "elite", locKey = "TITLE.ELITE", name = "Elite", kind = "rating", rating = PVL.ELITE_RATING, color = C.ELITE },
     }
 end
 
@@ -110,6 +110,7 @@ PVL.TITLE_DEFINITIONS = {
     [PVL.BRACKETS.ARENA_3V3] = WithFixedTiers({
         {
             id = "gladiator",
+            locKey = "TITLE.GLADIATOR",
             name = "Gladiator",
             kind = "rating",
             rating = PVL.ELITE_RATING,
@@ -120,6 +121,7 @@ PVL.TITLE_DEFINITIONS = {
         },
         {
             id = "rank1",
+            locKey = "TITLE.RANK1_GLADIATOR",
             name = "Rank 1: Prized Gladiator",
             kind = "percentile",
             percentile = 0.1,
@@ -135,6 +137,7 @@ PVL.TITLE_DEFINITIONS = {
     [PVL.BRACKETS.SHUFFLE] = WithFixedTiers({
         {
             id = "legend",
+            locKey = "TITLE.LEGEND",
             name = "Legend",
             kind = "rating",
             rating = PVL.ELITE_RATING,
@@ -145,6 +148,7 @@ PVL.TITLE_DEFINITIONS = {
         },
         {
             id = "rank1",
+            locKey = "TITLE.RANK1_LEGEND",
             name = "Rank 1: Prized Legend",
             kind = "percentile",
             percentile = 0.1,
@@ -159,7 +163,7 @@ PVL.TITLE_DEFINITIONS = {
         {
             id = "guardian",
             name = function(faction)
-                return FactionTitle("Guardian of the Alliance", "Guardian of the Horde", faction)
+                return FactionTitle("TITLE.GUARDIAN_ALLIANCE", "TITLE.GUARDIAN_HORDE", faction)
             end,
             kind = "percentile",
             percentile = 3.0,
@@ -169,7 +173,7 @@ PVL.TITLE_DEFINITIONS = {
         {
             id = "hero",
             name = function(faction)
-                return FactionTitle("Hero of the Alliance", "Hero of the Horde", faction)
+                return FactionTitle("TITLE.HERO_ALLIANCE", "TITLE.HERO_HORDE", faction)
             end,
             kind = "percentile",
             percentile = 0.5,
@@ -184,7 +188,7 @@ PVL.TITLE_DEFINITIONS = {
         {
             id = "rank1",
             name = function(faction)
-                return FactionTitle("Rank 1: Prized Marshal", "Rank 1: Prized Warlord", faction)
+                return FactionTitle("TITLE.RANK1_MARSHAL", "TITLE.RANK1_WARLORD", faction)
             end,
             kind = "percentile",
             percentile = 0.1,
@@ -457,6 +461,10 @@ end
 function PVL.GetTitleName(def, faction)
     if type(def.name) == "function" then
         return def.name(faction)
+    end
+
+    if def.locKey then
+        return PVL.L(def.locKey)
     end
 
     return def.name

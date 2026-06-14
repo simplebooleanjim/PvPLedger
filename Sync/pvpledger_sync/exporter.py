@@ -7,6 +7,7 @@ from pathlib import Path
 from typing import Any
 
 from .config import SyncConfig
+from .i18n import t
 from .saved_vars import find_app_helper_saved_vars, get_pending_matches, load_app_helper_saved_vars
 
 
@@ -19,6 +20,7 @@ class ExportScanResult:
     pending_matches: int = 0
     awaiting_reload_matches: int = 0
     note: str = ""
+    note_key: str = ""
 
 
 def _exclude_acknowledged_matches(
@@ -83,7 +85,11 @@ def scan_exports(
     addons_dir = Path(config_addons_dir)
     saved_vars_path = find_app_helper_saved_vars(addons_dir)
     if not saved_vars_path:
-        return ExportScanResult(found=False, note="No PvPLedger_AppHelper SavedVariables file found yet.")
+        return ExportScanResult(
+            found=False,
+            note=t("EXPORT.NO_SAVED_VARS"),
+            note_key="EXPORT.NO_SAVED_VARS",
+        )
 
     try:
         document = load_app_helper_saved_vars(saved_vars_path)
@@ -108,7 +114,8 @@ def scan_exports(
             path=str(saved_vars_path),
             pending_matches=pending,
             awaiting_reload_matches=awaiting_reload,
-            note=f"{pending} pending match export(s) ready for upload.",
+            note=t("EXPORT.PENDING_READY", count=pending),
+            note_key="EXPORT.PENDING_READY",
         )
 
     if awaiting_reload:
@@ -117,14 +124,16 @@ def scan_exports(
             path=str(saved_vars_path),
             pending_matches=0,
             awaiting_reload_matches=awaiting_reload,
-            note=f"{awaiting_reload} uploaded match export(s) awaiting /reload in WoW.",
+            note=t("EXPORT.AWAITING_RELOAD", count=awaiting_reload),
+            note_key="EXPORT.AWAITING_RELOAD",
         )
 
     return ExportScanResult(
         found=True,
         path=str(saved_vars_path),
         pending_matches=0,
-        note="No pending exports.",
+        note=t("EXPORT.NO_PENDING"),
+        note_key="EXPORT.NO_PENDING",
     )
 
 
@@ -144,7 +153,11 @@ def scan_exports_for_config(config: SyncConfig) -> ExportScanResult:
     """
 
     if not config.wow_addons_dir:
-        return ExportScanResult(found=False, note="WoW AddOns directory is not configured.")
+        return ExportScanResult(
+            found=False,
+            note=t("EXPORT.ADDONS_NOT_CONFIGURED"),
+            note_key="EXPORT.ADDONS_NOT_CONFIGURED",
+        )
 
     return scan_exports(
         config.wow_addons_dir,

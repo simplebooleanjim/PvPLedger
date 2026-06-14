@@ -23,6 +23,7 @@ from .exporter import scan_exports_for_config
 from .ingest_server import default_ingest_dir, default_upload_url, ensure_ingest_server_running, run_ingest_server_forever
 from .manifest import fetch_manifest, format_github_error
 from .startup import install_startup, is_startup_installed, uninstall_startup
+from .uninstall import uninstall_tray_app
 from .uploader import resolve_export_spool_dir, upload_exports
 
 
@@ -34,6 +35,7 @@ def parse_args() -> argparse.Namespace:
 
     init_parser = subparsers.add_parser("init", help="Create or update local sync config.")
     init_parser.add_argument("--addons-dir", type=str, default="", help="Path to WoW Interface/AddOns.")
+    init_parser.add_argument("--region", type=str, default="", help="Ladder region code such as US or EU.")
 
     subparsers.add_parser("status", help="Show sync configuration and remote manifest state.")
     subparsers.add_parser("sync", help="Download AppData.lua if remote data is newer.")
@@ -65,6 +67,7 @@ def parse_args() -> argparse.Namespace:
     subparsers.add_parser("serve-ingest", help="Run the local export ingest HTTP server.")
     subparsers.add_parser("install-startup", help="Start PvPLedger Sync automatically at Windows login.")
     subparsers.add_parser("uninstall-startup", help="Remove PvPLedger Sync from Windows login startup.")
+    subparsers.add_parser("uninstall", help="Remove the installed PvPLedger Sync tray app.")
 
     return parser.parse_args()
 
@@ -79,10 +82,13 @@ def cmd_init(args: argparse.Namespace) -> int:
         return 1
 
     config.wow_addons_dir = addons_dir
+    if args.region:
+        config.region = args.region.upper()
     config = apply_config_defaults(config)
     path = save_config(config)
     print(f"Saved config to {path}")
     print(f"WoW AddOns: {config.wow_addons_dir}")
+    print(f"Ladder region: {config.region}")
     print(f"AppHelper target: {config.app_data_path}")
     print(f"Upload URL: {config.upload_url}")
     print(f"Ingest directory: {default_ingest_dir()}")
@@ -96,6 +102,7 @@ def cmd_status() -> int:
     print(f"Config: {default_config_path()}")
     print(f"WoW AddOns: {config.wow_addons_dir or '(not set)'}")
     print(f"Repo: {config.repo}@{config.branch}")
+    print(f"Ladder region: {config.region}")
     print(f"Last manifest date: {config.last_manifest_generated_date or '(never)'}")
     print(f"Last AppData sync: {config.last_app_data_sync_at or '(never)'}")
     print(f"Export upload: {'enabled' if config.export_enabled else 'disabled'}")
@@ -116,18 +123,19 @@ def cmd_status() -> int:
         manifest = fetch_manifest(
             repo=config.repo,
             branch=config.branch,
+            region=config.region,
         )
-        print(f"Remote manifest date: {manifest.generated_date}")
+        print(f"Remote manifest date ({config.region}): {manifest.generated_date}")
         print(f"Remote brackets: {', '.join(sorted(manifest.brackets))}")
     except Exception as exc:  # noqa: BLE001 - CLI status should show network failures clearly
         print(f"Remote manifest: unavailable ({format_github_error(exc)})")
-        if local_manifest_source().exists():
-            print(f"Local fallback manifest: {local_manifest_source()}")
+        if local_manifest_source(config.region).exists():
+            print(f"Local fallback manifest: {local_manifest_source(config.region)}")
         else:
             print("Local fallback manifest: not found")
 
-    if local_app_data_source().exists():
-        print(f"Local fallback AppData: {local_app_data_source()}")
+    if local_app_data_source(config.region).exists():
+        print(f"Local fallback AppData: {local_app_data_source(config.region)}")
 
     if config.wow_addons_dir:
         _, installed_status = inspect_installed_app_data(config)
@@ -285,6 +293,17 @@ def cmd_uninstall_startup() -> int:
     return 0
 
 
+def cmd_uninstall() -> int:
+    """Remove the installed tray app, startup entry, and running process."""
+
+    result = uninstall_tray_app()
+    for line in result.messages:
+        print(line)
+    if result.removed_executable or result.removed_startup or result.stopped_tray:
+        return 0
+    return 1
+
+
 def main() -> int:
     """Dispatch CLI commands."""
 
@@ -313,6 +332,8 @@ def main() -> int:
         return cmd_install_startup()
     if args.command == "uninstall-startup":
         return cmd_uninstall_startup()
+    if args.command == "uninstall":
+        return cmd_uninstall()
     return 1
 
 

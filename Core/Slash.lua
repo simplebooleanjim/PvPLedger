@@ -17,12 +17,20 @@ local function RegisterSlashCommands()
         local command = strtrim(string.lower(input or ""))
 
         if command == "" or command == "toggle" then
-            PVL.UI.Toggle()
+            if PVL.UI and PVL.UI.Toggle then
+                PVL.UI.Toggle()
+            else
+                Print(PVL.L("SLASH.UI_UNAVAILABLE"))
+            end
             return
         end
 
         if command == "show" then
-            PVL.UI.Show()
+            if PVL.UI and PVL.UI.Show then
+                PVL.UI.Show()
+            else
+                Print(PVL.L("SLASH.UI_UNAVAILABLE"))
+            end
             return
         end
 
@@ -47,7 +55,7 @@ local function RegisterSlashCommands()
 
         if command == "status" then
             Print(PVL.GetStatusText())
-            Print("Imported snapshots:")
+            Print(PVL.L("SLASH.IMPORTED_HEADER"))
             for _, line in ipairs(PVL.GetImportedSnapshotStatusLines()) do
                 Print("  " .. line)
             end
@@ -66,22 +74,25 @@ local function RegisterSlashCommands()
             local summary = PVL.RefreshImportedLadderData()
             PVL.UI.Refresh()
             if summary.loadedAppHelper then
-                Print("Loaded PvPLedger-AppHelper and refreshed imported ladder snapshots.")
+                Print(PVL.L("SLASH.UPDATE_APP_HELPER"))
             elseif summary.loadedDataAddon then
-                Print("Loaded PvPLedger-Data-US and refreshed imported ladder snapshots.")
-            elseif PVL.IsAppHelperInstalled() or PVL.IsDataAddonInstalled() then
-                Print("Refreshed imported ladder snapshots from installed data sources.")
+                Print(PVL.L(
+                    "SLASH.UPDATE_DATA_ADDON",
+                    PVL.GetDataAddonName(summary.region or PVL.GetActiveLadderRegion())
+                ))
+            elseif PVL.IsAppHelperInstalled() or PVL.IsDataAddonInstalled(PVL.GetActiveLadderRegion()) then
+                Print(PVL.L("SLASH.UPDATE_SOURCES"))
             else
-                Print("Refreshed bundled ladder snapshots.")
+                Print(PVL.L("SLASH.UPDATE_BUNDLED"))
                 Print(PVL.APP_HELPER_INSTALL_HINT)
             end
-            Print("If you updated addon files on disk, run /reload to pick up the new files.")
+            Print(PVL.L("SLASH.UPDATE_RELOAD_HINT"))
             return
         end
 
         if command == "share on" or command == "export on" then
             PVL.SetShareMatchData(true)
-            Print("Match export enabled for PvPLedger Sync.")
+            Print(PVL.L("SLASH.SHARE_ON"))
             if PVL.UI and PVL.UI.Refresh then
                 PVL.UI.Refresh()
             end
@@ -90,7 +101,7 @@ local function RegisterSlashCommands()
 
         if command == "share off" or command == "export off" then
             PVL.SetShareMatchData(false)
-            Print("Match export disabled.")
+            Print(PVL.L("SLASH.SHARE_OFF"))
             if PVL.UI and PVL.UI.Refresh then
                 PVL.UI.Refresh()
             end
@@ -100,26 +111,26 @@ local function RegisterSlashCommands()
         if command == "reload" then
             PVL.LoadImportedSnapshotFromPack()
             PVL.UI.Refresh()
-            Print("Reloaded bundled ladder snapshots.")
+            Print(PVL.L("SLASH.RELOAD_DONE"))
             return
         end
 
         if command == "enable" then
             PVL.GetDB().settings.enabled = true
-            Print("Match collection enabled.")
+            Print(PVL.L("SLASH.ENABLE_ON"))
             return
         end
 
         if command == "disable" then
             PVL.GetDB().settings.enabled = false
-            Print("Match collection disabled.")
+            Print(PVL.L("SLASH.ENABLE_OFF"))
             return
         end
 
         if command == "prune" then
             PVL.PruneImportedSnapshotPlayers()
             PVL.LoadImportedSnapshotFromPack()
-            Print("Removed imported player indexes from runtime memory. Run /pvl update to reload ladder data.")
+            Print(PVL.L("SLASH.PRUNE_DONE"))
             return
         end
 
@@ -161,7 +172,7 @@ local function RegisterSlashCommands()
             end
 
             if not matchRecord then
-                Print("No match found for the current bracket.")
+                Print(PVL.L("SLASH.MATCH_NOT_FOUND"))
                 return
             end
 
@@ -173,15 +184,15 @@ local function RegisterSlashCommands()
         end
 
         if command == "help" then
-            Print("Commands: toggle | show | hide | titles | options | status | update | refresh | reload | share on|off | debug score | debug rated | history | match | enable | disable | help")
-            Print("Use /pvl titles to see estimated rating cutoffs for seasonal titles (Rank 1, Gladiator, Hero).")
-            Print("Install PvPLedger-AppHelper + PvPLedger Sync for automatic ladder updates.")
-            Print("Enable match export in Options > AddOns > PvPLedger, or use /pvl share on.")
-            Print("Use /pvl status to see snapshot dates and active data source per bracket.")
+            Print(PVL.L("SLASH.HELP_COMMANDS"))
+            Print(PVL.L("SLASH.HELP_TITLES"))
+            Print(PVL.L("SLASH.HELP_SYNC"))
+            Print(PVL.L("SLASH.HELP_SHARE"))
+            Print(PVL.L("SLASH.HELP_STATUS"))
             return
         end
 
-        Print("Commands: toggle | show | hide | titles | options | status | update | refresh | reload | share on|off | debug score | debug rated | history | match | enable | disable | help")
+        Print(PVL.L("SLASH.HELP_COMMANDS"))
     end
 end
 

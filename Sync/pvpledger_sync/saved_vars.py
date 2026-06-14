@@ -201,14 +201,18 @@ def get_export_metadata(document: SavedVarsDocument) -> dict[str, Any]:
     Returns
     -------
     dict[str, Any]
-        Metadata such as addon version and last character name.
+        Metadata such as addon version, snapshots, and account identity.
     """
 
     export_section = document.data.get("export") or {}
     sync_section = document.data.get("sync") or {}
     return {
+        "schemaVersion": export_section.get("schemaVersion"),
         "lastExportedAt": export_section.get("lastExportedAt"),
         "lastMatchAt": export_section.get("lastMatchAt"),
         "addonVersion": sync_section.get("addonVersion"),
         "lastCharacter": sync_section.get("lastCharacter"),
+        "accountIdentity": sync_section.get("accountIdentity"),
+        "accountSnapshot": export_section.get("accountSnapshot"),
+        "characterSnapshot": export_section.get("characterSnapshot"),
     }

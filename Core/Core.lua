@@ -31,6 +31,10 @@ end
 function PVL.Init()
     PVL.MigrateLegacySavedVars()
 
+    if PVL.InitLocale then
+        PVL.InitLocale()
+    end
+
     PvPLedgerDB = PVL.MigrateDB(PvPLedgerDB or PVL.GetDefaultDB())
     PvPLedgerCharDB = PVL.MigrateCharDB(PvPLedgerCharDB or PVL.GetDefaultCharDB())
 
@@ -68,7 +72,7 @@ function PVL.Init()
         PVL.RegisterSettingsPanel()
     end
 
-    print(string.format("|cff66ccffPvPLedger|r v%s loaded. Type |cffFFFF00/pvl|r for commands.", PVL.VERSION))
+    print(string.format("|cff66ccffPvPLedger|r %s", PVL.L("CHAT.LOADED", PVL.VERSION)))
 end
 
 --- Returns a short status string for slash command output.
@@ -81,13 +85,29 @@ function PVL.GetStatusText()
     local bracketName = PVL.BRACKET_NAMES[bracket] or bracket
 
     return string.format(
-        "viewing=%s | matches=%d | snapshot=%s (%s) | enabled=%s",
+        "region=%s | viewing=%s | matches=%d | snapshot=%s (%s) | enabled=%s",
+        PVL.GetActiveLadderRegion(),
         bracketName,
         matchCount,
         snapshot and (snapshot.snapshotDate or snapshot.snapshotId or "loaded") or "none",
         snapshot and PVL.FormatSnapshotAge(snapshot.snapshotDate) or "n/a",
         tostring(db.settings.enabled)
     )
+end
+
+--- Returns true when one addon name is a ladder data or bridge dependency.
+--- @param addonName string|nil
+--- @return boolean
+function PVL.IsLadderDependencyAddon(addonName)
+    if not addonName then
+        return false
+    end
+
+    if addonName == PVL.APP_HELPER_NAME then
+        return true
+    end
+
+    return addonName:match("^PvPLedger%-Data%-") ~= nil
 end
 
 --- Creates the bootstrap frame that runs on ADDON_LOADED / PLAYER_LOGIN.
@@ -98,6 +118,11 @@ bootstrap:RegisterEvent("PLAYER_LOGOUT")
 bootstrap:SetScript("OnEvent", function(_, event, arg1)
     if event == "ADDON_LOADED" and arg1 == PVL.ADDON_NAME then
         PVL.Init()
+    elseif event == "ADDON_LOADED" and PVL.IsLadderDependencyAddon(arg1) then
+        PVL.RefreshImportedLadderData()
+        if PVL.UI and PVL.UI.Refresh then
+            PVL.UI.Refresh()
+        end
     elseif event == "PLAYER_LOGIN" then
         if PVL.GetDB().settings.autoRefreshLadderData then
             PVL.RefreshImportedLadderData()

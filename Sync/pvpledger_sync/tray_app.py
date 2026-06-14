@@ -13,6 +13,7 @@ from pystray import MenuItem as Item
 from .config import SyncConfig, default_config_path, load_config
 from .downloader import inspect_installed_app_data, sync_app_data
 from .exporter import scan_exports_for_config
+from .i18n import init_i18n, t
 from .icons import build_tray_icon
 from .ingest_server import default_ingest_dir, ensure_ingest_server_running
 from .notify import notify
@@ -21,10 +22,10 @@ from .startup import is_startup_installed
 from .uploader import upload_exports
 
 
-_SILENT_EXPORT_REASONS = frozenset(
+_SILENT_EXPORT_REASON_KEYS = frozenset(
     {
-        "No pending match exports to upload.",
-        "No PvPLedger_AppHelper SavedVariables file found yet.",
+        "UPLOAD.NO_PENDING_EXPORTS",
+        "UPLOAD.NO_SAVED_VARS",
     }
 )
 
@@ -37,20 +38,20 @@ class TrayApp:
         self._icon: pystray.Icon | None = None
         self._stop_event = threading.Event()
         self._worker: threading.Thread | None = None
-        self._last_message = "PvPLedger Sync is running."
+        self._last_message = t("TRAY.RUNNING")
 
     def _set_status(self, message: str) -> None:
         """Store the latest status message shown in the tray tooltip."""
 
         self._last_message = message
         if self._icon is not None:
-            self._icon.title = f"PvPLedger Sync\n{message}"
+            self._icon.title = f"{t('APP.NAME')}\n{message}"
 
     def _open_path(self, path: Path) -> None:
         """Open one folder in Windows Explorer."""
 
         if not path.exists():
-            notify("PvPLedger Sync", f"Path not found:\n{path}")
+            notify(t("APP.NAME"), t("TRAY.PATH_NOT_FOUND", path=path))
             return
         subprocess.Popen(["explorer", str(path)], shell=False)  # noqa: S603
 
@@ -58,34 +59,35 @@ class TrayApp:
         """Execute one ladder sync attempt and update tray state."""
 
         if not self._config.wow_addons_dir:
-            self._set_status("Not initialized. Run: run_sync.bat init")
-            notify("PvPLedger Sync", "Run init before syncing.")
+            self._set_status(t("TRAY.NOT_INITIALIZED"))
+            notify(t("APP.NAME"), t("TRAY.RUN_INIT_BEFORE_SYNC"))
             return
 
         try:
             result = sync_app_data(self._config, force=force)
         except Exception as exc:  # noqa: BLE001
-            message = f"Ladder sync failed: {exc}"
+            message = t("TRAY.LADDER_SYNC_FAILED", error=exc)
             self._set_status(message)
-            notify("PvPLedger Sync", message)
+            notify(t("APP.NAME"), message)
             return
 
         self._config = load_config()
         self._set_status(result.reason)
         if result.updated:
-            reload_hint = "\n/reload in WoW to apply the latest ladder data."
+            reload_hint = t("TRAY.RELOAD_HINT")
             if result.player_index_count > 0:
-                notify("PvPLedger Sync", f"{result.reason}{reload_hint}")
+                notify(t("APP.NAME"), f"{result.reason}{reload_hint}")
             else:
                 notify(
-                    "PvPLedger Sync",
-                    "Ladder aggregates synced, but View Ladder is still empty.\n"
-                    "The published snapshot does not include player names yet."
-                    f"{reload_hint}",
+                    t("APP.NAME"),
+                    f"{t('TRAY.LADDER_AGGREGATES_EMPTY')}{reload_hint}",
                 )
-        elif result.reason.startswith("Already up to date"):
-            _, installed_status = inspect_installed_app_data(self._config)
-            if "empty" in installed_status.lower():
+        elif result.reason_key in {
+            "SYNC.ALREADY_UP_TO_DATE_LOCAL",
+            "SYNC.ALREADY_UP_TO_DATE_INSTALLED",
+        }:
+            player_count, installed_status = inspect_installed_app_data(self._config)
+            if player_count <= 0:
                 self._set_status(f"{result.reason} {installed_status}")
 
     def _is_idle_export_state(
@@ -114,7 +116,7 @@ class TrayApp:
             return False
         if result.match_count > 0:
             return False
-        if result.reason in _SILENT_EXPORT_REASONS:
+        if result.reason_key in _SILENT_EXPORT_REASON_KEYS:
             return True
         return False
 
@@ -122,7 +124,7 @@ class TrayApp:
         """Upload pending match exports and update tray state."""
 
         if not self._config.wow_addons_dir:
-            self._set_status("Not initialized. Run: run_sync.bat init")
+            self._set_status(t("TRAY.NOT_INITIALIZED"))
             return
 
         result = upload_exports(self._config)
@@ -131,14 +133,14 @@ class TrayApp:
 
         if result.uploaded and result.match_count > 0:
             self._set_status(result.reason)
-            notify("PvPLedger Sync", result.reason)
+            notify(t("APP.NAME"), result.reason)
             return
 
         if scan.pending_matches:
             self._set_status(scan.note)
             return
 
-        if scan.awaiting_reload_matches and result.reason in _SILENT_EXPORT_REASONS:
+        if scan.awaiting_reload_matches and result.reason_key in _SILENT_EXPORT_REASON_KEYS:
             return
 
         if self._is_idle_export_state(result=result, scan=scan):
@@ -176,7 +178,7 @@ class TrayApp:
     def _show_status(self, _icon: pystray.Icon, _item: Item) -> None:
         """Show the latest sync status."""
 
-        notify("PvPLedger Sync", self._last_message)
+        notify(t("APP.NAME"), self._last_message)
 
     def _open_ingest_dir(self, _icon: pystray.Icon, _item: Item) -> None:
         """Open the ingested export batch folder."""
@@ -203,41 +205,43 @@ class TrayApp:
         """Start the tray icon and background polling loop."""
 
         if not self._config.wow_addons_dir:
-            notify(
-                "PvPLedger Sync",
-                "Run init first:\nrun_sync.bat init --addons-dir YOUR_ADDONS_PATH",
-            )
+            notify(t("APP.NAME"), t("TRAY.RUN_INIT_FIRST"))
 
         if self._config.ingest_enabled:
             if ensure_ingest_server_running(self._config):
-                ingest_status = f"Ingest: {self._config.ingest_host}:{self._config.ingest_port}"
-            else:
-                ingest_status = "Ingest: failed to start"
-                notify(
-                    "PvPLedger Sync",
-                    "Could not start the local ingest server. Check port availability.",
+                ingest_status = t(
+                    "TRAY.INGEST_RUNNING",
+                    host=self._config.ingest_host,
+                    port=self._config.ingest_port,
                 )
+            else:
+                ingest_status = t("TRAY.INGEST_FAILED_START")
+                notify(t("APP.NAME"), t("TRAY.INGEST_FAILED_PORT"))
         else:
-            ingest_status = "Ingest: disabled"
+            ingest_status = t("TRAY.INGEST_DISABLED")
 
-        startup_label = "Run at login: enabled" if is_startup_installed() else "Run at login: disabled"
+        startup_label = (
+            t("TRAY.STARTUP_ENABLED")
+            if is_startup_installed()
+            else t("TRAY.STARTUP_DISABLED")
+        )
         self._set_status(f"{ingest_status} | {startup_label}")
 
         menu = pystray.Menu(
-            Item("Sync ladder now", self._sync_now),
-            Item("Upload exports now", self._upload_exports_now),
-            Item("Show status", self._show_status),
-            Item("Open AppHelper folder", self._open_app_helper),
-            Item("Open ingest folder", self._open_ingest_dir),
-            Item("Open config folder", self._open_config),
+            Item(t("TRAY.MENU_SYNC_LADDER"), self._sync_now),
+            Item(t("TRAY.MENU_UPLOAD_EXPORTS"), self._upload_exports_now),
+            Item(t("TRAY.MENU_SHOW_STATUS"), self._show_status),
+            Item(t("TRAY.MENU_OPEN_APPHELPER"), self._open_app_helper),
+            Item(t("TRAY.MENU_OPEN_INGEST"), self._open_ingest_dir),
+            Item(t("TRAY.MENU_OPEN_CONFIG"), self._open_config),
             pystray.Menu.SEPARATOR,
-            Item("Exit", self._exit),
+            Item(t("TRAY.MENU_EXIT"), self._exit),
         )
 
         self._icon = pystray.Icon(
-            "PvPLedger Sync",
+            t("APP.NAME"),
             build_tray_icon(),
-            "PvPLedger Sync",
+            t("APP.NAME"),
             menu,
         )
 
@@ -249,8 +253,10 @@ class TrayApp:
 def run_tray_app() -> None:
     """Launch the tray application."""
 
+    init_i18n()
+
     if not try_acquire_single_instance():
-        notify("PvPLedger Sync", "PvPLedger Sync is already running in the system tray.")
+        notify(t("APP.NAME"), t("TRAY.ALREADY_RUNNING"))
         return
 
     TrayApp().run()

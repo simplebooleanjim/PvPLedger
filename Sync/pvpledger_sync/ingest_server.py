@@ -124,7 +124,7 @@ def is_ingest_server_running(*, host: str, port: int) -> bool:
 class _IngestRequestHandler(BaseHTTPRequestHandler):
     """Handle export batch uploads and health checks."""
 
-    server_version = "PvPLedgerIngest/0.7"
+    server_version = "PvPLedgerIngest/0.8"
 
     def log_message(self, format: str, *args: object) -> None:
         """Suppress default stderr logging from the HTTP server."""

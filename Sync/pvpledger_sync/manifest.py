@@ -12,6 +12,24 @@ from typing import Any
 _APP_DATA_GENERATED_AT_PATTERN = re.compile(r'generatedAt = "([^"]+)"')
 
 
+def regional_manifest_filename(region: str) -> str:
+    """Return the ladder manifest filename for one region."""
+
+    region_upper = region.upper()
+    if region_upper == "US":
+        return "ladder-manifest.json"
+    return f"ladder-manifest-{region_upper}.json"
+
+
+def regional_app_data_filename(region: str) -> str:
+    """Return the AppHelper bridge filename for one region."""
+
+    region_upper = region.upper()
+    if region_upper == "US":
+        return "AppData.lua"
+    return f"AppData-{region_upper}.lua"
+
+
 @dataclass
 class RemoteManifest:
     """Parsed ladder manifest from GitHub."""
@@ -22,16 +40,18 @@ class RemoteManifest:
     generated_at: str = ""
 
 
-def manifest_raw_url(*, repo: str, branch: str) -> str:
-    """Build the raw GitHub URL for ladder-manifest.json."""
+def manifest_raw_url(*, repo: str, branch: str, region: str = "US") -> str:
+    """Build the raw GitHub URL for one regional ladder manifest."""
 
-    return f"https://raw.githubusercontent.com/{repo}/{branch}/Data/ladder-manifest.json"
+    filename = regional_manifest_filename(region)
+    return f"https://raw.githubusercontent.com/{repo}/{branch}/Data/{filename}"
 
 
-def app_data_raw_url(*, repo: str, branch: str) -> str:
-    """Build the raw GitHub URL for AppHelper AppData.lua."""
+def app_data_raw_url(*, repo: str, branch: str, region: str = "US") -> str:
+    """Build the raw GitHub URL for one regional AppHelper bridge file."""
 
-    return f"https://raw.githubusercontent.com/{repo}/{branch}/PvPLedger-AppHelper/AppData.lua"
+    filename = regional_app_data_filename(region)
+    return f"https://raw.githubusercontent.com/{repo}/{branch}/PvPLedger-AppHelper/{filename}"
 
 
 def build_request_headers(*, token: str = "") -> dict[str, str]:
@@ -62,22 +82,22 @@ def fetch_text(url: str, *, token: str = "", timeout: float = 30.0) -> str:
         return response.read().decode("utf-8")
 
 
-def fetch_manifest(*, repo: str, branch: str) -> RemoteManifest:
+def fetch_manifest(*, repo: str, branch: str, region: str = "US") -> RemoteManifest:
     """Download and parse the remote ladder manifest from the public repo."""
 
-    payload = fetch_json(manifest_raw_url(repo=repo, branch=branch))
+    payload = fetch_json(manifest_raw_url(repo=repo, branch=branch, region=region))
     return RemoteManifest(
-        region=str(payload.get("region", "US")),
+        region=str(payload.get("region", region.upper())),
         generated_date=str(payload.get("generatedDate", "")),
         brackets=dict(payload.get("brackets", {})),
         generated_at=str(payload.get("generatedAt", "")),
     )
 
 
-def fetch_app_data(*, repo: str, branch: str) -> str:
-    """Download AppHelper AppData.lua from the public repo."""
+def fetch_app_data(*, repo: str, branch: str, region: str = "US") -> str:
+    """Download one regional AppHelper bridge file from the public repo."""
 
-    return fetch_text(app_data_raw_url(repo=repo, branch=branch))
+    return fetch_text(app_data_raw_url(repo=repo, branch=branch, region=region))
 
 
 def read_app_data_generated_at(content: str) -> str:
@@ -87,10 +107,10 @@ def read_app_data_generated_at(content: str) -> str:
     return match.group(1) if match else ""
 
 
-def fetch_app_data_generated_at(*, repo: str, branch: str) -> str:
+def fetch_app_data_generated_at(*, repo: str, branch: str, region: str = "US") -> str:
     """Fetch only the AppData.lua header and return its generatedAt timestamp."""
 
-    url = app_data_raw_url(repo=repo, branch=branch)
+    url = app_data_raw_url(repo=repo, branch=branch, region=region)
     request = urllib.request.Request(
         url,
         headers={
@@ -143,5 +163,5 @@ def format_github_error(exc: Exception) -> str:
 
     if isinstance(exc, urllib.error.HTTPError):
         if exc.code == 404:
-            return f"{exc} — repo/path not found. Check repo and branch settings."
+            return f"{exc} — repo/path not found. Check repo, branch, and region settings."
     return str(exc)

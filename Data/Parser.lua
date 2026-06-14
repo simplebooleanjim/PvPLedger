@@ -124,7 +124,7 @@ function PVL.GetImportedClassRows()
     for classToken, row in pairs(snapshot.byClass) do
         table.insert(rows, {
             classToken = classToken,
-            displayName = PVL.CLASS_NAMES[classToken] or PVL.TitleCaseToken(classToken),
+            displayName = PVL.GetLocalizedClassName(classToken),
             listedCount = row.listedCount or 0,
             avgListedRating = row.avgListedRating,
             medianListedRating = row.medianListedRating,
@@ -165,7 +165,7 @@ function PVL.BuildClassDetailSummary(classToken)
 
     return {
         classToken = classToken,
-        displayName = PVL.CLASS_NAMES[classToken] or PVL.TitleCaseToken(classToken),
+        displayName = PVL.GetLocalizedClassName(classToken),
         imported = imported,
         importedRepresentation = PVL.GetImportedClassRepresentation(classToken),
         importedSpecRows = specRows,
@@ -513,7 +513,7 @@ end
 --- @return string
 function PVL.FormatStandingLabel(standing)
     if not standing then
-        return "Unlisted"
+        return PVL.L("STANDING.UNLISTED")
     end
 
     if standing.estimatedRank and standing.isEstimated ~= false then
@@ -529,7 +529,7 @@ function PVL.FormatStandingLabel(standing)
         return string.format("#%s", PVL.FormatRating(standing.estimatedRank))
     end
 
-    return standing.cutoffLabel or "Unlisted"
+    return standing.cutoffLabel or PVL.L("STANDING.UNLISTED")
 end
 
 --- Compares the current character rating against imported ladder rows and cutoffs.
@@ -553,7 +553,7 @@ function PVL.EstimateListedStanding(rating, bracket, classToken, specKey)
 
     local standing = {
         rating = accessibleRating,
-        cutoffLabel = "Unlisted",
+        cutoffLabel = PVL.L("STANDING.UNLISTED"),
         isEstimated = true,
     }
 
@@ -678,7 +678,7 @@ end
 --- @return string
 function PVL.FormatSpecDisplayName(specKey)
     if not specKey then
-        return "All Specs"
+        return PVL.L("FILTER.ALL_SPECS")
     end
 
     local classToken, specToken = specKey:match("^(.-)_(.+)$")
@@ -686,21 +686,22 @@ function PVL.FormatSpecDisplayName(specKey)
         return specKey
     end
 
-    local className = PVL.CLASS_NAMES[classToken] or PVL.TitleCaseToken(classToken)
-    return string.format("%s %s", PVL.TitleCaseToken(specToken), className)
+    local className = PVL.GetLocalizedClassName(classToken)
+    local specName = PVL.GetLocalizedSpecName(specKey) or PVL.TitleCaseToken(specToken)
+    return string.format("%s %s", specName, className)
 end
 
 --- Returns dropdown options for class filtering.
 --- @return table[]
 function PVL.GetClassFilterOptions()
     local options = {
-        { label = "All Classes", value = nil },
+        { label = PVL.L("FILTER.ALL_CLASSES"), value = nil },
     }
     local formatClass = PVL.UI and PVL.UI.Format and PVL.UI.Format.ClassName
 
     for _, classToken in ipairs(PVL.CLASS_ORDER) do
         table.insert(options, {
-            label = formatClass and formatClass(classToken) or (PVL.CLASS_NAMES[classToken] or classToken),
+            label = formatClass and formatClass(classToken) or PVL.GetLocalizedClassName(classToken),
             value = classToken,
         })
     end
@@ -713,7 +714,7 @@ end
 --- @return table[]
 function PVL.GetSpecFilterOptions(classToken)
     local options = {
-        { label = "All Specs", value = nil },
+        { label = PVL.L("FILTER.ALL_SPECS"), value = nil },
     }
     local formatSpec = PVL.UI and PVL.UI.Format and PVL.UI.Format.SpecName
 

@@ -3,7 +3,7 @@
  * Contract matches Sync/pvpledger_sync/ingest_server.py (local dev server).
  */
 
-const MAX_BODY_BYTES = 5 * 1024 * 1024;
+const MAX_BODY_BYTES = 32 * 1024 * 1024;
 
 /**
  * @param {unknown} value

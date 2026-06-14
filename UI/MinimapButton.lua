@@ -58,9 +58,9 @@ end
 local function ShowTooltip(self)
     GameTooltip:SetOwner(self, "ANCHOR_LEFT")
     GameTooltip:AddLine("|cff66ccffPvPLedger|r")
-    GameTooltip:AddLine("Left-click: open or close the window", 1, 1, 1)
-    GameTooltip:AddLine("Right-click: open options", 1, 1, 1)
-    GameTooltip:AddLine("Drag: move around the minimap", 0.7, 0.7, 0.7)
+    GameTooltip:AddLine(PVL.L("UI.MINIMAP.CLICK_LEFT"), 1, 1, 1)
+    GameTooltip:AddLine(PVL.L("UI.MINIMAP.CLICK_RIGHT"), 1, 1, 1)
+    GameTooltip:AddLine(PVL.L("UI.MINIMAP.DRAG"), 0.7, 0.7, 0.7)
     GameTooltip:Show()
 end
 

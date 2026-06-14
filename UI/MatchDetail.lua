@@ -66,12 +66,12 @@ function UI.GetRecentMatchOptions(bracket, filters)
     local options = {}
 
     if #matches == 0 then
-        local emptyLabel = "No matches recorded"
+        local emptyLabel = PVL.L("UI.MATCH.NONE")
         if filters and filters.specUnavailable then
-            emptyLabel = "Select a specialization"
+            emptyLabel = PVL.L("UI.MATCH.SELECT_SPEC")
         elseif filters and filters.specKey then
-            emptyLabel = string.format(
-                "No %s matches recorded",
+            emptyLabel = PVL.L(
+                "UI.MATCH.NONE_SPEC",
                 PVL.UI and PVL.UI.Format and PVL.UI.Format.SpecShortName(filters.specKey) or filters.specKey
             )
         end
@@ -84,7 +84,7 @@ function UI.GetRecentMatchOptions(bracket, filters)
     end
 
     for _, match in ipairs(matches) do
-        local resultLabel = match.won == true and "W" or (match.won == false and "L" or "-")
+        local resultLabel = match.won == true and PVL.L("FORMAT.WIN") or (match.won == false and PVL.L("FORMAT.LOSS") or "-")
         local crText = PVL.FormatRating(match.playerCRAfter)
         local timestampText = PVL.CrHistory and PVL.CrHistory.FormatTimestamp(match.timestamp) or "--"
         table.insert(options, {
@@ -133,10 +133,6 @@ end
 --- @param statId string|nil
 --- @return table
 function UI.GetCombatStatDefinition(statId)
-    if statId == "ccApplied" or statId == "ccTaken" then
-        statId = "dispels"
-    end
-
     for _, stat in ipairs(PVL.COMBAT_ANALYSIS_STATS) do
         if stat.value == statId then
             return stat
@@ -150,11 +146,7 @@ end
 --- @return string
 function UI.GetSelectedCombatStat()
     local filters = UI.GetFilters()
-    local statId = filters.combatStat or PVL.DEFAULT_COMBAT_ANALYSIS_STAT
-    if statId == "ccApplied" or statId == "ccTaken" then
-        return "dispels"
-    end
-    return statId
+    return filters.combatStat or PVL.DEFAULT_COMBAT_ANALYSIS_STAT
 end
 
 --- Stores the selected combat analysis stat and refreshes the UI.
@@ -214,6 +206,11 @@ function UI.GetCombatStatValue(combatRow, statDef, participant)
             return scoreboardValue or 0
         end
 
+        if statDef.field == "ccApplied" or statDef.field == "ccTaken" then
+            local meterValue = combatRow and tonumber(combatRow[statDef.field]) or 0
+            return meterValue > 0 and meterValue or 0
+        end
+
         if statDef.field == "deaths" and participant.deaths ~= nil then
             return participant.deaths
         end
@@ -225,6 +222,8 @@ function UI.GetCombatStatValue(combatRow, statDef, participant)
             interrupts = 100,
             dispels = 100,
             deaths = 50,
+            ccApplied = 200,
+            ccTaken = 200,
         }
         local maxValue = countStatMax[statDef.field]
         if maxValue and value > maxValue then
@@ -435,6 +434,8 @@ function UI.BuildScoreboardCombatSummary(matchRecord)
                 and PVL.CombatLogCollector.ResolveSupplementCount
                 and PVL.CombatLogCollector.ResolveSupplementCount(participant.dispels, storedRow and storedRow.dispels)
                 or (participant.dispels or 0),
+            ccApplied = storedRow and storedRow.ccApplied or 0,
+            ccTaken = storedRow and storedRow.ccTaken or 0,
             deaths = participant.deaths or (storedRow and storedRow.deaths) or 0,
         })
     end
@@ -718,13 +719,13 @@ end
 --- @return string
 function UI.BuildMatchDetailText(matchRecord)
     if not matchRecord then
-        return Format.Muted("No matches recorded for this bracket yet.")
+        return Format.Muted(PVL.L("UI.MATCH.NONE_BRACKET"))
     end
 
     local lines = {}
     local bracketName = PVL.BRACKET_NAMES[matchRecord.bracket] or matchRecord.bracket or "PvP"
-    local resultLabel = matchRecord.won == true and Format.Colorize(Format.COLORS.POSITIVE, "Victory")
-        or (matchRecord.won == false and Format.Colorize(Format.COLORS.NEGATIVE, "Defeat") or Format.Muted("Result unknown"))
+    local resultLabel = matchRecord.won == true and Format.Colorize(Format.COLORS.POSITIVE, PVL.L("UI.MATCH.VICTORY"))
+        or (matchRecord.won == false and Format.Colorize(Format.COLORS.NEGATIVE, PVL.L("UI.MATCH.DEFEAT")) or Format.Muted(PVL.L("UI.MATCH.RESULT_UNKNOWN")))
     local timestampText = PVL.CrHistory and PVL.CrHistory.FormatTimestamp(matchRecord.timestamp) or "--"
     local mapLabel = UI.GetMatchMapLabel(matchRecord)
     local combatSummary = matchRecord.combatSummary
@@ -767,7 +768,7 @@ function UI.BuildMatchDetailText(matchRecord)
     end
 
     if not combatSummary and not UI.MatchHasStoredCombatTotals(matchRecord) then
-        table.insert(lines, Format.Muted("Combat totals unavailable for this saved match."))
+        table.insert(lines, Format.Muted(PVL.L("UI.COMBAT.UNAVAILABLE")))
         table.insert(lines, Format.Muted("New games after /reload will record full combat stats."))
     end
 
@@ -780,7 +781,7 @@ end
 --- @return string
 function UI.BuildMatchCombatAnalysisText(matchRecord, statId)
     if not matchRecord then
-        return Format.Muted("No matches recorded for this bracket yet.")
+        return Format.Muted(PVL.L("UI.MATCH.NONE_BRACKET"))
     end
 
     local combatSummary = matchRecord.combatSummary

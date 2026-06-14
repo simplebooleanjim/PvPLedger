@@ -1,0 +1,13 @@
+## Interface: 120000, 120001, 120100
+## Title: |cFF66CCFFPvPLedger Data (TW)|r
+## Notes: Frequently updated TW ladder snapshots for PvPLedger. Keep this addon updated via your addon manager for fresh ladder data without updating the main addon.
+## Author: Jake
+## Version: 2026.06.13
+## IconTexture: Interface\AddOns\PvPLedger\Media\Icon.tga
+## Dependencies: PvPLedger
+
+LadderData_TW_Blitz.lua
+LadderData_TW_Shuffle.lua
+LadderData_TW_Rbg.lua
+LadderData_TW_Arena2v2.lua
+LadderData_TW_Arena3v3.lua

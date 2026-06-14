@@ -328,7 +328,7 @@ end
 --- @return string
 function PVL.FormatSnapshotAge(snapshotDate)
     if not snapshotDate then
-        return "unknown age"
+        return PVL.L("SNAPSHOT.AGE_UNKNOWN")
     end
 
     local year, month, day = snapshotDate:match("^(%d%d%d%d)-(%d%d)-(%d%d)$")
@@ -349,14 +349,14 @@ function PVL.FormatSnapshotAge(snapshotDate)
 
     local ageDays = math.floor((time() - snapshotTime) / 86400)
     if ageDays <= 0 then
-        return "today"
+        return PVL.L("SNAPSHOT.AGE_TODAY")
     end
 
     if ageDays == 1 then
-        return "1 day old"
+        return PVL.L("SNAPSHOT.AGE_ONE_DAY")
     end
 
-    return string.format("%d days old", ageDays)
+    return PVL.L("SNAPSHOT.AGE_DAYS", ageDays)
 end
 
 --- Returns chat status lines for all packaged imported snapshots.

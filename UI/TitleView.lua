@@ -14,7 +14,7 @@ TitleView.linePool = TitleView.linePool or {}
 TitleView.titleRowPool = TitleView.titleRowPool or {}
 TitleView.achievementRowPool = TitleView.achievementRowPool or {}
 
-local TITLE_VIEW_LAYOUT_VERSION = 6
+local TITLE_VIEW_LAYOUT_VERSION = 7
 
 local FRAME_WIDTH = 520
 local FRAME_HEIGHT = 480
@@ -60,7 +60,7 @@ local function FormatProgress(row)
     end
 
     if row.achieved then
-        return Format.Colorize(Format.COLORS.STANDING, "Achieved")
+        return Format.Colorize(Format.COLORS.STANDING, PVL.L("UI.TITLES.ACHIEVED"))
     end
 
     return Format.Colorize(Format.COLORS.WARNING, string.format("+%s to go", PVL.FormatRating(row.gap)))
@@ -184,7 +184,7 @@ end
 --- @return string
 local function FormatSeasonAchievementProgress(row)
     if row.achieved then
-        return Format.Colorize(Format.COLORS.STANDING, "Complete")
+        return Format.Colorize(Format.COLORS.STANDING, PVL.L("UI.TITLES.COMPLETE"))
     end
 
     return Format.Colorize(
@@ -421,35 +421,35 @@ function TitleView.BuildDisplaySections(bracket)
 
     local snapshot = context.snapshot
     if not snapshot then
-        table.insert(sections, { kind = "text", text = Format.Muted("No ladder data is loaded for this bracket.") })
-        table.insert(sections, { kind = "text", text = Format.Muted("Run /pvl update or install PvPLedger Sync for ladder data.") })
+        table.insert(sections, { kind = "text", text = Format.Muted(PVL.L("UI.TITLES.NO_DATA")) })
+        table.insert(sections, { kind = "text", text = Format.Muted(PVL.L("UI.TITLES.UPDATE_HINT")) })
         return sections, context
     end
 
     table.insert(sections, {
         kind = "text",
-        text = Format.StatLine("Your current rating", Format.Rating(context.playerRating)),
+        text = Format.StatLine(PVL.L("UI.TITLES.YOUR_RATING"), Format.Rating(context.playerRating)),
     })
 
     if context.perSpec then
         table.insert(sections, {
             kind = "text",
             text = Format.StatLine(
-                "Your spec",
+                PVL.L("UI.TITLES.YOUR_SPEC"),
                 context.specName and Format.Colorize(Format.COLORS.COUNT, context.specName)
-                    or Format.Muted("not detected")
+                    or Format.Muted(PVL.L("UI.TITLES.SPEC_NOT_DETECTED"))
             ),
         })
         if context.specPopulation then
             table.insert(sections, {
                 kind = "text",
-                text = Format.StatLine("Rated in your spec", Format.Count(context.specPopulation)),
+                text = Format.StatLine(PVL.L("UI.TITLES.RATED_IN_SPEC"), Format.Count(context.specPopulation)),
             })
         end
     elseif context.ratedPopulation then
         table.insert(sections, {
             kind = "text",
-            text = Format.StatLine("Rated players", Format.Count(context.ratedPopulation)),
+            text = Format.StatLine(PVL.L("UI.TITLES.RATED_PLAYERS"), Format.Count(context.ratedPopulation)),
         })
     end
 
@@ -576,7 +576,7 @@ function TitleView.BuildSelectedSpecSection(bracket, context)
     table.insert(sections, { kind = "divider" })
     table.insert(sections, {
         kind = "text",
-        text = Format.SectionLabel("Selected spec") .. "  " .. Format.SpecName(selectedSpecKey),
+        text = Format.SectionLabel(PVL.L("UI.TITLES.SELECTED_SPEC")) .. "  " .. Format.SpecName(selectedSpecKey),
     })
     table.insert(sections, {
         kind = "text",
@@ -697,7 +697,7 @@ function TitleView.ShowRenderError(frame, message)
     frame.errorText:SetWidth(CONTENT_WIDTH - TEXT_PAD_X)
     frame.errorText:SetText(Format.Colorize(
         Format.COLORS.WARNING,
-        message or "Title cutoffs failed to render. Run /reload and try again."
+        message or PVL.L("UI.TITLES.RENDER_ERROR")
     ))
     frame.errorText:Show()
     frame.scrollContent:SetSize(CONTENT_WIDTH, math.max(frame.errorText:GetStringHeight() or LINE_HEIGHT, frame.scroll:GetHeight() or 1))
@@ -728,14 +728,14 @@ function TitleView.CreateFrame()
     frame:SetScript("OnDragStop", frame.StopMovingOrSizing)
     frame:Hide()
 
-    UI.RegisterEscapeToClose(frame)
+    UI.RegisterEscapeToClose(frame, false)
 
     UI.AddWindowLogo(frame)
     UI.AddWindowWatermark(frame)
 
     frame.title = frame:CreateFontString(nil, "OVERLAY", "GameFontHighlight")
     frame.title:SetPoint("TOP", frame.TitleBg, "TOP", 0, -3)
-    frame.title:SetText("Title Cutoffs")
+    frame.title:SetText(PVL.L("UI.TITLES.WINDOW_TITLE"))
 
     frame.header = frame:CreateFontString(nil, "OVERLAY", "GameFontNormal")
     frame.header:SetPoint("TOPLEFT", frame, "TOPLEFT", PADDING, -34)
@@ -745,7 +745,7 @@ function TitleView.CreateFrame()
     frame.note = frame:CreateFontString(nil, "OVERLAY", "GameFontHighlightSmall")
     frame.note:SetPoint("TOPLEFT", frame.header, "BOTTOMLEFT", 0, -4)
     frame.note:SetJustifyH("LEFT")
-    frame.note:SetText(Format.Muted("Estimated rating to reach each seasonal title in this bracket."))
+    frame.note:SetText(Format.Muted(PVL.L("UI.TITLES.SUBTITLE")))
 
     frame.scroll = CreateFrame("ScrollFrame", nil, frame, "UIPanelScrollFrameTemplate")
     frame.scroll:SetPoint("TOPLEFT", frame.note, "BOTTOMLEFT", 0, -10)

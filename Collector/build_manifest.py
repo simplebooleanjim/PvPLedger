@@ -1,21 +1,35 @@
 #!/usr/bin/env python3
-"""Build ladder-manifest.json from existing packaged Lua snapshot files."""
+"""Build regional ladder-manifest.json files from packaged Lua snapshot files."""
 
 from __future__ import annotations
 
+import argparse
 import json
 import re
 from datetime import date
 from pathlib import Path
 
+from render_app_data import regional_manifest_filename
+
 DATA_DIR = Path(__file__).resolve().parent.parent / "Data"
 
 
-def main() -> None:
-    """Scan Data/LadderData_*.lua and write ladder-manifest.json."""
+def parse_args() -> argparse.Namespace:
+    """Parse CLI arguments for manifest generation."""
 
+    parser = argparse.ArgumentParser(description="Build ladder-manifest metadata from packaged ladder files.")
+    parser.add_argument("--region", default="US", help="Ladder region code such as US or EU.")
+    parser.add_argument("--data-dir", type=Path, default=DATA_DIR, help="Directory containing LadderData_*.lua files.")
+    return parser.parse_args()
+
+
+def main() -> None:
+    """Scan regional LadderData files and write ladder-manifest metadata."""
+
+    args = parse_args()
+    region = args.region.upper()
     brackets: dict[str, dict] = {}
-    for path in sorted(DATA_DIR.glob("LadderData_*.lua")):
+    for path in sorted(args.data_dir.glob(f"LadderData_{region}_*.lua")):
         text = path.read_text(encoding="utf-8")
         bracket_match = re.search(r'bracket = "([^"]+)"', text)
         if not bracket_match:
@@ -30,11 +44,11 @@ def main() -> None:
         }
 
     manifest = {
-        "region": "US",
+        "region": region,
         "generatedDate": date.today().isoformat(),
         "brackets": brackets,
     }
-    output = DATA_DIR / "ladder-manifest.json"
+    output = args.data_dir / regional_manifest_filename(region)
     output.write_text(json.dumps(manifest, indent=2) + "\n", encoding="utf-8")
     print(f"Wrote {output} ({len(brackets)} brackets)")
 

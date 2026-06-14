@@ -302,22 +302,27 @@ function UI.CreateCombatMeterPanel(parent, name, topAnchor, bottomLeft, bottomRi
         self._lastStatDef = statDef
 
         if not matchRecord then
-            self:ShowEmpty("No matches recorded for this bracket yet.")
+            self:ShowEmpty(PVL.L("UI.COMBAT.NONE_BRACKET"))
             return
         end
 
         local roster = matchRecord.roster or {}
         if #roster == 0 then
-            self:ShowEmpty("No players found for this match.")
+            self:ShowEmpty(PVL.L("UI.COMBAT.NO_PLAYERS"))
             return
         end
 
         statDef = statDef or UI.GetCombatStatDefinition(UI.GetSelectedCombatStat())
+        if not statDef then
+            self:ShowEmpty(PVL.L("UI.COMBAT.NO_STATS"))
+            return
+        end
+
         local combatSummary = UI.ResolveMatchCombatSummary(matchRecord)
         local hasTotals = UI.MatchHasStoredCombatTotals(matchRecord, combatSummary)
         local entries = CombatMeter.BuildEntries(matchRecord, statDef, combatSummary)
         if #entries == 0 then
-            self:ShowEmpty("No players found for this match.")
+            self:ShowEmpty(PVL.L("UI.COMBAT.NO_PLAYERS"))
             return
         end
 
@@ -361,7 +366,7 @@ function UI.CreateCombatMeterPanel(parent, name, topAnchor, bottomLeft, bottomRi
 
         if not hasTotals and statDef.useCombatAmount then
             yOffset = self:ShowNotice(
-                "Combat totals unavailable for this saved match. New games after /reload will populate these bars.",
+                PVL.L("UI.COMBAT.UNAVAILABLE"),
                 yOffset,
                 contentWidth
             )

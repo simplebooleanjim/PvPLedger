@@ -134,7 +134,10 @@ end
 --- @param displayName string|nil
 --- @return string
 function Format.ClassName(classToken, displayName)
-    displayName = displayName or PVL.CLASS_NAMES[classToken] or PVL.TitleCaseToken(classToken)
+    displayName = displayName or PVL.GetLocalizedClassName(classToken)
+    if not displayName or displayName == "" then
+        displayName = PVL.TitleCaseToken(classToken)
+    end
     return Format.Colorize(Format.GetClassColorHex(classToken), displayName)
 end
 
@@ -537,7 +540,7 @@ end
 --- @return string
 function Format.SpecName(specKey)
     if not specKey then
-        return Format.Muted("All Specs")
+        return Format.Muted(PVL.L("FORMAT.ALL_SPECS"))
     end
 
     local classToken, specToken = specKey:match("^(.-)_(.+)$")
@@ -545,7 +548,7 @@ function Format.SpecName(specKey)
         return specKey
     end
 
-    return string.format("%s %s", PVL.TitleCaseToken(specToken), Format.ClassName(classToken))
+    return string.format("%s %s", PVL.GetLocalizedSpecName(specKey), Format.ClassName(classToken))
 end
 
 --- Returns just the spec name (without the class), colored by class.
@@ -563,7 +566,7 @@ function Format.SpecShortName(specKey)
         return specKey
     end
 
-    return Format.Colorize(Format.GetClassColorHex(classToken), PVL.TitleCaseToken(specToken))
+    return Format.Colorize(Format.GetClassColorHex(classToken), PVL.GetLocalizedSpecName(specKey) or PVL.TitleCaseToken(specToken))
 end
 
 --- Appends imported ladder rating stats using full descriptive labels.
@@ -588,8 +591,8 @@ function Format.RecentActivityLine(entry)
     local timeText = Format.Muted(PVL.CrHistory.FormatTimestamp(entry.timestamp))
 
     if entry.source == "match" then
-        local resultLabel = entry.won == true and Format.Colorize(Format.COLORS.POSITIVE, "W")
-            or (entry.won == false and Format.Colorize(Format.COLORS.NEGATIVE, "L") or Format.Muted("-"))
+        local resultLabel = entry.won == true and Format.Colorize(Format.COLORS.POSITIVE, PVL.L("FORMAT.WIN"))
+            or (entry.won == false and Format.Colorize(Format.COLORS.NEGATIVE, PVL.L("FORMAT.LOSS")) or Format.Muted("-"))
         local deltaText = (entry.delta == 0) and Format.Muted("0")
             or PVL.CrHistory.FormatDelta(entry.delta)
 
@@ -610,25 +613,32 @@ function Format.RecentActivityLine(entry)
     )
 end
 
+--- Inserts a blank gap between stacked list entries in scroll text.
+--- @param lines string[]
+function Format.AppendBlockGap(lines)
+    table.insert(lines, "")
+    table.insert(lines, "")
+end
+
 --- Builds one imported class overview block (header + stat lines).
 --- @param row table
 --- @return string header, string shareLine, string statsLine
 function Format.ClassOverviewLines(row)
     local header = string.format(
         "%s%s",
-        Format.ClassIcon(row.classToken),
+        Format.ClassIcon(row.classToken, 12),
         Format.ClassName(row.classToken, row.displayName)
     )
     local shareLine = string.format(
         "     %s  %s",
-        Format.StatLine("Share", Format.Percent(row.representation)),
-        Format.Muted(string.format("(%s listed)", Format.Count(row.listedCount)))
+        Format.StatLine(PVL.L("FORMAT.SHARE"), Format.Percent(row.representation)),
+        Format.Muted(PVL.L("FORMAT.LISTED_COUNT", Format.Count(row.listedCount)))
     )
     local statsLine = string.format(
         "     %s %s  %s %s",
-        Format.Label("Avg listed"),
+        Format.Label(PVL.L("FORMAT.AVG")),
         Format.Rating(row.avgListedRating),
-        Format.Label("Peak"),
+        Format.Label(PVL.L("FORMAT.PEAK")),
         Format.Rating(row.highest)
     )
 
@@ -643,8 +653,8 @@ end
 --- @return string
 function Format.SpecListLine(specKey, count, percent, rating)
     if rating ~= nil then
-        local header, shareLine, statsLine = Format.SpecOverviewLines(specKey, count, rating, percent)
-        return header .. "\n" .. shareLine .. "\n" .. statsLine
+        local header, detailLine = Format.SpecOverviewLines(specKey, count, rating, percent)
+        return header .. "\n" .. detailLine
     end
 
     local classToken = specKey:match("^(.-)_")
@@ -657,31 +667,28 @@ function Format.SpecListLine(specKey, count, percent, rating)
     )
 end
 
---- Builds a compact three-line spec overview (icon, share, avg rating).
+--- Builds a compact two-line spec overview (icon, share, avg rating).
 --- @param specKey string
 --- @param count number
 --- @param avgRating number|nil
 --- @param share number|nil
---- @return string header, string shareLine, string statsLine
+--- @return string header, string detailLine
 function Format.SpecOverviewLines(specKey, count, avgRating, share)
     local classToken = specKey:match("^(.-)_")
     local header = string.format(
         "%s%s",
-        Format.ClassIcon(classToken),
+        Format.ClassIcon(classToken, 12),
         Format.SpecShortName(specKey)
     )
-    local shareLine = string.format(
-        "     %s  %s",
+    local detailLine = string.format(
+        "     %s  %s  %s %s",
         Format.StatLine("Share", share and Format.Percent(share) or Format.Muted("--")),
-        Format.Muted(string.format("(%s listed)", Format.Count(count)))
-    )
-    local statsLine = string.format(
-        "     %s %s",
+        Format.Muted(string.format("(%s listed)", Format.Count(count))),
         Format.Label("Avg listed"),
         Format.Rating(avgRating)
     )
 
-    return header, shareLine, statsLine
+    return header, detailLine
 end
 
 --- Appends imported aggregate stats to a line list.

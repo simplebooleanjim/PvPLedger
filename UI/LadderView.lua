@@ -11,7 +11,7 @@ local LadderView = UI.LadderView
 LadderView.frame = LadderView.frame or nil
 LadderView.searchText = LadderView.searchText or ""
 LadderView.currentPage = LadderView.currentPage or 1
-local LADDER_VIEW_LAYOUT_VERSION = 8
+local LADDER_VIEW_LAYOUT_VERSION = 9
 local FRAME_WIDTH = 560
 local FRAME_HEIGHT = 548
 local PADDING = 20
@@ -200,7 +200,7 @@ function LadderView.BuildFilterLabel(filters)
     elseif filters.classToken then
         table.insert(parts, Format.ClassName(filters.classToken))
     else
-        table.insert(parts, "All classes")
+        table.insert(parts, PVL.L("UI.LADDER.ALL_CLASSES"))
     end
     return table.concat(parts, " · ")
 end
@@ -216,13 +216,16 @@ function LadderView.BuildSummaryText(filters, searchText, totalRows)
     local snapshot = PVL.GetImportedSnapshot(bracket)
     local lines = {}
     if not snapshot then
-        table.insert(lines, Format.Muted("No ladder data is loaded for this bracket."))
-        return table.concat(lines, "\n"), false, nil
+        table.insert(lines, Format.Muted(PVL.L("UI.LADDER.NO_DATA")))
+        for _, hintLine in ipairs(PVL.GetLadderStalenessLines(bracket)) do
+            table.insert(lines, Format.Colorize(Format.COLORS.WARNING, hintLine))
+        end
+        return table.concat(lines, "\n"), false, PVL.GetActiveLadderRegion()
     end
     local totalPlayers = PVL.GetImportedPlayerCount(bracket)
     if totalPlayers == 0 then
-        table.insert(lines, Format.Muted("This snapshot does not include a player list yet."))
-        table.insert(lines, Format.Muted("The next ladder data refresh will populate listed players."))
+        table.insert(lines, Format.Muted(PVL.L("UI.LADDER.NO_PLAYER_LIST")))
+        table.insert(lines, Format.Muted(PVL.L("UI.LADDER.REFRESH_WILL_POPULATE")))
         table.insert(lines, "")
         table.insert(lines, Format.Muted(string.format(
             "Snapshot: %s (%s)",
@@ -272,9 +275,9 @@ function LadderView.BuildSummaryText(filters, searchText, totalRows)
     if totalRows == 0 then
         table.insert(lines, "")
         if searchActive then
-            table.insert(lines, Format.Muted("No listed players match that search."))
+            table.insert(lines, Format.Muted(PVL.L("UI.LADDER.NO_SEARCH_RESULTS")))
         else
-            table.insert(lines, Format.Muted("No listed players match the current class/spec filter."))
+            table.insert(lines, Format.Muted(PVL.L("UI.LADDER.NO_FILTER_RESULTS")))
         end
     end
     return table.concat(lines, "\n"), not filters.specKey, snapshot.region
@@ -296,14 +299,14 @@ local function CreateHeaderRow(parent, showSpecColumn)
         label:SetText(Format.SectionLabel(text))
         return label
     end
-    AddHeaderLabel("RANK", "#", "RIGHT")
-    AddHeaderLabel("PLAYER", "Player", "LEFT")
+    AddHeaderLabel("RANK", PVL.L("UI.LADDER.COL_RANK"), "RIGHT")
+    AddHeaderLabel("PLAYER", PVL.L("UI.LADDER.COL_PLAYER"), "LEFT")
     if showSpecColumn then
-        AddHeaderLabel("SPEC", "Spec", "LEFT")
+        AddHeaderLabel("SPEC", PVL.L("UI.LADDER.COL_SPEC"), "LEFT")
     end
-    AddHeaderLabel("CR", "CR", "LEFT")
-    AddHeaderLabel("WL", "W-L", "LEFT")
-    AddHeaderLabel("WINPCT", "Win%", "LEFT")
+    AddHeaderLabel("CR", PVL.L("UI.LADDER.COL_CR"), "LEFT")
+    AddHeaderLabel("WL", PVL.L("UI.LADDER.COL_WL"), "LEFT")
+    AddHeaderLabel("WINPCT", PVL.L("UI.LADDER.COL_WINPCT"), "LEFT")
     header.divider = header:CreateTexture(nil, "ARTWORK")
     header.divider:SetColorTexture(122 / 255, 104 / 255, 62 / 255, 0.85)
     header.divider:SetHeight(1)
@@ -591,7 +594,7 @@ end
 local function CreateSearchBox(parent, topAnchor, rightAnchor)
     local searchLabel = parent:CreateFontString(nil, "OVERLAY", "GameFontHighlightSmall")
     searchLabel:SetPoint("TOPLEFT", topAnchor, "TOPLEFT", 0, 0)
-    searchLabel:SetText(Format.SectionLabel("Search"))
+    searchLabel:SetText(Format.SectionLabel(PVL.L("UI.LADDER.SEARCH")))
     local searchBox = CreateFrame("EditBox", nil, parent, "InputBoxTemplate")
     searchBox:SetAutoFocus(false)
     searchBox:SetHeight(SEARCH_HEIGHT)
@@ -618,7 +621,7 @@ end
 local function CreatePaginationBar(parent)
     local bar = CreateFrame("Frame", nil, parent)
     bar:SetHeight(PAGINATION_HEIGHT)
-    bar.prevButton = CreatePageArrowButton(bar, PREV_PAGE_TEXTURE, "Previous page")
+    bar.prevButton = CreatePageArrowButton(bar, PREV_PAGE_TEXTURE, PVL.L("UI.LADDER.PAGE_PREV"))
     bar.prevButton:SetPoint("LEFT", bar, "LEFT", 0, 0)
     bar.prevButton:SetScript("OnClick", function()
         if LadderView.currentPage > 1 then
@@ -626,7 +629,7 @@ local function CreatePaginationBar(parent)
             LadderView.Refresh()
         end
     end)
-    bar.nextButton = CreatePageArrowButton(bar, NEXT_PAGE_TEXTURE, "Next page")
+    bar.nextButton = CreatePageArrowButton(bar, NEXT_PAGE_TEXTURE, PVL.L("UI.LADDER.PAGE_NEXT"))
     bar.nextButton:SetPoint("RIGHT", bar, "RIGHT", 0, 0)
     bar.nextButton:SetScript("OnClick", function()
         LadderView.currentPage = LadderView.currentPage + 1
@@ -653,7 +656,7 @@ function LadderView.UpdatePaginationControls(frame, currentPage, totalPages, tot
         return
     end
     if totalRows <= 0 then
-        bar.pageText:SetText(Format.Muted("No results"))
+        bar.pageText:SetText(Format.Muted(PVL.L("UI.LADDER.NO_RESULTS")))
         bar.rangeText:SetText("")
         bar.prevButton:Disable()
         bar.nextButton:Disable()
@@ -705,12 +708,12 @@ function LadderView.CreateFrame()
     frame:SetScript("OnDragStart", frame.StartMoving)
     frame:SetScript("OnDragStop", frame.StopMovingOrSizing)
     frame:Hide()
-    UI.RegisterEscapeToClose(frame)
+    UI.RegisterEscapeToClose(frame, false)
     UI.AddWindowLogo(frame)
     UI.AddWindowWatermark(frame)
     frame.title = frame:CreateFontString(nil, "OVERLAY", "GameFontHighlight")
     frame.title:SetPoint("TOP", frame.TitleBg, "TOP", 0, -3)
-    frame.title:SetText("Ladder")
+    frame.title:SetText(PVL.L("UI.LADDER.TITLE"))
     frame.header = frame:CreateFontString(nil, "OVERLAY", "GameFontNormal")
     frame.header:SetPoint("TOPLEFT", GetContentHost(frame), "TOPLEFT", CONTENT_PAD_LEFT, -34)
     frame.header:SetJustifyH("LEFT")
@@ -719,7 +722,7 @@ function LadderView.CreateFrame()
     frame.note:SetPoint("TOPLEFT", frame.header, "BOTTOMLEFT", 0, -4)
     frame.note:SetPoint("RIGHT", GetContentHost(frame), "RIGHT", -CONTENT_PAD_RIGHT, 0)
     frame.note:SetJustifyH("LEFT")
-    frame.note:SetText(Format.Muted("Click a player to copy their armory link (Ctrl+C, then paste in your browser)."))
+    frame.note:SetText(Format.Muted(PVL.L("UI.LADDER.ARMORY_HINT")))
     local contentHost = GetContentHost(frame)
     frame.body = CreateFrame("Frame", nil, frame)
     frame.body:SetPoint("TOP", frame.note, "BOTTOM", 0, -8)

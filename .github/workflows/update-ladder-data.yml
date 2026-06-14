@@ -32,10 +32,36 @@ jobs:
           BNET_CLIENT_SECRET: ${{ secrets.BNET_CLIENT_SECRET }}
         run: python fetch_all.py --region US --write-manifest --include-players
 
-      - name: Commit refreshed snapshot files
+      - name: Commit refreshed US snapshot files
         uses: stefanzweifel/git-auto-commit-action@v7
         with:
           commit_message: "chore(data): refresh US ladder snapshots"
           file_pattern: "Data/LadderData_US_*.lua Data/ladder-manifest.json PvPLedger-Data-US/* PvPLedger-AppHelper/AppData.lua"
+          commit_user_name: github-actions[bot]
+          commit_user_email: 41898282+github-actions[bot]@users.noreply.github.com
+
+  refresh-eu-ladders:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Fetch all EU ladder snapshots
+        working-directory: Collector
+        env:
+          BNET_CLIENT_ID: ${{ secrets.BNET_CLIENT_ID }}
+          BNET_CLIENT_SECRET: ${{ secrets.BNET_CLIENT_SECRET }}
+        run: python fetch_all.py --region EU --write-manifest --include-players
+
+      - name: Commit refreshed EU snapshot files
+        uses: stefanzweifel/git-auto-commit-action@v7
+        with:
+          commit_message: "chore(data): refresh EU ladder snapshots"
+          file_pattern: "Data/LadderData_EU_*.lua Data/ladder-manifest-EU.json PvPLedger-Data-EU/* PvPLedger-AppHelper/AppData-EU.lua"
           commit_user_name: github-actions[bot]
           commit_user_email: 41898282+github-actions[bot]@users.noreply.github.com

@@ -7,36 +7,64 @@ local UI = PVL.UI
 local Format = UI.Format
 
 UI.frame = UI.frame or nil
-local UI_LAYOUT_VERSION = 24
+local UI_LAYOUT_VERSION = 31
 
 local FRAME_WIDTH = 720
 local FRAME_HEIGHT = 580
-local PADDING = 20
-local FILTER_LABEL_X = 16
+local CONTENT_PAD_LEFT = 12
+local CONTENT_PAD_RIGHT = 12
+local CONTENT_PAD_BOTTOM = 12
 local FILTER_ROW_Y = -34
 local DROPDOWN_MENU_INSET = 16
 local COLUMN_GAP = 12
-local COLUMN_WIDTH = math.floor((FRAME_WIDTH - (PADDING * 2) - COLUMN_GAP) / 2)
-local CONTENT_WIDTH = FRAME_WIDTH - (PADDING * 2)
-local TRIPLE_COL_GAP_TOTAL = COLUMN_GAP * 2
-local TRIPLE_COL_WIDTH = math.floor((CONTENT_WIDTH - TRIPLE_COL_GAP_TOTAL) / 3)
-local MIDDLE_SECTION_HEIGHT = 212
+local MIDDLE_SECTION_HEIGHT = 228
 local MATCH_DROPDOWN_HEIGHT = 28
 local BOTTOM_SECTION_GAP = 12
-local TOP_SECTION_Y = -78
-local VIEW_LADDER_BUTTON_WIDTH = 88
+local FILTER_LABEL_TO_DROPDOWN_GAP = 4
+local FILTER_DROPDOWN_TO_SECTION_GAP = 12
+local VIEW_LADDER_BUTTON_WIDTH = 56
 local VIEW_LADDER_BUTTON_HEIGHT = 22
-local FRAME_RIGHT_INSET = 36
+local TITLES_BUTTON_WIDTH = 52
+local FILTER_BUTTON_GAP = 4
+local SPEC_DROPDOWN_WIDTH = 170
+
+--- Returns the inset content host for a framed window.
+--- @param hostFrame Frame
+--- @return Frame
+local function GetContentHost(hostFrame)
+    return hostFrame.Inset or hostFrame
+end
+
+--- Returns layout metrics for the main frame.
+--- @return table|nil
+function UI.GetMainFrameLayout()
+    if UI.frame and UI.frame.layout then
+        return UI.frame.layout
+    end
+
+    return nil
+end
 
 --- Returns the left edge X offset for one of the three top content columns.
 --- @param columnIndex number 1=left, 2=middle, 3=right
 --- @return number
 function UI.GetTopColumnOffset(columnIndex)
-    if columnIndex <= 1 then
-        return PADDING
+    local layout = UI.GetMainFrameLayout()
+    if layout then
+        if columnIndex <= 1 then
+            return layout.contentPadLeft
+        end
+
+        return layout.contentPadLeft + ((columnIndex - 1) * (layout.tripleColWidth + COLUMN_GAP))
     end
 
-    return PADDING + ((columnIndex - 1) * (TRIPLE_COL_WIDTH + COLUMN_GAP))
+    local contentWidth = FRAME_WIDTH - 20 - CONTENT_PAD_LEFT - CONTENT_PAD_RIGHT
+    local tripleColWidth = math.floor((contentWidth - (COLUMN_GAP * 2)) / 3)
+    if columnIndex <= 1 then
+        return CONTENT_PAD_LEFT
+    end
+
+    return CONTENT_PAD_LEFT + ((columnIndex - 1) * (tripleColWidth + COLUMN_GAP))
 end
 
 --- Returns persisted UI filter settings.
@@ -129,13 +157,42 @@ function UI.CreateMainFrame()
     UI.AddWindowLogo(frame)
     UI.AddWindowWatermark(frame, 280)
 
+    local contentHost = GetContentHost(frame)
+    local hostWidth = contentHost:GetWidth()
+    if not hostWidth or hostWidth <= 0 then
+        hostWidth = FRAME_WIDTH - 10
+    end
+
+    local contentWidth = hostWidth - CONTENT_PAD_LEFT - CONTENT_PAD_RIGHT
+    local tripleColWidth = math.floor((contentWidth - (COLUMN_GAP * 2)) / 3)
+    local columnWidth = math.floor((contentWidth - COLUMN_GAP) / 2)
+
+    frame.layout = {
+        contentPadLeft = CONTENT_PAD_LEFT,
+        contentPadRight = CONTENT_PAD_RIGHT,
+        contentPadBottom = CONTENT_PAD_BOTTOM,
+        contentWidth = contentWidth,
+        tripleColWidth = tripleColWidth,
+        columnWidth = columnWidth,
+    }
+
+    --- @param columnIndex number
+    --- @return number
+    local function GetColumnOffset(columnIndex)
+        if columnIndex <= 1 then
+            return CONTENT_PAD_LEFT
+        end
+
+        return CONTENT_PAD_LEFT + ((columnIndex - 1) * (tripleColWidth + COLUMN_GAP))
+    end
+
     frame.title = frame:CreateFontString(nil, "OVERLAY", "GameFontHighlight")
     frame.title:SetPoint("TOP", frame.TitleBg, "TOP", 0, -3)
     frame.title:SetText("PvPLedger")
 
     frame.bracketLabel = frame:CreateFontString(nil, "OVERLAY", "GameFontNormal")
-    frame.bracketLabel:SetPoint("TOPLEFT", frame, "TOPLEFT", FILTER_LABEL_X, FILTER_ROW_Y)
-    frame.bracketLabel:SetText("Bracket")
+    frame.bracketLabel:SetPoint("TOPLEFT", contentHost, "TOPLEFT", CONTENT_PAD_LEFT, FILTER_ROW_Y)
+    frame.bracketLabel:SetText(PVL.L("UI.FILTER.BRACKET"))
 
     frame.bracketDropdown, frame.refreshBracketDropdown = UI.CreateDropdown(
         frame,
@@ -152,11 +209,11 @@ function UI.CreateMainFrame()
             UI.SetBracketFilter(option.value)
         end
     )
-    frame.bracketDropdown:SetPoint("TOPLEFT", frame.bracketLabel, "BOTTOMLEFT", -DROPDOWN_MENU_INSET, -2)
+    frame.bracketDropdown:SetPoint("TOPLEFT", frame.bracketLabel, "BOTTOMLEFT", -DROPDOWN_MENU_INSET, -FILTER_LABEL_TO_DROPDOWN_GAP)
 
     frame.classLabel = frame:CreateFontString(nil, "OVERLAY", "GameFontNormal")
     frame.classLabel:SetPoint("LEFT", frame.bracketLabel, "LEFT", 190, 0)
-    frame.classLabel:SetText("Class")
+    frame.classLabel:SetText(PVL.L("UI.FILTER.CLASS"))
 
     frame.classDropdown, frame.refreshClassDropdown = UI.CreateDropdown(
         frame,
@@ -176,16 +233,16 @@ function UI.CreateMainFrame()
             end
         end
     )
-    frame.classDropdown:SetPoint("TOPLEFT", frame.classLabel, "BOTTOMLEFT", -DROPDOWN_MENU_INSET, -2)
+    frame.classDropdown:SetPoint("TOPLEFT", frame.classLabel, "BOTTOMLEFT", -DROPDOWN_MENU_INSET, -FILTER_LABEL_TO_DROPDOWN_GAP)
 
     frame.specLabel = frame:CreateFontString(nil, "OVERLAY", "GameFontNormal")
     frame.specLabel:SetPoint("LEFT", frame.classLabel, "LEFT", 170, 0)
-    frame.specLabel:SetText("Spec")
+    frame.specLabel:SetText(PVL.L("UI.FILTER.SPEC"))
 
     frame.specDropdown, frame.refreshSpecDropdown = UI.CreateDropdown(
         frame,
         "PvPLedgerSpecDropdown",
-        188,
+        SPEC_DROPDOWN_WIDTH,
         function()
             return PVL.GetSpecFilterOptions(UI.GetFilters().classToken)
         end,
@@ -200,13 +257,13 @@ function UI.CreateMainFrame()
             UI.SetSpecFilter(option.value)
         end
     )
-    frame.specDropdown:SetPoint("TOPLEFT", frame.specLabel, "BOTTOMLEFT", -DROPDOWN_MENU_INSET, -2)
+    frame.specDropdown:SetPoint("TOPLEFT", frame.specLabel, "BOTTOMLEFT", -DROPDOWN_MENU_INSET, -FILTER_LABEL_TO_DROPDOWN_GAP)
 
     frame.viewLadderButton = CreateFrame("Button", "PvPLedgerViewLadderButton", frame, "UIPanelButtonTemplate")
     frame.viewLadderButton:SetSize(VIEW_LADDER_BUTTON_WIDTH, VIEW_LADDER_BUTTON_HEIGHT)
-    frame.viewLadderButton:SetPoint("TOP", frame.specDropdown, "TOP", 0, 0)
-    frame.viewLadderButton:SetPoint("RIGHT", frame, "RIGHT", -FRAME_RIGHT_INSET, 0)
-    frame.viewLadderButton:SetText("View Ladder")
+    frame.viewLadderButton:SetPoint("RIGHT", contentHost, "RIGHT", -CONTENT_PAD_RIGHT, 0)
+    frame.viewLadderButton:SetPoint("CENTER", frame.specDropdown, "CENTER", 0, 0)
+    frame.viewLadderButton:SetText(PVL.L("UI.BUTTON.LADDER"))
     frame.viewLadderButton:SetScript("OnClick", function()
         if UI.LadderView then
             UI.LadderView.Show()
@@ -214,9 +271,10 @@ function UI.CreateMainFrame()
     end)
 
     frame.viewTitlesButton = CreateFrame("Button", "PvPLedgerViewTitlesButton", frame, "UIPanelButtonTemplate")
-    frame.viewTitlesButton:SetSize(VIEW_LADDER_BUTTON_WIDTH, VIEW_LADDER_BUTTON_HEIGHT)
-    frame.viewTitlesButton:SetPoint("TOPRIGHT", frame.viewLadderButton, "BOTTOMRIGHT", 0, -4)
-    frame.viewTitlesButton:SetText("Titles")
+    frame.viewTitlesButton:SetSize(TITLES_BUTTON_WIDTH, VIEW_LADDER_BUTTON_HEIGHT)
+    frame.viewTitlesButton:SetPoint("RIGHT", frame.viewLadderButton, "LEFT", -FILTER_BUTTON_GAP, 0)
+    frame.viewTitlesButton:SetPoint("CENTER", frame.viewLadderButton, "CENTER", 0, 0)
+    frame.viewTitlesButton:SetText(PVL.L("UI.BUTTON.TITLES"))
     frame.viewTitlesButton:SetScript("OnClick", function()
         if UI.TitleView then
             UI.TitleView.Show()
@@ -224,12 +282,18 @@ function UI.CreateMainFrame()
     end)
 
     frame.regionLabel = frame:CreateFontString(nil, "OVERLAY", "GameFontHighlightSmall")
-    frame.regionLabel:SetPoint("BOTTOMRIGHT", frame.viewLadderButton, "TOPRIGHT", 0, 6)
+    frame.regionLabel:SetPoint("TOPRIGHT", contentHost, "TOPRIGHT", -CONTENT_PAD_RIGHT, FILTER_ROW_Y)
     frame.regionLabel:SetJustifyH("RIGHT")
 
+    frame.sectionStart = CreateFrame("Frame", nil, frame)
+    frame.sectionStart:SetHeight(1)
+    frame.sectionStart:SetPoint("TOP", frame.specDropdown, "BOTTOM", 0, -FILTER_DROPDOWN_TO_SECTION_GAP)
+    frame.sectionStart:SetPoint("LEFT", contentHost, "LEFT", 0, 0)
+    frame.sectionStart:SetPoint("RIGHT", contentHost, "RIGHT", 0, 0)
+
     frame.summaryHeader = frame:CreateFontString(nil, "OVERLAY", "GameFontNormalLarge")
-    frame.summaryHeader:SetPoint("TOPLEFT", frame, "TOPLEFT", UI.GetTopColumnOffset(1), TOP_SECTION_Y)
-    frame.summaryHeader:SetText(Format.Header("Overview"))
+    frame.summaryHeader:SetPoint("TOPLEFT", frame.sectionStart, "BOTTOMLEFT", GetColumnOffset(1), 0)
+    frame.summaryHeader:SetText(Format.Header(PVL.L("UI.SECTION.OVERVIEW")))
 
     frame.summaryScroll, frame.setSummaryText = UI.CreateScrollableTextArea(
         frame,
@@ -239,14 +303,14 @@ function UI.CreateMainFrame()
         frame,
         nil,
         MIDDLE_SECTION_HEIGHT,
-        TRIPLE_COL_WIDTH
+        tripleColWidth
     )
     frame.summaryScroll:ClearAllPoints()
     frame.summaryScroll:SetPoint("TOPLEFT", frame.summaryHeader, "BOTTOMLEFT", 0, -8)
-    frame.summaryScroll:SetSize(TRIPLE_COL_WIDTH, MIDDLE_SECTION_HEIGHT)
+    frame.summaryScroll:SetSize(tripleColWidth, MIDDLE_SECTION_HEIGHT)
 
     frame.crHistoryHeader = frame:CreateFontString(nil, "OVERLAY", "GameFontNormalLarge")
-    frame.crHistoryHeader:SetPoint("TOPLEFT", frame, "TOPLEFT", UI.GetTopColumnOffset(2), TOP_SECTION_Y)
+    frame.crHistoryHeader:SetPoint("TOPLEFT", frame.sectionStart, "BOTTOMLEFT", GetColumnOffset(2), 0)
     frame.crHistoryHeader:SetText(Format.Header(PVL.LABELS.CR_HISTORY))
 
     frame.crHistoryScroll, frame.setCrHistoryText = UI.CreateScrollableTextArea(
@@ -257,15 +321,17 @@ function UI.CreateMainFrame()
         frame,
         nil,
         MIDDLE_SECTION_HEIGHT,
-        TRIPLE_COL_WIDTH
+        tripleColWidth
     )
     frame.crHistoryScroll:ClearAllPoints()
     frame.crHistoryScroll:SetPoint("TOPLEFT", frame.crHistoryHeader, "BOTTOMLEFT", 0, -8)
-    frame.crHistoryScroll:SetSize(TRIPLE_COL_WIDTH, MIDDLE_SECTION_HEIGHT)
+    frame.crHistoryScroll:SetSize(tripleColWidth, MIDDLE_SECTION_HEIGHT)
 
     frame.specDetailHeader = frame:CreateFontString(nil, "OVERLAY", "GameFontNormalLarge")
-    frame.specDetailHeader:SetPoint("TOPLEFT", frame, "TOPLEFT", UI.GetTopColumnOffset(3), TOP_SECTION_Y)
-    frame.specDetailHeader:SetText(Format.Header("Spec Detail"))
+    frame.specDetailHeader:SetPoint("TOPLEFT", frame.sectionStart, "BOTTOMLEFT", GetColumnOffset(3), 0)
+    frame.specDetailHeader:SetWidth(tripleColWidth)
+    frame.specDetailHeader:SetJustifyH("LEFT")
+    frame.specDetailHeader:SetText(Format.Header(PVL.L("UI.SECTION.CLASS_BREAKDOWN")))
 
     frame.specDetailScroll, frame.setSpecDetailText = UI.CreateScrollableTextArea(
         frame,
@@ -275,11 +341,11 @@ function UI.CreateMainFrame()
         frame,
         nil,
         MIDDLE_SECTION_HEIGHT,
-        TRIPLE_COL_WIDTH
+        tripleColWidth
     )
     frame.specDetailScroll:ClearAllPoints()
     frame.specDetailScroll:SetPoint("TOPLEFT", frame.specDetailHeader, "BOTTOMLEFT", 0, -8)
-    frame.specDetailScroll:SetSize(TRIPLE_COL_WIDTH, MIDDLE_SECTION_HEIGHT)
+    frame.specDetailScroll:SetSize(tripleColWidth, MIDDLE_SECTION_HEIGHT)
 
     frame.topRowBottom = CreateFrame("Frame", nil, frame)
     frame.topRowBottom:SetPoint("TOPLEFT", frame.summaryScroll, "BOTTOMLEFT", 0, -4)
@@ -288,30 +354,30 @@ function UI.CreateMainFrame()
 
     frame.matchDetailHeader = UI.CreateSectionHeader(
         frame,
-        "Match Detail",
+        PVL.L("UI.SECTION.MATCH_DETAIL"),
         { "TOPLEFT", frame.topRowBottom, "BOTTOMLEFT", 0, -BOTTOM_SECTION_GAP }
     )
 
     frame.combatAnalysisHeader = UI.CreateSectionHeader(
         frame,
-        "Combat Analysis",
-        { "TOPLEFT", frame.matchDetailHeader, "TOPLEFT", COLUMN_WIDTH + COLUMN_GAP, 0 }
+        PVL.L("UI.SECTION.COMBAT_ANALYSIS"),
+        { "TOPLEFT", frame.matchDetailHeader, "TOPLEFT", columnWidth + COLUMN_GAP, 0 }
     )
 
     frame.leftColumnBottom = CreateFrame("Frame", nil, frame)
-    frame.leftColumnBottom:SetPoint("BOTTOMLEFT", frame, "BOTTOMLEFT", PADDING, PADDING)
-    frame.leftColumnBottom:SetPoint("RIGHT", frame, "CENTER", -(COLUMN_GAP / 2), 0)
+    frame.leftColumnBottom:SetPoint("BOTTOMLEFT", contentHost, "BOTTOMLEFT", CONTENT_PAD_LEFT, CONTENT_PAD_BOTTOM)
+    frame.leftColumnBottom:SetPoint("RIGHT", contentHost, "CENTER", -(COLUMN_GAP / 2), 0)
     frame.leftColumnBottom:SetHeight(1)
 
     frame.rightColumnBottom = CreateFrame("Frame", nil, frame)
-    frame.rightColumnBottom:SetPoint("BOTTOMRIGHT", frame, "BOTTOMRIGHT", -PADDING, PADDING)
-    frame.rightColumnBottom:SetPoint("LEFT", frame, "CENTER", COLUMN_GAP / 2, 0)
+    frame.rightColumnBottom:SetPoint("BOTTOMRIGHT", contentHost, "BOTTOMRIGHT", -CONTENT_PAD_RIGHT, CONTENT_PAD_BOTTOM)
+    frame.rightColumnBottom:SetPoint("LEFT", contentHost, "CENTER", COLUMN_GAP / 2, 0)
     frame.rightColumnBottom:SetHeight(1)
 
     frame.matchDropdown, frame.refreshMatchDropdown = UI.CreateDropdown(
         frame,
         "PvPLedgerMatchDropdown",
-        COLUMN_WIDTH - 8,
+        columnWidth - 8,
         function()
             return UI.GetRecentMatchOptions(nil, PVL.GetPersonalTrackingFilters())
         end,
@@ -340,7 +406,7 @@ function UI.CreateMainFrame()
     frame.combatStatDropdown, frame.refreshCombatStatDropdown = UI.CreateDropdown(
         frame,
         "PvPLedgerCombatStatDropdown",
-        COLUMN_WIDTH - 8,
+        columnWidth - 8,
         function()
             return UI.GetCombatStatOptions()
         end,
@@ -372,26 +438,26 @@ end
 --- @return string
 function UI.BuildSummaryText(summary)
     local lines = {}
-    local bracketName = PVL.BRACKET_NAMES[summary.bracket] or summary.bracket or "PvP"
+    local bracketName = PVL.BRACKET_NAMES[summary.bracket] or summary.bracket or PVL.L("COMMON.PVP")
 
     table.insert(lines, string.format(
         "%s  %s",
-        Format.Label("Bracket:"),
+        Format.Label(PVL.L("UI.SUMMARY.BRACKET_LABEL")),
         Format.Header(bracketName)
     ))
 
     if summary.specUnavailable then
-        table.insert(lines, Format.Muted("Unable to detect your current specialization."))
+        table.insert(lines, Format.Muted(PVL.L("UI.SUMMARY.SPEC_UNDETECTED")))
     elseif summary.specKey then
-        table.insert(lines, Format.StatLine("Current spec", Format.SpecShortName(summary.specKey)))
+        table.insert(lines, Format.StatLine(PVL.L("UI.SUMMARY.CURRENT_SPEC"), Format.SpecShortName(summary.specKey)))
     end
 
-    table.insert(lines, Format.StatLine("Matches tracked", Format.Count(summary.matchCount)))
+    table.insert(lines, Format.StatLine(PVL.L("UI.SUMMARY.MATCHES_TRACKED"), Format.Count(summary.matchCount)))
 
     if summary.blizzardSeasonRecord then
-        local blizzardLabel = "Blizzard season"
+        local blizzardLabel = PVL.L("UI.SUMMARY.BLIZZARD_SEASON")
         if summary.bracket == PVL.BRACKETS.SHUFFLE then
-            blizzardLabel = "Blizzard season rounds"
+            blizzardLabel = PVL.L("UI.SUMMARY.BLIZZARD_SEASON_ROUNDS")
         end
 
         local specSuffix = summary.specKey and (" (" .. Format.SpecShortName(summary.specKey) .. ")") or ""
@@ -401,16 +467,16 @@ function UI.BuildSummaryText(summary)
                 "%s  %s  %s",
                 Format.WinLossRecord(summary.blizzardSeasonRecord.wins, summary.blizzardSeasonRecord.losses),
                 Format.WinPercent(summary.blizzardSeasonRecord.wins, summary.blizzardSeasonRecord.losses),
-                Format.Muted(string.format("(%s %s)", Format.Count(summary.blizzardSeasonRecord.games), summary.blizzardSeasonRecord.unit or "match"))
+                Format.Muted(PVL.L("UI.SUMMARY.UNIT_MATCH", Format.Count(summary.blizzardSeasonRecord.games)))
             )
         ))
     end
 
-    local recordLabel = "Tracked spec record"
-    local winRateLabel = "Tracked spec win rate"
+    local recordLabel = PVL.L("UI.SUMMARY.TRACKED_RECORD")
+    local winRateLabel = PVL.L("UI.SUMMARY.TRACKED_WIN_RATE")
     if summary.bracket == PVL.BRACKETS.SHUFFLE then
-        recordLabel = "Tracked spec rounds"
-        winRateLabel = "Tracked spec round win rate"
+        recordLabel = PVL.L("UI.SUMMARY.TRACKED_ROUNDS")
+        winRateLabel = PVL.L("UI.SUMMARY.TRACKED_ROUND_WIN_RATE")
     end
 
     if summary.seasonRecord then
@@ -420,7 +486,7 @@ function UI.BuildSummaryText(summary)
             string.format(
                 "%s  %s",
                 Format.WinLossRecord(summary.seasonRecord.wins, summary.seasonRecord.losses),
-                Format.Muted(string.format("(%s logged)", Format.Count(summary.matchCount)))
+                Format.Muted(PVL.L("UI.SUMMARY.LOGGED", Format.Count(summary.matchCount)))
             )
         ))
         table.insert(lines, Format.StatLine(
@@ -431,7 +497,7 @@ function UI.BuildSummaryText(summary)
             and summary.seasonRecord.matchesPlayed
             and summary.seasonRecord.matchesPlayed > 0 then
             table.insert(lines, Format.StatLine(
-                "Matches played",
+                PVL.L("UI.SUMMARY.MATCHES_PLAYED"),
                 Format.WinLossRecord(
                     summary.seasonRecord.matchesWon or 0,
                     math.max((summary.seasonRecord.matchesPlayed or 0) - (summary.seasonRecord.matchesWon or 0), 0)
@@ -439,15 +505,15 @@ function UI.BuildSummaryText(summary)
             ))
         end
     elseif summary.specUnavailable then
-        table.insert(lines, Format.Muted("Select a specialization to view personal stats."))
+        table.insert(lines, Format.Muted(PVL.L("UI.SUMMARY.SELECT_SPEC_STATS")))
     elseif summary.specKey then
-        table.insert(lines, Format.Muted(string.format(
-            "No tracked matches on %s in this bracket yet.",
+        table.insert(lines, Format.Muted(PVL.L(
+            "UI.SUMMARY.NO_TRACKED_MATCHES_SPEC",
             Format.SpecShortName(summary.specKey)
         )))
     end
 
-    table.insert(lines, Format.StatLine("Latest spec CR", Format.Rating(summary.playerCurrentCR)))
+    table.insert(lines, Format.StatLine(PVL.L("UI.SUMMARY.LATEST_CR"), Format.Rating(summary.playerCurrentCR)))
 
     if summary.playerMMRKind == "team" then
         if PVL.IsValidObservedMmr(summary.playerPersonalMMR) then
@@ -464,11 +530,11 @@ function UI.BuildSummaryText(summary)
     if summary.standing then
         standingLabel = PVL.FormatStandingLabel(summary.standing)
     elseif (summary.playerCurrentCR or summary.playerCR) and PVL.GetImportedSnapshot(summary.bracket) then
-        standingLabel = "Unlisted"
+        standingLabel = PVL.L("STANDING.UNLISTED")
     end
 
     table.insert(lines, Format.StatLine(
-        "Estimated standing",
+        PVL.L("UI.SUMMARY.ESTIMATED_STANDING"),
         Format.Colorize(Format.COLORS.STANDING, standingLabel)
     ))
 
@@ -476,19 +542,19 @@ function UI.BuildSummaryText(summary)
         if summary.standing.isEstimated and summary.standing.estimatedRank and not summary.standing.isListed then
             if summary.ladderStalenessLines and #summary.ladderStalenessLines > 0 then
                 table.insert(lines, Format.Muted(
-                    "You are not in the loaded snapshot. Fresher ladder data may be available."
+                    PVL.L("UI.SUMMARY.NOT_IN_SNAPSHOT")
                 ))
             else
                 table.insert(lines, Format.Muted(
-                    "Based on imported ladder CRs. You are not in this snapshot yet."
+                    PVL.L("UI.SUMMARY.NOT_IN_SNAPSHOT_ESTIMATE")
                 ))
             end
         elseif summary.standing.isEstimated
             and summary.standing.isListed
             and summary.standing.snapshotRank
             and summary.standing.snapshotRating then
-            table.insert(lines, Format.Muted(string.format(
-                "Snapshot rank #%s at %s CR; estimate uses your current rating.",
+            table.insert(lines, Format.Muted(PVL.L(
+                "UI.SUMMARY.SNAPSHOT_RANK_HINT",
                 PVL.FormatRating(summary.standing.snapshotRank),
                 PVL.FormatRating(summary.standing.snapshotRating)
             )))
@@ -504,33 +570,36 @@ function UI.BuildSummaryText(summary)
     if summary.importedOverall then
         table.insert(lines, "")
         table.insert(lines, Format.Divider(190))
-        table.insert(lines, Format.SectionLabel("Ladder snapshot"))
+        table.insert(lines, Format.SectionLabel(PVL.L("UI.SUMMARY.LADDER_SNAPSHOT")))
         table.insert(lines, Format.StatLine(
-            "Source",
-            Format.Colorize(Format.COLORS.SOURCE, summary.imported.source or "unknown")
+            PVL.L("UI.SUMMARY.SOURCE"),
+            Format.Colorize(Format.COLORS.SOURCE, summary.imported.source or PVL.L("COMMON.UNKNOWN"))
         ))
         table.insert(lines, Format.StatLine(
-            "Snapshot date",
-            Format.Colorize(Format.COLORS.SOURCE, summary.imported.snapshotDate or "unknown")
+            PVL.L("UI.SUMMARY.SNAPSHOT_DATE"),
+            Format.Colorize(Format.COLORS.SOURCE, summary.imported.snapshotDate or PVL.L("COMMON.UNKNOWN"))
         ))
         table.insert(lines, Format.StatLine(
-            "Loaded from",
+            PVL.L("UI.SUMMARY.LOADED_FROM"),
             Format.Colorize(Format.COLORS.SOURCE, PVL.FormatLadderSourceLabel(PVL.GetSnapshotSource(summary.bracket)))
         ))
         if summary.importedPlayerCount and summary.importedPlayerCount > 0 then
-            table.insert(lines, Format.StatLine("Indexed players", Format.Count(summary.importedPlayerCount)))
+            table.insert(lines, Format.StatLine(PVL.L("UI.SUMMARY.INDEXED_PLAYERS"), Format.Count(summary.importedPlayerCount)))
         end
         if summary.observedPlayerCount and summary.observedPlayerCount > 0 then
             table.insert(lines, Format.StatLine(
-                "Observed on ladder",
+                PVL.L("UI.SUMMARY.OBSERVED_ON_LADDER"),
                 string.format("%s / %s", Format.Count(summary.listedObservedCount or 0), Format.Count(summary.observedPlayerCount))
             ))
         end
-        table.insert(lines, "")
+        Format.AppendBlockGap(lines)
         Format.AppendImportedRatingStats(lines, summary.importedOverall)
     else
         table.insert(lines, "")
-        table.insert(lines, Format.Muted("No ladder data loaded."))
+        table.insert(lines, Format.Muted(PVL.L("UI.SUMMARY.NO_LADDER_DATA")))
+        for _, hintLine in ipairs(PVL.GetLadderStalenessLines(summary.bracket)) do
+            table.insert(lines, Format.Colorize(Format.COLORS.WARNING, hintLine))
+        end
     end
 
     return table.concat(lines, "\n")
@@ -542,7 +611,7 @@ end
 --- @return string
 function UI.BuildCrHistoryText(bracket, filters)
     if not PVL.CrHistory then
-        return Format.Muted("CR history is unavailable.")
+        return Format.Muted(PVL.L("UI.CR_HISTORY.UNAVAILABLE"))
     end
 
     bracket = bracket or PVL.GetActiveBracketFilter()
@@ -554,11 +623,11 @@ function UI.BuildCrHistoryText(bracket, filters)
         Format.StatLine(PVL.LABELS.CR_NET_7D, PVL.CrHistory.FormatDelta(summary.net7d)),
         Format.StatLine(PVL.LABELS.CR_NET_SESSION, PVL.CrHistory.FormatDelta(summary.netSession)),
         Format.StatLine(
-            "Session record",
+            PVL.L("UI.CR_HISTORY.SESSION_RECORD"),
             string.format(
                 "%s  %s",
                 Format.WinLossRecord(summary.winsSession, summary.lossesSession),
-                Format.Muted(string.format("(%s games)", Format.Count(summary.gamesSession)))
+                Format.Muted(PVL.L("UI.CR_HISTORY.GAMES", Format.Count(summary.gamesSession)))
             )
         ),
         "",
@@ -566,21 +635,21 @@ function UI.BuildCrHistoryText(bracket, filters)
 
     if #summary.recentEntries == 0 then
         if summary.specUnavailable then
-            table.insert(lines, Format.Muted("Select a specialization to view CR history."))
+            table.insert(lines, Format.Muted(PVL.L("UI.CR_HISTORY.SELECT_SPEC")))
         elseif summary.specKey then
-            table.insert(lines, Format.Muted(string.format(
-                "No CR history recorded for %s in this bracket yet.",
+            table.insert(lines, Format.Muted(PVL.L(
+                "UI.CR_HISTORY.NONE_SPEC",
                 Format.SpecShortName(summary.specKey)
             )))
         else
-            table.insert(lines, Format.Muted("No CR history recorded for this bracket yet."))
-            table.insert(lines, Format.Muted("Play rated games or open the PvP queue menu to start tracking."))
+            table.insert(lines, Format.Muted(PVL.L("UI.CR_HISTORY.NONE")))
+            table.insert(lines, Format.Muted(PVL.L("UI.CR_HISTORY.START_HINT")))
         end
         return table.concat(lines, "\n")
     end
 
     table.insert(lines, Format.Divider(190))
-    table.insert(lines, Format.SectionLabel("Recent activity"))
+    table.insert(lines, Format.SectionLabel(PVL.L("UI.CR_HISTORY.RECENT_ACTIVITY")))
     table.insert(lines, "")
 
     for _, entry in ipairs(summary.recentEntries) do
@@ -625,10 +694,10 @@ end
 function UI.UpdateDetailPanels(frame, ladderFilters, personalFilters)
     local bracket = ladderFilters.bracket or PVL.GetActiveBracketFilter()
 
-    frame.summaryHeader:SetText(UI.AppendPlayerSpecHeader(Format.Header("Overview"), personalFilters))
+    frame.summaryHeader:SetText(UI.AppendPlayerSpecHeader(Format.Header(PVL.L("UI.SECTION.OVERVIEW")), personalFilters))
     frame.crHistoryHeader:SetText(UI.AppendPlayerSpecHeader(Format.Header(PVL.LABELS.CR_HISTORY), personalFilters))
 
-    local specHeader = Format.Header("Class Breakdown")
+    local specHeader = Format.Header(PVL.L("UI.SECTION.CLASS_BREAKDOWN"))
     if ladderFilters.specKey then
         local classToken = ladderFilters.specKey:match("^(.-)_")
         specHeader = Format.ClassIcon(classToken) .. Format.SpecShortName(ladderFilters.specKey)
@@ -648,8 +717,8 @@ function UI.UpdateMatchDetailPanel(frame, ladderFilters, personalFilters)
     local bracket = ladderFilters.bracket or PVL.GetActiveBracketFilter()
     local selectedMatch = UI.ResolveSelectedMatch(bracket, personalFilters)
 
-    frame.matchDetailHeader:SetText(UI.AppendPlayerSpecHeader(Format.Header("Match Detail"), personalFilters))
-    frame.combatAnalysisHeader:SetText(UI.AppendPlayerSpecHeader(Format.Header("Combat Analysis"), personalFilters))
+    frame.matchDetailHeader:SetText(UI.AppendPlayerSpecHeader(Format.Header(PVL.L("UI.SECTION.MATCH_DETAIL")), personalFilters))
+    frame.combatAnalysisHeader:SetText(UI.AppendPlayerSpecHeader(Format.Header(PVL.L("UI.SECTION.COMBAT_ANALYSIS")), personalFilters))
     frame.setMatchDetailText(UI.BuildMatchDetailText(selectedMatch))
 
     local statDef = UI.GetCombatStatDefinition(ladderFilters.combatStat)
@@ -673,24 +742,24 @@ function UI.BuildOverviewDetailText()
     local lines = {}
 
     if PVL.IsImportedSpecBreakdownMissing(bracket) then
-        local bracketName = PVL.BRACKET_NAMES[bracket] or "This bracket"
-        table.insert(lines, Format.Muted(string.format(
-            "%s uses one combined imported ladder without class breakdown.",
+        local bracketName = PVL.BRACKET_NAMES[bracket] or PVL.L("COMMON.THIS_BRACKET")
+        table.insert(lines, Format.Muted(PVL.L(
+            "UI.SPEC.COMBINED_LADDER",
             bracketName
         )))
-        table.insert(lines, Format.Muted(string.format(
-            "Select a class to view observed spec data from %s matches.",
+        table.insert(lines, Format.Muted(PVL.L(
+            "UI.SPEC.SELECT_CLASS_OBSERVED",
             bracketName
         )))
         return table.concat(lines, "\n")
     end
 
     if #classRows == 0 then
-        table.insert(lines, Format.Muted("No imported class breakdown is available for this bracket yet."))
+        table.insert(lines, Format.Muted(PVL.L("UI.SPEC.NO_CLASS_BREAKDOWN")))
         return table.concat(lines, "\n")
     end
 
-    table.insert(lines, Format.SectionLabel("Listed ladder by class"))
+    table.insert(lines, Format.SectionLabel(PVL.L("UI.SPEC.LISTED_BY_CLASS")))
     table.insert(lines, "")
 
     for index, row in ipairs(classRows) do
@@ -699,12 +768,12 @@ function UI.BuildOverviewDetailText()
         table.insert(lines, shareLine)
         table.insert(lines, statsLine)
         if index < #classRows then
-            table.insert(lines, "")
+            Format.AppendBlockGap(lines)
         end
     end
 
     table.insert(lines, "")
-    table.insert(lines, Format.Muted("Select a class to drill into specs."))
+    table.insert(lines, Format.Muted(PVL.L("UI.SPEC.SELECT_CLASS_DRILL")))
 
     return table.concat(lines, "\n")
 end
@@ -715,7 +784,7 @@ end
 function UI.BuildClassDetailText(classToken)
     local detail = PVL.BuildClassDetailSummary(classToken)
     if not detail then
-        return Format.Muted("No detail available for the selected class.")
+        return Format.Muted(PVL.L("UI.SPEC.NO_DETAIL_CLASS"))
     end
 
     local lines = {}
@@ -723,29 +792,28 @@ function UI.BuildClassDetailText(classToken)
     if detail.imported then
         Format.AppendImportedStats(lines, detail.imported, detail.importedRepresentation, true)
     elseif PVL.IsImportedSpecBreakdownMissing() then
-        table.insert(lines, Format.Muted(string.format(
-            "No imported class breakdown for %s.",
-            PVL.BRACKET_NAMES[PVL.GetActiveBracketFilter()] or "this bracket"
+        table.insert(lines, Format.Muted(PVL.L(
+            "UI.SPEC.NO_IMPORTED_CLASS",
+            PVL.BRACKET_NAMES[PVL.GetActiveBracketFilter()] or PVL.L("COMMON.THIS_BRACKET")
         )))
     else
-        table.insert(lines, Format.Muted("No imported listed-ladder data for this class yet."))
+        table.insert(lines, Format.Muted(PVL.L("UI.SPEC.NO_IMPORTED_LISTED")))
     end
 
     if detail.importedSpecRows and #detail.importedSpecRows > 0 then
         table.insert(lines, "")
-        table.insert(lines, Format.SectionLabel("Listed specs"))
+        table.insert(lines, Format.SectionLabel(PVL.L("UI.SPEC.LISTED_SPECS")))
         for specIndex, row in ipairs(detail.importedSpecRows) do
-            local header, shareLine, statsLine = Format.SpecOverviewLines(
+            local header, detailLine = Format.SpecOverviewLines(
                 row.specKey,
                 row.listedCount,
                 row.avgListedRating,
                 row.representation
             )
             table.insert(lines, header)
-            table.insert(lines, shareLine)
-            table.insert(lines, statsLine)
+            table.insert(lines, detailLine)
             if specIndex < #detail.importedSpecRows then
-                table.insert(lines, "")
+                Format.AppendBlockGap(lines)
             end
         end
     end
@@ -758,7 +826,7 @@ function UI.BuildClassDetailText(classToken)
 
     if detail.observedSpecRows and #detail.observedSpecRows > 0 then
         table.insert(lines, "")
-        table.insert(lines, Format.SectionLabel("Observed specs"))
+        table.insert(lines, Format.SectionLabel(PVL.L("UI.SPEC.OBSERVED_SPECS")))
         for _, row in ipairs(detail.observedSpecRows) do
             table.insert(lines, Format.SpecListLine(row.specKey, row.count, row.percent))
         end
@@ -772,12 +840,12 @@ end
 --- @return string
 function UI.BuildSpecDetailText(specKey)
     if not specKey then
-        return Format.Muted("Select a class or spec to compare imported ladder stats against your observed match data.")
+        return Format.Muted(PVL.L("UI.SPEC.SELECT_TO_COMPARE"))
     end
 
     local detail = PVL.BuildSpecDetailSummary(specKey)
     if not detail then
-        return Format.Muted("No detail available for the selected spec.")
+        return Format.Muted(PVL.L("UI.SPEC.NO_DETAIL_SPEC"))
     end
 
     local lines = {}
@@ -785,12 +853,12 @@ function UI.BuildSpecDetailText(specKey)
     if detail.imported then
         Format.AppendImportedStats(lines, detail.imported, detail.importedRepresentation, true)
     elseif PVL.IsImportedSpecBreakdownMissing() then
-        table.insert(lines, Format.Muted(string.format(
-            "%s has one combined imported ladder without per-spec breakdown.",
-            PVL.BRACKET_NAMES[PVL.GetActiveBracketFilter()] or "This bracket"
+        table.insert(lines, Format.Muted(PVL.L(
+            "UI.SPEC.COMBINED_SPEC",
+            PVL.BRACKET_NAMES[PVL.GetActiveBracketFilter()] or PVL.L("COMMON.THIS_BRACKET")
         )))
     else
-        table.insert(lines, Format.Muted("No imported listed-ladder data for this spec yet."))
+        table.insert(lines, Format.Muted(PVL.L("UI.SPEC.NO_IMPORTED_SPEC")))
     end
 
     table.insert(lines, "")
@@ -877,14 +945,18 @@ function UI.Refresh()
     end
 
     if summary.imported then
-        frame.regionLabel:SetText(string.format(
-            "Region: %s | Bracket: %s",
-            summary.imported.region or "US",
+        frame.regionLabel:SetText(PVL.L(
+            "UI.REGION_BRACKET_FORMAT",
+            summary.imported.region or PVL.GetActiveLadderRegion(),
             summary.imported.bracket or "blitz"
         ))
     else
-        local bracketName = PVL.BRACKET_NAMES[summary.bracket] or summary.bracket or "PvP"
-        frame.regionLabel:SetText(string.format("Region: -- | Bracket: %s", bracketName))
+        local bracketName = PVL.BRACKET_NAMES[summary.bracket] or summary.bracket or PVL.L("COMMON.PVP")
+        frame.regionLabel:SetText(PVL.L(
+            "UI.REGION_BRACKET_FORMAT",
+            PVL.GetActiveLadderRegion(),
+            bracketName
+        ))
     end
 
     frame.setSummaryText(UI.BuildSummaryText(summary))
@@ -903,12 +975,24 @@ end
 --- Shows the main frame.
 function UI.Show()
     local frame = UI.CreateMainFrame()
+
     if PVL.RatedInfo then
-        PVL.RatedInfo.RequestUpdate()
-        PVL.RatedInfo.RefreshAll()
+        pcall(PVL.RatedInfo.RequestUpdate)
+        pcall(PVL.RatedInfo.RefreshAll)
     end
-    UI.Refresh()
+
     frame:Show()
+    if frame.Raise then
+        frame:Raise()
+    end
+
+    local ok, err = pcall(UI.Refresh)
+    if not ok then
+        print(string.format(
+            "|cff66ccffPvPLedger|r: %s",
+            PVL.L("UI.MAIN.RENDER_ERROR", tostring(err))
+        ))
+    end
 end
 
 --- Hides every PvPLedger window.

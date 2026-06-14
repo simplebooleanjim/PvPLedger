@@ -5,7 +5,7 @@ PvPLedger = PvPLedger or {}
 local PVL = PvPLedger
 
 PVL.ADDON_NAME = "PvPLedger"
-PVL.VERSION = "0.7.0"
+PVL.VERSION = "0.8.0"
 PVL.DB_VERSION = 1
 
 --- Bracket identifiers used throughout SavedVariables and imported ladder packs.
@@ -35,14 +35,8 @@ PVL.DEFAULT_COLLECTED_BRACKETS = {
     PVL.BRACKETS.ARENA_3V3,
 }
 
---- Human-readable bracket labels for UI dropdowns.
-PVL.BRACKET_NAMES = {
-    [PVL.BRACKETS.BLITZ] = "Battleground Blitz",
-    [PVL.BRACKETS.SHUFFLE] = "Solo Shuffle",
-    [PVL.BRACKETS.RBG] = "Rated Battlegrounds",
-    [PVL.BRACKETS.ARENA_2V2] = "Arena 2v2",
-    [PVL.BRACKETS.ARENA_3V3] = "Arena 3v3",
-}
+--- Human-readable bracket labels for UI dropdowns (populated in PVL.InitLocale).
+PVL.BRACKET_NAMES = PVL.BRACKET_NAMES or {}
 
 --- Imported brackets that use one combined Battle.net ladder slug from Blizzard.
 PVL.COMBINED_IMPORTED_BRACKETS = {
@@ -55,19 +49,24 @@ PVL.COMBINED_IMPORTED_BRACKETS = {
 PVL.REGIONS = {
     US = "US",
     EU = "EU",
+    KR = "KR",
+    TW = "TW",
 }
 
---- Optional companion addon that ships frequently refreshed US ladder snapshots.
+--- Settings value that follows the player's WoW client region.
+PVL.LADDER_REGION_AUTO = "auto"
+
+--- Default US companion addon name kept for legacy references.
 PVL.DATA_ADDON_NAME = "PvPLedger-Data-US"
 
 --- GitHub folder users can install as a sibling addon for public data updates.
-PVL.DATA_ADDON_INSTALL_HINT = "Copy PvPLedger-Data-US into Interface/AddOns beside PvPLedger."
+PVL.DATA_ADDON_INSTALL_HINT = PVL.DATA_ADDON_INSTALL_HINT or ""
 
 --- Bridge addon written by PvPLedger Sync (TSM/Raider.io-style desktop sync).
 PVL.APP_HELPER_NAME = "PvPLedger-AppHelper"
 
 --- Install hint for the AppHelper + future desktop sync app.
-PVL.APP_HELPER_INSTALL_HINT = "Install PvPLedger-AppHelper and PvPLedger Sync for automatic ladder updates."
+PVL.APP_HELPER_INSTALL_HINT = PVL.APP_HELPER_INSTALL_HINT or ""
 
 --- Ordered class tokens for stable UI sorting.
 PVL.CLASS_ORDER = {
@@ -86,22 +85,8 @@ PVL.CLASS_ORDER = {
     "WARRIOR",
 }
 
---- Maps WoW class tokens to localized display names.
-PVL.CLASS_NAMES = {
-    DEATHKNIGHT = "Death Knight",
-    DEMONHUNTER = "Demon Hunter",
-    DRUID = "Druid",
-    EVOKER = "Evoker",
-    HUNTER = "Hunter",
-    MAGE = "Mage",
-    MONK = "Monk",
-    PALADIN = "Paladin",
-    PRIEST = "Priest",
-    ROGUE = "Rogue",
-    SHAMAN = "Shaman",
-    WARLOCK = "Warlock",
-    WARRIOR = "Warrior",
-}
+--- Maps WoW class tokens to localized display names via Blizzard APIs (see Core/ClassSpec.lua).
+PVL.CLASS_NAMES = PVL.CLASS_NAMES or {}
 
 --- Maps spec index (1-4) to a stable spec key per class.
 --- Keys are uppercase CLASS_SPEC tokens used in aggregates and imports.
@@ -129,26 +114,8 @@ PVL.TEAM_OBSERVED_MMR_BRACKETS = {
     [PVL.BRACKETS.BLITZ] = true,
 }
 
---- UI copy that keeps ladder wording honest about data limits.
-PVL.LABELS = {
-    LISTED_AVG = "Average listed rating",
-    LISTED_MEDIAN = "Median listed rating",
-    TOP100_AVG = "Top-100 listed average",
-    REPRESENTATION = "Top-ladder representation",
-    OBSERVED = "Observed in your matches",
-    TEAM_AVG_MMR = "Team avg MMR",
-    PERSONAL_MMR = "Your MMR",
-    CURRENT_CR = "Current CR",
-    CR_HISTORY = "CR History",
-    CR_PEAK = "Peak CR",
-    CR_LOW = "Low CR",
-    CR_NET_7D = "Net CR (7 days)",
-    CR_NET_SESSION = "Net CR (session)",
-    SEASON_RECORD = "Season record",
-    SEASON_WIN_RATE = "Season win rate",
-    ROUND_RECORD = "Round record",
-    ROUND_WIN_RATE = "Round win rate",
-}
+--- UI copy that keeps ladder wording honest about data limits (populated in PVL.InitLocale).
+PVL.LABELS = PVL.LABELS or {}
 
 --- Maximum CR history points retained per character.
 PVL.MAX_CR_HISTORY = 1000
@@ -165,14 +132,7 @@ PVL.LADDER_VIEW_LIMIT = 1000
 --- Seconds to suppress redundant queue-screen CR snapshots after a match entry.
 PVL.CR_SNAPSHOT_SUPPRESS_SECONDS = 120
 
-PVL.COMBAT_ANALYSIS_STATS = {
-    { value = "damage", label = "Damage Done", field = "damage", useCombatAmount = true, rateLabel = "DPS" },
-    { value = "healing", label = "Healing Done", field = "healing", useCombatAmount = true, rateLabel = "HPS" },
-    { value = "damageTaken", label = "Damage Taken", field = "damageTaken", useCombatAmount = true, rateLabel = "DTPS" },
-    { value = "interrupts", label = "Interrupts", field = "interrupts", useCombatAmount = false, rateLabel = "Per min" },
-    { value = "dispels", label = "Dispels", field = "dispels", useCombatAmount = false, rateLabel = "Per min" },
-    { value = "deaths", label = "Deaths", field = "deaths", useCombatAmount = false, rateLabel = "Per min" },
-}
+PVL.COMBAT_ANALYSIS_STATS = PVL.COMBAT_ANALYSIS_STATS or {}
 
 PVL.DEFAULT_COMBAT_ANALYSIS_STAT = "damage"
 

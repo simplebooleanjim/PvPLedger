@@ -12,6 +12,7 @@ from urllib import error, request
 
 from .config import SyncConfig, default_config_path, save_config
 from .export_ack import write_export_ack
+from .i18n import t
 from .saved_vars import (
     find_app_helper_saved_vars,
     get_export_metadata,
@@ -26,6 +27,7 @@ class UploadResult:
 
     uploaded: bool
     reason: str
+    reason_key: str = ""
     match_count: int = 0
     batch_id: str = ""
     spool_path: str = ""
@@ -138,7 +140,7 @@ def build_upload_payload(
     """
 
     return {
-        "schemaVersion": 1,
+        "schemaVersion": metadata.get("schemaVersion") or 2,
         "batchId": batch_id,
         "uploadedAt": _utc_now(),
         "source": "pvpledger-sync",
@@ -146,6 +148,9 @@ def build_upload_payload(
         "repo": config.repo,
         "character": metadata.get("lastCharacter"),
         "addonVersion": metadata.get("addonVersion"),
+        "accountIdentity": metadata.get("accountIdentity"),
+        "accountSnapshot": metadata.get("accountSnapshot"),
+        "characterSnapshot": metadata.get("characterSnapshot"),
         "matchCount": len(matches),
         "matches": matches,
     }
@@ -198,7 +203,7 @@ def post_upload_payload(*, upload_url: str, payload: dict[str, Any], upload_toke
 
     headers = {
         "Content-Type": "application/json",
-        "User-Agent": "PvPLedger-Sync/0.7",
+        "User-Agent": "PvPLedger-Sync/0.8",
     }
     if upload_token:
         headers["Authorization"] = f"Bearer {upload_token}"
@@ -242,16 +247,25 @@ def upload_exports(config: SyncConfig, *, force: bool = False) -> UploadResult:
     """
 
     if not config.wow_addons_dir:
-        return UploadResult(uploaded=False, reason="Sync is not initialized.")
+        return UploadResult(
+            uploaded=False,
+            reason=t("UPLOAD.NOT_INITIALIZED"),
+            reason_key="UPLOAD.NOT_INITIALIZED",
+        )
 
     if not config.export_enabled and not force:
-        return UploadResult(uploaded=False, reason="Match export upload is disabled.")
+        return UploadResult(
+            uploaded=False,
+            reason=t("UPLOAD.DISABLED"),
+            reason_key="UPLOAD.DISABLED",
+        )
 
     saved_vars_path = find_app_helper_saved_vars(Path(config.wow_addons_dir))
     if not saved_vars_path:
         return UploadResult(
             uploaded=False,
-            reason="No PvPLedger_AppHelper SavedVariables file found yet.",
+            reason=t("UPLOAD.NO_SAVED_VARS"),
+            reason_key="UPLOAD.NO_SAVED_VARS",
             match_count=0,
         )
 
@@ -276,7 +290,8 @@ def upload_exports(config: SyncConfig, *, force: bool = False) -> UploadResult:
     if not pending_matches:
         return UploadResult(
             uploaded=False,
-            reason="No pending match exports to upload.",
+            reason=t("UPLOAD.NO_PENDING_EXPORTS"),
+            reason_key="UPLOAD.NO_PENDING_EXPORTS",
             match_count=0,
         )
 
@@ -322,7 +337,8 @@ def upload_exports(config: SyncConfig, *, force: bool = False) -> UploadResult:
 
     return UploadResult(
         uploaded=True,
-        reason=f"Uploaded {len(uploaded_match_ids)} match export(s).",
+        reason=t("UPLOAD.UPLOADED_COUNT", count=len(uploaded_match_ids)),
+        reason_key="UPLOAD.UPLOADED_COUNT",
         match_count=len(uploaded_match_ids),
         batch_id=batch_id,
         spool_path=str(spool_path),

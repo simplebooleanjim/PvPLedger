@@ -31,6 +31,10 @@ echo Generating brand assets...
 %PYTHON% ..\Media\generate_brand_assets.py
 if %ERRORLEVEL% NEQ 0 exit /b %ERRORLEVEL%
 
+echo Generating locale overlays...
+%PYTHON% build\complete_all_locales.py
+if %ERRORLEVEL% NEQ 0 exit /b %ERRORLEVEL%
+
 echo Preparing friend installer addon bundle...
 %PYTHON% build\prepare_friend_bundle.py
 if %ERRORLEVEL% NEQ 0 exit /b %ERRORLEVEL%
@@ -43,7 +47,7 @@ copy /Y "%BUILD_DIST%\PvPLedger-Sync.exe" "dist\PvPLedger-Sync.exe" >nul
 set "PVL_SYNC_EXE=%BUILD_DIST%\PvPLedger-Sync.exe"
 
 echo Building PvPLedger-Setup.exe...
-%PYTHON% -m PyInstaller --noconfirm --distpath "%BUILD_DIST%" --workpath "%BUILD_WORK%" build\pvpledger_setup.spec
+%PYTHON% -m PyInstaller --clean --noconfirm --distpath "%BUILD_DIST%" --workpath "%BUILD_WORK%" build\pvpledger_setup.spec
 if %ERRORLEVEL% NEQ 0 exit /b %ERRORLEVEL%
 
 copy /Y "%BUILD_DIST%\PvPLedger-Setup.exe" "dist\PvPLedger-Setup.exe" >nul

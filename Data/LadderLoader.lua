@@ -1,6 +1,7 @@
 --- Loads bundled and companion data-addon ladder snapshots with merge precedence.
---- WoW addons cannot fetch HTTP URLs, so public updates ship via the optional
---- PvPLedger-Data-US companion addon or PvPLedger-AppHelper + desktop sync app.
+--- WoW addons cannot fetch HTTP URLs, so public updates ship via optional
+--- region-specific companion addons (for example PvPLedger-Data-EU) or
+--- PvPLedger-AppHelper + the desktop sync app.
 --- @class PvPLedger
 local PVL = PvPLedger
 
@@ -12,8 +13,8 @@ PVL.LADDER_DATA_SOURCES = {
 }
 
 PVL._bundledLadderData = PVL._bundledLadderData or {}
-PVL._appHelperSnapshots = PVL._appHelperSnapshots or {}
-PVL._appSyncInfo = PVL._appSyncInfo or nil
+PVL._appHelperSnapshotsByRegion = PVL._appHelperSnapshotsByRegion or {}
+PVL._appSyncInfoByRegion = PVL._appSyncInfoByRegion or {}
 PVL._snapshotSources = PVL._snapshotSources or {}
 
 --- Parses an ISO snapshot date into a unix timestamp.
@@ -133,14 +134,17 @@ end
 
 --- Returns a readable label for one ladder snapshot source key.
 --- @param source string|nil
+--- @param region string|nil
 --- @return string
-function PVL.FormatLadderSourceLabel(source)
+function PVL.FormatLadderSourceLabel(source, region)
+    region = PVL.NormalizeLadderRegion(region or PVL.GetActiveLadderRegion())
+
     if source == PVL.LADDER_DATA_SOURCES.DESKTOP_APP then
         return "PvPLedger Sync"
     end
 
     if source == PVL.LADDER_DATA_SOURCES.DATA_ADDON then
-        return "PvPLedger-Data-US"
+        return PVL.GetDataAddonName(region)
     end
 
     if source == PVL.LADDER_DATA_SOURCES.BUNDLED then
@@ -166,16 +170,59 @@ function PVL.CountSnapshotPlayers(snapshot)
     return count
 end
 
+--- Stores one bundled snapshot under its region and bracket keys.
+--- @param region string
+--- @param bracket string
+--- @param snapshot table
+function PVL.StoreBundledLadderSnapshot(region, bracket, snapshot)
+    region = PVL.NormalizeLadderRegion(region)
+    PVL._bundledLadderData[region] = PVL._bundledLadderData[region] or {}
+    PVL._bundledLadderData[region][bracket] = snapshot
+end
+
+--- Returns one bundled snapshot for a region and bracket.
+--- @param bracket string
+--- @param region string|nil
+--- @return table|nil
+function PVL.GetBundledLadderSnapshot(bracket, region)
+    region = PVL.NormalizeLadderRegion(region or PVL.GetActiveLadderRegion())
+    local regionSnapshots = PVL._bundledLadderData[region]
+    if not regionSnapshots then
+        return nil
+    end
+
+    return regionSnapshots[bracket]
+end
+
+--- Returns AppHelper snapshots for one ladder region.
+--- @param region string|nil
+--- @return table<string, table>
+function PVL.GetAppHelperSnapshots(region)
+    region = PVL.NormalizeLadderRegion(region or PVL.GetActiveLadderRegion())
+    return PVL._appHelperSnapshotsByRegion[region] or {}
+end
+
+--- Returns one AppHelper snapshot for a region and bracket.
+--- @param bracket string
+--- @param region string|nil
+--- @return table|nil
+function PVL.GetAppHelperLadderSnapshot(bracket, region)
+    local snapshots = PVL.GetAppHelperSnapshots(region)
+    return snapshots[bracket]
+end
+
 --- Returns ladder snapshot candidates available for one bracket.
 --- @param bracket string
+--- @param region string|nil
 --- @return table[]
-function PVL.GetLadderSnapshotCandidates(bracket)
+function PVL.GetLadderSnapshotCandidates(bracket, region)
+    region = PVL.NormalizeLadderRegion(region or PVL.GetActiveLadderRegion())
     PVL.CaptureBundledLadderData()
 
     return {
-        { snapshot = PVL._bundledLadderData[bracket], source = PVL.LADDER_DATA_SOURCES.BUNDLED },
-        { snapshot = PVL.ReadLadderSnapshotFromGlobal(bracket), source = PVL.LADDER_DATA_SOURCES.DATA_ADDON },
-        { snapshot = PVL._appHelperSnapshots[bracket], source = PVL.LADDER_DATA_SOURCES.DESKTOP_APP },
+        { snapshot = PVL.GetBundledLadderSnapshot(bracket, region), source = PVL.LADDER_DATA_SOURCES.BUNDLED },
+        { snapshot = PVL.ReadLadderSnapshotFromGlobal(bracket, region), source = PVL.LADDER_DATA_SOURCES.DATA_ADDON },
+        { snapshot = PVL.GetAppHelperLadderSnapshot(bracket, region), source = PVL.LADDER_DATA_SOURCES.DESKTOP_APP },
     }
 end
 
@@ -184,22 +231,51 @@ end
 --- @return string[]
 function PVL.GetLadderStalenessLines(bracket)
     bracket = bracket or PVL.GetActiveBracketFilter()
+    local activeRegion = PVL.GetActiveLadderRegion()
     local lines = {}
     local activeSnapshot = PVL.GetImportedSnapshot(bracket)
     local activeSource = PVL.GetSnapshotSource(bracket)
 
     if not activeSnapshot then
+        local usSyncInfo = PVL.GetAppSyncInfo(PVL.REGIONS.US)
+        local euSyncInfo = PVL.GetAppSyncInfo(PVL.REGIONS.EU)
+        if activeRegion == PVL.REGIONS.EU and usSyncInfo and not euSyncInfo then
+            table.insert(lines, "PvPLedger Sync is still delivering US ladder data. Set Sync region to EU and run Sync ladder now.")
+        end
+
+        if PVL.IsDataAddonInstalled(activeRegion) and not PVL.IsDataAddonEnabledForPlayer(activeRegion) then
+            table.insert(lines, string.format(
+                "%s is installed but disabled. Enable it on the character select AddOns screen, then /reload.",
+                PVL.GetDataAddonName(activeRegion)
+            ))
+        elseif not PVL.IsDataAddonInstalled(activeRegion) then
+            table.insert(lines, string.format(
+                "%s is not installed in Interface/AddOns. Copy the folder out of PvPLedger/ or run Collector/fetch_all.py --region %s.",
+                PVL.GetDataAddonName(activeRegion),
+                activeRegion
+            ))
+        elseif not PVL.IsDataAddonLoaded(activeRegion) then
+            table.insert(lines, string.format(
+                "%s is enabled but not loaded yet. Run /pvl update and /reload.",
+                PVL.GetDataAddonName(activeRegion)
+            ))
+        end
+
+        table.insert(lines, string.format(
+            "No %s ladder snapshot is loaded. Run /pvl update, then /reload.",
+            activeRegion
+        ))
         return lines
     end
 
-    local idealSnapshot, idealSource = PVL.PickBestSnapshot(PVL.GetLadderSnapshotCandidates(bracket))
+    local idealSnapshot, idealSource = PVL.PickBestSnapshot(PVL.GetLadderSnapshotCandidates(bracket, activeRegion))
     local activePlayerCount = PVL.CountSnapshotPlayers(activeSnapshot)
     local idealPlayerCount = PVL.CountSnapshotPlayers(idealSnapshot)
 
     if idealSnapshot and idealSource and activeSource and idealSource ~= activeSource then
         table.insert(lines, string.format(
             "Fresher ladder data is available from %s. Run /pvl update or /reload.",
-            PVL.FormatLadderSourceLabel(idealSource)
+            PVL.FormatLadderSourceLabel(idealSource, activeRegion)
         ))
     elseif idealSnapshot
         and idealSource == activeSource
@@ -215,17 +291,20 @@ function PVL.GetLadderStalenessLines(bracket)
     if activeSource == PVL.LADDER_DATA_SOURCES.BUNDLED
         and PVL.IsAppHelperInstalled()
         and not PVL.IsAppHelperLoaded()
-        and PVL._appHelperSnapshots[bracket] then
+        and PVL.GetAppHelperLadderSnapshot(bracket, activeRegion) then
         table.insert(lines, "PvPLedger-AppHelper is installed but not loaded yet. /reload to use synced ladder data.")
     end
 
     if activeSource == PVL.LADDER_DATA_SOURCES.BUNDLED
-        and not PVL._appHelperSnapshots[bracket]
-        and not PVL.ReadLadderSnapshotFromGlobal(bracket) then
-        table.insert(lines, "Using bundled ladder files only. Install PvPLedger Sync or PvPLedger-Data-US for automatic same-day refreshes.")
+        and not PVL.GetAppHelperLadderSnapshot(bracket, activeRegion)
+        and not PVL.ReadLadderSnapshotFromGlobal(bracket, activeRegion) then
+        table.insert(lines, string.format(
+            "Using bundled ladder files only. Install %s or PvPLedger Sync for automatic same-day refreshes.",
+            PVL.GetDataAddonName(activeRegion)
+        ))
     end
 
-    local syncInfo = PVL.GetAppSyncInfo()
+    local syncInfo = PVL.GetAppSyncInfo(activeRegion)
     local syncGeneratedAt = syncInfo and syncInfo.generatedAt or nil
     local syncTime = PVL.ParseIsoTimestamp(syncGeneratedAt)
     if syncTime and activeSource == PVL.LADDER_DATA_SOURCES.DESKTOP_APP then
@@ -247,7 +326,7 @@ function PVL.GetLadderStalenessLines(bracket)
         if not listedInActive and listedInIdeal then
             table.insert(lines, string.format(
                 "Your character is listed in %s but not the currently loaded snapshot. Run /pvl update.",
-                PVL.FormatLadderSourceLabel(idealSource)
+                PVL.FormatLadderSourceLabel(idealSource, activeRegion)
             ))
         end
     end
@@ -300,24 +379,47 @@ function PVL.ShouldPreferSnapshot(candidate, baseline, candidateSource, baseline
     return PVL.GetSnapshotSourcePriority(candidateSource) > PVL.GetSnapshotSourcePriority(baselineSource)
 end
 
---- Returns true when the optional US data companion addon is installed.
+--- Returns true when the optional region data companion addon is enabled for the current character.
+--- @param region string|nil
 --- @return boolean
-function PVL.IsDataAddonInstalled()
+function PVL.IsDataAddonEnabledForPlayer(region)
+    local addonName = PVL.GetDataAddonName(region)
+    if not C_AddOns or not C_AddOns.DoesAddOnExist or not C_AddOns.DoesAddOnExist(addonName) then
+        return false
+    end
+
+    if not C_AddOns.GetAddOnEnableState or not UnitName then
+        return true
+    end
+
+    local playerName = UnitName("player")
+    if not playerName then
+        return true
+    end
+
+    return C_AddOns.GetAddOnEnableState(addonName, playerName) > 0
+end
+
+--- Returns true when the optional region data companion addon is installed.
+--- @param region string|nil
+--- @return boolean
+function PVL.IsDataAddonInstalled(region)
     if not C_AddOns or not C_AddOns.DoesAddOnExist then
         return false
     end
 
-    return C_AddOns.DoesAddOnExist(PVL.DATA_ADDON_NAME)
+    return C_AddOns.DoesAddOnExist(PVL.GetDataAddonName(region))
 end
 
---- Returns true when the optional US data companion addon is loaded.
+--- Returns true when the optional region data companion addon is loaded.
+--- @param region string|nil
 --- @return boolean
-function PVL.IsDataAddonLoaded()
+function PVL.IsDataAddonLoaded(region)
     if not C_AddOns or not C_AddOns.IsAddOnLoaded then
         return false
     end
 
-    return C_AddOns.IsAddOnLoaded(PVL.DATA_ADDON_NAME)
+    return C_AddOns.IsAddOnLoaded(PVL.GetDataAddonName(region))
 end
 
 --- Returns true when the AppHelper bridge addon is installed.
@@ -338,6 +440,28 @@ function PVL.IsAppHelperLoaded()
     end
 
     return C_AddOns.IsAddOnLoaded(PVL.APP_HELPER_NAME)
+end
+
+--- Re-reads AppHelper globals after bridge addon files finish loading.
+function PVL.IngestAppHelperGlobals()
+    if type(PVL_AppHelperPendingSnapshotsByRegion) == "table" then
+        for region, snapshots in pairs(PVL_AppHelperPendingSnapshotsByRegion) do
+            local syncInfo = type(PVL_AppHelperSyncInfoByRegion) == "table"
+                and PVL_AppHelperSyncInfoByRegion[region]
+                or { region = region }
+            PVL.ApplyAppSyncSnapshots(snapshots, syncInfo)
+        end
+    end
+
+    if type(PVL_AppHelperPendingSnapshots) == "table" then
+        PVL.ApplyAppSyncSnapshots(PVL_AppHelperPendingSnapshots, PVL_AppHelperSyncInfo)
+    end
+end
+
+--- Clears cached bundled snapshot capture so newly loaded addon files can be indexed.
+function PVL.ResetBundledLadderCapture()
+    PVL._bundledLadderDataCaptured = false
+    PVL._bundledLadderData = {}
 end
 
 --- Attempts to load the AppHelper bridge addon written by PvPLedger Sync.
@@ -368,26 +492,34 @@ function PVL.ApplyAppSyncSnapshots(snapshots, syncInfo)
         return
     end
 
-    PVL._appHelperSnapshots = PVL._appHelperSnapshots or {}
+    local region = PVL.NormalizeLadderRegion(syncInfo and syncInfo.region or PVL.REGIONS.US)
+    PVL._appHelperSnapshotsByRegion[region] = PVL._appHelperSnapshotsByRegion[region] or {}
+
     for bracket, snapshot in pairs(snapshots) do
         if type(snapshot) == "table" and snapshot.snapshotId then
-            PVL._appHelperSnapshots[bracket] = snapshot
+            PVL._appHelperSnapshotsByRegion[region][bracket] = snapshot
         end
     end
 
-    PVL._appSyncInfo = syncInfo
+    if syncInfo then
+        PVL._appSyncInfoByRegion[region] = syncInfo
+    end
 
     local db = PVL.GetDB()
     if db and db.meta then
         db.meta.appHelperInstalled = true
-        db.meta.appSyncGeneratedAt = syncInfo and syncInfo.generatedAt or nil
+        if region == PVL.GetActiveLadderRegion() then
+            db.meta.appSyncGeneratedAt = syncInfo and syncInfo.generatedAt or nil
+        end
     end
 end
 
 --- Returns sync metadata supplied by the desktop app through AppHelper.
+--- @param region string|nil
 --- @return table|nil
-function PVL.GetAppSyncInfo()
-    return PVL._appSyncInfo
+function PVL.GetAppSyncInfo(region)
+    region = PVL.NormalizeLadderRegion(region or PVL.GetActiveLadderRegion())
+    return PVL._appSyncInfoByRegion[region]
 end
 
 --- Returns metadata for the AppHelper bridge addon.
@@ -402,16 +534,53 @@ function PVL.GetAppHelperMetadata()
         C_AddOns.GetAddOnMetadata(PVL.APP_HELPER_NAME, "Title")
 end
 
---- Returns metadata for the optional US data companion addon.
+--- Returns metadata for the optional region data companion addon.
+--- @param region string|nil
 --- @return string|nil version
 --- @return string|nil title
-function PVL.GetDataAddonMetadata()
-    if not PVL.IsDataAddonInstalled() or not C_AddOns or not C_AddOns.GetAddOnMetadata then
+function PVL.GetDataAddonMetadata(region)
+    if not PVL.IsDataAddonInstalled(region) or not C_AddOns or not C_AddOns.GetAddOnMetadata then
         return nil, nil
     end
 
-    return C_AddOns.GetAddOnMetadata(PVL.DATA_ADDON_NAME, "Version"),
-        C_AddOns.GetAddOnMetadata(PVL.DATA_ADDON_NAME, "Title")
+    local addonName = PVL.GetDataAddonName(region)
+    return C_AddOns.GetAddOnMetadata(addonName, "Version"),
+        C_AddOns.GetAddOnMetadata(addonName, "Title")
+end
+
+--- Iterates ladder snapshots stored in the global PvPLedgerLadderData table.
+--- @param callback fun(region: string, bracket: string, snapshot: table): nil
+function PVL.ForEachLadderGlobalSnapshot(callback)
+    if type(PvPLedgerLadderData) ~= "table" then
+        return
+    end
+
+    if PvPLedgerLadderData.snapshotId and PvPLedgerLadderData.bracket then
+        callback(
+            PVL.NormalizeLadderRegion(PvPLedgerLadderData.region),
+            PvPLedgerLadderData.bracket,
+            PvPLedgerLadderData
+        )
+        return
+    end
+
+    for key, value in pairs(PvPLedgerLadderData) do
+        if type(value) == "table" then
+            if PVL.IsLadderRegionKey(key) then
+                for bracket, snapshot in pairs(value) do
+                    if type(snapshot) == "table" and snapshot.snapshotId then
+                        callback(PVL.NormalizeLadderRegion(key), bracket, snapshot)
+                    end
+                end
+            elseif value.snapshotId then
+                callback(
+                    PVL.NormalizeLadderRegion(value.region),
+                    key,
+                    value
+                )
+            end
+        end
+    end
 end
 
 --- Caches ladder snapshots bundled with the main addon before loading the companion.
@@ -420,44 +589,36 @@ function PVL.CaptureBundledLadderData()
         return
     end
 
-    if type(PvPLedgerLadderData) ~= "table" then
-        PVL._bundledLadderDataCaptured = true
-        return
-    end
-
-    if PvPLedgerLadderData.snapshotId then
-        local bracket = PvPLedgerLadderData.bracket
-        if bracket then
-            PVL._bundledLadderData[bracket] = PvPLedgerLadderData
-        end
-        PVL._bundledLadderDataCaptured = true
-        return
-    end
-
-    for bracket, snapshot in pairs(PvPLedgerLadderData) do
-        if type(snapshot) == "table" and snapshot.snapshotId then
-            PVL._bundledLadderData[bracket] = snapshot
-        end
-    end
+    PVL.ForEachLadderGlobalSnapshot(function(region, bracket, snapshot)
+        PVL.StoreBundledLadderSnapshot(region, bracket, snapshot)
+    end)
 
     PVL._bundledLadderDataCaptured = true
 end
 
---- Attempts to load the optional US data companion addon.
+--- Attempts to load the optional region data companion addon.
+--- @param region string|nil
 --- @return boolean loaded
 --- @return string|nil reason
-function PVL.TryLoadDataAddon()
-    if not PVL.IsDataAddonInstalled() then
-        return false, "PvPLedger-Data-US is not installed."
+function PVL.TryLoadDataAddon(region)
+    region = PVL.NormalizeLadderRegion(region or PVL.GetActiveLadderRegion())
+    local addonName = PVL.GetDataAddonName(region)
+
+    if not PVL.IsDataAddonInstalled(region) then
+        return false, string.format("%s is not installed.", addonName)
     end
 
-    if PVL.IsDataAddonLoaded() then
+    if not PVL.IsDataAddonEnabledForPlayer(region) then
+        return false, string.format("%s is disabled for this character.", addonName)
+    end
+
+    if PVL.IsDataAddonLoaded(region) then
         return true, "already loaded"
     end
 
-    local loaded, reason = C_AddOns.LoadAddOn(PVL.DATA_ADDON_NAME)
+    local loaded, reason = C_AddOns.LoadAddOn(addonName)
     if not loaded then
-        return false, reason or "failed to load PvPLedger-Data-US"
+        return false, reason or string.format("failed to load %s", addonName)
     end
 
     return true, "loaded"
@@ -465,19 +626,34 @@ end
 
 --- Reads one bracket snapshot from the live ladder global table.
 --- @param bracket string
+--- @param region string|nil
 --- @return table|nil
-function PVL.ReadLadderSnapshotFromGlobal(bracket)
+function PVL.ReadLadderSnapshotFromGlobal(bracket, region)
+    region = PVL.NormalizeLadderRegion(region or PVL.GetActiveLadderRegion())
+
     if type(PvPLedgerLadderData) ~= "table" then
         return nil
     end
 
-    if PvPLedgerLadderData.snapshotId and PvPLedgerLadderData.bracket == bracket then
-        return PvPLedgerLadderData
+    local regionBucket = PvPLedgerLadderData[region]
+    if type(regionBucket) == "table" then
+        local nestedSnapshot = regionBucket[bracket]
+        if type(nestedSnapshot) == "table" and nestedSnapshot.snapshotId then
+            return nestedSnapshot
+        end
     end
 
-    local snapshot = PvPLedgerLadderData[bracket]
-    if type(snapshot) == "table" and snapshot.snapshotId then
-        return snapshot
+    if PvPLedgerLadderData.snapshotId and PvPLedgerLadderData.bracket == bracket then
+        if PVL.SnapshotMatchesRegion(PvPLedgerLadderData, region) then
+            return PvPLedgerLadderData
+        end
+    end
+
+    local flatSnapshot = PvPLedgerLadderData[bracket]
+    if type(flatSnapshot) == "table" and flatSnapshot.snapshotId then
+        if PVL.SnapshotMatchesRegion(flatSnapshot, region) then
+            return flatSnapshot
+        end
     end
 
     return nil
@@ -550,7 +726,9 @@ end
 --- @return table summary
 function PVL.RefreshImportedLadderData(options)
     options = options or {}
+    local activeRegion = PVL.GetActiveLadderRegion()
     local summary = {
+        region = activeRegion,
         loadedDataAddon = false,
         dataAddonReason = nil,
         loadedAppHelper = false,
@@ -565,39 +743,43 @@ function PVL.RefreshImportedLadderData(options)
         local loaded, reason = PVL.TryLoadAppHelper()
         summary.loadedAppHelper = loaded
         summary.appHelperReason = reason
+        PVL.IngestAppHelperGlobals()
     end
 
     if options.loadDataAddon ~= false then
-        local loaded, reason = PVL.TryLoadDataAddon()
+        local loaded, reason = PVL.TryLoadDataAddon(activeRegion)
         summary.loadedDataAddon = loaded
         summary.dataAddonReason = reason
+        if loaded then
+            PVL.ResetBundledLadderCapture()
+            PVL.CaptureBundledLadderData()
+        end
     end
 
     PVL.ImportedSnapshots = PVL.ImportedSnapshots or {}
     PVL._snapshotSources = {}
 
     for _, bracket in ipairs(PVL.IMPORTED_BRACKETS) do
-        local snapshot, source = PVL.PickBestSnapshot({
-            { snapshot = PVL._bundledLadderData[bracket], source = PVL.LADDER_DATA_SOURCES.BUNDLED },
-            { snapshot = PVL.ReadLadderSnapshotFromGlobal(bracket), source = PVL.LADDER_DATA_SOURCES.DATA_ADDON },
-            { snapshot = PVL._appHelperSnapshots[bracket], source = PVL.LADDER_DATA_SOURCES.DESKTOP_APP },
-        })
+        local snapshot, source = PVL.PickBestSnapshot(PVL.GetLadderSnapshotCandidates(bracket, activeRegion))
 
-        if snapshot then
+        if snapshot and PVL.SnapshotMatchesRegion(snapshot, activeRegion) then
             PVL.SetImportedSnapshot(snapshot)
             PVL._snapshotSources[bracket] = source
             summary.sources[bracket] = source
             table.insert(summary.updatedBrackets, bracket)
+        else
+            PVL.ImportedSnapshots[bracket] = nil
+            PVL._snapshotSources[bracket] = nil
         end
     end
 
     local db = PVL.GetDB()
     if db and db.meta then
         db.meta.lastLadderRefreshAt = time()
-        db.meta.dataAddonInstalled = PVL.IsDataAddonInstalled()
-        db.meta.dataAddonVersion = select(1, PVL.GetDataAddonMetadata())
+        db.meta.dataAddonInstalled = PVL.IsDataAddonInstalled(activeRegion)
+        db.meta.dataAddonVersion = select(1, PVL.GetDataAddonMetadata(activeRegion))
         db.meta.appHelperInstalled = PVL.IsAppHelperInstalled()
-        db.meta.appSyncGeneratedAt = PVL.GetAppSyncInfo() and PVL.GetAppSyncInfo().generatedAt or nil
+        db.meta.appSyncGeneratedAt = PVL.GetAppSyncInfo(activeRegion) and PVL.GetAppSyncInfo(activeRegion).generatedAt or nil
     end
 
     return summary
@@ -607,10 +789,13 @@ end
 --- @return string[]
 function PVL.GetLadderUpdateStatusLines()
     local lines = {}
+    local activeRegion = PVL.GetActiveLadderRegion()
+
+    table.insert(lines, string.format("Active ladder region: %s", activeRegion))
 
     if PVL.IsAppHelperInstalled() then
         local version = select(1, PVL.GetAppHelperMetadata())
-        local syncInfo = PVL.GetAppSyncInfo()
+        local syncInfo = PVL.GetAppSyncInfo(activeRegion)
         local loadedText = PVL.IsAppHelperLoaded() and "loaded" or "installed, not loaded yet"
         table.insert(lines, string.format(
             "AppHelper: PvPLedger-AppHelper (%s) — %s",
@@ -618,24 +803,28 @@ function PVL.GetLadderUpdateStatusLines()
             loadedText
         ))
         if syncInfo and syncInfo.generatedAt then
-            table.insert(lines, string.format("Desktop sync payload: %s", syncInfo.generatedAt))
+            table.insert(lines, string.format("Desktop sync payload (%s): %s", activeRegion, syncInfo.generatedAt))
         end
     else
         table.insert(lines, "AppHelper: not installed.")
         table.insert(lines, PVL.APP_HELPER_INSTALL_HINT)
     end
 
-    if PVL.IsDataAddonInstalled() then
-        local version = select(1, PVL.GetDataAddonMetadata())
-        local loadedText = PVL.IsDataAddonLoaded() and "loaded" or "installed, not loaded yet"
+    if PVL.IsDataAddonInstalled(activeRegion) then
+        local version = select(1, PVL.GetDataAddonMetadata(activeRegion))
+        local loadedText = PVL.IsDataAddonLoaded(activeRegion) and "loaded" or "installed, not loaded yet"
         table.insert(lines, string.format(
-            "Data addon: PvPLedger-Data-US (%s) — %s",
+            "Data addon: %s (%s) — %s",
+            PVL.GetDataAddonName(activeRegion),
             version or "unknown version",
             loadedText
         ))
     else
-        table.insert(lines, "Data addon: not installed (using bundled snapshots only).")
-        table.insert(lines, "Install PvPLedger-Data-US and keep it updated for fresher ladder data.")
+        table.insert(lines, string.format(
+            "Data addon: %s not installed (using bundled snapshots only).",
+            PVL.GetDataAddonName(activeRegion)
+        ))
+        table.insert(lines, PVL.GetDataAddonInstallHint(activeRegion))
     end
 
     local db = PVL.GetDB()

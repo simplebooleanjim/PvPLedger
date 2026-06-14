@@ -1,0 +1,35 @@
+{
+  "region": "KR",
+  "generatedDate": "2026-06-13",
+  "generatedAt": "2026-06-14T03:33:54Z",
+  "brackets": {
+    "arena2v2": {
+      "snapshotId": "kr-arena2v2-s41-2026-06-13",
+      "source": "blizzard-api",
+      "season": 41,
+      "listedPlayers": 224,
+      "file": "LadderData_KR_Arena2v2.lua"
+    },
+    "arena3v3": {
+      "snapshotId": "kr-arena3v3-s41-2026-06-13",
+      "source": "blizzard-api",
+      "season": 41,
+      "listedPlayers": 10,
+      "file": "LadderData_KR_Arena3v3.lua"
+    },
+    "blitz": {
+      "snapshotId": "kr-blitz-s41-2026-06-13",
+      "source": "blizzard-api",
+      "season": 41,
+      "listedPlayers": 6655,
+      "file": "LadderData_KR_Blitz.lua"
+    },
+    "shuffle": {
+      "snapshotId": "kr-shuffle-s41-2026-06-13",
+      "source": "blizzard-api",
+      "season": 41,
+      "listedPlayers": 5657,
+      "file": "LadderData_KR_Shuffle.lua"
+    }
+  }
+}

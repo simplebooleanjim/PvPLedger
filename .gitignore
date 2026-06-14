@@ -27,6 +27,12 @@ Sync/build/
 Sync/dist/
 Sync/release-config.json
 
+# Dev export batches (never ship to players)
+Data/match-exports/
+
+# Release staging output
+release/dist/_staging/
+
 # Cloudflare Worker
 Server/cloudflare/node_modules/
 Server/cloudflare/.wrangler/

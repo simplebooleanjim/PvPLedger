@@ -27,6 +27,7 @@ function PVL.GetDefaultDB()
                 hide = false,
                 position = 220,
             },
+            ladderRegionChoice = 1,
             uiFilters = {
                 bracket = PVL.BRACKETS.BLITZ,
                 classToken = nil,
@@ -96,14 +97,13 @@ function PVL.MigrateDB(db)
     db.meta.appHelperInstalled = db.meta.appHelperInstalled
     db.meta.appSyncGeneratedAt = db.meta.appSyncGeneratedAt
     db.settings = db.settings or defaults.settings
+    db.settings.enabled = true
+    db.settings.collectCombatSummary = true
     if db.settings.autoRefreshLadderData == nil then
         db.settings.autoRefreshLadderData = defaults.settings.autoRefreshLadderData
     end
     if db.settings.shareMatchData == nil then
         db.settings.shareMatchData = defaults.settings.shareMatchData
-    end
-    if db.settings.collectCombatSummary == nil then
-        db.settings.collectCombatSummary = defaults.settings.collectCombatSummary
     end
     db.settings.minimap = db.settings.minimap or defaults.settings.minimap
     if db.settings.minimap.hide == nil then
@@ -112,14 +112,18 @@ function PVL.MigrateDB(db)
     if db.settings.minimap.position == nil then
         db.settings.minimap.position = defaults.settings.minimap.position
     end
+    if db.settings.ladderRegionChoice == nil then
+        if db.settings.ladderRegion ~= nil then
+            db.settings.ladderRegionChoice = PVL.GetLadderRegionChoiceIndex(db.settings.ladderRegion)
+            db.settings.ladderRegion = nil
+        else
+            db.settings.ladderRegionChoice = defaults.settings.ladderRegionChoice
+        end
+    end
     db.settings.uiFilters = db.settings.uiFilters or defaults.settings.uiFilters
     db.settings.uiFilters.bracket = db.settings.uiFilters.bracket or defaults.settings.uiFilters.bracket
     if db.settings.uiFilters.combatStat == nil then
         db.settings.uiFilters.combatStat = defaults.settings.uiFilters.combatStat
-    end
-    if db.settings.uiFilters.combatStat == "ccApplied"
-        or db.settings.uiFilters.combatStat == "ccTaken" then
-        db.settings.uiFilters.combatStat = "dispels"
     end
     db.observations = db.observations or defaults.observations
     db.observations.matches = db.observations.matches or {}

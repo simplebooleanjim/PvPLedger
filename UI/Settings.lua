@@ -54,42 +54,55 @@ function PVL.RegisterSettingsPanel()
 
     RegisterBoolean(
         category,
-        "PVL_ENABLED",
-        "enabled",
-        db.settings,
-        "Enable match collection",
-        true,
-        "Record rated PvP matches and player observations as you play."
-    )
-
-    RegisterBoolean(
-        category,
-        "PVL_COLLECT_COMBAT_SUMMARY",
-        "collectCombatSummary",
-        db.settings,
-        "Record match combat stats",
-        true,
-        "Silently capture per-player damage, healing, interrupts, CC, and kills from the live combat log for later review."
-    )
-
-    RegisterBoolean(
-        category,
         "PVL_AUTO_REFRESH_LADDER",
         "autoRefreshLadderData",
         db.settings,
-        "Auto-refresh ladder data on login",
+        PVL.L("SETTINGS.AUTO_REFRESH_NAME"),
         true,
-        "Reload bundled and synced ladder snapshots automatically when you log in."
+        PVL.L("SETTINGS.AUTO_REFRESH_DESC")
     )
+
+    local defaultLadderRegionChoice = db.settings.ladderRegionChoice or 1
+    local ladderRegionSetting = Settings.RegisterAddOnSetting(
+        category,
+        "PVL_LADDER_REGION",
+        "ladderRegionChoice",
+        db.settings,
+        type(defaultLadderRegionChoice),
+        PVL.L("SETTINGS.REGION_NAME"),
+        defaultLadderRegionChoice
+    )
+
+    local function GetLadderRegionOptions()
+        local container = Settings.CreateControlTextContainer()
+        for index, region in ipairs(PVL.LADDER_REGION_OPTIONS) do
+            container:Add(index, PVL.REGION_NAMES[region] or region)
+        end
+        return container:GetData()
+    end
+
+    Settings.CreateDropdown(
+        category,
+        ladderRegionSetting,
+        GetLadderRegionOptions,
+        PVL.L("SETTINGS.REGION_DESC")
+    )
+
+    ladderRegionSetting:SetValueChangedCallback(function()
+        PVL.RefreshImportedLadderData()
+        if PVL.UI and PVL.UI.Refresh then
+            PVL.UI.Refresh()
+        end
+    end)
 
     RegisterBoolean(
         category,
         "PVL_SHARE_MATCH_DATA",
         "shareMatchData",
         db.settings,
-        "Share match data with PvPLedger Sync",
+        PVL.L("SETTINGS.SHARE_NAME"),
         false,
-        "When enabled, completed matches are queued for export to the desktop sync app on logout."
+        PVL.L("SETTINGS.SHARE_DESC")
     )
 
     RegisterBoolean(
@@ -97,9 +110,9 @@ function PVL.RegisterSettingsPanel()
         "PVL_HIDE_MINIMAP",
         "hide",
         db.settings.minimap,
-        "Hide minimap button",
+        PVL.L("SETTINGS.MINIMAP_HIDE_NAME"),
         false,
-        "Hide the PvPLedger minimap button. Left-click the button to open the window; right-click for these options.",
+        PVL.L("SETTINGS.MINIMAP_HIDE_DESC"),
         function()
             if PVL.UI and PVL.UI.MinimapButton and PVL.UI.MinimapButton.Update then
                 PVL.UI.MinimapButton.Update()

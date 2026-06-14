@@ -1,0 +1,1 @@
+--- Locale overlays register themselves when loaded; lookup tables are built in PVL.Init().
