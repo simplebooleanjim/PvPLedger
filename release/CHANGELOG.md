@@ -1,5 +1,12 @@
 # Changelog
 
+## 0.8.2 — 2026-06-15
+
+### Addons
+
+- Ladder search: fix accent matching for UTF-8 names (`lunartic` finds `Lunartiç`).
+- Ladder search: debounced input and faster scan (no full-ladder sort on every keystroke).
+
 ## 0.8.1 — 2026-06-06
 
 ### Addons

@@ -260,6 +260,43 @@ local function ImportedPlayerMatchesFilters(row, classToken, specKey)
     return true
 end
 
+--- Builds one imported ladder row for UI display.
+--- @param playerKey string
+--- @param row table
+--- @return table
+local function BuildImportedLadderRow(playerKey, row)
+    return {
+        playerKey = playerKey,
+        displayName = PVL.FormatPlayerKeyDisplay(playerKey, row),
+        specKey = row.specKey,
+        rating = row.rating,
+        rank = row.rank,
+        wins = row.wins,
+        losses = row.losses,
+        faction = row.faction,
+    }
+end
+
+--- Sorts imported ladder rows by rank, rating, then name.
+--- @param rows table[]
+local function SortImportedLadderRows(rows)
+    table.sort(rows, function(left, right)
+        local leftRank = left.rank or 999999
+        local rightRank = right.rank or 999999
+        if leftRank ~= rightRank then
+            return leftRank < rightRank
+        end
+
+        local leftRating = left.rating or 0
+        local rightRating = right.rating or 0
+        if leftRating ~= rightRating then
+            return leftRating > rightRating
+        end
+
+        return (left.displayName or "") < (right.displayName or "")
+    end)
+end
+
 --- Returns imported ladder player rows filtered by bracket/class/spec.
 --- @param bracket string|nil
 --- @param classToken string|nil
@@ -280,34 +317,11 @@ function PVL.GetFilteredImportedLadderPlayers(bracket, classToken, specKey, limi
     local rows = {}
     for playerKey, row in pairs(snapshot.players) do
         if type(row) == "table" and ImportedPlayerMatchesFilters(row, classToken, specKey) then
-            table.insert(rows, {
-                playerKey = playerKey,
-                displayName = PVL.FormatPlayerKeyDisplay(playerKey, row),
-                specKey = row.specKey,
-                rating = row.rating,
-                rank = row.rank,
-                wins = row.wins,
-                losses = row.losses,
-                faction = row.faction,
-            })
+            table.insert(rows, BuildImportedLadderRow(playerKey, row))
         end
     end
 
-    table.sort(rows, function(left, right)
-        local leftRank = left.rank or 999999
-        local rightRank = right.rank or 999999
-        if leftRank ~= rightRank then
-            return leftRank < rightRank
-        end
-
-        local leftRating = left.rating or 0
-        local rightRating = right.rating or 0
-        if leftRating ~= rightRating then
-            return leftRating > rightRating
-        end
-
-        return (left.displayName or "") < (right.displayName or "")
-    end)
+    SortImportedLadderRows(rows)
 
     if type(limit) == "number" and limit > 0 and #rows > limit then
         local trimmed = {}
@@ -318,6 +332,42 @@ function PVL.GetFilteredImportedLadderPlayers(bracket, classToken, specKey, limi
     end
 
     return rows
+end
+
+--- Returns imported ladder rows whose names match one search string.
+--- Scans the snapshot directly and only sorts matching rows.
+--- @param bracket string|nil
+--- @param classToken string|nil
+--- @param specKey string|nil
+--- @param searchText string|nil
+--- @return table[]
+function PVL.SearchImportedLadderPlayers(bracket, classToken, specKey, searchText)
+    bracket = bracket or PVL.GetActiveBracketFilter()
+    local foldedNeedle = PVL.FoldPlayerSearchText(searchText)
+    if foldedNeedle == "" then
+        return PVL.GetFilteredImportedLadderPlayers(bracket, classToken, specKey, PVL.LADDER_VIEW_LIMIT)
+    end
+
+    local snapshot = PVL.GetImportedSnapshot(bracket)
+    if not snapshot or not snapshot.players then
+        return {}
+    end
+
+    local matches = {}
+    for playerKey, row in pairs(snapshot.players) do
+        if type(row) == "table" and ImportedPlayerMatchesFilters(row, classToken, specKey) then
+            local matched = PVL.FoldedPlayerNameContains(playerKey, foldedNeedle)
+            if not matched and row.displayName then
+                matched = PVL.FoldedPlayerNameContains(row.displayName, foldedNeedle)
+            end
+            if matched then
+                table.insert(matches, BuildImportedLadderRow(playerKey, row))
+            end
+        end
+    end
+
+    SortImportedLadderRows(matches)
+    return matches
 end
 
 --- Counts how many observed match participants appear in the imported player index.

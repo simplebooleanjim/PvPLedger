@@ -77,7 +77,77 @@ function PVL.NormalizePlayerLookupKey(name, realm)
     return string.format("%s-%s", normalizedName, normalizedRealm)
 end
 
+local PLAYER_SEARCH_FOLD_RULES = {
+    { "æ", "ae" },
+    { "œ", "oe" },
+    { "ß", "ss" },
+    { "ð", "d" },
+    { "þ", "th" },
+    { "ø", "o" },
+    { "ł", "l" },
+    { "đ", "d" },
+    { "ı", "i" },
+    { "à", "a" },
+    { "á", "a" },
+    { "â", "a" },
+    { "ã", "a" },
+    { "ä", "a" },
+    { "å", "a" },
+    { "ā", "a" },
+    { "ă", "a" },
+    { "ą", "a" },
+    { "ç", "c" },
+    { "ć", "c" },
+    { "č", "c" },
+    { "è", "e" },
+    { "é", "e" },
+    { "ê", "e" },
+    { "ë", "e" },
+    { "ē", "e" },
+    { "ĕ", "e" },
+    { "ė", "e" },
+    { "ę", "e" },
+    { "ì", "i" },
+    { "í", "i" },
+    { "î", "i" },
+    { "ï", "i" },
+    { "ī", "i" },
+    { "ĩ", "i" },
+    { "į", "i" },
+    { "ñ", "n" },
+    { "ń", "n" },
+    { "ò", "o" },
+    { "ó", "o" },
+    { "ô", "o" },
+    { "õ", "o" },
+    { "ö", "o" },
+    { "ō", "o" },
+    { "ő", "o" },
+    { "ù", "u" },
+    { "ú", "u" },
+    { "û", "u" },
+    { "ü", "u" },
+    { "ū", "u" },
+    { "ů", "u" },
+    { "ű", "u" },
+    { "ý", "y" },
+    { "ÿ", "y" },
+    { "ŷ", "y" },
+    { "ř", "r" },
+    { "š", "s" },
+    { "ś", "s" },
+    { "ş", "s" },
+    { "ž", "z" },
+    { "ź", "z" },
+    { "ď", "d" },
+    { "ť", "t" },
+    { "ğ", "g" },
+    { "ħ", "h" },
+}
+
 --- Folds player-name search text for accent-insensitive partial matching.
+--- Lua 5.1 patterns cannot match UTF-8 code points inside [] classes, so each
+--- accented letter is replaced via an explicit literal string mapping.
 --- @param text string|nil
 --- @return string
 function PVL.FoldPlayerSearchText(text)
@@ -87,39 +157,45 @@ function PVL.FoldPlayerSearchText(text)
     end
 
     local folded = string.lower(text)
-    local replacements = {
-        { "æ", "ae" },
-        { "œ", "oe" },
-        { "ß", "ss" },
-        { "ð", "d" },
-        { "þ", "th" },
-        { "ø", "o" },
-        { "ł", "l" },
-        { "đ", "d" },
-        { "ı", "i" },
-        { "[àáâãäåāăą]", "a" },
-        { "[èéêëēĕėę]", "e" },
-        { "[ìíîïīĩį]", "i" },
-        { "[òóôõöōő]", "o" },
-        { "[ùúûüūůű]", "u" },
-        { "[ýÿŷ]", "y" },
-        { "[ñń]", "n" },
-        { "[çćč]", "c" },
-        { "[šś]", "s" },
-        { "[žź]", "z" },
-        { "[ř]", "r" },
-        { "[ď]", "d" },
-        { "[ť]", "t" },
-        { "[ğ]", "g" },
-        { "[ş]", "s" },
-        { "[ħ]", "h" },
-    }
+    if not folded:find("[\128-\255]") then
+        return folded
+    end
 
-    for _, rule in ipairs(replacements) do
+    for index = 1, #PLAYER_SEARCH_FOLD_RULES do
+        local rule = PLAYER_SEARCH_FOLD_RULES[index]
         folded = folded:gsub(rule[1], rule[2])
     end
 
     return folded
+end
+
+--- Returns true when one player name contains a folded search needle.
+--- ASCII-only names skip accent folding unless a plain match already failed.
+--- @param haystack string|nil
+--- @param foldedNeedle string
+--- @return boolean
+function PVL.FoldedPlayerNameContains(haystack, foldedNeedle)
+    if foldedNeedle == "" then
+        return true
+    end
+
+    haystack = haystack or ""
+    local lowerHaystack = string.lower(haystack)
+    if lowerHaystack:find(foldedNeedle, 1, true) then
+        return true
+    end
+
+    if not lowerHaystack:find("[\128-\255]") then
+        return false
+    end
+
+    local foldedHaystack = PVL.FoldPlayerSearchText(lowerHaystack)
+    if foldedHaystack:find(foldedNeedle, 1, true) then
+        return true
+    end
+
+    local shortName = foldedHaystack:match("^(.-)%-.+$") or foldedHaystack
+    return shortName:find(foldedNeedle, 1, true) ~= nil
 end
 
 --- Parses a player key into name and realm components.

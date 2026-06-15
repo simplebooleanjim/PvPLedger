@@ -11,6 +11,8 @@ local LadderView = UI.LadderView
 LadderView.frame = LadderView.frame or nil
 LadderView.searchText = LadderView.searchText or ""
 LadderView.currentPage = LadderView.currentPage or 1
+LadderView.searchRefreshTimer = LadderView.searchRefreshTimer or nil
+local SEARCH_DEBOUNCE_SECONDS = 0.25
 local LADDER_VIEW_LAYOUT_VERSION = 9
 local FRAME_WIDTH = 560
 local FRAME_HEIGHT = 548
@@ -98,26 +100,29 @@ end
 function LadderView.NormalizeSearchText(text)
     return PVL.FoldPlayerSearchText(text)
 end
---- Returns true when one ladder row matches the current search text.
---- @param entry table
---- @param searchText string|nil
---- @return boolean
-function LadderView.RowMatchesSearch(entry, searchText)
-    local needle = LadderView.NormalizeSearchText(searchText)
-    if needle == "" then
-        return true
+
+--- Cancels a pending debounced ladder search refresh.
+function LadderView.CancelSearchRefreshTimer()
+    if LadderView.searchRefreshTimer then
+        LadderView.searchRefreshTimer:Cancel()
+        LadderView.searchRefreshTimer = nil
     end
-    local displayName = PVL.FoldPlayerSearchText(entry.displayName or "")
-    local playerKey = PVL.FoldPlayerSearchText(entry.playerKey or "")
-    if displayName:find(needle, 1, true) then
-        return true
-    end
-    if playerKey:find(needle, 1, true) then
-        return true
-    end
-    local shortName = displayName:match("^(.-)%-.+$") or displayName
-    return shortName:find(needle, 1, true) ~= nil
 end
+
+--- Refreshes the ladder after the search box has been idle briefly.
+function LadderView.ScheduleSearchRefresh()
+    LadderView.CancelSearchRefreshTimer()
+    if C_Timer and C_Timer.NewTimer then
+        LadderView.searchRefreshTimer = C_Timer.NewTimer(SEARCH_DEBOUNCE_SECONDS, function()
+            LadderView.searchRefreshTimer = nil
+            LadderView.Refresh()
+        end)
+        return
+    end
+
+    LadderView.Refresh()
+end
+
 --- Returns ladder rows after class/spec filters and optional name search.
 --- @param filters table|nil
 --- @param searchText string|nil
@@ -125,24 +130,21 @@ end
 function LadderView.GetDisplayedRows(filters, searchText)
     filters = filters or UI.GetFilters()
     local bracket = filters.bracket or PVL.GetActiveBracketFilter()
-    local searchActive = LadderView.NormalizeSearchText(searchText) ~= ""
-    local limit = searchActive and 0 or PVL.LADDER_VIEW_LIMIT
-    local rows = PVL.GetFilteredImportedLadderPlayers(
+    if LadderView.NormalizeSearchText(searchText) == "" then
+        return PVL.GetFilteredImportedLadderPlayers(
+            bracket,
+            filters.classToken,
+            filters.specKey,
+            PVL.LADDER_VIEW_LIMIT
+        )
+    end
+
+    return PVL.SearchImportedLadderPlayers(
         bracket,
         filters.classToken,
         filters.specKey,
-        limit
+        searchText
     )
-    if not searchActive then
-        return rows
-    end
-    local filtered = {}
-    for _, entry in ipairs(rows) do
-        if LadderView.RowMatchesSearch(entry, searchText) then
-            table.insert(filtered, entry)
-        end
-    end
-    return filtered
 end
 --- Returns how many ladder rows fit in the visible table area.
 --- @param scrollFrame ScrollFrame|nil
@@ -605,9 +607,12 @@ local function CreateSearchBox(parent, topAnchor, rightAnchor)
     searchBox:SetScript("OnTextChanged", function(self)
         LadderView.searchText = self:GetText() or ""
         LadderView.currentPage = 1
-        LadderView.Refresh()
+        LadderView.ScheduleSearchRefresh()
     end)
     searchBox:SetScript("OnEnterPressed", function(self)
+        LadderView.searchText = self:GetText() or ""
+        LadderView.currentPage = 1
+        LadderView.Refresh()
         self:ClearFocus()
     end)
     searchBox:SetScript("OnEscapePressed", function(self)
@@ -759,6 +764,7 @@ function LadderView.CreateFrame()
 end
 --- Refreshes ladder browser content from the current UI filters.
 function LadderView.Refresh()
+    LadderView.CancelSearchRefreshTimer()
     local frame = LadderView.CreateFrame()
     local filters = UI.GetFilters()
     local filterKey = string.format(
