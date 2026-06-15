@@ -38,8 +38,6 @@ PVL.Locale.RegisterOverlay({
     ["COMBAT.DAMAGE_TAKEN"] = "承受傷害",
     ["COMBAT.INTERRUPTS"] = "斷法",
     ["COMBAT.DISPELS"] = "驅散",
-    ["COMBAT.CC_APPLIED"] = "控場施加",
-    ["COMBAT.CC_TAKEN"] = "控場承受",
     ["COMBAT.DEATHS"] = "死亡",
     ["COMBAT.DPS"] = "DPS",
     ["COMBAT.HPS"] = "HPS",

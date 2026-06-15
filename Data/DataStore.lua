@@ -77,6 +77,51 @@ function PVL.NormalizePlayerLookupKey(name, realm)
     return string.format("%s-%s", normalizedName, normalizedRealm)
 end
 
+--- Folds player-name search text for accent-insensitive partial matching.
+--- @param text string|nil
+--- @return string
+function PVL.FoldPlayerSearchText(text)
+    text = strtrim(text or "")
+    if text == "" then
+        return ""
+    end
+
+    local folded = string.lower(text)
+    local replacements = {
+        { "æ", "ae" },
+        { "œ", "oe" },
+        { "ß", "ss" },
+        { "ð", "d" },
+        { "þ", "th" },
+        { "ø", "o" },
+        { "ł", "l" },
+        { "đ", "d" },
+        { "ı", "i" },
+        { "[àáâãäåāăą]", "a" },
+        { "[èéêëēĕėę]", "e" },
+        { "[ìíîïīĩį]", "i" },
+        { "[òóôõöōő]", "o" },
+        { "[ùúûüūůű]", "u" },
+        { "[ýÿŷ]", "y" },
+        { "[ñń]", "n" },
+        { "[çćč]", "c" },
+        { "[šś]", "s" },
+        { "[žź]", "z" },
+        { "[ř]", "r" },
+        { "[ď]", "d" },
+        { "[ť]", "t" },
+        { "[ğ]", "g" },
+        { "[ş]", "s" },
+        { "[ħ]", "h" },
+    }
+
+    for _, rule in ipairs(replacements) do
+        folded = folded:gsub(rule[1], rule[2])
+    end
+
+    return folded
+end
+
 --- Parses a player key into name and realm components.
 --- @param playerKey string
 --- @return string name, string|nil realm

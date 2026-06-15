@@ -3,7 +3,7 @@
 ## Notes: Frequently updated KR ladder snapshots for PvPLedger. Keep this addon updated via your addon manager for fresh ladder data without updating the main addon.
 ## Author: Jake
 ## Version: 2026.06.13
-## IconTexture: Interface\AddOns\PvPLedger\Media\Icon.tga
+## IconTexture: Interface\AddOns\PvPLedger-Data-KR\Media\Icon.tga
 ## Dependencies: PvPLedger
 
 LadderData_KR_Arena2v2.lua

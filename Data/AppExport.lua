@@ -215,8 +215,6 @@ function PVL.BuildExportCombatPlayerRow(row)
         interrupts = row.interrupts,
         dispels = row.dispels,
         deaths = row.deaths,
-        ccApplied = row.ccApplied,
-        ccTaken = row.ccTaken,
         spells = PVL.DeepCopyForExport(row.spells),
     }
 end

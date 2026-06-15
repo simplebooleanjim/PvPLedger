@@ -38,8 +38,6 @@ PVL.Locale.RegisterOverlay({
     ["COMBAT.DAMAGE_TAKEN"] = "Danni subiti",
     ["COMBAT.INTERRUPTS"] = "Interruzioni",
     ["COMBAT.DISPELS"] = "Dissipazioni",
-    ["COMBAT.CC_APPLIED"] = "CC applicati",
-    ["COMBAT.CC_TAKEN"] = "CC subiti",
     ["COMBAT.DEATHS"] = "Morti",
     ["COMBAT.DPS"] = "DPS",
     ["COMBAT.HPS"] = "HPS",

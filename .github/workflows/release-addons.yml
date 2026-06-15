@@ -1,0 +1,71 @@
+name: Release addon packages
+
+on:
+  push:
+    tags:
+      - "v*"
+  workflow_dispatch:
+    inputs:
+      tag:
+        description: "Existing git tag to attach packages to (for example v0.8.0)"
+        required: true
+        default: "v0.8.0"
+
+permissions:
+  contents: write
+
+jobs:
+  package-and-release:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Build addon zip packages
+        run: python release/package_addons.py
+
+      - name: Resolve release tag
+        id: release_tag
+        run: |
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
+            echo "tag=${{ github.event.inputs.tag }}" >> "$GITHUB_OUTPUT"
+          else
+            echo "tag=${GITHUB_REF_NAME}" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Attach packages to GitHub Release
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: ${{ steps.release_tag.outputs.tag }}
+          files: |
+            release/dist/PvPLedger.zip
+            release/dist/PvPLedger-AppHelper.zip
+            release/dist/PvPLedger-Data-US.zip
+            release/dist/PvPLedger-Data-EU.zip
+            release/dist/PvPLedger-Data-KR.zip
+            release/dist/PvPLedger-Data-TW.zip
+          append_body: true
+          body: |
+            ### Addon packages (CurseForge / Wago / manual install)
+
+            | Zip | Addon |
+            |-----|-------|
+            | `PvPLedger.zip` | Main addon |
+            | `PvPLedger-AppHelper.zip` | Required bridge |
+            | `PvPLedger-Data-US.zip` | Optional US data |
+            | `PvPLedger-Data-EU.zip` | Optional EU data |
+            | `PvPLedger-Data-KR.zip` | Optional KR data |
+            | `PvPLedger-Data-TW.zip` | Optional TW data |
+
+            Wago and other clients can update from these GitHub release assets.
+
+      - name: Upload packages to Wago Addons
+        env:
+          WAGO_API_TOKEN: ${{ secrets.WAGO_API_TOKEN }}
+        run: python release/upload_wago.py --tag "${{ steps.release_tag.outputs.tag }}"

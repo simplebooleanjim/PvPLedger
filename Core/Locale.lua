@@ -87,8 +87,6 @@ function PVL.InitLocale()
         { value = "damageTaken", label = PVL.L("COMBAT.DAMAGE_TAKEN"), field = "damageTaken", useCombatAmount = true, rateLabel = PVL.L("COMBAT.DTPS") },
         { value = "interrupts", label = PVL.L("COMBAT.INTERRUPTS"), field = "interrupts", useCombatAmount = false, rateLabel = PVL.L("COMBAT.PER_MIN") },
         { value = "dispels", label = PVL.L("COMBAT.DISPELS"), field = "dispels", useCombatAmount = false, rateLabel = PVL.L("COMBAT.PER_MIN") },
-        { value = "ccApplied", label = PVL.L("COMBAT.CC_APPLIED"), field = "ccApplied", useCombatAmount = false, rateLabel = PVL.L("COMBAT.PER_MIN") },
-        { value = "ccTaken", label = PVL.L("COMBAT.CC_TAKEN"), field = "ccTaken", useCombatAmount = false, rateLabel = PVL.L("COMBAT.PER_MIN") },
         { value = "deaths", label = PVL.L("COMBAT.DEATHS"), field = "deaths", useCombatAmount = false, rateLabel = PVL.L("COMBAT.PER_MIN") },
     }
 end

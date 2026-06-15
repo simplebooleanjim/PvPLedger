@@ -206,11 +206,6 @@ function UI.GetCombatStatValue(combatRow, statDef, participant)
             return scoreboardValue or 0
         end
 
-        if statDef.field == "ccApplied" or statDef.field == "ccTaken" then
-            local meterValue = combatRow and tonumber(combatRow[statDef.field]) or 0
-            return meterValue > 0 and meterValue or 0
-        end
-
         if statDef.field == "deaths" and participant.deaths ~= nil then
             return participant.deaths
         end
@@ -222,8 +217,6 @@ function UI.GetCombatStatValue(combatRow, statDef, participant)
             interrupts = 100,
             dispels = 100,
             deaths = 50,
-            ccApplied = 200,
-            ccTaken = 200,
         }
         local maxValue = countStatMax[statDef.field]
         if maxValue and value > maxValue then
@@ -434,8 +427,6 @@ function UI.BuildScoreboardCombatSummary(matchRecord)
                 and PVL.CombatLogCollector.ResolveSupplementCount
                 and PVL.CombatLogCollector.ResolveSupplementCount(participant.dispels, storedRow and storedRow.dispels)
                 or (participant.dispels or 0),
-            ccApplied = storedRow and storedRow.ccApplied or 0,
-            ccTaken = storedRow and storedRow.ccTaken or 0,
             deaths = participant.deaths or (storedRow and storedRow.deaths) or 0,
         })
     end

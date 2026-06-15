@@ -32,6 +32,8 @@ Data/match-exports/
 
 # Release staging output
 release/dist/_staging/
+release/dist/*.zip
+release/wago-projects.json
 
 # Cloudflare Worker
 Server/cloudflare/node_modules/

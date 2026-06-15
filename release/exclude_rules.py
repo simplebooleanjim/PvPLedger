@@ -10,10 +10,17 @@ EXCLUDED_TOP_LEVEL_DIRS = frozenset(
         ".git",
         ".github",
         ".venv",
+        ".vscode",
         "Server",
         "Sync",
         "release",
         "__pycache__",
+        # Companion addons ship as separate CurseForge/Wago projects.
+        "PvPLedger-AppHelper",
+        "PvPLedger-Data-US",
+        "PvPLedger-Data-EU",
+        "PvPLedger-Data-KR",
+        "PvPLedger-Data-TW",
     }
 )
 
@@ -21,8 +28,10 @@ EXCLUDED_TOP_LEVEL_DIRS = frozenset(
 EXCLUDED_FILE_NAMES = frozenset(
     {
         ".env",
+        ".gitignore",
         "release-config.json",
         "generate_brand_assets.py",
+        "env.example",
     }
 )
 

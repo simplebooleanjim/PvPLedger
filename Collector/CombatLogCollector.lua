@@ -20,13 +20,12 @@ CombatLogCollector.damageMeterSynced = CombatLogCollector.damageMeterSynced or f
 CombatLogCollector.lastDamageMeterSyncAt = CombatLogCollector.lastDamageMeterSyncAt or nil
 CombatLogCollector.liveSyncTicker = CombatLogCollector.liveSyncTicker or nil
 CombatLogCollector.useDamageMeterPolling = CombatLogCollector.useDamageMeterPolling ~= false
+CombatLogCollector.combatLogListenerActive = CombatLogCollector.combatLogListenerActive or false
+CombatLogCollector.combatLogRegistrationSkipped = CombatLogCollector.combatLogRegistrationSkipped or false
 CombatLogCollector.rawCombatEvents = CombatLogCollector.rawCombatEvents or {}
-CombatLogCollector.seenCcAuras = CombatLogCollector.seenCcAuras or {}
-CombatLogCollector.seenLossOfControl = CombatLogCollector.seenLossOfControl or {}
 
 local PERSIST_INTERVAL_SECONDS = 15
 local MAX_RAW_COMBAT_EVENTS = 4000
-local LOSS_OF_CONTROL_INTERRUPT_TYPE = "SCHOOL_INTERRUPT"
 local LIVE_SYNC_INTERVAL_SECONDS = 3
 local DAMAGE_METER_SESSION_OVERALL = Enum and Enum.DamageMeterSessionType and Enum.DamageMeterSessionType.Overall or 0
 local DAMAGE_METER_SESSION_CURRENT = Enum and Enum.DamageMeterSessionType and Enum.DamageMeterSessionType.Current or 1
@@ -50,7 +49,7 @@ local DAMAGE_METER_SPELL_EXPORT_TYPES = {
     { meterType = DAMAGE_METER_TYPE_DISPELS, key = "dispels" },
     { meterType = Enum and Enum.DamageMeterType and Enum.DamageMeterType.Deaths or 9, key = "deaths" },
 }
-local MERGE_COUNT_FIELDS = { "interrupts", "dispels", "deaths", "ccApplied", "ccTaken" }
+local MERGE_COUNT_FIELDS = { "interrupts", "dispels", "deaths" }
 local MERGE_AMOUNT_FIELDS = { "damage", "healing", "damageTaken" }
 local COMBATLOG_OBJECT_TYPE_PLAYER = 0x00000400
 local DAMAGE_METER_SESSION_EXPIRED = Enum and Enum.DamageMeterSessionType and Enum.DamageMeterSessionType.Expired or 2
@@ -850,26 +849,7 @@ function CombatLogCollector.ClonePlayerRow(row)
         interrupts = row.interrupts or 0,
         dispels = row.dispels or 0,
         deaths = row.deaths or 0,
-        ccApplied = row.ccApplied or 0,
-        ccTaken = row.ccTaken or 0,
     }
-end
-
---- Returns true when one spell id is classified as crowd control.
---- @param spellId number|nil
---- @return boolean
-function CombatLogCollector.IsCrowdControlSpell(spellId)
-    spellId = tonumber(spellId)
-    if not spellId or spellId <= 0 then
-        return false
-    end
-
-    if C_Spell and type(C_Spell.IsSpellCrowdControl) == "function" then
-        local ok, isCrowdControl = pcall(C_Spell.IsSpellCrowdControl, spellId)
-        return ok and isCrowdControl == true
-    end
-
-    return false
 end
 
 --- Appends one compact combat-log event to the in-memory raw event buffer.
@@ -986,337 +966,64 @@ function CombatLogCollector.CollectPlayerSpellBreakdown(guid, sessionId)
     return breakdown
 end
 
---- Increments crowd-control applied/taken counters for one aura application.
---- @param sourceGUID string|nil
---- @param sourceName string|nil
---- @param sourceFlags number|nil
---- @param destGUID string|nil
---- @param destName string|nil
---- @param destFlags number|nil
---- @param spellId number|nil
-function CombatLogCollector.ProcessCrowdControlAppliedEvent(sourceGUID, sourceName, sourceFlags, destGUID, destName, destFlags, spellId)
-    if not CombatLogCollector.IsCrowdControlSpell(spellId) then
-        return
-    end
-
-    local sourceRow = CombatLogCollector.GetPlayerRow(sourceGUID, sourceName, sourceFlags)
-    if sourceRow then
-        CombatLogCollector.AddCount(sourceRow, "ccApplied")
-    end
-
-    local destRow = CombatLogCollector.GetPlayerRow(destGUID, destName, destFlags)
-    if destRow then
-        CombatLogCollector.AddCount(destRow, "ccTaken")
-    end
-end
-
---- Clears dedupe state used by aura and loss-of-control tracking.
-function CombatLogCollector.ResetCrowdControlTracking()
-    CombatLogCollector.seenCcAuras = {}
-    CombatLogCollector.seenLossOfControl = {}
-end
-
---- Returns true when one loss-of-control type should count as crowd control.
---- @param locType string|nil
---- @return boolean
-function CombatLogCollector.ShouldCountLossOfControlType(locType)
-    if type(locType) ~= "string" or locType == "" then
-        return false
-    end
-
-    return locType ~= LOSS_OF_CONTROL_INTERRUPT_TYPE
-end
-
---- Returns true when one unit token should be scanned for aura-based CC tracking.
---- @param unit string|nil
---- @return boolean
-function CombatLogCollector.ShouldWatchAuraUnit(unit)
-    if type(unit) ~= "string" or unit == "" then
-        return false
-    end
-
-    if unit == "player"
-        or unit == "target"
-        or unit:find("^party%d")
-        or unit:find("^raid%d")
-        or unit:find("^arena%d")
-        or unit:find("^nameplate%d") then
-        return UnitExists(unit) == true
-    end
-
-    return false
-end
-
---- Applies friendly/enemy team metadata to one tracked player row.
---- @param row table
---- @param unit string
-function CombatLogCollector.ApplyTeamFromUnit(row, unit)
-    if type(row) ~= "table" or type(unit) ~= "string" then
-        return
-    end
-
-    if UnitIsUnit(unit, "player") or (UnitIsFriend and UnitIsFriend("player", unit)) then
-        row.team = "friendly"
-        return
-    end
-
-    if UnitIsEnemy and UnitIsEnemy("player", unit) then
-        row.team = "enemy"
-    end
-end
-
---- Returns one tracked player row for a live unit token.
---- @param unit string
---- @return table|nil
-function CombatLogCollector.GetPlayerRowFromUnit(unit)
-    if not CombatLogCollector.ShouldWatchAuraUnit(unit) then
-        return nil
-    end
-
-    local guid = UnitGUID(unit)
-    local name = UnitName(unit)
-    local row = CombatLogCollector.GetPlayerRow(guid, name, COMBATLOG_OBJECT_TYPE_PLAYER)
-    if row then
-        CombatLogCollector.ApplyTeamFromUnit(row, unit)
-        if CombatLogCollector.IsPlayerGuid(guid) then
-            row.guid = guid
-        end
-    end
-
-    return row
-end
-
---- Returns true when one aura instance has already been counted.
---- @param auraInstanceID number|nil
---- @return boolean
-function CombatLogCollector.HasSeenCrowdControlAura(auraInstanceID)
-    if not auraInstanceID then
-        return false
-    end
-
-    return CombatLogCollector.seenCcAuras[auraInstanceID] == true
-end
-
---- Marks one aura instance as counted for crowd-control tracking.
---- @param auraInstanceID number|nil
-function CombatLogCollector.MarkCrowdControlAuraSeen(auraInstanceID)
-    if auraInstanceID then
-        CombatLogCollector.seenCcAuras[auraInstanceID] = true
-    end
-end
-
---- Returns true when one loss-of-control effect has already been counted.
---- @param spellId number|nil
---- @param startTime number|nil
---- @return boolean
-function CombatLogCollector.HasSeenLossOfControlEffect(spellId, startTime)
-    if not spellId or not startTime then
-        return false
-    end
-
-    local key = string.format("%s:%s", tostring(spellId), tostring(startTime))
-    return CombatLogCollector.seenLossOfControl[key] == true
-end
-
---- Marks one loss-of-control effect as counted.
---- @param spellId number|nil
---- @param startTime number|nil
-function CombatLogCollector.MarkLossOfControlEffectSeen(spellId, startTime)
-    if not spellId or not startTime then
-        return
-    end
-
-    local key = string.format("%s:%s", tostring(spellId), tostring(startTime))
-    CombatLogCollector.seenLossOfControl[key] = true
-end
-
---- Reads one aura table from the modern unit aura API.
---- @param unit string
---- @param auraInstanceID number
---- @return table|nil
-function CombatLogCollector.GetAuraDataForInstance(unit, auraInstanceID)
-    if not C_UnitAuras or type(C_UnitAuras.GetAuraDataByAuraInstanceID) ~= "function" then
-        return nil
-    end
-
-    local ok, aura = pcall(C_UnitAuras.GetAuraDataByAuraInstanceID, unit, auraInstanceID)
-    if ok and type(aura) == "table" then
-        return aura
-    end
-
-    return nil
-end
-
---- Credits crowd-control counters for one newly applied aura.
---- @param unit string
---- @param aura table
-function CombatLogCollector.CreditCrowdControlFromAura(unit, aura)
-    if type(aura) ~= "table" or not CombatLogCollector.ShouldTrackCrowdControlEvents() then
-        return
-    end
-
-    local spellId = aura.spellId or aura.spellID
-    if not CombatLogCollector.IsCrowdControlSpell(spellId) then
-        return
-    end
-
-    local auraInstanceID = aura.auraInstanceID
-    if CombatLogCollector.HasSeenCrowdControlAura(auraInstanceID) then
-        return
-    end
-    CombatLogCollector.MarkCrowdControlAuraSeen(auraInstanceID)
-
-    local destRow = CombatLogCollector.GetPlayerRowFromUnit(unit)
-    if destRow then
-        CombatLogCollector.AddCount(destRow, "ccTaken")
-    end
-
-    local sourceUnit = aura.sourceUnit
-    if type(sourceUnit) ~= "string" or sourceUnit == "" or UnitIsUnit(sourceUnit, unit) then
-        return
-    end
-
-    local sourceGuid = UnitGUID(sourceUnit)
-    local sourceName = UnitName(sourceUnit)
-    local creditGuid, creditName, creditFlags = CombatLogCollector.ResolveInterruptSource(
-        sourceGuid,
-        sourceName,
-        COMBATLOG_OBJECT_TYPE_PLAYER
-    )
-    local sourceRow = CombatLogCollector.GetPlayerRow(creditGuid, creditName, creditFlags)
-    if sourceRow and (not destRow or sourceRow ~= destRow) then
-        if sourceUnit == "player" or (UnitIsUnit and UnitIsUnit(sourceUnit, "player")) then
-            sourceRow.team = "friendly"
-        end
-        CombatLogCollector.AddCount(sourceRow, "ccApplied")
-    end
-end
-
---- Processes newly added auras from one UNIT_AURA payload.
---- @param unit string
---- @param updateInfo table|nil
-function CombatLogCollector.ProcessUnitAuraUpdate(unit, updateInfo)
-    if not CombatLogCollector.ShouldWatchAuraUnit(unit)
-        or type(updateInfo) ~= "table"
-        or type(updateInfo.addedAuras) ~= "table" then
-        return
-    end
-
-    CombatLogCollector.EnsureArmedForEvent()
-
-    for _, auraInfo in ipairs(updateInfo.addedAuras) do
-        local auraInstanceID = type(auraInfo) == "table" and auraInfo.auraInstanceID or auraInfo
-        if auraInstanceID then
-            local aura = CombatLogCollector.GetAuraDataForInstance(unit, auraInstanceID)
-            if aura then
-                CombatLogCollector.CreditCrowdControlFromAura(unit, aura)
-            end
-        end
-    end
-end
-
---- Records one loss-of-control effect for the local player.
---- @param effectIndex number|nil
-function CombatLogCollector.ProcessLossOfControlAdded(effectIndex)
-    if not CombatLogCollector.ShouldTrackCrowdControlEvents() then
-        return
-    end
-
-    if not C_LossOfControl or type(C_LossOfControl.GetActiveLossOfControlData) ~= "function" then
-        return
-    end
-
-    CombatLogCollector.EnsureArmedForEvent()
-
-    local ok, data = pcall(C_LossOfControl.GetActiveLossOfControlData, effectIndex)
-    if not ok or type(data) ~= "table" then
-        return
-    end
-
-    if not CombatLogCollector.ShouldCountLossOfControlType(data.locType) then
-        return
-    end
-
-    local spellId = data.spellID or data.spellId
-    local startTime = data.startTime
-    if CombatLogCollector.HasSeenLossOfControlEffect(spellId, startTime) then
-        return
-    end
-    CombatLogCollector.MarkLossOfControlEffectSeen(spellId, startTime)
-
-    local row = CombatLogCollector.GetPlayerRowFromUnit("player")
-    if row then
-        CombatLogCollector.AddCount(row, "ccTaken")
-    end
-end
-
---- Returns true when aura and loss-of-control listeners should record events.
---- @return boolean
-function CombatLogCollector.ShouldTrackCrowdControlEvents()
-    if not CombatLogCollector.IsEnabled() then
-        return false
-    end
-
-    return CombatLogCollector.active or CombatLogCollector.IsInLivePvpContext()
-end
-
---- Handles UNIT_AURA updates for crowd-control tracking.
---- @param unit string
---- @param updateInfo table|nil
-function CombatLogCollector.OnUnitAura(unit, updateInfo)
-    if not CombatLogCollector.ShouldTrackCrowdControlEvents() then
-        return
-    end
-
-    CombatLogCollector.ProcessUnitAuraUpdate(unit, updateInfo)
-end
-
---- Handles LOSS_OF_CONTROL_ADDED for local crowd-control tracking.
---- @param effectIndex number|nil
-function CombatLogCollector.OnLossOfControlAdded(effectIndex)
-    CombatLogCollector.ProcessLossOfControlAdded(effectIndex)
-end
-
---- Handles one registered combat telemetry event.
---- @param event string
---- @param ... any
-function CombatLogCollector.OnEvent(event, ...)
-    if event == "LOSS_OF_CONTROL_ADDED" then
-        CombatLogCollector.OnLossOfControlAdded(...)
-    elseif event == "UNIT_AURA" then
-        CombatLogCollector.OnUnitAura(...)
-    elseif event == "COMBAT_LOG_EVENT_UNFILTERED" then
-        CombatLogCollector.OnCombatLogEvent()
-    end
-end
-
---- Registers aura and loss-of-control listeners used when combat log access is blocked.
+--- Creates the combat-log listener frame when the client allows CLEU registration.
 function CombatLogCollector.EnsureEventFrame()
     if CombatLogCollector.frame then
         return
     end
 
     local frame = CreateFrame("Frame")
-    frame:RegisterEvent("LOSS_OF_CONTROL_ADDED")
-    frame:RegisterEvent("UNIT_AURA")
-    if CombatLogCollector.TryRegisterCombatLogEvent(frame) then
-        CombatLogCollector.combatLogListenerActive = true
+    if not CombatLogCollector.TryRegisterCombatLogEvent(frame) then
+        return
     end
-    frame:SetScript("OnEvent", function(_, event, ...)
-        CombatLogCollector.OnEvent(event, ...)
+
+    CombatLogCollector.combatLogListenerActive = true
+    frame:SetScript("OnEvent", function()
+        CombatLogCollector.OnCombatLogEvent()
     end)
     CombatLogCollector.frame = frame
+end
+
+--- Returns true when COMBAT_LOG_EVENT_UNFILTERED may be registered.
+--- Midnight blocks this registration; calling it (even inside pcall) still triggers BugGrabber.
+--- @return boolean
+function CombatLogCollector.ShouldRegisterCombatLogEvents()
+    if CombatLogCollector.combatLogRegistrationSkipped then
+        return false
+    end
+
+    if CombatLogCollector.useDamageMeterPolling and CombatLogCollector.IsDamageMeterAvailable() then
+        return false
+    end
+
+    if GetBuildInfo then
+        local _, _, _, tocVersion = GetBuildInfo()
+        local interfaceVersion = tonumber(tocVersion)
+        if interfaceVersion and interfaceVersion >= 120000 then
+            return false
+        end
+    end
+
+    return true
 end
 
 --- Attempts to register COMBAT_LOG_EVENT_UNFILTERED when the client allows it.
 --- @param frame Frame
 --- @return boolean registered
 function CombatLogCollector.TryRegisterCombatLogEvent(frame)
+    if not CombatLogCollector.ShouldRegisterCombatLogEvents() then
+        CombatLogCollector.combatLogRegistrationSkipped = true
+        return false
+    end
+
     if type(frame) ~= "table" or type(frame.RegisterEvent) ~= "function" then
         return false
     end
 
     local ok = pcall(frame.RegisterEvent, frame, "COMBAT_LOG_EVENT_UNFILTERED")
+    if not ok then
+        CombatLogCollector.combatLogRegistrationSkipped = true
+    end
     return ok == true
 end
 
@@ -2402,8 +2109,6 @@ function CombatLogCollector.CreatePlayerRow(storageKey, name, team)
         interrupts = 0,
         dispels = 0,
         deaths = 0,
-        ccApplied = 0,
-        ccTaken = 0,
     }
 end
 
@@ -2691,8 +2396,8 @@ function CombatLogCollector.ArmForCurrentInstance()
     return CombatLogCollector.active
 end
 
---- Initializes the combat log collector for damage meter polling and CC listeners.
---- RegisterEvent is blocked in Midnight instanced PvP and still triggers BugGrabber via pcall.
+--- Initializes combat listeners and damage-meter polling for live match stats.
+--- COMBAT_LOG_EVENT_UNFILTERED is not registered on Midnight; polling is used instead.
 function CombatLogCollector.Init()
     CombatLogCollector.useDamageMeterPolling = true
     CombatLogCollector.EnsureEventFrame()
@@ -2756,24 +2461,6 @@ function CombatLogCollector.OnCombatLogEvent()
         return
     end
 
-    if subEvent == "SPELL_AURA_APPLIED" and CombatLogCollector.IsInLivePvpContext() then
-        if CombatLogCollector.EnsureArmedForEvent() then
-            CombatLogCollector.eventCount = (CombatLogCollector.eventCount or 0) + 1
-            local spellId, _, auraType = select(12, CombatLogGetCurrentEventInfo())
-            CombatLogCollector.AppendRawCombatEvent(subEvent, sourceGUID, sourceName, destGUID, destName, spellId, auraType, nil)
-            CombatLogCollector.ProcessCrowdControlAppliedEvent(
-                sourceGUID,
-                sourceName,
-                sourceFlags,
-                destGUID,
-                destName,
-                destFlags,
-                spellId
-            )
-        end
-        return
-    end
-
     if not CombatLogCollector.EnsureArmedForEvent() then
         return
     end
@@ -2830,7 +2517,6 @@ function CombatLogCollector.Reset(preserveListener)
     CombatLogCollector.players = {}
     CombatLogCollector.killEvents = {}
     CombatLogCollector.rawCombatEvents = {}
-    CombatLogCollector.ResetCrowdControlTracking()
     CombatLogCollector.matchContext = nil
     CombatLogCollector.damageMeterSynced = false
     CombatLogCollector.lastDamageMeterSyncAt = nil
@@ -2877,7 +2563,6 @@ function CombatLogCollector.StartMatch(matchContext)
         CombatLogCollector.players = {}
         CombatLogCollector.killEvents = {}
         CombatLogCollector.rawCombatEvents = {}
-        CombatLogCollector.ResetCrowdControlTracking()
     end
 
     CombatLogCollector.StartPersistTicker()
@@ -2923,8 +2608,6 @@ function CombatLogCollector.BuildPlayerSummaryRow(guid, combatRow, participant)
     local interrupts = 0
     local dispels = 0
     local deaths = 0
-    local ccApplied = 0
-    local ccTaken = 0
     local damageTaken = combatRow and combatRow.damageTaken or 0
 
     if participant then
@@ -2934,16 +2617,12 @@ function CombatLogCollector.BuildPlayerSummaryRow(guid, combatRow, participant)
         dispels = CombatLogCollector.ResolveSupplementCount(participant.dispels, combatRow and combatRow.dispels)
         deaths = CombatLogCollector.ResolveSupplementCount(participant.deaths, combatRow and combatRow.deaths)
         damageTaken = CombatLogCollector.ResolveSupplementCount(nil, combatRow and combatRow.damageTaken)
-        ccApplied = CombatLogCollector.ResolveSupplementCount(nil, combatRow and combatRow.ccApplied)
-        ccTaken = CombatLogCollector.ResolveSupplementCount(nil, combatRow and combatRow.ccTaken)
     else
         damage = combatRow and combatRow.damage or 0
         healing = combatRow and combatRow.healing or 0
         interrupts = combatRow and combatRow.interrupts or 0
         dispels = combatRow and combatRow.dispels or 0
         deaths = combatRow and combatRow.deaths or 0
-        ccApplied = combatRow and combatRow.ccApplied or 0
-        ccTaken = combatRow and combatRow.ccTaken or 0
     end
 
     return {
@@ -2959,8 +2638,6 @@ function CombatLogCollector.BuildPlayerSummaryRow(guid, combatRow, participant)
         interrupts = interrupts,
         dispels = dispels,
         deaths = deaths,
-        ccApplied = ccApplied,
-        ccTaken = ccTaken,
     }
 end
 

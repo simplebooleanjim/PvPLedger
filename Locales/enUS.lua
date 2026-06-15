@@ -42,8 +42,6 @@ PVL.Locale.RegisterBase({
     ["COMBAT.DAMAGE_TAKEN"] = "Damage Taken",
     ["COMBAT.INTERRUPTS"] = "Interrupts",
     ["COMBAT.DISPELS"] = "Dispels",
-    ["COMBAT.CC_APPLIED"] = "CC Applied",
-    ["COMBAT.CC_TAKEN"] = "CC Taken",
     ["COMBAT.DEATHS"] = "Deaths",
     ["COMBAT.DPS"] = "DPS",
     ["COMBAT.HPS"] = "HPS",

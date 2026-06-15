@@ -96,7 +96,7 @@ end
 --- @param text string|nil
 --- @return string
 function LadderView.NormalizeSearchText(text)
-    return string.lower(strtrim(text or ""))
+    return PVL.FoldPlayerSearchText(text)
 end
 --- Returns true when one ladder row matches the current search text.
 --- @param entry table
@@ -107,8 +107,8 @@ function LadderView.RowMatchesSearch(entry, searchText)
     if needle == "" then
         return true
     end
-    local displayName = string.lower(entry.displayName or "")
-    local playerKey = string.lower(entry.playerKey or "")
+    local displayName = PVL.FoldPlayerSearchText(entry.displayName or "")
+    local playerKey = PVL.FoldPlayerSearchText(entry.playerKey or "")
     if displayName:find(needle, 1, true) then
         return true
     end

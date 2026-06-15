@@ -1,11 +1,23 @@
 # Changelog
 
+## 0.8.1 — 2026-06-06
+
+### Addons
+
+- Removed CC Applied / CC Taken combat stats (Midnight-safe simplification).
+- Ladder search: accent-insensitive partial name matching (`jose` finds `José`).
+- Combat log: skip `COMBAT_LOG_EVENT_UNFILTERED` registration on Midnight to avoid `ADDON_ACTION_FORBIDDEN` errors.
+
+### Release tooling
+
+- GitHub Release workflow attaches six addon zip packages on `v*` tags.
+- Optional Wago API upload script (`release/upload_wago.py`).
+
 ## 0.8.0 — 2026-06-06
 
 ### Addons
 
 - Full UI localization (11 client locales).
-- Combat analysis: CC Applied / CC Taken stats with Midnight-safe tracking (`LOSS_OF_CONTROL` + `UNIT_AURA`).
 - Expanded optional match export (schema v2): spell breakdowns, raw combat events, CR history, account snapshots.
 - Multi-region ladder companions (EU, KR, TW) and improved ladder merge logic.
 - Fixed `/pvl` and minimap open path after localization init changes.

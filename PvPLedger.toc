@@ -2,10 +2,11 @@
 ## Title: |cFF66CCFFPvPLedger|r
 ## Notes: Hybrid PvP ladder intelligence — in-game observations plus imported ladder snapshots.
 ## Author: Jake
-## Version: 0.8.0
+## Version: 0.8.1
 ## IconTexture: Interface\AddOns\PvPLedger\Media\Icon.tga
 ## SavedVariables: PvPLedgerDB, BlitzLedgerDB
 ## SavedVariablesPerCharacter: PvPLedgerCharDB, BlitzLedgerCharDB
+## OptionalDeps: PvPLedger-AppHelper, PvPLedger-Data-US, PvPLedger-Data-EU, PvPLedger-Data-KR, PvPLedger-Data-TW
 
 Core/Constants.lua
 Core/Locale.lua

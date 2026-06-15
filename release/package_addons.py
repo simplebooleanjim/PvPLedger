@@ -15,13 +15,54 @@ if str(REPO_ROOT) not in sys.path:
 
 from release.exclude_rules import should_exclude_path  # noqa: E402
 
-ADDON_PACKAGES: tuple[tuple[str, Path], ...] = (
-    ("PvPLedger", REPO_ROOT),
-    ("PvPLedger-AppHelper", REPO_ROOT.parent / "PvPLedger-AppHelper"),
-    ("PvPLedger-Data-US", REPO_ROOT.parent / "PvPLedger-Data-US"),
-    ("PvPLedger-Data-EU", REPO_ROOT.parent / "PvPLedger-Data-EU"),
-    ("PvPLedger-Data-KR", REPO_ROOT.parent / "PvPLedger-Data-KR"),
-    ("PvPLedger-Data-TW", REPO_ROOT.parent / "PvPLedger-Data-TW"),
+ADDON_FOLDER_NAMES: tuple[str, ...] = (
+    "PvPLedger",
+    "PvPLedger-AppHelper",
+    "PvPLedger-Data-US",
+    "PvPLedger-Data-EU",
+    "PvPLedger-Data-KR",
+    "PvPLedger-Data-TW",
+)
+
+
+def resolve_addon_source(folder_name: str) -> Path:
+    """
+    Resolve the source directory for one addon package.
+
+    GitHub CI keeps companion addons inside the repository root. Local dev
+    checkouts may also keep sibling folders under ``Interface/AddOns``.
+
+    Parameters
+    ----------
+    folder_name:
+        Addon folder name (for example ``PvPLedger-AppHelper``).
+
+    Returns
+    -------
+    Path
+        Existing source directory, preferring in-repo copies for CI.
+    """
+
+    if folder_name == "PvPLedger":
+        return REPO_ROOT
+
+    candidates = (
+        REPO_ROOT / folder_name,
+        REPO_ROOT.parent / folder_name,
+    )
+    for candidate in candidates:
+        if candidate.exists():
+            return candidate
+
+    return candidates[0]
+
+DATA_COMPANION_FOLDERS = frozenset(
+    {
+        "PvPLedger-Data-US",
+        "PvPLedger-Data-EU",
+        "PvPLedger-Data-KR",
+        "PvPLedger-Data-TW",
+    }
 )
 
 
@@ -50,6 +91,27 @@ def copy_filtered_tree(source: Path, destination: Path) -> None:
         return ignored
 
     shutil.copytree(source, destination, ignore=_ignore)
+
+
+def stage_data_companion_icon(*, folder_name: str, staging_dir: Path) -> None:
+    """
+    Copy the shared addon icon into a data companion staging folder.
+
+    Parameters
+    ----------
+    folder_name:
+        Staged addon folder name (for example ``PvPLedger-Data-US``).
+    staging_dir:
+        Directory containing staged addon folders.
+    """
+
+    icon_source = REPO_ROOT / "Media" / "Icon.tga"
+    if not icon_source.exists():
+        return
+
+    media_dir = staging_dir / folder_name / "Media"
+    media_dir.mkdir(parents=True, exist_ok=True)
+    shutil.copy2(icon_source, media_dir / "Icon.tga")
 
 
 def write_zip(*, staging_dir: Path, zip_path: Path, folder_name: str) -> None:
@@ -100,12 +162,15 @@ def build_packages(*, output_dir: Path) -> list[Path]:
     staging_root.mkdir(parents=True, exist_ok=True)
 
     created: list[Path] = []
-    for folder_name, source_dir in ADDON_PACKAGES:
+    for folder_name in ADDON_FOLDER_NAMES:
+        source_dir = resolve_addon_source(folder_name)
         if not source_dir.exists():
             print(f"skip {folder_name}: missing source at {source_dir}")
             continue
 
         copy_filtered_tree(source_dir, staging_root / folder_name)
+        if folder_name in DATA_COMPANION_FOLDERS:
+            stage_data_companion_icon(folder_name=folder_name, staging_dir=staging_root)
         zip_path = output_dir / f"{folder_name}.zip"
         write_zip(staging_dir=staging_root, zip_path=zip_path, folder_name=folder_name)
         created.append(zip_path)

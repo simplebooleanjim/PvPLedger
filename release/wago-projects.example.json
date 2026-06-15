@@ -1,0 +1,30 @@
+{
+  "supported_retail_patch": "12.0.0",
+  "stability": "stable",
+  "projects": {
+    "PvPLedger": {
+      "wago_id": "REPLACE_WITH_WAGO_PROJECT_ID",
+      "zip": "PvPLedger.zip"
+    },
+    "PvPLedger-AppHelper": {
+      "wago_id": "REPLACE_WITH_WAGO_PROJECT_ID",
+      "zip": "PvPLedger-AppHelper.zip"
+    },
+    "PvPLedger-Data-US": {
+      "wago_id": "REPLACE_WITH_WAGO_PROJECT_ID",
+      "zip": "PvPLedger-Data-US.zip"
+    },
+    "PvPLedger-Data-EU": {
+      "wago_id": "REPLACE_WITH_WAGO_PROJECT_ID",
+      "zip": "PvPLedger-Data-EU.zip"
+    },
+    "PvPLedger-Data-KR": {
+      "wago_id": "REPLACE_WITH_WAGO_PROJECT_ID",
+      "zip": "PvPLedger-Data-KR.zip"
+    },
+    "PvPLedger-Data-TW": {
+      "wago_id": "REPLACE_WITH_WAGO_PROJECT_ID",
+      "zip": "PvPLedger-Data-TW.zip"
+    }
+  }
+}

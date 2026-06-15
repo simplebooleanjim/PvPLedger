@@ -3,7 +3,7 @@
 ## Notes: Frequently updated US ladder snapshots for PvPLedger. Keep this addon updated via your addon manager for fresh ladder data without updating the main addon.
 ## Author: Jake
 ## Version: 2026.06.15
-## IconTexture: Interface\AddOns\PvPLedger\Media\Icon.tga
+## IconTexture: Interface\AddOns\PvPLedger-Data-US\Media\Icon.tga
 ## Dependencies: PvPLedger
 
 LadderData_US_Blitz.lua
