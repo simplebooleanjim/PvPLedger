@@ -2,12 +2,12 @@
 PvPLedgerLadderData = PvPLedgerLadderData or {}
 PvPLedgerLadderData.US = PvPLedgerLadderData.US or {}
 PvPLedgerLadderData.US.arena2v2 = {
-    snapshotId = "us-arena2v2-s41-2026-06-14",
+    snapshotId = "us-arena2v2-s41-2026-06-15",
     region = "US",
     bracket = "arena2v2",
     season = 41,
-    snapshotDate = "2026-06-14",
-    generatedAt = "2026-06-14T22:51:22Z",
+    snapshotDate = "2026-06-15",
+    generatedAt = "2026-06-15T00:10:29Z",
     source = "blizzard-api+seramate",
     overall = {
         listedCount = 1004,
@@ -182,9 +182,9 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["ROGUE"] = {
             listedCount = 132,
-            avgListedRating = 2383.1,
-            medianListedRating = 2331,
-            top100Avg = 2383.1,
+            avgListedRating = 2383.0,
+            medianListedRating = 2331.5,
+            top100Avg = 2383.0,
             highest = 2820,
             buckets = {
                 ["2200-2299"] = 14,
@@ -549,14 +549,14 @@ PvPLedgerLadderData.US.arena2v2 = {
             },
         },
         ["ROGUE_ASSASSINATION"] = {
-            listedCount = 50,
-            avgListedRating = 2377.0,
-            medianListedRating = 2346.0,
-            top100Avg = 2377.0,
+            listedCount = 51,
+            avgListedRating = 2375.6,
+            medianListedRating = 2345,
+            top100Avg = 2375.6,
             highest = 2820,
             buckets = {
                 ["2200-2299"] = 5,
-                ["2300-2399"] = 31,
+                ["2300-2399"] = 32,
                 ["2400-2499"] = 9,
                 ["2500-2599"] = 3,
                 ["2600-2699"] = 1,
@@ -578,14 +578,14 @@ PvPLedgerLadderData.US.arena2v2 = {
             },
         },
         ["ROGUE_SUBTLETY"] = {
-            listedCount = 67,
-            avgListedRating = 2378.6,
-            medianListedRating = 2331,
-            top100Avg = 2378.6,
+            listedCount = 66,
+            avgListedRating = 2379.7,
+            medianListedRating = 2331.5,
+            top100Avg = 2379.7,
             highest = 2707,
             buckets = {
                 ["2200-2299"] = 5,
-                ["2300-2399"] = 38,
+                ["2300-2399"] = 37,
                 ["2400-2499"] = 15,
                 ["2500-2599"] = 5,
                 ["2600-2699"] = 3,
@@ -8038,7 +8038,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["stealthdrops-stormscale"] = {
             displayName = "Stealthdrops-stormscale",
-            specKey = "ROGUE_SUBTLETY",
+            specKey = "ROGUE_ASSASSINATION",
             rating = 2305,
             rank = 746,
             wins = 106,
