@@ -2,8 +2,8 @@
 ## Title: |cFF66CCFFPvPLedger Data (EU)|r
 ## Notes: Frequently updated EU ladder snapshots for PvPLedger. Keep this addon updated via your addon manager for fresh ladder data without updating the main addon.
 ## Author: Jake
-## Version: 2026.06.13
-## IconTexture: Interface\AddOns\PvPLedger-Data-EU\Media\Icon.tga
+## Version: 2026.06.15
+## IconTexture: Interface\AddOns\PvPLedger\Media\Icon.tga
 ## Dependencies: PvPLedger
 
 LadderData_EU_Blitz.lua
