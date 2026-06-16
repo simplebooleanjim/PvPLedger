@@ -7,7 +7,7 @@ PvPLedgerLadderData.US.rbg = {
     bracket = "rbg",
     season = 41,
     snapshotDate = "2026-06-16",
-    generatedAt = "2026-06-16T16:13:39Z",
+    generatedAt = "2026-06-16T19:51:43Z",
     source = "blizzard-api+seramate",
     overall = {
         listedCount = 1008,
@@ -202,9 +202,9 @@ PvPLedgerLadderData.US.rbg = {
         },
         ["PRIEST"] = {
             listedCount = 165,
-            avgListedRating = 1926.3,
+            avgListedRating = 1926.8,
             medianListedRating = 1895,
-            top100Avg = 1928.7,
+            top100Avg = 1929.2,
             highest = 2649,
             buckets = {
                 ["1700-1799"] = 37,
@@ -669,13 +669,13 @@ PvPLedgerLadderData.US.rbg = {
             },
         },
         ["PRIEST_HOLY"] = {
-            listedCount = 39,
-            avgListedRating = 1940.0,
-            medianListedRating = 1900,
-            top100Avg = 1940.0,
+            listedCount = 40,
+            avgListedRating = 1934.5,
+            medianListedRating = 1899.0,
+            top100Avg = 1934.5,
             highest = 2572,
             buckets = {
-                ["1700-1799"] = 9,
+                ["1700-1799"] = 10,
                 ["1800-1899"] = 10,
                 ["1900-1999"] = 10,
                 ["2000-2099"] = 4,
@@ -685,13 +685,13 @@ PvPLedgerLadderData.US.rbg = {
             },
         },
         ["PRIEST_SHADOW"] = {
-            listedCount = 23,
-            avgListedRating = 1870.9,
-            medianListedRating = 1807,
-            top100Avg = 1870.9,
+            listedCount = 22,
+            avgListedRating = 1877.8,
+            medianListedRating = 1818.0,
+            top100Avg = 1877.8,
             highest = 2284,
             buckets = {
-                ["1700-1799"] = 10,
+                ["1700-1799"] = 9,
                 ["1800-1899"] = 6,
                 ["1900-1999"] = 3,
                 ["2000-2099"] = 2,
@@ -7628,7 +7628,7 @@ PvPLedgerLadderData.US.rbg = {
         },
         ["rædin-stormrage"] = {
             displayName = "Rædin-stormrage",
-            specKey = "PRIEST_SHADOW",
+            specKey = "PRIEST_HOLY",
             rating = 1720,
             rank = 986,
             wins = 14,
