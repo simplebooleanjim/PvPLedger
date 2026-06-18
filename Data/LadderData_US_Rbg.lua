@@ -2,12 +2,12 @@
 PvPLedgerLadderData = PvPLedgerLadderData or {}
 PvPLedgerLadderData.US = PvPLedgerLadderData.US or {}
 PvPLedgerLadderData.US.rbg = {
-    snapshotId = "us-rbg-s41-2026-06-17",
+    snapshotId = "us-rbg-s41-2026-06-18",
     region = "US",
     bracket = "rbg",
     season = 41,
-    snapshotDate = "2026-06-17",
-    generatedAt = "2026-06-17T22:58:43Z",
+    snapshotDate = "2026-06-18",
+    generatedAt = "2026-06-18T00:21:36Z",
     source = "blizzard-api+seramate",
     overall = {
         listedCount = 1003,
@@ -152,9 +152,9 @@ PvPLedgerLadderData.US.rbg = {
         },
         ["MAGE"] = {
             listedCount = 42,
-            avgListedRating = 1911.2,
-            medianListedRating = 1917,
-            top100Avg = 1911.2,
+            avgListedRating = 1917.1,
+            medianListedRating = 1955.5,
+            top100Avg = 1917.1,
             highest = 2348,
             buckets = {
                 ["1700-1799"] = 16,
@@ -539,30 +539,30 @@ PvPLedgerLadderData.US.rbg = {
             },
         },
         ["MAGE_FIRE"] = {
-            listedCount = 7,
-            avgListedRating = 1936.9,
-            medianListedRating = 1917,
-            top100Avg = 1936.9,
+            listedCount = 8,
+            avgListedRating = 1963.2,
+            medianListedRating = 1955.5,
+            top100Avg = 1963.2,
             highest = 2169,
             buckets = {
                 ["1700-1799"] = 2,
                 ["1900-1999"] = 3,
                 ["2000-2099"] = 1,
-                ["2100-2199"] = 1,
+                ["2100-2199"] = 2,
             },
         },
         ["MAGE_FROST"] = {
-            listedCount = 32,
-            avgListedRating = 1880.4,
-            medianListedRating = 1837.5,
-            top100Avg = 1880.4,
+            listedCount = 31,
+            avgListedRating = 1871.8,
+            medianListedRating = 1836,
+            top100Avg = 1871.8,
             highest = 2348,
             buckets = {
                 ["1700-1799"] = 13,
                 ["1800-1899"] = 8,
                 ["1900-1999"] = 6,
                 ["2000-2099"] = 1,
-                ["2100-2199"] = 2,
+                ["2100-2199"] = 1,
                 ["2200-2299"] = 1,
                 ["2300-2399"] = 1,
             },
@@ -1160,7 +1160,7 @@ PvPLedgerLadderData.US.rbg = {
         },
         ["arkcuran-proudmoore"] = {
             displayName = "Arkcuran-proudmoore",
-            specKey = "MAGE_FROST",
+            specKey = "MAGE_FIRE",
             rating = 2148,
             rank = 173,
             wins = 149,
