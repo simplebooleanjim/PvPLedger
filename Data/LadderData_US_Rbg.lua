@@ -7,7 +7,7 @@ PvPLedgerLadderData.US.rbg = {
     bracket = "rbg",
     season = 41,
     snapshotDate = "2026-06-19",
-    generatedAt = "2026-06-19T07:39:33Z",
+    generatedAt = "2026-06-19T11:55:22Z",
     source = "blizzard-api+seramate",
     overall = {
         listedCount = 1000,
@@ -38,7 +38,7 @@ PvPLedgerLadderData.US.rbg = {
             ["2500-2599"] = 21,
             ["2600-2699"] = 5,
         },
-        ratedPopulation = 3135,
+        ratedPopulation = 3134,
         titleCutoffs = {
             {
                 pct = 0.1,
@@ -169,9 +169,9 @@ PvPLedgerLadderData.US.rbg = {
         },
         ["MONK"] = {
             listedCount = 114,
-            avgListedRating = 2031.6,
+            avgListedRating = 1999.1,
             medianListedRating = 1947.0,
-            top100Avg = 2031.6,
+            top100Avg = 1999.1,
             highest = 2585,
             buckets = {
                 ["1700-1799"] = 22,
@@ -187,9 +187,9 @@ PvPLedgerLadderData.US.rbg = {
         },
         ["PALADIN"] = {
             listedCount = 52,
-            avgListedRating = 1935.5,
+            avgListedRating = 1927.3,
             medianListedRating = 1885,
-            top100Avg = 1935.5,
+            top100Avg = 1927.3,
             highest = 2398,
             buckets = {
                 ["1700-1799"] = 13,
@@ -571,25 +571,25 @@ PvPLedgerLadderData.US.rbg = {
             },
         },
         ["MONK_BREWMASTER"] = {
-            listedCount = 3,
-            avgListedRating = 2169.7,
-            medianListedRating = 2194,
-            top100Avg = 2169.7,
+            listedCount = 4,
+            avgListedRating = 2070.2,
+            medianListedRating = 1983.0,
+            top100Avg = 2070.2,
             highest = 2577,
             buckets = {
-                ["1700-1799"] = 1,
+                ["1700-1799"] = 2,
                 ["2100-2199"] = 1,
                 ["2500-2599"] = 1,
             },
         },
         ["MONK_MISTWEAVER"] = {
-            listedCount = 89,
-            avgListedRating = 1965.3,
-            medianListedRating = 1911,
-            top100Avg = 1965.3,
+            listedCount = 88,
+            avgListedRating = 1967.5,
+            medianListedRating = 1912.5,
+            top100Avg = 1967.5,
             highest = 2585,
             buckets = {
-                ["1700-1799"] = 19,
+                ["1700-1799"] = 18,
                 ["1800-1899"] = 22,
                 ["1900-1999"] = 21,
                 ["2000-2099"] = 10,
@@ -616,13 +616,13 @@ PvPLedgerLadderData.US.rbg = {
             },
         },
         ["PALADIN_HOLY"] = {
-            listedCount = 7,
-            avgListedRating = 2011.1,
-            medianListedRating = 1987,
-            top100Avg = 2011.1,
+            listedCount = 8,
+            avgListedRating = 1983.9,
+            medianListedRating = 1890.0,
+            top100Avg = 1983.9,
             highest = 2326,
             buckets = {
-                ["1700-1799"] = 3,
+                ["1700-1799"] = 4,
                 ["1900-1999"] = 1,
                 ["2100-2199"] = 1,
                 ["2200-2299"] = 1,
@@ -641,13 +641,13 @@ PvPLedgerLadderData.US.rbg = {
             },
         },
         ["PALADIN_RETRIBUTION"] = {
-            listedCount = 42,
-            avgListedRating = 1905.1,
-            medianListedRating = 1858.0,
-            top100Avg = 1905.1,
+            listedCount = 41,
+            avgListedRating = 1907.8,
+            medianListedRating = 1860,
+            top100Avg = 1907.8,
             highest = 2398,
             buckets = {
-                ["1700-1799"] = 10,
+                ["1700-1799"] = 9,
                 ["1800-1899"] = 17,
                 ["1900-1999"] = 6,
                 ["2000-2099"] = 6,
@@ -3442,7 +3442,7 @@ PvPLedgerLadderData.US.rbg = {
         },
         ["fitban-onyxia"] = {
             displayName = "Fitban-onyxia",
-            specKey = "PALADIN_RETRIBUTION",
+            specKey = "PALADIN_HOLY",
             rating = 1793,
             rank = 761,
             wins = 76,
@@ -5399,7 +5399,7 @@ PvPLedgerLadderData.US.rbg = {
             rating = 1787,
             rank = 785,
             wins = 31,
-            losses = 25,
+            losses = 26,
             faction = "ALLIANCE",
         },
         ["luffynshanks-tichondrius"] = {
@@ -9328,7 +9328,7 @@ PvPLedgerLadderData.US.rbg = {
         },
         ["windela-aeriepeak"] = {
             displayName = "Windela-aerie-peak",
-            specKey = "MONK_MISTWEAVER",
+            specKey = "MONK_BREWMASTER",
             rating = 1772,
             rank = 828,
             wins = 58,
