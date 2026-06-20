@@ -7,7 +7,7 @@ PvPLedgerLadderData.US.rbg = {
     bracket = "rbg",
     season = 41,
     snapshotDate = "2026-06-20",
-    generatedAt = "2026-06-20T18:46:48Z",
+    generatedAt = "2026-06-20T20:15:50Z",
     source = "blizzard-api+seramate",
     overall = {
         listedCount = 1000,
@@ -202,13 +202,13 @@ PvPLedgerLadderData.US.rbg = {
             },
         },
         ["PRIEST"] = {
-            listedCount = 170,
-            avgListedRating = 1942.5,
-            medianListedRating = 1890.0,
+            listedCount = 171,
+            avgListedRating = 1941.8,
+            medianListedRating = 1885,
             top100Avg = 1951.2,
             highest = 2656,
             buckets = {
-                ["1700-1799"] = 41,
+                ["1700-1799"] = 42,
                 ["1800-1899"] = 45,
                 ["1900-1999"] = 29,
                 ["2000-2099"] = 20,
@@ -655,13 +655,13 @@ PvPLedgerLadderData.US.rbg = {
             },
         },
         ["PRIEST_DISCIPLINE"] = {
-            listedCount = 112,
-            avgListedRating = 1960.5,
-            medianListedRating = 1890.0,
+            listedCount = 113,
+            avgListedRating = 1958.4,
+            medianListedRating = 1885,
             top100Avg = 1986.4,
             highest = 2656,
             buckets = {
-                ["1700-1799"] = 26,
+                ["1700-1799"] = 27,
                 ["1800-1899"] = 31,
                 ["1900-1999"] = 19,
                 ["2000-2099"] = 9,
@@ -2297,7 +2297,7 @@ PvPLedgerLadderData.US.rbg = {
         },
         ["combo-gnomeregan"] = {
             displayName = "Combo-gnomeregan",
-            specKey = "",
+            specKey = "PRIEST_DISCIPLINE",
             rating = 1731,
             rank = 983,
             wins = 33,
