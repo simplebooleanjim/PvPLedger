@@ -195,6 +195,9 @@ function PVL.BuildExportRosterRow(participant)
         interrupts = participant.interrupts,
         dispels = participant.dispels,
         deaths = participant.deaths,
+        roundsWon = participant.roundsWon,
+        roundsLost = participant.roundsLost,
+        roundsPlayed = participant.roundsPlayed,
     }
 end
 
@@ -277,6 +280,9 @@ function PVL.BuildMatchExportRecord(matchRecord)
         playerMMRKind = matchRecord.playerMMRKind,
         playerPersonalMMRBefore = matchRecord.playerPersonalMMRBefore,
         playerPersonalMMRAfter = matchRecord.playerPersonalMMRAfter,
+        playerRoundWins = matchRecord.playerRoundWins,
+        playerRoundLosses = matchRecord.playerRoundLosses,
+        playerRoundsPlayed = matchRecord.playerRoundsPlayed,
         combatSummary = PVL.BuildCombatExportSummary(matchRecord.combatSummary),
         roster = roster,
     }

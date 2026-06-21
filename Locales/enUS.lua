@@ -170,6 +170,8 @@ PVL.Locale.RegisterBase({
     ["UI.MATCH.VICTORY"] = "Victory",
     ["UI.MATCH.DEFEAT"] = "Defeat",
     ["UI.MATCH.RESULT_UNKNOWN"] = "Result unknown",
+    ["UI.MATCH.YOUR_ROUNDS"] = "Your rounds",
+    ["UI.MATCH.ROUNDS"] = "Rounds",
 
     -- Combat meter
     ["UI.COMBAT.NONE_BRACKET"] = "No matches recorded for this bracket yet.",

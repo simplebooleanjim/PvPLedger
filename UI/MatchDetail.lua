@@ -515,6 +515,22 @@ function UI.FormatParticipantSpec(participant)
     return Format.Muted("Unknown")
 end
 
+--- Formats one participant's Solo Shuffle round win-loss record.
+--- @param participant table
+--- @return string
+function UI.FormatParticipantRoundRecord(participant)
+    if not participant or participant.roundsWon == nil then
+        return Format.Muted("--")
+    end
+
+    local losses = participant.roundsLost
+    if losses == nil and participant.roundsPlayed then
+        losses = math.max(0, participant.roundsPlayed - participant.roundsWon)
+    end
+
+    return Format.WinLossRecord(participant.roundsWon, losses)
+end
+
 --- Formats one roster rating delta for match detail rows.
 --- @param participant table
 --- @return string
@@ -533,21 +549,28 @@ end
 
 --- Formats one roster row with player identity and rating on a single line.
 --- @param participant table
+--- @param bracket string|nil
 --- @return string
-function UI.FormatParticipantRosterLine(participant)
-    return string.format(
-        "%s  %s  %s",
+function UI.FormatParticipantRosterLine(participant, bracket)
+    local parts = {
         UI.FormatParticipantNameLine(participant),
         Format.Rating(participant.rating),
-        UI.FormatParticipantRatingDelta(participant)
-    )
+        UI.FormatParticipantRatingDelta(participant),
+    }
+
+    if bracket == PVL.BRACKETS.SHUFFLE then
+        table.insert(parts, UI.FormatParticipantRoundRecord(participant))
+    end
+
+    return table.concat(parts, "  ")
 end
 
 --- Appends one team roster block with CR and rating change.
 --- @param lines string[]
 --- @param title string
 --- @param participants table[]
-function UI.AppendMatchRosterBlock(lines, title, participants)
+--- @param bracket string|nil
+function UI.AppendMatchRosterBlock(lines, title, participants, bracket)
     table.insert(lines, Format.SectionLabel(title))
     table.insert(lines, Format.Divider(300))
 
@@ -557,11 +580,58 @@ function UI.AppendMatchRosterBlock(lines, title, participants)
         return
     end
 
+    if bracket == PVL.BRACKETS.SHUFFLE then
+        table.insert(lines, string.format(
+            "%s  %s  %s  %s",
+            Format.Muted("Player"),
+            Format.Muted("CR"),
+            Format.Muted("Change"),
+            Format.Muted(PVL.L("UI.MATCH.ROUNDS"))
+        ))
+    end
+
     for _, participant in ipairs(participants) do
-        table.insert(lines, UI.FormatParticipantRosterLine(participant))
+        table.insert(lines, UI.FormatParticipantRosterLine(participant, bracket))
     end
 
     table.insert(lines, "")
+end
+
+--- Sorts Solo Shuffle roster rows by round wins, then CR change.
+--- @param participants table[]
+--- @return table[]
+function UI.SortShuffleParticipantsByRoundRecord(participants)
+    local sorted = {}
+    for index, participant in ipairs(participants) do
+        sorted[index] = participant
+    end
+
+    table.sort(sorted, function(a, b)
+        local winsA = a.roundsWon or -1
+        local winsB = b.roundsWon or -1
+        if winsA ~= winsB then
+            return winsA > winsB
+        end
+
+        local changeA = UI.GetParticipantRatingChange(a)
+        local changeB = UI.GetParticipantRatingChange(b)
+        if changeA == nil and changeB == nil then
+            return (a.name or "") < (b.name or "")
+        end
+        if changeA == nil then
+            return false
+        end
+        if changeB == nil then
+            return true
+        end
+        if changeA == changeB then
+            return (a.name or "") < (b.name or "")
+        end
+
+        return changeA > changeB
+    end)
+
+    return sorted
 end
 
 --- Returns a usable CR change value for sorting, or nil when missing.
@@ -622,6 +692,10 @@ function UI.GetAllMatchParticipants(matchRecord)
 
     for _, participant in ipairs(matchRecord.roster or {}) do
         table.insert(participants, participant)
+    end
+
+    if matchRecord.bracket == PVL.BRACKETS.SHUFFLE then
+        return UI.SortShuffleParticipantsByRoundRecord(participants)
     end
 
     return UI.SortParticipantsByRatingChange(participants)
@@ -758,12 +832,48 @@ function UI.BuildMatchDetailText(matchRecord)
         table.insert(lines, Format.StatLine(mmrLabel, Format.Rating(matchRecord.playerMMRAfter)))
     end
 
+    if matchRecord.bracket == PVL.BRACKETS.SHUFFLE then
+        local roundWins = matchRecord.playerRoundWins
+        local roundLosses = matchRecord.playerRoundLosses
+        if roundWins == nil and matchRecord.roster then
+            for _, participant in ipairs(matchRecord.roster) do
+                if participant.isLocalPlayer then
+                    roundWins = participant.roundsWon
+                    roundLosses = participant.roundsLost
+                    break
+                end
+            end
+        end
+
+        if roundWins ~= nil then
+            table.insert(lines, Format.StatLine(
+                PVL.L("UI.MATCH.YOUR_ROUNDS"),
+                Format.WinLossRecord(roundWins, roundLosses)
+            ))
+        end
+    end
+
     table.insert(lines, "")
     if UI.UsesTeamSplitLayout(matchRecord.bracket) then
-        UI.AppendMatchRosterBlock(lines, "Your team", UI.GetMatchTeamParticipants(matchRecord, true))
-        UI.AppendMatchRosterBlock(lines, "Enemy team", UI.GetMatchTeamParticipants(matchRecord, false))
+        UI.AppendMatchRosterBlock(
+            lines,
+            "Your team",
+            UI.GetMatchTeamParticipants(matchRecord, true),
+            matchRecord.bracket
+        )
+        UI.AppendMatchRosterBlock(
+            lines,
+            "Enemy team",
+            UI.GetMatchTeamParticipants(matchRecord, false),
+            matchRecord.bracket
+        )
     else
-        UI.AppendMatchRosterBlock(lines, "Players", UI.GetAllMatchParticipants(matchRecord))
+        UI.AppendMatchRosterBlock(
+            lines,
+            "Players",
+            UI.GetAllMatchParticipants(matchRecord),
+            matchRecord.bracket
+        )
     end
 
     if not combatSummary and not UI.MatchHasStoredCombatTotals(matchRecord) then

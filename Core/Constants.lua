@@ -5,7 +5,7 @@ PvPLedger = PvPLedger or {}
 local PVL = PvPLedger
 
 PVL.ADDON_NAME = "PvPLedger"
-PVL.VERSION = "0.8.3.1"
+PVL.VERSION = "0.8.3.2"
 PVL.DB_VERSION = 1
 
 --- Bracket identifiers used throughout SavedVariables and imported ladder packs.

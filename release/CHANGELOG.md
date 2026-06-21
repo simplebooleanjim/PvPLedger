@@ -1,5 +1,12 @@
 # Changelog
 
+## 0.8.3.2 — 2026-06-06
+
+### Addons
+
+- Solo Shuffle match detail: track and display per-player round win-loss from the post-match scoreboard (you + all six players).
+- Match export: include shuffle round totals on roster rows and match records.
+
 ## 0.8.3.1 — 2026-06-20
 
 ### Addons

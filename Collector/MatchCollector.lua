@@ -1095,6 +1095,119 @@ function MatchCollector.ScoreboardStatMatches(label, keywords)
     return false
 end
 
+--- Returns true when the current scoreboard context is Solo Shuffle.
+--- @return boolean
+function MatchCollector.IsShuffleScoreboardContext()
+    if MatchCollector.activeMatch and MatchCollector.activeMatch.bracket == PVL.BRACKETS.SHUFFLE then
+        return true
+    end
+
+    return C_PvP and C_PvP.IsRatedSoloShuffle and C_PvP.IsRatedSoloShuffle() or false
+end
+
+--- Returns the custom victory stat id for the active match (Solo Shuffle round wins).
+--- @return number|nil
+function MatchCollector.GetShuffleVictoryStatId()
+    if not C_PvP or not C_PvP.GetCustomVictoryStatID then
+        return nil
+    end
+
+    local ok, statId = pcall(C_PvP.GetCustomVictoryStatID)
+    if ok and type(statId) == "number" and statId > 0 then
+        return statId
+    end
+
+    return nil
+end
+
+--- Builds a lowercase search blob for one scoreboard stat row.
+--- @param stat table
+--- @return string
+function MatchCollector.BuildScoreboardStatBlob(stat)
+    local statName = PVL.GetAccessibleString(stat.name) or ""
+    local statTooltip = PVL.GetAccessibleString(stat.tooltip) or ""
+    local statIcon = PVL.GetAccessibleString(stat.iconName) or ""
+    local columnName = ""
+    local columnTooltip = ""
+    local columnTitle = ""
+
+    if stat.pvpStatID and C_PvP and C_PvP.GetMatchPVPStatColumn then
+        local columnOk, column = pcall(C_PvP.GetMatchPVPStatColumn, stat.pvpStatID)
+        if columnOk and type(column) == "table" then
+            columnName = PVL.GetAccessibleString(column.name) or ""
+            columnTooltip = PVL.GetAccessibleString(column.tooltip) or ""
+            columnTitle = PVL.GetAccessibleString(column.tooltipTitle) or ""
+        end
+    end
+
+    local blobOk, blob = pcall(function()
+        return string.lower(string.format(
+            "%s %s %s %s %s %s",
+            statName,
+            statTooltip,
+            statIcon,
+            columnName,
+            columnTooltip,
+            columnTitle
+        ))
+    end)
+    if not blobOk or not blob then
+        return ""
+    end
+
+    return blob
+end
+
+--- Parses Solo Shuffle round win/loss totals from scoreboard stat rows.
+--- Blizzard exposes round wins through ``GetCustomVictoryStatID`` and the per-player
+--- ``stats`` array on ``C_PvP.GetScoreInfo``.
+--- @param stats table[]|nil
+--- @return table { roundsWon, roundsLost, roundsPlayed }
+function MatchCollector.ParseShuffleRoundStats(stats)
+    local parsed = {
+        roundsWon = nil,
+        roundsLost = nil,
+        roundsPlayed = nil,
+    }
+
+    if type(stats) ~= "table" then
+        return parsed
+    end
+
+    local victoryStatId = MatchCollector.GetShuffleVictoryStatId()
+
+    for _, stat in ipairs(stats) do
+        local value = MatchCollector.GetAccessibleNumber(stat.pvpStatValue)
+        if value == nil or value < 0 then
+            -- Skip empty or unavailable rows.
+        elseif victoryStatId and stat.pvpStatID == victoryStatId then
+            parsed.roundsWon = value
+        else
+            local blob = MatchCollector.BuildScoreboardStatBlob(stat)
+            if MatchCollector.ScoreboardStatMatches(blob, { "round", "won" }) then
+                parsed.roundsWon = value
+            elseif MatchCollector.ScoreboardStatMatches(blob, { "round", "lost" }) then
+                parsed.roundsLost = value
+            elseif MatchCollector.ScoreboardStatMatches(blob, { "round", "played" }) then
+                parsed.roundsPlayed = value
+            end
+        end
+    end
+
+    if parsed.roundsWon ~= nil and parsed.roundsLost == nil then
+        local played = parsed.roundsPlayed or PVL.SHUFFLE_ROUNDS_PER_MATCH
+        if played >= parsed.roundsWon then
+            parsed.roundsLost = played - parsed.roundsWon
+        end
+    elseif parsed.roundsWon == nil and parsed.roundsLost ~= nil and parsed.roundsPlayed then
+        parsed.roundsWon = math.max(0, parsed.roundsPlayed - parsed.roundsLost)
+    elseif parsed.roundsWon ~= nil and parsed.roundsLost ~= nil and not parsed.roundsPlayed then
+        parsed.roundsPlayed = parsed.roundsWon + parsed.roundsLost
+    end
+
+    return parsed
+end
+
 --- Parses extended PvP scoreboard stats when Blizzard exposes them.
 --- Battleground Blitz does not include kick counts on the scoreboard; those come from the combat log.
 --- @param stats table[]|nil
@@ -1115,36 +1228,7 @@ function MatchCollector.ParseScoreboardStats(stats)
         if value <= 0 then
             -- Skip empty rows.
         else
-            local statName = PVL.GetAccessibleString(stat.name) or ""
-            local statTooltip = PVL.GetAccessibleString(stat.tooltip) or ""
-            local statIcon = PVL.GetAccessibleString(stat.iconName) or ""
-            local columnName = ""
-            local columnTooltip = ""
-            local columnTitle = ""
-
-            if stat.pvpStatID and C_PvP and C_PvP.GetMatchPVPStatColumn then
-                local columnOk, column = pcall(C_PvP.GetMatchPVPStatColumn, stat.pvpStatID)
-                if columnOk and type(column) == "table" then
-                    columnName = PVL.GetAccessibleString(column.name) or ""
-                    columnTooltip = PVL.GetAccessibleString(column.tooltip) or ""
-                    columnTitle = PVL.GetAccessibleString(column.tooltipTitle) or ""
-                end
-            end
-
-            local blobOk, blob = pcall(function()
-                return string.lower(string.format(
-                    "%s %s %s %s %s %s",
-                    statName,
-                    statTooltip,
-                    statIcon,
-                    columnName,
-                    columnTooltip,
-                    columnTitle
-                ))
-            end)
-            if not blobOk or not blob then
-                blob = ""
-            end
+            local blob = MatchCollector.BuildScoreboardStatBlob(stat)
 
             if MatchCollector.ScoreboardStatMatches(blob, {
                 "interrupt",
@@ -1231,6 +1315,9 @@ function MatchCollector.BuildParticipantFromScore(scoreInfo)
 
     local scoreboardStats = MatchCollector.ParseScoreboardStats(scoreInfo.stats)
     local deaths = MatchCollector.GetAccessibleNumber(scoreInfo.deaths) or scoreboardStats.deaths or 0
+    local shuffleRounds = MatchCollector.IsShuffleScoreboardContext()
+        and MatchCollector.ParseShuffleRoundStats(scoreInfo.stats)
+        or nil
 
     return {
         name = name,
@@ -1250,6 +1337,9 @@ function MatchCollector.BuildParticipantFromScore(scoreInfo)
         interrupts = scoreboardStats.interrupts,
         dispels = scoreboardStats.dispels,
         deaths = deaths,
+        roundsWon = shuffleRounds and shuffleRounds.roundsWon or nil,
+        roundsLost = shuffleRounds and shuffleRounds.roundsLost or nil,
+        roundsPlayed = shuffleRounds and shuffleRounds.roundsPlayed or nil,
         listedRating = listedPlayer and listedPlayer.rating or nil,
         listedRank = listedPlayer and listedPlayer.rank or nil,
     }
@@ -2038,6 +2128,31 @@ function MatchCollector.ScoreboardLooksReady(localPlayer, roster, bracket, attem
         return false
     end
 
+    if bracket == PVL.BRACKETS.SHUFFLE then
+        local expectedPlayers = PVL.SHUFFLE_ROUNDS_PER_MATCH or 6
+        local playersWithRounds = 0
+
+        for _, participant in ipairs(roster) do
+            if participant.roundsWon ~= nil then
+                playersWithRounds = playersWithRounds + 1
+            end
+        end
+
+        if #roster >= expectedPlayers and playersWithRounds >= expectedPlayers then
+            return true
+        end
+
+        if localPlayer and localPlayer.roundsWon ~= nil and playersWithRounds >= math.max(1, #roster) then
+            return true
+        end
+
+        if attempt and attempt >= COMPLETE_MAX_ATTEMPTS then
+            return localPlayer ~= nil or #roster > 0
+        end
+
+        return false
+    end
+
     if localPlayer and localPlayer.rating then
         return true
     end
@@ -2314,6 +2429,9 @@ function MatchCollector.FinalizeMatchComplete(bracket, roster, localPlayer, matc
         playerMMRKind = mmrKind,
         playerPersonalMMRBefore = personalMmrBefore,
         playerPersonalMMRAfter = personalMmrAfter,
+        playerRoundWins = localPlayer and localPlayer.roundsWon or nil,
+        playerRoundLosses = localPlayer and localPlayer.roundsLost or nil,
+        playerRoundsPlayed = localPlayer and localPlayer.roundsPlayed or nil,
         roster = roster,
         combatSummary = combatSummary,
     }
