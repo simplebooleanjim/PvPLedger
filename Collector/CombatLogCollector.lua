@@ -566,6 +566,10 @@ end
 --- Imports player combat totals from Blizzard's damage meter sessions.
 --- @return boolean synced
 function CombatLogCollector.SyncFromDamageMeter()
+    if PVL.IsCombatLocked and PVL.IsCombatLocked() then
+        return false
+    end
+
     if not CombatLogCollector.IsDamageMeterAvailable() then
         return false
     end
@@ -992,7 +996,8 @@ function CombatLogCollector.ShouldRegisterCombatLogEvents()
         return false
     end
 
-    if CombatLogCollector.useDamageMeterPolling and CombatLogCollector.IsDamageMeterAvailable() then
+    -- CLEU handlers run during combat and can taint secure action buttons in instanced PvP.
+    if CombatLogCollector.useDamageMeterPolling ~= false then
         return false
     end
 
@@ -2048,6 +2053,13 @@ end
 --- Midnight blocks COMBAT_LOG_EVENT_UNFILTERED in instanced PvP, so polling is the reliable path.
 function CombatLogCollector.TryLiveSync()
     if not CombatLogCollector.IsEnabled() then
+        return
+    end
+
+    if PVL.IsCombatLocked and PVL.IsCombatLocked() then
+        if PVL.EnsureCombatLockEvents then
+            PVL.EnsureCombatLockEvents()
+        end
         return
     end
 

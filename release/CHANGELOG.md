@@ -1,5 +1,20 @@
 # Changelog
 
+## 0.8.3 — 2026-06-16
+
+### Addons
+
+- Solo Shuffle and Battleground Blitz: Galactic Legend / Marshal / Warlord cutoffs now use **top 8 per specialization** (matches Blizzard’s Midnight change).
+- Title cutoffs: resolve rank-8 thresholds from listed spec ladder players when bundled snapshots still carry legacy 0.1% (rank 3) cutoffs.
+- Combat lockdown: defer UI refresh, inspect, and ladder updates during combat to reduce action-bar taint (`ADDON_ACTION_FORBIDDEN`).
+- Fix ESC menu error: stop chaining ``CloseAll()`` from frame ``OnHide`` during UISpecialFrames dismiss (prevents ``ClearTarget()`` taint on ``ToggleGameMenu``).
+- Combat lockdown: defer ladder/title refreshes and inspect callbacks during combat to reduce action-bar taint (`ActionButton:SetAttribute`).
+- Combat lockdown: pause damage-meter polling and roster inspects while the UI is closed and combat lockdown is active; resume on regen.
+
+### Collector
+
+- `export_ladder.py`: per-spec Rank 1 cutoff pinned to rank 8 (replaces 0.1% with a 3-player floor). Re-export ladder data for updated cutoff ratings in snapshots.
+
 ## 0.8.2 — 2026-06-15
 
 ### Addons

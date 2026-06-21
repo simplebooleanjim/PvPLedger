@@ -110,6 +110,9 @@ local function FormatRule(row, context)
         if row.rank then
             table.insert(parts, string.format("~rank %s", PVL.FormatRating(row.rank)))
         end
+    elseif def.kind == "spec_rank" then
+        local scope = context and context.specName and (context.specName .. " ladder") or "spec ladder"
+        table.insert(parts, string.format("Top %s on %s", PVL.FormatRating(def.rank or PVL.PER_SPEC_RANK1_SLOTS), scope))
     elseif def.kind == "achievement" then
         if row.cutoffRating then
             table.insert(parts, string.format("%s rating", PVL.FormatRating(row.cutoffRating)))
@@ -786,6 +789,13 @@ end
 --- Refreshes the title cutoff window from the active bracket.
 --- @param frame Frame|nil
 function TitleView.Refresh(frame)
+    if PVL.IsCombatLocked and PVL.IsCombatLocked() then
+        if PVL.RequestUiRefresh then
+            PVL.RequestUiRefresh()
+        end
+        return
+    end
+
     frame = frame or TitleView.CreateFrame()
     local bracket = PVL.GetActiveBracketFilter()
     frame.header:SetText(Format.Header(PVL.BRACKET_NAMES[bracket] or bracket or "PvP"))
@@ -821,6 +831,10 @@ end
 
 --- Shows the title cutoff window.
 function TitleView.Show()
+    if PVL.CanOpenAddonWindows and not PVL.CanOpenAddonWindows() then
+        return
+    end
+
     local frame = TitleView.CreateFrame()
 
     if PVL.RatedInfo then

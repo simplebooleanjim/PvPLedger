@@ -8,6 +8,7 @@ local InspectQueue = PVL.InspectQueue
 InspectQueue.pending = InspectQueue.pending or {}
 InspectQueue.processing = false
 InspectQueue.frame = InspectQueue.frame or nil
+InspectQueue.pendingRosterCallback = InspectQueue.pendingRosterCallback or nil
 
 --- Initializes the inspect queue event frame.
 function InspectQueue.Init()
@@ -52,6 +53,16 @@ end
 function InspectQueue.ProcessNext()
     InspectQueue.Init()
 
+    if PVL.IsCombatLocked and PVL.IsCombatLocked() then
+        if PVL.EnsureCombatLockEvents then
+            PVL.EnsureCombatLockEvents()
+        end
+        if C_Timer and C_Timer.After then
+            C_Timer.After(PVL.INSPECT_DELAY_SECONDS, InspectQueue.ProcessNext)
+        end
+        return
+    end
+
     if InspectQueue.processing then
         return
     end
@@ -74,6 +85,18 @@ end
 --- Handles INSPECT_READY and invokes the queued callback with spec info.
 --- @param guid string
 function InspectQueue.OnInspectReady(guid)
+    if PVL.IsCombatLocked and PVL.IsCombatLocked() then
+        if PVL.EnsureCombatLockEvents then
+            PVL.EnsureCombatLockEvents()
+        end
+        if C_Timer and C_Timer.After then
+            C_Timer.After(PVL.INSPECT_DELAY_SECONDS, function()
+                InspectQueue.OnInspectReady(guid)
+            end)
+        end
+        return
+    end
+
     local request = InspectQueue.pending[guid]
     InspectQueue.processing = false
 
@@ -109,11 +132,12 @@ end
 function InspectQueue.Clear()
     wipe(InspectQueue.pending)
     InspectQueue.processing = false
+    InspectQueue.pendingRosterCallback = nil
 end
 
---- Queues inspects for all visible enemy and friendly players in the active match.
+--- Scans raid/party/nameplate units and queues spec inspects for one match roster.
 --- @param callback function
-function InspectQueue.EnqueueMatchRoster(callback)
+function InspectQueue.RunMatchRosterEnqueue(callback)
     if type(callback) ~= "function" then
         return
     end
@@ -130,4 +154,33 @@ function InspectQueue.EnqueueMatchRoster(callback)
     scan("raid", 40)
     scan("party", 4)
     scan("nameplate", 40)
+end
+
+--- Runs a roster inspect pass that was deferred until combat ended.
+function InspectQueue.FlushPendingRosterEnqueue()
+    local callback = InspectQueue.pendingRosterCallback
+    if not callback or (PVL.IsCombatLocked and PVL.IsCombatLocked()) then
+        return
+    end
+
+    InspectQueue.pendingRosterCallback = nil
+    InspectQueue.RunMatchRosterEnqueue(callback)
+end
+
+--- Queues inspects for all visible enemy and friendly players in the active match.
+--- @param callback function
+function InspectQueue.EnqueueMatchRoster(callback)
+    if type(callback) ~= "function" then
+        return
+    end
+
+    if PVL.IsCombatLocked and PVL.IsCombatLocked() then
+        InspectQueue.pendingRosterCallback = callback
+        if PVL.EnsureCombatLockEvents then
+            PVL.EnsureCombatLockEvents()
+        end
+        return
+    end
+
+    InspectQueue.RunMatchRosterEnqueue(callback)
 end

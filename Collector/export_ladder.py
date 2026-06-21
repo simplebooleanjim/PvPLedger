@@ -50,11 +50,11 @@ LISTED_RANK_CAP = 1000
 TITLE_CUTOFF_PERCENTILES: tuple[float, ...] = (0.1, 0.5, 1.0, 3.0)
 RATED_POPULATION_FLOOR = 1000
 
-# Per-spec Rank 1 titles (Solo Shuffle / Battleground Blitz) are awarded to at
-# least a handful of players per specialization even when 0.1% of that spec's
-# population would round to fewer. Blizzard guarantees a minimum number of Rank 1
-# slots per spec, so the per-spec 0.1% cutoff is floored to this many ranks.
-PER_SPEC_RANK1_MIN_SLOTS = 3
+# Per-spec Rank 1 titles (Galactic Legend / Marshal / Warlord in Solo Shuffle and
+# Battleground Blitz) are awarded to the top N players of each specialization,
+# not a percentile of that spec's ladder. The 0.1% percentile slot in spec
+# cutoffs is pinned to this fixed rank for addon lookup compatibility.
+PER_SPEC_RANK1_FIXED_RANK = 8
 PER_SPEC_RANK1_PERCENTILE = 0.1
 
 
@@ -220,6 +220,7 @@ def compute_title_cutoffs(
     percentiles: tuple[float, ...] = TITLE_CUTOFF_PERCENTILES,
     floor: int = RATED_POPULATION_FLOOR,
     rank_floors: dict[float, int] | None = None,
+    rank_ceilings: dict[float, int] | None = None,
 ) -> list[dict[str, Any]]:
     """Compute the rating threshold for each seasonal title percentile.
 
@@ -232,7 +233,9 @@ def compute_title_cutoffs(
     :param percentiles: Top-percent thresholds to evaluate (e.g. 0.1 for 0.1%).
     :param floor: Minimum rating counted toward the rated population.
     :param rank_floors: Optional minimum cutoff rank per percentile, e.g.
-        ``{0.1: 3}`` to guarantee at least 3 Rank 1 slots. Clamped to population.
+        ``{0.1: 8}`` to guarantee at least 8 Rank 1 slots. Clamped to population.
+    :param rank_ceilings: Optional maximum cutoff rank per percentile, e.g.
+        ``{0.1: 8}`` to cap Rank 1 at the top 8 players. Clamped to population.
     :return: One ``{pct, rank, rating}`` entry per percentile, or an empty list
         when no rated players are present.
     """
@@ -252,6 +255,10 @@ def compute_title_cutoffs(
             minimum = rank_floors.get(percentile)
             if minimum:
                 rank = max(rank, minimum)
+        if rank_ceilings:
+            maximum = rank_ceilings.get(percentile)
+            if maximum:
+                rank = min(rank, maximum)
         rank = min(rank, population)
         cutoffs.append({
             "pct": percentile,
@@ -268,10 +275,10 @@ def compute_spec_cutoffs(
 ) -> dict[str, dict[str, Any]]:
     """Compute per-specialization title cutoffs for per-spec brackets.
 
-    Solo Shuffle and Battleground Blitz award Rank 1 titles to the top N% of
-    *each specialization's* own ladder, not the combined ladder. This builds a
-    cutoff table keyed by spec so the addon can resolve the threshold for the
-    player's current spec.
+    Solo Shuffle and Battleground Blitz award Galactic Legend / Marshal / Warlord
+    to the top ``PER_SPEC_RANK1_FIXED_RANK`` players of *each specialization's*
+    own ladder, not the combined ladder. This builds a cutoff table keyed by spec
+    so the addon can resolve the threshold for the player's current spec.
 
     :param spec_ratings: Mapping of ``spec_key`` to that spec's full rating list.
     :param percentiles: Top-percent thresholds to evaluate (e.g. 0.1 for 0.1%).
@@ -280,7 +287,8 @@ def compute_spec_cutoffs(
         with no rated players at or above ``floor``.
     """
 
-    rank_floors = {PER_SPEC_RANK1_PERCENTILE: PER_SPEC_RANK1_MIN_SLOTS}
+    rank_floors = {PER_SPEC_RANK1_PERCENTILE: PER_SPEC_RANK1_FIXED_RANK}
+    rank_ceilings = {PER_SPEC_RANK1_PERCENTILE: PER_SPEC_RANK1_FIXED_RANK}
     result: dict[str, dict[str, Any]] = {}
     for spec_key, ratings in spec_ratings.items():
         if not spec_key:
@@ -290,6 +298,7 @@ def compute_spec_cutoffs(
             percentiles=percentiles,
             floor=floor,
             rank_floors=rank_floors,
+            rank_ceilings=rank_ceilings,
         )
         if not cutoffs:
             continue

@@ -72,7 +72,9 @@ local function RegisterSlashCommands()
 
         if command == "update" or command == "refresh" then
             local summary = PVL.RefreshImportedLadderData()
-            PVL.UI.Refresh()
+            if PVL.RequestUiRefresh then
+                PVL.RequestUiRefresh()
+            end
             if summary.loadedAppHelper then
                 Print(PVL.L("SLASH.UPDATE_APP_HELPER"))
             elseif summary.loadedDataAddon then
@@ -93,8 +95,8 @@ local function RegisterSlashCommands()
         if command == "share on" or command == "export on" then
             PVL.SetShareMatchData(true)
             Print(PVL.L("SLASH.SHARE_ON"))
-            if PVL.UI and PVL.UI.Refresh then
-                PVL.UI.Refresh()
+            if PVL.RequestUiRefresh then
+                PVL.RequestUiRefresh()
             end
             return
         end
@@ -102,15 +104,17 @@ local function RegisterSlashCommands()
         if command == "share off" or command == "export off" then
             PVL.SetShareMatchData(false)
             Print(PVL.L("SLASH.SHARE_OFF"))
-            if PVL.UI and PVL.UI.Refresh then
-                PVL.UI.Refresh()
+            if PVL.RequestUiRefresh then
+                PVL.RequestUiRefresh()
             end
             return
         end
 
         if command == "reload" then
             PVL.LoadImportedSnapshotFromPack()
-            PVL.UI.Refresh()
+            if PVL.RequestUiRefresh then
+                PVL.RequestUiRefresh()
+            end
             Print(PVL.L("SLASH.RELOAD_DONE"))
             return
         end

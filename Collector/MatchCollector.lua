@@ -2286,8 +2286,8 @@ function MatchCollector.FinalizeMatchComplete(bracket, roster, localPlayer, matc
         if PVL.UI and PVL.UI.GetFilters then
             PVL.UI.GetFilters().selectedMatchId = duplicateMatch.matchId
         end
-        if PVL.UI and PVL.UI.Refresh then
-            pcall(PVL.UI.Refresh)
+        if PVL.RequestUiRefresh then
+            pcall(PVL.RequestUiRefresh)
         end
         return
     end
@@ -2347,8 +2347,8 @@ function MatchCollector.FinalizeMatchComplete(bracket, roster, localPlayer, matc
         PVL.RatedInfo.RequestUpdate()
     end
 
-    if PVL.UI and PVL.UI.Refresh then
-        pcall(PVL.UI.Refresh)
+    if PVL.RequestUiRefresh then
+        pcall(PVL.RequestUiRefresh)
     end
 end
 

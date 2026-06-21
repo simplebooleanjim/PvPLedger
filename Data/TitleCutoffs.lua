@@ -69,9 +69,11 @@ end
 --- Each definition describes one title tier:
 ---   id        Stable identifier.
 ---   name      Display name, or function(faction) -> string.
----   kind      "rating" for fixed thresholds, "percentile" for ladder cutoffs.
+---   kind      "rating" for fixed thresholds, "percentile" for ladder cutoffs,
+---             "spec_rank" for per-spec fixed rank cutoffs (Blitz / Shuffle Rank 1).
 ---   rating    Fixed rating threshold (kind == "rating").
 ---   percentile Top-percent of the ladder (kind == "percentile", e.g. 0.1).
+---   rank      Fixed ladder rank within one spec (kind == "spec_rank", e.g. 8).
 ---   wins      Season games-won requirement, when applicable.
 ---   color     TITLE_COLORS hex.
 ---   feat      True for end-of-season feats of strength (the prestige titles).
@@ -81,6 +83,10 @@ local C = PVL.TITLE_COLORS
 
 --- Current-season rating required for the Elite title in all brackets.
 PVL.ELITE_RATING = 2300
+
+--- Per-spec Rank 1 slots for Solo Shuffle and Battleground Blitz (Galactic Legend /
+--- Marshal / Warlord). Blizzard awards these to the top N players of each spec.
+PVL.PER_SPEC_RANK1_SLOTS = 8
 
 --- Fixed rating tiers shared by every bracket (Combatant through Elite).
 --- @return table[]
@@ -150,12 +156,15 @@ PVL.TITLE_DEFINITIONS = {
             id = "rank1",
             locKey = "TITLE.RANK1_LEGEND",
             name = "Rank 1: Prized Legend",
-            kind = "percentile",
-            percentile = 0.1,
+            kind = "spec_rank",
+            rank = PVL.PER_SPEC_RANK1_SLOTS,
             wins = 50,
             color = C.RANK_ONE,
             feat = true,
-            note = "Top 0.1% of your specialization's Solo Shuffle ladder (at least the top few per spec), 50 wins required.",
+            note = string.format(
+                "Top %d players on your Solo Shuffle specialization ladder, 50 wins required.",
+                PVL.PER_SPEC_RANK1_SLOTS
+            ),
         },
     }),
 
@@ -190,12 +199,15 @@ PVL.TITLE_DEFINITIONS = {
             name = function(faction)
                 return FactionTitle("TITLE.RANK1_MARSHAL", "TITLE.RANK1_WARLORD", faction)
             end,
-            kind = "percentile",
-            percentile = 0.1,
+            kind = "spec_rank",
+            rank = PVL.PER_SPEC_RANK1_SLOTS,
             wins = 50,
             color = C.RANK_ONE,
             feat = true,
-            note = "Top 0.1% of your specialization's Battleground Blitz ladder (at least the top few per spec), 50 wins required. Blitz has no Hero title.",
+            note = string.format(
+                "Top %d players on your Battleground Blitz specialization ladder, 50 wins required. Blitz has no Hero title.",
+                PVL.PER_SPEC_RANK1_SLOTS
+            ),
         },
     }),
 }
@@ -530,6 +542,119 @@ local function FindSpecTitleCutoff(snapshot, specKey, percentile)
     return nil, specEntry.population
 end
 
+--- Finds the per-spec cutoff entry for one fixed ladder rank within one spec.
+--- @param snapshot table|nil Imported ladder snapshot.
+--- @param specKey string|nil Player spec key (e.g. "WARRIOR_FURY").
+--- @param targetRank number Ladder rank within the spec (e.g. 8).
+--- @return table|nil cutoff { pct, rank, rating }, number|nil specPopulation
+local function FindSpecRankCutoff(snapshot, specKey, targetRank)
+    if not specKey or not targetRank or targetRank < 1 then
+        return nil, nil
+    end
+
+    local overall = snapshot and snapshot.overall
+    local specCutoffs = overall and overall.specCutoffs
+    if type(specCutoffs) ~= "table" then
+        return nil, nil
+    end
+
+    local specEntry = specCutoffs[specKey]
+    if type(specEntry) ~= "table" or type(specEntry.cutoffs) ~= "table" then
+        return nil, nil
+    end
+
+    for _, entry in ipairs(specEntry.cutoffs) do
+        if entry.rank and entry.rank == targetRank then
+            return entry, specEntry.population
+        end
+    end
+
+    return nil, specEntry.population
+end
+
+--- Clamps a per-spec Rank 1 target rank to the spec's rated population.
+--- @param targetRank number Desired ladder rank (e.g. 8).
+--- @param specPopulation number|nil Rated players in that spec.
+--- @return number
+local function ClampSpecRankTarget(targetRank, specPopulation)
+    if not specPopulation or specPopulation < 1 then
+        return targetRank
+    end
+
+    return math.min(targetRank, specPopulation)
+end
+
+--- Interpolates a rating from sorted rank/rating sample points.
+--- @param points table[] { rank, rating } rows sorted by rank ascending.
+--- @param targetRank number
+--- @return number|nil
+local function InterpolateRatingAtRank(points, targetRank)
+    if #points == 0 then
+        return nil
+    end
+
+    table.sort(points, function(left, right)
+        return left.rank < right.rank
+    end)
+
+    for _, point in ipairs(points) do
+        if point.rank == targetRank then
+            return point.rating
+        end
+    end
+
+    if targetRank <= points[1].rank then
+        return points[1].rating
+    end
+
+    local last = points[#points]
+    if targetRank >= last.rank then
+        return last.rating
+    end
+
+    for index = 1, #points - 1 do
+        local low = points[index]
+        local high = points[index + 1]
+        if targetRank >= low.rank and targetRank <= high.rank then
+            local span = high.rank - low.rank
+            if span <= 0 then
+                return low.rating
+            end
+
+            local progress = (targetRank - low.rank) / span
+            return low.rating + (high.rating - low.rating) * progress
+        end
+    end
+
+    return last.rating
+end
+
+--- Estimates the rating at one rank on a specialization ladder from listed players.
+--- @param snapshot table|nil Imported ladder snapshot.
+--- @param specKey string|nil Player spec key (e.g. "EVOKER_DEVASTATION").
+--- @param targetRank number Ladder rank within the spec.
+--- @return number|nil
+function PVL.EstimateSpecRatingAtRank(snapshot, specKey, targetRank)
+    if not snapshot or not specKey or not targetRank or targetRank < 1 then
+        return nil
+    end
+
+    local points = {}
+    if snapshot.players then
+        for _, row in pairs(snapshot.players) do
+            if type(row) == "table" and row.specKey == specKey and row.rank and row.rating then
+                table.insert(points, { rank = row.rank, rating = row.rating })
+            end
+        end
+    end
+
+    if #points == 0 then
+        return nil
+    end
+
+    return InterpolateRatingAtRank(points, targetRank)
+end
+
 --- Resolves the player's current specialization key and localized name.
 --- The key matches the collector format (``CLASS_SPEC``, e.g. "WARRIOR_FURY")
 --- so it can be matched against per-spec cutoff data.
@@ -599,34 +724,7 @@ function PVL.EstimateRatingAtRank(snapshot, bracket, targetRank)
         return nil
     end
 
-    table.sort(points, function(left, right)
-        return left.rank < right.rank
-    end)
-
-    if targetRank <= points[1].rank then
-        return points[1].rating
-    end
-
-    local last = points[#points]
-    if targetRank >= last.rank then
-        return last.rating
-    end
-
-    for index = 1, #points - 1 do
-        local low = points[index]
-        local high = points[index + 1]
-        if targetRank >= low.rank and targetRank <= high.rank then
-            local span = high.rank - low.rank
-            if span <= 0 then
-                return low.rating
-            end
-
-            local progress = (targetRank - low.rank) / span
-            return low.rating + (high.rating - low.rating) * progress
-        end
-    end
-
-    return last.rating
+    return InterpolateRatingAtRank(points, targetRank)
 end
 
 --- Resolves the rating threshold for one title in one bracket.
@@ -645,6 +743,35 @@ function PVL.ResolveTitleCutoffRating(snapshot, def, bracket, specKey)
     end
 
     local perSpec = not PVL.IsCombinedImportedBracket(bracket)
+
+    if def.kind == "spec_rank" then
+        if not perSpec then
+            return nil, "unavailable", nil
+        end
+
+        if SnapshotHasSpecCutoffs(snapshot) then
+            local overall = snapshot.overall
+            local specEntry = specKey and overall.specCutoffs and overall.specCutoffs[specKey] or nil
+            local specPopulation = type(specEntry) == "table" and specEntry.population or nil
+            local targetRank = ClampSpecRankTarget(def.rank, specPopulation)
+
+            local specCutoff = FindSpecRankCutoff(snapshot, specKey, targetRank)
+            if specCutoff and specCutoff.rating then
+                return specCutoff.rating, "exact-spec", targetRank
+            end
+
+            -- Snapshots exported before the top-8 rule may only have legacy 0.1%
+            -- cutoffs (often rank 3). Derive rank 8 from listed spec ladder players.
+            local estimated = PVL.EstimateSpecRatingAtRank(snapshot, specKey, targetRank)
+            if estimated then
+                return math.floor(estimated + 0.5), "estimated-spec", targetRank
+            end
+
+            return nil, "needs-spec", nil
+        end
+
+        return nil, "unavailable", nil
+    end
 
     -- Per-spec brackets: the title is awarded against the player's own spec
     -- ladder, so prefer the per-spec cutoff over the combined ladder number.
@@ -785,7 +912,7 @@ function PVL.BuildSpecTitleCutoffRows(bracket, specKey)
 
     local rows = {}
     for _, def in ipairs(definitions) do
-        if def.kind == "percentile" or def.feat then
+        if def.kind == "percentile" or def.kind == "spec_rank" or def.feat then
             local rating, source, rank = PVL.ResolveTitleCutoffRating(snapshot, def, bracket, specKey)
             table.insert(rows, {
                 def = def,

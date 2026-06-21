@@ -111,6 +111,13 @@ end
 
 --- Refreshes the ladder after the search box has been idle briefly.
 function LadderView.ScheduleSearchRefresh()
+    if PVL.IsCombatLocked and PVL.IsCombatLocked() then
+        if PVL.RequestUiRefresh then
+            PVL.RequestUiRefresh()
+        end
+        return
+    end
+
     LadderView.CancelSearchRefreshTimer()
     if C_Timer and C_Timer.NewTimer then
         LadderView.searchRefreshTimer = C_Timer.NewTimer(SEARCH_DEBOUNCE_SECONDS, function()
@@ -764,6 +771,13 @@ function LadderView.CreateFrame()
 end
 --- Refreshes ladder browser content from the current UI filters.
 function LadderView.Refresh()
+    if PVL.IsCombatLocked and PVL.IsCombatLocked() then
+        if PVL.RequestUiRefresh then
+            PVL.RequestUiRefresh()
+        end
+        return
+    end
+
     LadderView.CancelSearchRefreshTimer()
     local frame = LadderView.CreateFrame()
     local filters = UI.GetFilters()
@@ -826,6 +840,10 @@ function LadderView.PositionDefault()
 end
 --- Shows the ladder browser window.
 function LadderView.Show()
+    if PVL.CanOpenAddonWindows and not PVL.CanOpenAddonWindows() then
+        return
+    end
+
     LadderView.Refresh()
     LadderView.PositionDefault()
     LadderView.frame:Show()

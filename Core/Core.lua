@@ -120,8 +120,8 @@ bootstrap:SetScript("OnEvent", function(_, event, arg1)
         PVL.Init()
     elseif event == "ADDON_LOADED" and PVL.IsLadderDependencyAddon(arg1) then
         PVL.RefreshImportedLadderData()
-        if PVL.UI and PVL.UI.Refresh then
-            PVL.UI.Refresh()
+        if PVL.RequestUiRefresh then
+            PVL.RequestUiRefresh()
         end
     elseif event == "PLAYER_LOGIN" then
         if PVL.GetDB().settings.autoRefreshLadderData then
@@ -129,8 +129,8 @@ bootstrap:SetScript("OnEvent", function(_, event, arg1)
         else
             PVL.LoadImportedSnapshotFromPack()
         end
-        if PVL.UI then
-            PVL.UI.Refresh()
+        if PVL.RequestUiRefresh then
+            PVL.RequestUiRefresh()
         end
     elseif event == "PLAYER_LOGOUT" then
         if PVL.SaveAppHelperExport then

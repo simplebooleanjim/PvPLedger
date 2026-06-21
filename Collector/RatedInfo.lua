@@ -124,8 +124,8 @@ end
 function RatedInfo.RefreshAndNotify()
     RatedInfo.RefreshAll()
 
-    if PVL.UI and PVL.UI.frame and PVL.UI.frame:IsShown() and PVL.UI.Refresh then
-        PVL.UI.Refresh()
+    if PVL.UI and PVL.UI.frame and PVL.UI.frame:IsShown() and PVL.RequestUiRefresh then
+        PVL.RequestUiRefresh()
     end
 end
 
@@ -225,8 +225,8 @@ function RatedInfo.OnRatedStatsUpdate()
         PVL.CrHistory.RecordAllSnapshots()
     end
 
-    if PVL.UI and PVL.UI.frame and PVL.UI.frame:IsShown() and PVL.UI.Refresh then
-        PVL.UI.Refresh()
+    if PVL.UI and PVL.UI.frame and PVL.UI.frame:IsShown() and PVL.RequestUiRefresh then
+        PVL.RequestUiRefresh()
     end
 end
 

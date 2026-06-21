@@ -90,8 +90,8 @@ function PVL.RegisterSettingsPanel()
 
     ladderRegionSetting:SetValueChangedCallback(function()
         PVL.RefreshImportedLadderData()
-        if PVL.UI and PVL.UI.Refresh then
-            PVL.UI.Refresh()
+        if PVL.RequestUiRefresh then
+            PVL.RequestUiRefresh()
         end
     end)
 
@@ -129,6 +129,10 @@ end
 --- Opens the Blizzard Settings UI to the PvPLedger category.
 --- Registers the panel on demand so right-click works even before login hooks.
 function PVL.OpenSettings()
+    if not PVL.CanOpenAddonWindows() then
+        return
+    end
+
     if not PVL._settingsRegistered then
         PVL.RegisterSettingsPanel()
     end

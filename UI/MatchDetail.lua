@@ -18,7 +18,11 @@ end
 function UI.SetSelectedMatchId(matchId)
     local filters = UI.GetFilters()
     filters.selectedMatchId = matchId
-    UI.Refresh()
+    if PVL.RequestUiRefresh then
+        PVL.RequestUiRefresh()
+    else
+        UI.Refresh()
+    end
 end
 
 --- Returns the match record currently selected for the active bracket.
@@ -154,7 +158,11 @@ end
 function UI.SetCombatStat(statId)
     local filters = UI.GetFilters()
     filters.combatStat = statId or PVL.DEFAULT_COMBAT_ANALYSIS_STAT
-    UI.Refresh()
+    if PVL.RequestUiRefresh then
+        PVL.RequestUiRefresh()
+    else
+        UI.Refresh()
+    end
 end
 
 --- Returns the selected index for the combat stat dropdown.

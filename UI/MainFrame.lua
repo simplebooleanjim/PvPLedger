@@ -81,7 +81,11 @@ function UI.SetBracketFilter(bracket)
     local filters = UI.GetFilters()
     filters.bracket = bracket
     filters.selectedMatchId = nil
-    UI.Refresh()
+    if PVL.RequestUiRefresh then
+        PVL.RequestUiRefresh()
+    else
+        UI.Refresh()
+    end
 end
 
 --- Applies a class filter and clears an invalid spec selection.
@@ -97,7 +101,11 @@ function UI.SetClassFilter(classToken)
         end
     end
 
-    UI.Refresh()
+    if PVL.RequestUiRefresh then
+        PVL.RequestUiRefresh()
+    else
+        UI.Refresh()
+    end
 end
 
 --- Applies a spec filter and aligns the class filter when needed.
@@ -110,7 +118,11 @@ function UI.SetSpecFilter(specKey)
         filters.classToken = specKey:match("^(.-)_")
     end
 
-    UI.Refresh()
+    if PVL.RequestUiRefresh then
+        PVL.RequestUiRefresh()
+    else
+        UI.Refresh()
+    end
 end
 
 --- Registers events that should refresh personal panels when the player changes spec.
@@ -122,8 +134,8 @@ function UI.EnsureSpecRefreshEvents()
     local frame = CreateFrame("Frame")
     frame:RegisterEvent("PLAYER_SPECIALIZATION_CHANGED")
     frame:SetScript("OnEvent", function()
-        if UI.frame and UI.frame:IsShown() and UI.Refresh then
-            UI.Refresh()
+        if UI.frame and UI.frame:IsShown() and PVL.RequestUiRefresh then
+            PVL.RequestUiRefresh()
         end
     end)
 
@@ -918,11 +930,23 @@ function UI.Toggle()
         return
     end
 
+    if PVL.CanOpenAddonWindows and not PVL.CanOpenAddonWindows() then
+        return
+    end
+
     UI.Show()
 end
 
 --- Refreshes all text regions and dropdowns from current database state.
 function UI.Refresh()
+    if PVL.IsCombatLocked and PVL.IsCombatLocked() then
+        if PVL.EnsureCombatLockEvents then
+            PVL._pendingUiRefresh = true
+            PVL.EnsureCombatLockEvents()
+        end
+        return
+    end
+
     local frame = UI.CreateMainFrame()
     local ladderFilters = UI.GetFilters()
     local personalFilters = PVL.GetPersonalTrackingFilters()
@@ -974,6 +998,10 @@ end
 
 --- Shows the main frame.
 function UI.Show()
+    if PVL.CanOpenAddonWindows and not PVL.CanOpenAddonWindows() then
+        return
+    end
+
     local frame = UI.CreateMainFrame()
 
     if PVL.RatedInfo then

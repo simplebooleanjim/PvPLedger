@@ -90,8 +90,10 @@ function UI.UpdateScrollBarVisibility(scrollFrame)
 end
 
 --- Registers one frame to close when the player presses Escape.
+--- Each registered frame closes independently on ESC (standard UISpecialFrames
+--- behavior). The close button may still call ``UI.CloseAll`` when configured.
 --- @param frame Frame
---- @param closeAll boolean|nil When true (default), dismissing this window also closes every PvPLedger window.
+--- @param closeAll boolean|nil When true (default), the close button also closes every PvPLedger window.
 function UI.RegisterEscapeToClose(frame, closeAll)
     if not frame then
         return
@@ -126,19 +128,6 @@ function UI.RegisterEscapeToClose(frame, closeAll)
                 UI.CloseAll()
             else
                 frame:Hide()
-            end
-        end)
-    end
-
-    if not frame._pvlEscapeHooked then
-        frame._pvlEscapeHooked = true
-        frame:HookScript("OnHide", function()
-            if UI._closingAll or not frame._pvlCloseAllOnDismiss or not UI.CloseAll then
-                return
-            end
-
-            if UI.AnyWindowShown and UI.AnyWindowShown() then
-                UI.CloseAll()
             end
         end)
     end
