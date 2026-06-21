@@ -1,15 +1,20 @@
 # Changelog
 
+## 0.8.3.1 — 2026-06-20
+
+### Addons
+
+- Combat lockdown: pause damage-meter polling and roster spec inspects during `InCombatLockdown()` (fixes action-bar taint when the PvPLedger UI is closed in arena/BG).
+- Combat lockdown: skip UI refresh requests when no PvPLedger window is visible; resume collector work on regen.
+- ESC dismiss: stop chaining `CloseAll()` from frame `OnHide` (fixes `ClearTarget()` taint on game menu).
+
 ## 0.8.3 — 2026-06-16
 
 ### Addons
 
 - Solo Shuffle and Battleground Blitz: Galactic Legend / Marshal / Warlord cutoffs now use **top 8 per specialization** (matches Blizzard’s Midnight change).
 - Title cutoffs: resolve rank-8 thresholds from listed spec ladder players when bundled snapshots still carry legacy 0.1% (rank 3) cutoffs.
-- Combat lockdown: defer UI refresh, inspect, and ladder updates during combat to reduce action-bar taint (`ADDON_ACTION_FORBIDDEN`).
-- Fix ESC menu error: stop chaining ``CloseAll()`` from frame ``OnHide`` during UISpecialFrames dismiss (prevents ``ClearTarget()`` taint on ``ToggleGameMenu``).
-- Combat lockdown: defer ladder/title refreshes and inspect callbacks during combat to reduce action-bar taint (`ActionButton:SetAttribute`).
-- Combat lockdown: pause damage-meter polling and roster inspects while the UI is closed and combat lockdown is active; resume on regen.
+- Initial combat lockdown guards for UI refresh and inspect during combat.
 
 ### Collector
 
