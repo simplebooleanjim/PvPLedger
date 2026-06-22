@@ -1981,6 +1981,10 @@ function CombatLogCollector.PersistPendingSession(matchContext)
         return
     end
 
+    if PVL.IsCombatLocked and PVL.IsCombatLocked() then
+        return
+    end
+
     if CombatLogCollector.IsDamageMeterAvailable() then
         CombatLogCollector.SyncFromDamageMeter()
     end
@@ -2579,7 +2583,10 @@ function CombatLogCollector.StartMatch(matchContext)
 
     CombatLogCollector.StartPersistTicker()
     CombatLogCollector.StartLiveSyncTicker()
-    CombatLogCollector.PersistPendingSession(matchContext)
+
+    if not (PVL.IsCombatLocked and PVL.IsCombatLocked()) then
+        CombatLogCollector.PersistPendingSession(matchContext)
+    end
 end
 
 --- Stops combat log capture without building a summary.

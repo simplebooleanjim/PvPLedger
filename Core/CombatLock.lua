@@ -31,6 +31,9 @@ function PVL.FlushCombatDeferredWork()
     PVL.FlushPendingUiRefresh()
 
     if PVL.InspectQueue then
+        if PVL.InspectQueue.FlushDeferredInspect then
+            PVL.InspectQueue.FlushDeferredInspect()
+        end
         if PVL.InspectQueue.FlushPendingRosterEnqueue then
             PVL.InspectQueue.FlushPendingRosterEnqueue()
         end

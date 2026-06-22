@@ -713,10 +713,14 @@ function MatchCollector.SyncMatchLifecycle()
         return
     end
 
+    local combatLocked = PVL.IsCombatLocked and PVL.IsCombatLocked()
+
     if MatchCollector.ShouldCollectCombatForPhase(phase) then
         MatchCollector.OnMatchEngaged()
         MatchCollector.EnsureCombatLogStarted()
-        if PVL.CombatLogCollector and PVL.CombatLogCollector.TryLiveSync then
+        if not combatLocked
+            and PVL.CombatLogCollector
+            and PVL.CombatLogCollector.TryLiveSync then
             pcall(PVL.CombatLogCollector.TryLiveSync)
         end
         return
@@ -725,7 +729,9 @@ function MatchCollector.SyncMatchLifecycle()
     if phase == "waiting" or phase == "startup" then
         MatchCollector.OnMatchWaiting()
         MatchCollector.EnsureCombatLogStarted()
-        if PVL.CombatLogCollector and PVL.CombatLogCollector.TryLiveSync then
+        if not combatLocked
+            and PVL.CombatLogCollector
+            and PVL.CombatLogCollector.TryLiveSync then
             pcall(PVL.CombatLogCollector.TryLiveSync)
         end
     end
@@ -844,9 +850,18 @@ function MatchCollector.OnMatchEngaged()
     end
 
     if db.settings.collectSpecs and PVL.InspectQueue then
-        PVL.InspectQueue.EnqueueMatchRoster(function(participant)
-            MatchCollector.MergeLiveSpec(participant)
-        end)
+        if PVL.IsCombatLocked and PVL.IsCombatLocked() then
+            PVL.InspectQueue.pendingRosterCallback = function(participant)
+                MatchCollector.MergeLiveSpec(participant)
+            end
+            if PVL.InspectQueue.DeferForCombat then
+                PVL.InspectQueue.DeferForCombat()
+            end
+        else
+            PVL.InspectQueue.EnqueueMatchRoster(function(participant)
+                MatchCollector.MergeLiveSpec(participant)
+            end)
+        end
     end
 end
 

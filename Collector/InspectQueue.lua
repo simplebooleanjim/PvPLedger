@@ -9,6 +9,20 @@ InspectQueue.pending = InspectQueue.pending or {}
 InspectQueue.processing = false
 InspectQueue.frame = InspectQueue.frame or nil
 InspectQueue.pendingRosterCallback = InspectQueue.pendingRosterCallback or nil
+InspectQueue.deferredReadyGuid = InspectQueue.deferredReadyGuid or nil
+
+--- Returns true when inspect work must wait until combat ends.
+--- @return boolean
+function InspectQueue.IsDeferredForCombat()
+    return PVL.IsCombatLocked and PVL.IsCombatLocked()
+end
+
+--- Registers the out-of-combat flush listener for deferred inspect work.
+function InspectQueue.DeferForCombat()
+    if PVL.EnsureCombatLockEvents then
+        PVL.EnsureCombatLockEvents()
+    end
+end
 
 --- Initializes the inspect queue event frame.
 function InspectQueue.Init()
@@ -53,13 +67,8 @@ end
 function InspectQueue.ProcessNext()
     InspectQueue.Init()
 
-    if PVL.IsCombatLocked and PVL.IsCombatLocked() then
-        if PVL.EnsureCombatLockEvents then
-            PVL.EnsureCombatLockEvents()
-        end
-        if C_Timer and C_Timer.After then
-            C_Timer.After(PVL.INSPECT_DELAY_SECONDS, InspectQueue.ProcessNext)
-        end
+    if InspectQueue.IsDeferredForCombat() then
+        InspectQueue.DeferForCombat()
         return
     end
 
@@ -78,22 +87,28 @@ function InspectQueue.ProcessNext()
         return
     end
 
+    if InspectQueue.IsDeferredForCombat() then
+        InspectQueue.DeferForCombat()
+        return
+    end
+
     InspectQueue.processing = true
+
+    if InspectQueue.IsDeferredForCombat() then
+        InspectQueue.processing = false
+        InspectQueue.DeferForCombat()
+        return
+    end
+
     NotifyInspect(request.unit)
 end
 
 --- Handles INSPECT_READY and invokes the queued callback with spec info.
 --- @param guid string
 function InspectQueue.OnInspectReady(guid)
-    if PVL.IsCombatLocked and PVL.IsCombatLocked() then
-        if PVL.EnsureCombatLockEvents then
-            PVL.EnsureCombatLockEvents()
-        end
-        if C_Timer and C_Timer.After then
-            C_Timer.After(PVL.INSPECT_DELAY_SECONDS, function()
-                InspectQueue.OnInspectReady(guid)
-            end)
-        end
+    if InspectQueue.IsDeferredForCombat() then
+        InspectQueue.deferredReadyGuid = guid
+        InspectQueue.DeferForCombat()
         return
     end
 
@@ -133,6 +148,22 @@ function InspectQueue.Clear()
     wipe(InspectQueue.pending)
     InspectQueue.processing = false
     InspectQueue.pendingRosterCallback = nil
+    InspectQueue.deferredReadyGuid = nil
+end
+
+--- Resumes one inspect that completed while combat lockdown was active.
+function InspectQueue.FlushDeferredInspect()
+    if InspectQueue.IsDeferredForCombat() then
+        return
+    end
+
+    local guid = InspectQueue.deferredReadyGuid
+    if not guid then
+        return
+    end
+
+    InspectQueue.deferredReadyGuid = nil
+    InspectQueue.OnInspectReady(guid)
 end
 
 --- Scans raid/party/nameplate units and queues spec inspects for one match roster.
@@ -176,9 +207,7 @@ function InspectQueue.EnqueueMatchRoster(callback)
 
     if PVL.IsCombatLocked and PVL.IsCombatLocked() then
         InspectQueue.pendingRosterCallback = callback
-        if PVL.EnsureCombatLockEvents then
-            PVL.EnsureCombatLockEvents()
-        end
+        InspectQueue.DeferForCombat()
         return
     end
 

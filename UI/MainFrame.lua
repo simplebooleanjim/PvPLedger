@@ -486,12 +486,8 @@ function UI.BuildSummaryText(summary)
 
     local recordLabel = PVL.L("UI.SUMMARY.TRACKED_RECORD")
     local winRateLabel = PVL.L("UI.SUMMARY.TRACKED_WIN_RATE")
-    if summary.bracket == PVL.BRACKETS.SHUFFLE then
-        recordLabel = PVL.L("UI.SUMMARY.TRACKED_ROUNDS")
-        winRateLabel = PVL.L("UI.SUMMARY.TRACKED_ROUND_WIN_RATE")
-    end
 
-    if summary.seasonRecord then
+    if summary.seasonRecord and summary.bracket ~= PVL.BRACKETS.SHUFFLE then
         local specSuffix = summary.specKey and (" (" .. Format.SpecShortName(summary.specKey) .. ")") or ""
         table.insert(lines, Format.StatLine(
             recordLabel .. specSuffix,
@@ -505,24 +501,15 @@ function UI.BuildSummaryText(summary)
             winRateLabel,
             Format.WinPercent(summary.seasonRecord.wins, summary.seasonRecord.losses)
         ))
-        if summary.bracket == PVL.BRACKETS.SHUFFLE
-            and summary.seasonRecord.matchesPlayed
-            and summary.seasonRecord.matchesPlayed > 0 then
-            table.insert(lines, Format.StatLine(
-                PVL.L("UI.SUMMARY.MATCHES_PLAYED"),
-                Format.WinLossRecord(
-                    summary.seasonRecord.matchesWon or 0,
-                    math.max((summary.seasonRecord.matchesPlayed or 0) - (summary.seasonRecord.matchesWon or 0), 0)
-                )
-            ))
+    elseif summary.bracket ~= PVL.BRACKETS.SHUFFLE then
+        if summary.specUnavailable then
+            table.insert(lines, Format.Muted(PVL.L("UI.SUMMARY.SELECT_SPEC_STATS")))
+        elseif summary.specKey then
+            table.insert(lines, Format.Muted(PVL.L(
+                "UI.SUMMARY.NO_TRACKED_MATCHES_SPEC",
+                Format.SpecShortName(summary.specKey)
+            )))
         end
-    elseif summary.specUnavailable then
-        table.insert(lines, Format.Muted(PVL.L("UI.SUMMARY.SELECT_SPEC_STATS")))
-    elseif summary.specKey then
-        table.insert(lines, Format.Muted(PVL.L(
-            "UI.SUMMARY.NO_TRACKED_MATCHES_SPEC",
-            Format.SpecShortName(summary.specKey)
-        )))
     end
 
     table.insert(lines, Format.StatLine(PVL.L("UI.SUMMARY.LATEST_CR"), Format.Rating(summary.playerCurrentCR)))

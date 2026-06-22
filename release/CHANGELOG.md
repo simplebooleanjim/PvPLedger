@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.8.3.3 — 2026-06-06
+
+### Addons
+
+- Combat lockdown: pause background spec inspects, damage-meter sync, and session persistence during `InCombatLockdown()` when the PvPLedger UI is closed (fixes action-bar taint at PvP combat start).
+- Inspect queue: defer `INSPECT_READY` until regen instead of retrying during combat; re-check lockdown immediately before `NotifyInspect`.
+- Solo Shuffle summary: remove addon “Tracked spec rounds” aggregate (Blizzard season rounds and per-match round W-L in match detail remain).
+
 ## 0.8.3.2 — 2026-06-06
 
 ### Addons
