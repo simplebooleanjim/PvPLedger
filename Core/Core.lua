@@ -49,6 +49,10 @@ function PVL.Init()
         PVL.InspectQueue.Init()
     end
 
+    if PVL.EnsureCombatLockEvents then
+        PVL.EnsureCombatLockEvents()
+    end
+
     if PVL.MatchCollector then
         PVL.MatchCollector.Init()
         if PVL.MatchCollector.EnsureMatchTracking then
@@ -85,7 +89,8 @@ function PVL.GetStatusText()
     local bracketName = PVL.BRACKET_NAMES[bracket] or bracket
 
     return string.format(
-        "region=%s | viewing=%s | matches=%d | snapshot=%s (%s) | enabled=%s",
+        "addon=v%s | region=%s | viewing=%s | matches=%d | snapshot=%s (%s) | enabled=%s",
+        PVL.VERSION or "unknown",
         PVL.GetActiveLadderRegion(),
         bracketName,
         matchCount,

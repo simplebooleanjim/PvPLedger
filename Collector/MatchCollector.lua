@@ -240,6 +240,34 @@ function MatchCollector.GetBattlefieldRuntimeMs()
     return MatchCollector.GetAccessibleNumber(GetBattlefieldInstanceRunTime()) or 0
 end
 
+--- Returns the UiMapID for the current PvP instance when available.
+--- Prefer ``GetInstanceInfo`` over ``GetBestMapForUnit``, which reports open-world
+--- zones such as capital cities after leaving an instance.
+--- @param preferredMapId number|nil
+--- @return number|nil
+function MatchCollector.ResolveMatchMapId(preferredMapId)
+    if type(preferredMapId) == "number" and preferredMapId > 0 then
+        return preferredMapId
+    end
+
+    if GetInstanceInfo then
+        local inInstance = select(1, GetInstanceInfo())
+        local instanceMapId = select(8, GetInstanceInfo())
+        if inInstance and type(instanceMapId) == "number" and instanceMapId > 0 then
+            return instanceMapId
+        end
+    end
+
+    if MatchCollector.IsInCollectiblePvpInstance() and C_Map and C_Map.GetBestMapForUnit then
+        local mapId = C_Map.GetBestMapForUnit("player")
+        if type(mapId) == "number" and mapId > 0 then
+            return mapId
+        end
+    end
+
+    return nil
+end
+
 --- Builds a stable session key for the current PvP instance.
 --- @param bracket string|nil
 --- @return string|nil sessionKey
@@ -253,7 +281,7 @@ function MatchCollector.BuildMatchSessionKey(bracket)
     end
 
     local instanceType = MatchCollector.GetCollectibleInstanceType() or "pvp"
-    local instanceMapID = select(8, GetInstanceInfo()) or C_Map.GetBestMapForUnit("player")
+    local instanceMapID = MatchCollector.ResolveMatchMapId(select(8, GetInstanceInfo()))
     local runtimeMs = MatchCollector.GetBattlefieldRuntimeMs()
     local sessionKey = string.format(
         "%s:%s:%s",
@@ -658,7 +686,7 @@ function MatchCollector.BuildActiveMatchContext(bracket, resumePending)
         runtimeMs = runtimeMs,
         minRuntimeMs = canResume and pending.minRuntimeMs or runtimeMs,
         startedAt = canResume and pending.startedAt or time(),
-        mapID = C_Map.GetBestMapForUnit("player"),
+        mapID = MatchCollector.ResolveMatchMapId(instanceMapID),
         playerCrBefore = canResume and pending.playerCrBefore or startCr,
         playerMmrBefore = canResume and pending.playerMmrBefore or startMmr,
         rosterFingerprint = canResume and pending.rosterFingerprint or rosterFingerprint,
@@ -684,6 +712,14 @@ function MatchCollector.StartLifecycleSync()
     end
 
     MatchCollector.syncTicker = C_Timer.NewTicker(LIFECYCLE_SYNC_SECONDS, function()
+        if PVL.IsCombatLocked and PVL.IsCombatLocked() then
+            if PVL.EnsureCombatLockEvents then
+                PVL._deferredLifecycleSync = true
+                PVL.EnsureCombatLockEvents()
+            end
+            return
+        end
+
         MatchCollector.SyncMatchLifecycle()
     end)
 end
@@ -693,6 +729,14 @@ function MatchCollector.SyncMatchLifecycle()
     local db = PVL.GetDB()
     if not db or not db.settings.enabled then
         MatchCollector.StopLifecycleSync()
+        return
+    end
+
+    if PVL.IsCombatLocked and PVL.IsCombatLocked() then
+        if PVL.EnsureCombatLockEvents then
+            PVL._deferredLifecycleSync = true
+            PVL.EnsureCombatLockEvents()
+        end
         return
     end
 
@@ -849,7 +893,7 @@ function MatchCollector.OnMatchEngaged()
         PVL.CombatLogCollector.StartMatch(context)
     end
 
-    if db.settings.collectSpecs and PVL.InspectQueue then
+    if db.settings.collectSpecs and PVL.InspectQueue and not MatchCollector.IsInCollectiblePvpInstance() then
         if PVL.IsCombatLocked and PVL.IsCombatLocked() then
             PVL.InspectQueue.pendingRosterCallback = function(participant)
                 MatchCollector.MergeLiveSpec(participant)
@@ -870,6 +914,11 @@ end
 function MatchCollector.HandleMatchInactive(previousPhase)
     if previousPhase == "inactive" or previousPhase == "complete" then
         return
+    end
+
+    if MatchCollector.pendingComplete and MatchCollector.activeMatch then
+        MatchCollector.pendingComplete.mapID = MatchCollector.pendingComplete.mapID
+            or MatchCollector.ResolveMatchMapId(MatchCollector.activeMatch.mapID)
     end
 
     if MatchCollector.activeMatch and PVL.CombatLogCollector then
@@ -910,7 +959,6 @@ function MatchCollector.Init()
     frame:RegisterEvent("PVP_MATCH_COMPLETE")
     frame:RegisterEvent("PLAYER_ENTERING_WORLD")
     frame:RegisterEvent("ZONE_CHANGED_NEW_AREA")
-    frame:RegisterEvent("PLAYER_REGEN_DISABLED")
     frame:RegisterEvent("PLAYER_LOGOUT")
     frame:RegisterEvent("LOADING_SCREEN_DISABLED")
     frame:SetScript("OnEvent", function(_, event, ...)
@@ -937,7 +985,6 @@ function MatchCollector.OnEvent(event)
         MatchCollector.PersistActiveCombatSession()
     elseif event == "PLAYER_ENTERING_WORLD"
         or event == "ZONE_CHANGED_NEW_AREA"
-        or event == "PLAYER_REGEN_DISABLED"
         or event == "LOADING_SCREEN_DISABLED" then
         MatchCollector.SyncMatchLifecycle()
         MatchCollector.EnsureCombatLogStarted()
@@ -2216,6 +2263,7 @@ function MatchCollector.OnMatchComplete()
     MatchCollector.pendingComplete = {
         bracket = bracket,
         playerCrBefore = MatchCollector.activeMatch and MatchCollector.activeMatch.playerCrBefore or nil,
+        mapID = MatchCollector.ResolveMatchMapId(MatchCollector.activeMatch and MatchCollector.activeMatch.mapID),
     }
     MatchCollector.ScheduleCompleteAttempt(1)
 end
@@ -2234,7 +2282,9 @@ function MatchCollector.TryFinalizeMatchComplete(attempt)
     localPlayer = MatchCollector.FindLocalParticipant(roster) or localPlayer
 
     if PVL.CombatLogCollector and PVL.CombatLogCollector.SyncFromDamageMeter then
-        pcall(PVL.CombatLogCollector.SyncFromDamageMeter)
+        if not (PVL.IsCombatLocked and PVL.IsCombatLocked()) then
+            pcall(PVL.CombatLogCollector.SyncFromDamageMeter)
+        end
     end
 
     if PVL.CombatLogCollector then
@@ -2251,7 +2301,8 @@ function MatchCollector.TryFinalizeMatchComplete(attempt)
         pending.bracket,
         roster,
         localPlayer,
-        pending.playerCrBefore
+        pending.playerCrBefore,
+        pending.mapID
     )
 end
 
@@ -2314,7 +2365,8 @@ end
 --- @param roster table[]
 --- @param localPlayer table|nil
 --- @param matchStartCr number|nil
-function MatchCollector.FinalizeMatchComplete(bracket, roster, localPlayer, matchStartCr)
+--- @param matchMapId number|nil
+function MatchCollector.FinalizeMatchComplete(bracket, roster, localPlayer, matchStartCr, matchMapId)
     local db = PVL.GetDB()
     if not db or not db.settings.enabled then
         return
@@ -2428,13 +2480,25 @@ function MatchCollector.FinalizeMatchComplete(bracket, roster, localPlayer, matc
             or PVL.MakeSpecKey(localPlayer.class, localPlayer.spec)
     end
 
+    local resolvedMapId = MatchCollector.ResolveMatchMapId(matchMapId)
+    if not resolvedMapId and MatchCollector.activeMatch then
+        resolvedMapId = MatchCollector.ResolveMatchMapId(MatchCollector.activeMatch.mapID)
+    end
+    if not resolvedMapId then
+        local pendingSession = MatchCollector.GetPendingCombatSession()
+        resolvedMapId = MatchCollector.ResolveMatchMapId(pendingSession and pendingSession.mapID)
+    end
+    if not resolvedMapId and PVL.CombatLogCollector and PVL.CombatLogCollector.matchContext then
+        resolvedMapId = MatchCollector.ResolveMatchMapId(PVL.CombatLogCollector.matchContext.mapID)
+    end
+
     local matchRecord = {
         matchId = MatchCollector.BuildMatchId(bracket, roster),
         matchFingerprint = matchFingerprint,
         rosterFingerprint = matchFingerprint,
         bracket = bracket,
         timestamp = time(),
-        mapID = MatchCollector.activeMatch and MatchCollector.activeMatch.mapID or C_Map.GetBestMapForUnit("player"),
+        mapID = resolvedMapId,
         won = MatchCollector.ResolveLocalMatchWon(localPlayer),
         playerSpec = playerSpec,
         playerCRBefore = playerCrBefore,

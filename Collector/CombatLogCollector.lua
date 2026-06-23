@@ -2077,6 +2077,23 @@ function CombatLogCollector.TryLiveSync()
     end
 end
 
+--- Stops background polling while combat lockdown is active.
+function CombatLogCollector.PauseBackgroundSync()
+    CombatLogCollector.StopLiveSyncTicker()
+    CombatLogCollector.StopPersistTicker()
+end
+
+--- Restarts background polling after combat lockdown ends.
+function CombatLogCollector.ResumeBackgroundSync()
+    if not CombatLogCollector.active then
+        return
+    end
+
+    CombatLogCollector.StartPersistTicker()
+    CombatLogCollector.StartLiveSyncTicker()
+    CombatLogCollector.TryLiveSync()
+end
+
 --- Starts frequent damage meter polling for live in-match stat tracking.
 function CombatLogCollector.StartLiveSyncTicker()
     if CombatLogCollector.liveSyncTicker or not C_Timer or not C_Timer.NewTicker then

@@ -1,5 +1,14 @@
 # Changelog
 
+## 0.8.3.4 — 2026-06-22
+
+### Addons
+
+- Match detail: record the PvP instance map from `GetInstanceInfo` and preserve it through scoreboard finalization (fixes “Silvermoon City” showing after leaving Blitz).
+- Combat lockdown: pause lifecycle sync, damage-meter tickers, and inspect queue on `PLAYER_REGEN_DISABLED`; resume after regen.
+- Instanced PvP: skip mid-match `NotifyInspect` (scoreboard supplies specs at match end).
+- `/pvl status`: include main addon version (`addon=v…`).
+
 ## 0.8.3.3 — 2026-06-06
 
 ### Addons

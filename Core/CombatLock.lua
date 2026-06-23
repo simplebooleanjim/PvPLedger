@@ -3,6 +3,7 @@
 local PVL = PvPLedger
 
 PVL._pendingUiRefresh = PVL._pendingUiRefresh or false
+PVL._deferredLifecycleSync = PVL._deferredLifecycleSync or false
 PVL._combatLockFrame = PVL._combatLockFrame or nil
 
 --- Returns true when secure Blizzard UI must not be modified by addon code.
@@ -42,10 +43,31 @@ function PVL.FlushCombatDeferredWork()
         end
     end
 
-    if PVL.CombatLogCollector
-        and PVL.CombatLogCollector.TryLiveSync
-        and PVL.CombatLogCollector.active then
-        pcall(PVL.CombatLogCollector.TryLiveSync)
+    if PVL.CombatLogCollector then
+        if PVL.CombatLogCollector.ResumeBackgroundSync then
+            PVL.CombatLogCollector.ResumeBackgroundSync()
+        elseif PVL.CombatLogCollector.TryLiveSync and PVL.CombatLogCollector.active then
+            pcall(PVL.CombatLogCollector.TryLiveSync)
+        end
+    end
+
+    if PVL._deferredLifecycleSync and PVL.MatchCollector and PVL.MatchCollector.SyncMatchLifecycle then
+        PVL._deferredLifecycleSync = false
+        pcall(PVL.MatchCollector.SyncMatchLifecycle)
+    end
+end
+
+--- Pauses background collectors that must not run during combat lockdown.
+function PVL.OnCombatLockdownStarted()
+    PVL._deferredLifecycleSync = true
+    PVL.EnsureCombatLockEvents()
+
+    if PVL.InspectQueue and PVL.InspectQueue.Clear then
+        PVL.InspectQueue.Clear()
+    end
+
+    if PVL.CombatLogCollector and PVL.CombatLogCollector.PauseBackgroundSync then
+        PVL.CombatLogCollector.PauseBackgroundSync()
     end
 end
 
@@ -57,9 +79,12 @@ function PVL.EnsureCombatLockEvents()
 
     local frame = CreateFrame("Frame")
     frame:RegisterEvent("PLAYER_REGEN_ENABLED")
+    frame:RegisterEvent("PLAYER_REGEN_DISABLED")
     frame:SetScript("OnEvent", function(_, event)
         if event == "PLAYER_REGEN_ENABLED" then
             PVL.FlushCombatDeferredWork()
+        elseif event == "PLAYER_REGEN_DISABLED" then
+            PVL.OnCombatLockdownStarted()
         end
     end)
     PVL._combatLockFrame = frame
