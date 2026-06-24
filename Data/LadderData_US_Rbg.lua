@@ -7,7 +7,7 @@ PvPLedgerLadderData.US.rbg = {
     bracket = "rbg",
     season = 41,
     snapshotDate = "2026-06-24",
-    generatedAt = "2026-06-24T09:31:19Z",
+    generatedAt = "2026-06-24T12:08:41Z",
     source = "blizzard-api+seramate",
     overall = {
         listedCount = 1003,
@@ -99,9 +99,9 @@ PvPLedgerLadderData.US.rbg = {
         },
         ["DRUID"] = {
             listedCount = 168,
-            avgListedRating = 1991.0,
-            medianListedRating = 1918.0,
-            top100Avg = 1991.0,
+            avgListedRating = 1986.4,
+            medianListedRating = 1907.0,
+            top100Avg = 1986.4,
             highest = 2614,
             buckets = {
                 ["1700-1799"] = 34,
@@ -395,11 +395,11 @@ PvPLedgerLadderData.US.rbg = {
             },
         },
         ["DRUID_FERAL"] = {
-            listedCount = 20,
-            avgListedRating = 1990.2,
-            medianListedRating = 1930.0,
-            top100Avg = 1990.2,
-            highest = 2604,
+            listedCount = 19,
+            avgListedRating = 1957.9,
+            medianListedRating = 1908,
+            top100Avg = 1957.9,
+            highest = 2272,
             buckets = {
                 ["1700-1799"] = 3,
                 ["1800-1899"] = 6,
@@ -407,15 +407,14 @@ PvPLedgerLadderData.US.rbg = {
                 ["2000-2099"] = 2,
                 ["2100-2199"] = 2,
                 ["2200-2299"] = 2,
-                ["2600-2699"] = 1,
             },
         },
         ["DRUID_GUARDIAN"] = {
-            listedCount = 46,
-            avgListedRating = 1940.0,
-            medianListedRating = 1891.0,
-            top100Avg = 1940.0,
-            highest = 2526,
+            listedCount = 47,
+            avgListedRating = 1954.1,
+            medianListedRating = 1894,
+            top100Avg = 1954.1,
+            highest = 2604,
             buckets = {
                 ["1700-1799"] = 10,
                 ["1800-1899"] = 14,
@@ -425,6 +424,7 @@ PvPLedgerLadderData.US.rbg = {
                 ["2200-2299"] = 2,
                 ["2400-2499"] = 1,
                 ["2500-2599"] = 1,
+                ["2600-2699"] = 1,
             },
         },
         ["DRUID_RESTORATION"] = {
@@ -5989,7 +5989,7 @@ PvPLedgerLadderData.US.rbg = {
         },
         ["moxie-moonguard"] = {
             displayName = "Moxie-moon-guard",
-            specKey = "DRUID_FERAL",
+            specKey = "DRUID_GUARDIAN",
             rating = 2604,
             rank = 9,
             wins = 64,
