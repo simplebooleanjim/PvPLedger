@@ -7,7 +7,7 @@ PvPLedgerLadderData.US.rbg = {
     bracket = "rbg",
     season = 41,
     snapshotDate = "2026-06-26",
-    generatedAt = "2026-06-26T15:42:45Z",
+    generatedAt = "2026-06-26T17:25:55Z",
     source = "blizzard-api+seramate",
     overall = {
         listedCount = 1004,
@@ -2091,15 +2091,6 @@ PvPLedgerLadderData.US.rbg = {
             wins = 37,
             losses = 7,
             faction = "ALLIANCE",
-        },
-        ["chettab938a5-tichondrius"] = {
-            displayName = "ChettaB938A5-tichondrius",
-            specKey = "",
-            rating = 2033,
-            rank = 288,
-            wins = 47,
-            losses = 49,
-            faction = "HORDE",
         },
         ["chewybjorn-tichondrius"] = {
             displayName = "Chewybjorn-tichondrius",
@@ -7886,6 +7877,15 @@ PvPLedgerLadderData.US.rbg = {
             rank = 862,
             wins = 64,
             losses = 65,
+            faction = "HORDE",
+        },
+        ["shetta-tichondrius"] = {
+            displayName = "Shetta-tichondrius",
+            specKey = "",
+            rating = 2033,
+            rank = 288,
+            wins = 47,
+            losses = 49,
             faction = "HORDE",
         },
         ["shinichiró-ragnaros"] = {
