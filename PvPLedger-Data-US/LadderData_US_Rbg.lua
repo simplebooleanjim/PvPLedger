@@ -7,7 +7,7 @@ PvPLedgerLadderData.US.rbg = {
     bracket = "rbg",
     season = 41,
     snapshotDate = "2026-06-27",
-    generatedAt = "2026-06-27T09:18:17Z",
+    generatedAt = "2026-06-27T11:12:08Z",
     source = "blizzard-api+seramate",
     overall = {
         listedCount = 1005,
@@ -118,9 +118,9 @@ PvPLedgerLadderData.US.rbg = {
         },
         ["EVOKER"] = {
             listedCount = 74,
-            avgListedRating = 1932.6,
-            medianListedRating = 1873.0,
-            top100Avg = 1932.6,
+            avgListedRating = 1932.8,
+            medianListedRating = 1878,
+            top100Avg = 1932.8,
             highest = 2684,
             buckets = {
                 ["1700-1799"] = 13,
@@ -452,14 +452,14 @@ PvPLedgerLadderData.US.rbg = {
             },
         },
         ["EVOKER_DEVASTATION"] = {
-            listedCount = 30,
-            avgListedRating = 1973.4,
-            medianListedRating = 1873.0,
-            top100Avg = 1973.4,
+            listedCount = 29,
+            avgListedRating = 1977.4,
+            medianListedRating = 1878,
+            top100Avg = 1977.4,
             highest = 2491,
             buckets = {
                 ["1700-1799"] = 7,
-                ["1800-1899"] = 10,
+                ["1800-1899"] = 9,
                 ["1900-1999"] = 2,
                 ["2000-2099"] = 5,
                 ["2100-2199"] = 1,
@@ -469,14 +469,14 @@ PvPLedgerLadderData.US.rbg = {
             },
         },
         ["EVOKER_PRESERVATION"] = {
-            listedCount = 42,
-            avgListedRating = 2007.0,
-            medianListedRating = 1891.5,
-            top100Avg = 2007.0,
+            listedCount = 43,
+            avgListedRating = 2003.6,
+            medianListedRating = 1890,
+            top100Avg = 2003.6,
             highest = 2684,
             buckets = {
                 ["1700-1799"] = 5,
-                ["1800-1899"] = 17,
+                ["1800-1899"] = 18,
                 ["1900-1999"] = 4,
                 ["2000-2099"] = 2,
                 ["2100-2199"] = 5,
@@ -1804,7 +1804,7 @@ PvPLedgerLadderData.US.rbg = {
             rating = 1827,
             rank = 715,
             wins = 34,
-            losses = 25,
+            losses = 27,
             faction = "HORDE",
         },
         ["bugalugs-sargeras"] = {
@@ -5373,11 +5373,11 @@ PvPLedgerLadderData.US.rbg = {
         },
         ["lucerys-kelthuzad"] = {
             displayName = "Lucerys-kelthuzad",
-            specKey = "EVOKER_DEVASTATION",
+            specKey = "EVOKER_PRESERVATION",
             rating = 1857,
             rank = 633,
             wins = 36,
-            losses = 31,
+            losses = 32,
             faction = "ALLIANCE",
         },
         ["lughda-ragnaros"] = {
@@ -7861,7 +7861,7 @@ PvPLedgerLadderData.US.rbg = {
             rating = 1866,
             rank = 609,
             wins = 71,
-            losses = 66,
+            losses = 68,
             faction = "HORDE",
         },
         ["shetta-tichondrius"] = {
@@ -8923,7 +8923,7 @@ PvPLedgerLadderData.US.rbg = {
             rating = 1742,
             rank = 1000,
             wins = 44,
-            losses = 58,
+            losses = 59,
             faction = "HORDE",
         },
         ["triåge-tichondrius"] = {
@@ -9184,7 +9184,7 @@ PvPLedgerLadderData.US.rbg = {
             rating = 1784,
             rank = 858,
             wins = 122,
-            losses = 168,
+            losses = 169,
             faction = "ALLIANCE",
         },
         ["verlox-moonguard"] = {
