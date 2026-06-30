@@ -7,7 +7,7 @@ PvPLedgerLadderData.US.rbg = {
     bracket = "rbg",
     season = 41,
     snapshotDate = "2026-06-30",
-    generatedAt = "2026-06-30T16:06:02Z",
+    generatedAt = "2026-06-30T18:15:10Z",
     source = "blizzard-api+seramate",
     overall = {
         listedCount = 1002,
@@ -138,9 +138,9 @@ PvPLedgerLadderData.US.rbg = {
         },
         ["HUNTER"] = {
             listedCount = 66,
-            avgListedRating = 2035.5,
+            avgListedRating = 2023.0,
             medianListedRating = 1939,
-            top100Avg = 2035.5,
+            top100Avg = 2023.0,
             highest = 2734,
             buckets = {
                 ["1700-1799"] = 6,
@@ -494,11 +494,11 @@ PvPLedgerLadderData.US.rbg = {
             },
         },
         ["HUNTER_BEASTMASTERY"] = {
-            listedCount = 12,
-            avgListedRating = 2154.8,
-            medianListedRating = 2061.0,
-            top100Avg = 2154.8,
-            highest = 2734,
+            listedCount = 11,
+            avgListedRating = 2102.2,
+            medianListedRating = 2033,
+            top100Avg = 2102.2,
+            highest = 2595,
             buckets = {
                 ["1700-1799"] = 1,
                 ["1800-1899"] = 1,
@@ -507,15 +507,14 @@ PvPLedgerLadderData.US.rbg = {
                 ["2100-2199"] = 1,
                 ["2300-2399"] = 2,
                 ["2500-2599"] = 1,
-                ["2700-2799"] = 1,
             },
         },
         ["HUNTER_MARKSMANSHIP"] = {
-            listedCount = 49,
-            avgListedRating = 1979.0,
-            medianListedRating = 1936,
-            top100Avg = 1979.0,
-            highest = 2560,
+            listedCount = 50,
+            avgListedRating = 1994.1,
+            medianListedRating = 1939.0,
+            top100Avg = 1994.1,
+            highest = 2734,
             buckets = {
                 ["1700-1799"] = 4,
                 ["1800-1899"] = 14,
@@ -526,6 +525,7 @@ PvPLedgerLadderData.US.rbg = {
                 ["2300-2399"] = 1,
                 ["2400-2499"] = 2,
                 ["2500-2599"] = 1,
+                ["2700-2799"] = 1,
             },
         },
         ["HUNTER_SURVIVAL"] = {
@@ -8846,7 +8846,7 @@ PvPLedgerLadderData.US.rbg = {
         },
         ["trappintwo-sargeras"] = {
             displayName = "Trappintwo-sargeras",
-            specKey = "HUNTER_BEASTMASTERY",
+            specKey = "HUNTER_MARKSMANSHIP",
             rating = 2734,
             rank = 2,
             wins = 126,
