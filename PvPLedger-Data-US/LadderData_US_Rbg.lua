@@ -7,7 +7,7 @@ PvPLedgerLadderData.US.rbg = {
     bracket = "rbg",
     season = 41,
     snapshotDate = "2026-07-03",
-    generatedAt = "2026-07-03T07:36:47Z",
+    generatedAt = "2026-07-03T10:19:00Z",
     source = "blizzard-api+seramate",
     overall = {
         listedCount = 1000,
@@ -1071,7 +1071,7 @@ PvPLedgerLadderData.US.rbg = {
             rating = 1820,
             rank = 775,
             wins = 29,
-            losses = 28,
+            losses = 29,
             faction = "ALLIANCE",
         },
         ["alviladari-tichondrius"] = {
@@ -3600,7 +3600,7 @@ PvPLedgerLadderData.US.rbg = {
             rating = 1842,
             rank = 703,
             wins = 24,
-            losses = 26,
+            losses = 27,
             faction = "ALLIANCE",
         },
         ["funter-eonar"] = {
@@ -9792,7 +9792,7 @@ PvPLedgerLadderData.US.rbg = {
             rating = 1987,
             rank = 376,
             wins = 34,
-            losses = 21,
+            losses = 22,
             faction = "ALLIANCE",
         },
         ["çöñqùést-malganis"] = {
