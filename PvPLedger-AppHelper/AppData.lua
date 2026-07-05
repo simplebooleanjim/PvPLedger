@@ -3,8 +3,8 @@
 --- DO NOT EDIT MANUALLY.
 PVL_AppHelperPendingSnapshots = PVL_AppHelperPendingSnapshots or {}
 PVL_AppHelperSyncInfo = {
-    lastSync = 1783253830,
-    generatedAt = "2026-07-05T12:17:10Z",
+    lastSync = 1783261040,
+    generatedAt = "2026-07-05T14:17:20Z",
     region = "US",
     source = "collector",
 }
@@ -15,7 +15,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
     bracket = "arena2v2",
     season = 41,
     snapshotDate = "2026-07-05",
-    generatedAt = "2026-07-05T12:16:58Z",
+    generatedAt = "2026-07-05T14:17:08Z",
     source = "blizzard-api+seramate",
     overall = {
         listedCount = 1003,
@@ -149,9 +149,9 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["MONK"] = {
             listedCount = 122,
-            avgListedRating = 2434.2,
-            medianListedRating = 2408.8,
-            top100Avg = 2434.2,
+            avgListedRating = 2434.1,
+            medianListedRating = 2408.0,
+            top100Avg = 2434.1,
             highest = 2864,
             buckets = {
                 ["2300-2399"] = 53,
@@ -447,28 +447,28 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
             },
         },
         ["MONK_MISTWEAVER"] = {
-            listedCount = 76,
-            avgListedRating = 2432.5,
-            medianListedRating = 2410.0,
-            top100Avg = 2432.5,
+            listedCount = 77,
+            avgListedRating = 2432.7,
+            medianListedRating = 2410,
+            top100Avg = 2432.7,
             highest = 2864,
             buckets = {
                 ["2300-2399"] = 33,
-                ["2400-2499"] = 29,
+                ["2400-2499"] = 30,
                 ["2500-2599"] = 10,
                 ["2600-2699"] = 3,
                 ["2800-2899"] = 1,
             },
         },
         ["MONK_WINDWALKER"] = {
-            listedCount = 46,
-            avgListedRating = 2435.9,
-            medianListedRating = 2407.5,
-            top100Avg = 2435.9,
+            listedCount = 45,
+            avgListedRating = 2435.6,
+            medianListedRating = 2406,
+            top100Avg = 2435.6,
             highest = 2663,
             buckets = {
                 ["2300-2399"] = 20,
-                ["2400-2499"] = 15,
+                ["2400-2499"] = 14,
                 ["2500-2599"] = 8,
                 ["2600-2699"] = 3,
             },
@@ -5462,7 +5462,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["meepmonk-tichondrius"] = {
             displayName = "Meepmonk-tichondrius",
-            specKey = "MONK_WINDWALKER",
+            specKey = "MONK_MISTWEAVER",
             rating = 2447,
             rank = 313,
             wins = 130,
@@ -9726,7 +9726,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
     bracket = "arena3v3",
     season = 41,
     snapshotDate = "2026-07-05",
-    generatedAt = "2026-07-05T12:17:09Z",
+    generatedAt = "2026-07-05T14:17:18Z",
     source = "blizzard-api+seramate",
     overall = {
         listedCount = 1010,
@@ -9957,9 +9957,9 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["WARRIOR"] = {
             listedCount = 80,
-            avgListedRating = 2667.3,
-            medianListedRating = 2642.5,
-            top100Avg = 2667.3,
+            avgListedRating = 2672.2,
+            medianListedRating = 2654.5,
+            top100Avg = 2672.2,
             highest = 3015,
             buckets = {
                 ["2500-2599"] = 21,
@@ -10427,30 +10427,30 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
             },
         },
         ["WARRIOR_ARMS"] = {
-            listedCount = 74,
+            listedCount = 73,
             avgListedRating = 2699.9,
-            medianListedRating = 2657.5,
+            medianListedRating = 2657,
             top100Avg = 2699.9,
             highest = 3015,
             buckets = {
                 ["2500-2599"] = 20,
                 ["2600-2699"] = 27,
-                ["2700-2799"] = 9,
+                ["2700-2799"] = 8,
                 ["2800-2899"] = 9,
                 ["2900-2999"] = 6,
                 ["3000-3099"] = 3,
             },
         },
         ["WARRIOR_FURY"] = {
-            listedCount = 6,
-            avgListedRating = 2634.7,
-            medianListedRating = 2627.5,
-            top100Avg = 2634.7,
+            listedCount = 7,
+            avgListedRating = 2644.6,
+            medianListedRating = 2652,
+            top100Avg = 2644.6,
             highest = 2706,
             buckets = {
                 ["2500-2599"] = 1,
                 ["2600-2699"] = 4,
-                ["2700-2799"] = 1,
+                ["2700-2799"] = 2,
             },
         },
     },
@@ -17612,7 +17612,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["szew-tichondrius"] = {
             displayName = "Szew-tichondrius",
-            specKey = "WARRIOR_ARMS",
+            specKey = "WARRIOR_FURY",
             rating = 2704,
             rank = 363,
             wins = 339,
@@ -19554,7 +19554,7 @@ PVL_AppHelperPendingSnapshots.blitz = {
     bracket = "blitz",
     season = 41,
     snapshotDate = "2026-07-05",
-    generatedAt = "2026-07-05T12:16:16Z",
+    generatedAt = "2026-07-05T14:16:16Z",
     source = "blizzard-api",
     overall = {
         listedCount = 37133,
@@ -329162,7 +329162,7 @@ PVL_AppHelperPendingSnapshots.rbg = {
     bracket = "rbg",
     season = 41,
     snapshotDate = "2026-07-05",
-    generatedAt = "2026-07-05T12:16:47Z",
+    generatedAt = "2026-07-05T14:16:57Z",
     source = "blizzard-api+seramate",
     overall = {
         listedCount = 1000,
@@ -339033,7 +339033,7 @@ PVL_AppHelperPendingSnapshots.shuffle = {
     bracket = "shuffle",
     season = 41,
     snapshotDate = "2026-07-05",
-    generatedAt = "2026-07-05T12:16:34Z",
+    generatedAt = "2026-07-05T14:16:45Z",
     source = "blizzard-api",
     overall = {
         listedCount = 37438,
