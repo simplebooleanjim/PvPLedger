@@ -7,7 +7,7 @@ PvPLedgerLadderData.US.rbg = {
     bracket = "rbg",
     season = 41,
     snapshotDate = "2026-07-08",
-    generatedAt = "2026-07-08T13:16:48Z",
+    generatedAt = "2026-07-08T15:42:14Z",
     source = "blizzard-api+seramate",
     overall = {
         listedCount = 1004,
@@ -3215,7 +3215,7 @@ PvPLedgerLadderData.US.rbg = {
         },
         ["enakhra-sargeras"] = {
             displayName = "Enakhra-sargeras",
-            specKey = "",
+            specKey = "MONK_MISTWEAVER",
             rating = 1765,
             rank = 985,
             wins = 54,
@@ -7418,7 +7418,7 @@ PvPLedgerLadderData.US.rbg = {
         },
         ["rezexo-ragnaros"] = {
             displayName = "Rezexo-ragnaros",
-            specKey = "MONK_MISTWEAVER",
+            specKey = "",
             rating = 1765,
             rank = 985,
             wins = 19,
