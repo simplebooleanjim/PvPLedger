@@ -7,7 +7,7 @@ PvPLedgerLadderData.US.rbg = {
     bracket = "rbg",
     season = 41,
     snapshotDate = "2026-07-09",
-    generatedAt = "2026-07-09T21:58:12Z",
+    generatedAt = "2026-07-09T23:17:32Z",
     source = "blizzard-api+seramate",
     overall = {
         listedCount = 1003,
@@ -194,9 +194,9 @@ PvPLedgerLadderData.US.rbg = {
         },
         ["PALADIN"] = {
             listedCount = 51,
-            avgListedRating = 1951.7,
-            medianListedRating = 1928.5,
-            top100Avg = 1951.7,
+            avgListedRating = 1967.2,
+            medianListedRating = 1925,
+            top100Avg = 1967.2,
             highest = 2489,
             buckets = {
                 ["1700-1799"] = 6,
@@ -211,9 +211,9 @@ PvPLedgerLadderData.US.rbg = {
         },
         ["PRIEST"] = {
             listedCount = 169,
-            avgListedRating = 1983.0,
+            avgListedRating = 1982.1,
             medianListedRating = 1942.0,
-            top100Avg = 1989.0,
+            top100Avg = 1988.1,
             highest = 2753,
             buckets = {
                 ["1700-1799"] = 25,
@@ -635,16 +635,17 @@ PvPLedgerLadderData.US.rbg = {
             },
         },
         ["PALADIN_HOLY"] = {
-            listedCount = 7,
-            avgListedRating = 1978.1,
-            medianListedRating = 1950,
-            top100Avg = 1978.1,
-            highest = 2218,
+            listedCount = 8,
+            avgListedRating = 2035.9,
+            medianListedRating = 2016.5,
+            top100Avg = 2035.9,
+            highest = 2440,
             buckets = {
                 ["1800-1899"] = 3,
                 ["1900-1999"] = 1,
                 ["2000-2099"] = 2,
                 ["2200-2299"] = 1,
+                ["2400-2499"] = 1,
             },
         },
         ["PALADIN_PROTECTION"] = {
@@ -659,10 +660,10 @@ PvPLedgerLadderData.US.rbg = {
             },
         },
         ["PALADIN_RETRIBUTION"] = {
-            listedCount = 42,
-            avgListedRating = 1977.0,
-            medianListedRating = 1928.5,
-            top100Avg = 1977.0,
+            listedCount = 41,
+            avgListedRating = 1965.7,
+            medianListedRating = 1925,
+            top100Avg = 1965.7,
             highest = 2489,
             buckets = {
                 ["1700-1799"] = 6,
@@ -672,7 +673,7 @@ PvPLedgerLadderData.US.rbg = {
                 ["2100-2199"] = 3,
                 ["2200-2299"] = 2,
                 ["2300-2399"] = 1,
-                ["2400-2499"] = 3,
+                ["2400-2499"] = 2,
             },
         },
         ["PRIEST_DISCIPLINE"] = {
@@ -695,13 +696,13 @@ PvPLedgerLadderData.US.rbg = {
             },
         },
         ["PRIEST_HOLY"] = {
-            listedCount = 42,
-            avgListedRating = 2001.3,
-            medianListedRating = 1965.5,
-            top100Avg = 2001.3,
+            listedCount = 41,
+            avgListedRating = 2006.2,
+            medianListedRating = 1977,
+            top100Avg = 2006.2,
             highest = 2539,
             buckets = {
-                ["1700-1799"] = 8,
+                ["1700-1799"] = 7,
                 ["1800-1899"] = 7,
                 ["1900-1999"] = 8,
                 ["2000-2099"] = 8,
@@ -712,13 +713,13 @@ PvPLedgerLadderData.US.rbg = {
             },
         },
         ["PRIEST_SHADOW"] = {
-            listedCount = 19,
-            avgListedRating = 1946.2,
-            medianListedRating = 1903,
-            top100Avg = 1946.2,
+            listedCount = 20,
+            avgListedRating = 1938.8,
+            medianListedRating = 1901.5,
+            top100Avg = 1938.8,
             highest = 2284,
             buckets = {
-                ["1700-1799"] = 2,
+                ["1700-1799"] = 3,
                 ["1800-1899"] = 6,
                 ["1900-1999"] = 7,
                 ["2000-2099"] = 2,
@@ -7681,7 +7682,7 @@ PvPLedgerLadderData.US.rbg = {
         },
         ["saintlaurent-demonsoul"] = {
             displayName = "Saintlaurent-demon-soul",
-            specKey = "PALADIN_RETRIBUTION",
+            specKey = "PALADIN_HOLY",
             rating = 2440,
             rank = 45,
             wins = 313,
@@ -8914,7 +8915,7 @@ PvPLedgerLadderData.US.rbg = {
         },
         ["tribbey-area52"] = {
             displayName = "Tribbey-area-52",
-            specKey = "PRIEST_HOLY",
+            specKey = "PRIEST_SHADOW",
             rating = 1798,
             rank = 879,
             wins = 57,
