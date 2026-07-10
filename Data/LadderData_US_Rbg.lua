@@ -7,7 +7,7 @@ PvPLedgerLadderData.US.rbg = {
     bracket = "rbg",
     season = 41,
     snapshotDate = "2026-07-10",
-    generatedAt = "2026-07-10T19:51:58Z",
+    generatedAt = "2026-07-10T21:05:57Z",
     source = "blizzard-api+seramate",
     overall = {
         listedCount = 1000,
@@ -230,9 +230,9 @@ PvPLedgerLadderData.US.rbg = {
         },
         ["ROGUE"] = {
             listedCount = 89,
-            avgListedRating = 2047.5,
-            medianListedRating = 1998,
-            top100Avg = 2047.5,
+            avgListedRating = 2040.1,
+            medianListedRating = 1994.0,
+            top100Avg = 2040.1,
             highest = 2762,
             buckets = {
                 ["1700-1799"] = 8,
@@ -717,11 +717,11 @@ PvPLedgerLadderData.US.rbg = {
             },
         },
         ["ROGUE_ASSASSINATION"] = {
-            listedCount = 17,
-            avgListedRating = 2075.3,
-            medianListedRating = 1998,
-            top100Avg = 2075.3,
-            highest = 2541,
+            listedCount = 16,
+            avgListedRating = 2046.2,
+            medianListedRating = 1994.0,
+            top100Avg = 2046.2,
+            highest = 2473,
             buckets = {
                 ["1700-1799"] = 2,
                 ["1800-1899"] = 2,
@@ -730,7 +730,6 @@ PvPLedgerLadderData.US.rbg = {
                 ["2100-2199"] = 1,
                 ["2200-2299"] = 2,
                 ["2400-2499"] = 2,
-                ["2500-2599"] = 1,
             },
         },
         ["ROGUE_OUTLAW"] = {
@@ -745,10 +744,10 @@ PvPLedgerLadderData.US.rbg = {
             },
         },
         ["ROGUE_SUBTLETY"] = {
-            listedCount = 70,
-            avgListedRating = 2035.1,
-            medianListedRating = 1970.0,
-            top100Avg = 2035.1,
+            listedCount = 71,
+            avgListedRating = 2042.2,
+            medianListedRating = 1986,
+            top100Avg = 2042.2,
             highest = 2762,
             buckets = {
                 ["1700-1799"] = 6,
@@ -759,7 +758,7 @@ PvPLedgerLadderData.US.rbg = {
                 ["2200-2299"] = 5,
                 ["2300-2399"] = 2,
                 ["2400-2499"] = 1,
-                ["2500-2599"] = 4,
+                ["2500-2599"] = 5,
                 ["2700-2799"] = 2,
             },
         },
@@ -8580,7 +8579,7 @@ PvPLedgerLadderData.US.rbg = {
         },
         ["takk-sargeras"] = {
             displayName = "Takk-sargeras",
-            specKey = "ROGUE_ASSASSINATION",
+            specKey = "ROGUE_SUBTLETY",
             rating = 2541,
             rank = 23,
             wins = 155,
