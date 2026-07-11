@@ -7,7 +7,7 @@ PvPLedgerLadderData.US.rbg = {
     bracket = "rbg",
     season = 41,
     snapshotDate = "2026-07-11",
-    generatedAt = "2026-07-11T21:26:56Z",
+    generatedAt = "2026-07-11T22:23:55Z",
     source = "blizzard-api+seramate",
     overall = {
         listedCount = 1003,
@@ -39,7 +39,7 @@ PvPLedgerLadderData.US.rbg = {
             ["2600-2699"] = 5,
             ["2700-2799"] = 8,
         },
-        ratedPopulation = 3407,
+        ratedPopulation = 3408,
         titleCutoffs = {
             {
                 pct = 0.1,
@@ -266,9 +266,9 @@ PvPLedgerLadderData.US.rbg = {
         },
         ["WARLOCK"] = {
             listedCount = 41,
-            avgListedRating = 1921.7,
+            avgListedRating = 1923.0,
             medianListedRating = 1885.5,
-            top100Avg = 1921.7,
+            top100Avg = 1923.0,
             highest = 2463,
             buckets = {
                 ["1700-1799"] = 7,
@@ -817,29 +817,29 @@ PvPLedgerLadderData.US.rbg = {
             },
         },
         ["WARLOCK_AFFLICTION"] = {
-            listedCount = 25,
-            avgListedRating = 1893.3,
-            medianListedRating = 1841,
-            top100Avg = 1893.3,
+            listedCount = 26,
+            avgListedRating = 1893.9,
+            medianListedRating = 1842.0,
+            top100Avg = 1893.9,
             highest = 2463,
             buckets = {
                 ["1700-1799"] = 6,
                 ["1800-1899"] = 11,
-                ["1900-1999"] = 4,
+                ["1900-1999"] = 5,
                 ["2000-2099"] = 1,
                 ["2100-2199"] = 2,
                 ["2400-2499"] = 1,
             },
         },
         ["WARLOCK_DEMONOLOGY"] = {
-            listedCount = 4,
-            avgListedRating = 1918.5,
-            medianListedRating = 1922.0,
-            top100Avg = 1918.5,
+            listedCount = 3,
+            avgListedRating = 1921.7,
+            medianListedRating = 1935,
+            top100Avg = 1921.7,
             highest = 1987,
             buckets = {
                 ["1800-1899"] = 1,
-                ["1900-1999"] = 3,
+                ["1900-1999"] = 2,
             },
         },
         ["WARLOCK_DESTRUCTION"] = {
@@ -2353,7 +2353,7 @@ PvPLedgerLadderData.US.rbg = {
         },
         ["coolwala-tichondrius"] = {
             displayName = "Coolwala-tichondrius",
-            specKey = "WARLOCK_DEMONOLOGY",
+            specKey = "WARLOCK_AFFLICTION",
             rating = 1909,
             rank = 569,
             wins = 24,
