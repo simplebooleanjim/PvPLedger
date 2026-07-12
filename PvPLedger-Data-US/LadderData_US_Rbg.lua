@@ -7,7 +7,7 @@ PvPLedgerLadderData.US.rbg = {
     bracket = "rbg",
     season = 41,
     snapshotDate = "2026-07-12",
-    generatedAt = "2026-07-12T14:56:59Z",
+    generatedAt = "2026-07-12T16:02:04Z",
     source = "blizzard-api+seramate",
     overall = {
         listedCount = 1000,
@@ -210,13 +210,13 @@ PvPLedgerLadderData.US.rbg = {
             },
         },
         ["PRIEST"] = {
-            listedCount = 167,
-            avgListedRating = 1992.0,
-            medianListedRating = 1973.5,
+            listedCount = 168,
+            avgListedRating = 1991.3,
+            medianListedRating = 1970,
             top100Avg = 1996.7,
             highest = 2753,
             buckets = {
-                ["1700-1799"] = 21,
+                ["1700-1799"] = 22,
                 ["1800-1899"] = 41,
                 ["1900-1999"] = 35,
                 ["2000-2099"] = 24,
@@ -675,13 +675,13 @@ PvPLedgerLadderData.US.rbg = {
             },
         },
         ["PRIEST_DISCIPLINE"] = {
-            listedCount = 106,
-            avgListedRating = 2012.4,
-            medianListedRating = 1973.5,
+            listedCount = 107,
+            avgListedRating = 2010.2,
+            medianListedRating = 1970,
             top100Avg = 2026.6,
             highest = 2753,
             buckets = {
-                ["1700-1799"] = 13,
+                ["1700-1799"] = 14,
                 ["1800-1899"] = 30,
                 ["1900-1999"] = 16,
                 ["2000-2099"] = 14,
@@ -1838,7 +1838,7 @@ PvPLedgerLadderData.US.rbg = {
         },
         ["bubblebop-sargeras"] = {
             displayName = "Bubblebop-sargeras",
-            specKey = "",
+            specKey = "PRIEST_DISCIPLINE",
             rating = 1773,
             rank = 984,
             wins = 18,
