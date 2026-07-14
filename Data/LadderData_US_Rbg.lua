@@ -7,7 +7,7 @@ PvPLedgerLadderData.US.rbg = {
     bracket = "rbg",
     season = 41,
     snapshotDate = "2026-07-14",
-    generatedAt = "2026-07-14T22:40:16Z",
+    generatedAt = "2026-07-14T23:34:56Z",
     source = "blizzard-api+seramate",
     overall = {
         listedCount = 1000,
@@ -66,9 +66,9 @@ PvPLedgerLadderData.US.rbg = {
     byClass = {
         ["DEATHKNIGHT"] = {
             listedCount = 52,
-            avgListedRating = 1978.7,
-            medianListedRating = 1893.0,
-            top100Avg = 1978.7,
+            avgListedRating = 1970.2,
+            medianListedRating = 1888.0,
+            top100Avg = 1970.2,
             highest = 2608,
             buckets = {
                 ["1700-1799"] = 6,
@@ -84,9 +84,9 @@ PvPLedgerLadderData.US.rbg = {
         },
         ["DEMONHUNTER"] = {
             listedCount = 41,
-            avgListedRating = 2055.4,
+            avgListedRating = 1999.4,
             medianListedRating = 1986.0,
-            top100Avg = 2055.4,
+            top100Avg = 1999.4,
             highest = 2468,
             buckets = {
                 ["1700-1799"] = 5,
@@ -303,25 +303,24 @@ PvPLedgerLadderData.US.rbg = {
     },
     bySpec = {
         ["DEATHKNIGHT_FROST"] = {
-            listedCount = 12,
-            avgListedRating = 1974.4,
-            medianListedRating = 1890.0,
-            top100Avg = 1974.4,
+            listedCount = 11,
+            avgListedRating = 1951.3,
+            medianListedRating = 1879,
+            top100Avg = 1951.3,
             highest = 2608,
             buckets = {
                 ["1700-1799"] = 3,
                 ["1800-1899"] = 3,
                 ["1900-1999"] = 2,
                 ["2000-2099"] = 2,
-                ["2200-2299"] = 1,
                 ["2600-2699"] = 1,
             },
         },
         ["DEATHKNIGHT_UNHOLY"] = {
-            listedCount = 40,
-            avgListedRating = 1983,
-            medianListedRating = 1896.0,
-            top100Avg = 1983,
+            listedCount = 41,
+            avgListedRating = 1989,
+            medianListedRating = 1897,
+            top100Avg = 1989,
             highest = 2441,
             buckets = {
                 ["1700-1799"] = 3,
@@ -329,7 +328,7 @@ PvPLedgerLadderData.US.rbg = {
                 ["1900-1999"] = 6,
                 ["2000-2099"] = 2,
                 ["2100-2199"] = 5,
-                ["2200-2299"] = 3,
+                ["2200-2299"] = 4,
                 ["2300-2399"] = 2,
                 ["2400-2499"] = 1,
             },
@@ -352,14 +351,14 @@ PvPLedgerLadderData.US.rbg = {
             },
         },
         ["DEMONHUNTER_HAVOC"] = {
-            listedCount = 22,
-            avgListedRating = 1941.7,
-            medianListedRating = 1868.5,
-            top100Avg = 1941.7,
+            listedCount = 21,
+            avgListedRating = 1946.7,
+            medianListedRating = 1872,
+            top100Avg = 1946.7,
             highest = 2251,
             buckets = {
                 ["1700-1799"] = 4,
-                ["1800-1899"] = 9,
+                ["1800-1899"] = 8,
                 ["1900-1999"] = 1,
                 ["2000-2099"] = 3,
                 ["2100-2199"] = 2,
@@ -367,12 +366,13 @@ PvPLedgerLadderData.US.rbg = {
             },
         },
         ["DEMONHUNTER_VENGEANCE"] = {
-            listedCount = 1,
-            avgListedRating = 2183,
-            medianListedRating = 2183,
-            top100Avg = 2183,
+            listedCount = 2,
+            avgListedRating = 2010,
+            medianListedRating = 2010.0,
+            top100Avg = 2010,
             highest = 2183,
             buckets = {
+                ["1800-1899"] = 1,
                 ["2100-2199"] = 1,
             },
         },
@@ -5857,7 +5857,7 @@ PvPLedgerLadderData.US.rbg = {
         },
         ["mishæßß-jaedenar"] = {
             displayName = "Mishæßß-jaedenar",
-            specKey = "DEMONHUNTER_HAVOC",
+            specKey = "DEMONHUNTER_VENGEANCE",
             rating = 1837,
             rank = 786,
             wins = 23,
@@ -7603,7 +7603,7 @@ PvPLedgerLadderData.US.rbg = {
         },
         ["runehurtz-tichondrius"] = {
             displayName = "Runehurtz-tichondrius",
-            specKey = "DEATHKNIGHT_FROST",
+            specKey = "DEATHKNIGHT_UNHOLY",
             rating = 2229,
             rank = 157,
             wins = 53,
