@@ -7,7 +7,7 @@ PvPLedgerLadderData.US.rbg = {
     bracket = "rbg",
     season = 41,
     snapshotDate = "2026-07-15",
-    generatedAt = "2026-07-15T10:53:14Z",
+    generatedAt = "2026-07-15T12:15:04Z",
     source = "blizzard-api+seramate",
     overall = {
         listedCount = 1001,
@@ -229,10 +229,10 @@ PvPLedgerLadderData.US.rbg = {
             },
         },
         ["ROGUE"] = {
-            listedCount = 89,
-            avgListedRating = 2069.8,
-            medianListedRating = 2044.8,
-            top100Avg = 2069.8,
+            listedCount = 90,
+            avgListedRating = 2074.8,
+            medianListedRating = 2055.5,
+            top100Avg = 2074.8,
             highest = 2762,
             buckets = {
                 ["1700-1799"] = 7,
@@ -244,7 +244,7 @@ PvPLedgerLadderData.US.rbg = {
                 ["2300-2399"] = 2,
                 ["2400-2499"] = 2,
                 ["2500-2599"] = 6,
-                ["2700-2799"] = 1,
+                ["2700-2799"] = 2,
             },
         },
         ["SHAMAN"] = {
@@ -729,10 +729,10 @@ PvPLedgerLadderData.US.rbg = {
             },
         },
         ["ROGUE_SUBTLETY"] = {
-            listedCount = 70,
-            avgListedRating = 2025.7,
-            medianListedRating = 1964.5,
-            top100Avg = 2025.7,
+            listedCount = 71,
+            avgListedRating = 2035.7,
+            medianListedRating = 1986,
+            top100Avg = 2035.7,
             highest = 2762,
             buckets = {
                 ["1700-1799"] = 6,
@@ -744,7 +744,7 @@ PvPLedgerLadderData.US.rbg = {
                 ["2300-2399"] = 2,
                 ["2400-2499"] = 2,
                 ["2500-2599"] = 4,
-                ["2700-2799"] = 1,
+                ["2700-2799"] = 2,
             },
         },
         ["SHAMAN_ELEMENTAL"] = {
@@ -9860,7 +9860,7 @@ PvPLedgerLadderData.US.rbg = {
         },
         ["ñìghtmare-kelthuzad"] = {
             displayName = "Ñìghtmare-kelthuzad",
-            specKey = "",
+            specKey = "ROGUE_SUBTLETY",
             rating = 2740,
             rank = 6,
             wins = 108,
