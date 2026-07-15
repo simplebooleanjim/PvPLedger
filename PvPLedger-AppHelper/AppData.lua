@@ -3,8 +3,8 @@
 --- DO NOT EDIT MANUALLY.
 PVL_AppHelperPendingSnapshots = PVL_AppHelperPendingSnapshots or {}
 PVL_AppHelperSyncInfo = {
-    lastSync = 1784130859,
-    generatedAt = "2026-07-15T15:54:19Z",
+    lastSync = 1784135908,
+    generatedAt = "2026-07-15T17:18:28Z",
     region = "US",
     source = "collector",
 }
@@ -15,7 +15,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
     bracket = "arena2v2",
     season = 41,
     snapshotDate = "2026-07-15",
-    generatedAt = "2026-07-15T15:54:06Z",
+    generatedAt = "2026-07-15T17:18:16Z",
     source = "blizzard-api+seramate",
     overall = {
         listedCount = 1002,
@@ -9726,7 +9726,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
     bracket = "arena3v3",
     season = 41,
     snapshotDate = "2026-07-15",
-    generatedAt = "2026-07-15T15:54:17Z",
+    generatedAt = "2026-07-15T17:18:26Z",
     source = "blizzard-api+seramate",
     overall = {
         listedCount = 1000,
@@ -9915,9 +9915,9 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["ROGUE"] = {
             listedCount = 95,
-            avgListedRating = 2716.7,
+            avgListedRating = 2713.1,
             medianListedRating = 2695,
-            top100Avg = 2716.7,
+            top100Avg = 2713.1,
             highest = 3040,
             buckets = {
                 ["2500-2599"] = 16,
@@ -10335,18 +10335,17 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
             },
         },
         ["ROGUE_ASSASSINATION"] = {
-            listedCount = 22,
-            avgListedRating = 2690.0,
-            medianListedRating = 2629.5,
-            top100Avg = 2690.0,
-            highest = 3040,
+            listedCount = 21,
+            avgListedRating = 2673.4,
+            medianListedRating = 2627,
+            top100Avg = 2673.4,
+            highest = 2919,
             buckets = {
                 ["2500-2599"] = 7,
                 ["2600-2699"] = 5,
                 ["2700-2799"] = 6,
                 ["2800-2899"] = 2,
                 ["2900-2999"] = 1,
-                ["3000-3099"] = 1,
             },
         },
         ["ROGUE_OUTLAW"] = {
@@ -10364,18 +10363,18 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
             },
         },
         ["ROGUE_SUBTLETY"] = {
-            listedCount = 54,
-            avgListedRating = 2730.1,
-            medianListedRating = 2710.5,
-            top100Avg = 2730.1,
-            highest = 3028,
+            listedCount = 55,
+            avgListedRating = 2735.8,
+            medianListedRating = 2711,
+            top100Avg = 2735.8,
+            highest = 3040,
             buckets = {
                 ["2500-2599"] = 8,
                 ["2600-2699"] = 16,
                 ["2700-2799"] = 16,
                 ["2800-2899"] = 6,
                 ["2900-2999"] = 7,
-                ["3000-3099"] = 1,
+                ["3000-3099"] = 2,
             },
         },
         ["SHAMAN_ELEMENTAL"] = {
@@ -12575,7 +12574,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["däzëd-stormrage"] = {
             displayName = "Däzëd-stormrage",
-            specKey = "ROGUE_ASSASSINATION",
+            specKey = "ROGUE_SUBTLETY",
             rating = 3040,
             rank = 15,
             wins = 213,
@@ -19494,7 +19493,7 @@ PVL_AppHelperPendingSnapshots.blitz = {
     bracket = "blitz",
     season = 41,
     snapshotDate = "2026-07-15",
-    generatedAt = "2026-07-15T15:53:12Z",
+    generatedAt = "2026-07-15T17:17:34Z",
     source = "blizzard-api",
     overall = {
         listedCount = 37461,
@@ -331685,7 +331684,7 @@ PVL_AppHelperPendingSnapshots.rbg = {
     bracket = "rbg",
     season = 41,
     snapshotDate = "2026-07-15",
-    generatedAt = "2026-07-15T15:53:55Z",
+    generatedAt = "2026-07-15T17:18:04Z",
     source = "blizzard-api+seramate",
     overall = {
         listedCount = 1001,
@@ -331818,9 +331817,9 @@ PVL_AppHelperPendingSnapshots.rbg = {
         },
         ["HUNTER"] = {
             listedCount = 67,
-            avgListedRating = 2041.5,
+            avgListedRating = 2048.3,
             medianListedRating = 1969.0,
-            top100Avg = 2041.5,
+            top100Avg = 2048.3,
             highest = 2777,
             buckets = {
                 ["1700-1799"] = 2,
@@ -332182,36 +332181,37 @@ PVL_AppHelperPendingSnapshots.rbg = {
             },
         },
         ["HUNTER_MARKSMANSHIP"] = {
-            listedCount = 48,
-            avgListedRating = 2012.7,
+            listedCount = 46,
+            avgListedRating = 2006.2,
             medianListedRating = 1951.5,
-            top100Avg = 2012.7,
+            top100Avg = 2006.2,
             highest = 2777,
             buckets = {
                 ["1700-1799"] = 2,
-                ["1800-1899"] = 17,
+                ["1800-1899"] = 16,
                 ["1900-1999"] = 12,
                 ["2000-2099"] = 6,
                 ["2100-2199"] = 2,
                 ["2200-2299"] = 3,
                 ["2300-2399"] = 2,
-                ["2400-2499"] = 2,
+                ["2400-2499"] = 1,
                 ["2500-2599"] = 1,
                 ["2700-2799"] = 1,
             },
         },
         ["HUNTER_SURVIVAL"] = {
-            listedCount = 7,
-            avgListedRating = 2040.7,
+            listedCount = 9,
+            avgListedRating = 2067.6,
             medianListedRating = 2003,
-            top100Avg = 2040.7,
-            highest = 2229,
+            top100Avg = 2067.6,
+            highest = 2424,
             buckets = {
-                ["1800-1899"] = 1,
+                ["1800-1899"] = 2,
                 ["1900-1999"] = 2,
                 ["2000-2099"] = 2,
                 ["2100-2199"] = 1,
                 ["2200-2299"] = 1,
+                ["2400-2499"] = 1,
             },
         },
         ["MAGE_ARCANE"] = {
@@ -339468,7 +339468,7 @@ PVL_AppHelperPendingSnapshots.rbg = {
         },
         ["sax-kiljaeden"] = {
             displayName = "Sax-kiljaeden",
-            specKey = "HUNTER_MARKSMANSHIP",
+            specKey = "HUNTER_SURVIVAL",
             rating = 2424,
             rank = 56,
             wins = 65,
@@ -339477,7 +339477,7 @@ PVL_AppHelperPendingSnapshots.rbg = {
         },
         ["saxz-wyrmrestaccord"] = {
             displayName = "Saxz-wyrmrest-accord",
-            specKey = "HUNTER_MARKSMANSHIP",
+            specKey = "HUNTER_SURVIVAL",
             rating = 1899,
             rank = 605,
             wins = 42,
@@ -341572,7 +341572,7 @@ PVL_AppHelperPendingSnapshots.shuffle = {
     bracket = "shuffle",
     season = 41,
     snapshotDate = "2026-07-15",
-    generatedAt = "2026-07-15T15:53:42Z",
+    generatedAt = "2026-07-15T17:17:52Z",
     source = "blizzard-api",
     overall = {
         listedCount = 37649,

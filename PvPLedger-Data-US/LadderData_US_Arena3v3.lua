@@ -7,7 +7,7 @@ PvPLedgerLadderData.US.arena3v3 = {
     bracket = "arena3v3",
     season = 41,
     snapshotDate = "2026-07-15",
-    generatedAt = "2026-07-15T15:54:17Z",
+    generatedAt = "2026-07-15T17:18:26Z",
     source = "blizzard-api+seramate",
     overall = {
         listedCount = 1000,
@@ -196,9 +196,9 @@ PvPLedgerLadderData.US.arena3v3 = {
         },
         ["ROGUE"] = {
             listedCount = 95,
-            avgListedRating = 2716.7,
+            avgListedRating = 2713.1,
             medianListedRating = 2695,
-            top100Avg = 2716.7,
+            top100Avg = 2713.1,
             highest = 3040,
             buckets = {
                 ["2500-2599"] = 16,
@@ -616,18 +616,17 @@ PvPLedgerLadderData.US.arena3v3 = {
             },
         },
         ["ROGUE_ASSASSINATION"] = {
-            listedCount = 22,
-            avgListedRating = 2690.0,
-            medianListedRating = 2629.5,
-            top100Avg = 2690.0,
-            highest = 3040,
+            listedCount = 21,
+            avgListedRating = 2673.4,
+            medianListedRating = 2627,
+            top100Avg = 2673.4,
+            highest = 2919,
             buckets = {
                 ["2500-2599"] = 7,
                 ["2600-2699"] = 5,
                 ["2700-2799"] = 6,
                 ["2800-2899"] = 2,
                 ["2900-2999"] = 1,
-                ["3000-3099"] = 1,
             },
         },
         ["ROGUE_OUTLAW"] = {
@@ -645,18 +644,18 @@ PvPLedgerLadderData.US.arena3v3 = {
             },
         },
         ["ROGUE_SUBTLETY"] = {
-            listedCount = 54,
-            avgListedRating = 2730.1,
-            medianListedRating = 2710.5,
-            top100Avg = 2730.1,
-            highest = 3028,
+            listedCount = 55,
+            avgListedRating = 2735.8,
+            medianListedRating = 2711,
+            top100Avg = 2735.8,
+            highest = 3040,
             buckets = {
                 ["2500-2599"] = 8,
                 ["2600-2699"] = 16,
                 ["2700-2799"] = 16,
                 ["2800-2899"] = 6,
                 ["2900-2999"] = 7,
-                ["3000-3099"] = 1,
+                ["3000-3099"] = 2,
             },
         },
         ["SHAMAN_ELEMENTAL"] = {
@@ -2856,7 +2855,7 @@ PvPLedgerLadderData.US.arena3v3 = {
         },
         ["däzëd-stormrage"] = {
             displayName = "Däzëd-stormrage",
-            specKey = "ROGUE_ASSASSINATION",
+            specKey = "ROGUE_SUBTLETY",
             rating = 3040,
             rank = 15,
             wins = 213,
