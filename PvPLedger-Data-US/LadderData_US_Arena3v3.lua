@@ -7,7 +7,7 @@ PvPLedgerLadderData.US.arena3v3 = {
     bracket = "arena3v3",
     season = 41,
     snapshotDate = "2026-07-15",
-    generatedAt = "2026-07-15T14:14:38Z",
+    generatedAt = "2026-07-15T15:54:17Z",
     source = "blizzard-api+seramate",
     overall = {
         listedCount = 1000,
@@ -105,13 +105,13 @@ PvPLedgerLadderData.US.arena3v3 = {
             },
         },
         ["EVOKER"] = {
-            listedCount = 78,
-            avgListedRating = 2707.2,
+            listedCount = 77,
+            avgListedRating = 2710.9,
             medianListedRating = 2707,
-            top100Avg = 2707.2,
+            top100Avg = 2710.9,
             highest = 3054,
             buckets = {
-                ["2500-2599"] = 7,
+                ["2500-2599"] = 6,
                 ["2600-2699"] = 31,
                 ["2700-2799"] = 16,
                 ["2800-2899"] = 10,
@@ -398,13 +398,12 @@ PvPLedgerLadderData.US.arena3v3 = {
             },
         },
         ["EVOKER_DEVASTATION"] = {
-            listedCount = 8,
-            avgListedRating = 2648.6,
-            medianListedRating = 2632.0,
-            top100Avg = 2648.6,
+            listedCount = 7,
+            avgListedRating = 2659.6,
+            medianListedRating = 2633,
+            top100Avg = 2659.6,
             highest = 2814,
             buckets = {
-                ["2500-2599"] = 1,
                 ["2600-2699"] = 6,
                 ["2800-2899"] = 1,
             },
@@ -3109,7 +3108,7 @@ PvPLedgerLadderData.US.arena3v3 = {
         },
         ["evook-tichondrius"] = {
             displayName = "Evook-tichondrius",
-            specKey = "EVOKER_DEVASTATION",
+            specKey = "",
             rating = 2572,
             rank = 977,
             wins = 111,
