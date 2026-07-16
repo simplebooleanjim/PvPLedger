@@ -5,19 +5,19 @@ PVL_AppHelperPendingSnapshotsByRegion = PVL_AppHelperPendingSnapshotsByRegion or
 PVL_AppHelperSyncInfoByRegion = PVL_AppHelperSyncInfoByRegion or {}
 PVL_AppHelperPendingSnapshotsByRegion.EU = PVL_AppHelperPendingSnapshotsByRegion.EU or {}
 PVL_AppHelperSyncInfoByRegion.EU = {
-    lastSync = 1784157290,
-    generatedAt = "2026-07-15T23:14:50Z",
+    lastSync = 1784160803,
+    generatedAt = "2026-07-16T00:13:23Z",
     region = "EU",
     source = "collector",
 }
 
 PVL_AppHelperPendingSnapshotsByRegion.EU.arena2v2 = {
-    snapshotId = "eu-arena2v2-s41-2026-07-15",
+    snapshotId = "eu-arena2v2-s41-2026-07-16",
     region = "EU",
     bracket = "arena2v2",
     season = 41,
-    snapshotDate = "2026-07-15",
-    generatedAt = "2026-07-15T23:14:36Z",
+    snapshotDate = "2026-07-16",
+    generatedAt = "2026-07-16T00:13:11Z",
     source = "blizzard-api+seramate",
     overall = {
         listedCount = 1007,
@@ -9774,12 +9774,12 @@ PVL_AppHelperPendingSnapshotsByRegion.EU.arena2v2 = {
 }
 
 PVL_AppHelperPendingSnapshotsByRegion.EU.arena3v3 = {
-    snapshotId = "eu-arena3v3-s41-2026-07-15",
+    snapshotId = "eu-arena3v3-s41-2026-07-16",
     region = "EU",
     bracket = "arena3v3",
     season = 41,
-    snapshotDate = "2026-07-15",
-    generatedAt = "2026-07-15T23:14:49Z",
+    snapshotDate = "2026-07-16",
+    generatedAt = "2026-07-16T00:13:21Z",
     source = "blizzard-api+seramate",
     overall = {
         listedCount = 1000,
@@ -19514,12 +19514,12 @@ PVL_AppHelperPendingSnapshotsByRegion.EU.arena3v3 = {
 }
 
 PVL_AppHelperPendingSnapshotsByRegion.EU.blitz = {
-    snapshotId = "eu-blitz-s41-2026-07-15",
+    snapshotId = "eu-blitz-s41-2026-07-16",
     region = "EU",
     bracket = "blitz",
     season = 41,
-    snapshotDate = "2026-07-15",
-    generatedAt = "2026-07-15T23:13:20Z",
+    snapshotDate = "2026-07-16",
+    generatedAt = "2026-07-16T00:11:55Z",
     source = "blizzard-api",
     overall = {
         listedCount = 37084,
@@ -332662,12 +332662,12 @@ PVL_AppHelperPendingSnapshotsByRegion.EU.blitz = {
 }
 
 PVL_AppHelperPendingSnapshotsByRegion.EU.rbg = {
-    snapshotId = "eu-rbg-s41-2026-07-15",
+    snapshotId = "eu-rbg-s41-2026-07-16",
     region = "EU",
     bracket = "rbg",
     season = 41,
-    snapshotDate = "2026-07-15",
-    generatedAt = "2026-07-15T23:14:24Z",
+    snapshotDate = "2026-07-16",
+    generatedAt = "2026-07-16T00:12:59Z",
     source = "blizzard-api+seramate",
     overall = {
         listedCount = 1002,
@@ -342543,12 +342543,12 @@ PVL_AppHelperPendingSnapshotsByRegion.EU.rbg = {
 }
 
 PVL_AppHelperPendingSnapshotsByRegion.EU.shuffle = {
-    snapshotId = "eu-shuffle-s41-2026-07-15",
+    snapshotId = "eu-shuffle-s41-2026-07-16",
     region = "EU",
     bracket = "shuffle",
     season = 41,
-    snapshotDate = "2026-07-15",
-    generatedAt = "2026-07-15T23:14:07Z",
+    snapshotDate = "2026-07-16",
+    generatedAt = "2026-07-16T00:12:44Z",
     source = "blizzard-api",
     overall = {
         listedCount = 37589,
