@@ -1,14 +1,21 @@
 {
   "region": "US",
   "generatedDate": "2026-07-16",
-  "generatedAt": "2026-07-16T17:17:50Z",
+  "generatedAt": "2026-07-16T18:41:24Z",
   "brackets": {
     "blitz": {
       "snapshotId": "us-blitz-s41-2026-07-16",
       "source": "blizzard-api",
       "season": 41,
-      "listedPlayers": 37504,
+      "listedPlayers": 37516,
       "file": "LadderData_US_Blitz.lua"
+    },
+    "shuffle": {
+      "snapshotId": "us-shuffle-s41-2026-07-16",
+      "source": "blizzard-api",
+      "season": 41,
+      "listedPlayers": 37653,
+      "file": "LadderData_US_Shuffle.lua"
     },
     "rbg": {
       "snapshotId": "us-rbg-s41-2026-07-16",
@@ -21,7 +28,7 @@
       "snapshotId": "us-arena2v2-s41-2026-07-16",
       "source": "blizzard-api+seramate",
       "season": 41,
-      "listedPlayers": 1009,
+      "listedPlayers": 1010,
       "file": "LadderData_US_Arena2v2.lua"
     },
     "arena3v3": {
