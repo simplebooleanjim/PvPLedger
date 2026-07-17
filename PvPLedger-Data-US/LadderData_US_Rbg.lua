@@ -7,7 +7,7 @@ PvPLedgerLadderData.US.rbg = {
     bracket = "rbg",
     season = 41,
     snapshotDate = "2026-07-17",
-    generatedAt = "2026-07-17T18:41:27Z",
+    generatedAt = "2026-07-17T19:48:41Z",
     source = "blizzard-api+seramate",
     overall = {
         listedCount = 1005,
@@ -212,9 +212,9 @@ PvPLedgerLadderData.US.rbg = {
         },
         ["PRIEST"] = {
             listedCount = 164,
-            avgListedRating = 2003.9,
-            medianListedRating = 1985,
-            top100Avg = 2006.4,
+            avgListedRating = 2005.8,
+            medianListedRating = 1983.5,
+            top100Avg = 2009.1,
             highest = 2753,
             buckets = {
                 ["1700-1799"] = 12,
@@ -671,13 +671,13 @@ PvPLedgerLadderData.US.rbg = {
             },
         },
         ["PRIEST_DISCIPLINE"] = {
-            listedCount = 103,
-            avgListedRating = 2032.7,
-            medianListedRating = 1985,
+            listedCount = 104,
+            avgListedRating = 2030.4,
+            medianListedRating = 1983.5,
             top100Avg = 2040.1,
             highest = 2753,
             buckets = {
-                ["1700-1799"] = 6,
+                ["1700-1799"] = 7,
                 ["1800-1899"] = 29,
                 ["1900-1999"] = 17,
                 ["2000-2099"] = 18,
@@ -707,13 +707,12 @@ PvPLedgerLadderData.US.rbg = {
             },
         },
         ["PRIEST_SHADOW"] = {
-            listedCount = 21,
-            avgListedRating = 1958.6,
-            medianListedRating = 1903,
-            top100Avg = 1958.6,
+            listedCount = 20,
+            avgListedRating = 1966.6,
+            medianListedRating = 1921.5,
+            top100Avg = 1966.6,
             highest = 2284,
             buckets = {
-                ["1700-1799"] = 1,
                 ["1800-1899"] = 9,
                 ["1900-1999"] = 5,
                 ["2000-2099"] = 2,
@@ -8900,7 +8899,7 @@ PvPLedgerLadderData.US.rbg = {
         },
         ["tribbey-area52"] = {
             displayName = "Tribbey-area-52",
-            specKey = "PRIEST_SHADOW",
+            specKey = "PRIEST_DISCIPLINE",
             rating = 1798,
             rank = 926,
             wins = 57,
