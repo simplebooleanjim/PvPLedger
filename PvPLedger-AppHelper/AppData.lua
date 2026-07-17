@@ -3,8 +3,8 @@
 --- DO NOT EDIT MANUALLY.
 PVL_AppHelperPendingSnapshots = PVL_AppHelperPendingSnapshots or {}
 PVL_AppHelperSyncInfo = {
-    lastSync = 1784309959,
-    generatedAt = "2026-07-17T17:39:19Z",
+    lastSync = 1784313711,
+    generatedAt = "2026-07-17T18:41:51Z",
     region = "US",
     source = "collector",
 }
@@ -15,7 +15,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
     bracket = "arena2v2",
     season = 41,
     snapshotDate = "2026-07-17",
-    generatedAt = "2026-07-17T17:39:08Z",
+    generatedAt = "2026-07-17T18:41:39Z",
     source = "blizzard-api+seramate",
     overall = {
         listedCount = 1010,
@@ -192,13 +192,13 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
             },
         },
         ["ROGUE"] = {
-            listedCount = 125,
-            avgListedRating = 2470.4,
-            medianListedRating = 2453,
-            top100Avg = 2470.4,
+            listedCount = 124,
+            avgListedRating = 2471.0,
+            medianListedRating = 2458.0,
+            top100Avg = 2471.0,
             highest = 2871,
             buckets = {
-                ["2300-2399"] = 32,
+                ["2300-2399"] = 31,
                 ["2400-2499"] = 55,
                 ["2500-2599"] = 20,
                 ["2600-2699"] = 13,
@@ -590,13 +590,13 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
             },
         },
         ["ROGUE_SUBTLETY"] = {
-            listedCount = 65,
-            avgListedRating = 2485.6,
-            medianListedRating = 2453,
-            top100Avg = 2485.6,
+            listedCount = 64,
+            avgListedRating = 2487.5,
+            medianListedRating = 2458.0,
+            top100Avg = 2487.5,
             highest = 2767,
             buckets = {
-                ["2300-2399"] = 17,
+                ["2300-2399"] = 16,
                 ["2400-2499"] = 23,
                 ["2500-2599"] = 13,
                 ["2600-2699"] = 10,
@@ -1676,7 +1676,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["brendantko-arthas"] = {
             displayName = "Brendantko-arthas",
-            specKey = "ROGUE_SUBTLETY",
+            specKey = "",
             rating = 2366,
             rank = 990,
             wins = 61,
@@ -9801,7 +9801,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
     bracket = "arena3v3",
     season = 41,
     snapshotDate = "2026-07-17",
-    generatedAt = "2026-07-17T17:39:18Z",
+    generatedAt = "2026-07-17T18:41:50Z",
     source = "blizzard-api+seramate",
     overall = {
         listedCount = 1004,
@@ -9945,9 +9945,9 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["MONK"] = {
             listedCount = 103,
-            avgListedRating = 2718.0,
-            medianListedRating = 2673.0,
-            top100Avg = 2718.0,
+            avgListedRating = 2715.9,
+            medianListedRating = 2673.5,
+            top100Avg = 2715.9,
             highest = 3059,
             buckets = {
                 ["2500-2599"] = 17,
@@ -10296,32 +10296,32 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
             },
         },
         ["MONK_MISTWEAVER"] = {
-            listedCount = 72,
-            avgListedRating = 2719.8,
-            medianListedRating = 2683.0,
-            top100Avg = 2719.8,
+            listedCount = 73,
+            avgListedRating = 2722.8,
+            medianListedRating = 2684,
+            top100Avg = 2722.8,
             highest = 3059,
             buckets = {
                 ["2500-2599"] = 11,
                 ["2600-2699"] = 27,
                 ["2700-2799"] = 18,
                 ["2800-2899"] = 5,
-                ["2900-2999"] = 7,
+                ["2900-2999"] = 8,
                 ["3000-3099"] = 4,
             },
         },
         ["MONK_WINDWALKER"] = {
-            listedCount = 31,
-            avgListedRating = 2716.2,
-            medianListedRating = 2663,
-            top100Avg = 2716.2,
+            listedCount = 30,
+            avgListedRating = 2709.0,
+            medianListedRating = 2663.0,
+            top100Avg = 2709.0,
             highest = 3026,
             buckets = {
                 ["2500-2599"] = 6,
                 ["2600-2699"] = 12,
                 ["2700-2799"] = 5,
                 ["2800-2899"] = 5,
-                ["2900-2999"] = 2,
+                ["2900-2999"] = 1,
                 ["3000-3099"] = 1,
             },
         },
@@ -15090,7 +15090,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["meepmonk-tichondrius"] = {
             displayName = "Meepmonk-tichondrius",
-            specKey = "MONK_WINDWALKER",
+            specKey = "MONK_MISTWEAVER",
             rating = 2932,
             rank = 114,
             wins = 324,
@@ -19597,7 +19597,7 @@ PVL_AppHelperPendingSnapshots.blitz = {
     bracket = "blitz",
     season = 41,
     snapshotDate = "2026-07-17",
-    generatedAt = "2026-07-17T17:38:26Z",
+    generatedAt = "2026-07-17T18:40:57Z",
     source = "blizzard-api",
     overall = {
         listedCount = 37554,
@@ -332564,7 +332564,7 @@ PVL_AppHelperPendingSnapshots.rbg = {
     bracket = "rbg",
     season = 41,
     snapshotDate = "2026-07-17",
-    generatedAt = "2026-07-17T17:38:56Z",
+    generatedAt = "2026-07-17T18:41:27Z",
     source = "blizzard-api+seramate",
     overall = {
         listedCount = 1005,
@@ -342499,7 +342499,7 @@ PVL_AppHelperPendingSnapshots.shuffle = {
     bracket = "shuffle",
     season = 41,
     snapshotDate = "2026-07-17",
-    generatedAt = "2026-07-17T17:38:44Z",
+    generatedAt = "2026-07-17T18:41:14Z",
     source = "blizzard-api",
     overall = {
         listedCount = 37701,
