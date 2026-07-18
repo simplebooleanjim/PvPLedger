@@ -7,7 +7,7 @@ PvPLedgerLadderData.US.arena2v2 = {
     bracket = "arena2v2",
     season = 41,
     snapshotDate = "2026-07-18",
-    generatedAt = "2026-07-18T20:32:35Z",
+    generatedAt = "2026-07-18T21:34:31Z",
     source = "blizzard-api+seramate",
     overall = {
         listedCount = 1004,
@@ -61,9 +61,9 @@ PvPLedgerLadderData.US.arena2v2 = {
     byClass = {
         ["DEATHKNIGHT"] = {
             listedCount = 22,
-            avgListedRating = 2432.2,
-            medianListedRating = 2434.2,
-            top100Avg = 2432.2,
+            avgListedRating = 2432.8,
+            medianListedRating = 2441.5,
+            top100Avg = 2432.8,
             highest = 2520,
             buckets = {
                 ["2300-2399"] = 3,
@@ -240,26 +240,26 @@ PvPLedgerLadderData.US.arena2v2 = {
     },
     bySpec = {
         ["DEATHKNIGHT_FROST"] = {
-            listedCount = 10,
-            avgListedRating = 2439.5,
-            medianListedRating = 2443.0,
-            top100Avg = 2439.5,
+            listedCount = 9,
+            avgListedRating = 2439.7,
+            medianListedRating = 2448,
+            top100Avg = 2439.7,
             highest = 2520,
             buckets = {
                 ["2300-2399"] = 1,
-                ["2400-2499"] = 8,
+                ["2400-2499"] = 7,
                 ["2500-2599"] = 1,
             },
         },
         ["DEATHKNIGHT_UNHOLY"] = {
-            listedCount = 12,
-            avgListedRating = 2424.9,
-            medianListedRating = 2425.5,
-            top100Avg = 2424.9,
+            listedCount = 13,
+            avgListedRating = 2425.9,
+            medianListedRating = 2435,
+            top100Avg = 2425.9,
             highest = 2499,
             buckets = {
                 ["2300-2399"] = 2,
-                ["2400-2499"] = 10,
+                ["2400-2499"] = 11,
             },
         },
         ["DEMONHUNTER_DEVOURER"] = {
@@ -6557,7 +6557,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["partywaffles-illidan"] = {
             displayName = "Partywaffles-illidan",
-            specKey = "DEATHKNIGHT_FROST",
+            specKey = "DEATHKNIGHT_UNHOLY",
             rating = 2438,
             rank = 487,
             wins = 91,
