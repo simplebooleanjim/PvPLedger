@@ -1,7 +1,7 @@
 {
   "region": "US",
   "generatedDate": "2026-07-20",
-  "generatedAt": "2026-07-20T18:24:25Z",
+  "generatedAt": "2026-07-20T20:07:36Z",
   "brackets": {
     "blitz": {
       "snapshotId": "us-blitz-s41-2026-07-20",
@@ -35,7 +35,7 @@
       "snapshotId": "us-arena3v3-s41-2026-07-20",
       "source": "blizzard-api+seramate",
       "season": 41,
-      "listedPlayers": 1006,
+      "listedPlayers": 1005,
       "file": "LadderData_US_Arena3v3.lua"
     }
   }
