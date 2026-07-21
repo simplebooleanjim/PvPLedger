@@ -7,7 +7,7 @@ PvPLedgerLadderData.US.rbg = {
     bracket = "rbg",
     season = 41,
     snapshotDate = "2026-07-21",
-    generatedAt = "2026-07-21T10:02:02Z",
+    generatedAt = "2026-07-21T12:01:36Z",
     source = "blizzard-api+seramate",
     overall = {
         listedCount = 1008,
@@ -210,9 +210,9 @@ PvPLedgerLadderData.US.rbg = {
         },
         ["PRIEST"] = {
             listedCount = 167,
-            avgListedRating = 2018.1,
+            avgListedRating = 2019.3,
             medianListedRating = 1975,
-            top100Avg = 2019.7,
+            top100Avg = 2020.1,
             highest = 2753,
             buckets = {
                 ["1700-1799"] = 8,
@@ -673,10 +673,10 @@ PvPLedgerLadderData.US.rbg = {
             },
         },
         ["PRIEST_DISCIPLINE"] = {
-            listedCount = 102,
-            avgListedRating = 2035.4,
-            medianListedRating = 1972.0,
-            top100Avg = 2040.2,
+            listedCount = 101,
+            avgListedRating = 2032.2,
+            medianListedRating = 1971,
+            top100Avg = 2034.6,
             highest = 2753,
             buckets = {
                 ["1700-1799"] = 4,
@@ -685,7 +685,7 @@ PvPLedgerLadderData.US.rbg = {
                 ["2000-2099"] = 16,
                 ["2100-2199"] = 9,
                 ["2200-2299"] = 11,
-                ["2300-2399"] = 7,
+                ["2300-2399"] = 6,
                 ["2400-2499"] = 1,
                 ["2500-2599"] = 2,
                 ["2600-2699"] = 1,
@@ -693,10 +693,10 @@ PvPLedgerLadderData.US.rbg = {
             },
         },
         ["PRIEST_HOLY"] = {
-            listedCount = 44,
-            avgListedRating = 2043.4,
-            medianListedRating = 2009.5,
-            top100Avg = 2043.4,
+            listedCount = 45,
+            avgListedRating = 2050.3,
+            medianListedRating = 2011,
+            top100Avg = 2050.3,
             highest = 2533,
             buckets = {
                 ["1700-1799"] = 3,
@@ -705,7 +705,7 @@ PvPLedgerLadderData.US.rbg = {
                 ["2000-2099"] = 9,
                 ["2100-2199"] = 5,
                 ["2200-2299"] = 5,
-                ["2300-2399"] = 3,
+                ["2300-2399"] = 4,
                 ["2500-2599"] = 1,
             },
         },
@@ -6380,7 +6380,7 @@ PvPLedgerLadderData.US.rbg = {
         },
         ["nocuró-quelthalas"] = {
             displayName = "Nocuró-quelthalas",
-            specKey = "PRIEST_DISCIPLINE",
+            specKey = "PRIEST_HOLY",
             rating = 2357,
             rank = 73,
             wins = 109,
