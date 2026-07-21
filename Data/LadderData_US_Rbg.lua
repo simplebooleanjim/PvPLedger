@@ -7,7 +7,7 @@ PvPLedgerLadderData.US.rbg = {
     bracket = "rbg",
     season = 41,
     snapshotDate = "2026-07-21",
-    generatedAt = "2026-07-21T21:40:22Z",
+    generatedAt = "2026-07-21T22:36:54Z",
     source = "blizzard-api+seramate",
     overall = {
         listedCount = 1008,
@@ -210,9 +210,9 @@ PvPLedgerLadderData.US.rbg = {
         },
         ["PRIEST"] = {
             listedCount = 167,
-            avgListedRating = 2017.4,
-            medianListedRating = 1972.0,
-            top100Avg = 2017.4,
+            avgListedRating = 2020.2,
+            medianListedRating = 1975,
+            top100Avg = 2020.2,
             highest = 2753,
             buckets = {
                 ["1700-1799"] = 8,
@@ -693,10 +693,10 @@ PvPLedgerLadderData.US.rbg = {
             },
         },
         ["PRIEST_HOLY"] = {
-            listedCount = 45,
-            avgListedRating = 2050.3,
-            medianListedRating = 2011,
-            top100Avg = 2050.3,
+            listedCount = 44,
+            avgListedRating = 2045.3,
+            medianListedRating = 2009.5,
+            top100Avg = 2045.3,
             highest = 2533,
             buckets = {
                 ["1700-1799"] = 3,
@@ -704,16 +704,16 @@ PvPLedgerLadderData.US.rbg = {
                 ["1900-1999"] = 13,
                 ["2000-2099"] = 9,
                 ["2100-2199"] = 5,
-                ["2200-2299"] = 5,
+                ["2200-2299"] = 4,
                 ["2300-2399"] = 4,
                 ["2500-2599"] = 1,
             },
         },
         ["PRIEST_SHADOW"] = {
-            listedCount = 22,
-            avgListedRating = 1967.4,
-            medianListedRating = 1939.0,
-            top100Avg = 1967.4,
+            listedCount = 23,
+            avgListedRating = 1980.6,
+            medianListedRating = 1975,
+            top100Avg = 1980.6,
             highest = 2284,
             buckets = {
                 ["1700-1799"] = 2,
@@ -721,7 +721,7 @@ PvPLedgerLadderData.US.rbg = {
                 ["1900-1999"] = 4,
                 ["2000-2099"] = 4,
                 ["2100-2199"] = 2,
-                ["2200-2299"] = 2,
+                ["2200-2299"] = 3,
             },
         },
         ["ROGUE_ASSASSINATION"] = {
@@ -4715,7 +4715,7 @@ PvPLedgerLadderData.US.rbg = {
         },
         ["julesx-nordrassil"] = {
             displayName = "Julesx-nordrassil",
-            specKey = "PRIEST_HOLY",
+            specKey = "PRIEST_SHADOW",
             rating = 2271,
             rank = 126,
             wins = 41,
