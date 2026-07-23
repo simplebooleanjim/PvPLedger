@@ -2,12 +2,12 @@
 PvPLedgerLadderData = PvPLedgerLadderData or {}
 PvPLedgerLadderData.US = PvPLedgerLadderData.US or {}
 PvPLedgerLadderData.US.arena2v2 = {
-    snapshotId = "us-arena2v2-s41-2026-07-22",
+    snapshotId = "us-arena2v2-s41-2026-07-23",
     region = "US",
     bracket = "arena2v2",
     season = 41,
-    snapshotDate = "2026-07-22",
-    generatedAt = "2026-07-22T23:42:30Z",
+    snapshotDate = "2026-07-23",
+    generatedAt = "2026-07-23T01:14:50Z",
     source = "blizzard-api+seramate",
     overall = {
         listedCount = 1001,
@@ -61,9 +61,9 @@ PvPLedgerLadderData.US.arena2v2 = {
     byClass = {
         ["DEATHKNIGHT"] = {
             listedCount = 24,
-            avgListedRating = 2432.1,
-            medianListedRating = 2413.0,
-            top100Avg = 2432.1,
+            avgListedRating = 2431.9,
+            medianListedRating = 2419.2,
+            top100Avg = 2431.9,
             highest = 2520,
             buckets = {
                 ["2300-2399"] = 3,
@@ -141,14 +141,14 @@ PvPLedgerLadderData.US.arena2v2 = {
             },
         },
         ["MONK"] = {
-            listedCount = 118,
-            avgListedRating = 2485.3,
-            medianListedRating = 2458,
-            top100Avg = 2485.3,
+            listedCount = 119,
+            avgListedRating = 2484.5,
+            medianListedRating = 2457.0,
+            top100Avg = 2484.5,
             highest = 2898,
             buckets = {
                 ["2300-2399"] = 13,
-                ["2400-2499"] = 69,
+                ["2400-2499"] = 70,
                 ["2500-2599"] = 21,
                 ["2600-2699"] = 11,
                 ["2700-2799"] = 3,
@@ -241,26 +241,26 @@ PvPLedgerLadderData.US.arena2v2 = {
     },
     bySpec = {
         ["DEATHKNIGHT_FROST"] = {
-            listedCount = 9,
-            avgListedRating = 2436.7,
-            medianListedRating = 2410,
-            top100Avg = 2436.7,
+            listedCount = 10,
+            avgListedRating = 2436.8,
+            medianListedRating = 2424.0,
+            top100Avg = 2436.8,
             highest = 2520,
             buckets = {
                 ["2300-2399"] = 1,
-                ["2400-2499"] = 7,
+                ["2400-2499"] = 8,
                 ["2500-2599"] = 1,
             },
         },
         ["DEATHKNIGHT_UNHOLY"] = {
-            listedCount = 15,
-            avgListedRating = 2427.6,
-            medianListedRating = 2416,
-            top100Avg = 2427.6,
+            listedCount = 14,
+            avgListedRating = 2426.9,
+            medianListedRating = 2414.5,
+            top100Avg = 2426.9,
             highest = 2499,
             buckets = {
                 ["2300-2399"] = 2,
-                ["2400-2499"] = 13,
+                ["2400-2499"] = 12,
             },
         },
         ["DEMONHUNTER_DEVOURER"] = {
@@ -464,14 +464,14 @@ PvPLedgerLadderData.US.arena2v2 = {
             },
         },
         ["MONK_WINDWALKER"] = {
-            listedCount = 37,
-            avgListedRating = 2486.9,
-            medianListedRating = 2458,
-            top100Avg = 2486.9,
+            listedCount = 38,
+            avgListedRating = 2484.6,
+            medianListedRating = 2457.0,
+            top100Avg = 2484.6,
             highest = 2759,
             buckets = {
                 ["2300-2399"] = 5,
-                ["2400-2499"] = 21,
+                ["2400-2499"] = 22,
                 ["2500-2599"] = 6,
                 ["2600-2699"] = 3,
                 ["2700-2799"] = 2,
@@ -6433,7 +6433,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["partywaffles-illidan"] = {
             displayName = "Partywaffles-illidan",
-            specKey = "DEATHKNIGHT_UNHOLY",
+            specKey = "DEATHKNIGHT_FROST",
             rating = 2438,
             rank = 537,
             wins = 91,
@@ -9673,7 +9673,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["ðreyjutsu-moonguard"] = {
             displayName = "Ðreyjutsu-moon-guard",
-            specKey = "",
+            specKey = "MONK_WINDWALKER",
             rating = 2400,
             rank = 847,
             wins = 70,
