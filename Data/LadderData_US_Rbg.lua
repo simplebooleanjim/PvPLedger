@@ -7,7 +7,7 @@ PvPLedgerLadderData.US.rbg = {
     bracket = "rbg",
     season = 41,
     snapshotDate = "2026-07-23",
-    generatedAt = "2026-07-23T18:50:04Z",
+    generatedAt = "2026-07-23T20:12:56Z",
     source = "blizzard-api+seramate",
     overall = {
         listedCount = 1000,
@@ -84,9 +84,9 @@ PvPLedgerLadderData.US.rbg = {
         },
         ["DEMONHUNTER"] = {
             listedCount = 43,
-            avgListedRating = 2056.1,
-            medianListedRating = 1998.0,
-            top100Avg = 2056.1,
+            avgListedRating = 2106.0,
+            medianListedRating = 1993,
+            top100Avg = 2106.0,
             highest = 2468,
             buckets = {
                 ["1700-1799"] = 1,
@@ -345,13 +345,13 @@ PvPLedgerLadderData.US.rbg = {
             },
         },
         ["DEMONHUNTER_DEVOURER"] = {
-            listedCount = 20,
-            avgListedRating = 2036.3,
-            medianListedRating = 1998.0,
-            top100Avg = 2036.3,
+            listedCount = 21,
+            avgListedRating = 2027.4,
+            medianListedRating = 1993,
+            top100Avg = 2027.4,
             highest = 2347,
             buckets = {
-                ["1800-1899"] = 4,
+                ["1800-1899"] = 5,
                 ["1900-1999"] = 6,
                 ["2000-2099"] = 4,
                 ["2100-2199"] = 1,
@@ -376,13 +376,12 @@ PvPLedgerLadderData.US.rbg = {
             },
         },
         ["DEMONHUNTER_VENGEANCE"] = {
-            listedCount = 3,
-            avgListedRating = 2166.7,
-            medianListedRating = 2183,
-            top100Avg = 2166.7,
+            listedCount = 2,
+            avgListedRating = 2325.5,
+            medianListedRating = 2325.5,
+            top100Avg = 2325.5,
             highest = 2468,
             buckets = {
-                ["1800-1899"] = 1,
                 ["2100-2199"] = 1,
                 ["2400-2499"] = 1,
             },
@@ -5822,7 +5821,7 @@ PvPLedgerLadderData.US.rbg = {
         },
         ["mishæßß-jaedenar"] = {
             displayName = "Mishæßß-jaedenar",
-            specKey = "DEMONHUNTER_VENGEANCE",
+            specKey = "DEMONHUNTER_DEVOURER",
             rating = 1849,
             rank = 805,
             wins = 24,
