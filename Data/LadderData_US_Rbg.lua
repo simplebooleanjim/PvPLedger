@@ -7,7 +7,7 @@ PvPLedgerLadderData.US.rbg = {
     bracket = "rbg",
     season = 41,
     snapshotDate = "2026-07-25",
-    generatedAt = "2026-07-25T08:52:31Z",
+    generatedAt = "2026-07-25T10:27:17Z",
     source = "blizzard-api+seramate",
     overall = {
         listedCount = 1002,
@@ -934,7 +934,7 @@ PvPLedgerLadderData.US.rbg = {
             rating = 1909,
             rank = 646,
             wins = 102,
-            losses = 106,
+            losses = 107,
             faction = "HORDE",
         },
         ["aerozia-area52"] = {
@@ -2941,7 +2941,7 @@ PvPLedgerLadderData.US.rbg = {
             rating = 1908,
             rank = 649,
             wins = 62,
-            losses = 68,
+            losses = 69,
             faction = "HORDE",
         },
         ["druidshoww-tichondrius"] = {
@@ -4858,7 +4858,7 @@ PvPLedgerLadderData.US.rbg = {
             rating = 1842,
             rank = 845,
             wins = 51,
-            losses = 51,
+            losses = 52,
             faction = "HORDE",
         },
         ["kevinbacoñ-destromath"] = {
@@ -9097,7 +9097,7 @@ PvPLedgerLadderData.US.rbg = {
             rating = 1926,
             rank = 604,
             wins = 65,
-            losses = 61,
+            losses = 62,
             faction = "ALLIANCE",
         },
         ["valtir-ragnaros"] = {
