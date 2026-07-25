@@ -2,12 +2,12 @@
 PvPLedgerLadderData = PvPLedgerLadderData or {}
 PvPLedgerLadderData.US = PvPLedgerLadderData.US or {}
 PvPLedgerLadderData.US.arena3v3 = {
-    snapshotId = "us-arena3v3-s41-2026-07-24",
+    snapshotId = "us-arena3v3-s41-2026-07-25",
     region = "US",
     bracket = "arena3v3",
     season = 41,
-    snapshotDate = "2026-07-24",
-    generatedAt = "2026-07-24T23:33:25Z",
+    snapshotDate = "2026-07-25",
+    generatedAt = "2026-07-25T01:11:23Z",
     source = "blizzard-api+seramate",
     overall = {
         listedCount = 1006,
