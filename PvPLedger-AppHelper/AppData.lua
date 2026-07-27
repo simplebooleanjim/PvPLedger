@@ -3,8 +3,8 @@
 --- DO NOT EDIT MANUALLY.
 PVL_AppHelperPendingSnapshots = PVL_AppHelperPendingSnapshots or {}
 PVL_AppHelperSyncInfo = {
-    lastSync = 1785182181,
-    generatedAt = "2026-07-27T19:56:21Z",
+    lastSync = 1785186646,
+    generatedAt = "2026-07-27T21:10:46Z",
     region = "US",
     source = "collector",
 }
@@ -15,7 +15,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
     bracket = "arena2v2",
     season = 41,
     snapshotDate = "2026-07-27",
-    generatedAt = "2026-07-27T19:56:09Z",
+    generatedAt = "2026-07-27T21:10:36Z",
     source = "blizzard-api+seramate",
     overall = {
         listedCount = 1002,
@@ -9730,7 +9730,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
     bracket = "arena3v3",
     season = 41,
     snapshotDate = "2026-07-27",
-    generatedAt = "2026-07-27T19:56:19Z",
+    generatedAt = "2026-07-27T21:10:45Z",
     source = "blizzard-api+seramate",
     overall = {
         listedCount = 1006,
@@ -331155,7 +331155,7 @@ PVL_AppHelperPendingSnapshots.rbg = {
     bracket = "rbg",
     season = 41,
     snapshotDate = "2026-07-27",
-    generatedAt = "2026-07-27T19:55:58Z",
+    generatedAt = "2026-07-27T21:10:25Z",
     source = "blizzard-api+seramate",
     overall = {
         listedCount = 1002,
