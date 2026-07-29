@@ -3,8 +3,8 @@
 --- DO NOT EDIT MANUALLY.
 PVL_AppHelperPendingSnapshots = PVL_AppHelperPendingSnapshots or {}
 PVL_AppHelperSyncInfo = {
-    lastSync = 1785339061,
-    generatedAt = "2026-07-29T15:31:01Z",
+    lastSync = 1785343997,
+    generatedAt = "2026-07-29T16:53:17Z",
     region = "US",
     source = "collector",
 }
@@ -15,7 +15,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
     bracket = "arena2v2",
     season = 41,
     snapshotDate = "2026-07-29",
-    generatedAt = "2026-07-29T15:30:49Z",
+    generatedAt = "2026-07-29T16:53:05Z",
     source = "blizzard-api+seramate",
     overall = {
         listedCount = 1000,
@@ -9678,7 +9678,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
     bracket = "arena3v3",
     season = 41,
     snapshotDate = "2026-07-29",
-    generatedAt = "2026-07-29T15:31:00Z",
+    generatedAt = "2026-07-29T16:53:15Z",
     source = "blizzard-api+seramate",
     overall = {
         listedCount = 1008,
@@ -19490,7 +19490,7 @@ PVL_AppHelperPendingSnapshots.blitz = {
     bracket = "blitz",
     season = 41,
     snapshotDate = "2026-07-29",
-    generatedAt = "2026-07-29T15:29:44Z",
+    generatedAt = "2026-07-29T16:52:10Z",
     source = "blizzard-api",
     overall = {
         listedCount = 37395,
@@ -331426,7 +331426,7 @@ PVL_AppHelperPendingSnapshots.rbg = {
     bracket = "rbg",
     season = 41,
     snapshotDate = "2026-07-29",
-    generatedAt = "2026-07-29T15:30:38Z",
+    generatedAt = "2026-07-29T16:52:53Z",
     source = "blizzard-api+seramate",
     overall = {
         listedCount = 1002,
@@ -331517,9 +331517,9 @@ PVL_AppHelperPendingSnapshots.rbg = {
         },
         ["DRUID"] = {
             listedCount = 161,
-            avgListedRating = 2031.5,
-            medianListedRating = 2000.8,
-            top100Avg = 2031.5,
+            avgListedRating = 2037.1,
+            medianListedRating = 2000.2,
+            top100Avg = 2037.1,
             highest = 2794,
             buckets = {
                 ["1800-1899"] = 42,
@@ -331553,9 +331553,9 @@ PVL_AppHelperPendingSnapshots.rbg = {
         },
         ["HUNTER"] = {
             listedCount = 68,
-            avgListedRating = 2078.6,
-            medianListedRating = 2021.0,
-            top100Avg = 2078.6,
+            avgListedRating = 2071.9,
+            medianListedRating = 2022,
+            top100Avg = 2071.9,
             highest = 2808,
             buckets = {
                 ["1800-1899"] = 13,
@@ -331678,9 +331678,9 @@ PVL_AppHelperPendingSnapshots.rbg = {
         },
         ["WARLOCK"] = {
             listedCount = 42,
-            avgListedRating = 2039.0,
-            medianListedRating = 1987,
-            top100Avg = 2039.0,
+            avgListedRating = 2042.7,
+            medianListedRating = 1996.0,
+            top100Avg = 2042.7,
             highest = 2446,
             buckets = {
                 ["1800-1899"] = 16,
@@ -331828,10 +331828,10 @@ PVL_AppHelperPendingSnapshots.rbg = {
             },
         },
         ["DRUID_GUARDIAN"] = {
-            listedCount = 48,
-            avgListedRating = 2062.0,
-            medianListedRating = 2035.0,
-            top100Avg = 2062.0,
+            listedCount = 47,
+            avgListedRating = 2052.5,
+            medianListedRating = 2029,
+            top100Avg = 2052.5,
             highest = 2597,
             buckets = {
                 ["1800-1899"] = 11,
@@ -331840,21 +331840,22 @@ PVL_AppHelperPendingSnapshots.rbg = {
                 ["2100-2199"] = 9,
                 ["2200-2299"] = 3,
                 ["2300-2399"] = 3,
-                ["2500-2599"] = 3,
+                ["2500-2599"] = 2,
             },
         },
         ["DRUID_RESTORATION"] = {
-            listedCount = 16,
-            avgListedRating = 1960,
-            medianListedRating = 1869.0,
-            top100Avg = 1960,
-            highest = 2289,
+            listedCount = 17,
+            avgListedRating = 1992.2,
+            medianListedRating = 1881,
+            top100Avg = 1992.2,
+            highest = 2508,
             buckets = {
                 ["1800-1899"] = 10,
                 ["1900-1999"] = 1,
                 ["2000-2099"] = 1,
                 ["2100-2199"] = 1,
                 ["2200-2299"] = 3,
+                ["2500-2599"] = 1,
             },
         },
         ["EVOKER_AUGMENTATION"] = {
@@ -331917,14 +331918,14 @@ PVL_AppHelperPendingSnapshots.rbg = {
             },
         },
         ["HUNTER_MARKSMANSHIP"] = {
-            listedCount = 52,
-            avgListedRating = 2057.6,
-            medianListedRating = 2021.0,
-            top100Avg = 2057.6,
+            listedCount = 51,
+            avgListedRating = 2059.2,
+            medianListedRating = 2022,
+            top100Avg = 2059.2,
             highest = 2808,
             buckets = {
                 ["1800-1899"] = 11,
-                ["1900-1999"] = 13,
+                ["1900-1999"] = 12,
                 ["2000-2099"] = 14,
                 ["2100-2199"] = 4,
                 ["2200-2299"] = 4,
@@ -331935,12 +331936,13 @@ PVL_AppHelperPendingSnapshots.rbg = {
             },
         },
         ["HUNTER_SURVIVAL"] = {
-            listedCount = 3,
-            avgListedRating = 2063.7,
-            medianListedRating = 2087,
-            top100Avg = 2063.7,
+            listedCount = 4,
+            avgListedRating = 2041.8,
+            medianListedRating = 2049.0,
+            top100Avg = 2041.8,
             highest = 2093,
             buckets = {
+                ["1900-1999"] = 1,
                 ["2000-2099"] = 3,
             },
         },
@@ -332208,13 +332210,13 @@ PVL_AppHelperPendingSnapshots.rbg = {
             },
         },
         ["WARLOCK_AFFLICTION"] = {
-            listedCount = 29,
-            avgListedRating = 1943.2,
-            medianListedRating = 1909,
-            top100Avg = 1943.2,
+            listedCount = 30,
+            avgListedRating = 1940.3,
+            medianListedRating = 1906.0,
+            top100Avg = 1940.3,
             highest = 2240,
             buckets = {
-                ["1800-1899"] = 12,
+                ["1800-1899"] = 13,
                 ["1900-1999"] = 9,
                 ["2000-2099"] = 4,
                 ["2100-2199"] = 2,
@@ -332233,13 +332235,13 @@ PVL_AppHelperPendingSnapshots.rbg = {
             },
         },
         ["WARLOCK_DESTRUCTION"] = {
-            listedCount = 11,
-            avgListedRating = 1996.3,
-            medianListedRating = 1987,
-            top100Avg = 1996.3,
+            listedCount = 10,
+            avgListedRating = 2010.2,
+            medianListedRating = 1996.0,
+            top100Avg = 2010.2,
             highest = 2294,
             buckets = {
-                ["1800-1899"] = 4,
+                ["1800-1899"] = 3,
                 ["1900-1999"] = 2,
                 ["2000-2099"] = 3,
                 ["2100-2199"] = 1,
@@ -335721,7 +335723,7 @@ PVL_AppHelperPendingSnapshots.rbg = {
         },
         ["illarî-illidan"] = {
             displayName = "Illarî-illidan",
-            specKey = "DRUID_GUARDIAN",
+            specKey = "DRUID_RESTORATION",
             rating = 2508,
             rank = 46,
             wins = 151,
@@ -336036,7 +336038,7 @@ PVL_AppHelperPendingSnapshots.rbg = {
         },
         ["joeyravioli-illidan"] = {
             displayName = "Joeyravioli-illidan",
-            specKey = "WARLOCK_DESTRUCTION",
+            specKey = "WARLOCK_AFFLICTION",
             rating = 1857,
             rank = 819,
             wins = 52,
@@ -339159,7 +339161,7 @@ PVL_AppHelperPendingSnapshots.rbg = {
         },
         ["saxz-wyrmrestaccord"] = {
             displayName = "Saxz-wyrmrest-accord",
-            specKey = "HUNTER_MARKSMANSHIP",
+            specKey = "HUNTER_SURVIVAL",
             rating = 1976,
             rank = 539,
             wins = 51,
@@ -341308,7 +341310,7 @@ PVL_AppHelperPendingSnapshots.shuffle = {
     bracket = "shuffle",
     season = 41,
     snapshotDate = "2026-07-29",
-    generatedAt = "2026-07-29T15:30:26Z",
+    generatedAt = "2026-07-29T16:52:41Z",
     source = "blizzard-api",
     overall = {
         listedCount = 37909,
