@@ -3,8 +3,8 @@
 --- DO NOT EDIT MANUALLY.
 PVL_AppHelperPendingSnapshots = PVL_AppHelperPendingSnapshots or {}
 PVL_AppHelperSyncInfo = {
-    lastSync = 1785325269,
-    generatedAt = "2026-07-29T11:41:09Z",
+    lastSync = 1785331547,
+    generatedAt = "2026-07-29T13:25:47Z",
     region = "US",
     source = "collector",
 }
@@ -15,7 +15,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
     bracket = "arena2v2",
     season = 41,
     snapshotDate = "2026-07-29",
-    generatedAt = "2026-07-29T11:40:57Z",
+    generatedAt = "2026-07-29T13:25:33Z",
     source = "blizzard-api+seramate",
     overall = {
         listedCount = 1000,
@@ -214,9 +214,9 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["WARLOCK"] = {
             listedCount = 43,
-            avgListedRating = 2510.3,
-            medianListedRating = 2485,
-            top100Avg = 2510.3,
+            avgListedRating = 2519.1,
+            medianListedRating = 2491,
+            top100Avg = 2519.1,
             highest = 2809,
             buckets = {
                 ["2400-2499"] = 24,
@@ -596,28 +596,28 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
             },
         },
         ["WARLOCK_AFFLICTION"] = {
-            listedCount = 31,
-            avgListedRating = 2497.6,
-            medianListedRating = 2485,
-            top100Avg = 2497.6,
+            listedCount = 30,
+            avgListedRating = 2487.8,
+            medianListedRating = 2482.5,
+            top100Avg = 2487.8,
             highest = 2809,
             buckets = {
                 ["2400-2499"] = 17,
                 ["2500-2599"] = 12,
-                ["2700-2799"] = 1,
                 ["2800-2899"] = 1,
             },
         },
         ["WARLOCK_DEMONOLOGY"] = {
-            listedCount = 7,
-            avgListedRating = 2500.1,
-            medianListedRating = 2446,
-            top100Avg = 2500.1,
-            highest = 2638,
+            listedCount = 8,
+            avgListedRating = 2536.4,
+            medianListedRating = 2522.5,
+            top100Avg = 2536.4,
+            highest = 2790,
             buckets = {
                 ["2400-2499"] = 4,
                 ["2500-2599"] = 1,
                 ["2600-2699"] = 2,
+                ["2700-2799"] = 1,
             },
         },
         ["WARLOCK_DESTRUCTION"] = {
@@ -9014,7 +9014,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["woopzÿ-tichondrius"] = {
             displayName = "Woopzÿ-tichondrius",
-            specKey = "WARLOCK_AFFLICTION",
+            specKey = "WARLOCK_DEMONOLOGY",
             rating = 2790,
             rank = 16,
             wins = 136,
@@ -9678,7 +9678,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
     bracket = "arena3v3",
     season = 41,
     snapshotDate = "2026-07-29",
-    generatedAt = "2026-07-29T11:41:08Z",
+    generatedAt = "2026-07-29T13:25:46Z",
     source = "blizzard-api+seramate",
     overall = {
         listedCount = 1007,
@@ -9891,9 +9891,9 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["WARLOCK"] = {
             listedCount = 44,
-            avgListedRating = 2729.8,
+            avgListedRating = 2733.1,
             medianListedRating = 2695.5,
-            top100Avg = 2729.8,
+            top100Avg = 2733.1,
             highest = 2990,
             buckets = {
                 ["2600-2699"] = 20,
@@ -10346,27 +10346,27 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
             },
         },
         ["WARLOCK_AFFLICTION"] = {
-            listedCount = 24,
-            avgListedRating = 2731.6,
-            medianListedRating = 2728.0,
-            top100Avg = 2731.6,
+            listedCount = 23,
+            avgListedRating = 2729,
+            medianListedRating = 2727,
+            top100Avg = 2729,
             highest = 2990,
             buckets = {
                 ["2600-2699"] = 8,
-                ["2700-2799"] = 12,
+                ["2700-2799"] = 11,
                 ["2800-2899"] = 2,
                 ["2900-2999"] = 2,
             },
         },
         ["WARLOCK_DEMONOLOGY"] = {
-            listedCount = 8,
-            avgListedRating = 2678.6,
-            medianListedRating = 2675.5,
-            top100Avg = 2678.6,
-            highest = 2749,
+            listedCount = 9,
+            avgListedRating = 2691.2,
+            medianListedRating = 2679,
+            top100Avg = 2691.2,
+            highest = 2792,
             buckets = {
                 ["2600-2699"] = 6,
-                ["2700-2799"] = 2,
+                ["2700-2799"] = 3,
             },
         },
         ["WARLOCK_DESTRUCTION"] = {
@@ -18754,7 +18754,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["woopzÿ-tichondrius"] = {
             displayName = "Woopzÿ-tichondrius",
-            specKey = "WARLOCK_AFFLICTION",
+            specKey = "WARLOCK_DEMONOLOGY",
             rating = 2792,
             rank = 343,
             wins = 207,
@@ -19481,7 +19481,7 @@ PVL_AppHelperPendingSnapshots.blitz = {
     bracket = "blitz",
     season = 41,
     snapshotDate = "2026-07-29",
-    generatedAt = "2026-07-29T11:40:03Z",
+    generatedAt = "2026-07-29T13:24:28Z",
     source = "blizzard-api",
     overall = {
         listedCount = 37397,
@@ -331435,7 +331435,7 @@ PVL_AppHelperPendingSnapshots.rbg = {
     bracket = "rbg",
     season = 41,
     snapshotDate = "2026-07-29",
-    generatedAt = "2026-07-29T11:40:45Z",
+    generatedAt = "2026-07-29T13:25:20Z",
     source = "blizzard-api+seramate",
     overall = {
         listedCount = 1002,
@@ -331526,9 +331526,9 @@ PVL_AppHelperPendingSnapshots.rbg = {
         },
         ["DRUID"] = {
             listedCount = 160,
-            avgListedRating = 2035.7,
-            medianListedRating = 1998.5,
-            top100Avg = 2035.7,
+            avgListedRating = 2034.0,
+            medianListedRating = 2000.8,
+            top100Avg = 2034.0,
             highest = 2794,
             buckets = {
                 ["1800-1899"] = 41,
@@ -331804,13 +331804,13 @@ PVL_AppHelperPendingSnapshots.rbg = {
             },
         },
         ["DRUID_BALANCE"] = {
-            listedCount = 78,
-            avgListedRating = 2090.9,
-            medianListedRating = 2025.5,
-            top100Avg = 2090.9,
+            listedCount = 77,
+            avgListedRating = 2094.3,
+            medianListedRating = 2030,
+            top100Avg = 2094.3,
             highest = 2794,
             buckets = {
-                ["1800-1899"] = 15,
+                ["1800-1899"] = 14,
                 ["1900-1999"] = 19,
                 ["2000-2099"] = 14,
                 ["2100-2199"] = 11,
@@ -331853,13 +331853,13 @@ PVL_AppHelperPendingSnapshots.rbg = {
             },
         },
         ["DRUID_RESTORATION"] = {
-            listedCount = 14,
-            avgListedRating = 1980.4,
-            medianListedRating = 1882.5,
-            top100Avg = 1980.4,
+            listedCount = 15,
+            avgListedRating = 1970.1,
+            medianListedRating = 1881,
+            top100Avg = 1970.1,
             highest = 2289,
             buckets = {
-                ["1800-1899"] = 8,
+                ["1800-1899"] = 9,
                 ["1900-1999"] = 1,
                 ["2000-2099"] = 1,
                 ["2100-2199"] = 1,
@@ -338241,7 +338241,7 @@ PVL_AppHelperPendingSnapshots.rbg = {
         },
         ["pesothematch-ragnaros"] = {
             displayName = "Pesothematch-ragnaros",
-            specKey = "DRUID_BALANCE",
+            specKey = "DRUID_RESTORATION",
             rating = 1826,
             rank = 932,
             wins = 26,
@@ -341317,7 +341317,7 @@ PVL_AppHelperPendingSnapshots.shuffle = {
     bracket = "shuffle",
     season = 41,
     snapshotDate = "2026-07-29",
-    generatedAt = "2026-07-29T11:40:33Z",
+    generatedAt = "2026-07-29T13:25:05Z",
     source = "blizzard-api",
     overall = {
         listedCount = 37907,

@@ -7,7 +7,7 @@ PvPLedgerLadderData.US.arena3v3 = {
     bracket = "arena3v3",
     season = 41,
     snapshotDate = "2026-07-29",
-    generatedAt = "2026-07-29T11:41:08Z",
+    generatedAt = "2026-07-29T13:25:46Z",
     source = "blizzard-api+seramate",
     overall = {
         listedCount = 1007,
@@ -220,9 +220,9 @@ PvPLedgerLadderData.US.arena3v3 = {
         },
         ["WARLOCK"] = {
             listedCount = 44,
-            avgListedRating = 2729.8,
+            avgListedRating = 2733.1,
             medianListedRating = 2695.5,
-            top100Avg = 2729.8,
+            top100Avg = 2733.1,
             highest = 2990,
             buckets = {
                 ["2600-2699"] = 20,
@@ -675,27 +675,27 @@ PvPLedgerLadderData.US.arena3v3 = {
             },
         },
         ["WARLOCK_AFFLICTION"] = {
-            listedCount = 24,
-            avgListedRating = 2731.6,
-            medianListedRating = 2728.0,
-            top100Avg = 2731.6,
+            listedCount = 23,
+            avgListedRating = 2729,
+            medianListedRating = 2727,
+            top100Avg = 2729,
             highest = 2990,
             buckets = {
                 ["2600-2699"] = 8,
-                ["2700-2799"] = 12,
+                ["2700-2799"] = 11,
                 ["2800-2899"] = 2,
                 ["2900-2999"] = 2,
             },
         },
         ["WARLOCK_DEMONOLOGY"] = {
-            listedCount = 8,
-            avgListedRating = 2678.6,
-            medianListedRating = 2675.5,
-            top100Avg = 2678.6,
-            highest = 2749,
+            listedCount = 9,
+            avgListedRating = 2691.2,
+            medianListedRating = 2679,
+            top100Avg = 2691.2,
+            highest = 2792,
             buckets = {
                 ["2600-2699"] = 6,
-                ["2700-2799"] = 2,
+                ["2700-2799"] = 3,
             },
         },
         ["WARLOCK_DESTRUCTION"] = {
@@ -9083,7 +9083,7 @@ PvPLedgerLadderData.US.arena3v3 = {
         },
         ["woopzÿ-tichondrius"] = {
             displayName = "Woopzÿ-tichondrius",
-            specKey = "WARLOCK_AFFLICTION",
+            specKey = "WARLOCK_DEMONOLOGY",
             rating = 2792,
             rank = 343,
             wins = 207,
