@@ -7,7 +7,7 @@ PvPLedgerLadderData.US.arena2v2 = {
     bracket = "arena2v2",
     season = 41,
     snapshotDate = "2026-07-30",
-    generatedAt = "2026-07-30T18:25:45Z",
+    generatedAt = "2026-07-30T20:03:39Z",
     source = "blizzard-api+seramate",
     overall = {
         listedCount = 1002,
@@ -166,9 +166,9 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["PRIEST"] = {
             listedCount = 220,
-            avgListedRating = 2487.6,
+            avgListedRating = 2488.7,
             medianListedRating = 2463.0,
-            top100Avg = 2502.6,
+            top100Avg = 2503.8,
             highest = 2805,
             buckets = {
                 ["2400-2499"] = 142,
@@ -489,27 +489,27 @@ PvPLedgerLadderData.US.arena2v2 = {
             },
         },
         ["PRIEST_HOLY"] = {
-            listedCount = 35,
-            avgListedRating = 2518.3,
-            medianListedRating = 2512,
-            top100Avg = 2518.3,
+            listedCount = 34,
+            avgListedRating = 2518.8,
+            medianListedRating = 2513.0,
+            top100Avg = 2518.8,
             highest = 2745,
             buckets = {
                 ["2400-2499"] = 14,
-                ["2500-2599"] = 16,
+                ["2500-2599"] = 15,
                 ["2600-2699"] = 3,
                 ["2700-2799"] = 2,
             },
         },
         ["PRIEST_SHADOW"] = {
-            listedCount = 13,
-            avgListedRating = 2460.8,
-            medianListedRating = 2444,
-            top100Avg = 2460.8,
+            listedCount = 14,
+            avgListedRating = 2463.8,
+            medianListedRating = 2451.0,
+            top100Avg = 2463.8,
             highest = 2556,
             buckets = {
                 ["2400-2499"] = 10,
-                ["2500-2599"] = 3,
+                ["2500-2599"] = 4,
             },
         },
         ["ROGUE_ASSASSINATION"] = {
@@ -672,7 +672,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["abouna-kelthuzad"] = {
             displayName = "Abouna-kelthuzad",
-            specKey = "PRIEST_HOLY",
+            specKey = "PRIEST_SHADOW",
             rating = 2503,
             rank = 330,
             wins = 287,
