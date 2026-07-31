@@ -7,7 +7,7 @@ PvPLedgerLadderData.US.rbg = {
     bracket = "rbg",
     season = 41,
     snapshotDate = "2026-07-31",
-    generatedAt = "2026-07-31T20:42:32Z",
+    generatedAt = "2026-07-31T21:48:32Z",
     source = "blizzard-api+seramate",
     overall = {
         listedCount = 1002,
@@ -99,9 +99,9 @@ PvPLedgerLadderData.US.rbg = {
         },
         ["DRUID"] = {
             listedCount = 158,
-            avgListedRating = 2045.9,
+            avgListedRating = 2044.5,
             medianListedRating = 2012.0,
-            top100Avg = 2045.9,
+            top100Avg = 2044.5,
             highest = 2799,
             buckets = {
                 ["1800-1899"] = 40,
@@ -380,10 +380,10 @@ PvPLedgerLadderData.US.rbg = {
             },
         },
         ["DRUID_BALANCE"] = {
-            listedCount = 79,
-            avgListedRating = 2093.7,
-            medianListedRating = 2035,
-            top100Avg = 2093.7,
+            listedCount = 80,
+            avgListedRating = 2099.8,
+            medianListedRating = 2035.0,
+            top100Avg = 2099.8,
             highest = 2799,
             buckets = {
                 ["1800-1899"] = 14,
@@ -393,7 +393,7 @@ PvPLedgerLadderData.US.rbg = {
                 ["2200-2299"] = 6,
                 ["2300-2399"] = 6,
                 ["2400-2499"] = 1,
-                ["2500-2599"] = 4,
+                ["2500-2599"] = 5,
                 ["2600-2699"] = 1,
                 ["2700-2799"] = 2,
             },
@@ -414,10 +414,10 @@ PvPLedgerLadderData.US.rbg = {
             },
         },
         ["DRUID_GUARDIAN"] = {
-            listedCount = 44,
-            avgListedRating = 2075.1,
-            medianListedRating = 2042.0,
-            top100Avg = 2075.1,
+            listedCount = 43,
+            avgListedRating = 2063.4,
+            medianListedRating = 2041,
+            top100Avg = 2063.4,
             highest = 2762,
             buckets = {
                 ["1800-1899"] = 11,
@@ -426,7 +426,7 @@ PvPLedgerLadderData.US.rbg = {
                 ["2100-2199"] = 8,
                 ["2200-2299"] = 4,
                 ["2300-2399"] = 2,
-                ["2500-2599"] = 2,
+                ["2500-2599"] = 1,
                 ["2700-2799"] = 1,
             },
         },
@@ -2945,7 +2945,7 @@ PvPLedgerLadderData.US.rbg = {
         },
         ["druizzy-illidan"] = {
             displayName = "Druizzy-illidan",
-            specKey = "DRUID_GUARDIAN",
+            specKey = "DRUID_BALANCE",
             rating = 2580,
             rank = 30,
             wins = 97,
