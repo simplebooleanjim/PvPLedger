@@ -7,7 +7,7 @@ PvPLedgerLadderData.US.rbg = {
     bracket = "rbg",
     season = 41,
     snapshotDate = "2026-07-31",
-    generatedAt = "2026-07-31T06:44:15Z",
+    generatedAt = "2026-07-31T09:34:35Z",
     source = "blizzard-api+seramate",
     overall = {
         listedCount = 1002,
@@ -39,7 +39,7 @@ PvPLedgerLadderData.US.rbg = {
             ["2700-2799"] = 10,
             ["2800-2899"] = 4,
         },
-        ratedPopulation = 3650,
+        ratedPopulation = 3648,
         titleCutoffs = {
             {
                 pct = 0.1,
@@ -82,13 +82,13 @@ PvPLedgerLadderData.US.rbg = {
             },
         },
         ["DEMONHUNTER"] = {
-            listedCount = 48,
-            avgListedRating = 2030.4,
+            listedCount = 47,
+            avgListedRating = 2032.8,
             medianListedRating = 1999,
-            top100Avg = 2030.4,
+            top100Avg = 2032.8,
             highest = 2490,
             buckets = {
-                ["1800-1899"] = 17,
+                ["1800-1899"] = 16,
                 ["1900-1999"] = 11,
                 ["2000-2099"] = 6,
                 ["2100-2199"] = 4,
@@ -99,14 +99,14 @@ PvPLedgerLadderData.US.rbg = {
         },
         ["DRUID"] = {
             listedCount = 158,
-            avgListedRating = 2045.5,
-            medianListedRating = 2003.2,
-            top100Avg = 2045.5,
+            avgListedRating = 2042.4,
+            medianListedRating = 2002.0,
+            top100Avg = 2042.4,
             highest = 2799,
             buckets = {
-                ["1800-1899"] = 40,
+                ["1800-1899"] = 41,
                 ["1900-1999"] = 29,
-                ["2000-2099"] = 31,
+                ["2000-2099"] = 30,
                 ["2100-2199"] = 21,
                 ["2200-2299"] = 16,
                 ["2300-2399"] = 9,
@@ -355,13 +355,13 @@ PvPLedgerLadderData.US.rbg = {
             },
         },
         ["DEMONHUNTER_HAVOC"] = {
-            listedCount = 24,
-            avgListedRating = 1974.3,
-            medianListedRating = 1901.5,
-            top100Avg = 1974.3,
+            listedCount = 23,
+            avgListedRating = 1981.4,
+            medianListedRating = 1912,
+            top100Avg = 1981.4,
             highest = 2325,
             buckets = {
-                ["1800-1899"] = 12,
+                ["1800-1899"] = 11,
                 ["1900-1999"] = 4,
                 ["2000-2099"] = 3,
                 ["2100-2199"] = 1,
@@ -381,15 +381,15 @@ PvPLedgerLadderData.US.rbg = {
             },
         },
         ["DRUID_BALANCE"] = {
-            listedCount = 79,
-            avgListedRating = 2092.6,
-            medianListedRating = 2035,
-            top100Avg = 2092.6,
+            listedCount = 78,
+            avgListedRating = 2093.1,
+            medianListedRating = 2032.5,
+            top100Avg = 2093.1,
             highest = 2799,
             buckets = {
                 ["1800-1899"] = 14,
                 ["1900-1999"] = 18,
-                ["2000-2099"] = 17,
+                ["2000-2099"] = 16,
                 ["2100-2199"] = 10,
                 ["2200-2299"] = 6,
                 ["2300-2399"] = 6,
@@ -432,13 +432,13 @@ PvPLedgerLadderData.US.rbg = {
             },
         },
         ["DRUID_RESTORATION"] = {
-            listedCount = 14,
-            avgListedRating = 2003.2,
-            medianListedRating = 1882.5,
-            top100Avg = 2003.2,
+            listedCount = 15,
+            avgListedRating = 1990.4,
+            medianListedRating = 1881,
+            top100Avg = 1990.4,
             highest = 2508,
             buckets = {
-                ["1800-1899"] = 8,
+                ["1800-1899"] = 9,
                 ["2000-2099"] = 2,
                 ["2100-2199"] = 1,
                 ["2200-2299"] = 2,
@@ -1095,7 +1095,7 @@ PvPLedgerLadderData.US.rbg = {
             rating = 1936,
             rank = 614,
             wins = 39,
-            losses = 34,
+            losses = 36,
             faction = "ALLIANCE",
         },
         ["angelpuppy-lightbringer"] = {
@@ -2427,7 +2427,7 @@ PvPLedgerLadderData.US.rbg = {
             rating = 2182,
             rank = 232,
             wins = 150,
-            losses = 125,
+            losses = 126,
             faction = "HORDE",
         },
         ["cursesoul-area52"] = {
@@ -3044,7 +3044,7 @@ PvPLedgerLadderData.US.rbg = {
         },
         ["eightozpatty-tichondrius"] = {
             displayName = "Eightozpatty-tichondrius",
-            specKey = "",
+            specKey = "DRUID_RESTORATION",
             rating = 1811,
             rank = 984,
             wins = 30,
@@ -3134,7 +3134,7 @@ PvPLedgerLadderData.US.rbg = {
         },
         ["entropics-tichondrius"] = {
             displayName = "Entropics-tichondrius",
-            specKey = "DEMONHUNTER_HAVOC",
+            specKey = "",
             rating = 1811,
             rank = 984,
             wins = 32,
@@ -3804,7 +3804,7 @@ PvPLedgerLadderData.US.rbg = {
             rating = 2027,
             rank = 437,
             wins = 33,
-            losses = 25,
+            losses = 26,
             faction = "HORDE",
         },
         ["goldtat-laughingskull"] = {
@@ -4596,7 +4596,7 @@ PvPLedgerLadderData.US.rbg = {
             rating = 2204,
             rank = 209,
             wins = 69,
-            losses = 60,
+            losses = 61,
             faction = "ALLIANCE",
         },
         ["jesseyquick-tichondrius"] = {
@@ -4902,7 +4902,7 @@ PvPLedgerLadderData.US.rbg = {
             rating = 2337,
             rank = 94,
             wins = 77,
-            losses = 56,
+            losses = 57,
             faction = "HORDE",
         },
         ["kimmiroa-illidan"] = {
@@ -5055,7 +5055,7 @@ PvPLedgerLadderData.US.rbg = {
             rating = 2233,
             rank = 180,
             wins = 93,
-            losses = 65,
+            losses = 66,
             faction = "ALLIANCE",
         },
         ["kyrpawz-ragnaros"] = {
@@ -5064,7 +5064,7 @@ PvPLedgerLadderData.US.rbg = {
             rating = 1897,
             rank = 705,
             wins = 25,
-            losses = 9,
+            losses = 10,
             faction = "ALLIANCE",
         },
         ["káelian-drakkari"] = {
@@ -6252,7 +6252,7 @@ PvPLedgerLadderData.US.rbg = {
             rating = 2407,
             rank = 68,
             wins = 123,
-            losses = 74,
+            losses = 75,
             faction = "ALLIANCE",
         },
         ["neverflop-tichondrius"] = {
@@ -6648,7 +6648,7 @@ PvPLedgerLadderData.US.rbg = {
             rating = 1874,
             rank = 774,
             wins = 36,
-            losses = 50,
+            losses = 52,
             faction = "ALLIANCE",
         },
         ["ozsandlbs-tichondrius"] = {
@@ -7476,7 +7476,7 @@ PvPLedgerLadderData.US.rbg = {
             rating = 2446,
             rank = 60,
             wins = 85,
-            losses = 40,
+            losses = 41,
             faction = "HORDE",
         },
         ["romano-bleedinghollow"] = {
@@ -8075,7 +8075,7 @@ PvPLedgerLadderData.US.rbg = {
         },
         ["slickxoxo-arthas"] = {
             displayName = "Slickxoxo-arthas",
-            specKey = "DRUID_BALANCE",
+            specKey = "",
             rating = 2054,
             rank = 384,
             wins = 31,
@@ -8592,7 +8592,7 @@ PvPLedgerLadderData.US.rbg = {
             rating = 2194,
             rank = 218,
             wins = 50,
-            losses = 36,
+            losses = 37,
             faction = "HORDE",
         },
         ["sòdead-sargeras"] = {
