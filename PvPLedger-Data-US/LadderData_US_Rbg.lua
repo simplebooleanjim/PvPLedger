@@ -7,7 +7,7 @@ PvPLedgerLadderData.US.rbg = {
     bracket = "rbg",
     season = 41,
     snapshotDate = "2026-08-01",
-    generatedAt = "2026-08-01T14:45:37Z",
+    generatedAt = "2026-08-01T15:45:56Z",
     source = "blizzard-api+seramate",
     overall = {
         listedCount = 1003,
@@ -227,9 +227,9 @@ PvPLedgerLadderData.US.rbg = {
         },
         ["ROGUE"] = {
             listedCount = 86,
-            avgListedRating = 2095.8,
+            avgListedRating = 2105.2,
             medianListedRating = 2074.5,
-            top100Avg = 2095.8,
+            top100Avg = 2105.2,
             highest = 2820,
             buckets = {
                 ["1800-1899"] = 18,
@@ -718,19 +718,20 @@ PvPLedgerLadderData.US.rbg = {
         },
         ["ROGUE_ASSASSINATION"] = {
             listedCount = 16,
-            avgListedRating = 2136.4,
+            avgListedRating = 2173.6,
             medianListedRating = 2108.5,
-            top100Avg = 2136.4,
-            highest = 2780,
+            top100Avg = 2173.6,
+            highest = 2820,
             buckets = {
                 ["1800-1899"] = 3,
                 ["1900-1999"] = 3,
                 ["2000-2099"] = 2,
                 ["2100-2199"] = 3,
-                ["2200-2299"] = 2,
+                ["2200-2299"] = 1,
                 ["2400-2499"] = 1,
                 ["2500-2599"] = 1,
                 ["2700-2799"] = 1,
+                ["2800-2899"] = 1,
             },
         },
         ["ROGUE_OUTLAW"] = {
@@ -746,20 +747,19 @@ PvPLedgerLadderData.US.rbg = {
         },
         ["ROGUE_SUBTLETY"] = {
             listedCount = 68,
-            avgListedRating = 2104.4,
+            avgListedRating = 2095.6,
             medianListedRating = 2074.5,
-            top100Avg = 2104.4,
-            highest = 2820,
+            top100Avg = 2095.6,
+            highest = 2627,
             buckets = {
                 ["1800-1899"] = 14,
                 ["1900-1999"] = 14,
                 ["2000-2099"] = 9,
                 ["2100-2199"] = 12,
-                ["2200-2299"] = 8,
+                ["2200-2299"] = 9,
                 ["2300-2399"] = 3,
                 ["2500-2599"] = 6,
                 ["2600-2699"] = 1,
-                ["2800-2899"] = 1,
             },
         },
         ["SHAMAN_ELEMENTAL"] = {
@@ -7118,7 +7118,7 @@ PvPLedgerLadderData.US.rbg = {
         },
         ["priley-moonguard"] = {
             displayName = "Priley-moon-guard",
-            specKey = "ROGUE_ASSASSINATION",
+            specKey = "ROGUE_SUBTLETY",
             rating = 2225,
             rank = 195,
             wins = 90,
@@ -9881,7 +9881,7 @@ PvPLedgerLadderData.US.rbg = {
         },
         ["ñìghtmare-kelthuzad"] = {
             displayName = "Ñìghtmare-kelthuzad",
-            specKey = "ROGUE_SUBTLETY",
+            specKey = "ROGUE_ASSASSINATION",
             rating = 2820,
             rank = 1,
             wins = 120,
