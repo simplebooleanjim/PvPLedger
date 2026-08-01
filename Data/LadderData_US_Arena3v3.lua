@@ -7,7 +7,7 @@ PvPLedgerLadderData.US.arena3v3 = {
     bracket = "arena3v3",
     season = 41,
     snapshotDate = "2026-08-01",
-    generatedAt = "2026-08-01T11:47:55Z",
+    generatedAt = "2026-08-01T13:21:28Z",
     source = "blizzard-api+seramate",
     overall = {
         listedCount = 1007,
@@ -148,13 +148,13 @@ PvPLedgerLadderData.US.arena3v3 = {
             },
         },
         ["MONK"] = {
-            listedCount = 104,
-            avgListedRating = 2722.7,
+            listedCount = 105,
+            avgListedRating = 2722.5,
             medianListedRating = 2705.5,
-            top100Avg = 2722.7,
+            top100Avg = 2722.5,
             highest = 3165,
             buckets = {
-                ["2600-2699"] = 42,
+                ["2600-2699"] = 43,
                 ["2700-2799"] = 29,
                 ["2800-2899"] = 12,
                 ["2900-2999"] = 8,
@@ -490,20 +490,20 @@ PvPLedgerLadderData.US.arena3v3 = {
             },
         },
         ["MONK_BREWMASTER"] = {
-            listedCount = 1,
-            avgListedRating = 2641,
-            medianListedRating = 2641,
-            top100Avg = 2641,
+            listedCount = 2,
+            avgListedRating = 2640.5,
+            medianListedRating = 2640.5,
+            top100Avg = 2640.5,
             highest = 2641,
             buckets = {
-                ["2600-2699"] = 1,
+                ["2600-2699"] = 2,
             },
         },
         ["MONK_MISTWEAVER"] = {
             listedCount = 77,
-            avgListedRating = 2776.9,
+            avgListedRating = 2776.6,
             medianListedRating = 2716,
-            top100Avg = 2776.9,
+            top100Avg = 2776.6,
             highest = 3165,
             buckets = {
                 ["2600-2699"] = 30,
@@ -6124,7 +6124,7 @@ PvPLedgerLadderData.US.arena3v3 = {
         },
         ["pangdinge-tichondrius"] = {
             displayName = "Pangdinge-tichondrius",
-            specKey = "MONK_MISTWEAVER",
+            specKey = "MONK_BREWMASTER",
             rating = 2640,
             rank = 836,
             wins = 168,
@@ -9544,7 +9544,7 @@ PvPLedgerLadderData.US.arena3v3 = {
         },
         ["zerommr-tichondrius"] = {
             displayName = "Zerommr-tichondrius",
-            specKey = "",
+            specKey = "MONK_MISTWEAVER",
             rating = 2614,
             rank = 987,
             wins = 124,
