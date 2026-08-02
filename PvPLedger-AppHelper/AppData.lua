@@ -3,8 +3,8 @@
 --- DO NOT EDIT MANUALLY.
 PVL_AppHelperPendingSnapshots = PVL_AppHelperPendingSnapshots or {}
 PVL_AppHelperSyncInfo = {
-    lastSync = 1785661200,
-    generatedAt = "2026-08-02T09:00:00Z",
+    lastSync = 1785667628,
+    generatedAt = "2026-08-02T10:47:08Z",
     region = "US",
     source = "collector",
 }
@@ -15,7 +15,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
     bracket = "arena2v2",
     season = 41,
     snapshotDate = "2026-08-02",
-    generatedAt = "2026-08-02T08:59:48Z",
+    generatedAt = "2026-08-02T10:46:57Z",
     source = "blizzard-api+seramate",
     overall = {
         listedCount = 1000,
@@ -9689,7 +9689,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
     bracket = "arena3v3",
     season = 41,
     snapshotDate = "2026-08-02",
-    generatedAt = "2026-08-02T08:59:59Z",
+    generatedAt = "2026-08-02T10:47:07Z",
     source = "blizzard-api+seramate",
     overall = {
         listedCount = 1001,
@@ -9802,9 +9802,9 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["HUNTER"] = {
             listedCount = 56,
-            avgListedRating = 2764.9,
-            medianListedRating = 2729,
-            top100Avg = 2764.9,
+            avgListedRating = 2763.9,
+            medianListedRating = 2727.0,
+            top100Avg = 2763.9,
             highest = 3082,
             buckets = {
                 ["2600-2699"] = 20,
@@ -9830,13 +9830,13 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
             },
         },
         ["MONK"] = {
-            listedCount = 104,
-            avgListedRating = 2731.8,
-            medianListedRating = 2725,
-            top100Avg = 2731.8,
+            listedCount = 105,
+            avgListedRating = 2731.1,
+            medianListedRating = 2721.5,
+            top100Avg = 2731.1,
             highest = 3150,
             buckets = {
-                ["2600-2699"] = 36,
+                ["2600-2699"] = 37,
                 ["2700-2799"] = 33,
                 ["2800-2899"] = 13,
                 ["2900-2999"] = 8,
@@ -10082,13 +10082,13 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
             },
         },
         ["HUNTER_BEASTMASTERY"] = {
-            listedCount = 11,
-            avgListedRating = 2741.1,
-            medianListedRating = 2704,
-            top100Avg = 2741.1,
+            listedCount = 10,
+            avgListedRating = 2752.5,
+            medianListedRating = 2727.0,
+            top100Avg = 2752.5,
             highest = 2875,
             buckets = {
-                ["2600-2699"] = 3,
+                ["2600-2699"] = 2,
                 ["2700-2799"] = 4,
                 ["2800-2899"] = 4,
             },
@@ -10108,13 +10108,13 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
             },
         },
         ["HUNTER_SURVIVAL"] = {
-            listedCount = 8,
-            avgListedRating = 2756.6,
-            medianListedRating = 2746.0,
-            top100Avg = 2756.6,
+            listedCount = 9,
+            avgListedRating = 2742.2,
+            medianListedRating = 2724,
+            top100Avg = 2742.2,
             highest = 3019,
             buckets = {
-                ["2600-2699"] = 3,
+                ["2600-2699"] = 4,
                 ["2700-2799"] = 4,
                 ["3000-3099"] = 1,
             },
@@ -10172,13 +10172,13 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
             },
         },
         ["MONK_MISTWEAVER"] = {
-            listedCount = 77,
-            avgListedRating = 2788.3,
-            medianListedRating = 2725,
-            top100Avg = 2788.3,
+            listedCount = 78,
+            avgListedRating = 2786.3,
+            medianListedRating = 2721.5,
+            top100Avg = 2786.3,
             highest = 3150,
             buckets = {
-                ["2600-2699"] = 25,
+                ["2600-2699"] = 26,
                 ["2700-2799"] = 26,
                 ["2800-2899"] = 7,
                 ["2900-2999"] = 6,
@@ -11989,7 +11989,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["destrumz-zuljin"] = {
             displayName = "Destrumz-zuljin",
-            specKey = "HUNTER_BEASTMASTERY",
+            specKey = "HUNTER_SURVIVAL",
             rating = 2627,
             rank = 937,
             wins = 161,
@@ -12214,7 +12214,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["doodleo-illidan"] = {
             displayName = "Doodleo-illidan",
-            specKey = "",
+            specKey = "MONK_MISTWEAVER",
             rating = 2634,
             rank = 892,
             wins = 98,
@@ -19448,7 +19448,7 @@ PVL_AppHelperPendingSnapshots.blitz = {
     bracket = "blitz",
     season = 41,
     snapshotDate = "2026-08-02",
-    generatedAt = "2026-08-02T08:59:02Z",
+    generatedAt = "2026-08-02T10:46:05Z",
     source = "blizzard-api",
     overall = {
         listedCount = 37523,
@@ -332531,7 +332531,7 @@ PVL_AppHelperPendingSnapshots.rbg = {
     bracket = "rbg",
     season = 41,
     snapshotDate = "2026-08-02",
-    generatedAt = "2026-08-02T08:59:35Z",
+    generatedAt = "2026-08-02T10:46:46Z",
     source = "blizzard-api+seramate",
     overall = {
         listedCount = 1000,
@@ -342410,7 +342410,7 @@ PVL_AppHelperPendingSnapshots.shuffle = {
     bracket = "shuffle",
     season = 41,
     snapshotDate = "2026-08-02",
-    generatedAt = "2026-08-02T08:59:23Z",
+    generatedAt = "2026-08-02T10:46:34Z",
     source = "blizzard-api",
     overall = {
         listedCount = 38008,
