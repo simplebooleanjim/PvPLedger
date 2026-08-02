@@ -7,7 +7,7 @@ PvPLedgerLadderData.US.arena3v3 = {
     bracket = "arena3v3",
     season = 41,
     snapshotDate = "2026-08-02",
-    generatedAt = "2026-08-02T20:56:22Z",
+    generatedAt = "2026-08-02T21:56:56Z",
     source = "blizzard-api+seramate",
     overall = {
         listedCount = 1002,
@@ -120,9 +120,9 @@ PvPLedgerLadderData.US.arena3v3 = {
         },
         ["HUNTER"] = {
             listedCount = 56,
-            avgListedRating = 2760.7,
-            medianListedRating = 2724,
-            top100Avg = 2760.7,
+            avgListedRating = 2761.4,
+            medianListedRating = 2733.0,
+            top100Avg = 2761.4,
             highest = 3082,
             buckets = {
                 ["2600-2699"] = 20,
@@ -410,13 +410,13 @@ PvPLedgerLadderData.US.arena3v3 = {
             },
         },
         ["HUNTER_BEASTMASTERY"] = {
-            listedCount = 9,
-            avgListedRating = 2738.9,
-            medianListedRating = 2704,
-            top100Avg = 2738.9,
+            listedCount = 10,
+            avgListedRating = 2732.2,
+            medianListedRating = 2702.5,
+            top100Avg = 2732.2,
             highest = 2838,
             buckets = {
-                ["2600-2699"] = 2,
+                ["2600-2699"] = 3,
                 ["2700-2799"] = 4,
                 ["2800-2899"] = 3,
             },
@@ -436,13 +436,13 @@ PvPLedgerLadderData.US.arena3v3 = {
             },
         },
         ["HUNTER_SURVIVAL"] = {
-            listedCount = 9,
-            avgListedRating = 2743.7,
-            medianListedRating = 2724,
-            top100Avg = 2743.7,
+            listedCount = 8,
+            avgListedRating = 2752.6,
+            medianListedRating = 2746.0,
+            top100Avg = 2752.6,
             highest = 3019,
             buckets = {
-                ["2600-2699"] = 4,
+                ["2600-2699"] = 3,
                 ["2700-2799"] = 4,
                 ["3000-3099"] = 1,
             },
@@ -8195,7 +8195,7 @@ PvPLedgerLadderData.US.arena3v3 = {
         },
         ["toddmolovski-frostmourne"] = {
             displayName = "Toddmolovski-frostmourne",
-            specKey = "HUNTER_SURVIVAL",
+            specKey = "HUNTER_BEASTMASTERY",
             rating = 2672,
             rank = 714,
             wins = 658,

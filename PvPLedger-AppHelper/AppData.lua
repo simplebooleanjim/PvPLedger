@@ -3,8 +3,8 @@
 --- DO NOT EDIT MANUALLY.
 PVL_AppHelperPendingSnapshots = PVL_AppHelperPendingSnapshots or {}
 PVL_AppHelperSyncInfo = {
-    lastSync = 1785704183,
-    generatedAt = "2026-08-02T20:56:23Z",
+    lastSync = 1785707818,
+    generatedAt = "2026-08-02T21:56:58Z",
     region = "US",
     source = "collector",
 }
@@ -15,7 +15,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
     bracket = "arena2v2",
     season = 41,
     snapshotDate = "2026-08-02",
-    generatedAt = "2026-08-02T20:56:10Z",
+    generatedAt = "2026-08-02T21:56:46Z",
     source = "blizzard-api+seramate",
     overall = {
         listedCount = 1011,
@@ -120,9 +120,9 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["HUNTER"] = {
             listedCount = 74,
-            avgListedRating = 2486.2,
-            medianListedRating = 2457.5,
-            top100Avg = 2486.2,
+            avgListedRating = 2485.1,
+            medianListedRating = 2458,
+            top100Avg = 2485.1,
             highest = 2904,
             buckets = {
                 ["2400-2499"] = 50,
@@ -350,13 +350,13 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
             },
         },
         ["HUNTER_BEASTMASTERY"] = {
-            listedCount = 46,
-            avgListedRating = 2511.0,
-            medianListedRating = 2457.5,
-            top100Avg = 2511.0,
+            listedCount = 47,
+            avgListedRating = 2510.7,
+            medianListedRating = 2458,
+            top100Avg = 2510.7,
             highest = 2904,
             buckets = {
-                ["2400-2499"] = 30,
+                ["2400-2499"] = 31,
                 ["2500-2599"] = 6,
                 ["2600-2699"] = 4,
                 ["2700-2799"] = 5,
@@ -376,13 +376,13 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
             },
         },
         ["HUNTER_SURVIVAL"] = {
-            listedCount = 15,
-            avgListedRating = 2456.5,
-            medianListedRating = 2436,
-            top100Avg = 2456.5,
+            listedCount = 14,
+            avgListedRating = 2453.7,
+            medianListedRating = 2432.5,
+            top100Avg = 2453.7,
             highest = 2588,
             buckets = {
-                ["2400-2499"] = 13,
+                ["2400-2499"] = 12,
                 ["2500-2599"] = 2,
             },
         },
@@ -8414,7 +8414,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["toddmolovski-frostmourne"] = {
             displayName = "Toddmolovski-frostmourne",
-            specKey = "HUNTER_SURVIVAL",
+            specKey = "HUNTER_BEASTMASTERY",
             rating = 2496,
             rank = 392,
             wins = 162,
@@ -9789,7 +9789,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
     bracket = "arena3v3",
     season = 41,
     snapshotDate = "2026-08-02",
-    generatedAt = "2026-08-02T20:56:22Z",
+    generatedAt = "2026-08-02T21:56:56Z",
     source = "blizzard-api+seramate",
     overall = {
         listedCount = 1002,
@@ -9902,9 +9902,9 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["HUNTER"] = {
             listedCount = 56,
-            avgListedRating = 2760.7,
-            medianListedRating = 2724,
-            top100Avg = 2760.7,
+            avgListedRating = 2761.4,
+            medianListedRating = 2733.0,
+            top100Avg = 2761.4,
             highest = 3082,
             buckets = {
                 ["2600-2699"] = 20,
@@ -10192,13 +10192,13 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
             },
         },
         ["HUNTER_BEASTMASTERY"] = {
-            listedCount = 9,
-            avgListedRating = 2738.9,
-            medianListedRating = 2704,
-            top100Avg = 2738.9,
+            listedCount = 10,
+            avgListedRating = 2732.2,
+            medianListedRating = 2702.5,
+            top100Avg = 2732.2,
             highest = 2838,
             buckets = {
-                ["2600-2699"] = 2,
+                ["2600-2699"] = 3,
                 ["2700-2799"] = 4,
                 ["2800-2899"] = 3,
             },
@@ -10218,13 +10218,13 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
             },
         },
         ["HUNTER_SURVIVAL"] = {
-            listedCount = 9,
-            avgListedRating = 2743.7,
-            medianListedRating = 2724,
-            top100Avg = 2743.7,
+            listedCount = 8,
+            avgListedRating = 2752.6,
+            medianListedRating = 2746.0,
+            top100Avg = 2752.6,
             highest = 3019,
             buckets = {
-                ["2600-2699"] = 4,
+                ["2600-2699"] = 3,
                 ["2700-2799"] = 4,
                 ["3000-3099"] = 1,
             },
@@ -17977,7 +17977,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["toddmolovski-frostmourne"] = {
             displayName = "Toddmolovski-frostmourne",
-            specKey = "HUNTER_SURVIVAL",
+            specKey = "HUNTER_BEASTMASTERY",
             rating = 2672,
             rank = 714,
             wins = 658,
@@ -19577,7 +19577,7 @@ PVL_AppHelperPendingSnapshots.blitz = {
     bracket = "blitz",
     season = 41,
     snapshotDate = "2026-08-02",
-    generatedAt = "2026-08-02T20:55:25Z",
+    generatedAt = "2026-08-02T21:56:04Z",
     source = "blizzard-api",
     overall = {
         listedCount = 37549,
@@ -332903,7 +332903,7 @@ PVL_AppHelperPendingSnapshots.rbg = {
     bracket = "rbg",
     season = 41,
     snapshotDate = "2026-08-02",
-    generatedAt = "2026-08-02T20:55:59Z",
+    generatedAt = "2026-08-02T21:56:34Z",
     source = "blizzard-api+seramate",
     overall = {
         listedCount = 1000,
@@ -342782,7 +342782,7 @@ PVL_AppHelperPendingSnapshots.shuffle = {
     bracket = "shuffle",
     season = 41,
     snapshotDate = "2026-08-02",
-    generatedAt = "2026-08-02T20:55:46Z",
+    generatedAt = "2026-08-02T21:56:22Z",
     source = "blizzard-api",
     overall = {
         listedCount = 38005,
