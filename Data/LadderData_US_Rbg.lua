@@ -7,7 +7,7 @@ PvPLedgerLadderData.US.rbg = {
     bracket = "rbg",
     season = 41,
     snapshotDate = "2026-08-02",
-    generatedAt = "2026-08-02T18:30:13Z",
+    generatedAt = "2026-08-02T19:46:19Z",
     source = "blizzard-api+seramate",
     overall = {
         listedCount = 1000,
@@ -247,9 +247,9 @@ PvPLedgerLadderData.US.rbg = {
         },
         ["SHAMAN"] = {
             listedCount = 29,
-            avgListedRating = 2027.0,
-            medianListedRating = 2005,
-            top100Avg = 2027.0,
+            avgListedRating = 2038.9,
+            medianListedRating = 2002.5,
+            top100Avg = 2038.9,
             highest = 2816,
             buckets = {
                 ["1800-1899"] = 9,
@@ -778,13 +778,13 @@ PvPLedgerLadderData.US.rbg = {
             },
         },
         ["SHAMAN_ENHANCEMENT"] = {
-            listedCount = 15,
-            avgListedRating = 2023.3,
-            medianListedRating = 2005,
-            top100Avg = 2023.3,
+            listedCount = 16,
+            avgListedRating = 2012.1,
+            medianListedRating = 2002.5,
+            top100Avg = 2012.1,
             highest = 2492,
             buckets = {
-                ["1800-1899"] = 6,
+                ["1800-1899"] = 7,
                 ["2000-2099"] = 5,
                 ["2100-2199"] = 1,
                 ["2200-2299"] = 2,
@@ -792,13 +792,12 @@ PvPLedgerLadderData.US.rbg = {
             },
         },
         ["SHAMAN_RESTORATION"] = {
-            listedCount = 3,
-            avgListedRating = 1938.7,
-            medianListedRating = 1968,
-            top100Avg = 1938.7,
+            listedCount = 2,
+            avgListedRating = 1985.5,
+            medianListedRating = 1985.5,
+            top100Avg = 1985.5,
             highest = 2003,
             buckets = {
-                ["1800-1899"] = 1,
                 ["1900-1999"] = 1,
                 ["2000-2099"] = 1,
             },
@@ -9016,7 +9015,7 @@ PvPLedgerLadderData.US.rbg = {
         },
         ["tótem-ragnaros"] = {
             displayName = "Tótem-ragnaros",
-            specKey = "SHAMAN_RESTORATION",
+            specKey = "SHAMAN_ENHANCEMENT",
             rating = 1845,
             rank = 880,
             wins = 29,
