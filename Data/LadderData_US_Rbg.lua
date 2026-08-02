@@ -7,7 +7,7 @@ PvPLedgerLadderData.US.rbg = {
     bracket = "rbg",
     season = 41,
     snapshotDate = "2026-08-02",
-    generatedAt = "2026-08-02T15:02:41Z",
+    generatedAt = "2026-08-02T16:13:18Z",
     source = "blizzard-api+seramate",
     overall = {
         listedCount = 1000,
@@ -98,10 +98,10 @@ PvPLedgerLadderData.US.rbg = {
             },
         },
         ["DRUID"] = {
-            listedCount = 161,
-            avgListedRating = 2055.0,
+            listedCount = 160,
+            avgListedRating = 2053.2,
             medianListedRating = 2021.8,
-            top100Avg = 2055.0,
+            top100Avg = 2053.2,
             highest = 2799,
             buckets = {
                 ["1800-1899"] = 39,
@@ -109,7 +109,7 @@ PvPLedgerLadderData.US.rbg = {
                 ["2000-2099"] = 30,
                 ["2100-2199"] = 21,
                 ["2200-2299"] = 17,
-                ["2300-2399"] = 9,
+                ["2300-2399"] = 8,
                 ["2400-2499"] = 1,
                 ["2500-2599"] = 6,
                 ["2600-2699"] = 2,
@@ -414,10 +414,10 @@ PvPLedgerLadderData.US.rbg = {
             },
         },
         ["DRUID_GUARDIAN"] = {
-            listedCount = 40,
-            avgListedRating = 2029.9,
-            medianListedRating = 2022.0,
-            top100Avg = 2029.9,
+            listedCount = 39,
+            avgListedRating = 2022.7,
+            medianListedRating = 2022,
+            top100Avg = 2022.7,
             highest = 2325,
             buckets = {
                 ["1800-1899"] = 9,
@@ -425,7 +425,7 @@ PvPLedgerLadderData.US.rbg = {
                 ["2000-2099"] = 9,
                 ["2100-2199"] = 7,
                 ["2200-2299"] = 4,
-                ["2300-2399"] = 2,
+                ["2300-2399"] = 1,
             },
         },
         ["DRUID_RESTORATION"] = {
@@ -4533,7 +4533,7 @@ PvPLedgerLadderData.US.rbg = {
         },
         ["jeff-warsong"] = {
             displayName = "Jeff-warsong",
-            specKey = "DRUID_GUARDIAN",
+            specKey = "",
             rating = 2313,
             rank = 116,
             wins = 84,
