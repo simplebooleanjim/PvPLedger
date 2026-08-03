@@ -7,7 +7,7 @@ PvPLedgerLadderData.US.arena3v3 = {
     bracket = "arena3v3",
     season = 41,
     snapshotDate = "2026-08-03",
-    generatedAt = "2026-08-03T18:05:52Z",
+    generatedAt = "2026-08-03T19:59:01Z",
     source = "blizzard-api+seramate",
     overall = {
         listedCount = 1002,
@@ -106,9 +106,9 @@ PvPLedgerLadderData.US.arena3v3 = {
         },
         ["EVOKER"] = {
             listedCount = 72,
-            avgListedRating = 2722.0,
-            medianListedRating = 2681,
-            top100Avg = 2722.0,
+            avgListedRating = 2756.8,
+            medianListedRating = 2738.0,
+            top100Avg = 2756.8,
             highest = 3147,
             buckets = {
                 ["2600-2699"] = 21,
@@ -367,24 +367,14 @@ PvPLedgerLadderData.US.arena3v3 = {
                 ["3100-3199"] = 3,
             },
         },
-        ["EVOKER_AUGMENTATION"] = {
-            listedCount = 1,
-            avgListedRating = 2648,
-            medianListedRating = 2648,
-            top100Avg = 2648,
-            highest = 2648,
-            buckets = {
-                ["2600-2699"] = 1,
-            },
-        },
         ["EVOKER_DEVASTATION"] = {
-            listedCount = 7,
-            avgListedRating = 2685.4,
-            medianListedRating = 2681,
-            top100Avg = 2685.4,
+            listedCount = 8,
+            avgListedRating = 2680.8,
+            medianListedRating = 2664.5,
+            top100Avg = 2680.8,
             highest = 2782,
             buckets = {
-                ["2600-2699"] = 5,
+                ["2600-2699"] = 6,
                 ["2700-2799"] = 2,
             },
         },
@@ -1966,7 +1956,7 @@ PvPLedgerLadderData.US.arena3v3 = {
         },
         ["comedragon-area52"] = {
             displayName = "Comedragon-area-52",
-            specKey = "EVOKER_AUGMENTATION",
+            specKey = "EVOKER_DEVASTATION",
             rating = 2648,
             rank = 840,
             wins = 77,
