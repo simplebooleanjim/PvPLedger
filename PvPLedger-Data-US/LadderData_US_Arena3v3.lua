@@ -2,12 +2,12 @@
 PvPLedgerLadderData = PvPLedgerLadderData or {}
 PvPLedgerLadderData.US = PvPLedgerLadderData.US or {}
 PvPLedgerLadderData.US.arena3v3 = {
-    snapshotId = "us-arena3v3-s41-2026-08-03",
+    snapshotId = "us-arena3v3-s41-2026-08-04",
     region = "US",
     bracket = "arena3v3",
     season = 41,
-    snapshotDate = "2026-08-03",
-    generatedAt = "2026-08-03T23:36:54Z",
+    snapshotDate = "2026-08-04",
+    generatedAt = "2026-08-04T01:08:09Z",
     source = "blizzard-api+seramate",
     overall = {
         listedCount = 1003,
@@ -165,13 +165,13 @@ PvPLedgerLadderData.US.arena3v3 = {
             },
         },
         ["PALADIN"] = {
-            listedCount = 106,
-            avgListedRating = 2728.0,
+            listedCount = 105,
+            avgListedRating = 2728.8,
             medianListedRating = 2722.0,
-            top100Avg = 2728.0,
+            top100Avg = 2728.8,
             highest = 3119,
             buckets = {
-                ["2600-2699"] = 39,
+                ["2600-2699"] = 38,
                 ["2700-2799"] = 36,
                 ["2800-2899"] = 11,
                 ["2900-2999"] = 10,
@@ -211,13 +211,13 @@ PvPLedgerLadderData.US.arena3v3 = {
             },
         },
         ["SHAMAN"] = {
-            listedCount = 52,
-            avgListedRating = 2762.3,
+            listedCount = 53,
+            avgListedRating = 2759.8,
             medianListedRating = 2711,
-            top100Avg = 2762.3,
+            top100Avg = 2759.8,
             highest = 3135,
             buckets = {
-                ["2600-2699"] = 22,
+                ["2600-2699"] = 23,
                 ["2700-2799"] = 15,
                 ["2800-2899"] = 5,
                 ["2900-2999"] = 2,
@@ -550,13 +550,13 @@ PvPLedgerLadderData.US.arena3v3 = {
             },
         },
         ["PALADIN_RETRIBUTION"] = {
-            listedCount = 52,
-            avgListedRating = 2779.3,
-            medianListedRating = 2729.0,
-            top100Avg = 2779.3,
+            listedCount = 51,
+            avgListedRating = 2781.7,
+            medianListedRating = 2729,
+            top100Avg = 2781.7,
             highest = 3070,
             buckets = {
-                ["2600-2699"] = 16,
+                ["2600-2699"] = 15,
                 ["2700-2799"] = 19,
                 ["2800-2899"] = 6,
                 ["2900-2999"] = 5,
@@ -679,13 +679,13 @@ PvPLedgerLadderData.US.arena3v3 = {
             },
         },
         ["SHAMAN_RESTORATION"] = {
-            listedCount = 14,
-            avgListedRating = 2736.3,
-            medianListedRating = 2721.0,
-            top100Avg = 2736.3,
+            listedCount = 15,
+            avgListedRating = 2728.9,
+            medianListedRating = 2720,
+            top100Avg = 2728.9,
             highest = 2879,
             buckets = {
-                ["2600-2699"] = 5,
+                ["2600-2699"] = 6,
                 ["2700-2799"] = 6,
                 ["2800-2899"] = 3,
             },
@@ -1066,7 +1066,7 @@ PvPLedgerLadderData.US.arena3v3 = {
         },
         ["avengwogx-tichondrius"] = {
             displayName = "Avengwogx-tichondrius",
-            specKey = "PALADIN_RETRIBUTION",
+            specKey = "",
             rating = 2655,
             rank = 810,
             wins = 172,
@@ -3694,7 +3694,7 @@ PvPLedgerLadderData.US.arena3v3 = {
         },
         ["gratiiens-zuljin"] = {
             displayName = "Gratiiens-zuljin",
-            specKey = "",
+            specKey = "SHAMAN_RESTORATION",
             rating = 2625,
             rank = 983,
             wins = 147,

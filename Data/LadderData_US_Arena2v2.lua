@@ -2,12 +2,12 @@
 PvPLedgerLadderData = PvPLedgerLadderData or {}
 PvPLedgerLadderData.US = PvPLedgerLadderData.US or {}
 PvPLedgerLadderData.US.arena2v2 = {
-    snapshotId = "us-arena2v2-s41-2026-08-03",
+    snapshotId = "us-arena2v2-s41-2026-08-04",
     region = "US",
     bracket = "arena2v2",
     season = 41,
-    snapshotDate = "2026-08-03",
-    generatedAt = "2026-08-03T23:36:42Z",
+    snapshotDate = "2026-08-04",
+    generatedAt = "2026-08-04T01:07:57Z",
     source = "blizzard-api+seramate",
     overall = {
         listedCount = 1006,
@@ -167,9 +167,9 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["PRIEST"] = {
             listedCount = 219,
-            avgListedRating = 2493.9,
-            medianListedRating = 2472.5,
-            top100Avg = 2508.7,
+            avgListedRating = 2494.7,
+            medianListedRating = 2472,
+            top100Avg = 2509.1,
             highest = 2859,
             buckets = {
                 ["2400-2499"] = 133,
@@ -497,29 +497,29 @@ PvPLedgerLadderData.US.arena2v2 = {
             },
         },
         ["PRIEST_DISCIPLINE"] = {
-            listedCount = 168,
-            avgListedRating = 2494.9,
-            medianListedRating = 2472.5,
-            top100Avg = 2539.1,
+            listedCount = 167,
+            avgListedRating = 2494.1,
+            medianListedRating = 2472,
+            top100Avg = 2537.3,
             highest = 2817,
             buckets = {
                 ["2400-2499"] = 107,
                 ["2500-2599"] = 43,
-                ["2600-2699"] = 10,
+                ["2600-2699"] = 9,
                 ["2700-2799"] = 6,
                 ["2800-2899"] = 2,
             },
         },
         ["PRIEST_HOLY"] = {
-            listedCount = 38,
-            avgListedRating = 2518.1,
-            medianListedRating = 2505.5,
-            top100Avg = 2518.1,
+            listedCount = 39,
+            avgListedRating = 2521.2,
+            medianListedRating = 2509,
+            top100Avg = 2521.2,
             highest = 2859,
             buckets = {
                 ["2400-2499"] = 17,
                 ["2500-2599"] = 16,
-                ["2600-2699"] = 2,
+                ["2600-2699"] = 3,
                 ["2700-2799"] = 2,
                 ["2800-2899"] = 1,
             },
@@ -6113,7 +6113,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["omfgg-sargeras"] = {
             displayName = "Omfgg-sargeras",
-            specKey = "PRIEST_DISCIPLINE",
+            specKey = "PRIEST_HOLY",
             rating = 2637,
             rank = 87,
             wins = 182,
