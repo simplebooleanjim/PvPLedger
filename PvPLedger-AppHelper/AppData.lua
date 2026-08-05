@@ -3,8 +3,8 @@
 --- DO NOT EDIT MANUALLY.
 PVL_AppHelperPendingSnapshots = PVL_AppHelperPendingSnapshots or {}
 PVL_AppHelperSyncInfo = {
-    lastSync = 1785961663,
-    generatedAt = "2026-08-05T20:27:43Z",
+    lastSync = 1785966530,
+    generatedAt = "2026-08-05T21:48:50Z",
     region = "US",
     source = "collector",
 }
@@ -15,7 +15,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
     bracket = "arena2v2",
     season = 41,
     snapshotDate = "2026-08-05",
-    generatedAt = "2026-08-05T20:27:31Z",
+    generatedAt = "2026-08-05T21:48:37Z",
     source = "blizzard-api+seramate",
     overall = {
         listedCount = 1001,
@@ -175,9 +175,9 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["PRIEST"] = {
             listedCount = 223,
-            avgListedRating = 2498.4,
-            medianListedRating = 2475,
-            top100Avg = 2512.8,
+            avgListedRating = 2497.6,
+            medianListedRating = 2475.5,
+            top100Avg = 2512.3,
             highest = 2859,
             buckets = {
                 ["2400-2499"] = 131,
@@ -494,29 +494,29 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
             },
         },
         ["PRIEST_DISCIPLINE"] = {
-            listedCount = 169,
-            avgListedRating = 2495.6,
-            medianListedRating = 2475,
-            top100Avg = 2538.9,
+            listedCount = 170,
+            avgListedRating = 2496.6,
+            medianListedRating = 2475.5,
+            top100Avg = 2540.9,
             highest = 2830,
             buckets = {
                 ["2400-2499"] = 104,
                 ["2500-2599"] = 47,
-                ["2600-2699"] = 11,
+                ["2600-2699"] = 12,
                 ["2700-2799"] = 5,
                 ["2800-2899"] = 2,
             },
         },
         ["PRIEST_HOLY"] = {
-            listedCount = 40,
-            avgListedRating = 2529.1,
-            medianListedRating = 2516.0,
-            top100Avg = 2529.1,
+            listedCount = 39,
+            avgListedRating = 2525.6,
+            medianListedRating = 2515,
+            top100Avg = 2525.6,
             highest = 2859,
             buckets = {
                 ["2400-2499"] = 17,
                 ["2500-2599"] = 15,
-                ["2600-2699"] = 5,
+                ["2600-2699"] = 4,
                 ["2700-2799"] = 2,
                 ["2800-2899"] = 1,
             },
@@ -7287,7 +7287,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["selur-sargeras"] = {
             displayName = "Selur-sargeras",
-            specKey = "PRIEST_HOLY",
+            specKey = "PRIEST_DISCIPLINE",
             rating = 2663,
             rank = 70,
             wins = 252,
@@ -9697,7 +9697,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
     bracket = "arena3v3",
     season = 41,
     snapshotDate = "2026-08-05",
-    generatedAt = "2026-08-05T20:27:42Z",
+    generatedAt = "2026-08-05T21:48:49Z",
     source = "blizzard-api+seramate",
     overall = {
         listedCount = 1005,
@@ -19506,7 +19506,7 @@ PVL_AppHelperPendingSnapshots.blitz = {
     bracket = "blitz",
     season = 41,
     snapshotDate = "2026-08-05",
-    generatedAt = "2026-08-05T20:26:35Z",
+    generatedAt = "2026-08-05T21:47:43Z",
     source = "blizzard-api",
     overall = {
         listedCount = 37583,
@@ -333148,7 +333148,7 @@ PVL_AppHelperPendingSnapshots.rbg = {
     bracket = "rbg",
     season = 41,
     snapshotDate = "2026-08-05",
-    generatedAt = "2026-08-05T20:27:19Z",
+    generatedAt = "2026-08-05T21:48:25Z",
     source = "blizzard-api+seramate",
     overall = {
         listedCount = 1002,
@@ -333351,9 +333351,9 @@ PVL_AppHelperPendingSnapshots.rbg = {
         },
         ["PRIEST"] = {
             listedCount = 165,
-            avgListedRating = 2067.2,
-            medianListedRating = 2025.5,
-            top100Avg = 2068.9,
+            avgListedRating = 2065.3,
+            medianListedRating = 2035,
+            top100Avg = 2067.8,
             highest = 2808,
             buckets = {
                 ["1800-1899"] = 33,
@@ -333812,10 +333812,10 @@ PVL_AppHelperPendingSnapshots.rbg = {
             },
         },
         ["PRIEST_DISCIPLINE"] = {
-            listedCount = 102,
-            avgListedRating = 2068.4,
-            medianListedRating = 2025.5,
-            top100Avg = 2073.3,
+            listedCount = 103,
+            avgListedRating = 2072.9,
+            medianListedRating = 2035,
+            top100Avg = 2080.3,
             highest = 2808,
             buckets = {
                 ["1800-1899"] = 23,
@@ -333825,16 +333825,16 @@ PVL_AppHelperPendingSnapshots.rbg = {
                 ["2200-2299"] = 11,
                 ["2300-2399"] = 10,
                 ["2400-2499"] = 2,
-                ["2500-2599"] = 1,
+                ["2500-2599"] = 2,
                 ["2600-2699"] = 1,
                 ["2800-2899"] = 1,
             },
         },
         ["PRIEST_HOLY"] = {
-            listedCount = 42,
-            avgListedRating = 2112.3,
-            medianListedRating = 2070.0,
-            top100Avg = 2112.3,
+            listedCount = 41,
+            avgListedRating = 2102.1,
+            medianListedRating = 2070,
+            top100Avg = 2102.1,
             highest = 2754,
             buckets = {
                 ["1800-1899"] = 5,
@@ -333843,7 +333843,7 @@ PVL_AppHelperPendingSnapshots.rbg = {
                 ["2100-2199"] = 4,
                 ["2200-2299"] = 5,
                 ["2300-2399"] = 4,
-                ["2500-2599"] = 2,
+                ["2500-2599"] = 1,
                 ["2700-2799"] = 1,
             },
         },
@@ -340956,7 +340956,7 @@ PVL_AppHelperPendingSnapshots.rbg = {
         },
         ["selur-sargeras"] = {
             displayName = "Selur-sargeras",
-            specKey = "PRIEST_HOLY",
+            specKey = "PRIEST_DISCIPLINE",
             rating = 2531,
             rank = 45,
             wins = 100,
@@ -343060,7 +343060,7 @@ PVL_AppHelperPendingSnapshots.shuffle = {
     bracket = "shuffle",
     season = 41,
     snapshotDate = "2026-08-05",
-    generatedAt = "2026-08-05T20:27:07Z",
+    generatedAt = "2026-08-05T21:48:13Z",
     source = "blizzard-api",
     overall = {
         listedCount = 38095,
