@@ -7,7 +7,7 @@ PvPLedgerLadderData.US.arena3v3 = {
     bracket = "arena3v3",
     season = 41,
     snapshotDate = "2026-08-05",
-    generatedAt = "2026-08-05T17:06:39Z",
+    generatedAt = "2026-08-05T18:53:31Z",
     source = "blizzard-api+seramate",
     overall = {
         listedCount = 1005,
@@ -35,7 +35,7 @@ PvPLedgerLadderData.US.arena3v3 = {
             ["3100-3199"] = 60,
             ["3200-3299"] = 4,
         },
-        ratedPopulation = 5021,
+        ratedPopulation = 5026,
         titleCutoffs = {
             {
                 pct = 0.1,
