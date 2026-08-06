@@ -2,12 +2,12 @@
 PvPLedgerLadderData = PvPLedgerLadderData or {}
 PvPLedgerLadderData.US = PvPLedgerLadderData.US or {}
 PvPLedgerLadderData.US.rbg = {
-    snapshotId = "us-rbg-s41-2026-08-05",
+    snapshotId = "us-rbg-s41-2026-08-06",
     region = "US",
     bracket = "rbg",
     season = 41,
-    snapshotDate = "2026-08-05",
-    generatedAt = "2026-08-05T22:59:20Z",
+    snapshotDate = "2026-08-06",
+    generatedAt = "2026-08-06T00:06:20Z",
     source = "blizzard-api+seramate",
     overall = {
         listedCount = 1002,
@@ -137,9 +137,9 @@ PvPLedgerLadderData.US.rbg = {
         },
         ["HUNTER"] = {
             listedCount = 72,
-            avgListedRating = 2066.0,
-            medianListedRating = 2042.0,
-            top100Avg = 2066.0,
+            avgListedRating = 2062.2,
+            medianListedRating = 2039,
+            top100Avg = 2062.2,
             highest = 2832,
             buckets = {
                 ["1800-1899"] = 14,
@@ -510,14 +510,14 @@ PvPLedgerLadderData.US.rbg = {
             },
         },
         ["HUNTER_MARKSMANSHIP"] = {
-            listedCount = 54,
-            avgListedRating = 2059.1,
-            medianListedRating = 2016.5,
-            top100Avg = 2059.1,
+            listedCount = 53,
+            avgListedRating = 2060.6,
+            medianListedRating = 2022,
+            top100Avg = 2060.6,
             highest = 2832,
             buckets = {
                 ["1800-1899"] = 11,
-                ["1900-1999"] = 13,
+                ["1900-1999"] = 12,
                 ["2000-2099"] = 17,
                 ["2100-2199"] = 3,
                 ["2200-2299"] = 3,
@@ -529,13 +529,14 @@ PvPLedgerLadderData.US.rbg = {
             },
         },
         ["HUNTER_SURVIVAL"] = {
-            listedCount = 4,
-            avgListedRating = 2046.5,
-            medianListedRating = 2066.0,
-            top100Avg = 2046.5,
+            listedCount = 5,
+            avgListedRating = 2033.6,
+            medianListedRating = 2039,
+            top100Avg = 2033.6,
             highest = 2229,
             buckets = {
                 ["1800-1899"] = 1,
+                ["1900-1999"] = 1,
                 ["2000-2099"] = 2,
                 ["2200-2299"] = 1,
             },
@@ -1065,7 +1066,7 @@ PvPLedgerLadderData.US.rbg = {
         },
         ["altofalt-sargeras"] = {
             displayName = "Altofalt-sargeras",
-            specKey = "",
+            specKey = "HUNTER_MARKSMANSHIP",
             rating = 1820,
             rank = 985,
             wins = 29,
@@ -7410,7 +7411,7 @@ PvPLedgerLadderData.US.rbg = {
         },
         ["resmondo-thunderhorn"] = {
             displayName = "Resmondo-thunderhorn",
-            specKey = "HUNTER_MARKSMANSHIP",
+            specKey = "",
             rating = 1820,
             rank = 985,
             wins = 32,
@@ -7977,7 +7978,7 @@ PvPLedgerLadderData.US.rbg = {
         },
         ["silkysmoothe-darkspear"] = {
             displayName = "Silkysmoothe-darkspear",
-            specKey = "HUNTER_MARKSMANSHIP",
+            specKey = "HUNTER_SURVIVAL",
             rating = 1982,
             rank = 563,
             wins = 30,
