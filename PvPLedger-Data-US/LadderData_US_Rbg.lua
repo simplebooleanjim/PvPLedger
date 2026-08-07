@@ -7,7 +7,7 @@ PvPLedgerLadderData.US.rbg = {
     bracket = "rbg",
     season = 41,
     snapshotDate = "2026-08-07",
-    generatedAt = "2026-08-07T10:26:43Z",
+    generatedAt = "2026-08-07T11:22:48Z",
     source = "blizzard-api+seramate",
     overall = {
         listedCount = 1002,
@@ -137,9 +137,9 @@ PvPLedgerLadderData.US.rbg = {
         },
         ["HUNTER"] = {
             listedCount = 71,
-            avgListedRating = 2060.5,
+            avgListedRating = 2064.6,
             medianListedRating = 2039,
-            top100Avg = 2060.5,
+            top100Avg = 2064.6,
             highest = 2832,
             buckets = {
                 ["1800-1899"] = 13,
@@ -171,13 +171,13 @@ PvPLedgerLadderData.US.rbg = {
             },
         },
         ["MONK"] = {
-            listedCount = 107,
-            avgListedRating = 2151.6,
+            listedCount = 108,
+            avgListedRating = 2150.7,
             medianListedRating = 2001,
-            top100Avg = 2151.6,
+            top100Avg = 2150.7,
             highest = 2806,
             buckets = {
-                ["1800-1899"] = 30,
+                ["1800-1899"] = 31,
                 ["1900-1999"] = 24,
                 ["2000-2099"] = 21,
                 ["2100-2199"] = 13,
@@ -502,15 +502,15 @@ PvPLedgerLadderData.US.rbg = {
             },
         },
         ["HUNTER_MARKSMANSHIP"] = {
-            listedCount = 54,
-            avgListedRating = 2058.4,
+            listedCount = 52,
+            avgListedRating = 2060.2,
             medianListedRating = 2022.0,
-            top100Avg = 2058.4,
+            top100Avg = 2060.2,
             highest = 2832,
             buckets = {
                 ["1800-1899"] = 10,
-                ["1900-1999"] = 13,
-                ["2000-2099"] = 18,
+                ["1900-1999"] = 12,
+                ["2000-2099"] = 17,
                 ["2100-2199"] = 3,
                 ["2200-2299"] = 3,
                 ["2300-2399"] = 3,
@@ -520,14 +520,15 @@ PvPLedgerLadderData.US.rbg = {
             },
         },
         ["HUNTER_SURVIVAL"] = {
-            listedCount = 3,
-            avgListedRating = 1985.7,
+            listedCount = 5,
+            avgListedRating = 1996.2,
             medianListedRating = 2039,
-            top100Avg = 1985.7,
+            top100Avg = 1996.2,
             highest = 2093,
             buckets = {
                 ["1800-1899"] = 1,
-                ["2000-2099"] = 2,
+                ["1900-1999"] = 1,
+                ["2000-2099"] = 3,
             },
         },
         ["MAGE_ARCANE"] = {
@@ -583,13 +584,13 @@ PvPLedgerLadderData.US.rbg = {
             },
         },
         ["MONK_MISTWEAVER"] = {
-            listedCount = 83,
-            avgListedRating = 2050.4,
-            medianListedRating = 1990,
-            top100Avg = 2050.4,
+            listedCount = 84,
+            avgListedRating = 2047.7,
+            medianListedRating = 1984.5,
+            top100Avg = 2047.7,
             highest = 2806,
             buckets = {
-                ["1800-1899"] = 24,
+                ["1800-1899"] = 25,
                 ["1900-1999"] = 20,
                 ["2000-2099"] = 15,
                 ["2100-2199"] = 9,
@@ -2285,7 +2286,7 @@ PvPLedgerLadderData.US.rbg = {
             rating = 1963,
             rank = 602,
             wins = 28,
-            losses = 13,
+            losses = 14,
             faction = "ALLIANCE",
         },
         ["corvana-kelthuzad"] = {
@@ -3653,7 +3654,7 @@ PvPLedgerLadderData.US.rbg = {
             rating = 2082,
             rank = 374,
             wins = 34,
-            losses = 23,
+            losses = 24,
             faction = "ALLIANCE",
         },
         ["fôrgêt-kelthuzad"] = {
@@ -4225,7 +4226,7 @@ PvPLedgerLadderData.US.rbg = {
         },
         ["ichithebaned-illidan"] = {
             displayName = "Ichithebaned-illidan",
-            specKey = "",
+            specKey = "MONK_MISTWEAVER",
             rating = 1823,
             rank = 983,
             wins = 24,
@@ -4814,7 +4815,7 @@ PvPLedgerLadderData.US.rbg = {
             rating = 2392,
             rank = 78,
             wins = 81,
-            losses = 47,
+            losses = 48,
             faction = "ALLIANCE",
         },
         ["karpa-ragnaros"] = {
@@ -6763,7 +6764,7 @@ PvPLedgerLadderData.US.rbg = {
         },
         ["paradiseone-stormrage"] = {
             displayName = "Paradiseone-stormrage",
-            specKey = "HUNTER_MARKSMANSHIP",
+            specKey = "HUNTER_SURVIVAL",
             rating = 2042,
             rank = 448,
             wins = 34,
@@ -7978,7 +7979,7 @@ PvPLedgerLadderData.US.rbg = {
         },
         ["silkysmoothe-darkspear"] = {
             displayName = "Silkysmoothe-darkspear",
-            specKey = "HUNTER_MARKSMANSHIP",
+            specKey = "HUNTER_SURVIVAL",
             rating = 1982,
             rank = 574,
             wins = 30,
@@ -9206,7 +9207,7 @@ PvPLedgerLadderData.US.rbg = {
             rating = 2348,
             rank = 101,
             wins = 87,
-            losses = 55,
+            losses = 56,
             faction = "ALLIANCE",
         },
         ["verlox-moonguard"] = {
