@@ -7,7 +7,7 @@ PvPLedgerLadderData.US.rbg = {
     bracket = "rbg",
     season = 41,
     snapshotDate = "2026-08-08",
-    generatedAt = "2026-08-08T22:29:44Z",
+    generatedAt = "2026-08-08T23:38:27Z",
     source = "blizzard-api+seramate",
     overall = {
         listedCount = 1000,
@@ -83,9 +83,9 @@ PvPLedgerLadderData.US.rbg = {
         },
         ["DEMONHUNTER"] = {
             listedCount = 47,
-            avgListedRating = 2047.7,
-            medianListedRating = 2022,
-            top100Avg = 2047.7,
+            avgListedRating = 2041.7,
+            medianListedRating = 2027.5,
+            top100Avg = 2041.7,
             highest = 2490,
             buckets = {
                 ["1800-1899"] = 14,
@@ -342,16 +342,16 @@ PvPLedgerLadderData.US.rbg = {
             },
         },
         ["DEMONHUNTER_DEVOURER"] = {
-            listedCount = 23,
-            avgListedRating = 2055.8,
-            medianListedRating = 2022,
-            top100Avg = 2055.8,
+            listedCount = 24,
+            avgListedRating = 2057.8,
+            medianListedRating = 2027.5,
+            top100Avg = 2057.8,
             highest = 2490,
             buckets = {
                 ["1800-1899"] = 6,
                 ["1900-1999"] = 4,
                 ["2000-2099"] = 5,
-                ["2100-2199"] = 2,
+                ["2100-2199"] = 3,
                 ["2200-2299"] = 2,
                 ["2300-2399"] = 3,
                 ["2400-2499"] = 1,
@@ -373,14 +373,14 @@ PvPLedgerLadderData.US.rbg = {
             },
         },
         ["DEMONHUNTER_VENGEANCE"] = {
-            listedCount = 3,
-            avgListedRating = 2064,
-            medianListedRating = 2104,
-            top100Avg = 2064,
+            listedCount = 2,
+            avgListedRating = 2044,
+            medianListedRating = 2044.0,
+            top100Avg = 2044,
             highest = 2183,
             buckets = {
                 ["1900-1999"] = 1,
-                ["2100-2199"] = 2,
+                ["2100-2199"] = 1,
             },
         },
         ["DRUID_BALANCE"] = {
@@ -7996,7 +7996,7 @@ PvPLedgerLadderData.US.rbg = {
         },
         ["skinnyfiends-kelthuzad"] = {
             displayName = "Skinnyfiends-kelthuzad",
-            specKey = "DEMONHUNTER_VENGEANCE",
+            specKey = "DEMONHUNTER_DEVOURER",
             rating = 2104,
             rank = 349,
             wins = 39,
