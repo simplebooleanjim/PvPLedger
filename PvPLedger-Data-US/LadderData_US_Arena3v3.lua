@@ -7,7 +7,7 @@ PvPLedgerLadderData.US.arena3v3 = {
     bracket = "arena3v3",
     season = 41,
     snapshotDate = "2026-08-08",
-    generatedAt = "2026-08-08T13:13:28Z",
+    generatedAt = "2026-08-08T13:58:51Z",
     source = "blizzard-api+seramate",
     overall = {
         listedCount = 1003,
@@ -123,9 +123,9 @@ PvPLedgerLadderData.US.arena3v3 = {
         },
         ["HUNTER"] = {
             listedCount = 54,
-            avgListedRating = 2767.9,
-            medianListedRating = 2716.5,
-            top100Avg = 2767.9,
+            avgListedRating = 2768.8,
+            medianListedRating = 2724,
+            top100Avg = 2768.8,
             highest = 3132,
             buckets = {
                 ["2600-2699"] = 16,
@@ -424,13 +424,13 @@ PvPLedgerLadderData.US.arena3v3 = {
             },
         },
         ["HUNTER_MARKSMANSHIP"] = {
-            listedCount = 35,
-            avgListedRating = 2859.9,
-            medianListedRating = 2788,
-            top100Avg = 2859.9,
+            listedCount = 36,
+            avgListedRating = 2853.8,
+            medianListedRating = 2785.5,
+            top100Avg = 2853.8,
             highest = 3132,
             buckets = {
-                ["2600-2699"] = 9,
+                ["2600-2699"] = 10,
                 ["2700-2799"] = 9,
                 ["2800-2899"] = 3,
                 ["2900-2999"] = 3,
@@ -439,13 +439,13 @@ PvPLedgerLadderData.US.arena3v3 = {
             },
         },
         ["HUNTER_SURVIVAL"] = {
-            listedCount = 10,
-            avgListedRating = 2720.4,
-            medianListedRating = 2716.5,
-            top100Avg = 2720.4,
+            listedCount = 9,
+            avgListedRating = 2729.1,
+            medianListedRating = 2724,
+            top100Avg = 2729.1,
             highest = 2827,
             buckets = {
-                ["2600-2699"] = 4,
+                ["2600-2699"] = 3,
                 ["2700-2799"] = 5,
                 ["2800-2899"] = 1,
             },
@@ -6284,7 +6284,7 @@ PvPLedgerLadderData.US.arena3v3 = {
         },
         ["paradiseone-stormrage"] = {
             displayName = "Paradiseone-stormrage",
-            specKey = "HUNTER_SURVIVAL",
+            specKey = "HUNTER_MARKSMANSHIP",
             rating = 2642,
             rank = 954,
             wins = 291,
