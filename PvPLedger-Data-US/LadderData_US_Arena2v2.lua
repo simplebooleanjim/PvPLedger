@@ -7,7 +7,7 @@ PvPLedgerLadderData.US.arena2v2 = {
     bracket = "arena2v2",
     season = 41,
     snapshotDate = "2026-08-08",
-    generatedAt = "2026-08-08T09:49:33Z",
+    generatedAt = "2026-08-08T11:07:06Z",
     source = "blizzard-api+seramate",
     overall = {
         listedCount = 1012,
@@ -72,9 +72,9 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["DEMONHUNTER"] = {
             listedCount = 36,
-            avgListedRating = 2487.8,
-            medianListedRating = 2466.5,
-            top100Avg = 2487.8,
+            avgListedRating = 2485.3,
+            medianListedRating = 2475.0,
+            top100Avg = 2485.3,
             highest = 2694,
             buckets = {
                 ["2400-2499"] = 24,
@@ -271,15 +271,25 @@ PvPLedgerLadderData.US.arena2v2 = {
             },
         },
         ["DEMONHUNTER_HAVOC"] = {
-            listedCount = 23,
-            avgListedRating = 2487.0,
-            medianListedRating = 2475,
-            top100Avg = 2487.0,
+            listedCount = 22,
+            avgListedRating = 2487.4,
+            medianListedRating = 2475.0,
+            top100Avg = 2487.4,
             highest = 2614,
             buckets = {
-                ["2400-2499"] = 15,
+                ["2400-2499"] = 14,
                 ["2500-2599"] = 7,
                 ["2600-2699"] = 1,
+            },
+        },
+        ["DEMONHUNTER_VENGEANCE"] = {
+            listedCount = 1,
+            avgListedRating = 2480,
+            medianListedRating = 2480,
+            top100Avg = 2480,
+            highest = 2480,
+            buckets = {
+                ["2400-2499"] = 1,
             },
         },
         ["DRUID_BALANCE"] = {
@@ -6970,7 +6980,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["revolutio-tichondrius"] = {
             displayName = "Revolutio-tichondrius",
-            specKey = "DEMONHUNTER_HAVOC",
+            specKey = "DEMONHUNTER_VENGEANCE",
             rating = 2480,
             rank = 521,
             wins = 82,
