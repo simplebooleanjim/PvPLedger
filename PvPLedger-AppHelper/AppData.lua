@@ -3,8 +3,8 @@
 --- DO NOT EDIT MANUALLY.
 PVL_AppHelperPendingSnapshots = PVL_AppHelperPendingSnapshots or {}
 PVL_AppHelperSyncInfo = {
-    lastSync = 1786160643,
-    generatedAt = "2026-08-08T03:44:03Z",
+    lastSync = 1786164096,
+    generatedAt = "2026-08-08T04:41:36Z",
     region = "US",
     source = "collector",
 }
@@ -15,7 +15,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
     bracket = "arena2v2",
     season = 41,
     snapshotDate = "2026-08-08",
-    generatedAt = "2026-08-08T03:43:52Z",
+    generatedAt = "2026-08-08T04:41:24Z",
     source = "blizzard-api+seramate",
     overall = {
         listedCount = 1001,
@@ -9702,7 +9702,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
     bracket = "arena3v3",
     season = 41,
     snapshotDate = "2026-08-08",
-    generatedAt = "2026-08-08T03:44:02Z",
+    generatedAt = "2026-08-08T04:41:35Z",
     source = "blizzard-api+seramate",
     overall = {
         listedCount = 1008,
@@ -19543,7 +19543,7 @@ PVL_AppHelperPendingSnapshots.blitz = {
     bracket = "blitz",
     season = 41,
     snapshotDate = "2026-08-08",
-    generatedAt = "2026-08-08T03:43:10Z",
+    generatedAt = "2026-08-08T04:40:30Z",
     source = "blizzard-api",
     overall = {
         listedCount = 37662,
@@ -333741,7 +333741,7 @@ PVL_AppHelperPendingSnapshots.rbg = {
     bracket = "rbg",
     season = 41,
     snapshotDate = "2026-08-08",
-    generatedAt = "2026-08-08T03:43:40Z",
+    generatedAt = "2026-08-08T04:41:12Z",
     source = "blizzard-api+seramate",
     overall = {
         listedCount = 1001,
@@ -333871,9 +333871,9 @@ PVL_AppHelperPendingSnapshots.rbg = {
         },
         ["HUNTER"] = {
             listedCount = 71,
-            avgListedRating = 2065.1,
-            medianListedRating = 2039,
-            top100Avg = 2065.1,
+            avgListedRating = 2067.9,
+            medianListedRating = 2040.5,
+            top100Avg = 2067.9,
             highest = 2832,
             buckets = {
                 ["1800-1899"] = 11,
@@ -334016,9 +334016,9 @@ PVL_AppHelperPendingSnapshots.rbg = {
         },
         ["WARRIOR"] = {
             listedCount = 57,
-            avgListedRating = 2095.0,
+            avgListedRating = 2092.5,
             medianListedRating = 2045.0,
-            top100Avg = 2095.0,
+            top100Avg = 2092.5,
             highest = 2794,
             buckets = {
                 ["1800-1899"] = 16,
@@ -334234,15 +334234,15 @@ PVL_AppHelperPendingSnapshots.rbg = {
             },
         },
         ["HUNTER_MARKSMANSHIP"] = {
-            listedCount = 52,
-            avgListedRating = 2062.3,
-            medianListedRating = 2022.0,
-            top100Avg = 2062.3,
+            listedCount = 51,
+            avgListedRating = 2062.7,
+            medianListedRating = 2022,
+            top100Avg = 2062.7,
             highest = 2832,
             buckets = {
                 ["1800-1899"] = 8,
                 ["1900-1999"] = 13,
-                ["2000-2099"] = 17,
+                ["2000-2099"] = 16,
                 ["2100-2199"] = 4,
                 ["2200-2299"] = 3,
                 ["2300-2399"] = 3,
@@ -334252,15 +334252,15 @@ PVL_AppHelperPendingSnapshots.rbg = {
             },
         },
         ["HUNTER_SURVIVAL"] = {
-            listedCount = 5,
-            avgListedRating = 1996.2,
-            medianListedRating = 2039,
-            top100Avg = 1996.2,
+            listedCount = 6,
+            avgListedRating = 2004.2,
+            medianListedRating = 2040.5,
+            top100Avg = 2004.2,
             highest = 2093,
             buckets = {
                 ["1800-1899"] = 1,
                 ["1900-1999"] = 1,
-                ["2000-2099"] = 3,
+                ["2000-2099"] = 4,
             },
         },
         ["MAGE_ARCANE"] = {
@@ -334563,16 +334563,16 @@ PVL_AppHelperPendingSnapshots.rbg = {
             },
         },
         ["WARRIOR_ARMS"] = {
-            listedCount = 32,
-            avgListedRating = 2068.6,
-            medianListedRating = 2028.0,
-            top100Avg = 2068.6,
+            listedCount = 33,
+            avgListedRating = 2069.9,
+            medianListedRating = 2036,
+            top100Avg = 2069.9,
             highest = 2695,
             buckets = {
                 ["1800-1899"] = 10,
                 ["1900-1999"] = 4,
                 ["2000-2099"] = 6,
-                ["2100-2199"] = 4,
+                ["2100-2199"] = 5,
                 ["2200-2299"] = 3,
                 ["2300-2399"] = 3,
                 ["2600-2699"] = 2,
@@ -334596,14 +334596,14 @@ PVL_AppHelperPendingSnapshots.rbg = {
             },
         },
         ["WARRIOR_PROTECTION"] = {
-            listedCount = 3,
-            avgListedRating = 2094.3,
-            medianListedRating = 2112,
-            top100Avg = 2094.3,
+            listedCount = 2,
+            avgListedRating = 2085.5,
+            medianListedRating = 2085.5,
+            top100Avg = 2085.5,
             highest = 2157,
             buckets = {
                 ["2000-2099"] = 1,
-                ["2100-2199"] = 2,
+                ["2100-2199"] = 1,
             },
         },
     },
@@ -337148,7 +337148,7 @@ PVL_AppHelperPendingSnapshots.rbg = {
         },
         ["fkallyall-sargeras"] = {
             displayName = "Fkallyall-sargeras",
-            specKey = "WARRIOR_PROTECTION",
+            specKey = "WARRIOR_ARMS",
             rating = 2112,
             rank = 327,
             wins = 243,
@@ -341486,7 +341486,7 @@ PVL_AppHelperPendingSnapshots.rbg = {
         },
         ["saxz-wyrmrestaccord"] = {
             displayName = "Saxz-wyrmrest-accord",
-            specKey = "HUNTER_MARKSMANSHIP",
+            specKey = "HUNTER_SURVIVAL",
             rating = 2044,
             rank = 446,
             wins = 64,
@@ -343626,7 +343626,7 @@ PVL_AppHelperPendingSnapshots.shuffle = {
     bracket = "shuffle",
     season = 41,
     snapshotDate = "2026-08-08",
-    generatedAt = "2026-08-08T03:43:28Z",
+    generatedAt = "2026-08-08T04:41:00Z",
     source = "blizzard-api",
     overall = {
         listedCount = 38133,
