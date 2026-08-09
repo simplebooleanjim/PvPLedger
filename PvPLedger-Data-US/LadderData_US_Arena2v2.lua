@@ -7,7 +7,7 @@ PvPLedgerLadderData.US.arena2v2 = {
     bracket = "arena2v2",
     season = 41,
     snapshotDate = "2026-08-09",
-    generatedAt = "2026-08-09T11:47:01Z",
+    generatedAt = "2026-08-09T12:50:10Z",
     source = "blizzard-api+seramate",
     overall = {
         listedCount = 1007,
@@ -184,7 +184,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         ["ROGUE"] = {
             listedCount = 119,
             avgListedRating = 2546.3,
-            medianListedRating = 2499.5,
+            medianListedRating = 2497,
             top100Avg = 2546.3,
             highest = 2871,
             buckets = {
@@ -542,15 +542,15 @@ PvPLedgerLadderData.US.arena2v2 = {
             },
         },
         ["ROGUE_ASSASSINATION"] = {
-            listedCount = 46,
-            avgListedRating = 2538.1,
-            medianListedRating = 2499.5,
-            top100Avg = 2538.1,
+            listedCount = 45,
+            avgListedRating = 2536.7,
+            medianListedRating = 2496,
+            top100Avg = 2536.7,
             highest = 2871,
             buckets = {
                 ["2400-2499"] = 23,
                 ["2500-2599"] = 12,
-                ["2600-2699"] = 5,
+                ["2600-2699"] = 4,
                 ["2700-2799"] = 3,
                 ["2800-2899"] = 3,
             },
@@ -569,15 +569,15 @@ PvPLedgerLadderData.US.arena2v2 = {
             },
         },
         ["ROGUE_SUBTLETY"] = {
-            listedCount = 56,
-            avgListedRating = 2524.7,
-            medianListedRating = 2494.5,
-            top100Avg = 2524.7,
+            listedCount = 57,
+            avgListedRating = 2526.1,
+            medianListedRating = 2497,
+            top100Avg = 2526.1,
             highest = 2821,
             buckets = {
                 ["2400-2499"] = 29,
                 ["2500-2599"] = 14,
-                ["2600-2699"] = 10,
+                ["2600-2699"] = 11,
                 ["2700-2799"] = 2,
                 ["2800-2899"] = 1,
             },
@@ -2572,7 +2572,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["djdarkxd-sargeras"] = {
             displayName = "Djdarkxd-sargeras",
-            specKey = "ROGUE_ASSASSINATION",
+            specKey = "ROGUE_SUBTLETY",
             rating = 2601,
             rank = 153,
             wins = 159,
