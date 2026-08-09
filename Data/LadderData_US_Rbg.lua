@@ -7,7 +7,7 @@ PvPLedgerLadderData.US.rbg = {
     bracket = "rbg",
     season = 41,
     snapshotDate = "2026-08-09",
-    generatedAt = "2026-08-09T12:49:59Z",
+    generatedAt = "2026-08-09T13:50:22Z",
     source = "blizzard-api+seramate",
     overall = {
         listedCount = 1001,
@@ -6332,7 +6332,7 @@ PvPLedgerLadderData.US.rbg = {
             rank = 201,
             wins = 53,
             losses = 24,
-            faction = "ALLIANCE",
+            faction = "HORDE",
         },
         ["nikkiliciøus-tichondrius"] = {
             displayName = "Nikkiliciøus-tichondrius",
