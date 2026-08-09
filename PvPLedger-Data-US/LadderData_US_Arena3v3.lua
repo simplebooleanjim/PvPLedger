@@ -2,12 +2,12 @@
 PvPLedgerLadderData = PvPLedgerLadderData or {}
 PvPLedgerLadderData.US = PvPLedgerLadderData.US or {}
 PvPLedgerLadderData.US.arena3v3 = {
-    snapshotId = "us-arena3v3-s41-2026-08-08",
+    snapshotId = "us-arena3v3-s41-2026-08-09",
     region = "US",
     bracket = "arena3v3",
     season = 41,
-    snapshotDate = "2026-08-08",
-    generatedAt = "2026-08-08T23:38:45Z",
+    snapshotDate = "2026-08-09",
+    generatedAt = "2026-08-09T00:03:18Z",
     source = "blizzard-api+seramate",
     overall = {
         listedCount = 1004,
@@ -169,13 +169,13 @@ PvPLedgerLadderData.US.arena3v3 = {
             },
         },
         ["PALADIN"] = {
-            listedCount = 102,
-            avgListedRating = 2745.0,
-            medianListedRating = 2732.5,
-            top100Avg = 2745.0,
+            listedCount = 100,
+            avgListedRating = 2746.8,
+            medianListedRating = 2736.5,
+            top100Avg = 2746.8,
             highest = 3178,
             buckets = {
-                ["2600-2699"] = 29,
+                ["2600-2699"] = 27,
                 ["2700-2799"] = 40,
                 ["2800-2899"] = 13,
                 ["2900-2999"] = 7,
@@ -558,13 +558,13 @@ PvPLedgerLadderData.US.arena3v3 = {
             },
         },
         ["PALADIN_RETRIBUTION"] = {
-            listedCount = 56,
-            avgListedRating = 2779.5,
-            medianListedRating = 2732.5,
-            top100Avg = 2779.5,
+            listedCount = 54,
+            avgListedRating = 2784.8,
+            medianListedRating = 2736.5,
+            top100Avg = 2784.8,
             highest = 3100,
             buckets = {
-                ["2600-2699"] = 14,
+                ["2600-2699"] = 12,
                 ["2700-2799"] = 25,
                 ["2800-2899"] = 7,
                 ["2900-2999"] = 4,
@@ -4682,7 +4682,7 @@ PvPLedgerLadderData.US.arena3v3 = {
         },
         ["kimboosun-tichondrius"] = {
             displayName = "Kimboosun-tichondrius",
-            specKey = "PALADIN_RETRIBUTION",
+            specKey = "",
             rating = 2637,
             rank = 983,
             wins = 204,
@@ -9173,7 +9173,7 @@ PvPLedgerLadderData.US.arena3v3 = {
         },
         ["wrekd-malganis"] = {
             displayName = "Wrekd-malganis",
-            specKey = "PALADIN_RETRIBUTION",
+            specKey = "",
             rating = 2636,
             rank = 989,
             wins = 166,

@@ -2,12 +2,12 @@
 PvPLedgerLadderData = PvPLedgerLadderData or {}
 PvPLedgerLadderData.US = PvPLedgerLadderData.US or {}
 PvPLedgerLadderData.US.arena2v2 = {
-    snapshotId = "us-arena2v2-s41-2026-08-08",
+    snapshotId = "us-arena2v2-s41-2026-08-09",
     region = "US",
     bracket = "arena2v2",
     season = 41,
-    snapshotDate = "2026-08-08",
-    generatedAt = "2026-08-08T23:38:36Z",
+    snapshotDate = "2026-08-09",
+    generatedAt = "2026-08-09T00:03:07Z",
     source = "blizzard-api+seramate",
     overall = {
         listedCount = 1007,
@@ -112,9 +112,9 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["HUNTER"] = {
             listedCount = 72,
-            avgListedRating = 2516.6,
+            avgListedRating = 2516.1,
             medianListedRating = 2490,
-            top100Avg = 2516.6,
+            top100Avg = 2516.1,
             highest = 2880,
             buckets = {
                 ["2400-2499"] = 40,
@@ -364,13 +364,13 @@ PvPLedgerLadderData.US.arena2v2 = {
             },
         },
         ["HUNTER_BEASTMASTERY"] = {
-            listedCount = 41,
-            avgListedRating = 2523.6,
-            medianListedRating = 2489,
-            top100Avg = 2523.6,
+            listedCount = 40,
+            avgListedRating = 2525.3,
+            medianListedRating = 2490.0,
+            top100Avg = 2525.3,
             highest = 2808,
             buckets = {
-                ["2400-2499"] = 24,
+                ["2400-2499"] = 23,
                 ["2500-2599"] = 8,
                 ["2600-2699"] = 4,
                 ["2700-2799"] = 3,
@@ -378,13 +378,13 @@ PvPLedgerLadderData.US.arena2v2 = {
             },
         },
         ["HUNTER_MARKSMANSHIP"] = {
-            listedCount = 18,
-            avgListedRating = 2521.9,
-            medianListedRating = 2502.5,
-            top100Avg = 2521.9,
+            listedCount = 19,
+            avgListedRating = 2518.5,
+            medianListedRating = 2496,
+            top100Avg = 2518.5,
             highest = 2880,
             buckets = {
-                ["2400-2499"] = 9,
+                ["2400-2499"] = 10,
                 ["2500-2599"] = 6,
                 ["2600-2699"] = 1,
                 ["2700-2799"] = 1,
@@ -6163,7 +6163,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["oldchill-proudmoore"] = {
             displayName = "Oldchill-proudmoore",
-            specKey = "HUNTER_BEASTMASTERY",
+            specKey = "HUNTER_MARKSMANSHIP",
             rating = 2457,
             rank = 672,
             wins = 103,
