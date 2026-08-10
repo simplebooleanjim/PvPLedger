@@ -1,7 +1,7 @@
 {
   "region": "US",
   "generatedDate": "2026-08-10",
-  "generatedAt": "2026-08-10T18:35:19Z",
+  "generatedAt": "2026-08-10T19:43:14Z",
   "brackets": {
     "blitz": {
       "snapshotId": "us-blitz-s41-2026-08-10",
@@ -23,13 +23,6 @@
       "season": 41,
       "listedPlayers": 1000,
       "file": "LadderData_US_Rbg.lua"
-    },
-    "arena2v2": {
-      "snapshotId": "us-arena2v2-s41-2026-08-10",
-      "source": "blizzard-api+seramate",
-      "season": 41,
-      "listedPlayers": 1003,
-      "file": "LadderData_US_Arena2v2.lua"
     },
     "arena3v3": {
       "snapshotId": "us-arena3v3-s41-2026-08-10",
