@@ -2,12 +2,12 @@
 PvPLedgerLadderData = PvPLedgerLadderData or {}
 PvPLedgerLadderData.EU = PvPLedgerLadderData.EU or {}
 PvPLedgerLadderData.EU.rbg = {
-    snapshotId = "eu-rbg-s41-2026-08-09",
+    snapshotId = "eu-rbg-s41-2026-08-10",
     region = "EU",
     bracket = "rbg",
     season = 41,
-    snapshotDate = "2026-08-09",
-    generatedAt = "2026-08-09T22:32:27Z",
+    snapshotDate = "2026-08-10",
+    generatedAt = "2026-08-10T01:47:46Z",
     source = "blizzard-api+seramate",
     overall = {
         listedCount = 1001,
@@ -251,9 +251,9 @@ PvPLedgerLadderData.EU.rbg = {
         },
         ["SHAMAN"] = {
             listedCount = 44,
-            avgListedRating = 1899.3,
-            medianListedRating = 1840,
-            top100Avg = 1899.3,
+            avgListedRating = 1892.5,
+            medianListedRating = 1856.5,
+            top100Avg = 1892.5,
             highest = 2671,
             buckets = {
                 ["1600-1699"] = 5,
@@ -737,14 +737,14 @@ PvPLedgerLadderData.EU.rbg = {
             },
         },
         ["SHAMAN_ELEMENTAL"] = {
-            listedCount = 17,
-            avgListedRating = 1892.5,
-            medianListedRating = 1840,
-            top100Avg = 1892.5,
+            listedCount = 16,
+            avgListedRating = 1903.6,
+            medianListedRating = 1856.5,
+            top100Avg = 1903.6,
             highest = 2671,
             buckets = {
                 ["1600-1699"] = 2,
-                ["1700-1799"] = 5,
+                ["1700-1799"] = 4,
                 ["1800-1899"] = 3,
                 ["1900-1999"] = 5,
                 ["2200-2299"] = 1,
@@ -752,13 +752,13 @@ PvPLedgerLadderData.EU.rbg = {
             },
         },
         ["SHAMAN_ENHANCEMENT"] = {
-            listedCount = 7,
-            avgListedRating = 1965.6,
-            medianListedRating = 1954,
-            top100Avg = 1965.6,
+            listedCount = 8,
+            avgListedRating = 1934.1,
+            medianListedRating = 1947.5,
+            top100Avg = 1934.1,
             highest = 2220,
             buckets = {
-                ["1700-1799"] = 1,
+                ["1700-1799"] = 2,
                 ["1800-1899"] = 1,
                 ["1900-1999"] = 3,
                 ["2100-2199"] = 1,
@@ -2496,7 +2496,7 @@ PvPLedgerLadderData.EU.rbg = {
             rating = 1985,
             rank = 310,
             wins = 47,
-            losses = 52,
+            losses = 55,
             faction = "ALLIANCE",
         },
         ["elektrikar-burningblade"] = {
@@ -4332,7 +4332,7 @@ PvPLedgerLadderData.EU.rbg = {
             rating = 1780,
             rank = 605,
             wins = 33,
-            losses = 48,
+            losses = 49,
             faction = "HORDE",
         },
         ["lumiel-twilightshammer"] = {
@@ -6105,7 +6105,7 @@ PvPLedgerLadderData.EU.rbg = {
             rating = 1822,
             rank = 542,
             wins = 50,
-            losses = 46,
+            losses = 47,
             faction = "ALLIANCE",
         },
         ["saltypopcorn-ravencrest"] = {
@@ -6168,7 +6168,7 @@ PvPLedgerLadderData.EU.rbg = {
             rating = 1767,
             rank = 624,
             wins = 23,
-            losses = 26,
+            losses = 27,
             faction = "HORDE",
         },
         ["sasoriana-eredar"] = {
@@ -6227,7 +6227,7 @@ PvPLedgerLadderData.EU.rbg = {
         },
         ["schallack-ravencrest"] = {
             displayName = "Schallack-ravencrest",
-            specKey = "SHAMAN_ELEMENTAL",
+            specKey = "SHAMAN_ENHANCEMENT",
             rating = 1714,
             rank = 759,
             wins = 20,
@@ -6951,7 +6951,7 @@ PvPLedgerLadderData.EU.rbg = {
             rating = 1789,
             rank = 595,
             wins = 23,
-            losses = 19,
+            losses = 22,
             faction = "HORDE",
         },
         ["tenzz-ragnaros"] = {
@@ -7284,7 +7284,7 @@ PvPLedgerLadderData.EU.rbg = {
             rating = 1989,
             rank = 305,
             wins = 30,
-            losses = 11,
+            losses = 12,
             faction = "ALLIANCE",
         },
         ["tyondé-drakthul"] = {
