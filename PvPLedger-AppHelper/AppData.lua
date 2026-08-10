@@ -3,8 +3,8 @@
 --- DO NOT EDIT MANUALLY.
 PVL_AppHelperPendingSnapshots = PVL_AppHelperPendingSnapshots or {}
 PVL_AppHelperSyncInfo = {
-    lastSync = 1786363332,
-    generatedAt = "2026-08-10T12:02:12Z",
+    lastSync = 1786369492,
+    generatedAt = "2026-08-10T13:44:52Z",
     region = "US",
     source = "collector",
 }
@@ -15,7 +15,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
     bracket = "arena2v2",
     season = 41,
     snapshotDate = "2026-08-10",
-    generatedAt = "2026-08-10T12:02:00Z",
+    generatedAt = "2026-08-10T13:44:40Z",
     source = "blizzard-api+seramate",
     overall = {
         listedCount = 1002,
@@ -107,9 +107,9 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["EVOKER"] = {
             listedCount = 73,
-            avgListedRating = 2502.2,
-            medianListedRating = 2485.0,
-            top100Avg = 2502.2,
+            avgListedRating = 2528.1,
+            medianListedRating = 2487.0,
+            top100Avg = 2528.1,
             highest = 2890,
             buckets = {
                 ["2400-2499"] = 30,
@@ -340,26 +340,27 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
             },
         },
         ["EVOKER_DEVASTATION"] = {
-            listedCount = 4,
-            avgListedRating = 2457.8,
-            medianListedRating = 2453.0,
-            top100Avg = 2457.8,
-            highest = 2483,
+            listedCount = 5,
+            avgListedRating = 2512.2,
+            medianListedRating = 2458,
+            top100Avg = 2512.2,
+            highest = 2730,
             buckets = {
                 ["2400-2499"] = 4,
+                ["2700-2799"] = 1,
             },
         },
         ["EVOKER_PRESERVATION"] = {
-            listedCount = 69,
-            avgListedRating = 2546.6,
-            medianListedRating = 2517,
-            top100Avg = 2546.6,
+            listedCount = 68,
+            avgListedRating = 2543.9,
+            medianListedRating = 2516.0,
+            top100Avg = 2543.9,
             highest = 2890,
             buckets = {
                 ["2400-2499"] = 26,
                 ["2500-2599"] = 26,
                 ["2600-2699"] = 9,
-                ["2700-2799"] = 6,
+                ["2700-2799"] = 5,
                 ["2800-2899"] = 2,
             },
         },
@@ -5633,7 +5634,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["muppetgronk-frostmourne"] = {
             displayName = "Muppetgronk-frostmourne",
-            specKey = "EVOKER_PRESERVATION",
+            specKey = "EVOKER_DEVASTATION",
             rating = 2730,
             rank = 39,
             wins = 289,
@@ -9726,7 +9727,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
     bracket = "arena3v3",
     season = 41,
     snapshotDate = "2026-08-10",
-    generatedAt = "2026-08-10T12:02:10Z",
+    generatedAt = "2026-08-10T13:44:50Z",
     source = "blizzard-api+seramate",
     overall = {
         listedCount = 1004,
@@ -19552,7 +19553,7 @@ PVL_AppHelperPendingSnapshots.blitz = {
     bracket = "blitz",
     season = 41,
     snapshotDate = "2026-08-10",
-    generatedAt = "2026-08-10T12:01:07Z",
+    generatedAt = "2026-08-10T13:43:46Z",
     source = "blizzard-api",
     overall = {
         listedCount = 37711,
@@ -334212,7 +334213,7 @@ PVL_AppHelperPendingSnapshots.rbg = {
     bracket = "rbg",
     season = 41,
     snapshotDate = "2026-08-10",
-    generatedAt = "2026-08-10T12:01:49Z",
+    generatedAt = "2026-08-10T13:44:28Z",
     source = "blizzard-api+seramate",
     overall = {
         listedCount = 1000,
@@ -344092,7 +344093,7 @@ PVL_AppHelperPendingSnapshots.shuffle = {
     bracket = "shuffle",
     season = 41,
     snapshotDate = "2026-08-10",
-    generatedAt = "2026-08-10T12:01:36Z",
+    generatedAt = "2026-08-10T13:44:16Z",
     source = "blizzard-api",
     overall = {
         listedCount = 38189,
