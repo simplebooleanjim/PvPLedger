@@ -7,7 +7,7 @@ PvPLedgerLadderData.US.arena2v2 = {
     bracket = "arena2v2",
     season = 41,
     snapshotDate = "2026-08-10",
-    generatedAt = "2026-08-10T20:24:54Z",
+    generatedAt = "2026-08-10T21:13:30Z",
     source = "blizzard-api+seramate",
     overall = {
         listedCount = 1002,
@@ -198,9 +198,9 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["SHAMAN"] = {
             listedCount = 45,
-            avgListedRating = 2465.1,
-            medianListedRating = 2465.0,
-            top100Avg = 2465.1,
+            avgListedRating = 2480.3,
+            medianListedRating = 2469.8,
+            top100Avg = 2480.3,
             highest = 2661,
             buckets = {
                 ["2400-2499"] = 30,
@@ -584,24 +584,14 @@ PvPLedgerLadderData.US.arena2v2 = {
                 ["2800-2899"] = 1,
             },
         },
-        ["SHAMAN_ELEMENTAL"] = {
-            listedCount = 1,
-            avgListedRating = 2427,
-            medianListedRating = 2427,
-            top100Avg = 2427,
-            highest = 2427,
-            buckets = {
-                ["2400-2499"] = 1,
-            },
-        },
         ["SHAMAN_ENHANCEMENT"] = {
-            listedCount = 6,
-            avgListedRating = 2480.7,
-            medianListedRating = 2465.0,
-            top100Avg = 2480.7,
+            listedCount = 7,
+            avgListedRating = 2473,
+            medianListedRating = 2463,
+            top100Avg = 2473,
             highest = 2614,
             buckets = {
-                ["2400-2499"] = 5,
+                ["2400-2499"] = 6,
                 ["2600-2699"] = 1,
             },
         },
@@ -5032,7 +5022,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["loganhawk-tichondrius"] = {
             displayName = "Loganhawk-tichondrius",
-            specKey = "SHAMAN_ELEMENTAL",
+            specKey = "SHAMAN_ENHANCEMENT",
             rating = 2427,
             rank = 942,
             wins = 72,
