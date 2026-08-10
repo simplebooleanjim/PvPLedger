@@ -7,7 +7,7 @@ PvPLedgerLadderData.US.arena2v2 = {
     bracket = "arena2v2",
     season = 41,
     snapshotDate = "2026-08-10",
-    generatedAt = "2026-08-10T21:13:30Z",
+    generatedAt = "2026-08-10T22:00:18Z",
     source = "blizzard-api+seramate",
     overall = {
         listedCount = 1002,
@@ -61,9 +61,9 @@ PvPLedgerLadderData.US.arena2v2 = {
     byClass = {
         ["DEATHKNIGHT"] = {
             listedCount = 23,
-            avgListedRating = 2487.8,
-            medianListedRating = 2480.8,
-            top100Avg = 2487.8,
+            avgListedRating = 2488.0,
+            medianListedRating = 2480.2,
+            top100Avg = 2488.0,
             highest = 2672,
             buckets = {
                 ["2400-2499"] = 14,
@@ -238,26 +238,26 @@ PvPLedgerLadderData.US.arena2v2 = {
     },
     bySpec = {
         ["DEATHKNIGHT_FROST"] = {
-            listedCount = 8,
-            avgListedRating = 2488.6,
-            medianListedRating = 2462.5,
-            top100Avg = 2488.6,
+            listedCount = 9,
+            avgListedRating = 2489.9,
+            medianListedRating = 2468,
+            top100Avg = 2489.9,
             highest = 2672,
             buckets = {
                 ["2400-2499"] = 6,
-                ["2500-2599"] = 1,
+                ["2500-2599"] = 2,
                 ["2600-2699"] = 1,
             },
         },
         ["DEATHKNIGHT_UNHOLY"] = {
-            listedCount = 15,
-            avgListedRating = 2487.1,
-            medianListedRating = 2499,
-            top100Avg = 2487.1,
+            listedCount = 14,
+            avgListedRating = 2486.1,
+            medianListedRating = 2492.5,
+            top100Avg = 2486.1,
             highest = 2543,
             buckets = {
                 ["2400-2499"] = 8,
-                ["2500-2599"] = 7,
+                ["2500-2599"] = 6,
             },
         },
         ["DEMONHUNTER_DEVOURER"] = {
@@ -3555,7 +3555,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["gripdeez-area52"] = {
             displayName = "Gripdeez-area-52",
-            specKey = "DEATHKNIGHT_UNHOLY",
+            specKey = "DEATHKNIGHT_FROST",
             rating = 2500,
             rank = 472,
             wins = 101,
