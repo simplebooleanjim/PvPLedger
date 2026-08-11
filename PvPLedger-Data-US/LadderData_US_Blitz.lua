@@ -7,7 +7,7 @@ PvPLedgerLadderData.US.blitz = {
     bracket = "blitz",
     season = 41,
     snapshotDate = "2026-08-11",
-    generatedAt = "2026-08-11T07:55:59Z",
+    generatedAt = "2026-08-11T08:57:06Z",
     source = "blizzard-api",
     overall = {
         listedCount = 37719,
@@ -69,7 +69,7 @@ PvPLedgerLadderData.US.blitz = {
             ["800-899"] = 752,
             ["900-999"] = 28,
         },
-        ratedPopulation = 86731,
+        ratedPopulation = 86728,
         titleCutoffs = {
             {
                 pct = 0.1,
@@ -1019,7 +1019,7 @@ PvPLedgerLadderData.US.blitz = {
                 },
             },
             ["WARRIOR_ARMS"] = {
-                population = 4197,
+                population = 4194,
                 cutoffs = {
                     {
                         pct = 0.1,
@@ -6180,7 +6180,7 @@ PvPLedgerLadderData.US.blitz = {
             rating = 1953,
             rank = 257,
             wins = 21,
-            losses = 13,
+            losses = 15,
             faction = "ALLIANCE",
         },
         ["ahsend-tichondrius"] = {
@@ -11076,7 +11076,7 @@ PvPLedgerLadderData.US.blitz = {
             rating = 1867,
             rank = 43,
             wins = 21,
-            losses = 13,
+            losses = 15,
             faction = "ALLIANCE",
         },
         ["anfora-sistersofelune"] = {
@@ -19482,7 +19482,7 @@ PvPLedgerLadderData.US.blitz = {
             rating = 2341,
             rank = 488,
             wins = 51,
-            losses = 43,
+            losses = 44,
             faction = "HORDE",
         },
         ["aypock-arthas"] = {
@@ -25818,7 +25818,7 @@ PvPLedgerLadderData.US.blitz = {
             rating = 1817,
             rank = 996,
             wins = 56,
-            losses = 66,
+            losses = 67,
             faction = "ALLIANCE",
         },
         ["bellamor-burningblade"] = {
@@ -46734,7 +46734,7 @@ PvPLedgerLadderData.US.blitz = {
             rating = 1794,
             rank = 626,
             wins = 8,
-            losses = 3,
+            losses = 4,
             faction = "ALLIANCE",
         },
         ["chloelia-moonguard"] = {
@@ -48984,7 +48984,7 @@ PvPLedgerLadderData.US.blitz = {
             rating = 1985,
             rank = 207,
             wins = 31,
-            losses = 25,
+            losses = 27,
             faction = "HORDE",
         },
         ["clarence-demonsoul"] = {
@@ -49074,7 +49074,7 @@ PvPLedgerLadderData.US.blitz = {
             rating = 863,
             rank = 988,
             wins = 3,
-            losses = 9,
+            losses = 10,
             faction = "ALLIANCE",
         },
         ["claudius-tichondrius"] = {
@@ -51854,7 +51854,7 @@ PvPLedgerLadderData.US.blitz = {
             specKey = "MONK_MISTWEAVER",
             rating = 2278,
             rank = 302,
-            wins = 55,
+            wins = 56,
             losses = 54,
             faction = "HORDE",
         },
@@ -56490,7 +56490,7 @@ PvPLedgerLadderData.US.blitz = {
             rating = 2407,
             rank = 27,
             wins = 61,
-            losses = 51,
+            losses = 52,
             faction = "ALLIANCE",
         },
         ["cônflicted-emeralddream"] = {
@@ -58149,15 +58149,6 @@ PvPLedgerLadderData.US.blitz = {
             losses = 27,
             faction = "ALLIANCE",
         },
-        ["dandelion-trollbane"] = {
-            displayName = "Dandelion-trollbane",
-            specKey = "DEATHKNIGHT_UNHOLY",
-            rating = 2054,
-            rank = 547,
-            wins = 21,
-            losses = 20,
-            faction = "HORDE",
-        },
         ["dandogg-kultiras"] = {
             displayName = "Dandogg-kul-tiras",
             specKey = "HUNTER_MARKSMANSHIP",
@@ -58183,6 +58174,15 @@ PvPLedgerLadderData.US.blitz = {
             rank = 34,
             wins = 53,
             losses = 48,
+            faction = "HORDE",
+        },
+        ["dandyz-trollbane"] = {
+            displayName = "Dandyz-trollbane",
+            specKey = "DEATHKNIGHT_UNHOLY",
+            rating = 2054,
+            rank = 547,
+            wins = 21,
+            losses = 20,
             faction = "HORDE",
         },
         ["dangbrochill-anvilmar"] = {
@@ -59658,7 +59658,7 @@ PvPLedgerLadderData.US.blitz = {
             rating = 1726,
             rank = 718,
             wins = 7,
-            losses = 5,
+            losses = 6,
             faction = "HORDE",
         },
         ["darong-tichondrius"] = {
@@ -63105,7 +63105,7 @@ PvPLedgerLadderData.US.blitz = {
             rating = 2190,
             rank = 149,
             wins = 55,
-            losses = 43,
+            losses = 44,
             faction = "ALLIANCE",
         },
         ["demiurge-deathwing"] = {
@@ -66876,7 +66876,7 @@ PvPLedgerLadderData.US.blitz = {
             rating = 2545,
             rank = 55,
             wins = 47,
-            losses = 27,
+            losses = 29,
             faction = "ALLIANCE",
         },
         ["discodeitx-lightninghoof"] = {
@@ -79809,7 +79809,7 @@ PvPLedgerLadderData.US.blitz = {
             rating = 3401,
             rank = 12,
             wins = 160,
-            losses = 135,
+            losses = 136,
             faction = "ALLIANCE",
         },
         ["elegiggle-malganis"] = {
@@ -102993,7 +102993,7 @@ PvPLedgerLadderData.US.blitz = {
             rating = 2247,
             rank = 478,
             wins = 24,
-            losses = 18,
+            losses = 19,
             faction = "HORDE",
         },
         ["glandalfe-hakkar"] = {
@@ -105459,7 +105459,7 @@ PvPLedgerLadderData.US.blitz = {
             rating = 1858,
             rank = 795,
             wins = 12,
-            losses = 14,
+            losses = 15,
             faction = "ALLIANCE",
         },
         ["gornluzzarn-area52"] = {
@@ -110913,7 +110913,7 @@ PvPLedgerLadderData.US.blitz = {
             rating = 3278,
             rank = 12,
             wins = 75,
-            losses = 58,
+            losses = 59,
             faction = "HORDE",
         },
         ["hadokha-ragnaros"] = {
@@ -114666,7 +114666,7 @@ PvPLedgerLadderData.US.blitz = {
             rating = 2028,
             rank = 845,
             wins = 16,
-            losses = 8,
+            losses = 9,
             faction = "ALLIANCE",
         },
         ["hellfalcon-tichondrius"] = {
@@ -117168,7 +117168,7 @@ PvPLedgerLadderData.US.blitz = {
             rating = 2058,
             rank = 558,
             wins = 16,
-            losses = 7,
+            losses = 9,
             faction = "ALLIANCE",
         },
         ["hollend-kiljaeden"] = {
@@ -126177,7 +126177,7 @@ PvPLedgerLadderData.US.blitz = {
             rating = 2181,
             rank = 79,
             wins = 22,
-            losses = 23,
+            losses = 24,
             faction = "HORDE",
         },
         ["inkstick-stormrage"] = {
@@ -134412,7 +134412,7 @@ PvPLedgerLadderData.US.blitz = {
             rating = 1900,
             rank = 376,
             wins = 14,
-            losses = 11,
+            losses = 12,
             faction = "ALLIANCE",
         },
         ["joeys-area52"] = {
@@ -135411,7 +135411,7 @@ PvPLedgerLadderData.US.blitz = {
             rating = 2585,
             rank = 78,
             wins = 34,
-            losses = 35,
+            losses = 36,
             faction = "ALLIANCE",
         },
         ["josesilver-quelthalas"] = {
@@ -145779,7 +145779,7 @@ PvPLedgerLadderData.US.blitz = {
             rating = 2058,
             rank = 799,
             wins = 19,
-            losses = 13,
+            losses = 14,
             faction = "ALLIANCE",
         },
         ["knifeinbut-area52"] = {
@@ -146895,7 +146895,7 @@ PvPLedgerLadderData.US.blitz = {
             rating = 1986,
             rank = 411,
             wins = 14,
-            losses = 8,
+            losses = 9,
             faction = "HORDE",
         },
         ["kossíí-kelthuzad"] = {
@@ -158532,7 +158532,7 @@ PvPLedgerLadderData.US.blitz = {
             rating = 2482,
             rank = 64,
             wins = 30,
-            losses = 21,
+            losses = 22,
             faction = "HORDE",
         },
         ["lohaitin-area52"] = {
@@ -164274,7 +164274,7 @@ PvPLedgerLadderData.US.blitz = {
             rating = 2446,
             rank = 193,
             wins = 33,
-            losses = 26,
+            losses = 27,
             faction = "ALLIANCE",
         },
         ["mageawayo-area52"] = {
@@ -165696,7 +165696,7 @@ PvPLedgerLadderData.US.blitz = {
             rating = 1841,
             rank = 845,
             wins = 17,
-            losses = 18,
+            losses = 19,
             faction = "ALLIANCE",
         },
         ["malfu-tichondrius"] = {
@@ -170915,7 +170915,7 @@ PvPLedgerLadderData.US.blitz = {
             specKey = "PRIEST_HOLY",
             rating = 2463,
             rank = 113,
-            wins = 70,
+            wins = 72,
             losses = 61,
             faction = "HORDE",
         },
@@ -182067,7 +182067,7 @@ PvPLedgerLadderData.US.blitz = {
             rating = 3356,
             rank = 23,
             wins = 62,
-            losses = 28,
+            losses = 30,
             faction = "HORDE",
         },
         ["märïäh-tichondrius"] = {
@@ -184524,7 +184524,7 @@ PvPLedgerLadderData.US.blitz = {
             rating = 2522,
             rank = 244,
             wins = 49,
-            losses = 37,
+            losses = 38,
             faction = "HORDE",
         },
         ["nathemate-khazgoroth"] = {
@@ -186063,7 +186063,7 @@ PvPLedgerLadderData.US.blitz = {
             rating = 1800,
             rank = 542,
             wins = 12,
-            losses = 3,
+            losses = 4,
             faction = "HORDE",
         },
         ["nemodamus-illidan"] = {
@@ -189015,7 +189015,7 @@ PvPLedgerLadderData.US.blitz = {
             rating = 1892,
             rank = 727,
             wins = 14,
-            losses = 11,
+            losses = 13,
             faction = "ALLIANCE",
         },
         ["nitinol-tichondrius"] = {
@@ -195567,7 +195567,7 @@ PvPLedgerLadderData.US.blitz = {
             rating = 3090,
             rank = 10,
             wins = 50,
-            losses = 27,
+            losses = 28,
             faction = "ALLIANCE",
         },
         ["omgitstista-proudmoore"] = {
@@ -204927,7 +204927,7 @@ PvPLedgerLadderData.US.blitz = {
             rating = 1982,
             rank = 228,
             wins = 28,
-            losses = 24,
+            losses = 25,
             faction = "ALLIANCE",
         },
         ["piroro-tichondrius"] = {
@@ -205971,7 +205971,7 @@ PvPLedgerLadderData.US.blitz = {
             rating = 1977,
             rank = 559,
             wins = 24,
-            losses = 22,
+            losses = 23,
             faction = "ALLIANCE",
         },
         ["pn-hellscream"] = {
@@ -212991,7 +212991,7 @@ PvPLedgerLadderData.US.blitz = {
             rating = 2675,
             rank = 176,
             wins = 33,
-            losses = 8,
+            losses = 10,
             faction = "HORDE",
         },
         ["ra-gundrak"] = {
@@ -218355,7 +218355,7 @@ PvPLedgerLadderData.US.blitz = {
             rating = 2025,
             rank = 337,
             wins = 23,
-            losses = 19,
+            losses = 21,
             faction = "HORDE",
         },
         ["rennyfox-wyrmrestaccord"] = {
@@ -228435,7 +228435,7 @@ PvPLedgerLadderData.US.blitz = {
             rating = 2409,
             rank = 185,
             wins = 144,
-            losses = 152,
+            losses = 153,
             faction = "ALLIANCE",
         },
         ["samuraigash-tichondrius"] = {
@@ -237003,7 +237003,7 @@ PvPLedgerLadderData.US.blitz = {
             rating = 1957,
             rank = 310,
             wins = 22,
-            losses = 18,
+            losses = 19,
             faction = "ALLIANCE",
         },
         ["shiftthtmist-kalecgos"] = {
@@ -241755,7 +241755,7 @@ PvPLedgerLadderData.US.blitz = {
             rating = 2327,
             rank = 206,
             wins = 32,
-            losses = 28,
+            losses = 30,
             faction = "ALLIANCE",
         },
         ["skelecton-tichondrius"] = {
@@ -247695,7 +247695,7 @@ PvPLedgerLadderData.US.blitz = {
             rating = 1972,
             rank = 396,
             wins = 22,
-            losses = 13,
+            losses = 14,
             faction = "ALLIANCE",
         },
         ["sorcerous-arthas"] = {
@@ -259674,7 +259674,7 @@ PvPLedgerLadderData.US.blitz = {
             rating = 2145,
             rank = 284,
             wins = 124,
-            losses = 132,
+            losses = 134,
             faction = "ALLIANCE",
         },
         ["síxr-tichondrius"] = {
@@ -263229,7 +263229,7 @@ PvPLedgerLadderData.US.blitz = {
             rating = 3045,
             rank = 26,
             wins = 64,
-            losses = 42,
+            losses = 44,
             faction = "ALLIANCE",
         },
         ["tealeauz-area52"] = {
@@ -271968,7 +271968,7 @@ PvPLedgerLadderData.US.blitz = {
             rating = 2401,
             rank = 199,
             wins = 77,
-            losses = 79,
+            losses = 80,
             faction = "ALLIANCE",
         },
         ["traicell-thrall"] = {
@@ -272940,7 +272940,7 @@ PvPLedgerLadderData.US.blitz = {
             rating = 1905,
             rank = 116,
             wins = 21,
-            losses = 18,
+            losses = 20,
             faction = "ALLIANCE",
         },
         ["tribalfury-tichondrius"] = {
@@ -288465,7 +288465,7 @@ PvPLedgerLadderData.US.blitz = {
             rating = 1793,
             rank = 960,
             wins = 12,
-            losses = 4,
+            losses = 5,
             faction = "HORDE",
         },
         ["vøtt-barthilas"] = {
@@ -295845,7 +295845,7 @@ PvPLedgerLadderData.US.blitz = {
             rating = 1887,
             rank = 389,
             wins = 28,
-            losses = 30,
+            losses = 31,
             faction = "ALLIANCE",
         },
         ["wwxww-bleedinghollow"] = {
@@ -308499,7 +308499,7 @@ PvPLedgerLadderData.US.blitz = {
             rating = 2375,
             rank = 233,
             wins = 24,
-            losses = 15,
+            losses = 16,
             faction = "ALLIANCE",
         },
         ["zugamm-barthilas"] = {
@@ -310767,7 +310767,7 @@ PvPLedgerLadderData.US.blitz = {
             rating = 3202,
             rank = 35,
             wins = 62,
-            losses = 40,
+            losses = 42,
             faction = "HORDE",
         },
         ["ßørèd-bleedinghollow"] = {

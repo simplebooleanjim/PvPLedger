@@ -7,7 +7,7 @@ PvPLedgerLadderData.US.rbg = {
     bracket = "rbg",
     season = 41,
     snapshotDate = "2026-08-11",
-    generatedAt = "2026-08-11T07:56:32Z",
+    generatedAt = "2026-08-11T08:57:44Z",
     source = "blizzard-api+seramate",
     overall = {
         listedCount = 1003,
@@ -4717,7 +4717,7 @@ PvPLedgerLadderData.US.rbg = {
             rating = 2309,
             rank = 139,
             wins = 113,
-            losses = 73,
+            losses = 74,
             faction = "HORDE",
         },
         ["kaderin-area52"] = {

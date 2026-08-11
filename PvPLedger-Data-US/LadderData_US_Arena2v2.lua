@@ -7,7 +7,7 @@ PvPLedgerLadderData.US.arena2v2 = {
     bracket = "arena2v2",
     season = 41,
     snapshotDate = "2026-08-11",
-    generatedAt = "2026-08-11T07:56:44Z",
+    generatedAt = "2026-08-11T08:57:57Z",
     source = "blizzard-api+seramate",
     overall = {
         listedCount = 1002,
@@ -993,7 +993,7 @@ PvPLedgerLadderData.US.arena2v2 = {
             rating = 2541,
             rank = 298,
             wins = 172,
-            losses = 127,
+            losses = 128,
             faction = "ALLIANCE",
         },
         ["assassassin-khadgar"] = {
@@ -8157,7 +8157,7 @@ PvPLedgerLadderData.US.arena2v2 = {
             rating = 2452,
             rank = 763,
             wins = 113,
-            losses = 70,
+            losses = 71,
             faction = "HORDE",
         },
         ["thccx-tichondrius"] = {
