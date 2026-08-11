@@ -3,19 +3,19 @@
 --- DO NOT EDIT MANUALLY.
 PVL_AppHelperPendingSnapshots = PVL_AppHelperPendingSnapshots or {}
 PVL_AppHelperSyncInfo = {
-    lastSync = 1786404933,
-    generatedAt = "2026-08-10T23:35:33Z",
+    lastSync = 1786408475,
+    generatedAt = "2026-08-11T00:34:35Z",
     region = "US",
     source = "collector",
 }
 
 PVL_AppHelperPendingSnapshots.arena2v2 = {
-    snapshotId = "us-arena2v2-s41-2026-08-10",
+    snapshotId = "us-arena2v2-s41-2026-08-11",
     region = "US",
     bracket = "arena2v2",
     season = 41,
-    snapshotDate = "2026-08-10",
-    generatedAt = "2026-08-10T23:35:19Z",
+    snapshotDate = "2026-08-11",
+    generatedAt = "2026-08-11T00:34:20Z",
     source = "blizzard-api+seramate",
     overall = {
         listedCount = 1005,
@@ -9738,12 +9738,12 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
 }
 
 PVL_AppHelperPendingSnapshots.arena3v3 = {
-    snapshotId = "us-arena3v3-s41-2026-08-10",
+    snapshotId = "us-arena3v3-s41-2026-08-11",
     region = "US",
     bracket = "arena3v3",
     season = 41,
-    snapshotDate = "2026-08-10",
-    generatedAt = "2026-08-10T23:35:32Z",
+    snapshotDate = "2026-08-11",
+    generatedAt = "2026-08-11T00:34:34Z",
     source = "blizzard-api+seramate",
     overall = {
         listedCount = 1000,
@@ -9797,7 +9797,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
     },
     byClass = {
         ["DEATHKNIGHT"] = {
-            listedCount = 40,
+            listedCount = 39,
             avgListedRating = 2810.1,
             medianListedRating = 2737,
             top100Avg = 2810.1,
@@ -9805,7 +9805,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
             buckets = {
                 ["2600-2699"] = 10,
                 ["2700-2799"] = 11,
-                ["2800-2899"] = 3,
+                ["2800-2899"] = 2,
                 ["2900-2999"] = 3,
                 ["3000-3099"] = 5,
                 ["3100-3199"] = 7,
@@ -9936,13 +9936,13 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
             },
         },
         ["ROGUE"] = {
-            listedCount = 105,
-            avgListedRating = 2827.1,
-            medianListedRating = 2753,
-            top100Avg = 2827.1,
+            listedCount = 106,
+            avgListedRating = 2823.9,
+            medianListedRating = 2749.5,
+            top100Avg = 2823.9,
             highest = 3220,
             buckets = {
-                ["2600-2699"] = 22,
+                ["2600-2699"] = 23,
                 ["2700-2799"] = 34,
                 ["2800-2899"] = 15,
                 ["2900-2999"] = 11,
@@ -10024,15 +10024,15 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
             },
         },
         ["DEATHKNIGHT_UNHOLY"] = {
-            listedCount = 30,
-            avgListedRating = 2867.6,
-            medianListedRating = 2794.0,
-            top100Avg = 2867.6,
+            listedCount = 29,
+            avgListedRating = 2867.4,
+            medianListedRating = 2764,
+            top100Avg = 2867.4,
             highest = 3201,
             buckets = {
                 ["2600-2699"] = 7,
                 ["2700-2799"] = 8,
-                ["2800-2899"] = 3,
+                ["2800-2899"] = 2,
                 ["2900-2999"] = 3,
                 ["3000-3099"] = 3,
                 ["3100-3199"] = 5,
@@ -10352,13 +10352,13 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
             },
         },
         ["ROGUE_ASSASSINATION"] = {
-            listedCount = 17,
-            avgListedRating = 2812.2,
-            medianListedRating = 2753,
-            top100Avg = 2812.2,
+            listedCount = 18,
+            avgListedRating = 2802.6,
+            medianListedRating = 2749.5,
+            top100Avg = 2802.6,
             highest = 3218,
             buckets = {
-                ["2600-2699"] = 6,
+                ["2600-2699"] = 7,
                 ["2700-2799"] = 6,
                 ["2800-2899"] = 1,
                 ["2900-2999"] = 1,
@@ -11766,7 +11766,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["conjecture-moonguard"] = {
             displayName = "Conjecture-moon-guard",
-            specKey = "",
+            specKey = "ROGUE_ASSASSINATION",
             rating = 2640,
             rank = 987,
             wins = 136,
@@ -11928,7 +11928,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["dandelion-trollbane"] = {
             displayName = "Dandelion-trollbane",
-            specKey = "DEATHKNIGHT_UNHOLY",
+            specKey = "",
             rating = 2872,
             rank = 306,
             wins = 152,
@@ -19526,12 +19526,12 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
 }
 
 PVL_AppHelperPendingSnapshots.blitz = {
-    snapshotId = "us-blitz-s41-2026-08-10",
+    snapshotId = "us-blitz-s41-2026-08-11",
     region = "US",
     bracket = "blitz",
     season = 41,
-    snapshotDate = "2026-08-10",
-    generatedAt = "2026-08-10T23:34:32Z",
+    snapshotDate = "2026-08-11",
+    generatedAt = "2026-08-11T00:33:26Z",
     source = "blizzard-api",
     overall = {
         listedCount = 37714,
@@ -334286,12 +334286,12 @@ PVL_AppHelperPendingSnapshots.blitz = {
 }
 
 PVL_AppHelperPendingSnapshots.rbg = {
-    snapshotId = "us-rbg-s41-2026-08-10",
+    snapshotId = "us-rbg-s41-2026-08-11",
     region = "US",
     bracket = "rbg",
     season = 41,
-    snapshotDate = "2026-08-10",
-    generatedAt = "2026-08-10T23:35:06Z",
+    snapshotDate = "2026-08-11",
+    generatedAt = "2026-08-11T00:34:07Z",
     source = "blizzard-api+seramate",
     overall = {
         listedCount = 1000,
@@ -344166,12 +344166,12 @@ PVL_AppHelperPendingSnapshots.rbg = {
 }
 
 PVL_AppHelperPendingSnapshots.shuffle = {
-    snapshotId = "us-shuffle-s41-2026-08-10",
+    snapshotId = "us-shuffle-s41-2026-08-11",
     region = "US",
     bracket = "shuffle",
     season = 41,
-    snapshotDate = "2026-08-10",
-    generatedAt = "2026-08-10T23:34:53Z",
+    snapshotDate = "2026-08-11",
+    generatedAt = "2026-08-11T00:33:55Z",
     source = "blizzard-api",
     overall = {
         listedCount = 38206,

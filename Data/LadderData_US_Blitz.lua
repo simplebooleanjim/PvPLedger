@@ -2,12 +2,12 @@
 PvPLedgerLadderData = PvPLedgerLadderData or {}
 PvPLedgerLadderData.US = PvPLedgerLadderData.US or {}
 PvPLedgerLadderData.US.blitz = {
-    snapshotId = "us-blitz-s41-2026-08-10",
+    snapshotId = "us-blitz-s41-2026-08-11",
     region = "US",
     bracket = "blitz",
     season = 41,
-    snapshotDate = "2026-08-10",
-    generatedAt = "2026-08-10T23:34:32Z",
+    snapshotDate = "2026-08-11",
+    generatedAt = "2026-08-11T00:33:26Z",
     source = "blizzard-api",
     overall = {
         listedCount = 37714,
