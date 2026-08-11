@@ -1,7 +1,7 @@
 {
   "region": "US",
   "generatedDate": "2026-08-11",
-  "generatedAt": "2026-08-11T14:33:35Z",
+  "generatedAt": "2026-08-11T15:40:19Z",
   "brackets": {
     "blitz": {
       "snapshotId": "us-blitz-s41-2026-08-11",
@@ -14,7 +14,7 @@
       "snapshotId": "us-shuffle-s41-2026-08-11",
       "source": "blizzard-api",
       "season": 41,
-      "listedPlayers": 38232,
+      "listedPlayers": 38231,
       "file": "LadderData_US_Shuffle.lua"
     },
     "rbg": {

@@ -7,7 +7,7 @@ PvPLedgerLadderData.US.blitz = {
     bracket = "blitz",
     season = 41,
     snapshotDate = "2026-08-11",
-    generatedAt = "2026-08-11T14:32:23Z",
+    generatedAt = "2026-08-11T15:39:05Z",
     source = "blizzard-api",
     overall = {
         listedCount = 37716,
@@ -69,7 +69,7 @@ PvPLedgerLadderData.US.blitz = {
             ["800-899"] = 752,
             ["900-999"] = 28,
         },
-        ratedPopulation = 86729,
+        ratedPopulation = 86730,
         titleCutoffs = {
             {
                 pct = 0.1,
@@ -944,7 +944,7 @@ PvPLedgerLadderData.US.blitz = {
                 },
             },
             ["WARLOCK_AFFLICTION"] = {
-                population = 3160,
+                population = 3161,
                 cutoffs = {
                     {
                         pct = 0.1,
@@ -66671,15 +66671,6 @@ PvPLedgerLadderData.US.blitz = {
             wins = 11,
             losses = 12,
             faction = "ALLIANCE",
-        },
-        ["dirtydraws-tichondrius"] = {
-            displayName = "Dirtydraws-tichondrius",
-            specKey = "WARRIOR_ARMS",
-            rating = 2966,
-            rank = 34,
-            wins = 103,
-            losses = 93,
-            faction = "HORDE",
         },
         ["dirtyfists-tichondrius"] = {
             displayName = "Dirtyfists-tichondrius",
@@ -231713,6 +231704,15 @@ PvPLedgerLadderData.US.blitz = {
             wins = 102,
             losses = 55,
             faction = "ALLIANCE",
+        },
+        ["seafoamdweeb-tichondrius"] = {
+            displayName = "Seafoamdweeb-tichondrius",
+            specKey = "WARRIOR_ARMS",
+            rating = 2966,
+            rank = 34,
+            wins = 103,
+            losses = 93,
+            faction = "HORDE",
         },
         ["sealrogue-barthilas"] = {
             displayName = "Sealrogue-barthilas",
