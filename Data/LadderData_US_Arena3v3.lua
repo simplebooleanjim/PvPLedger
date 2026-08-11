@@ -7,7 +7,7 @@ PvPLedgerLadderData.US.arena3v3 = {
     bracket = "arena3v3",
     season = 41,
     snapshotDate = "2026-08-11",
-    generatedAt = "2026-08-11T19:47:22Z",
+    generatedAt = "2026-08-11T20:43:42Z",
     source = "blizzard-api+seramate",
     overall = {
         listedCount = 1000,
@@ -138,9 +138,9 @@ PvPLedgerLadderData.US.arena3v3 = {
         },
         ["MAGE"] = {
             listedCount = 100,
-            avgListedRating = 2807.7,
-            medianListedRating = 2743.0,
-            top100Avg = 2807.7,
+            avgListedRating = 2807.3,
+            medianListedRating = 2741,
+            top100Avg = 2807.3,
             highest = 3200,
             buckets = {
                 ["2600-2699"] = 28,
@@ -452,14 +452,14 @@ PvPLedgerLadderData.US.arena3v3 = {
             },
         },
         ["MAGE_ARCANE"] = {
-            listedCount = 8,
+            listedCount = 7,
             avgListedRating = 2734,
-            medianListedRating = 2720.5,
+            medianListedRating = 2707,
             top100Avg = 2734,
             highest = 2833,
             buckets = {
                 ["2600-2699"] = 3,
-                ["2700-2799"] = 4,
+                ["2700-2799"] = 3,
                 ["2800-2899"] = 1,
             },
         },
@@ -478,14 +478,14 @@ PvPLedgerLadderData.US.arena3v3 = {
             },
         },
         ["MAGE_FROST"] = {
-            listedCount = 78,
-            avgListedRating = 2818.1,
-            medianListedRating = 2743.0,
-            top100Avg = 2818.1,
+            listedCount = 79,
+            avgListedRating = 2817.0,
+            medianListedRating = 2741,
+            top100Avg = 2817.0,
             highest = 3200,
             buckets = {
                 ["2600-2699"] = 23,
-                ["2700-2799"] = 23,
+                ["2700-2799"] = 24,
                 ["2800-2899"] = 14,
                 ["2900-2999"] = 3,
                 ["3000-3099"] = 3,
@@ -3613,7 +3613,7 @@ PvPLedgerLadderData.US.arena3v3 = {
         },
         ["gohonn-emeralddream"] = {
             displayName = "Gohonn-emerald-dream",
-            specKey = "MAGE_ARCANE",
+            specKey = "MAGE_FROST",
             rating = 2734,
             rank = 559,
             wins = 471,

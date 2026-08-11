@@ -3,8 +3,8 @@
 --- DO NOT EDIT MANUALLY.
 PVL_AppHelperPendingSnapshots = PVL_AppHelperPendingSnapshots or {}
 PVL_AppHelperSyncInfo = {
-    lastSync = 1786477643,
-    generatedAt = "2026-08-11T19:47:23Z",
+    lastSync = 1786481023,
+    generatedAt = "2026-08-11T20:43:43Z",
     region = "US",
     source = "collector",
 }
@@ -15,7 +15,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
     bracket = "arena2v2",
     season = 41,
     snapshotDate = "2026-08-11",
-    generatedAt = "2026-08-11T19:47:11Z",
+    generatedAt = "2026-08-11T20:43:27Z",
     source = "blizzard-api+seramate",
     overall = {
         listedCount = 1002,
@@ -9725,7 +9725,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
     bracket = "arena3v3",
     season = 41,
     snapshotDate = "2026-08-11",
-    generatedAt = "2026-08-11T19:47:22Z",
+    generatedAt = "2026-08-11T20:43:42Z",
     source = "blizzard-api+seramate",
     overall = {
         listedCount = 1000,
@@ -9856,9 +9856,9 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["MAGE"] = {
             listedCount = 100,
-            avgListedRating = 2807.7,
-            medianListedRating = 2743.0,
-            top100Avg = 2807.7,
+            avgListedRating = 2807.3,
+            medianListedRating = 2741,
+            top100Avg = 2807.3,
             highest = 3200,
             buckets = {
                 ["2600-2699"] = 28,
@@ -10170,14 +10170,14 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
             },
         },
         ["MAGE_ARCANE"] = {
-            listedCount = 8,
+            listedCount = 7,
             avgListedRating = 2734,
-            medianListedRating = 2720.5,
+            medianListedRating = 2707,
             top100Avg = 2734,
             highest = 2833,
             buckets = {
                 ["2600-2699"] = 3,
-                ["2700-2799"] = 4,
+                ["2700-2799"] = 3,
                 ["2800-2899"] = 1,
             },
         },
@@ -10196,14 +10196,14 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
             },
         },
         ["MAGE_FROST"] = {
-            listedCount = 78,
-            avgListedRating = 2818.1,
-            medianListedRating = 2743.0,
-            top100Avg = 2818.1,
+            listedCount = 79,
+            avgListedRating = 2817.0,
+            medianListedRating = 2741,
+            top100Avg = 2817.0,
             highest = 3200,
             buckets = {
                 ["2600-2699"] = 23,
-                ["2700-2799"] = 23,
+                ["2700-2799"] = 24,
                 ["2800-2899"] = 14,
                 ["2900-2999"] = 3,
                 ["3000-3099"] = 3,
@@ -13331,7 +13331,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["gohonn-emeralddream"] = {
             displayName = "Gohonn-emerald-dream",
-            specKey = "MAGE_ARCANE",
+            specKey = "MAGE_FROST",
             rating = 2734,
             rank = 559,
             wins = 471,
@@ -19512,7 +19512,7 @@ PVL_AppHelperPendingSnapshots.blitz = {
     bracket = "blitz",
     season = 41,
     snapshotDate = "2026-08-11",
-    generatedAt = "2026-08-11T19:46:18Z",
+    generatedAt = "2026-08-11T20:42:29Z",
     source = "blizzard-api",
     overall = {
         listedCount = 37716,
@@ -334226,7 +334226,7 @@ PVL_AppHelperPendingSnapshots.rbg = {
     bracket = "rbg",
     season = 41,
     snapshotDate = "2026-08-11",
-    generatedAt = "2026-08-11T19:46:58Z",
+    generatedAt = "2026-08-11T20:43:11Z",
     source = "blizzard-api+seramate",
     overall = {
         listedCount = 1003,
@@ -334302,9 +334302,9 @@ PVL_AppHelperPendingSnapshots.rbg = {
         },
         ["DEMONHUNTER"] = {
             listedCount = 47,
-            avgListedRating = 2045.9,
-            medianListedRating = 2036.0,
-            top100Avg = 2045.9,
+            avgListedRating = 2047.0,
+            medianListedRating = 2039,
+            top100Avg = 2047.0,
             highest = 2490,
             buckets = {
                 ["1800-1899"] = 14,
@@ -334562,14 +334562,14 @@ PVL_AppHelperPendingSnapshots.rbg = {
             },
         },
         ["DEMONHUNTER_DEVOURER"] = {
-            listedCount = 22,
-            avgListedRating = 2074.7,
-            medianListedRating = 2036.0,
-            top100Avg = 2074.7,
+            listedCount = 21,
+            avgListedRating = 2082.5,
+            medianListedRating = 2039,
+            top100Avg = 2082.5,
             highest = 2490,
             buckets = {
                 ["1800-1899"] = 5,
-                ["1900-1999"] = 4,
+                ["1900-1999"] = 3,
                 ["2000-2099"] = 3,
                 ["2100-2199"] = 4,
                 ["2200-2299"] = 2,
@@ -334578,14 +334578,14 @@ PVL_AppHelperPendingSnapshots.rbg = {
             },
         },
         ["DEMONHUNTER_HAVOC"] = {
-            listedCount = 23,
-            avgListedRating = 2019.0,
-            medianListedRating = 1999,
-            top100Avg = 2019.0,
+            listedCount = 24,
+            avgListedRating = 2014.5,
+            medianListedRating = 1993.5,
+            top100Avg = 2014.5,
             highest = 2349,
             buckets = {
                 ["1800-1899"] = 9,
-                ["1900-1999"] = 3,
+                ["1900-1999"] = 4,
                 ["2000-2099"] = 4,
                 ["2100-2199"] = 3,
                 ["2200-2299"] = 3,
@@ -343701,7 +343701,7 @@ PVL_AppHelperPendingSnapshots.rbg = {
         },
         ["xonu-sargeras"] = {
             displayName = "Xonu-sargeras",
-            specKey = "DEMONHUNTER_DEVOURER",
+            specKey = "DEMONHUNTER_HAVOC",
             rating = 1912,
             rank = 713,
             wins = 36,
@@ -344131,7 +344131,7 @@ PVL_AppHelperPendingSnapshots.shuffle = {
     bracket = "shuffle",
     season = 41,
     snapshotDate = "2026-08-11",
-    generatedAt = "2026-08-11T19:46:46Z",
+    generatedAt = "2026-08-11T20:42:56Z",
     source = "blizzard-api",
     overall = {
         listedCount = 38231,
