@@ -7,7 +7,7 @@ PvPLedgerLadderData.US.shuffle = {
     bracket = "shuffle",
     season = 41,
     snapshotDate = "2026-08-11",
-    generatedAt = "2026-08-11T08:57:30Z",
+    generatedAt = "2026-08-11T10:03:12Z",
     source = "blizzard-api",
     overall = {
         listedCount = 38232,
@@ -842,7 +842,7 @@ PvPLedgerLadderData.US.shuffle = {
                 },
             },
             ["ROGUE_SUBTLETY"] = {
-                population = 5001,
+                population = 5002,
                 cutoffs = {
                     {
                         pct = 0.1,
@@ -942,7 +942,7 @@ PvPLedgerLadderData.US.shuffle = {
                 },
             },
             ["WARLOCK_AFFLICTION"] = {
-                population = 5030,
+                population = 5029,
                 cutoffs = {
                     {
                         pct = 0.1,
@@ -12885,15 +12885,6 @@ PvPLedgerLadderData.US.shuffle = {
             wins = 125,
             losses = 106,
             faction = "ALLIANCE",
-        },
-        ["arsnlupin-tichondrius"] = {
-            displayName = "Arsnlupin-tichondrius",
-            specKey = "MONK_WINDWALKER",
-            rating = 2808,
-            rank = 79,
-            wins = 207,
-            losses = 187,
-            faction = "HORDE",
         },
         ["arson-sargeras"] = {
             displayName = "Arson-sargeras",
@@ -106612,6 +106603,15 @@ PvPLedgerLadderData.US.shuffle = {
             losses = 42,
             faction = "HORDE",
         },
+        ["hakénkreuz-tichondrius"] = {
+            displayName = "Hakénkreuz-tichondrius",
+            specKey = "MONK_WINDWALKER",
+            rating = 2808,
+            rank = 79,
+            wins = 207,
+            losses = 187,
+            faction = "HORDE",
+        },
         ["haladriel-sargeras"] = {
             displayName = "Haladriel-sargeras",
             specKey = "MAGE_FIRE",
@@ -143161,15 +143161,6 @@ PvPLedgerLadderData.US.shuffle = {
             losses = 369,
             faction = "ALLIANCE",
         },
-        ["ktzr-illidan"] = {
-            displayName = "Ktzr-illidan",
-            specKey = "DEMONHUNTER_DEVOURER",
-            rating = 2651,
-            rank = 181,
-            wins = 86,
-            losses = 68,
-            faction = "ALLIANCE",
-        },
         ["kuasaxiao-tichondrius"] = {
             displayName = "Kuasaxiao-tichondrius",
             specKey = "WARLOCK_AFFLICTION",
@@ -168585,6 +168576,15 @@ PvPLedgerLadderData.US.shuffle = {
             wins = 88,
             losses = 47,
             faction = "HORDE",
+        },
+        ["missednova-illidan"] = {
+            displayName = "Missednova-illidan",
+            specKey = "DEMONHUNTER_DEVOURER",
+            rating = 2651,
+            rank = 181,
+            wins = 86,
+            losses = 68,
+            faction = "ALLIANCE",
         },
         ["missedsweep-sargeras"] = {
             displayName = "Missedsweep-sargeras",

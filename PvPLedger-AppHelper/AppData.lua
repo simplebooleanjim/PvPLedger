@@ -3,8 +3,8 @@
 --- DO NOT EDIT MANUALLY.
 PVL_AppHelperPendingSnapshots = PVL_AppHelperPendingSnapshots or {}
 PVL_AppHelperSyncInfo = {
-    lastSync = 1786438690,
-    generatedAt = "2026-08-11T08:58:10Z",
+    lastSync = 1786442629,
+    generatedAt = "2026-08-11T10:03:49Z",
     region = "US",
     source = "collector",
 }
@@ -15,7 +15,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
     bracket = "arena2v2",
     season = 41,
     snapshotDate = "2026-08-11",
-    generatedAt = "2026-08-11T08:57:57Z",
+    generatedAt = "2026-08-11T10:03:37Z",
     source = "blizzard-api+seramate",
     overall = {
         listedCount = 1002,
@@ -9725,7 +9725,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
     bracket = "arena3v3",
     season = 41,
     snapshotDate = "2026-08-11",
-    generatedAt = "2026-08-11T08:58:09Z",
+    generatedAt = "2026-08-11T10:03:47Z",
     source = "blizzard-api+seramate",
     overall = {
         listedCount = 1000,
@@ -19512,7 +19512,7 @@ PVL_AppHelperPendingSnapshots.blitz = {
     bracket = "blitz",
     season = 41,
     snapshotDate = "2026-08-11",
-    generatedAt = "2026-08-11T08:57:06Z",
+    generatedAt = "2026-08-11T10:02:53Z",
     source = "blizzard-api",
     overall = {
         listedCount = 37719,
@@ -19574,7 +19574,7 @@ PVL_AppHelperPendingSnapshots.blitz = {
             ["800-899"] = 752,
             ["900-999"] = 28,
         },
-        ratedPopulation = 86728,
+        ratedPopulation = 86727,
         titleCutoffs = {
             {
                 pct = 0.1,
@@ -20449,7 +20449,7 @@ PVL_AppHelperPendingSnapshots.blitz = {
                 },
             },
             ["WARLOCK_AFFLICTION"] = {
-                population = 3160,
+                population = 3159,
                 cutoffs = {
                     {
                         pct = 0.1,
@@ -110709,15 +110709,6 @@ PVL_AppHelperPendingSnapshots.blitz = {
             rank = 28,
             wins = 54,
             losses = 35,
-            faction = "ALLIANCE",
-        },
-        ["firstçlass-tichondrius"] = {
-            displayName = "Firstçlass-tichondrius",
-            specKey = "HUNTER_MARKSMANSHIP",
-            rating = 3149,
-            rank = 27,
-            wins = 96,
-            losses = 83,
             faction = "ALLIANCE",
         },
         ["fish-area52"] = {
@@ -214111,6 +214102,15 @@ PVL_AppHelperPendingSnapshots.blitz = {
             wins = 22,
             losses = 15,
             faction = "HORDE",
+        },
+        ["oilbaron-tichondrius"] = {
+            displayName = "Oilbaron-tichondrius",
+            specKey = "HUNTER_MARKSMANSHIP",
+            rating = 3149,
+            rank = 27,
+            wins = 96,
+            losses = 83,
+            faction = "ALLIANCE",
         },
         ["oilhead-frostmourne"] = {
             displayName = "Oilhead-frostmourne",
@@ -334253,7 +334253,7 @@ PVL_AppHelperPendingSnapshots.rbg = {
     bracket = "rbg",
     season = 41,
     snapshotDate = "2026-08-11",
-    generatedAt = "2026-08-11T08:57:44Z",
+    generatedAt = "2026-08-11T10:03:25Z",
     source = "blizzard-api+seramate",
     overall = {
         listedCount = 1003,
@@ -344159,7 +344159,7 @@ PVL_AppHelperPendingSnapshots.shuffle = {
     bracket = "shuffle",
     season = 41,
     snapshotDate = "2026-08-11",
-    generatedAt = "2026-08-11T08:57:30Z",
+    generatedAt = "2026-08-11T10:03:12Z",
     source = "blizzard-api",
     overall = {
         listedCount = 38232,
@@ -344994,7 +344994,7 @@ PVL_AppHelperPendingSnapshots.shuffle = {
                 },
             },
             ["ROGUE_SUBTLETY"] = {
-                population = 5001,
+                population = 5002,
                 cutoffs = {
                     {
                         pct = 0.1,
@@ -345094,7 +345094,7 @@ PVL_AppHelperPendingSnapshots.shuffle = {
                 },
             },
             ["WARLOCK_AFFLICTION"] = {
-                population = 5030,
+                population = 5029,
                 cutoffs = {
                     {
                         pct = 0.1,
@@ -357037,15 +357037,6 @@ PVL_AppHelperPendingSnapshots.shuffle = {
             wins = 125,
             losses = 106,
             faction = "ALLIANCE",
-        },
-        ["arsnlupin-tichondrius"] = {
-            displayName = "Arsnlupin-tichondrius",
-            specKey = "MONK_WINDWALKER",
-            rating = 2808,
-            rank = 79,
-            wins = 207,
-            losses = 187,
-            faction = "HORDE",
         },
         ["arson-sargeras"] = {
             displayName = "Arson-sargeras",
@@ -450764,6 +450755,15 @@ PVL_AppHelperPendingSnapshots.shuffle = {
             losses = 42,
             faction = "HORDE",
         },
+        ["hakénkreuz-tichondrius"] = {
+            displayName = "Hakénkreuz-tichondrius",
+            specKey = "MONK_WINDWALKER",
+            rating = 2808,
+            rank = 79,
+            wins = 207,
+            losses = 187,
+            faction = "HORDE",
+        },
         ["haladriel-sargeras"] = {
             displayName = "Haladriel-sargeras",
             specKey = "MAGE_FIRE",
@@ -487313,15 +487313,6 @@ PVL_AppHelperPendingSnapshots.shuffle = {
             losses = 369,
             faction = "ALLIANCE",
         },
-        ["ktzr-illidan"] = {
-            displayName = "Ktzr-illidan",
-            specKey = "DEMONHUNTER_DEVOURER",
-            rating = 2651,
-            rank = 181,
-            wins = 86,
-            losses = 68,
-            faction = "ALLIANCE",
-        },
         ["kuasaxiao-tichondrius"] = {
             displayName = "Kuasaxiao-tichondrius",
             specKey = "WARLOCK_AFFLICTION",
@@ -512737,6 +512728,15 @@ PVL_AppHelperPendingSnapshots.shuffle = {
             wins = 88,
             losses = 47,
             faction = "HORDE",
+        },
+        ["missednova-illidan"] = {
+            displayName = "Missednova-illidan",
+            specKey = "DEMONHUNTER_DEVOURER",
+            rating = 2651,
+            rank = 181,
+            wins = 86,
+            losses = 68,
+            faction = "ALLIANCE",
         },
         ["missedsweep-sargeras"] = {
             displayName = "Missedsweep-sargeras",

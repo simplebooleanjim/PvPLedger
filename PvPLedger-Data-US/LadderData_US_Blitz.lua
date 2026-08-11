@@ -7,7 +7,7 @@ PvPLedgerLadderData.US.blitz = {
     bracket = "blitz",
     season = 41,
     snapshotDate = "2026-08-11",
-    generatedAt = "2026-08-11T08:57:06Z",
+    generatedAt = "2026-08-11T10:02:53Z",
     source = "blizzard-api",
     overall = {
         listedCount = 37719,
@@ -69,7 +69,7 @@ PvPLedgerLadderData.US.blitz = {
             ["800-899"] = 752,
             ["900-999"] = 28,
         },
-        ratedPopulation = 86728,
+        ratedPopulation = 86727,
         titleCutoffs = {
             {
                 pct = 0.1,
@@ -944,7 +944,7 @@ PvPLedgerLadderData.US.blitz = {
                 },
             },
             ["WARLOCK_AFFLICTION"] = {
-                population = 3160,
+                population = 3159,
                 cutoffs = {
                     {
                         pct = 0.1,
@@ -91204,15 +91204,6 @@ PvPLedgerLadderData.US.blitz = {
             rank = 28,
             wins = 54,
             losses = 35,
-            faction = "ALLIANCE",
-        },
-        ["firstçlass-tichondrius"] = {
-            displayName = "Firstçlass-tichondrius",
-            specKey = "HUNTER_MARKSMANSHIP",
-            rating = 3149,
-            rank = 27,
-            wins = 96,
-            losses = 83,
             faction = "ALLIANCE",
         },
         ["fish-area52"] = {
@@ -194606,6 +194597,15 @@ PvPLedgerLadderData.US.blitz = {
             wins = 22,
             losses = 15,
             faction = "HORDE",
+        },
+        ["oilbaron-tichondrius"] = {
+            displayName = "Oilbaron-tichondrius",
+            specKey = "HUNTER_MARKSMANSHIP",
+            rating = 3149,
+            rank = 27,
+            wins = 96,
+            losses = 83,
+            faction = "ALLIANCE",
         },
         ["oilhead-frostmourne"] = {
             displayName = "Oilhead-frostmourne",
