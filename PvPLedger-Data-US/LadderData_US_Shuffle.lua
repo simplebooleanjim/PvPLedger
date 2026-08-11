@@ -7,7 +7,7 @@ PvPLedgerLadderData.US.shuffle = {
     bracket = "shuffle",
     season = 41,
     snapshotDate = "2026-08-11",
-    generatedAt = "2026-08-11T11:57:12Z",
+    generatedAt = "2026-08-11T13:10:11Z",
     source = "blizzard-api",
     overall = {
         listedCount = 38232,
@@ -67,7 +67,7 @@ PvPLedgerLadderData.US.shuffle = {
             ["800-899"] = 133,
             ["900-999"] = 136,
         },
-        ratedPopulation = 137206,
+        ratedPopulation = 137204,
         titleCutoffs = {
             {
                 pct = 0.1,
@@ -417,7 +417,7 @@ PvPLedgerLadderData.US.shuffle = {
                 },
             },
             ["HUNTER_BEASTMASTERY"] = {
-                population = 5005,
+                population = 5000,
                 cutoffs = {
                     {
                         pct = 0.1,
@@ -426,18 +426,18 @@ PvPLedgerLadderData.US.shuffle = {
                     },
                     {
                         pct = 0.5,
-                        rank = 26,
-                        rating = 3068,
+                        rank = 25,
+                        rating = 3075,
                     },
                     {
                         pct = 1.0,
-                        rank = 51,
-                        rating = 2931,
+                        rank = 50,
+                        rating = 2937,
                     },
                     {
                         pct = 3.0,
-                        rank = 151,
-                        rating = 2746,
+                        rank = 150,
+                        rating = 2749,
                     },
                 },
             },
@@ -592,7 +592,7 @@ PvPLedgerLadderData.US.shuffle = {
                 },
             },
             ["MONK_MISTWEAVER"] = {
-                population = 5002,
+                population = 5003,
                 cutoffs = {
                     {
                         pct = 0.1,
@@ -942,7 +942,7 @@ PvPLedgerLadderData.US.shuffle = {
                 },
             },
             ["WARLOCK_AFFLICTION"] = {
-                population = 5029,
+                population = 5031,
                 cutoffs = {
                     {
                         pct = 0.1,
