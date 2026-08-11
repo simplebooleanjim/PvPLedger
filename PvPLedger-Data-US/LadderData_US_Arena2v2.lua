@@ -7,7 +7,7 @@ PvPLedgerLadderData.US.arena2v2 = {
     bracket = "arena2v2",
     season = 41,
     snapshotDate = "2026-08-11",
-    generatedAt = "2026-08-11T10:03:37Z",
+    generatedAt = "2026-08-11T11:06:09Z",
     source = "blizzard-api+seramate",
     overall = {
         listedCount = 1002,
@@ -170,9 +170,9 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["PRIEST"] = {
             listedCount = 225,
-            avgListedRating = 2506.3,
-            medianListedRating = 2491,
-            top100Avg = 2520.1,
+            avgListedRating = 2506.0,
+            medianListedRating = 2491.0,
+            top100Avg = 2519.7,
             highest = 2859,
             buckets = {
                 ["2400-2499"] = 116,
@@ -504,13 +504,13 @@ PvPLedgerLadderData.US.arena2v2 = {
             },
         },
         ["PRIEST_DISCIPLINE"] = {
-            listedCount = 161,
-            avgListedRating = 2513.7,
-            medianListedRating = 2491,
+            listedCount = 160,
+            avgListedRating = 2514.0,
+            medianListedRating = 2491.0,
             top100Avg = 2555.2,
             highest = 2816,
             buckets = {
-                ["2400-2499"] = 84,
+                ["2400-2499"] = 83,
                 ["2500-2599"] = 53,
                 ["2600-2699"] = 15,
                 ["2700-2799"] = 7,
@@ -518,13 +518,13 @@ PvPLedgerLadderData.US.arena2v2 = {
             },
         },
         ["PRIEST_HOLY"] = {
-            listedCount = 50,
-            avgListedRating = 2524.9,
-            medianListedRating = 2509.5,
-            top100Avg = 2524.9,
+            listedCount = 51,
+            avgListedRating = 2523.6,
+            medianListedRating = 2504,
+            top100Avg = 2523.6,
             highest = 2859,
             buckets = {
-                ["2400-2499"] = 22,
+                ["2400-2499"] = 23,
                 ["2500-2599"] = 18,
                 ["2600-2699"] = 7,
                 ["2700-2799"] = 2,
@@ -9161,7 +9161,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["xiaz-lightbringer"] = {
             displayName = "Xiaz-lightbringer",
-            specKey = "PRIEST_DISCIPLINE",
+            specKey = "PRIEST_HOLY",
             rating = 2459,
             rank = 703,
             wins = 104,

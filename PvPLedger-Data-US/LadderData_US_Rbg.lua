@@ -7,7 +7,7 @@ PvPLedgerLadderData.US.rbg = {
     bracket = "rbg",
     season = 41,
     snapshotDate = "2026-08-11",
-    generatedAt = "2026-08-11T10:03:25Z",
+    generatedAt = "2026-08-11T11:05:57Z",
     source = "blizzard-api+seramate",
     overall = {
         listedCount = 1003,
@@ -99,9 +99,9 @@ PvPLedgerLadderData.US.rbg = {
         },
         ["DRUID"] = {
             listedCount = 163,
-            avgListedRating = 2062.1,
-            medianListedRating = 2055.8,
-            top100Avg = 2062.1,
+            avgListedRating = 2059.2,
+            medianListedRating = 2054.8,
+            top100Avg = 2059.2,
             highest = 2834,
             buckets = {
                 ["1800-1899"] = 37,
@@ -385,10 +385,10 @@ PvPLedgerLadderData.US.rbg = {
             },
         },
         ["DRUID_BALANCE"] = {
-            listedCount = 86,
-            avgListedRating = 2120.1,
-            medianListedRating = 2072.0,
-            top100Avg = 2120.1,
+            listedCount = 87,
+            avgListedRating = 2122.3,
+            medianListedRating = 2076,
+            top100Avg = 2122.3,
             highest = 2834,
             buckets = {
                 ["1800-1899"] = 15,
@@ -396,7 +396,7 @@ PvPLedgerLadderData.US.rbg = {
                 ["2000-2099"] = 14,
                 ["2100-2199"] = 12,
                 ["2200-2299"] = 6,
-                ["2300-2399"] = 10,
+                ["2300-2399"] = 11,
                 ["2400-2499"] = 2,
                 ["2500-2599"] = 4,
                 ["2600-2699"] = 2,
@@ -404,18 +404,17 @@ PvPLedgerLadderData.US.rbg = {
             },
         },
         ["DRUID_FERAL"] = {
-            listedCount = 18,
-            avgListedRating = 2078.7,
-            medianListedRating = 2079.5,
-            top100Avg = 2078.7,
-            highest = 2308,
+            listedCount = 17,
+            avgListedRating = 2065.2,
+            medianListedRating = 2070,
+            top100Avg = 2065.2,
+            highest = 2263,
             buckets = {
                 ["1800-1899"] = 2,
                 ["1900-1999"] = 5,
                 ["2000-2099"] = 3,
                 ["2100-2199"] = 3,
                 ["2200-2299"] = 4,
-                ["2300-2399"] = 1,
             },
         },
         ["DRUID_GUARDIAN"] = {
@@ -3336,7 +3335,7 @@ PvPLedgerLadderData.US.rbg = {
         },
         ["fervaxx-ragnaros"] = {
             displayName = "Fervaxx-ragnaros",
-            specKey = "MONK_MISTWEAVER",
+            specKey = "",
             rating = 1833,
             rank = 977,
             wins = 26,
@@ -6882,7 +6881,7 @@ PvPLedgerLadderData.US.rbg = {
         },
         ["phìlly-tichondrius"] = {
             displayName = "Phìlly-tichondrius",
-            specKey = "DRUID_FERAL",
+            specKey = "DRUID_BALANCE",
             rating = 2308,
             rank = 143,
             wins = 50,
@@ -8484,7 +8483,7 @@ PvPLedgerLadderData.US.rbg = {
         },
         ["switchmonk-illidan"] = {
             displayName = "Switchmonk-illidan",
-            specKey = "",
+            specKey = "MONK_MISTWEAVER",
             rating = 1833,
             rank = 977,
             wins = 51,
