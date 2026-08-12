@@ -7,7 +7,7 @@ PvPLedgerLadderData.US.arena2v2 = {
     bracket = "arena2v2",
     season = 41,
     snapshotDate = "2026-08-12",
-    generatedAt = "2026-08-12T21:30:32Z",
+    generatedAt = "2026-08-12T22:21:54Z",
     source = "blizzard-api+seramate",
     overall = {
         listedCount = 1002,
@@ -4050,15 +4050,6 @@ PvPLedgerLadderData.US.arena2v2 = {
             losses = 214,
             faction = "ALLIANCE",
         },
-        ["iceteabaf233-tichondrius"] = {
-            displayName = "IceteaBAF233-tichondrius",
-            specKey = "",
-            rating = 2428,
-            rank = 954,
-            wins = 166,
-            losses = 147,
-            faction = "HORDE",
-        },
         ["ifoxd-sargeras"] = {
             displayName = "Ifoxd-sargeras",
             specKey = "HUNTER_SURVIVAL",
@@ -4589,6 +4580,15 @@ PvPLedgerLadderData.US.arena2v2 = {
             wins = 154,
             losses = 81,
             faction = "ALLIANCE",
+        },
+        ["kcpatmahomes-tichondrius"] = {
+            displayName = "Kcpatmahomes-tichondrius",
+            specKey = "",
+            rating = 2428,
+            rank = 954,
+            wins = 166,
+            losses = 147,
+            faction = "HORDE",
         },
         ["keeganbigair-drakthul"] = {
             displayName = "Keeganbigair-drakthul",

@@ -3,8 +3,8 @@
 --- DO NOT EDIT MANUALLY.
 PVL_AppHelperPendingSnapshots = PVL_AppHelperPendingSnapshots or {}
 PVL_AppHelperSyncInfo = {
-    lastSync = 1786570243,
-    generatedAt = "2026-08-12T21:30:43Z",
+    lastSync = 1786573326,
+    generatedAt = "2026-08-12T22:22:06Z",
     region = "US",
     source = "collector",
 }
@@ -15,7 +15,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
     bracket = "arena2v2",
     season = 41,
     snapshotDate = "2026-08-12",
-    generatedAt = "2026-08-12T21:30:32Z",
+    generatedAt = "2026-08-12T22:21:54Z",
     source = "blizzard-api+seramate",
     overall = {
         listedCount = 1002,
@@ -4058,15 +4058,6 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
             losses = 214,
             faction = "ALLIANCE",
         },
-        ["iceteabaf233-tichondrius"] = {
-            displayName = "IceteaBAF233-tichondrius",
-            specKey = "",
-            rating = 2428,
-            rank = 954,
-            wins = 166,
-            losses = 147,
-            faction = "HORDE",
-        },
         ["ifoxd-sargeras"] = {
             displayName = "Ifoxd-sargeras",
             specKey = "HUNTER_SURVIVAL",
@@ -4597,6 +4588,15 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
             wins = 154,
             losses = 81,
             faction = "ALLIANCE",
+        },
+        ["kcpatmahomes-tichondrius"] = {
+            displayName = "Kcpatmahomes-tichondrius",
+            specKey = "",
+            rating = 2428,
+            rank = 954,
+            wins = 166,
+            losses = 147,
+            faction = "HORDE",
         },
         ["keeganbigair-drakthul"] = {
             displayName = "Keeganbigair-drakthul",
@@ -9737,7 +9737,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
     bracket = "arena3v3",
     season = 41,
     snapshotDate = "2026-08-12",
-    generatedAt = "2026-08-12T21:30:42Z",
+    generatedAt = "2026-08-12T22:22:04Z",
     source = "blizzard-api+seramate",
     overall = {
         listedCount = 1002,
@@ -19543,7 +19543,7 @@ PVL_AppHelperPendingSnapshots.blitz = {
     bracket = "blitz",
     season = 41,
     snapshotDate = "2026-08-12",
-    generatedAt = "2026-08-12T21:29:50Z",
+    generatedAt = "2026-08-12T22:20:54Z",
     source = "blizzard-api",
     overall = {
         listedCount = 37715,
@@ -19605,7 +19605,7 @@ PVL_AppHelperPendingSnapshots.blitz = {
             ["800-899"] = 751,
             ["900-999"] = 28,
         },
-        ratedPopulation = 86718,
+        ratedPopulation = 86719,
         titleCutoffs = {
             {
                 pct = 0.1,
@@ -20130,7 +20130,7 @@ PVL_AppHelperPendingSnapshots.blitz = {
                 },
             },
             ["MONK_MISTWEAVER"] = {
-                population = 3974,
+                population = 3975,
                 cutoffs = {
                     {
                         pct = 0.1,
@@ -129748,15 +129748,6 @@ PVL_AppHelperPendingSnapshots.blitz = {
             rank = 66,
             wins = 49,
             losses = 38,
-            faction = "ALLIANCE",
-        },
-        ["gènghis-frostmourne"] = {
-            displayName = "Gènghis-frostmourne",
-            specKey = "DEMONHUNTER_HAVOC",
-            rating = 1769,
-            rank = 736,
-            wins = 21,
-            losses = 18,
             faction = "ALLIANCE",
         },
         ["gèngär-tichondrius"] = {
@@ -239802,6 +239793,15 @@ PVL_AppHelperPendingSnapshots.blitz = {
             losses = 6,
             faction = "HORDE",
         },
+        ["richieleon-frostmourne"] = {
+            displayName = "Richieleon-frostmourne",
+            specKey = "DEMONHUNTER_HAVOC",
+            rating = 1769,
+            rank = 736,
+            wins = 21,
+            losses = 18,
+            faction = "ALLIANCE",
+        },
         ["rickintokyo-windrunner"] = {
             displayName = "Rickintokyo-windrunner",
             specKey = "EVOKER_AUGMENTATION",
@@ -244572,15 +244572,6 @@ PVL_AppHelperPendingSnapshots.blitz = {
             losses = 12,
             faction = "HORDE",
         },
-        ["russtii-sargeras"] = {
-            displayName = "Russtii-sargeras",
-            specKey = "SHAMAN_RESTORATION",
-            rating = 2027,
-            rank = 232,
-            wins = 19,
-            losses = 15,
-            faction = "HORDE",
-        },
         ["rusted-nemesis"] = {
             displayName = "Rusted-nemesis",
             specKey = "DEATHKNIGHT_FROST",
@@ -244634,6 +244625,15 @@ PVL_AppHelperPendingSnapshots.blitz = {
             wins = 4,
             losses = 1,
             faction = "ALLIANCE",
+        },
+        ["rustytotems-sargeras"] = {
+            displayName = "Rustytotems-sargeras",
+            specKey = "SHAMAN_RESTORATION",
+            rating = 2027,
+            rank = 232,
+            wins = 19,
+            losses = 15,
+            faction = "HORDE",
         },
         ["rutkan-emeralddream"] = {
             displayName = "Rutkan-emerald-dream",
@@ -334257,7 +334257,7 @@ PVL_AppHelperPendingSnapshots.rbg = {
     bracket = "rbg",
     season = 41,
     snapshotDate = "2026-08-12",
-    generatedAt = "2026-08-12T21:30:23Z",
+    generatedAt = "2026-08-12T22:21:42Z",
     source = "blizzard-api+seramate",
     overall = {
         listedCount = 1003,
@@ -334421,15 +334421,15 @@ PVL_AppHelperPendingSnapshots.rbg = {
             },
         },
         ["MONK"] = {
-            listedCount = 106,
-            avgListedRating = 2160.0,
+            listedCount = 105,
+            avgListedRating = 2160.2,
             medianListedRating = 2010,
-            top100Avg = 2160.0,
+            top100Avg = 2160.2,
             highest = 2806,
             buckets = {
                 ["1800-1899"] = 27,
                 ["1900-1999"] = 22,
-                ["2000-2099"] = 22,
+                ["2000-2099"] = 21,
                 ["2100-2199"] = 15,
                 ["2200-2299"] = 6,
                 ["2300-2399"] = 4,
@@ -334533,7 +334533,7 @@ PVL_AppHelperPendingSnapshots.rbg = {
         ["WARRIOR"] = {
             listedCount = 56,
             avgListedRating = 2071.5,
-            medianListedRating = 2045.0,
+            medianListedRating = 2042.5,
             top100Avg = 2071.5,
             highest = 2794,
             buckets = {
@@ -334830,15 +334830,15 @@ PVL_AppHelperPendingSnapshots.rbg = {
             },
         },
         ["MONK_MISTWEAVER"] = {
-            listedCount = 80,
-            avgListedRating = 2066.3,
-            medianListedRating = 2005.5,
-            top100Avg = 2066.3,
+            listedCount = 79,
+            avgListedRating = 2066.7,
+            medianListedRating = 2001,
+            top100Avg = 2066.7,
             highest = 2806,
             buckets = {
                 ["1800-1899"] = 21,
                 ["1900-1999"] = 18,
-                ["2000-2099"] = 16,
+                ["2000-2099"] = 15,
                 ["2100-2199"] = 9,
                 ["2200-2299"] = 5,
                 ["2300-2399"] = 4,
@@ -335080,10 +335080,10 @@ PVL_AppHelperPendingSnapshots.rbg = {
             },
         },
         ["WARRIOR_ARMS"] = {
-            listedCount = 29,
-            avgListedRating = 2092.3,
-            medianListedRating = 2049,
-            top100Avg = 2092.3,
+            listedCount = 28,
+            avgListedRating = 2072.6,
+            medianListedRating = 2042.5,
+            top100Avg = 2072.6,
             highest = 2700,
             buckets = {
                 ["1800-1899"] = 7,
@@ -335092,15 +335092,14 @@ PVL_AppHelperPendingSnapshots.rbg = {
                 ["2100-2199"] = 5,
                 ["2200-2299"] = 3,
                 ["2300-2399"] = 3,
-                ["2600-2699"] = 1,
                 ["2700-2799"] = 1,
             },
         },
         ["WARRIOR_FURY"] = {
-            listedCount = 26,
-            avgListedRating = 2108.1,
-            medianListedRating = 2045.0,
-            top100Avg = 2108.1,
+            listedCount = 27,
+            avgListedRating = 2128.0,
+            medianListedRating = 2069,
+            top100Avg = 2128.0,
             highest = 2794,
             buckets = {
                 ["1800-1899"] = 7,
@@ -335110,6 +335109,7 @@ PVL_AppHelperPendingSnapshots.rbg = {
                 ["2200-2299"] = 1,
                 ["2400-2499"] = 2,
                 ["2500-2599"] = 2,
+                ["2600-2699"] = 1,
                 ["2700-2799"] = 1,
             },
         },
@@ -338430,7 +338430,7 @@ PVL_AppHelperPendingSnapshots.rbg = {
         },
         ["huskié-nerzhul"] = {
             displayName = "Huskié-nerzhul",
-            specKey = "MONK_MISTWEAVER",
+            specKey = "",
             rating = 2038,
             rank = 474,
             wins = 82,
@@ -342156,7 +342156,7 @@ PVL_AppHelperPendingSnapshots.rbg = {
         },
         ["shîntâ-ragnaros"] = {
             displayName = "Shîntâ-ragnaros",
-            specKey = "WARRIOR_ARMS",
+            specKey = "WARRIOR_FURY",
             rating = 2645,
             rank = 25,
             wins = 161,
@@ -344161,7 +344161,7 @@ PVL_AppHelperPendingSnapshots.shuffle = {
     bracket = "shuffle",
     season = 41,
     snapshotDate = "2026-08-12",
-    generatedAt = "2026-08-12T21:30:11Z",
+    generatedAt = "2026-08-12T22:21:29Z",
     source = "blizzard-api",
     overall = {
         listedCount = 38235,
@@ -344221,7 +344221,7 @@ PVL_AppHelperPendingSnapshots.shuffle = {
             ["800-899"] = 133,
             ["900-999"] = 136,
         },
-        ratedPopulation = 137192,
+        ratedPopulation = 137191,
         titleCutoffs = {
             {
                 pct = 0.1,
@@ -344471,7 +344471,7 @@ PVL_AppHelperPendingSnapshots.shuffle = {
                 },
             },
             ["DRUID_RESTORATION"] = {
-                population = 5003,
+                population = 5002,
                 cutoffs = {
                     {
                         pct = 0.1,
@@ -399204,6 +399204,15 @@ PVL_AppHelperPendingSnapshots.shuffle = {
             wins = 188,
             losses = 185,
             faction = "HORDE",
+        },
+        ["damshrek-sargeras"] = {
+            displayName = "Damshrek-sargeras",
+            specKey = "ROGUE_ASSASSINATION",
+            rating = 2406,
+            rank = 497,
+            wins = 79,
+            losses = 69,
+            faction = "ALLIANCE",
         },
         ["damuj-sargeras"] = {
             displayName = "Damuj-sargeras",
@@ -464741,15 +464750,6 @@ PVL_AppHelperPendingSnapshots.shuffle = {
             rank = 967,
             wins = 82,
             losses = 66,
-            faction = "ALLIANCE",
-        },
-        ["imrealneega-moonguard"] = {
-            displayName = "Imrealneega-moon-guard",
-            specKey = "DEMONHUNTER_DEVOURER",
-            rating = 2407,
-            rank = 644,
-            wins = 92,
-            losses = 89,
             faction = "ALLIANCE",
         },
         ["imrestarted-nordrassil"] = {
@@ -538417,15 +538417,6 @@ PVL_AppHelperPendingSnapshots.shuffle = {
             losses = 104,
             faction = "ALLIANCE",
         },
-        ["peejayhache-sargeras"] = {
-            displayName = "Peejayhache-sargeras",
-            specKey = "ROGUE_ASSASSINATION",
-            rating = 2406,
-            rank = 497,
-            wins = 79,
-            losses = 69,
-            faction = "ALLIANCE",
-        },
         ["peejean-gnomeregan"] = {
             displayName = "Peejean-gnomeregan",
             specKey = "PALADIN_PROTECTION",
@@ -542060,6 +542051,15 @@ PVL_AppHelperPendingSnapshots.shuffle = {
             rank = 383,
             wins = 425,
             losses = 412,
+            faction = "ALLIANCE",
+        },
+        ["playergkkmky-moonguard"] = {
+            displayName = "PlayerGKKMKY-moon-guard",
+            specKey = "DEMONHUNTER_DEVOURER",
+            rating = 2407,
+            rank = 644,
+            wins = 92,
+            losses = 89,
             faction = "ALLIANCE",
         },
         ["playforfon-frostmourne"] = {
@@ -561925,15 +561925,6 @@ PVL_AppHelperPendingSnapshots.shuffle = {
             losses = 49,
             faction = "HORDE",
         },
-        ["russtii-sargeras"] = {
-            displayName = "Russtii-sargeras",
-            specKey = "SHAMAN_RESTORATION",
-            rating = 2481,
-            rank = 559,
-            wins = 315,
-            losses = 297,
-            faction = "HORDE",
-        },
         ["rusted-nemesis"] = {
             displayName = "Rusted-nemesis",
             specKey = "DEATHKNIGHT_FROST",
@@ -562049,6 +562040,15 @@ PVL_AppHelperPendingSnapshots.shuffle = {
             rank = 744,
             wins = 295,
             losses = 284,
+            faction = "HORDE",
+        },
+        ["rustytotems-sargeras"] = {
+            displayName = "Rustytotems-sargeras",
+            specKey = "SHAMAN_RESTORATION",
+            rating = 2481,
+            rank = 559,
+            wins = 315,
+            losses = 297,
             faction = "HORDE",
         },
         ["ruud-azgalor"] = {

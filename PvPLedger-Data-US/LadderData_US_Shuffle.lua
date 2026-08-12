@@ -7,7 +7,7 @@ PvPLedgerLadderData.US.shuffle = {
     bracket = "shuffle",
     season = 41,
     snapshotDate = "2026-08-12",
-    generatedAt = "2026-08-12T21:30:11Z",
+    generatedAt = "2026-08-12T22:21:29Z",
     source = "blizzard-api",
     overall = {
         listedCount = 38235,
@@ -67,7 +67,7 @@ PvPLedgerLadderData.US.shuffle = {
             ["800-899"] = 133,
             ["900-999"] = 136,
         },
-        ratedPopulation = 137192,
+        ratedPopulation = 137191,
         titleCutoffs = {
             {
                 pct = 0.1,
@@ -317,7 +317,7 @@ PvPLedgerLadderData.US.shuffle = {
                 },
             },
             ["DRUID_RESTORATION"] = {
-                population = 5003,
+                population = 5002,
                 cutoffs = {
                     {
                         pct = 0.1,
@@ -55050,6 +55050,15 @@ PvPLedgerLadderData.US.shuffle = {
             wins = 188,
             losses = 185,
             faction = "HORDE",
+        },
+        ["damshrek-sargeras"] = {
+            displayName = "Damshrek-sargeras",
+            specKey = "ROGUE_ASSASSINATION",
+            rating = 2406,
+            rank = 497,
+            wins = 79,
+            losses = 69,
+            faction = "ALLIANCE",
         },
         ["damuj-sargeras"] = {
             displayName = "Damuj-sargeras",
@@ -120587,15 +120596,6 @@ PvPLedgerLadderData.US.shuffle = {
             rank = 967,
             wins = 82,
             losses = 66,
-            faction = "ALLIANCE",
-        },
-        ["imrealneega-moonguard"] = {
-            displayName = "Imrealneega-moon-guard",
-            specKey = "DEMONHUNTER_DEVOURER",
-            rating = 2407,
-            rank = 644,
-            wins = 92,
-            losses = 89,
             faction = "ALLIANCE",
         },
         ["imrestarted-nordrassil"] = {
@@ -194263,15 +194263,6 @@ PvPLedgerLadderData.US.shuffle = {
             losses = 104,
             faction = "ALLIANCE",
         },
-        ["peejayhache-sargeras"] = {
-            displayName = "Peejayhache-sargeras",
-            specKey = "ROGUE_ASSASSINATION",
-            rating = 2406,
-            rank = 497,
-            wins = 79,
-            losses = 69,
-            faction = "ALLIANCE",
-        },
         ["peejean-gnomeregan"] = {
             displayName = "Peejean-gnomeregan",
             specKey = "PALADIN_PROTECTION",
@@ -197906,6 +197897,15 @@ PvPLedgerLadderData.US.shuffle = {
             rank = 383,
             wins = 425,
             losses = 412,
+            faction = "ALLIANCE",
+        },
+        ["playergkkmky-moonguard"] = {
+            displayName = "PlayerGKKMKY-moon-guard",
+            specKey = "DEMONHUNTER_DEVOURER",
+            rating = 2407,
+            rank = 644,
+            wins = 92,
+            losses = 89,
             faction = "ALLIANCE",
         },
         ["playforfon-frostmourne"] = {
@@ -217771,15 +217771,6 @@ PvPLedgerLadderData.US.shuffle = {
             losses = 49,
             faction = "HORDE",
         },
-        ["russtii-sargeras"] = {
-            displayName = "Russtii-sargeras",
-            specKey = "SHAMAN_RESTORATION",
-            rating = 2481,
-            rank = 559,
-            wins = 315,
-            losses = 297,
-            faction = "HORDE",
-        },
         ["rusted-nemesis"] = {
             displayName = "Rusted-nemesis",
             specKey = "DEATHKNIGHT_FROST",
@@ -217895,6 +217886,15 @@ PvPLedgerLadderData.US.shuffle = {
             rank = 744,
             wins = 295,
             losses = 284,
+            faction = "HORDE",
+        },
+        ["rustytotems-sargeras"] = {
+            displayName = "Rustytotems-sargeras",
+            specKey = "SHAMAN_RESTORATION",
+            rating = 2481,
+            rank = 559,
+            wins = 315,
+            losses = 297,
             faction = "HORDE",
         },
         ["ruud-azgalor"] = {

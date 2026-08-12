@@ -7,7 +7,7 @@ PvPLedgerLadderData.US.blitz = {
     bracket = "blitz",
     season = 41,
     snapshotDate = "2026-08-12",
-    generatedAt = "2026-08-12T21:29:50Z",
+    generatedAt = "2026-08-12T22:20:54Z",
     source = "blizzard-api",
     overall = {
         listedCount = 37715,
@@ -69,7 +69,7 @@ PvPLedgerLadderData.US.blitz = {
             ["800-899"] = 751,
             ["900-999"] = 28,
         },
-        ratedPopulation = 86718,
+        ratedPopulation = 86719,
         titleCutoffs = {
             {
                 pct = 0.1,
@@ -594,7 +594,7 @@ PvPLedgerLadderData.US.blitz = {
                 },
             },
             ["MONK_MISTWEAVER"] = {
-                population = 3974,
+                population = 3975,
                 cutoffs = {
                     {
                         pct = 0.1,
@@ -110212,15 +110212,6 @@ PvPLedgerLadderData.US.blitz = {
             rank = 66,
             wins = 49,
             losses = 38,
-            faction = "ALLIANCE",
-        },
-        ["gènghis-frostmourne"] = {
-            displayName = "Gènghis-frostmourne",
-            specKey = "DEMONHUNTER_HAVOC",
-            rating = 1769,
-            rank = 736,
-            wins = 21,
-            losses = 18,
             faction = "ALLIANCE",
         },
         ["gèngär-tichondrius"] = {
@@ -220266,6 +220257,15 @@ PvPLedgerLadderData.US.blitz = {
             losses = 6,
             faction = "HORDE",
         },
+        ["richieleon-frostmourne"] = {
+            displayName = "Richieleon-frostmourne",
+            specKey = "DEMONHUNTER_HAVOC",
+            rating = 1769,
+            rank = 736,
+            wins = 21,
+            losses = 18,
+            faction = "ALLIANCE",
+        },
         ["rickintokyo-windrunner"] = {
             displayName = "Rickintokyo-windrunner",
             specKey = "EVOKER_AUGMENTATION",
@@ -225036,15 +225036,6 @@ PvPLedgerLadderData.US.blitz = {
             losses = 12,
             faction = "HORDE",
         },
-        ["russtii-sargeras"] = {
-            displayName = "Russtii-sargeras",
-            specKey = "SHAMAN_RESTORATION",
-            rating = 2027,
-            rank = 232,
-            wins = 19,
-            losses = 15,
-            faction = "HORDE",
-        },
         ["rusted-nemesis"] = {
             displayName = "Rusted-nemesis",
             specKey = "DEATHKNIGHT_FROST",
@@ -225098,6 +225089,15 @@ PvPLedgerLadderData.US.blitz = {
             wins = 4,
             losses = 1,
             faction = "ALLIANCE",
+        },
+        ["rustytotems-sargeras"] = {
+            displayName = "Rustytotems-sargeras",
+            specKey = "SHAMAN_RESTORATION",
+            rating = 2027,
+            rank = 232,
+            wins = 19,
+            losses = 15,
+            faction = "HORDE",
         },
         ["rutkan-emeralddream"] = {
             displayName = "Rutkan-emerald-dream",
