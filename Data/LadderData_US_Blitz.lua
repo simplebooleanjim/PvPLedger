@@ -7,7 +7,7 @@ PvPLedgerLadderData.US.blitz = {
     bracket = "blitz",
     season = 41,
     snapshotDate = "2026-08-12",
-    generatedAt = "2026-08-12T07:44:40Z",
+    generatedAt = "2026-08-12T08:53:15Z",
     source = "blizzard-api",
     overall = {
         listedCount = 37717,
@@ -67752,15 +67752,6 @@ PvPLedgerLadderData.US.blitz = {
             losses = 7,
             faction = "ALLIANCE",
         },
-        ["djkzy-thrall"] = {
-            displayName = "Djkzy-thrall",
-            specKey = "PALADIN_HOLY",
-            rating = 1716,
-            rank = 734,
-            wins = 10,
-            losses = 12,
-            faction = "HORDE",
-        },
         ["djoh-barthilas"] = {
             displayName = "Djoh-barthilas",
             specKey = "DRUID_RESTORATION",
@@ -90683,6 +90674,15 @@ PvPLedgerLadderData.US.blitz = {
             wins = 30,
             losses = 25,
             faction = "ALLIANCE",
+        },
+        ["filø-moonguard"] = {
+            displayName = "Filø-moon-guard",
+            specKey = "DEATHKNIGHT_BLOOD",
+            rating = 3067,
+            rank = 7,
+            wins = 49,
+            losses = 36,
+            faction = "HORDE",
         },
         ["fimersslave-tichondrius"] = {
             displayName = "Fimersslave-tichondrius",
@@ -189720,6 +189720,15 @@ PvPLedgerLadderData.US.blitz = {
             losses = 41,
             faction = "HORDE",
         },
+        ["nokiz-thrall"] = {
+            displayName = "Nokiz-thrall",
+            specKey = "PALADIN_HOLY",
+            rating = 1716,
+            rank = 734,
+            wins = 10,
+            losses = 12,
+            faction = "HORDE",
+        },
         ["nokkas-shadowsong"] = {
             displayName = "Nokkas-shadowsong",
             specKey = "PALADIN_HOLY",
@@ -277524,8 +277533,8 @@ PvPLedgerLadderData.US.blitz = {
             losses = 21,
             faction = "ALLIANCE",
         },
-        ["uhdaptiv-tichondrius"] = {
-            displayName = "Uhdaptiv-tichondrius",
+        ["uhdaptiv-stormscale"] = {
+            displayName = "Uhdaptiv-stormscale",
             specKey = "SHAMAN_RESTORATION",
             rating = 3025,
             rank = 18,
@@ -288799,15 +288808,6 @@ PvPLedgerLadderData.US.blitz = {
             rank = 573,
             wins = 42,
             losses = 34,
-            faction = "HORDE",
-        },
-        ["wagyubéef-moonguard"] = {
-            displayName = "Wagyubéef-moon-guard",
-            specKey = "DEATHKNIGHT_BLOOD",
-            rating = 3067,
-            rank = 7,
-            wins = 49,
-            losses = 36,
             faction = "HORDE",
         },
         ["wagyupie-barthilas"] = {
