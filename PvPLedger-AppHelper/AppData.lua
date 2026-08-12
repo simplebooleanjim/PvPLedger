@@ -3,8 +3,8 @@
 --- DO NOT EDIT MANUALLY.
 PVL_AppHelperPendingSnapshots = PVL_AppHelperPendingSnapshots or {}
 PVL_AppHelperSyncInfo = {
-    lastSync = 1786549242,
-    generatedAt = "2026-08-12T15:40:42Z",
+    lastSync = 1786552659,
+    generatedAt = "2026-08-12T16:37:39Z",
     region = "US",
     source = "collector",
 }
@@ -15,7 +15,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
     bracket = "arena2v2",
     season = 41,
     snapshotDate = "2026-08-12",
-    generatedAt = "2026-08-12T15:40:29Z",
+    generatedAt = "2026-08-12T16:37:27Z",
     source = "blizzard-api+seramate",
     overall = {
         listedCount = 1002,
@@ -165,9 +165,9 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["PALADIN"] = {
             listedCount = 53,
-            avgListedRating = 2517.5,
-            medianListedRating = 2483,
-            top100Avg = 2517.5,
+            avgListedRating = 2517.9,
+            medianListedRating = 2485.0,
+            top100Avg = 2517.9,
             highest = 2856,
             buckets = {
                 ["2400-2499"] = 29,
@@ -487,14 +487,14 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
             },
         },
         ["PALADIN_HOLY"] = {
-            listedCount = 39,
-            avgListedRating = 2517.2,
-            medianListedRating = 2483,
-            top100Avg = 2517.2,
+            listedCount = 40,
+            avgListedRating = 2516.9,
+            medianListedRating = 2485.0,
+            top100Avg = 2516.9,
             highest = 2856,
             buckets = {
                 ["2400-2499"] = 22,
-                ["2500-2599"] = 9,
+                ["2500-2599"] = 10,
                 ["2600-2699"] = 6,
                 ["2800-2899"] = 2,
             },
@@ -511,14 +511,14 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
             },
         },
         ["PALADIN_RETRIBUTION"] = {
-            listedCount = 10,
-            avgListedRating = 2516.9,
-            medianListedRating = 2503.5,
-            top100Avg = 2516.9,
+            listedCount = 9,
+            avgListedRating = 2518.4,
+            medianListedRating = 2504,
+            top100Avg = 2518.4,
             highest = 2649,
             buckets = {
                 ["2400-2499"] = 4,
-                ["2500-2599"] = 5,
+                ["2500-2599"] = 4,
                 ["2600-2699"] = 1,
             },
         },
@@ -5076,7 +5076,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["luthorion-stormrage"] = {
             displayName = "Luthorion-stormrage",
-            specKey = "PALADIN_RETRIBUTION",
+            specKey = "PALADIN_HOLY",
             rating = 2503,
             rank = 460,
             wins = 349,
@@ -9736,7 +9736,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
     bracket = "arena3v3",
     season = 41,
     snapshotDate = "2026-08-12",
-    generatedAt = "2026-08-12T15:40:41Z",
+    generatedAt = "2026-08-12T16:37:38Z",
     source = "blizzard-api+seramate",
     overall = {
         listedCount = 1002,
@@ -9899,9 +9899,9 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["PALADIN"] = {
             listedCount = 102,
-            avgListedRating = 2754.7,
-            medianListedRating = 2729,
-            top100Avg = 2754.7,
+            avgListedRating = 2754.6,
+            medianListedRating = 2729.0,
+            top100Avg = 2754.6,
             highest = 3220,
             buckets = {
                 ["2600-2699"] = 27,
@@ -10263,15 +10263,15 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
             },
         },
         ["PALADIN_HOLY"] = {
-            listedCount = 42,
-            avgListedRating = 2824.3,
-            medianListedRating = 2766.5,
-            top100Avg = 2824.3,
+            listedCount = 43,
+            avgListedRating = 2825.7,
+            medianListedRating = 2769,
+            top100Avg = 2825.7,
             highest = 3220,
             buckets = {
                 ["2600-2699"] = 10,
                 ["2700-2799"] = 15,
-                ["2800-2899"] = 6,
+                ["2800-2899"] = 7,
                 ["2900-2999"] = 3,
                 ["3000-3099"] = 1,
                 ["3100-3199"] = 6,
@@ -10289,15 +10289,15 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
             },
         },
         ["PALADIN_RETRIBUTION"] = {
-            listedCount = 57,
-            avgListedRating = 2789.5,
-            medianListedRating = 2729,
-            top100Avg = 2789.5,
+            listedCount = 56,
+            avgListedRating = 2787.9,
+            medianListedRating = 2729.0,
+            top100Avg = 2787.9,
             highest = 3150,
             buckets = {
                 ["2600-2699"] = 14,
                 ["2700-2799"] = 26,
-                ["2800-2899"] = 7,
+                ["2800-2899"] = 6,
                 ["2900-2999"] = 2,
                 ["3000-3099"] = 3,
                 ["3100-3199"] = 5,
@@ -17033,7 +17033,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["selfmade-stormrage"] = {
             displayName = "Selfmade-stormrage",
-            specKey = "PALADIN_RETRIBUTION",
+            specKey = "PALADIN_HOLY",
             rating = 2884,
             rank = 295,
             wins = 252,
@@ -19542,7 +19542,7 @@ PVL_AppHelperPendingSnapshots.blitz = {
     bracket = "blitz",
     season = 41,
     snapshotDate = "2026-08-12",
-    generatedAt = "2026-08-12T15:39:26Z",
+    generatedAt = "2026-08-12T16:36:45Z",
     source = "blizzard-api",
     overall = {
         listedCount = 37717,
@@ -334265,7 +334265,7 @@ PVL_AppHelperPendingSnapshots.rbg = {
     bracket = "rbg",
     season = 41,
     snapshotDate = "2026-08-12",
-    generatedAt = "2026-08-12T15:40:17Z",
+    generatedAt = "2026-08-12T16:37:16Z",
     source = "blizzard-api+seramate",
     overall = {
         listedCount = 1003,
@@ -344169,7 +344169,7 @@ PVL_AppHelperPendingSnapshots.shuffle = {
     bracket = "shuffle",
     season = 41,
     snapshotDate = "2026-08-12",
-    generatedAt = "2026-08-12T15:40:03Z",
+    generatedAt = "2026-08-12T16:37:03Z",
     source = "blizzard-api",
     overall = {
         listedCount = 38236,
