@@ -2,12 +2,12 @@
 PvPLedgerLadderData = PvPLedgerLadderData or {}
 PvPLedgerLadderData.US = PvPLedgerLadderData.US or {}
 PvPLedgerLadderData.US.rbg = {
-    snapshotId = "us-rbg-s41-2026-08-11",
+    snapshotId = "us-rbg-s41-2026-08-12",
     region = "US",
     bracket = "rbg",
     season = 41,
-    snapshotDate = "2026-08-11",
-    generatedAt = "2026-08-11T23:12:55Z",
+    snapshotDate = "2026-08-12",
+    generatedAt = "2026-08-12T00:01:18Z",
     source = "blizzard-api+seramate",
     overall = {
         listedCount = 1003,
@@ -250,9 +250,9 @@ PvPLedgerLadderData.US.rbg = {
         },
         ["SHAMAN"] = {
             listedCount = 27,
-            avgListedRating = 2108.2,
-            medianListedRating = 2008,
-            top100Avg = 2108.2,
+            avgListedRating = 2138.9,
+            medianListedRating = 2006.5,
+            top100Avg = 2138.9,
             highest = 2847,
             buckets = {
                 ["1800-1899"] = 6,
@@ -774,13 +774,13 @@ PvPLedgerLadderData.US.rbg = {
             },
         },
         ["SHAMAN_ENHANCEMENT"] = {
-            listedCount = 13,
-            avgListedRating = 2069.5,
-            medianListedRating = 2008,
-            top100Avg = 2069.5,
+            listedCount = 14,
+            avgListedRating = 2053.4,
+            medianListedRating = 2006.5,
+            top100Avg = 2053.4,
             highest = 2521,
             buckets = {
-                ["1800-1899"] = 4,
+                ["1800-1899"] = 5,
                 ["1900-1999"] = 1,
                 ["2000-2099"] = 3,
                 ["2100-2199"] = 2,
@@ -789,13 +789,12 @@ PvPLedgerLadderData.US.rbg = {
             },
         },
         ["SHAMAN_RESTORATION"] = {
-            listedCount = 4,
-            avgListedRating = 2169.5,
-            medianListedRating = 1993.0,
-            top100Avg = 2169.5,
+            listedCount = 3,
+            avgListedRating = 2277.7,
+            medianListedRating = 2006,
+            top100Avg = 2277.7,
             highest = 2847,
             buckets = {
-                ["1800-1899"] = 1,
                 ["1900-1999"] = 1,
                 ["2000-2099"] = 1,
                 ["2800-2899"] = 1,
@@ -9032,7 +9031,7 @@ PvPLedgerLadderData.US.rbg = {
         },
         ["tótem-ragnaros"] = {
             displayName = "Tótem-ragnaros",
-            specKey = "SHAMAN_RESTORATION",
+            specKey = "SHAMAN_ENHANCEMENT",
             rating = 1845,
             rank = 932,
             wins = 29,

@@ -2,17 +2,17 @@
 PvPLedgerLadderData = PvPLedgerLadderData or {}
 PvPLedgerLadderData.US = PvPLedgerLadderData.US or {}
 PvPLedgerLadderData.US.blitz = {
-    snapshotId = "us-blitz-s41-2026-08-11",
+    snapshotId = "us-blitz-s41-2026-08-12",
     region = "US",
     bracket = "blitz",
     season = 41,
-    snapshotDate = "2026-08-11",
-    generatedAt = "2026-08-11T23:12:21Z",
+    snapshotDate = "2026-08-12",
+    generatedAt = "2026-08-12T00:00:52Z",
     source = "blizzard-api",
     overall = {
-        listedCount = 37716,
+        listedCount = 37717,
         avgListedRating = 1865.4,
-        medianListedRating = 1869.0,
+        medianListedRating = 1869,
         top100Avg = 3615.5,
         cutoffs = {
             {
@@ -42,7 +42,7 @@ PvPLedgerLadderData.US.blitz = {
             ["1600-1699"] = 3239,
             ["1700-1799"] = 4011,
             ["1800-1899"] = 6382,
-            ["1900-1999"] = 3816,
+            ["1900-1999"] = 3817,
             ["200-299"] = 1682,
             ["2000-2099"] = 2555,
             ["2100-2199"] = 2900,
@@ -69,7 +69,7 @@ PvPLedgerLadderData.US.blitz = {
             ["800-899"] = 752,
             ["900-999"] = 28,
         },
-        ratedPopulation = 86730,
+        ratedPopulation = 86732,
         titleCutoffs = {
             {
                 pct = 0.1,
@@ -594,7 +594,7 @@ PvPLedgerLadderData.US.blitz = {
                 },
             },
             ["MONK_MISTWEAVER"] = {
-                population = 3974,
+                population = 3975,
                 cutoffs = {
                     {
                         pct = 0.1,
@@ -844,7 +844,7 @@ PvPLedgerLadderData.US.blitz = {
                 },
             },
             ["ROGUE_SUBTLETY"] = {
-                population = 4496,
+                population = 4498,
                 cutoffs = {
                     {
                         pct = 0.1,
@@ -944,7 +944,7 @@ PvPLedgerLadderData.US.blitz = {
                 },
             },
             ["WARLOCK_AFFLICTION"] = {
-                population = 3161,
+                population = 3160,
                 cutoffs = {
                     {
                         pct = 0.1,
@@ -994,7 +994,7 @@ PvPLedgerLadderData.US.blitz = {
                 },
             },
             ["WARLOCK_DESTRUCTION"] = {
-                population = 2478,
+                population = 2477,
                 cutoffs = {
                     {
                         pct = 0.1,
@@ -1019,7 +1019,7 @@ PvPLedgerLadderData.US.blitz = {
                 },
             },
             ["WARRIOR_ARMS"] = {
-                population = 4194,
+                population = 4195,
                 cutoffs = {
                     {
                         pct = 0.1,
@@ -1460,8 +1460,8 @@ PvPLedgerLadderData.US.blitz = {
             },
         },
         ["ROGUE"] = {
-            listedCount = 3301,
-            avgListedRating = 1789.8,
+            listedCount = 3302,
+            avgListedRating = 1789.6,
             medianListedRating = 1810,
             top100Avg = 2784.9,
             highest = 3720,
@@ -1475,7 +1475,7 @@ PvPLedgerLadderData.US.blitz = {
                 ["1600-1699"] = 379,
                 ["1700-1799"] = 270,
                 ["1800-1899"] = 253,
-                ["1900-1999"] = 213,
+                ["1900-1999"] = 214,
                 ["200-299"] = 350,
                 ["2000-2099"] = 239,
                 ["2100-2199"] = 219,
@@ -2545,13 +2545,13 @@ PvPLedgerLadderData.US.blitz = {
             },
         },
         ["ROGUE_SUBTLETY"] = {
-            listedCount = 1001,
-            avgListedRating = 2362.0,
-            medianListedRating = 2304,
+            listedCount = 1002,
+            avgListedRating = 2361.6,
+            medianListedRating = 2304.0,
             top100Avg = 3143.9,
             highest = 3670,
             buckets = {
-                ["1900-1999"] = 97,
+                ["1900-1999"] = 98,
                 ["2000-2099"] = 151,
                 ["2100-2199"] = 159,
                 ["2200-2299"] = 79,
@@ -15830,6 +15830,15 @@ PvPLedgerLadderData.US.blitz = {
             wins = 204,
             losses = 178,
             faction = "ALLIANCE",
+        },
+        ["asgà-illidan"] = {
+            displayName = "Asgà-illidan",
+            specKey = "PRIEST_DISCIPLINE",
+            rating = 3684,
+            rank = 5,
+            wins = 85,
+            losses = 43,
+            faction = "HORDE",
         },
         ["ashafi-tichondrius"] = {
             displayName = "Ashafi-tichondrius",
@@ -39213,15 +39222,6 @@ PvPLedgerLadderData.US.blitz = {
             losses = 22,
             faction = "ALLIANCE",
         },
-        ["bussindown-durotan"] = {
-            displayName = "Bussindown-durotan",
-            specKey = "ROGUE_SUBTLETY",
-            rating = 2314,
-            rank = 466,
-            wins = 40,
-            losses = 25,
-            faction = "HORDE",
-        },
         ["bussinnutz-tichondrius"] = {
             displayName = "Bussinnutz-tichondrius",
             specKey = "ROGUE_OUTLAW",
@@ -51318,6 +51318,15 @@ PvPLedgerLadderData.US.blitz = {
             losses = 13,
             faction = "HORDE",
         },
+        ["contemplated-tichondrius"] = {
+            displayName = "Contemplated-tichondrius",
+            specKey = "MONK_MISTWEAVER",
+            rating = 3231,
+            rank = 18,
+            wins = 99,
+            losses = 93,
+            faction = "HORDE",
+        },
         ["contemptor-wyrmrestaccord"] = {
             displayName = "Contemptor-wyrmrest-accord",
             specKey = "PALADIN_RETRIBUTION",
@@ -55267,6 +55276,15 @@ PvPLedgerLadderData.US.blitz = {
             rank = 835,
             wins = 13,
             losses = 9,
+            faction = "ALLIANCE",
+        },
+        ["cursa-tichondrius"] = {
+            displayName = "Cursa-tichondrius",
+            specKey = "ROGUE_SUBTLETY",
+            rating = 1961,
+            rank = 991,
+            wins = 36,
+            losses = 29,
             faction = "ALLIANCE",
         },
         ["curse-ravenholdt"] = {
@@ -83398,7 +83416,7 @@ PvPLedgerLadderData.US.blitz = {
             displayName = "Erosion-tichondrius",
             specKey = "ROGUE_SUBTLETY",
             rating = 1960,
-            rank = 995,
+            rank = 996,
             wins = 27,
             losses = 23,
             faction = "ALLIANCE",
@@ -84064,7 +84082,7 @@ PvPLedgerLadderData.US.blitz = {
             displayName = "Estrellafu-tichondrius",
             specKey = "ROGUE_SUBTLETY",
             rating = 1960,
-            rank = 995,
+            rank = 996,
             wins = 15,
             losses = 8,
             faction = "ALLIANCE",
@@ -129105,15 +129123,6 @@ PvPLedgerLadderData.US.blitz = {
             losses = 21,
             faction = "HORDE",
         },
-        ["iyrïcs-illidan"] = {
-            displayName = "Iyrïcs-illidan",
-            specKey = "PRIEST_DISCIPLINE",
-            rating = 3684,
-            rank = 5,
-            wins = 85,
-            losses = 43,
-            faction = "HORDE",
-        },
         ["izanagidanzo-kelthuzad"] = {
             displayName = "Izanagidanzo-kelthuzad",
             specKey = "MAGE_ARCANE",
@@ -144706,7 +144715,7 @@ PvPLedgerLadderData.US.blitz = {
             displayName = "Kirecdusk-kul-tiras",
             specKey = "ROGUE_SUBTLETY",
             rating = 1960,
-            rank = 995,
+            rank = 996,
             wins = 45,
             losses = 39,
             faction = "ALLIANCE",
@@ -179995,7 +180004,7 @@ PvPLedgerLadderData.US.blitz = {
             displayName = "Mungral-barthilas",
             specKey = "ROGUE_SUBTLETY",
             rating = 1960,
-            rank = 995,
+            rank = 996,
             wins = 14,
             losses = 7,
             faction = "HORDE",
@@ -222214,7 +222223,7 @@ PvPLedgerLadderData.US.blitz = {
             displayName = "Rockyrogue-draenor",
             specKey = "ROGUE_SUBTLETY",
             rating = 1960,
-            rank = 995,
+            rank = 996,
             wins = 24,
             losses = 21,
             faction = "ALLIANCE",
@@ -244584,6 +244593,15 @@ PvPLedgerLadderData.US.blitz = {
             losses = 21,
             faction = "HORDE",
         },
+        ["smile-kelthuzad"] = {
+            displayName = "Smile-kelthuzad",
+            specKey = "MONK_MISTWEAVER",
+            rating = 2112,
+            rank = 439,
+            wins = 99,
+            losses = 102,
+            faction = "ALLIANCE",
+        },
         ["smilense-stormrage"] = {
             displayName = "Smilense-stormrage",
             specKey = "DRUID_RESTORATION",
@@ -257769,15 +257787,6 @@ PvPLedgerLadderData.US.blitz = {
             losses = 7,
             faction = "ALLIANCE",
         },
-        ["swollzy-kelthuzad"] = {
-            displayName = "Swollzy-kelthuzad",
-            specKey = "MONK_MISTWEAVER",
-            rating = 2112,
-            rank = 439,
-            wins = 99,
-            losses = 102,
-            faction = "ALLIANCE",
-        },
         ["swollzy-sargeras"] = {
             displayName = "Swollzy-sargeras",
             specKey = "MONK_MISTWEAVER",
@@ -257786,15 +257795,6 @@ PvPLedgerLadderData.US.blitz = {
             wins = 39,
             losses = 26,
             faction = "ALLIANCE",
-        },
-        ["swollzy-tichondrius"] = {
-            displayName = "Swollzy-tichondrius",
-            specKey = "MONK_MISTWEAVER",
-            rating = 3231,
-            rank = 18,
-            wins = 99,
-            losses = 93,
-            faction = "HORDE",
         },
         ["swolspoon-zuljin"] = {
             displayName = "Swolspoon-zuljin",
@@ -274401,6 +274401,15 @@ PvPLedgerLadderData.US.blitz = {
             losses = 16,
             faction = "ALLIANCE",
         },
+        ["ttrexzz-durotan"] = {
+            displayName = "Ttrexzz-durotan",
+            specKey = "ROGUE_SUBTLETY",
+            rating = 2314,
+            rank = 466,
+            wins = 40,
+            losses = 25,
+            faction = "HORDE",
+        },
         ["ttvbigsquirt-illidan"] = {
             displayName = "Ttvbigsquirt-illidan",
             specKey = "WARLOCK_DESTRUCTION",
@@ -281839,7 +281848,7 @@ PvPLedgerLadderData.US.blitz = {
             displayName = "Vanîr-tichondrius",
             specKey = "ROGUE_SUBTLETY",
             rating = 1960,
-            rank = 995,
+            rank = 996,
             wins = 15,
             losses = 5,
             faction = "HORDE",
@@ -286528,7 +286537,7 @@ PvPLedgerLadderData.US.blitz = {
             displayName = "Voidrog-tichondrius",
             specKey = "ROGUE_SUBTLETY",
             rating = 1960,
-            rank = 995,
+            rank = 996,
             wins = 16,
             losses = 4,
             faction = "HORDE",

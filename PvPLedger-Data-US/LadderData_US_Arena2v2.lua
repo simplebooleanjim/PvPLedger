@@ -2,12 +2,12 @@
 PvPLedgerLadderData = PvPLedgerLadderData or {}
 PvPLedgerLadderData.US = PvPLedgerLadderData.US or {}
 PvPLedgerLadderData.US.arena2v2 = {
-    snapshotId = "us-arena2v2-s41-2026-08-11",
+    snapshotId = "us-arena2v2-s41-2026-08-12",
     region = "US",
     bracket = "arena2v2",
     season = 41,
-    snapshotDate = "2026-08-11",
-    generatedAt = "2026-08-11T23:13:08Z",
+    snapshotDate = "2026-08-12",
+    generatedAt = "2026-08-12T00:01:29Z",
     source = "blizzard-api+seramate",
     overall = {
         listedCount = 1002,
@@ -34,7 +34,7 @@ PvPLedgerLadderData.US.arena2v2 = {
             ["2800-2899"] = 22,
             ["2900-2999"] = 3,
         },
-        ratedPopulation = 5012,
+        ratedPopulation = 5013,
         titleCutoffs = {
             {
                 pct = 0.1,
@@ -60,13 +60,13 @@ PvPLedgerLadderData.US.arena2v2 = {
     },
     byClass = {
         ["DEATHKNIGHT"] = {
-            listedCount = 24,
-            avgListedRating = 2489.2,
-            medianListedRating = 2477.0,
-            top100Avg = 2489.2,
+            listedCount = 23,
+            avgListedRating = 2493.6,
+            medianListedRating = 2485.0,
+            top100Avg = 2493.6,
             highest = 2672,
             buckets = {
-                ["2400-2499"] = 14,
+                ["2400-2499"] = 13,
                 ["2500-2599"] = 9,
                 ["2600-2699"] = 1,
             },
@@ -98,13 +98,13 @@ PvPLedgerLadderData.US.arena2v2 = {
             },
         },
         ["EVOKER"] = {
-            listedCount = 73,
-            avgListedRating = 2529.6,
-            medianListedRating = 2490.5,
-            top100Avg = 2529.6,
+            listedCount = 72,
+            avgListedRating = 2530.6,
+            medianListedRating = 2493.5,
+            top100Avg = 2530.6,
             highest = 2890,
             buckets = {
-                ["2400-2499"] = 29,
+                ["2400-2499"] = 28,
                 ["2500-2599"] = 27,
                 ["2600-2699"] = 8,
                 ["2700-2799"] = 6,
@@ -112,17 +112,17 @@ PvPLedgerLadderData.US.arena2v2 = {
             },
         },
         ["HUNTER"] = {
-            listedCount = 76,
-            avgListedRating = 2530.8,
-            medianListedRating = 2500.5,
-            top100Avg = 2530.8,
+            listedCount = 75,
+            avgListedRating = 2528.6,
+            medianListedRating = 2500,
+            top100Avg = 2528.6,
             highest = 2880,
             buckets = {
                 ["2400-2499"] = 35,
                 ["2500-2599"] = 23,
                 ["2600-2699"] = 11,
                 ["2700-2799"] = 3,
-                ["2800-2899"] = 4,
+                ["2800-2899"] = 3,
             },
         },
         ["MAGE"] = {
@@ -238,13 +238,13 @@ PvPLedgerLadderData.US.arena2v2 = {
     },
     bySpec = {
         ["DEATHKNIGHT_FROST"] = {
-            listedCount = 9,
-            avgListedRating = 2495.4,
-            medianListedRating = 2468,
-            top100Avg = 2495.4,
+            listedCount = 8,
+            avgListedRating = 2504.2,
+            medianListedRating = 2484.0,
+            top100Avg = 2504.2,
             highest = 2672,
             buckets = {
-                ["2400-2499"] = 5,
+                ["2400-2499"] = 4,
                 ["2500-2599"] = 3,
                 ["2600-2699"] = 1,
             },
@@ -343,13 +343,13 @@ PvPLedgerLadderData.US.arena2v2 = {
             },
         },
         ["EVOKER_PRESERVATION"] = {
-            listedCount = 68,
-            avgListedRating = 2547.1,
-            medianListedRating = 2523.0,
-            top100Avg = 2547.1,
+            listedCount = 67,
+            avgListedRating = 2548.9,
+            medianListedRating = 2529,
+            top100Avg = 2548.9,
             highest = 2890,
             buckets = {
-                ["2400-2499"] = 25,
+                ["2400-2499"] = 24,
                 ["2500-2599"] = 27,
                 ["2600-2699"] = 8,
                 ["2700-2799"] = 5,
@@ -357,17 +357,17 @@ PvPLedgerLadderData.US.arena2v2 = {
             },
         },
         ["HUNTER_BEASTMASTERY"] = {
-            listedCount = 44,
-            avgListedRating = 2535.0,
-            medianListedRating = 2500.5,
-            top100Avg = 2535.0,
-            highest = 2810,
+            listedCount = 43,
+            avgListedRating = 2528.6,
+            medianListedRating = 2500,
+            top100Avg = 2528.6,
+            highest = 2808,
             buckets = {
                 ["2400-2499"] = 20,
                 ["2500-2599"] = 14,
                 ["2600-2699"] = 4,
                 ["2700-2799"] = 3,
-                ["2800-2899"] = 3,
+                ["2800-2899"] = 2,
             },
         },
         ["HUNTER_MARKSMANSHIP"] = {
@@ -1151,7 +1151,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["bannable-tichondrius"] = {
             displayName = "Bannable-tichondrius",
-            specKey = "DEATHKNIGHT_FROST",
+            specKey = "",
             rating = 2425,
             rank = 987,
             wins = 60,
@@ -1646,7 +1646,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["broydiesnipe-illidan"] = {
             displayName = "Broydiesnipe-illidan",
-            specKey = "HUNTER_BEASTMASTERY",
+            specKey = "",
             rating = 2810,
             rank = 19,
             wins = 149,
@@ -2357,7 +2357,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["deathbyself-zuljin"] = {
             displayName = "Deathbyself-zuljin",
-            specKey = "EVOKER_PRESERVATION",
+            specKey = "",
             rating = 2425,
             rank = 987,
             wins = 83,
