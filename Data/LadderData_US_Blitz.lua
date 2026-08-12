@@ -7,7 +7,7 @@ PvPLedgerLadderData.US.blitz = {
     bracket = "blitz",
     season = 41,
     snapshotDate = "2026-08-12",
-    generatedAt = "2026-08-12T04:28:39Z",
+    generatedAt = "2026-08-12T05:59:48Z",
     source = "blizzard-api",
     overall = {
         listedCount = 37717,
@@ -69,7 +69,7 @@ PvPLedgerLadderData.US.blitz = {
             ["800-899"] = 752,
             ["900-999"] = 28,
         },
-        ratedPopulation = 86729,
+        ratedPopulation = 86728,
         titleCutoffs = {
             {
                 pct = 0.1,
@@ -869,7 +869,7 @@ PvPLedgerLadderData.US.blitz = {
                 },
             },
             ["SHAMAN_ELEMENTAL"] = {
-                population = 1507,
+                population = 1506,
                 cutoffs = {
                     {
                         pct = 0.1,
@@ -54934,6 +54934,15 @@ PvPLedgerLadderData.US.blitz = {
             rank = 449,
             wins = 18,
             losses = 8,
+            faction = "HORDE",
+        },
+        ["cubanpapi-tichondrius"] = {
+            displayName = "Cubanpapi-tichondrius",
+            specKey = "HUNTER_MARKSMANSHIP",
+            rating = 3199,
+            rank = 23,
+            wins = 93,
+            losses = 84,
             faction = "HORDE",
         },
         ["cubbymonster-illidan"] = {
@@ -271636,15 +271645,6 @@ PvPLedgerLadderData.US.blitz = {
             rank = 853,
             wins = 6,
             losses = 1,
-            faction = "HORDE",
-        },
-        ["tours-tichondrius"] = {
-            displayName = "Tours-tichondrius",
-            specKey = "HUNTER_MARKSMANSHIP",
-            rating = 3199,
-            rank = 23,
-            wins = 93,
-            losses = 84,
             faction = "HORDE",
         },
         ["touzany-malganis"] = {
