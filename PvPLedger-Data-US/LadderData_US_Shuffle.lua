@@ -7,7 +7,7 @@ PvPLedgerLadderData.US.shuffle = {
     bracket = "shuffle",
     season = 41,
     snapshotDate = "2026-08-12",
-    generatedAt = "2026-08-12T11:10:58Z",
+    generatedAt = "2026-08-12T13:25:51Z",
     source = "blizzard-api",
     overall = {
         listedCount = 38236,
@@ -67,7 +67,7 @@ PvPLedgerLadderData.US.shuffle = {
             ["800-899"] = 133,
             ["900-999"] = 136,
         },
-        ratedPopulation = 137195,
+        ratedPopulation = 137194,
         titleCutoffs = {
             {
                 pct = 0.1,
@@ -317,7 +317,7 @@ PvPLedgerLadderData.US.shuffle = {
                 },
             },
             ["DRUID_RESTORATION"] = {
-                population = 5004,
+                population = 5003,
                 cutoffs = {
                     {
                         pct = 0.1,
@@ -842,7 +842,7 @@ PvPLedgerLadderData.US.shuffle = {
                 },
             },
             ["ROGUE_SUBTLETY"] = {
-                population = 5002,
+                population = 5003,
                 cutoffs = {
                     {
                         pct = 0.1,
@@ -892,7 +892,7 @@ PvPLedgerLadderData.US.shuffle = {
                 },
             },
             ["SHAMAN_ENHANCEMENT"] = {
-                population = 4598,
+                population = 4597,
                 cutoffs = {
                     {
                         pct = 0.1,
@@ -20264,6 +20264,15 @@ PvPLedgerLadderData.US.shuffle = {
             rank = 329,
             wins = 7,
             losses = 11,
+            faction = "ALLIANCE",
+        },
+        ["barewitness-illidan"] = {
+            displayName = "Barewitness-illidan",
+            specKey = "PALADIN_RETRIBUTION",
+            rating = 2675,
+            rank = 356,
+            wins = 148,
+            losses = 119,
             faction = "ALLIANCE",
         },
         ["barfbag-nordrassil"] = {
@@ -75562,15 +75571,6 @@ PvPLedgerLadderData.US.shuffle = {
             losses = 68,
             faction = "ALLIANCE",
         },
-        ["egoshift-tichondrius"] = {
-            displayName = "Egoshift-tichondrius",
-            specKey = "MAGE_FROST",
-            rating = 2846,
-            rank = 93,
-            wins = 151,
-            losses = 117,
-            faction = "ALLIANCE",
-        },
         ["egugu-tichondrius"] = {
             displayName = "Egugu-tichondrius",
             specKey = "MONK_WINDWALKER",
@@ -78647,15 +78647,6 @@ PvPLedgerLadderData.US.shuffle = {
             rank = 171,
             wins = 120,
             losses = 82,
-            faction = "ALLIANCE",
-        },
-        ["enjoy-frostmourne"] = {
-            displayName = "Enjoy-frostmourne",
-            specKey = "ROGUE_SUBTLETY",
-            rating = 2305,
-            rank = 804,
-            wins = 274,
-            losses = 268,
             faction = "ALLIANCE",
         },
         ["enjyn-malganis"] = {
@@ -92642,6 +92633,15 @@ PvPLedgerLadderData.US.shuffle = {
             rank = 929,
             wins = 237,
             losses = 231,
+            faction = "ALLIANCE",
+        },
+        ["fuel-frostmourne"] = {
+            displayName = "Fuel-frostmourne",
+            specKey = "ROGUE_SUBTLETY",
+            rating = 2305,
+            rank = 804,
+            wins = 274,
+            losses = 268,
             faction = "ALLIANCE",
         },
         ["fufx-dathremar"] = {
@@ -177433,6 +177433,15 @@ PvPLedgerLadderData.US.shuffle = {
             losses = 97,
             faction = "HORDE",
         },
+        ["nautik-dalaran"] = {
+            displayName = "Nautik-dalaran",
+            specKey = "ROGUE_OUTLAW",
+            rating = 2486,
+            rank = 113,
+            wins = 372,
+            losses = 367,
+            faction = "ALLIANCE",
+        },
         ["nautik-tichondrius"] = {
             displayName = "Nautik-tichondrius",
             specKey = "ROGUE_OUTLAW",
@@ -177693,15 +177702,6 @@ PvPLedgerLadderData.US.shuffle = {
             wins = 98,
             losses = 95,
             faction = "HORDE",
-        },
-        ["naütik-kelthuzad"] = {
-            displayName = "Naütik-kelthuzad",
-            specKey = "ROGUE_OUTLAW",
-            rating = 2486,
-            rank = 113,
-            wins = 372,
-            losses = 367,
-            faction = "ALLIANCE",
         },
         ["nba-stormrage"] = {
             displayName = "Nba-stormrage",
@@ -182815,8 +182815,8 @@ PvPLedgerLadderData.US.shuffle = {
             losses = 81,
             faction = "ALLIANCE",
         },
-        ["nootsw-stormrage"] = {
-            displayName = "Nootsw-stormrage",
+        ["nootswfae336-bleedinghollow"] = {
+            displayName = "NootswFAE336-bleeding-hollow",
             specKey = "WARRIOR_FURY",
             rating = 2319,
             rank = 381,
@@ -189556,15 +189556,6 @@ PvPLedgerLadderData.US.shuffle = {
             losses = 35,
             faction = "ALLIANCE",
         },
-        ["optimals-illidan"] = {
-            displayName = "Optimals-illidan",
-            specKey = "PALADIN_RETRIBUTION",
-            rating = 2675,
-            rank = 356,
-            wins = 148,
-            losses = 119,
-            faction = "ALLIANCE",
-        },
         ["optimisticly-kelthuzad"] = {
             displayName = "Optimisticly-kelthuzad",
             specKey = "WARLOCK_DEMONOLOGY",
@@ -194009,6 +194000,15 @@ PvPLedgerLadderData.US.shuffle = {
             rank = 167,
             wins = 762,
             losses = 726,
+            faction = "ALLIANCE",
+        },
+        ["peacemage-tichondrius"] = {
+            displayName = "Peacemage-tichondrius",
+            specKey = "MAGE_FROST",
+            rating = 2846,
+            rank = 93,
+            wins = 151,
+            losses = 117,
             faction = "ALLIANCE",
         },
         ["peaceweaver-emeralddream"] = {
@@ -201796,6 +201796,15 @@ PvPLedgerLadderData.US.shuffle = {
             losses = 192,
             faction = "ALLIANCE",
         },
+        ["prueharry-frostmourne"] = {
+            displayName = "Prueharry-frostmourne",
+            specKey = "DRUID_BALANCE",
+            rating = 2525,
+            rank = 144,
+            wins = 263,
+            losses = 250,
+            faction = "ALLIANCE",
+        },
         ["pruett-thrall"] = {
             displayName = "Pruett-thrall",
             specKey = "MAGE_FIRE",
@@ -201804,15 +201813,6 @@ PvPLedgerLadderData.US.shuffle = {
             wins = 44,
             losses = 34,
             faction = "HORDE",
-        },
-        ["pruey-area52"] = {
-            displayName = "Pruey-area-52",
-            specKey = "DRUID_BALANCE",
-            rating = 2525,
-            rank = 144,
-            wins = 263,
-            losses = 250,
-            faction = "ALLIANCE",
         },
         ["prunenomore-tichondrius"] = {
             displayName = "Prunenomore-tichondrius",
@@ -240622,8 +240622,8 @@ PvPLedgerLadderData.US.shuffle = {
             losses = 36,
             faction = "ALLIANCE",
         },
-        ["soyky-proudmoore"] = {
-            displayName = "Soyky-proudmoore",
+        ["soyky-tichondrius"] = {
+            displayName = "Soyky-tichondrius",
             specKey = "MAGE_FIRE",
             rating = 2375,
             rank = 194,

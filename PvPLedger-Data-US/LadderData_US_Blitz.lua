@@ -7,7 +7,7 @@ PvPLedgerLadderData.US.blitz = {
     bracket = "blitz",
     season = 41,
     snapshotDate = "2026-08-12",
-    generatedAt = "2026-08-12T11:10:40Z",
+    generatedAt = "2026-08-12T13:25:30Z",
     source = "blizzard-api",
     overall = {
         listedCount = 37717,
@@ -69,7 +69,7 @@ PvPLedgerLadderData.US.blitz = {
             ["800-899"] = 752,
             ["900-999"] = 28,
         },
-        ratedPopulation = 86728,
+        ratedPopulation = 86727,
         titleCutoffs = {
             {
                 pct = 0.1,
@@ -694,7 +694,7 @@ PvPLedgerLadderData.US.blitz = {
                 },
             },
             ["PALADIN_RETRIBUTION"] = {
-                population = 5006,
+                population = 5005,
                 cutoffs = {
                     {
                         pct = 0.1,
@@ -87217,6 +87217,15 @@ PvPLedgerLadderData.US.blitz = {
             rank = 132,
             wins = 89,
             losses = 65,
+            faction = "ALLIANCE",
+        },
+        ["fallguysgoat-dalaran"] = {
+            displayName = "Fallguysgoat-dalaran",
+            specKey = "PALADIN_RETRIBUTION",
+            rating = 2199,
+            rank = 701,
+            wins = 21,
+            losses = 6,
             faction = "ALLIANCE",
         },
         ["falloutt-area52"] = {
@@ -178542,15 +178551,6 @@ PvPLedgerLadderData.US.blitz = {
             losses = 18,
             faction = "HORDE",
         },
-        ["morlpala-dalaran"] = {
-            displayName = "Morlpala-dalaran",
-            specKey = "PALADIN_RETRIBUTION",
-            rating = 2199,
-            rank = 701,
-            wins = 21,
-            losses = 6,
-            faction = "ALLIANCE",
-        },
         ["morningstarr-icecrown"] = {
             displayName = "Morningstarr-icecrown",
             specKey = "WARLOCK_DESTRUCTION",
@@ -190161,8 +190161,8 @@ PvPLedgerLadderData.US.blitz = {
             losses = 17,
             faction = "HORDE",
         },
-        ["nootsw-stormrage"] = {
-            displayName = "Nootsw-stormrage",
+        ["nootswfae336-bleedinghollow"] = {
+            displayName = "NootswFAE336-bleeding-hollow",
             specKey = "WARRIOR_FURY",
             rating = 1762,
             rank = 911,
@@ -209205,6 +209205,15 @@ PvPLedgerLadderData.US.blitz = {
             losses = 3,
             faction = "ALLIANCE",
         },
+        ["prueharry-frostmourne"] = {
+            displayName = "Prueharry-frostmourne",
+            specKey = "DRUID_BALANCE",
+            rating = 2798,
+            rank = 83,
+            wins = 66,
+            losses = 47,
+            faction = "ALLIANCE",
+        },
         ["pruett-thrall"] = {
             displayName = "Pruett-thrall",
             specKey = "MAGE_FIRE",
@@ -209221,15 +209230,6 @@ PvPLedgerLadderData.US.blitz = {
             rank = 649,
             wins = 12,
             losses = 11,
-            faction = "ALLIANCE",
-        },
-        ["pruey-area52"] = {
-            displayName = "Pruey-area-52",
-            specKey = "DRUID_BALANCE",
-            rating = 2798,
-            rank = 83,
-            wins = 66,
-            losses = 47,
             faction = "ALLIANCE",
         },
         ["prueyh-frostmourne"] = {
