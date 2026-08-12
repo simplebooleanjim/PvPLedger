@@ -7,7 +7,7 @@ PvPLedgerLadderData.US.shuffle = {
     bracket = "shuffle",
     season = 41,
     snapshotDate = "2026-08-12",
-    generatedAt = "2026-08-12T13:25:51Z",
+    generatedAt = "2026-08-12T14:36:27Z",
     source = "blizzard-api",
     overall = {
         listedCount = 38236,
@@ -67,7 +67,7 @@ PvPLedgerLadderData.US.shuffle = {
             ["800-899"] = 133,
             ["900-999"] = 136,
         },
-        ratedPopulation = 137194,
+        ratedPopulation = 137193,
         titleCutoffs = {
             {
                 pct = 0.1,
@@ -142,7 +142,7 @@ PvPLedgerLadderData.US.shuffle = {
                 },
             },
             ["DEATHKNIGHT_UNHOLY"] = {
-                population = 5007,
+                population = 5006,
                 cutoffs = {
                     {
                         pct = 0.1,
@@ -30580,6 +30580,15 @@ PvPLedgerLadderData.US.shuffle = {
             losses = 266,
             faction = "HORDE",
         },
+        ["bonz-tichondrius"] = {
+            displayName = "Bonz-tichondrius",
+            specKey = "DEATHKNIGHT_UNHOLY",
+            rating = 3009,
+            rank = 29,
+            wins = 343,
+            losses = 313,
+            faction = "HORDE",
+        },
         ["booee-sargeras"] = {
             displayName = "Booee-sargeras",
             specKey = "PRIEST_DISCIPLINE",
@@ -31478,6 +31487,15 @@ PvPLedgerLadderData.US.shuffle = {
             rank = 775,
             wins = 191,
             losses = 183,
+            faction = "HORDE",
+        },
+        ["bornz-tichondrius"] = {
+            displayName = "Bornz-tichondrius",
+            specKey = "DEATHKNIGHT_FROST",
+            rating = 3022,
+            rank = 17,
+            wins = 124,
+            losses = 85,
             faction = "HORDE",
         },
         ["boroff-proudmoore"] = {
@@ -81061,15 +81079,6 @@ PvPLedgerLadderData.US.shuffle = {
             losses = 58,
             faction = "HORDE",
         },
-        ["evergrip-tichondrius"] = {
-            displayName = "Evergrip-tichondrius",
-            specKey = "DEATHKNIGHT_UNHOLY",
-            rating = 3009,
-            rank = 29,
-            wins = 343,
-            losses = 313,
-            faction = "HORDE",
-        },
         ["everguards-tichondrius"] = {
             displayName = "Everguards-tichondrius",
             specKey = "PALADIN_RETRIBUTION",
@@ -82895,15 +82904,6 @@ PvPLedgerLadderData.US.shuffle = {
             rank = 831,
             wins = 54,
             losses = 36,
-            faction = "ALLIANCE",
-        },
-        ["faeriefly-moonguard"] = {
-            displayName = "Faeriefly-moon-guard",
-            specKey = "DRUID_FERAL",
-            rating = 2108,
-            rank = 810,
-            wins = 72,
-            losses = 70,
             faction = "ALLIANCE",
         },
         ["faermôrn-illidan"] = {
@@ -155680,15 +155680,6 @@ PvPLedgerLadderData.US.shuffle = {
             losses = 4,
             faction = "ALLIANCE",
         },
-        ["luminate-barthilas"] = {
-            displayName = "Luminate-barthilas",
-            specKey = "PALADIN_HOLY",
-            rating = 2572,
-            rank = 377,
-            wins = 837,
-            losses = 808,
-            faction = "ALLIANCE",
-        },
         ["luminspear-elune"] = {
             displayName = "Luminspear-elune",
             specKey = "PALADIN_RETRIBUTION",
@@ -159900,6 +159891,15 @@ PvPLedgerLadderData.US.shuffle = {
             wins = 298,
             losses = 277,
             faction = "ALLIANCE",
+        },
+        ["maliflora-bleedinghollow"] = {
+            displayName = "Maliflora-bleeding-hollow",
+            specKey = "WARLOCK_DESTRUCTION",
+            rating = 2159,
+            rank = 613,
+            wins = 50,
+            losses = 34,
+            faction = "HORDE",
         },
         ["malikay-jubeithos"] = {
             displayName = "Malikay-jubeithos",
@@ -182626,15 +182626,6 @@ PvPLedgerLadderData.US.shuffle = {
             losses = 601,
             faction = "HORDE",
         },
-        ["nomoreorc-tichondrius"] = {
-            displayName = "Nomoreorc-tichondrius",
-            specKey = "DEATHKNIGHT_FROST",
-            rating = 3022,
-            rank = 17,
-            wins = 124,
-            losses = 85,
-            faction = "HORDE",
-        },
         ["nomormana-tichondrius"] = {
             displayName = "Nomormana-tichondrius",
             specKey = "PRIEST_DISCIPLINE",
@@ -182815,8 +182806,8 @@ PvPLedgerLadderData.US.shuffle = {
             losses = 81,
             faction = "ALLIANCE",
         },
-        ["nootswfae336-bleedinghollow"] = {
-            displayName = "NootswFAE336-bleeding-hollow",
+        ["noot-bleedinghollow"] = {
+            displayName = "Noot-bleeding-hollow",
             specKey = "WARRIOR_FURY",
             rating = 2319,
             rank = 381,
@@ -206690,6 +206681,15 @@ PvPLedgerLadderData.US.shuffle = {
             rank = 758,
             wins = 2,
             losses = 4,
+            faction = "ALLIANCE",
+        },
+        ["rafìki-moonguard"] = {
+            displayName = "Rafìki-moon-guard",
+            specKey = "DRUID_FERAL",
+            rating = 2108,
+            rank = 810,
+            wins = 72,
+            losses = 70,
             faction = "ALLIANCE",
         },
         ["raganarok-darkspear"] = {
@@ -232322,15 +232322,6 @@ PvPLedgerLadderData.US.shuffle = {
             rank = 703,
             wins = 70,
             losses = 76,
-            faction = "HORDE",
-        },
-        ["sightsear-bleedinghollow"] = {
-            displayName = "Sightsear-bleeding-hollow",
-            specKey = "WARLOCK_DESTRUCTION",
-            rating = 2159,
-            rank = 613,
-            wins = 50,
-            losses = 34,
             faction = "HORDE",
         },
         ["sigiloson-illidan"] = {
@@ -284549,6 +284540,15 @@ PvPLedgerLadderData.US.shuffle = {
             rank = 305,
             wins = 69,
             losses = 62,
+            faction = "ALLIANCE",
+        },
+        ["world-saurfang"] = {
+            displayName = "World-saurfang",
+            specKey = "PALADIN_HOLY",
+            rating = 2572,
+            rank = 377,
+            wins = 837,
+            losses = 808,
             faction = "ALLIANCE",
         },
         ["world-steamwheedlecartel"] = {

@@ -7,7 +7,7 @@ PvPLedgerLadderData.US.rbg = {
     bracket = "rbg",
     season = 41,
     snapshotDate = "2026-08-12",
-    generatedAt = "2026-08-12T13:26:04Z",
+    generatedAt = "2026-08-12T14:36:40Z",
     source = "blizzard-api+seramate",
     overall = {
         listedCount = 1003,
@@ -83,9 +83,9 @@ PvPLedgerLadderData.US.rbg = {
         },
         ["DEMONHUNTER"] = {
             listedCount = 47,
-            avgListedRating = 2047.0,
-            medianListedRating = 2039,
-            top100Avg = 2047.0,
+            avgListedRating = 2089.8,
+            medianListedRating = 2036.0,
+            top100Avg = 2089.8,
             highest = 2490,
             buckets = {
                 ["1800-1899"] = 14,
@@ -230,9 +230,9 @@ PvPLedgerLadderData.US.rbg = {
         },
         ["ROGUE"] = {
             listedCount = 88,
-            avgListedRating = 2113.1,
-            medianListedRating = 2107,
-            top100Avg = 2113.1,
+            avgListedRating = 2121.6,
+            medianListedRating = 2122.5,
+            top100Avg = 2121.6,
             highest = 2848,
             buckets = {
                 ["1800-1899"] = 15,
@@ -343,11 +343,11 @@ PvPLedgerLadderData.US.rbg = {
             },
         },
         ["DEMONHUNTER_DEVOURER"] = {
-            listedCount = 21,
-            avgListedRating = 2082.5,
-            medianListedRating = 2039,
-            top100Avg = 2082.5,
-            highest = 2490,
+            listedCount = 20,
+            avgListedRating = 2062.1,
+            medianListedRating = 2036.0,
+            top100Avg = 2062.1,
+            highest = 2320,
             buckets = {
                 ["1800-1899"] = 5,
                 ["1900-1999"] = 3,
@@ -355,7 +355,6 @@ PvPLedgerLadderData.US.rbg = {
                 ["2100-2199"] = 4,
                 ["2200-2299"] = 2,
                 ["2300-2399"] = 3,
-                ["2400-2499"] = 1,
             },
         },
         ["DEMONHUNTER_HAVOC"] = {
@@ -374,14 +373,15 @@ PvPLedgerLadderData.US.rbg = {
             },
         },
         ["DEMONHUNTER_VENGEANCE"] = {
-            listedCount = 2,
-            avgListedRating = 2044,
-            medianListedRating = 2044.0,
-            top100Avg = 2044,
-            highest = 2183,
+            listedCount = 3,
+            avgListedRating = 2192.7,
+            medianListedRating = 2183,
+            top100Avg = 2192.7,
+            highest = 2490,
             buckets = {
                 ["1900-1999"] = 1,
                 ["2100-2199"] = 1,
+                ["2400-2499"] = 1,
             },
         },
         ["DRUID_BALANCE"] = {
@@ -711,11 +711,11 @@ PvPLedgerLadderData.US.rbg = {
             },
         },
         ["ROGUE_ASSASSINATION"] = {
-            listedCount = 19,
-            avgListedRating = 2118,
-            medianListedRating = 2107,
-            top100Avg = 2118,
-            highest = 2609,
+            listedCount = 20,
+            avgListedRating = 2154.5,
+            medianListedRating = 2122.5,
+            top100Avg = 2154.5,
+            highest = 2848,
             buckets = {
                 ["1800-1899"] = 4,
                 ["1900-1999"] = 1,
@@ -725,6 +725,7 @@ PvPLedgerLadderData.US.rbg = {
                 ["2300-2399"] = 1,
                 ["2400-2499"] = 1,
                 ["2600-2699"] = 1,
+                ["2800-2899"] = 1,
             },
         },
         ["ROGUE_OUTLAW"] = {
@@ -740,11 +741,11 @@ PvPLedgerLadderData.US.rbg = {
             },
         },
         ["ROGUE_SUBTLETY"] = {
-            listedCount = 66,
-            avgListedRating = 2137.4,
-            medianListedRating = 2083.5,
-            top100Avg = 2137.4,
-            highest = 2848,
+            listedCount = 65,
+            avgListedRating = 2126.4,
+            medianListedRating = 2083,
+            top100Avg = 2126.4,
+            highest = 2794,
             buckets = {
                 ["1800-1899"] = 10,
                 ["1900-1999"] = 16,
@@ -756,7 +757,6 @@ PvPLedgerLadderData.US.rbg = {
                 ["2500-2599"] = 5,
                 ["2600-2699"] = 2,
                 ["2700-2799"] = 1,
-                ["2800-2899"] = 1,
             },
         },
         ["SHAMAN_ELEMENTAL"] = {
@@ -1228,7 +1228,7 @@ PvPLedgerLadderData.US.rbg = {
         },
         ["astørâl-moonguard"] = {
             displayName = "Astørâl-moon-guard",
-            specKey = "DEMONHUNTER_DEVOURER",
+            specKey = "DEMONHUNTER_VENGEANCE",
             rating = 2490,
             rank = 56,
             wins = 75,
@@ -9868,7 +9868,7 @@ PvPLedgerLadderData.US.rbg = {
         },
         ["ñìghtmare-kelthuzad"] = {
             displayName = "Ñìghtmare-kelthuzad",
-            specKey = "ROGUE_SUBTLETY",
+            specKey = "ROGUE_ASSASSINATION",
             rating = 2848,
             rank = 1,
             wins = 126,

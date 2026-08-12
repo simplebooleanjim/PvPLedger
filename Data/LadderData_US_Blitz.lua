@@ -7,7 +7,7 @@ PvPLedgerLadderData.US.blitz = {
     bracket = "blitz",
     season = 41,
     snapshotDate = "2026-08-12",
-    generatedAt = "2026-08-12T13:25:30Z",
+    generatedAt = "2026-08-12T14:36:10Z",
     source = "blizzard-api",
     overall = {
         listedCount = 37717,
@@ -16657,6 +16657,15 @@ PvPLedgerLadderData.US.blitz = {
             rank = 702,
             wins = 20,
             losses = 15,
+            faction = "ALLIANCE",
+        },
+        ["astherian-stormrage"] = {
+            displayName = "Astherian-stormrage",
+            specKey = "PALADIN_HOLY",
+            rating = 1803,
+            rank = 531,
+            wins = 19,
+            losses = 18,
             faction = "ALLIANCE",
         },
         ["asthmos-area52"] = {
@@ -144585,15 +144594,6 @@ PvPLedgerLadderData.US.blitz = {
             losses = 51,
             faction = "HORDE",
         },
-        ["kinriel-gallywix"] = {
-            displayName = "Kinriel-gallywix",
-            specKey = "PALADIN_HOLY",
-            rating = 1803,
-            rank = 531,
-            wins = 19,
-            losses = 18,
-            faction = "ALLIANCE",
-        },
         ["kintarõ-kelthuzad"] = {
             displayName = "Kintarõ-kelthuzad",
             specKey = "EVOKER_PRESERVATION",
@@ -190152,6 +190152,15 @@ PvPLedgerLadderData.US.blitz = {
             losses = 17,
             faction = "ALLIANCE",
         },
+        ["noot-bleedinghollow"] = {
+            displayName = "Noot-bleeding-hollow",
+            specKey = "WARRIOR_FURY",
+            rating = 1762,
+            rank = 911,
+            wins = 9,
+            losses = 8,
+            faction = "HORDE",
+        },
         ["noots-arthas"] = {
             displayName = "Noots-arthas",
             specKey = "PRIEST_DISCIPLINE",
@@ -190159,15 +190168,6 @@ PvPLedgerLadderData.US.blitz = {
             rank = 790,
             wins = 21,
             losses = 17,
-            faction = "HORDE",
-        },
-        ["nootswfae336-bleedinghollow"] = {
-            displayName = "NootswFAE336-bleeding-hollow",
-            specKey = "WARRIOR_FURY",
-            rating = 1762,
-            rank = 911,
-            wins = 9,
-            losses = 8,
             faction = "HORDE",
         },
         ["nope-moonguard"] = {

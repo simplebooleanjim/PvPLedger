@@ -3,8 +3,8 @@
 --- DO NOT EDIT MANUALLY.
 PVL_AppHelperPendingSnapshots = PVL_AppHelperPendingSnapshots or {}
 PVL_AppHelperSyncInfo = {
-    lastSync = 1786541188,
-    generatedAt = "2026-08-12T13:26:28Z",
+    lastSync = 1786545424,
+    generatedAt = "2026-08-12T14:37:04Z",
     region = "US",
     source = "collector",
 }
@@ -15,7 +15,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
     bracket = "arena2v2",
     season = 41,
     snapshotDate = "2026-08-12",
-    generatedAt = "2026-08-12T13:26:16Z",
+    generatedAt = "2026-08-12T14:36:51Z",
     source = "blizzard-api+seramate",
     overall = {
         listedCount = 1002,
@@ -106,13 +106,13 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
             },
         },
         ["EVOKER"] = {
-            listedCount = 72,
-            avgListedRating = 2530.6,
-            medianListedRating = 2493.5,
-            top100Avg = 2530.6,
+            listedCount = 73,
+            avgListedRating = 2529.6,
+            medianListedRating = 2490.5,
+            top100Avg = 2529.6,
             highest = 2890,
             buckets = {
-                ["2400-2499"] = 28,
+                ["2400-2499"] = 29,
                 ["2500-2599"] = 27,
                 ["2600-2699"] = 8,
                 ["2700-2799"] = 6,
@@ -164,13 +164,13 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
             },
         },
         ["PALADIN"] = {
-            listedCount = 54,
-            avgListedRating = 2516.8,
-            medianListedRating = 2481.5,
-            top100Avg = 2516.8,
+            listedCount = 53,
+            avgListedRating = 2517.5,
+            medianListedRating = 2483,
+            top100Avg = 2517.5,
             highest = 2856,
             buckets = {
-                ["2400-2499"] = 30,
+                ["2400-2499"] = 29,
                 ["2500-2599"] = 14,
                 ["2600-2699"] = 8,
                 ["2800-2899"] = 2,
@@ -191,13 +191,13 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
             },
         },
         ["ROGUE"] = {
-            listedCount = 117,
-            avgListedRating = 2551.5,
+            listedCount = 118,
+            avgListedRating = 2548.8,
             medianListedRating = 2520,
-            top100Avg = 2551.5,
+            top100Avg = 2548.8,
             highest = 2871,
             buckets = {
-                ["2400-2499"] = 48,
+                ["2400-2499"] = 49,
                 ["2500-2599"] = 32,
                 ["2600-2699"] = 25,
                 ["2700-2799"] = 8,
@@ -361,13 +361,13 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
             },
         },
         ["EVOKER_PRESERVATION"] = {
-            listedCount = 67,
-            avgListedRating = 2548.9,
-            medianListedRating = 2529,
-            top100Avg = 2548.9,
+            listedCount = 68,
+            avgListedRating = 2547.1,
+            medianListedRating = 2523.0,
+            top100Avg = 2547.1,
             highest = 2890,
             buckets = {
-                ["2400-2499"] = 24,
+                ["2400-2499"] = 25,
                 ["2500-2599"] = 27,
                 ["2600-2699"] = 8,
                 ["2700-2799"] = 5,
@@ -487,13 +487,13 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
             },
         },
         ["PALADIN_HOLY"] = {
-            listedCount = 40,
-            avgListedRating = 2514.9,
-            medianListedRating = 2481.5,
-            top100Avg = 2514.9,
+            listedCount = 39,
+            avgListedRating = 2517.2,
+            medianListedRating = 2483,
+            top100Avg = 2517.2,
             highest = 2856,
             buckets = {
-                ["2400-2499"] = 23,
+                ["2400-2499"] = 22,
                 ["2500-2599"] = 9,
                 ["2600-2699"] = 6,
                 ["2800-2899"] = 2,
@@ -576,13 +576,13 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
             },
         },
         ["ROGUE_OUTLAW"] = {
-            listedCount = 13,
-            avgListedRating = 2570,
-            medianListedRating = 2533,
-            top100Avg = 2570,
+            listedCount = 14,
+            avgListedRating = 2562.1,
+            medianListedRating = 2533.0,
+            top100Avg = 2562.1,
             highest = 2721,
             buckets = {
-                ["2400-2499"] = 3,
+                ["2400-2499"] = 4,
                 ["2500-2599"] = 6,
                 ["2600-2699"] = 2,
                 ["2700-2799"] = 2,
@@ -1521,7 +1521,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["bodymasage-tichondrius"] = {
             displayName = "Bodymasage-tichondrius",
-            specKey = "",
+            specKey = "ROGUE_OUTLAW",
             rating = 2459,
             rank = 703,
             wins = 218,
@@ -2376,7 +2376,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["deathbyself-zuljin"] = {
             displayName = "Deathbyself-zuljin",
-            specKey = "",
+            specKey = "EVOKER_PRESERVATION",
             rating = 2425,
             rank = 987,
             wins = 83,
@@ -3006,7 +3006,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["eynx-tichondrius"] = {
             displayName = "Eynx-tichondrius",
-            specKey = "PALADIN_HOLY",
+            specKey = "",
             rating = 2425,
             rank = 987,
             wins = 86,
@@ -9736,7 +9736,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
     bracket = "arena3v3",
     season = 41,
     snapshotDate = "2026-08-12",
-    generatedAt = "2026-08-12T13:26:28Z",
+    generatedAt = "2026-08-12T14:37:02Z",
     source = "blizzard-api+seramate",
     overall = {
         listedCount = 1002,
@@ -9866,13 +9866,13 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
             },
         },
         ["MAGE"] = {
-            listedCount = 97,
-            avgListedRating = 2826.6,
+            listedCount = 98,
+            avgListedRating = 2825.8,
             medianListedRating = 2752.5,
-            top100Avg = 2826.6,
+            top100Avg = 2825.8,
             highest = 3200,
             buckets = {
-                ["2600-2699"] = 26,
+                ["2600-2699"] = 27,
                 ["2700-2799"] = 30,
                 ["2800-2899"] = 19,
                 ["2900-2999"] = 3,
@@ -9882,13 +9882,13 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
             },
         },
         ["MONK"] = {
-            listedCount = 114,
-            avgListedRating = 2776.0,
+            listedCount = 115,
+            avgListedRating = 2775.2,
             medianListedRating = 2736,
-            top100Avg = 2776.0,
+            top100Avg = 2775.2,
             highest = 3278,
             buckets = {
-                ["2600-2699"] = 30,
+                ["2600-2699"] = 31,
                 ["2700-2799"] = 37,
                 ["2800-2899"] = 15,
                 ["2900-2999"] = 5,
@@ -10209,13 +10209,13 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
             },
         },
         ["MAGE_FROST"] = {
-            listedCount = 75,
-            avgListedRating = 2816.6,
-            medianListedRating = 2741,
-            top100Avg = 2816.6,
+            listedCount = 76,
+            avgListedRating = 2814.3,
+            medianListedRating = 2737.5,
+            top100Avg = 2814.3,
             highest = 3150,
             buckets = {
-                ["2600-2699"] = 21,
+                ["2600-2699"] = 22,
                 ["2700-2799"] = 23,
                 ["2800-2899"] = 14,
                 ["2900-2999"] = 3,
@@ -10234,13 +10234,13 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
             },
         },
         ["MONK_MISTWEAVER"] = {
-            listedCount = 86,
-            avgListedRating = 2850.3,
-            medianListedRating = 2764.5,
-            top100Avg = 2850.3,
+            listedCount = 87,
+            avgListedRating = 2847.9,
+            medianListedRating = 2763,
+            top100Avg = 2847.9,
             highest = 3278,
             buckets = {
-                ["2600-2699"] = 20,
+                ["2600-2699"] = 21,
                 ["2700-2799"] = 29,
                 ["2800-2899"] = 8,
                 ["2900-2999"] = 5,
@@ -14099,7 +14099,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["jeremih-arthas"] = {
             displayName = "Jeremih-arthas",
-            specKey = "",
+            specKey = "MONK_MISTWEAVER",
             rating = 2642,
             rank = 986,
             wins = 256,
@@ -16520,7 +16520,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["qup-burninglegion"] = {
             displayName = "Qup-burning-legion",
-            specKey = "",
+            specKey = "MAGE_FROST",
             rating = 2643,
             rank = 980,
             wins = 171,
@@ -19542,7 +19542,7 @@ PVL_AppHelperPendingSnapshots.blitz = {
     bracket = "blitz",
     season = 41,
     snapshotDate = "2026-08-12",
-    generatedAt = "2026-08-12T13:25:30Z",
+    generatedAt = "2026-08-12T14:36:10Z",
     source = "blizzard-api",
     overall = {
         listedCount = 37717,
@@ -36192,6 +36192,15 @@ PVL_AppHelperPendingSnapshots.blitz = {
             rank = 702,
             wins = 20,
             losses = 15,
+            faction = "ALLIANCE",
+        },
+        ["astherian-stormrage"] = {
+            displayName = "Astherian-stormrage",
+            specKey = "PALADIN_HOLY",
+            rating = 1803,
+            rank = 531,
+            wins = 19,
+            losses = 18,
             faction = "ALLIANCE",
         },
         ["asthmos-area52"] = {
@@ -164120,15 +164129,6 @@ PVL_AppHelperPendingSnapshots.blitz = {
             losses = 51,
             faction = "HORDE",
         },
-        ["kinriel-gallywix"] = {
-            displayName = "Kinriel-gallywix",
-            specKey = "PALADIN_HOLY",
-            rating = 1803,
-            rank = 531,
-            wins = 19,
-            losses = 18,
-            faction = "ALLIANCE",
-        },
         ["kintarõ-kelthuzad"] = {
             displayName = "Kintarõ-kelthuzad",
             specKey = "EVOKER_PRESERVATION",
@@ -209687,6 +209687,15 @@ PVL_AppHelperPendingSnapshots.blitz = {
             losses = 17,
             faction = "ALLIANCE",
         },
+        ["noot-bleedinghollow"] = {
+            displayName = "Noot-bleeding-hollow",
+            specKey = "WARRIOR_FURY",
+            rating = 1762,
+            rank = 911,
+            wins = 9,
+            losses = 8,
+            faction = "HORDE",
+        },
         ["noots-arthas"] = {
             displayName = "Noots-arthas",
             specKey = "PRIEST_DISCIPLINE",
@@ -209694,15 +209703,6 @@ PVL_AppHelperPendingSnapshots.blitz = {
             rank = 790,
             wins = 21,
             losses = 17,
-            faction = "HORDE",
-        },
-        ["nootswfae336-bleedinghollow"] = {
-            displayName = "NootswFAE336-bleeding-hollow",
-            specKey = "WARRIOR_FURY",
-            rating = 1762,
-            rank = 911,
-            wins = 9,
-            losses = 8,
             faction = "HORDE",
         },
         ["nope-moonguard"] = {
@@ -334265,7 +334265,7 @@ PVL_AppHelperPendingSnapshots.rbg = {
     bracket = "rbg",
     season = 41,
     snapshotDate = "2026-08-12",
-    generatedAt = "2026-08-12T13:26:04Z",
+    generatedAt = "2026-08-12T14:36:40Z",
     source = "blizzard-api+seramate",
     overall = {
         listedCount = 1003,
@@ -334341,9 +334341,9 @@ PVL_AppHelperPendingSnapshots.rbg = {
         },
         ["DEMONHUNTER"] = {
             listedCount = 47,
-            avgListedRating = 2047.0,
-            medianListedRating = 2039,
-            top100Avg = 2047.0,
+            avgListedRating = 2089.8,
+            medianListedRating = 2036.0,
+            top100Avg = 2089.8,
             highest = 2490,
             buckets = {
                 ["1800-1899"] = 14,
@@ -334488,9 +334488,9 @@ PVL_AppHelperPendingSnapshots.rbg = {
         },
         ["ROGUE"] = {
             listedCount = 88,
-            avgListedRating = 2113.1,
-            medianListedRating = 2107,
-            top100Avg = 2113.1,
+            avgListedRating = 2121.6,
+            medianListedRating = 2122.5,
+            top100Avg = 2121.6,
             highest = 2848,
             buckets = {
                 ["1800-1899"] = 15,
@@ -334601,11 +334601,11 @@ PVL_AppHelperPendingSnapshots.rbg = {
             },
         },
         ["DEMONHUNTER_DEVOURER"] = {
-            listedCount = 21,
-            avgListedRating = 2082.5,
-            medianListedRating = 2039,
-            top100Avg = 2082.5,
-            highest = 2490,
+            listedCount = 20,
+            avgListedRating = 2062.1,
+            medianListedRating = 2036.0,
+            top100Avg = 2062.1,
+            highest = 2320,
             buckets = {
                 ["1800-1899"] = 5,
                 ["1900-1999"] = 3,
@@ -334613,7 +334613,6 @@ PVL_AppHelperPendingSnapshots.rbg = {
                 ["2100-2199"] = 4,
                 ["2200-2299"] = 2,
                 ["2300-2399"] = 3,
-                ["2400-2499"] = 1,
             },
         },
         ["DEMONHUNTER_HAVOC"] = {
@@ -334632,14 +334631,15 @@ PVL_AppHelperPendingSnapshots.rbg = {
             },
         },
         ["DEMONHUNTER_VENGEANCE"] = {
-            listedCount = 2,
-            avgListedRating = 2044,
-            medianListedRating = 2044.0,
-            top100Avg = 2044,
-            highest = 2183,
+            listedCount = 3,
+            avgListedRating = 2192.7,
+            medianListedRating = 2183,
+            top100Avg = 2192.7,
+            highest = 2490,
             buckets = {
                 ["1900-1999"] = 1,
                 ["2100-2199"] = 1,
+                ["2400-2499"] = 1,
             },
         },
         ["DRUID_BALANCE"] = {
@@ -334969,11 +334969,11 @@ PVL_AppHelperPendingSnapshots.rbg = {
             },
         },
         ["ROGUE_ASSASSINATION"] = {
-            listedCount = 19,
-            avgListedRating = 2118,
-            medianListedRating = 2107,
-            top100Avg = 2118,
-            highest = 2609,
+            listedCount = 20,
+            avgListedRating = 2154.5,
+            medianListedRating = 2122.5,
+            top100Avg = 2154.5,
+            highest = 2848,
             buckets = {
                 ["1800-1899"] = 4,
                 ["1900-1999"] = 1,
@@ -334983,6 +334983,7 @@ PVL_AppHelperPendingSnapshots.rbg = {
                 ["2300-2399"] = 1,
                 ["2400-2499"] = 1,
                 ["2600-2699"] = 1,
+                ["2800-2899"] = 1,
             },
         },
         ["ROGUE_OUTLAW"] = {
@@ -334998,11 +334999,11 @@ PVL_AppHelperPendingSnapshots.rbg = {
             },
         },
         ["ROGUE_SUBTLETY"] = {
-            listedCount = 66,
-            avgListedRating = 2137.4,
-            medianListedRating = 2083.5,
-            top100Avg = 2137.4,
-            highest = 2848,
+            listedCount = 65,
+            avgListedRating = 2126.4,
+            medianListedRating = 2083,
+            top100Avg = 2126.4,
+            highest = 2794,
             buckets = {
                 ["1800-1899"] = 10,
                 ["1900-1999"] = 16,
@@ -335014,7 +335015,6 @@ PVL_AppHelperPendingSnapshots.rbg = {
                 ["2500-2599"] = 5,
                 ["2600-2699"] = 2,
                 ["2700-2799"] = 1,
-                ["2800-2899"] = 1,
             },
         },
         ["SHAMAN_ELEMENTAL"] = {
@@ -335486,7 +335486,7 @@ PVL_AppHelperPendingSnapshots.rbg = {
         },
         ["astørâl-moonguard"] = {
             displayName = "Astørâl-moon-guard",
-            specKey = "DEMONHUNTER_DEVOURER",
+            specKey = "DEMONHUNTER_VENGEANCE",
             rating = 2490,
             rank = 56,
             wins = 75,
@@ -344126,7 +344126,7 @@ PVL_AppHelperPendingSnapshots.rbg = {
         },
         ["ñìghtmare-kelthuzad"] = {
             displayName = "Ñìghtmare-kelthuzad",
-            specKey = "ROGUE_SUBTLETY",
+            specKey = "ROGUE_ASSASSINATION",
             rating = 2848,
             rank = 1,
             wins = 126,
@@ -344169,7 +344169,7 @@ PVL_AppHelperPendingSnapshots.shuffle = {
     bracket = "shuffle",
     season = 41,
     snapshotDate = "2026-08-12",
-    generatedAt = "2026-08-12T13:25:51Z",
+    generatedAt = "2026-08-12T14:36:27Z",
     source = "blizzard-api",
     overall = {
         listedCount = 38236,
@@ -344229,7 +344229,7 @@ PVL_AppHelperPendingSnapshots.shuffle = {
             ["800-899"] = 133,
             ["900-999"] = 136,
         },
-        ratedPopulation = 137194,
+        ratedPopulation = 137193,
         titleCutoffs = {
             {
                 pct = 0.1,
@@ -344304,7 +344304,7 @@ PVL_AppHelperPendingSnapshots.shuffle = {
                 },
             },
             ["DEATHKNIGHT_UNHOLY"] = {
-                population = 5007,
+                population = 5006,
                 cutoffs = {
                     {
                         pct = 0.1,
@@ -374742,6 +374742,15 @@ PVL_AppHelperPendingSnapshots.shuffle = {
             losses = 266,
             faction = "HORDE",
         },
+        ["bonz-tichondrius"] = {
+            displayName = "Bonz-tichondrius",
+            specKey = "DEATHKNIGHT_UNHOLY",
+            rating = 3009,
+            rank = 29,
+            wins = 343,
+            losses = 313,
+            faction = "HORDE",
+        },
         ["booee-sargeras"] = {
             displayName = "Booee-sargeras",
             specKey = "PRIEST_DISCIPLINE",
@@ -375640,6 +375649,15 @@ PVL_AppHelperPendingSnapshots.shuffle = {
             rank = 775,
             wins = 191,
             losses = 183,
+            faction = "HORDE",
+        },
+        ["bornz-tichondrius"] = {
+            displayName = "Bornz-tichondrius",
+            specKey = "DEATHKNIGHT_FROST",
+            rating = 3022,
+            rank = 17,
+            wins = 124,
+            losses = 85,
             faction = "HORDE",
         },
         ["boroff-proudmoore"] = {
@@ -425223,15 +425241,6 @@ PVL_AppHelperPendingSnapshots.shuffle = {
             losses = 58,
             faction = "HORDE",
         },
-        ["evergrip-tichondrius"] = {
-            displayName = "Evergrip-tichondrius",
-            specKey = "DEATHKNIGHT_UNHOLY",
-            rating = 3009,
-            rank = 29,
-            wins = 343,
-            losses = 313,
-            faction = "HORDE",
-        },
         ["everguards-tichondrius"] = {
             displayName = "Everguards-tichondrius",
             specKey = "PALADIN_RETRIBUTION",
@@ -427057,15 +427066,6 @@ PVL_AppHelperPendingSnapshots.shuffle = {
             rank = 831,
             wins = 54,
             losses = 36,
-            faction = "ALLIANCE",
-        },
-        ["faeriefly-moonguard"] = {
-            displayName = "Faeriefly-moon-guard",
-            specKey = "DRUID_FERAL",
-            rating = 2108,
-            rank = 810,
-            wins = 72,
-            losses = 70,
             faction = "ALLIANCE",
         },
         ["faermôrn-illidan"] = {
@@ -499842,15 +499842,6 @@ PVL_AppHelperPendingSnapshots.shuffle = {
             losses = 4,
             faction = "ALLIANCE",
         },
-        ["luminate-barthilas"] = {
-            displayName = "Luminate-barthilas",
-            specKey = "PALADIN_HOLY",
-            rating = 2572,
-            rank = 377,
-            wins = 837,
-            losses = 808,
-            faction = "ALLIANCE",
-        },
         ["luminspear-elune"] = {
             displayName = "Luminspear-elune",
             specKey = "PALADIN_RETRIBUTION",
@@ -504062,6 +504053,15 @@ PVL_AppHelperPendingSnapshots.shuffle = {
             wins = 298,
             losses = 277,
             faction = "ALLIANCE",
+        },
+        ["maliflora-bleedinghollow"] = {
+            displayName = "Maliflora-bleeding-hollow",
+            specKey = "WARLOCK_DESTRUCTION",
+            rating = 2159,
+            rank = 613,
+            wins = 50,
+            losses = 34,
+            faction = "HORDE",
         },
         ["malikay-jubeithos"] = {
             displayName = "Malikay-jubeithos",
@@ -526788,15 +526788,6 @@ PVL_AppHelperPendingSnapshots.shuffle = {
             losses = 601,
             faction = "HORDE",
         },
-        ["nomoreorc-tichondrius"] = {
-            displayName = "Nomoreorc-tichondrius",
-            specKey = "DEATHKNIGHT_FROST",
-            rating = 3022,
-            rank = 17,
-            wins = 124,
-            losses = 85,
-            faction = "HORDE",
-        },
         ["nomormana-tichondrius"] = {
             displayName = "Nomormana-tichondrius",
             specKey = "PRIEST_DISCIPLINE",
@@ -526977,8 +526968,8 @@ PVL_AppHelperPendingSnapshots.shuffle = {
             losses = 81,
             faction = "ALLIANCE",
         },
-        ["nootswfae336-bleedinghollow"] = {
-            displayName = "NootswFAE336-bleeding-hollow",
+        ["noot-bleedinghollow"] = {
+            displayName = "Noot-bleeding-hollow",
             specKey = "WARRIOR_FURY",
             rating = 2319,
             rank = 381,
@@ -550852,6 +550843,15 @@ PVL_AppHelperPendingSnapshots.shuffle = {
             rank = 758,
             wins = 2,
             losses = 4,
+            faction = "ALLIANCE",
+        },
+        ["rafìki-moonguard"] = {
+            displayName = "Rafìki-moon-guard",
+            specKey = "DRUID_FERAL",
+            rating = 2108,
+            rank = 810,
+            wins = 72,
+            losses = 70,
             faction = "ALLIANCE",
         },
         ["raganarok-darkspear"] = {
@@ -576484,15 +576484,6 @@ PVL_AppHelperPendingSnapshots.shuffle = {
             rank = 703,
             wins = 70,
             losses = 76,
-            faction = "HORDE",
-        },
-        ["sightsear-bleedinghollow"] = {
-            displayName = "Sightsear-bleeding-hollow",
-            specKey = "WARLOCK_DESTRUCTION",
-            rating = 2159,
-            rank = 613,
-            wins = 50,
-            losses = 34,
             faction = "HORDE",
         },
         ["sigiloson-illidan"] = {
@@ -628711,6 +628702,15 @@ PVL_AppHelperPendingSnapshots.shuffle = {
             rank = 305,
             wins = 69,
             losses = 62,
+            faction = "ALLIANCE",
+        },
+        ["world-saurfang"] = {
+            displayName = "World-saurfang",
+            specKey = "PALADIN_HOLY",
+            rating = 2572,
+            rank = 377,
+            wins = 837,
+            losses = 808,
             faction = "ALLIANCE",
         },
         ["world-steamwheedlecartel"] = {
