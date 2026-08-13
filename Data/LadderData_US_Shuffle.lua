@@ -7,7 +7,7 @@ PvPLedgerLadderData.US.shuffle = {
     bracket = "shuffle",
     season = 41,
     snapshotDate = "2026-08-13",
-    generatedAt = "2026-08-13T12:10:01Z",
+    generatedAt = "2026-08-13T13:47:46Z",
     source = "blizzard-api",
     overall = {
         listedCount = 38236,
@@ -67,7 +67,7 @@ PvPLedgerLadderData.US.shuffle = {
             ["800-899"] = 133,
             ["900-999"] = 136,
         },
-        ratedPopulation = 137190,
+        ratedPopulation = 137192,
         titleCutoffs = {
             {
                 pct = 0.1,
@@ -392,7 +392,7 @@ PvPLedgerLadderData.US.shuffle = {
                 },
             },
             ["EVOKER_PRESERVATION"] = {
-                population = 4799,
+                population = 4800,
                 cutoffs = {
                     {
                         pct = 0.1,
@@ -692,7 +692,7 @@ PvPLedgerLadderData.US.shuffle = {
                 },
             },
             ["PALADIN_RETRIBUTION"] = {
-                population = 5004,
+                population = 5005,
                 cutoffs = {
                     {
                         pct = 0.1,
@@ -78685,6 +78685,15 @@ PvPLedgerLadderData.US.shuffle = {
             losses = 82,
             faction = "ALLIANCE",
         },
+        ["enjoy-frostmourne"] = {
+            displayName = "Enjoy-frostmourne",
+            specKey = "HUNTER_SURVIVAL",
+            rating = 2312,
+            rank = 442,
+            wins = 62,
+            losses = 58,
+            faction = "ALLIANCE",
+        },
         ["enjyn-malganis"] = {
             displayName = "Enjyn-malganis",
             specKey = "MAGE_FIRE",
@@ -102002,15 +102011,6 @@ PvPLedgerLadderData.US.shuffle = {
             rank = 881,
             wins = 60,
             losses = 42,
-            faction = "ALLIANCE",
-        },
-        ["graphic-frostmourne"] = {
-            displayName = "Graphic-frostmourne",
-            specKey = "HUNTER_SURVIVAL",
-            rating = 2312,
-            rank = 442,
-            wins = 62,
-            losses = 58,
             faction = "ALLIANCE",
         },
         ["graphically-tichondrius"] = {
@@ -148363,15 +148363,6 @@ PvPLedgerLadderData.US.shuffle = {
             losses = 31,
             faction = "HORDE",
         },
-        ["leekw-tichondrius"] = {
-            displayName = "Leekw-tichondrius",
-            specKey = "HUNTER_BEASTMASTERY",
-            rating = 2743,
-            rank = 152,
-            wins = 549,
-            losses = 538,
-            faction = "HORDE",
-        },
         ["leelicious-stormrage"] = {
             displayName = "Leelicious-stormrage",
             specKey = "DEATHKNIGHT_UNHOLY",
@@ -152636,6 +152627,15 @@ PvPLedgerLadderData.US.shuffle = {
             rank = 836,
             wins = 86,
             losses = 79,
+            faction = "HORDE",
+        },
+        ["lkw-tichondrius"] = {
+            displayName = "Lkw-tichondrius",
+            specKey = "HUNTER_BEASTMASTERY",
+            rating = 2743,
+            rank = 152,
+            wins = 549,
+            losses = 538,
             faction = "HORDE",
         },
         ["lkwon-tichondrius"] = {

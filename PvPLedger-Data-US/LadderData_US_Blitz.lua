@@ -7,7 +7,7 @@ PvPLedgerLadderData.US.blitz = {
     bracket = "blitz",
     season = 41,
     snapshotDate = "2026-08-13",
-    generatedAt = "2026-08-13T12:09:31Z",
+    generatedAt = "2026-08-13T13:47:17Z",
     source = "blizzard-api",
     overall = {
         listedCount = 37712,
@@ -69,7 +69,7 @@ PvPLedgerLadderData.US.blitz = {
             ["800-899"] = 751,
             ["900-999"] = 28,
         },
-        ratedPopulation = 86714,
+        ratedPopulation = 86715,
         titleCutoffs = {
             {
                 pct = 0.1,
@@ -244,7 +244,7 @@ PvPLedgerLadderData.US.blitz = {
                 },
             },
             ["DRUID_BALANCE"] = {
-                population = 2802,
+                population = 2803,
                 cutoffs = {
                     {
                         pct = 0.1,
@@ -26404,6 +26404,15 @@ PvPLedgerLadderData.US.blitz = {
             rank = 395,
             wins = 3,
             losses = 4,
+            faction = "ALLIANCE",
+        },
+        ["benzbrake-tichondrius"] = {
+            displayName = "Benzbrake-tichondrius",
+            specKey = "MONK_WINDWALKER",
+            rating = 1739,
+            rank = 899,
+            wins = 15,
+            losses = 17,
             faction = "ALLIANCE",
         },
         ["beogar-moonguard"] = {
@@ -75492,15 +75501,6 @@ PvPLedgerLadderData.US.blitz = {
             losses = 85,
             faction = "ALLIANCE",
         },
-        ["ducknoneed-tichondrius"] = {
-            displayName = "Ducknoneed-tichondrius",
-            specKey = "MONK_WINDWALKER",
-            rating = 1739,
-            rank = 899,
-            wins = 15,
-            losses = 17,
-            faction = "ALLIANCE",
-        },
         ["ducksan-tichondrius"] = {
             displayName = "Ducksan-tichondrius",
             specKey = "HUNTER_BEASTMASTERY",
@@ -100188,8 +100188,8 @@ PvPLedgerLadderData.US.blitz = {
             losses = 9,
             faction = "ALLIANCE",
         },
-        ["gaxn-barthilas"] = {
-            displayName = "Gaxn-barthilas",
+        ["gaxn-frostmourne"] = {
+            displayName = "Gaxn-frostmourne",
             specKey = "WARRIOR_ARMS",
             rating = 1892,
             rank = 896,
@@ -299223,8 +299223,8 @@ PvPLedgerLadderData.US.blitz = {
             losses = 239,
             faction = "ALLIANCE",
         },
-        ["xynzo-azralon"] = {
-            displayName = "Xynzo-azralon",
+        ["xynzo-area52"] = {
+            displayName = "Xynzo-area-52",
             specKey = "WARLOCK_DESTRUCTION",
             rating = 1810,
             rank = 766,
