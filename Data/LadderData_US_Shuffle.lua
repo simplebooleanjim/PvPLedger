@@ -7,7 +7,7 @@ PvPLedgerLadderData.US.shuffle = {
     bracket = "shuffle",
     season = 41,
     snapshotDate = "2026-08-13",
-    generatedAt = "2026-08-13T13:47:46Z",
+    generatedAt = "2026-08-13T14:57:23Z",
     source = "blizzard-api",
     overall = {
         listedCount = 38236,
@@ -67,7 +67,7 @@ PvPLedgerLadderData.US.shuffle = {
             ["800-899"] = 133,
             ["900-999"] = 136,
         },
-        ratedPopulation = 137192,
+        ratedPopulation = 137190,
         titleCutoffs = {
             {
                 pct = 0.1,
@@ -192,7 +192,7 @@ PvPLedgerLadderData.US.shuffle = {
                 },
             },
             ["DEMONHUNTER_HAVOC"] = {
-                population = 5002,
+                population = 5001,
                 cutoffs = {
                     {
                         pct = 0.1,
@@ -1017,7 +1017,7 @@ PvPLedgerLadderData.US.shuffle = {
                 },
             },
             ["WARRIOR_ARMS"] = {
-                population = 5006,
+                population = 5005,
                 cutoffs = {
                     {
                         pct = 0.1,
@@ -124430,6 +124430,33 @@ PvPLedgerLadderData.US.shuffle = {
             rank = 803,
             wins = 121,
             losses = 98,
+            faction = "ALLIANCE",
+        },
+        ["iïlcränkx-tichondrius"] = {
+            displayName = "Iïlcränkx-tichondrius",
+            specKey = "WARRIOR_ARMS",
+            rating = 2802,
+            rank = 106,
+            wins = 122,
+            losses = 94,
+            faction = "ALLIANCE",
+        },
+        ["iïldäwgx-tichondrius"] = {
+            displayName = "Iïldäwgx-tichondrius",
+            specKey = "WARRIOR_ARMS",
+            rating = 2830,
+            rank = 84,
+            wins = 246,
+            losses = 211,
+            faction = "ALLIANCE",
+        },
+        ["iïlparsex-tichondrius"] = {
+            displayName = "Iïlparsex-tichondrius",
+            specKey = "WARRIOR_ARMS",
+            rating = 2839,
+            rank = 74,
+            wins = 94,
+            losses = 78,
             faction = "ALLIANCE",
         },
         ["iïlpümpx-tichondrius"] = {
@@ -300112,15 +300139,6 @@ PvPLedgerLadderData.US.shuffle = {
             losses = 125,
             faction = "ALLIANCE",
         },
-        ["ßáðßâðmáñ-tichondrius"] = {
-            displayName = "ßáðßâðmáñ-tichondrius",
-            specKey = "WARRIOR_ARMS",
-            rating = 2839,
-            rank = 74,
-            wins = 94,
-            losses = 78,
-            faction = "ALLIANCE",
-        },
         ["ßäi-tichondrius"] = {
             displayName = "ßäi-tichondrius",
             specKey = "PRIEST_HOLY",
@@ -300175,15 +300193,6 @@ PvPLedgerLadderData.US.shuffle = {
             losses = 45,
             faction = "ALLIANCE",
         },
-        ["ßîgpümpý-tichondrius"] = {
-            displayName = "ßîgpümpý-tichondrius",
-            specKey = "WARRIOR_ARMS",
-            rating = 2830,
-            rank = 84,
-            wins = 246,
-            losses = 211,
-            faction = "ALLIANCE",
-        },
         ["ßîgçäßãl-tichondrius"] = {
             displayName = "ßîgçäßãl-tichondrius",
             specKey = "WARRIOR_ARMS",
@@ -300200,15 +300209,6 @@ PvPLedgerLadderData.US.shuffle = {
             rank = 163,
             wins = 114,
             losses = 115,
-            faction = "ALLIANCE",
-        },
-        ["ßïggø-tichondrius"] = {
-            displayName = "ßïggø-tichondrius",
-            specKey = "WARRIOR_ARMS",
-            rating = 2802,
-            rank = 106,
-            wins = 122,
-            losses = 94,
             faction = "ALLIANCE",
         },
         ["ßïgßøøtyßby-malganis"] = {

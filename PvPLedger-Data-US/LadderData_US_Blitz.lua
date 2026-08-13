@@ -7,7 +7,7 @@ PvPLedgerLadderData.US.blitz = {
     bracket = "blitz",
     season = 41,
     snapshotDate = "2026-08-13",
-    generatedAt = "2026-08-13T13:47:17Z",
+    generatedAt = "2026-08-13T14:56:47Z",
     source = "blizzard-api",
     overall = {
         listedCount = 37712,
@@ -69,7 +69,7 @@ PvPLedgerLadderData.US.blitz = {
             ["800-899"] = 751,
             ["900-999"] = 28,
         },
-        ratedPopulation = 86715,
+        ratedPopulation = 86714,
         titleCutoffs = {
             {
                 pct = 0.1,
@@ -194,7 +194,7 @@ PvPLedgerLadderData.US.blitz = {
                 },
             },
             ["DEMONHUNTER_HAVOC"] = {
-                population = 2077,
+                population = 2076,
                 cutoffs = {
                     {
                         pct = 0.1,
@@ -40102,15 +40102,6 @@ PvPLedgerLadderData.US.blitz = {
             rank = 947,
             wins = 17,
             losses = 18,
-            faction = "HORDE",
-        },
-        ["bålënciaga-emeralddream"] = {
-            displayName = "Bålënciaga-emerald-dream",
-            specKey = "ROGUE_OUTLAW",
-            rating = 1434,
-            rank = 489,
-            wins = 5,
-            losses = 2,
             faction = "HORDE",
         },
         ["bårf-bleedinghollow"] = {
@@ -129310,6 +129301,33 @@ PvPLedgerLadderData.US.blitz = {
             rank = 13,
             wins = 153,
             losses = 133,
+            faction = "ALLIANCE",
+        },
+        ["iïlcränkx-tichondrius"] = {
+            displayName = "Iïlcränkx-tichondrius",
+            specKey = "WARRIOR_ARMS",
+            rating = 2673,
+            rank = 82,
+            wins = 84,
+            losses = 64,
+            faction = "ALLIANCE",
+        },
+        ["iïldäwgx-tichondrius"] = {
+            displayName = "Iïldäwgx-tichondrius",
+            specKey = "WARRIOR_ARMS",
+            rating = 2630,
+            rank = 92,
+            wins = 83,
+            losses = 67,
+            faction = "ALLIANCE",
+        },
+        ["iïlparsex-tichondrius"] = {
+            displayName = "Iïlparsex-tichondrius",
+            specKey = "WARRIOR_ARMS",
+            rating = 2934,
+            rank = 36,
+            wins = 60,
+            losses = 40,
             faction = "ALLIANCE",
         },
         ["iïlpümpx-tichondrius"] = {
@@ -259092,6 +259110,15 @@ PvPLedgerLadderData.US.blitz = {
             losses = 30,
             faction = "ALLIANCE",
         },
+        ["sàùce-emeralddream"] = {
+            displayName = "Sàùce-emerald-dream",
+            specKey = "ROGUE_OUTLAW",
+            rating = 1434,
+            rank = 489,
+            wins = 5,
+            losses = 2,
+            faction = "HORDE",
+        },
         ["sámmý-bleedinghollow"] = {
             displayName = "Sámmý-bleeding-hollow",
             specKey = "WARLOCK_AFFLICTION",
@@ -310500,15 +310527,6 @@ PvPLedgerLadderData.US.blitz = {
             losses = 5,
             faction = "ALLIANCE",
         },
-        ["ßáðßâðmáñ-tichondrius"] = {
-            displayName = "ßáðßâðmáñ-tichondrius",
-            specKey = "WARRIOR_ARMS",
-            rating = 2934,
-            rank = 36,
-            wins = 60,
-            losses = 40,
-            faction = "ALLIANCE",
-        },
         ["ßâne-illidan"] = {
             displayName = "ßâne-illidan",
             specKey = "DEATHKNIGHT_UNHOLY",
@@ -310626,15 +310644,6 @@ PvPLedgerLadderData.US.blitz = {
             losses = 68,
             faction = "HORDE",
         },
-        ["ßîgpümpý-tichondrius"] = {
-            displayName = "ßîgpümpý-tichondrius",
-            specKey = "WARRIOR_ARMS",
-            rating = 2630,
-            rank = 92,
-            wins = 83,
-            losses = 67,
-            faction = "ALLIANCE",
-        },
         ["ßîgßs-moonguard"] = {
             displayName = "ßîgßs-moon-guard",
             specKey = "HUNTER_MARKSMANSHIP",
@@ -310670,15 +310679,6 @@ PvPLedgerLadderData.US.blitz = {
             wins = 74,
             losses = 86,
             faction = "HORDE",
-        },
-        ["ßïggø-tichondrius"] = {
-            displayName = "ßïggø-tichondrius",
-            specKey = "WARRIOR_ARMS",
-            rating = 2673,
-            rank = 82,
-            wins = 84,
-            losses = 64,
-            faction = "ALLIANCE",
         },
         ["ßóßÿ-tichondrius"] = {
             displayName = "ßóßÿ-tichondrius",
