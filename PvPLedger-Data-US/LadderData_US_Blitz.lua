@@ -7,7 +7,7 @@ PvPLedgerLadderData.US.blitz = {
     bracket = "blitz",
     season = 41,
     snapshotDate = "2026-08-13",
-    generatedAt = "2026-08-13T04:27:26Z",
+    generatedAt = "2026-08-13T05:59:06Z",
     source = "blizzard-api",
     overall = {
         listedCount = 37715,
@@ -69,7 +69,7 @@ PvPLedgerLadderData.US.blitz = {
             ["800-899"] = 751,
             ["900-999"] = 28,
         },
-        ratedPopulation = 86720,
+        ratedPopulation = 86719,
         titleCutoffs = {
             {
                 pct = 0.1,
@@ -144,7 +144,7 @@ PvPLedgerLadderData.US.blitz = {
                 },
             },
             ["DEATHKNIGHT_UNHOLY"] = {
-                population = 3994,
+                population = 3993,
                 cutoffs = {
                     {
                         pct = 0.1,
@@ -14517,6 +14517,15 @@ PvPLedgerLadderData.US.blitz = {
             losses = 4,
             faction = "HORDE",
         },
+        ["arkahnx-dawnbringer"] = {
+            displayName = "Arkahnx-dawnbringer",
+            specKey = "WARLOCK_DESTRUCTION",
+            rating = 2406,
+            rank = 117,
+            wins = 57,
+            losses = 46,
+            faction = "ALLIANCE",
+        },
         ["arkaimdk-stormrage"] = {
             displayName = "Arkaimdk-stormrage",
             specKey = "DEATHKNIGHT_UNHOLY",
@@ -24534,6 +24543,15 @@ PvPLedgerLadderData.US.blitz = {
             losses = 3,
             faction = "HORDE",
         },
+        ["bearlycat-aggramar"] = {
+            displayName = "Bearlycat-aggramar",
+            specKey = "DRUID_GUARDIAN",
+            rating = 862,
+            rank = 873,
+            wins = 3,
+            losses = 4,
+            faction = "HORDE",
+        },
         ["bearlygrillz-malfurion"] = {
             displayName = "Bearlygrillz-malfurion",
             specKey = "DRUID_GUARDIAN",
@@ -31967,15 +31985,6 @@ PvPLedgerLadderData.US.blitz = {
             wins = 32,
             losses = 33,
             faction = "HORDE",
-        },
-        ["bläckslayer-tichondrius"] = {
-            displayName = "Bläckslayer-tichondrius",
-            specKey = "MAGE_FIRE",
-            rating = 2177,
-            rank = 82,
-            wins = 29,
-            losses = 30,
-            faction = "ALLIANCE",
         },
         ["blästér-ragnaros"] = {
             displayName = "Blästér-ragnaros",
@@ -69730,6 +69739,15 @@ PvPLedgerLadderData.US.blitz = {
             rank = 949,
             wins = 17,
             losses = 22,
+            faction = "ALLIANCE",
+        },
+        ["dopestalienn-zuljin"] = {
+            displayName = "Dopestalienn-zuljin",
+            specKey = "ROGUE_ASSASSINATION",
+            rating = 1631,
+            rank = 913,
+            wins = 9,
+            losses = 10,
             faction = "ALLIANCE",
         },
         ["doppa-wyrmrestaccord"] = {
@@ -122130,15 +122148,6 @@ PvPLedgerLadderData.US.blitz = {
             losses = 12,
             faction = "ALLIANCE",
         },
-        ["iamdope-zuljin"] = {
-            displayName = "Iamdope-zuljin",
-            specKey = "ROGUE_ASSASSINATION",
-            rating = 1631,
-            rank = 913,
-            wins = 9,
-            losses = 10,
-            faction = "ALLIANCE",
-        },
         ["iamdownhere-ghostlands"] = {
             displayName = "Iamdownhere-ghostlands",
             specKey = "WARRIOR_FURY",
@@ -136278,8 +136287,8 @@ PvPLedgerLadderData.US.blitz = {
             losses = 99,
             faction = "ALLIANCE",
         },
-        ["juicymeldofc-area52"] = {
-            displayName = "Juicymeldofc-area-52",
+        ["juicymeldofc-shuhalo"] = {
+            displayName = "Juicymeldofc-shuhalo",
             specKey = "ROGUE_SUBTLETY",
             rating = 2427,
             rank = 314,
@@ -155835,15 +155844,6 @@ PvPLedgerLadderData.US.blitz = {
             losses = 9,
             faction = "ALLIANCE",
         },
-        ["liktak-aggramar"] = {
-            displayName = "Liktak-aggramar",
-            specKey = "DRUID_GUARDIAN",
-            rating = 862,
-            rank = 873,
-            wins = 3,
-            losses = 4,
-            faction = "HORDE",
-        },
         ["lilacstrike-moonguard"] = {
             displayName = "Lilacstrike-moon-guard",
             specKey = "MONK_MISTWEAVER",
@@ -174481,15 +174481,6 @@ PvPLedgerLadderData.US.blitz = {
             rank = 130,
             wins = 18,
             losses = 9,
-            faction = "ALLIANCE",
-        },
-        ["mirinx-dawnbringer"] = {
-            displayName = "Mirinx-dawnbringer",
-            specKey = "WARLOCK_DESTRUCTION",
-            rating = 2406,
-            rank = 117,
-            wins = 57,
-            losses = 46,
             faction = "ALLIANCE",
         },
         ["miriska-malganis"] = {
@@ -205387,6 +205378,15 @@ PvPLedgerLadderData.US.blitz = {
             rank = 123,
             wins = 117,
             losses = 113,
+            faction = "ALLIANCE",
+        },
+        ["playerypvcwm-tichondrius"] = {
+            displayName = "PlayerYPVCWM-tichondrius",
+            specKey = "MAGE_FIRE",
+            rating = 2177,
+            rank = 82,
+            wins = 29,
+            losses = 30,
             faction = "ALLIANCE",
         },
         ["playful-area52"] = {
@@ -246006,15 +246006,6 @@ PvPLedgerLadderData.US.blitz = {
             losses = 49,
             faction = "ALLIANCE",
         },
-        ["snuggycat-alteracmountains"] = {
-            displayName = "Snuggycat-alterac-mountains",
-            specKey = "SHAMAN_RESTORATION",
-            rating = 1819,
-            rank = 511,
-            wins = 14,
-            losses = 12,
-            faction = "HORDE",
-        },
         ["snuglebug-stormrage"] = {
             displayName = "Snuglebug-stormrage",
             specKey = "DEATHKNIGHT_BLOOD",
@@ -257481,8 +257472,8 @@ PvPLedgerLadderData.US.blitz = {
             losses = 16,
             faction = "HORDE",
         },
-        ["swepz-stormrage"] = {
-            displayName = "Swepz-stormrage",
+        ["swepzbaf3eb-tichondrius"] = {
+            displayName = "SwepzBAF3EB-tichondrius",
             specKey = "HUNTER_BEASTMASTERY",
             rating = 2405,
             rank = 89,
@@ -257687,6 +257678,15 @@ PvPLedgerLadderData.US.blitz = {
             wins = 10,
             losses = 8,
             faction = "ALLIANCE",
+        },
+        ["swirly-illidan"] = {
+            displayName = "Swirly-illidan",
+            specKey = "SHAMAN_RESTORATION",
+            rating = 1819,
+            rank = 511,
+            wins = 14,
+            losses = 12,
+            faction = "HORDE",
         },
         ["swirv-area52"] = {
             displayName = "Swirv-area-52",
