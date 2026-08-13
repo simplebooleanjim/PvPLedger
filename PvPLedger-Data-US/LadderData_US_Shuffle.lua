@@ -7,7 +7,7 @@ PvPLedgerLadderData.US.shuffle = {
     bracket = "shuffle",
     season = 41,
     snapshotDate = "2026-08-13",
-    generatedAt = "2026-08-13T20:04:19Z",
+    generatedAt = "2026-08-13T21:03:27Z",
     source = "blizzard-api",
     overall = {
         listedCount = 38238,
@@ -67,7 +67,7 @@ PvPLedgerLadderData.US.shuffle = {
             ["800-899"] = 133,
             ["900-999"] = 136,
         },
-        ratedPopulation = 137189,
+        ratedPopulation = 137191,
         titleCutoffs = {
             {
                 pct = 0.1,
@@ -517,7 +517,7 @@ PvPLedgerLadderData.US.shuffle = {
                 },
             },
             ["MAGE_FIRE"] = {
-                population = 2318,
+                population = 2319,
                 cutoffs = {
                     {
                         pct = 0.1,
@@ -542,7 +542,7 @@ PvPLedgerLadderData.US.shuffle = {
                 },
             },
             ["MAGE_FROST"] = {
-                population = 5010,
+                population = 5011,
                 cutoffs = {
                     {
                         pct = 0.1,
@@ -120409,6 +120409,15 @@ PvPLedgerLadderData.US.shuffle = {
             losses = 48,
             faction = "HORDE",
         },
+        ["immörtalx-tichondrius"] = {
+            displayName = "Immörtalx-tichondrius",
+            specKey = "WARLOCK_DESTRUCTION",
+            rating = 2442,
+            rank = 250,
+            wins = 82,
+            losses = 68,
+            faction = "HORDE",
+        },
         ["immörtälis-stormrage"] = {
             displayName = "Immörtälis-stormrage",
             specKey = "DRUID_GUARDIAN",
@@ -193696,6 +193705,15 @@ PvPLedgerLadderData.US.shuffle = {
             losses = 58,
             faction = "ALLIANCE",
         },
+        ["pawtickles-proudmoore"] = {
+            displayName = "Pawtickles-proudmoore",
+            specKey = "EVOKER_PRESERVATION",
+            rating = 2800,
+            rank = 108,
+            wins = 163,
+            losses = 114,
+            faction = "HORDE",
+        },
         ["pawtism-deathwing"] = {
             displayName = "Pawtism-deathwing",
             specKey = "DRUID_FERAL",
@@ -215888,15 +215906,6 @@ PvPLedgerLadderData.US.shuffle = {
             rank = 959,
             wins = 62,
             losses = 58,
-            faction = "ALLIANCE",
-        },
-        ["ronaldradke-moonguard"] = {
-            displayName = "Ronaldradke-moon-guard",
-            specKey = "PRIEST_SHADOW",
-            rating = 2318,
-            rank = 671,
-            wins = 70,
-            losses = 78,
             faction = "ALLIANCE",
         },
         ["ronath-darkspear"] = {
@@ -249010,15 +249019,6 @@ PvPLedgerLadderData.US.shuffle = {
             losses = 15,
             faction = "ALLIANCE",
         },
-        ["swiftarc-proudmoore"] = {
-            displayName = "Swiftarc-proudmoore",
-            specKey = "DRUID_BALANCE",
-            rating = 2181,
-            rank = 495,
-            wins = 140,
-            losses = 139,
-            faction = "ALLIANCE",
-        },
         ["swiftnëss-illidan"] = {
             displayName = "Swiftnëss-illidan",
             specKey = "DRUID_RESTORATION",
@@ -268188,15 +268188,6 @@ PvPLedgerLadderData.US.shuffle = {
             wins = 53,
             losses = 42,
             faction = "ALLIANCE",
-        },
-        ["uglybird-proudmoore"] = {
-            displayName = "Uglybird-proudmoore",
-            specKey = "EVOKER_PRESERVATION",
-            rating = 2800,
-            rank = 108,
-            wins = 163,
-            losses = 114,
-            faction = "HORDE",
         },
         ["uglygirl-illidan"] = {
             displayName = "Uglygirl-illidan",
@@ -298177,6 +298168,15 @@ PvPLedgerLadderData.US.shuffle = {
             losses = 2044,
             faction = "ALLIANCE",
         },
+        ["zularak-proudmoore"] = {
+            displayName = "Zularak-proudmoore",
+            specKey = "DRUID_BALANCE",
+            rating = 2181,
+            rank = 495,
+            wins = 140,
+            losses = 139,
+            faction = "ALLIANCE",
+        },
         ["zuldahn-skullcrusher"] = {
             displayName = "Zuldahn-skullcrusher",
             specKey = "HUNTER_BEASTMASTERY",
@@ -300886,15 +300886,6 @@ PvPLedgerLadderData.US.shuffle = {
             losses = 71,
             faction = "ALLIANCE",
         },
-        ["åfflictedx-tichondrius"] = {
-            displayName = "Åfflictedx-tichondrius",
-            specKey = "WARLOCK_DESTRUCTION",
-            rating = 2442,
-            rank = 250,
-            wins = 82,
-            losses = 68,
-            faction = "HORDE",
-        },
         ["ållinyoface-tichondrius"] = {
             displayName = "Ållinyoface-tichondrius",
             specKey = "WARRIOR_PROTECTION",
@@ -303224,6 +303215,15 @@ PvPLedgerLadderData.US.shuffle = {
             rank = 705,
             wins = 125,
             losses = 106,
+            faction = "ALLIANCE",
+        },
+        ["ðåñìëllé-moonguard"] = {
+            displayName = "Ðåñìëllé-moon-guard",
+            specKey = "PRIEST_SHADOW",
+            rating = 2318,
+            rank = 671,
+            wins = 70,
+            losses = 78,
             faction = "ALLIANCE",
         },
         ["ðæths-jubeithos"] = {
