@@ -7,7 +7,7 @@ PvPLedgerLadderData.US.shuffle = {
     bracket = "shuffle",
     season = 41,
     snapshotDate = "2026-08-13",
-    generatedAt = "2026-08-13T07:46:34Z",
+    generatedAt = "2026-08-13T09:11:57Z",
     source = "blizzard-api",
     overall = {
         listedCount = 38236,
@@ -67,7 +67,7 @@ PvPLedgerLadderData.US.shuffle = {
             ["800-899"] = 133,
             ["900-999"] = 136,
         },
-        ratedPopulation = 137194,
+        ratedPopulation = 137191,
         titleCutoffs = {
             {
                 pct = 0.1,
@@ -792,7 +792,7 @@ PvPLedgerLadderData.US.shuffle = {
                 },
             },
             ["ROGUE_ASSASSINATION"] = {
-                population = 3738,
+                population = 3737,
                 cutoffs = {
                     {
                         pct = 0.1,
@@ -842,7 +842,7 @@ PvPLedgerLadderData.US.shuffle = {
                 },
             },
             ["ROGUE_SUBTLETY"] = {
-                population = 5003,
+                population = 5002,
                 cutoffs = {
                     {
                         pct = 0.1,
@@ -917,7 +917,7 @@ PvPLedgerLadderData.US.shuffle = {
                 },
             },
             ["SHAMAN_RESTORATION"] = {
-                population = 5001,
+                population = 5000,
                 cutoffs = {
                     {
                         pct = 0.1,
@@ -926,17 +926,17 @@ PvPLedgerLadderData.US.shuffle = {
                     },
                     {
                         pct = 0.5,
-                        rank = 26,
-                        rating = 3082,
+                        rank = 25,
+                        rating = 3088,
                     },
                     {
                         pct = 1.0,
-                        rank = 51,
-                        rating = 2976,
+                        rank = 50,
+                        rating = 2981,
                     },
                     {
                         pct = 3.0,
-                        rank = 151,
+                        rank = 150,
                         rating = 2768,
                     },
                 },
@@ -37663,15 +37663,6 @@ PvPLedgerLadderData.US.shuffle = {
             losses = 4,
             faction = "ALLIANCE",
         },
-        ["bõnd-exodar"] = {
-            displayName = "Bõnd-exodar",
-            specKey = "DEMONHUNTER_VENGEANCE",
-            rating = 192,
-            rank = 196,
-            wins = 2,
-            losses = 10,
-            faction = "HORDE",
-        },
         ["bõness-sargeras"] = {
             displayName = "Bõness-sargeras",
             specKey = "DRUID_RESTORATION",
@@ -37743,6 +37734,15 @@ PvPLedgerLadderData.US.shuffle = {
             wins = 202,
             losses = 187,
             faction = "ALLIANCE",
+        },
+        ["bønd-exodar"] = {
+            displayName = "Bønd-exodar",
+            specKey = "DEMONHUNTER_VENGEANCE",
+            rating = 192,
+            rank = 196,
+            wins = 2,
+            losses = 10,
+            faction = "HORDE",
         },
         ["bøness-area52"] = {
             displayName = "Bøness-area-52",
@@ -197890,15 +197890,6 @@ PvPLedgerLadderData.US.shuffle = {
             losses = 412,
             faction = "ALLIANCE",
         },
-        ["playerypvcwm-tichondrius"] = {
-            displayName = "PlayerYPVCWM-tichondrius",
-            specKey = "MAGE_FIRE",
-            rating = 2327,
-            rank = 239,
-            wins = 64,
-            losses = 50,
-            faction = "ALLIANCE",
-        },
         ["playforfon-frostmourne"] = {
             displayName = "Playforfon-frostmourne",
             specKey = "DEMONHUNTER_DEVOURER",
@@ -267557,6 +267548,15 @@ PvPLedgerLadderData.US.shuffle = {
             rank = 625,
             wins = 202,
             losses = 180,
+            faction = "ALLIANCE",
+        },
+        ["tälibanco-tichondrius"] = {
+            displayName = "Tälibanco-tichondrius",
+            specKey = "MAGE_FIRE",
+            rating = 2327,
+            rank = 239,
+            wins = 64,
+            losses = 50,
             faction = "ALLIANCE",
         },
         ["täzx-laughingskull"] = {
