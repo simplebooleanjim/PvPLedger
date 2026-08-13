@@ -7,7 +7,7 @@ PvPLedgerLadderData.US.blitz = {
     bracket = "blitz",
     season = 41,
     snapshotDate = "2026-08-13",
-    generatedAt = "2026-08-13T17:05:42Z",
+    generatedAt = "2026-08-13T18:07:36Z",
     source = "blizzard-api",
     overall = {
         listedCount = 37712,
@@ -69,7 +69,7 @@ PvPLedgerLadderData.US.blitz = {
             ["800-899"] = 751,
             ["900-999"] = 28,
         },
-        ratedPopulation = 86714,
+        ratedPopulation = 86713,
         titleCutoffs = {
             {
                 pct = 0.1,
@@ -1044,7 +1044,7 @@ PvPLedgerLadderData.US.blitz = {
                 },
             },
             ["WARRIOR_FURY"] = {
-                population = 2661,
+                population = 2660,
                 cutoffs = {
                     {
                         pct = 0.1,
@@ -88938,6 +88938,15 @@ PvPLedgerLadderData.US.blitz = {
             losses = 3,
             faction = "HORDE",
         },
+        ["feignboi-illidan"] = {
+            displayName = "Feignboi-illidan",
+            specKey = "MONK_BREWMASTER",
+            rating = 288,
+            rank = 251,
+            wins = 1,
+            losses = 0,
+            faction = "HORDE",
+        },
         ["feigndeathxd-barthilas"] = {
             displayName = "Feigndeathxd-barthilas",
             specKey = "HUNTER_BEASTMASTERY",
@@ -88963,15 +88972,6 @@ PvPLedgerLadderData.US.blitz = {
             rank = 196,
             wins = 75,
             losses = 71,
-            faction = "HORDE",
-        },
-        ["feigniac-illidan"] = {
-            displayName = "Feigniac-illidan",
-            specKey = "MONK_BREWMASTER",
-            rating = 288,
-            rank = 251,
-            wins = 1,
-            losses = 0,
             faction = "HORDE",
         },
         ["feile-bloodscalp"] = {
@@ -108134,15 +108134,6 @@ PvPLedgerLadderData.US.blitz = {
             wins = 22,
             losses = 25,
             faction = "ALLIANCE",
-        },
-        ["groudon-saurfang"] = {
-            displayName = "Groudon-saurfang",
-            specKey = "SHAMAN_RESTORATION",
-            rating = 1748,
-            rank = 728,
-            wins = 7,
-            losses = 2,
-            faction = "HORDE",
         },
         ["groundbeefs-moonguard"] = {
             displayName = "Groundbeefs-moon-guard",
@@ -179001,8 +178992,8 @@ PvPLedgerLadderData.US.blitz = {
             losses = 150,
             faction = "HORDE",
         },
-        ["mossmaul-rexxar"] = {
-            displayName = "Mossmaul-rexxar",
+        ["mossmaul-moonguard"] = {
+            displayName = "Mossmaul-moon-guard",
             specKey = "DRUID_FERAL",
             rating = 1734,
             rank = 698,
@@ -290700,6 +290691,15 @@ PvPLedgerLadderData.US.blitz = {
             losses = 39,
             faction = "ALLIANCE",
         },
+        ["wayza-saurfang"] = {
+            displayName = "Wayza-saurfang",
+            specKey = "SHAMAN_RESTORATION",
+            rating = 1748,
+            rank = 728,
+            wins = 7,
+            losses = 2,
+            faction = "HORDE",
+        },
         ["wazgorilla-emeralddream"] = {
             displayName = "Wazgorilla-emerald-dream",
             specKey = "SHAMAN_RESTORATION",
@@ -313641,8 +313641,8 @@ PvPLedgerLadderData.US.blitz = {
             losses = 171,
             faction = "ALLIANCE",
         },
-        ["ðrìz-tichondrius"] = {
-            displayName = "Ðrìz-tichondrius",
+        ["ðrìíz-tichondrius"] = {
+            displayName = "Ðrìíz-tichondrius",
             specKey = "DRUID_BALANCE",
             rating = 1819,
             rank = 953,
