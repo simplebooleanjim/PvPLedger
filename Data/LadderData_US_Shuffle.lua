@@ -7,7 +7,7 @@ PvPLedgerLadderData.US.shuffle = {
     bracket = "shuffle",
     season = 41,
     snapshotDate = "2026-08-13",
-    generatedAt = "2026-08-13T10:28:53Z",
+    generatedAt = "2026-08-13T11:23:27Z",
     source = "blizzard-api",
     overall = {
         listedCount = 38236,
@@ -67,7 +67,7 @@ PvPLedgerLadderData.US.shuffle = {
             ["800-899"] = 133,
             ["900-999"] = 136,
         },
-        ratedPopulation = 137191,
+        ratedPopulation = 137190,
         titleCutoffs = {
             {
                 pct = 0.1,
@@ -692,7 +692,7 @@ PvPLedgerLadderData.US.shuffle = {
                 },
             },
             ["PALADIN_RETRIBUTION"] = {
-                population = 5005,
+                population = 5004,
                 cutoffs = {
                     {
                         pct = 0.1,
@@ -24837,15 +24837,6 @@ PvPLedgerLadderData.US.shuffle = {
             wins = 98,
             losses = 89,
             faction = "HORDE",
-        },
-        ["bigdrako-kelthuzad"] = {
-            displayName = "Bigdrako-kelthuzad",
-            specKey = "DEATHKNIGHT_BLOOD",
-            rating = 192,
-            rank = 408,
-            wins = 2,
-            losses = 4,
-            faction = "ALLIANCE",
         },
         ["bigdrane-sargeras"] = {
             displayName = "Bigdrane-sargeras",
@@ -58749,6 +58740,15 @@ PvPLedgerLadderData.US.shuffle = {
             wins = 3,
             losses = 3,
             faction = "HORDE",
+        },
+        ["deetime-tichondrius"] = {
+            displayName = "Deetime-tichondrius",
+            specKey = "PALADIN_PROTECTION",
+            rating = 672,
+            rank = 433,
+            wins = 7,
+            losses = 5,
+            faction = "ALLIANCE",
         },
         ["deez-frostwolf"] = {
             displayName = "Deez-frostwolf",
@@ -152638,15 +152638,6 @@ PvPLedgerLadderData.US.shuffle = {
             losses = 79,
             faction = "HORDE",
         },
-        ["lkw-tichondrius"] = {
-            displayName = "Lkw-tichondrius",
-            specKey = "HUNTER_BEASTMASTERY",
-            rating = 2929,
-            rank = 52,
-            wins = 685,
-            losses = 652,
-            faction = "ALLIANCE",
-        },
         ["lkwon-tichondrius"] = {
             displayName = "Lkwon-tichondrius",
             specKey = "MAGE_ARCANE",
@@ -166246,8 +166237,8 @@ PvPLedgerLadderData.US.shuffle = {
             losses = 190,
             faction = "HORDE",
         },
-        ["mezwhoo-area52"] = {
-            displayName = "Mezwhoo-area-52",
+        ["mezwhoo-stormrage"] = {
+            displayName = "Mezwhoo-stormrage",
             specKey = "HUNTER_SURVIVAL",
             rating = 2352,
             rank = 354,
@@ -186667,6 +186658,15 @@ PvPLedgerLadderData.US.shuffle = {
             losses = 9,
             faction = "ALLIANCE",
         },
+        ["ogdrako-dalaran"] = {
+            displayName = "Ogdrako-dalaran",
+            specKey = "DEATHKNIGHT_BLOOD",
+            rating = 192,
+            rank = 408,
+            wins = 2,
+            losses = 4,
+            faction = "ALLIANCE",
+        },
         ["ogidotu-tichondrius"] = {
             displayName = "Ogidotu-tichondrius",
             specKey = "WARLOCK_AFFLICTION",
@@ -192804,15 +192804,6 @@ PvPLedgerLadderData.US.shuffle = {
             wins = 56,
             losses = 48,
             faction = "HORDE",
-        },
-        ["papillonnoir-tichondrius"] = {
-            displayName = "Papillonnoir-tichondrius",
-            specKey = "PALADIN_PROTECTION",
-            rating = 672,
-            rank = 433,
-            wins = 7,
-            losses = 5,
-            faction = "ALLIANCE",
         },
         ["papiloscopic-illidan"] = {
             displayName = "Papiloscopic-illidan",
@@ -204566,6 +204557,15 @@ PvPLedgerLadderData.US.shuffle = {
             rank = 361,
             wins = 162,
             losses = 147,
+            faction = "ALLIANCE",
+        },
+        ["qasdqdqsdfqq-tichondrius"] = {
+            displayName = "Qasdqdqsdfqq-tichondrius",
+            specKey = "HUNTER_BEASTMASTERY",
+            rating = 2929,
+            rank = 52,
+            wins = 685,
+            losses = 652,
             faction = "ALLIANCE",
         },
         ["qathim-tichondrius"] = {
@@ -300382,6 +300382,15 @@ PvPLedgerLadderData.US.shuffle = {
             losses = 22,
             faction = "ALLIANCE",
         },
+        ["àrx-frostmourne"] = {
+            displayName = "Àrx-frostmourne",
+            specKey = "WARRIOR_PROTECTION",
+            rating = 192,
+            rank = 419,
+            wins = 2,
+            losses = 4,
+            faction = "HORDE",
+        },
         ["àrx-frostwolf"] = {
             displayName = "Àrx-frostwolf",
             specKey = "WARRIOR_PROTECTION",
@@ -300795,15 +300804,6 @@ PvPLedgerLadderData.US.shuffle = {
             wins = 356,
             losses = 327,
             faction = "ALLIANCE",
-        },
-        ["ärx62db37-frostmourne"] = {
-            displayName = "Ärx62DB37-frostmourne",
-            specKey = "WARRIOR_PROTECTION",
-            rating = 192,
-            rank = 419,
-            wins = 2,
-            losses = 4,
-            faction = "HORDE",
         },
         ["äsakura-agamaggan"] = {
             displayName = "Äsakura-agamaggan",
