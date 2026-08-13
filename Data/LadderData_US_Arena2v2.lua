@@ -7,7 +7,7 @@ PvPLedgerLadderData.US.arena2v2 = {
     bracket = "arena2v2",
     season = 41,
     snapshotDate = "2026-08-13",
-    generatedAt = "2026-08-13T21:03:53Z",
+    generatedAt = "2026-08-13T22:03:42Z",
     source = "blizzard-api+seramate",
     overall = {
         listedCount = 1002,
@@ -157,9 +157,9 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["PALADIN"] = {
             listedCount = 55,
-            avgListedRating = 2514.8,
-            medianListedRating = 2483,
-            top100Avg = 2514.8,
+            avgListedRating = 2522.3,
+            medianListedRating = 2481.5,
+            top100Avg = 2522.3,
             highest = 2856,
             buckets = {
                 ["2400-2499"] = 31,
@@ -479,16 +479,16 @@ PvPLedgerLadderData.US.arena2v2 = {
             },
         },
         ["PALADIN_HOLY"] = {
-            listedCount = 41,
-            avgListedRating = 2514.0,
-            medianListedRating = 2483,
-            top100Avg = 2514.0,
-            highest = 2856,
+            listedCount = 40,
+            avgListedRating = 2505.4,
+            medianListedRating = 2481.5,
+            top100Avg = 2505.4,
+            highest = 2807,
             buckets = {
                 ["2400-2499"] = 23,
                 ["2500-2599"] = 10,
                 ["2600-2699"] = 6,
-                ["2800-2899"] = 2,
+                ["2800-2899"] = 1,
             },
         },
         ["PALADIN_PROTECTION"] = {
@@ -503,15 +503,16 @@ PvPLedgerLadderData.US.arena2v2 = {
             },
         },
         ["PALADIN_RETRIBUTION"] = {
-            listedCount = 10,
-            avgListedRating = 2511.8,
-            medianListedRating = 2498.5,
-            top100Avg = 2511.8,
-            highest = 2649,
+            listedCount = 11,
+            avgListedRating = 2543.1,
+            medianListedRating = 2504,
+            top100Avg = 2543.1,
+            highest = 2856,
             buckets = {
                 ["2400-2499"] = 5,
                 ["2500-2599"] = 4,
                 ["2600-2699"] = 1,
+                ["2800-2899"] = 1,
             },
         },
         ["PRIEST_DISCIPLINE"] = {
@@ -7247,7 +7248,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["scarlet-skywall"] = {
             displayName = "Scarlet-skywall",
-            specKey = "PALADIN_HOLY",
+            specKey = "PALADIN_RETRIBUTION",
             rating = 2856,
             rank = 9,
             wins = 122,
