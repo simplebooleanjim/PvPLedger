@@ -2,12 +2,12 @@
 PvPLedgerLadderData = PvPLedgerLadderData or {}
 PvPLedgerLadderData.EU = PvPLedgerLadderData.EU or {}
 PvPLedgerLadderData.EU.arena2v2 = {
-    snapshotId = "eu-arena2v2-s41-2026-08-13",
+    snapshotId = "eu-arena2v2-s41-2026-08-14",
     region = "EU",
     bracket = "arena2v2",
     season = 41,
-    snapshotDate = "2026-08-13",
-    generatedAt = "2026-08-13T19:20:58Z",
+    snapshotDate = "2026-08-14",
+    generatedAt = "2026-08-14T00:00:11Z",
     source = "blizzard-api+seramate",
     overall = {
         listedCount = 1009,
@@ -171,9 +171,9 @@ PvPLedgerLadderData.EU.arena2v2 = {
         },
         ["PRIEST"] = {
             listedCount = 169,
-            avgListedRating = 2508.6,
-            medianListedRating = 2484.5,
-            top100Avg = 2514.1,
+            avgListedRating = 2509.2,
+            medianListedRating = 2482,
+            top100Avg = 2515.0,
             highest = 2822,
             buckets = {
                 ["2400-2499"] = 89,
@@ -548,26 +548,26 @@ PvPLedgerLadderData.EU.arena2v2 = {
             },
         },
         ["PRIEST_DISCIPLINE"] = {
-            listedCount = 122,
-            avgListedRating = 2508.7,
-            medianListedRating = 2484.5,
+            listedCount = 123,
+            avgListedRating = 2508.0,
+            medianListedRating = 2482,
             top100Avg = 2525.2,
             highest = 2781,
             buckets = {
-                ["2400-2499"] = 65,
+                ["2400-2499"] = 66,
                 ["2500-2599"] = 41,
                 ["2600-2699"] = 12,
                 ["2700-2799"] = 4,
             },
         },
         ["PRIEST_HOLY"] = {
-            listedCount = 39,
-            avgListedRating = 2535.6,
-            medianListedRating = 2506,
-            top100Avg = 2535.6,
+            listedCount = 38,
+            avgListedRating = 2538.3,
+            medianListedRating = 2507.5,
+            top100Avg = 2538.3,
             highest = 2822,
             buckets = {
-                ["2400-2499"] = 18,
+                ["2400-2499"] = 17,
                 ["2500-2599"] = 10,
                 ["2600-2699"] = 10,
                 ["2800-2899"] = 1,
@@ -5394,7 +5394,7 @@ PvPLedgerLadderData.EU.arena2v2 = {
         },
         ["nessä-ravencrest"] = {
             displayName = "Nessä-ravencrest",
-            specKey = "PRIEST_HOLY",
+            specKey = "",
             rating = 2434,
             rank = 925,
             wins = 64,
@@ -7734,7 +7734,7 @@ PvPLedgerLadderData.EU.arena2v2 = {
         },
         ["thrakíen-ravencrest"] = {
             displayName = "Thrakíen-ravencrest",
-            specKey = "",
+            specKey = "PRIEST_DISCIPLINE",
             rating = 2424,
             rank = 998,
             wins = 76,

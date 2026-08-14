@@ -2,12 +2,12 @@
 PvPLedgerLadderData = PvPLedgerLadderData or {}
 PvPLedgerLadderData.EU = PvPLedgerLadderData.EU or {}
 PvPLedgerLadderData.EU.arena3v3 = {
-    snapshotId = "eu-arena3v3-s41-2026-08-13",
+    snapshotId = "eu-arena3v3-s41-2026-08-14",
     region = "EU",
     bracket = "arena3v3",
     season = 41,
-    snapshotDate = "2026-08-13",
-    generatedAt = "2026-08-13T19:21:11Z",
+    snapshotDate = "2026-08-14",
+    generatedAt = "2026-08-14T00:00:20Z",
     source = "blizzard-api+seramate",
     overall = {
         listedCount = 1004,
@@ -62,13 +62,13 @@ PvPLedgerLadderData.EU.arena3v3 = {
     },
     byClass = {
         ["DEATHKNIGHT"] = {
-            listedCount = 40,
-            avgListedRating = 2760.9,
-            medianListedRating = 2748.5,
-            top100Avg = 2760.9,
+            listedCount = 41,
+            avgListedRating = 2722.0,
+            medianListedRating = 2726,
+            top100Avg = 2722.0,
             highest = 3157,
             buckets = {
-                ["2600-2699"] = 13,
+                ["2600-2699"] = 14,
                 ["2700-2799"] = 10,
                 ["2800-2899"] = 7,
                 ["2900-2999"] = 4,
@@ -77,13 +77,13 @@ PvPLedgerLadderData.EU.arena3v3 = {
             },
         },
         ["DEMONHUNTER"] = {
-            listedCount = 101,
-            avgListedRating = 2814.0,
-            medianListedRating = 2794,
-            top100Avg = 2814.0,
+            listedCount = 102,
+            avgListedRating = 2811.9,
+            medianListedRating = 2777.5,
+            top100Avg = 2811.9,
             highest = 3176,
             buckets = {
-                ["2600-2699"] = 28,
+                ["2600-2699"] = 29,
                 ["2700-2799"] = 33,
                 ["2800-2899"] = 10,
                 ["2900-2999"] = 13,
@@ -198,13 +198,13 @@ PvPLedgerLadderData.EU.arena3v3 = {
             },
         },
         ["ROGUE"] = {
-            listedCount = 100,
-            avgListedRating = 2855.6,
-            medianListedRating = 2726.5,
-            top100Avg = 2855.6,
+            listedCount = 99,
+            avgListedRating = 2856.6,
+            medianListedRating = 2727,
+            top100Avg = 2856.6,
             highest = 3305,
             buckets = {
-                ["2600-2699"] = 31,
+                ["2600-2699"] = 30,
                 ["2700-2799"] = 27,
                 ["2800-2899"] = 11,
                 ["2900-2999"] = 11,
@@ -246,9 +246,9 @@ PvPLedgerLadderData.EU.arena3v3 = {
         },
         ["WARRIOR"] = {
             listedCount = 86,
-            avgListedRating = 2760.8,
-            medianListedRating = 2714.0,
-            top100Avg = 2760.8,
+            avgListedRating = 2776.7,
+            medianListedRating = 2720.0,
+            top100Avg = 2776.7,
             highest = 3173,
             buckets = {
                 ["2600-2699"] = 31,
@@ -260,6 +260,16 @@ PvPLedgerLadderData.EU.arena3v3 = {
         },
     },
     bySpec = {
+        ["DEATHKNIGHT_BLOOD"] = {
+            listedCount = 1,
+            avgListedRating = 2644,
+            medianListedRating = 2644,
+            top100Avg = 2644,
+            highest = 2644,
+            buckets = {
+                ["2600-2699"] = 1,
+            },
+        },
         ["DEATHKNIGHT_FROST"] = {
             listedCount = 5,
             avgListedRating = 2716.2,
@@ -287,13 +297,13 @@ PvPLedgerLadderData.EU.arena3v3 = {
             },
         },
         ["DEMONHUNTER_DEVOURER"] = {
-            listedCount = 31,
-            avgListedRating = 2827.8,
-            medianListedRating = 2794,
-            top100Avg = 2827.8,
+            listedCount = 32,
+            avgListedRating = 2821.4,
+            medianListedRating = 2777.5,
+            top100Avg = 2821.4,
             highest = 3170,
             buckets = {
-                ["2600-2699"] = 6,
+                ["2600-2699"] = 7,
                 ["2700-2799"] = 11,
                 ["2800-2899"] = 5,
                 ["2900-2999"] = 4,
@@ -626,13 +636,13 @@ PvPLedgerLadderData.EU.arena3v3 = {
             },
         },
         ["ROGUE_SUBTLETY"] = {
-            listedCount = 68,
-            avgListedRating = 2820.9,
-            medianListedRating = 2726.5,
-            top100Avg = 2820.9,
+            listedCount = 67,
+            avgListedRating = 2823.8,
+            medianListedRating = 2727,
+            top100Avg = 2823.8,
             highest = 3254,
             buckets = {
-                ["2600-2699"] = 24,
+                ["2600-2699"] = 23,
                 ["2700-2799"] = 17,
                 ["2800-2899"] = 8,
                 ["2900-2999"] = 6,
@@ -723,15 +733,15 @@ PvPLedgerLadderData.EU.arena3v3 = {
             },
         },
         ["WARRIOR_ARMS"] = {
-            listedCount = 66,
-            avgListedRating = 2773.6,
-            medianListedRating = 2714.0,
-            top100Avg = 2773.6,
+            listedCount = 65,
+            avgListedRating = 2771.9,
+            medianListedRating = 2714,
+            top100Avg = 2771.9,
             highest = 3165,
             buckets = {
                 ["2600-2699"] = 25,
                 ["2700-2799"] = 19,
-                ["2800-2899"] = 11,
+                ["2800-2899"] = 10,
                 ["2900-2999"] = 7,
                 ["3100-3199"] = 4,
             },
@@ -751,14 +761,15 @@ PvPLedgerLadderData.EU.arena3v3 = {
             },
         },
         ["WARRIOR_PROTECTION"] = {
-            listedCount = 3,
-            avgListedRating = 2688.3,
-            medianListedRating = 2709,
-            top100Avg = 2688.3,
-            highest = 2731,
+            listedCount = 4,
+            avgListedRating = 2737.5,
+            medianListedRating = 2720.0,
+            top100Avg = 2737.5,
+            highest = 2885,
             buckets = {
                 ["2600-2699"] = 1,
                 ["2700-2799"] = 2,
+                ["2800-2899"] = 1,
             },
         },
     },
@@ -1710,7 +1721,7 @@ PvPLedgerLadderData.EU.arena3v3 = {
         },
         ["brawndow-draenor"] = {
             displayName = "Brawndow-draenor",
-            specKey = "",
+            specKey = "DEMONHUNTER_DEVOURER",
             rating = 2625,
             rank = 978,
             wins = 234,
@@ -2502,7 +2513,7 @@ PvPLedgerLadderData.EU.arena3v3 = {
         },
         ["dkhaled-tarrenmill"] = {
             displayName = "Dkhaled-tarren-mill",
-            specKey = "",
+            specKey = "DEATHKNIGHT_BLOOD",
             rating = 2644,
             rank = 868,
             wins = 142,
@@ -2583,7 +2594,7 @@ PvPLedgerLadderData.EU.arena3v3 = {
         },
         ["drydamage-kazzak"] = {
             displayName = "Drydamage-kazzak",
-            specKey = "ROGUE_SUBTLETY",
+            specKey = "",
             rating = 2625,
             rank = 978,
             wins = 194,
@@ -3402,7 +3413,7 @@ PvPLedgerLadderData.EU.arena3v3 = {
         },
         ["gewyon-sylvanas"] = {
             displayName = "Gewyon-sylvanas",
-            specKey = "WARRIOR_ARMS",
+            specKey = "WARRIOR_PROTECTION",
             rating = 2885,
             rank = 288,
             wins = 173,
