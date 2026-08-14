@@ -7,7 +7,7 @@ PvPLedgerLadderData.US.blitz = {
     bracket = "blitz",
     season = 41,
     snapshotDate = "2026-08-14",
-    generatedAt = "2026-08-14T20:05:16Z",
+    generatedAt = "2026-08-14T20:45:35Z",
     source = "blizzard-api",
     overall = {
         listedCount = 37711,
@@ -69,7 +69,7 @@ PvPLedgerLadderData.US.blitz = {
             ["800-899"] = 751,
             ["900-999"] = 28,
         },
-        ratedPopulation = 86712,
+        ratedPopulation = 86711,
         titleCutoffs = {
             {
                 pct = 0.1,
@@ -644,7 +644,7 @@ PvPLedgerLadderData.US.blitz = {
                 },
             },
             ["PALADIN_HOLY"] = {
-                population = 2495,
+                population = 2494,
                 cutoffs = {
                     {
                         pct = 0.1,
@@ -694,7 +694,7 @@ PvPLedgerLadderData.US.blitz = {
                 },
             },
             ["PALADIN_RETRIBUTION"] = {
-                population = 5004,
+                population = 5003,
                 cutoffs = {
                     {
                         pct = 0.1,
@@ -944,7 +944,7 @@ PvPLedgerLadderData.US.blitz = {
                 },
             },
             ["WARLOCK_AFFLICTION"] = {
-                population = 3160,
+                population = 3161,
                 cutoffs = {
                     {
                         pct = 0.1,
@@ -22410,6 +22410,15 @@ PvPLedgerLadderData.US.blitz = {
             losses = 16,
             faction = "ALLIANCE",
         },
+        ["bam-khazmodan"] = {
+            displayName = "Bam-khaz-modan",
+            specKey = "DRUID_FERAL",
+            rating = 2151,
+            rank = 189,
+            wins = 24,
+            losses = 19,
+            faction = "ALLIANCE",
+        },
         ["bam-stormrage"] = {
             displayName = "Bam-stormrage",
             specKey = "ROGUE_OUTLAW",
@@ -22499,15 +22508,6 @@ PvPLedgerLadderData.US.blitz = {
             wins = 19,
             losses = 20,
             faction = "HORDE",
-        },
-        ["bamd-korgath"] = {
-            displayName = "Bamd-korgath",
-            specKey = "DRUID_FERAL",
-            rating = 2151,
-            rank = 189,
-            wins = 24,
-            losses = 19,
-            faction = "ALLIANCE",
         },
         ["bamfntauren-tichondrius"] = {
             displayName = "Bamfntauren-tichondrius",
@@ -22751,6 +22751,15 @@ PvPLedgerLadderData.US.blitz = {
             wins = 73,
             losses = 57,
             faction = "HORDE",
+        },
+        ["banryu-kiljaeden"] = {
+            displayName = "Banryu-kiljaeden",
+            specKey = "MONK_WINDWALKER",
+            rating = 1985,
+            rank = 348,
+            wins = 15,
+            losses = 6,
+            faction = "ALLIANCE",
         },
         ["banshers-stormrage"] = {
             displayName = "Banshers-stormrage",
@@ -136683,15 +136692,6 @@ PvPLedgerLadderData.US.blitz = {
             losses = 43,
             faction = "HORDE",
         },
-        ["junemyangel-moonguard"] = {
-            displayName = "Junemyangel-moon-guard",
-            specKey = "DEATHKNIGHT_FROST",
-            rating = 1742,
-            rank = 598,
-            wins = 7,
-            losses = 7,
-            faction = "ALLIANCE",
-        },
         ["junemylove-kirintor"] = {
             displayName = "Junemylove-kirin-tor",
             specKey = "PRIEST_SHADOW",
@@ -163692,6 +163692,15 @@ PvPLedgerLadderData.US.blitz = {
             losses = 11,
             faction = "HORDE",
         },
+        ["madeuloveme-moonguard"] = {
+            displayName = "Madeuloveme-moon-guard",
+            specKey = "DEATHKNIGHT_FROST",
+            rating = 1742,
+            rank = 598,
+            wins = 7,
+            losses = 7,
+            faction = "ALLIANCE",
+        },
         ["madfurytime-zuluhed"] = {
             displayName = "Madfurytime-zuluhed",
             specKey = "WARRIOR_PROTECTION",
@@ -169218,6 +169227,15 @@ PvPLedgerLadderData.US.blitz = {
             losses = 29,
             faction = "HORDE",
         },
+        ["mcdonaldsman-stormrage"] = {
+            displayName = "Mcdonaldsman-stormrage",
+            specKey = "WARRIOR_PROTECTION",
+            rating = 2555,
+            rank = 20,
+            wins = 45,
+            losses = 31,
+            faction = "ALLIANCE",
+        },
         ["mcfisted-area52"] = {
             displayName = "Mcfisted-area-52",
             specKey = "MONK_MISTWEAVER",
@@ -174391,15 +174409,6 @@ PvPLedgerLadderData.US.blitz = {
             rank = 701,
             wins = 11,
             losses = 13,
-            faction = "ALLIANCE",
-        },
-        ["minâzuki-kiljaeden"] = {
-            displayName = "Minâzuki-kiljaeden",
-            specKey = "MONK_WINDWALKER",
-            rating = 1985,
-            rank = 348,
-            wins = 15,
-            losses = 6,
             faction = "ALLIANCE",
         },
         ["miochan-ragnaros"] = {
@@ -231866,15 +231875,6 @@ PvPLedgerLadderData.US.blitz = {
             wins = 59,
             losses = 55,
             faction = "HORDE",
-        },
-        ["secondhand-stormrage"] = {
-            displayName = "Secondhand-stormrage",
-            specKey = "WARRIOR_PROTECTION",
-            rating = 2555,
-            rank = 20,
-            wins = 45,
-            losses = 31,
-            faction = "ALLIANCE",
         },
         ["secondrinse-icecrown"] = {
             displayName = "Secondrinse-icecrown",

@@ -7,7 +7,7 @@ PvPLedgerLadderData.US.shuffle = {
     bracket = "shuffle",
     season = 41,
     snapshotDate = "2026-08-14",
-    generatedAt = "2026-08-14T20:05:37Z",
+    generatedAt = "2026-08-14T20:46:05Z",
     source = "blizzard-api",
     overall = {
         listedCount = 38238,
@@ -67,7 +67,7 @@ PvPLedgerLadderData.US.shuffle = {
             ["800-899"] = 133,
             ["900-999"] = 136,
         },
-        ratedPopulation = 137184,
+        ratedPopulation = 137177,
         titleCutoffs = {
             {
                 pct = 0.1,
@@ -167,7 +167,7 @@ PvPLedgerLadderData.US.shuffle = {
                 },
             },
             ["DEMONHUNTER_DEVOURER"] = {
-                population = 5005,
+                population = 5004,
                 cutoffs = {
                     {
                         pct = 0.1,
@@ -192,7 +192,7 @@ PvPLedgerLadderData.US.shuffle = {
                 },
             },
             ["DEMONHUNTER_HAVOC"] = {
-                population = 5001,
+                population = 5000,
                 cutoffs = {
                     {
                         pct = 0.1,
@@ -201,17 +201,17 @@ PvPLedgerLadderData.US.shuffle = {
                     },
                     {
                         pct = 0.5,
-                        rank = 26,
-                        rating = 3041,
+                        rank = 25,
+                        rating = 3046,
                     },
                     {
                         pct = 1.0,
-                        rank = 51,
-                        rating = 2818,
+                        rank = 50,
+                        rating = 2823,
                     },
                     {
                         pct = 3.0,
-                        rank = 151,
+                        rank = 150,
                         rating = 2622,
                     },
                 },
@@ -267,7 +267,7 @@ PvPLedgerLadderData.US.shuffle = {
                 },
             },
             ["DRUID_FERAL"] = {
-                population = 3527,
+                population = 3526,
                 cutoffs = {
                     {
                         pct = 0.1,
@@ -417,7 +417,7 @@ PvPLedgerLadderData.US.shuffle = {
                 },
             },
             ["HUNTER_BEASTMASTERY"] = {
-                population = 5005,
+                population = 5000,
                 cutoffs = {
                     {
                         pct = 0.1,
@@ -426,18 +426,18 @@ PvPLedgerLadderData.US.shuffle = {
                     },
                     {
                         pct = 0.5,
-                        rank = 26,
-                        rating = 3068,
+                        rank = 25,
+                        rating = 3075,
                     },
                     {
                         pct = 1.0,
-                        rank = 51,
-                        rating = 2931,
+                        rank = 50,
+                        rating = 2937,
                     },
                     {
                         pct = 3.0,
-                        rank = 151,
-                        rating = 2746,
+                        rank = 150,
+                        rating = 2749,
                     },
                 },
             },
@@ -467,7 +467,7 @@ PvPLedgerLadderData.US.shuffle = {
                 },
             },
             ["HUNTER_SURVIVAL"] = {
-                population = 2230,
+                population = 2231,
                 cutoffs = {
                     {
                         pct = 0.1,
@@ -642,7 +642,7 @@ PvPLedgerLadderData.US.shuffle = {
                 },
             },
             ["PALADIN_HOLY"] = {
-                population = 5009,
+                population = 5008,
                 cutoffs = {
                     {
                         pct = 0.1,
@@ -692,7 +692,7 @@ PvPLedgerLadderData.US.shuffle = {
                 },
             },
             ["PALADIN_RETRIBUTION"] = {
-                population = 5006,
+                population = 5005,
                 cutoffs = {
                     {
                         pct = 0.1,
@@ -917,7 +917,7 @@ PvPLedgerLadderData.US.shuffle = {
                 },
             },
             ["SHAMAN_RESTORATION"] = {
-                population = 5000,
+                population = 5003,
                 cutoffs = {
                     {
                         pct = 0.1,
@@ -926,17 +926,17 @@ PvPLedgerLadderData.US.shuffle = {
                     },
                     {
                         pct = 0.5,
-                        rank = 25,
-                        rating = 3088,
+                        rank = 26,
+                        rating = 3082,
                     },
                     {
                         pct = 1.0,
-                        rank = 50,
-                        rating = 2981,
+                        rank = 51,
+                        rating = 2976,
                     },
                     {
                         pct = 3.0,
-                        rank = 150,
+                        rank = 151,
                         rating = 2768,
                     },
                 },
@@ -1042,7 +1042,7 @@ PvPLedgerLadderData.US.shuffle = {
                 },
             },
             ["WARRIOR_FURY"] = {
-                population = 4857,
+                population = 4856,
                 cutoffs = {
                     {
                         pct = 0.1,
@@ -11194,6 +11194,15 @@ PvPLedgerLadderData.US.shuffle = {
             losses = 33,
             faction = "HORDE",
         },
+        ["apolloqt-sargeras"] = {
+            displayName = "Apolloqt-sargeras",
+            specKey = "HUNTER_SURVIVAL",
+            rating = 2739,
+            rank = 65,
+            wins = 71,
+            losses = 46,
+            faction = "HORDE",
+        },
         ["apoloo-ragnaros"] = {
             displayName = "Apoloo-ragnaros",
             specKey = "DRUID_GUARDIAN",
@@ -19591,6 +19600,15 @@ PvPLedgerLadderData.US.shuffle = {
             losses = 44,
             faction = "HORDE",
         },
+        ["bam-khazmodan"] = {
+            displayName = "Bam-khaz-modan",
+            specKey = "DRUID_FERAL",
+            rating = 2784,
+            rank = 71,
+            wins = 379,
+            losses = 357,
+            faction = "ALLIANCE",
+        },
         ["bam-stormrage"] = {
             displayName = "Bam-stormrage",
             specKey = "ROGUE_SUBTLETY",
@@ -19661,15 +19679,6 @@ PvPLedgerLadderData.US.shuffle = {
             rank = 251,
             wins = 95,
             losses = 68,
-            faction = "ALLIANCE",
-        },
-        ["bamd-korgath"] = {
-            displayName = "Bamd-korgath",
-            specKey = "DRUID_FERAL",
-            rating = 2784,
-            rank = 71,
-            wins = 379,
-            losses = 357,
             faction = "ALLIANCE",
         },
         ["bamdemic-moonguard"] = {
@@ -120382,15 +120391,6 @@ PvPLedgerLadderData.US.shuffle = {
             losses = 68,
             faction = "HORDE",
         },
-        ["immörtälis-stormrage"] = {
-            displayName = "Immörtälis-stormrage",
-            specKey = "DRUID_GUARDIAN",
-            rating = 208,
-            rank = 757,
-            wins = 3,
-            losses = 7,
-            faction = "HORDE",
-        },
         ["imnick-moonguard"] = {
             displayName = "Imnick-moon-guard",
             specKey = "DRUID_BALANCE",
@@ -122325,6 +122325,15 @@ PvPLedgerLadderData.US.shuffle = {
             wins = 159,
             losses = 149,
             faction = "ALLIANCE",
+        },
+        ["invîçtûs-stormrage"] = {
+            displayName = "Invîçtûs-stormrage",
+            specKey = "DRUID_GUARDIAN",
+            rating = 208,
+            rank = 757,
+            wins = 3,
+            losses = 7,
+            faction = "HORDE",
         },
         ["inwa-windrunner"] = {
             displayName = "Inwa-windrunner",
@@ -190339,15 +190348,6 @@ PvPLedgerLadderData.US.shuffle = {
             losses = 143,
             faction = "HORDE",
         },
-        ["osirisqt-sargeras"] = {
-            displayName = "Osirisqt-sargeras",
-            specKey = "HUNTER_SURVIVAL",
-            rating = 2739,
-            rank = 65,
-            wins = 71,
-            losses = 46,
-            faction = "HORDE",
-        },
         ["ositho-tichondrius"] = {
             displayName = "Ositho-tichondrius",
             specKey = "WARRIOR_FURY",
@@ -246490,6 +246490,15 @@ PvPLedgerLadderData.US.shuffle = {
             losses = 243,
             faction = "HORDE",
         },
+        ["stylesxd-area52"] = {
+            displayName = "Stylesxd-area-52",
+            specKey = "PRIEST_DISCIPLINE",
+            rating = 2729,
+            rank = 308,
+            wins = 354,
+            losses = 319,
+            faction = "HORDE",
+        },
         ["stylez-kelthuzad"] = {
             displayName = "Stylez-kelthuzad",
             specKey = "DRUID_RESTORATION",
@@ -287692,15 +287701,6 @@ PvPLedgerLadderData.US.shuffle = {
             losses = 70,
             faction = "ALLIANCE",
         },
-        ["xiiks-emeralddream"] = {
-            displayName = "Xiiks-emerald-dream",
-            specKey = "PRIEST_DISCIPLINE",
-            rating = 2729,
-            rank = 308,
-            wins = 354,
-            losses = 319,
-            faction = "HORDE",
-        },
         ["xiky-ragnaros"] = {
             displayName = "Xiky-ragnaros",
             specKey = "ROGUE_ASSASSINATION",
@@ -301732,8 +301732,8 @@ PvPLedgerLadderData.US.shuffle = {
             losses = 422,
             faction = "ALLIANCE",
         },
-        ["él-amanthul"] = {
-            displayName = "Él-amanthul",
+        ["él-stormrage"] = {
+            displayName = "Él-stormrage",
             specKey = "WARLOCK_DESTRUCTION",
             rating = 2293,
             rank = 450,
