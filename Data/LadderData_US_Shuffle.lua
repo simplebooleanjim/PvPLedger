@@ -7,7 +7,7 @@ PvPLedgerLadderData.US.shuffle = {
     bracket = "shuffle",
     season = 41,
     snapshotDate = "2026-08-14",
-    generatedAt = "2026-08-14T07:43:53Z",
+    generatedAt = "2026-08-14T08:49:20Z",
     source = "blizzard-api",
     overall = {
         listedCount = 38237,
@@ -67,7 +67,7 @@ PvPLedgerLadderData.US.shuffle = {
             ["800-899"] = 133,
             ["900-999"] = 136,
         },
-        ratedPopulation = 137189,
+        ratedPopulation = 137190,
         titleCutoffs = {
             {
                 pct = 0.1,
@@ -842,7 +842,7 @@ PvPLedgerLadderData.US.shuffle = {
                 },
             },
             ["ROGUE_SUBTLETY"] = {
-                population = 5002,
+                population = 5003,
                 cutoffs = {
                     {
                         pct = 0.1,
@@ -917,7 +917,7 @@ PvPLedgerLadderData.US.shuffle = {
                 },
             },
             ["SHAMAN_RESTORATION"] = {
-                population = 5000,
+                population = 5001,
                 cutoffs = {
                     {
                         pct = 0.1,
@@ -926,23 +926,23 @@ PvPLedgerLadderData.US.shuffle = {
                     },
                     {
                         pct = 0.5,
-                        rank = 25,
-                        rating = 3088,
+                        rank = 26,
+                        rating = 3082,
                     },
                     {
                         pct = 1.0,
-                        rank = 50,
-                        rating = 2981,
+                        rank = 51,
+                        rating = 2976,
                     },
                     {
                         pct = 3.0,
-                        rank = 150,
+                        rank = 151,
                         rating = 2768,
                     },
                 },
             },
             ["WARLOCK_AFFLICTION"] = {
-                population = 5030,
+                population = 5029,
                 cutoffs = {
                     {
                         pct = 0.1,
@@ -5154,6 +5154,15 @@ PvPLedgerLadderData.US.shuffle = {
             wins = 122,
             losses = 128,
             faction = "ALLIANCE",
+        },
+        ["agonyunc-frostmourne"] = {
+            displayName = "Agonyunc-frostmourne",
+            specKey = "WARLOCK_AFFLICTION",
+            rating = 2568,
+            rank = 318,
+            wins = 247,
+            losses = 220,
+            faction = "HORDE",
         },
         ["agorghar-illidan"] = {
             displayName = "Agorghar-illidan",
@@ -30164,15 +30173,6 @@ PvPLedgerLadderData.US.shuffle = {
             rank = 770,
             wins = 176,
             losses = 163,
-            faction = "HORDE",
-        },
-        ["bombaclock-frostmourne"] = {
-            displayName = "Bombaclock-frostmourne",
-            specKey = "WARLOCK_AFFLICTION",
-            rating = 2568,
-            rank = 318,
-            wins = 247,
-            losses = 220,
             faction = "HORDE",
         },
         ["bombardiro-frostmourne"] = {
@@ -79324,6 +79324,15 @@ PvPLedgerLadderData.US.shuffle = {
             losses = 125,
             faction = "ALLIANCE",
         },
+        ["epspeenislan-zuljin"] = {
+            displayName = "Epspeenislan-zuljin",
+            specKey = "ROGUE_ASSASSINATION",
+            rating = 2335,
+            rank = 711,
+            wins = 113,
+            losses = 104,
+            faction = "ALLIANCE",
+        },
         ["epstelnfiles-sargeras"] = {
             displayName = "Epstelnfiles-sargeras",
             specKey = "HUNTER_MARKSMANSHIP",
@@ -122317,15 +122326,6 @@ PvPLedgerLadderData.US.shuffle = {
             losses = 18,
             faction = "HORDE",
         },
-        ["invisipeen-zuljin"] = {
-            displayName = "Invisipeen-zuljin",
-            specKey = "ROGUE_ASSASSINATION",
-            rating = 2335,
-            rank = 711,
-            wins = 113,
-            losses = 104,
-            faction = "ALLIANCE",
-        },
         ["invorker-frostmourne"] = {
             displayName = "Invorker-frostmourne",
             specKey = "EVOKER_PRESERVATION",
@@ -164158,8 +164158,8 @@ PvPLedgerLadderData.US.shuffle = {
             losses = 131,
             faction = "HORDE",
         },
-        ["meihsuhn-tichondrius"] = {
-            displayName = "Meihsuhn-tichondrius",
+        ["meihsuhn-moonguard"] = {
+            displayName = "Meihsuhn-moon-guard",
             specKey = "DRUID_FERAL",
             rating = 2065,
             rank = 910,
@@ -175912,6 +175912,15 @@ PvPLedgerLadderData.US.shuffle = {
             losses = 45,
             faction = "ALLIANCE",
         },
+        ["naet-malganis"] = {
+            displayName = "Naet-malganis",
+            specKey = "DEMONHUNTER_DEVOURER",
+            rating = 2343,
+            rank = 860,
+            wins = 98,
+            losses = 91,
+            faction = "ALLIANCE",
+        },
         ["nafirisz-kelthuzad"] = {
             displayName = "Nafirisz-kelthuzad",
             specKey = "EVOKER_DEVASTATION",
@@ -180374,15 +180383,6 @@ PvPLedgerLadderData.US.shuffle = {
             rank = 53,
             wins = 187,
             losses = 142,
-            faction = "ALLIANCE",
-        },
-        ["nickyurangel-sistersofelune"] = {
-            displayName = "Nickyurangel-sisters-of-elune",
-            specKey = "HUNTER_MARKSMANSHIP",
-            rating = 2399,
-            rank = 802,
-            wins = 221,
-            losses = 216,
             faction = "ALLIANCE",
         },
         ["nickyü-ragnaros"] = {
@@ -210796,8 +210796,8 @@ PvPLedgerLadderData.US.shuffle = {
             losses = 53,
             faction = "HORDE",
         },
-        ["reineke-goldrinn"] = {
-            displayName = "Reineke-goldrinn",
+        ["reinekfb0c35-stormrage"] = {
+            displayName = "ReinekFB0C35-stormrage",
             specKey = "WARRIOR_FURY",
             rating = 2467,
             rank = 188,
@@ -279952,6 +279952,15 @@ PvPLedgerLadderData.US.shuffle = {
             losses = 328,
             faction = "HORDE",
         },
+        ["warningsigns-sistersofelune"] = {
+            displayName = "Warningsigns-sisters-of-elune",
+            specKey = "HUNTER_MARKSMANSHIP",
+            rating = 2399,
+            rank = 802,
+            wins = 221,
+            losses = 216,
+            faction = "ALLIANCE",
+        },
         ["warologist-sargeras"] = {
             displayName = "Warologist-sargeras",
             specKey = "WARRIOR_FURY",
@@ -281804,15 +281813,6 @@ PvPLedgerLadderData.US.shuffle = {
             rank = 69,
             wins = 162,
             losses = 99,
-            faction = "ALLIANCE",
-        },
-        ["whinkie-malganis"] = {
-            displayName = "Whinkie-malganis",
-            specKey = "DEMONHUNTER_DEVOURER",
-            rating = 2343,
-            rank = 860,
-            wins = 98,
-            losses = 91,
             faction = "ALLIANCE",
         },
         ["whiplashtelv-hyjal"] = {
@@ -296845,8 +296845,8 @@ PvPLedgerLadderData.US.shuffle = {
             losses = 168,
             faction = "HORDE",
         },
-        ["zlut-tichondrius"] = {
-            displayName = "Zlut-tichondrius",
+        ["zluffy-tichondrius"] = {
+            displayName = "Zluffy-tichondrius",
             specKey = "EVOKER_DEVASTATION",
             rating = 1989,
             rank = 720,
