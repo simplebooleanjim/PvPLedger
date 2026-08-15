@@ -7,7 +7,7 @@ PvPLedgerLadderData.US.arena2v2 = {
     bracket = "arena2v2",
     season = 41,
     snapshotDate = "2026-08-15",
-    generatedAt = "2026-08-15T23:28:11Z",
+    generatedAt = "2026-08-15T23:47:37Z",
     source = "blizzard-api+seramate",
     overall = {
         listedCount = 1002,
@@ -85,9 +85,9 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["DRUID"] = {
             listedCount = 99,
-            avgListedRating = 2541.4,
-            medianListedRating = 2510.5,
-            top100Avg = 2541.4,
+            avgListedRating = 2523.3,
+            medianListedRating = 2509,
+            top100Avg = 2523.3,
             highest = 2876,
             buckets = {
                 ["2400-2499"] = 46,
@@ -306,25 +306,15 @@ PvPLedgerLadderData.US.arena2v2 = {
             },
         },
         ["DRUID_FERAL"] = {
-            listedCount = 19,
-            avgListedRating = 2517.9,
-            medianListedRating = 2512,
-            top100Avg = 2517.9,
+            listedCount = 20,
+            avgListedRating = 2522,
+            medianListedRating = 2514.5,
+            top100Avg = 2522,
             highest = 2629,
             buckets = {
                 ["2400-2499"] = 8,
                 ["2500-2599"] = 8,
-                ["2600-2699"] = 3,
-            },
-        },
-        ["DRUID_GUARDIAN"] = {
-            listedCount = 1,
-            avgListedRating = 2600,
-            medianListedRating = 2600,
-            top100Avg = 2600,
-            highest = 2600,
-            buckets = {
-                ["2600-2699"] = 1,
+                ["2600-2699"] = 4,
             },
         },
         ["DRUID_RESTORATION"] = {
@@ -528,13 +518,13 @@ PvPLedgerLadderData.US.arena2v2 = {
             },
         },
         ["PRIEST_HOLY"] = {
-            listedCount = 50,
-            avgListedRating = 2530.1,
-            medianListedRating = 2516.0,
-            top100Avg = 2530.1,
+            listedCount = 49,
+            avgListedRating = 2531.6,
+            medianListedRating = 2517,
+            top100Avg = 2531.6,
             highest = 2859,
             buckets = {
-                ["2400-2499"] = 21,
+                ["2400-2499"] = 20,
                 ["2500-2599"] = 18,
                 ["2600-2699"] = 8,
                 ["2700-2799"] = 2,
@@ -542,13 +532,13 @@ PvPLedgerLadderData.US.arena2v2 = {
             },
         },
         ["PRIEST_SHADOW"] = {
-            listedCount = 15,
-            avgListedRating = 2483,
-            medianListedRating = 2468,
-            top100Avg = 2483,
+            listedCount = 16,
+            avgListedRating = 2481.4,
+            medianListedRating = 2466.5,
+            top100Avg = 2481.4,
             highest = 2624,
             buckets = {
-                ["2400-2499"] = 11,
+                ["2400-2499"] = 12,
                 ["2500-2599"] = 3,
                 ["2600-2699"] = 1,
             },
@@ -1099,7 +1089,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["ayway-tichondrius"] = {
             displayName = "Ayway-tichondrius",
-            specKey = "DRUID_GUARDIAN",
+            specKey = "DRUID_FERAL",
             rating = 2600,
             rank = 185,
             wins = 151,
@@ -5257,7 +5247,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["mauriy-ragnaros"] = {
             displayName = "Mauriy-ragnaros",
-            specKey = "PRIEST_HOLY",
+            specKey = "PRIEST_SHADOW",
             rating = 2458,
             rank = 710,
             wins = 299,
