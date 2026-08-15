@@ -7,7 +7,7 @@ PvPLedgerLadderData.US.rbg = {
     bracket = "rbg",
     season = 41,
     snapshotDate = "2026-08-15",
-    generatedAt = "2026-08-15T15:46:02Z",
+    generatedAt = "2026-08-15T16:00:41Z",
     source = "blizzard-api+seramate",
     overall = {
         listedCount = 1002,
@@ -99,9 +99,9 @@ PvPLedgerLadderData.US.rbg = {
         },
         ["DRUID"] = {
             listedCount = 161,
-            avgListedRating = 2057.8,
-            medianListedRating = 2058.8,
-            top100Avg = 2057.8,
+            avgListedRating = 2060.3,
+            medianListedRating = 2059.0,
+            top100Avg = 2060.3,
             highest = 2834,
             buckets = {
                 ["1800-1899"] = 37,
@@ -385,11 +385,11 @@ PvPLedgerLadderData.US.rbg = {
             },
         },
         ["DRUID_BALANCE"] = {
-            listedCount = 85,
-            avgListedRating = 2121.4,
-            medianListedRating = 2076,
-            top100Avg = 2121.4,
-            highest = 2834,
+            listedCount = 84,
+            avgListedRating = 2113.0,
+            medianListedRating = 2072.0,
+            top100Avg = 2113.0,
+            highest = 2832,
             buckets = {
                 ["1800-1899"] = 15,
                 ["1900-1999"] = 18,
@@ -400,7 +400,7 @@ PvPLedgerLadderData.US.rbg = {
                 ["2400-2499"] = 2,
                 ["2500-2599"] = 4,
                 ["2600-2699"] = 2,
-                ["2800-2899"] = 2,
+                ["2800-2899"] = 1,
             },
         },
         ["DRUID_FERAL"] = {
@@ -418,11 +418,11 @@ PvPLedgerLadderData.US.rbg = {
             },
         },
         ["DRUID_GUARDIAN"] = {
-            listedCount = 41,
-            avgListedRating = 2052,
-            medianListedRating = 2050,
-            top100Avg = 2052,
-            highest = 2551,
+            listedCount = 42,
+            avgListedRating = 2070.6,
+            medianListedRating = 2050.5,
+            top100Avg = 2070.6,
+            highest = 2834,
             buckets = {
                 ["1800-1899"] = 9,
                 ["1900-1999"] = 9,
@@ -431,6 +431,7 @@ PvPLedgerLadderData.US.rbg = {
                 ["2200-2299"] = 6,
                 ["2300-2399"] = 2,
                 ["2500-2599"] = 1,
+                ["2800-2899"] = 1,
             },
         },
         ["DRUID_RESTORATION"] = {
@@ -1676,7 +1677,7 @@ PvPLedgerLadderData.US.rbg = {
         },
         ["bobthehefty-area52"] = {
             displayName = "Bobthehefty-area-52",
-            specKey = "DRUID_BALANCE",
+            specKey = "DRUID_GUARDIAN",
             rating = 2834,
             rank = 3,
             wins = 95,
