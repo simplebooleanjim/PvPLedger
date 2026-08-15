@@ -7,7 +7,7 @@ PvPLedgerLadderData.US.shuffle = {
     bracket = "shuffle",
     season = 41,
     snapshotDate = "2026-08-15",
-    generatedAt = "2026-08-15T01:12:28Z",
+    generatedAt = "2026-08-15T03:56:04Z",
     source = "blizzard-api",
     overall = {
         listedCount = 38239,
@@ -67,7 +67,7 @@ PvPLedgerLadderData.US.shuffle = {
             ["800-899"] = 133,
             ["900-999"] = 136,
         },
-        ratedPopulation = 137178,
+        ratedPopulation = 137182,
         titleCutoffs = {
             {
                 pct = 0.1,
@@ -417,7 +417,7 @@ PvPLedgerLadderData.US.shuffle = {
                 },
             },
             ["HUNTER_BEASTMASTERY"] = {
-                population = 5000,
+                population = 5001,
                 cutoffs = {
                     {
                         pct = 0.1,
@@ -426,18 +426,18 @@ PvPLedgerLadderData.US.shuffle = {
                     },
                     {
                         pct = 0.5,
-                        rank = 25,
-                        rating = 3075,
+                        rank = 26,
+                        rating = 3068,
                     },
                     {
                         pct = 1.0,
-                        rank = 50,
-                        rating = 2937,
+                        rank = 51,
+                        rating = 2931,
                     },
                     {
                         pct = 3.0,
-                        rank = 150,
-                        rating = 2749,
+                        rank = 151,
+                        rating = 2746,
                     },
                 },
             },
@@ -467,7 +467,7 @@ PvPLedgerLadderData.US.shuffle = {
                 },
             },
             ["HUNTER_SURVIVAL"] = {
-                population = 2231,
+                population = 2232,
                 cutoffs = {
                     {
                         pct = 0.1,
@@ -542,7 +542,7 @@ PvPLedgerLadderData.US.shuffle = {
                 },
             },
             ["MAGE_FROST"] = {
-                population = 5010,
+                population = 5011,
                 cutoffs = {
                     {
                         pct = 0.1,
@@ -717,7 +717,7 @@ PvPLedgerLadderData.US.shuffle = {
                 },
             },
             ["PRIEST_DISCIPLINE"] = {
-                population = 5000,
+                population = 5001,
                 cutoffs = {
                     {
                         pct = 0.1,
@@ -726,18 +726,18 @@ PvPLedgerLadderData.US.shuffle = {
                     },
                     {
                         pct = 0.5,
-                        rank = 25,
-                        rating = 3147,
+                        rank = 26,
+                        rating = 3144,
                     },
                     {
                         pct = 1.0,
-                        rank = 50,
-                        rating = 3056,
+                        rank = 51,
+                        rating = 3054,
                     },
                     {
                         pct = 3.0,
-                        rank = 150,
-                        rating = 2823,
+                        rank = 151,
+                        rating = 2822,
                     },
                 },
             },
@@ -6406,6 +6406,15 @@ PvPLedgerLadderData.US.shuffle = {
             losses = 47,
             faction = "ALLIANCE",
         },
+        ["aktiv-tichondrius"] = {
+            displayName = "Aktiv-tichondrius",
+            specKey = "ROGUE_OUTLAW",
+            rating = 2158,
+            rank = 402,
+            wins = 64,
+            losses = 74,
+            faction = "ALLIANCE",
+        },
         ["akunimon-ragnaros"] = {
             displayName = "Akunimon-ragnaros",
             specKey = "MAGE_ARCANE",
@@ -9591,6 +9600,15 @@ PvPLedgerLadderData.US.shuffle = {
             wins = 350,
             losses = 328,
             faction = "ALLIANCE",
+        },
+        ["anerian-zuljin"] = {
+            displayName = "Anerian-zuljin",
+            specKey = "MAGE_FROST",
+            rating = 2553,
+            rank = 496,
+            wins = 73,
+            losses = 64,
+            faction = "HORDE",
         },
         ["anesthetic-tichondrius"] = {
             displayName = "Anesthetic-tichondrius",
@@ -23839,15 +23857,6 @@ PvPLedgerLadderData.US.shuffle = {
             losses = 116,
             faction = "HORDE",
         },
-        ["bevellade-zuljin"] = {
-            displayName = "Bevellade-zuljin",
-            specKey = "MAGE_FROST",
-            rating = 2553,
-            rank = 496,
-            wins = 73,
-            losses = 64,
-            faction = "HORDE",
-        },
         ["bewbeh-tichondrius"] = {
             displayName = "Bewbeh-tichondrius",
             specKey = "MAGE_FROST",
@@ -27765,11 +27774,11 @@ PvPLedgerLadderData.US.shuffle = {
         },
         ["bless-azgalor"] = {
             displayName = "Bless-azgalor",
-            specKey = "PRIEST_HOLY",
-            rating = 2411,
-            rank = 765,
-            wins = 224,
-            losses = 206,
+            specKey = "PALADIN_HOLY",
+            rating = 2407,
+            rank = 789,
+            wins = 675,
+            losses = 659,
             faction = "HORDE",
         },
         ["bless-lightningsblade"] = {
@@ -30957,6 +30966,15 @@ PvPLedgerLadderData.US.shuffle = {
             wins = 229,
             losses = 196,
             faction = "ALLIANCE",
+        },
+        ["boons-azgalor"] = {
+            displayName = "Boons-azgalor",
+            specKey = "PRIEST_HOLY",
+            rating = 2411,
+            rank = 765,
+            wins = 224,
+            losses = 206,
+            faction = "HORDE",
         },
         ["boopdeloop-tichondrius"] = {
             displayName = "Boopdeloop-tichondrius",
@@ -85804,15 +85822,6 @@ PvPLedgerLadderData.US.shuffle = {
             losses = 474,
             faction = "ALLIANCE",
         },
-        ["fergié-ragnaros"] = {
-            displayName = "Fergié-ragnaros",
-            specKey = "PRIEST_DISCIPLINE",
-            rating = 2678,
-            rank = 439,
-            wins = 82,
-            losses = 44,
-            faction = "HORDE",
-        },
         ["fergussx-ragnaros"] = {
             displayName = "Fergussx-ragnaros",
             specKey = "ROGUE_OUTLAW",
@@ -94155,15 +94164,6 @@ PvPLedgerLadderData.US.shuffle = {
             wins = 44,
             losses = 35,
             faction = "ALLIANCE",
-        },
-        ["gabbieghoulx-frostmourne"] = {
-            displayName = "Gabbieghoulx-frostmourne",
-            specKey = "DEATHKNIGHT_UNHOLY",
-            rating = 2349,
-            rank = 687,
-            wins = 48,
-            losses = 30,
-            faction = "HORDE",
         },
         ["gabbitp-sargeras"] = {
             displayName = "Gabbitp-sargeras",
@@ -131092,15 +131092,6 @@ PvPLedgerLadderData.US.shuffle = {
             losses = 165,
             faction = "HORDE",
         },
-        ["judge-azgalor"] = {
-            displayName = "Judge-azgalor",
-            specKey = "PALADIN_HOLY",
-            rating = 2407,
-            rank = 789,
-            wins = 675,
-            losses = 659,
-            faction = "HORDE",
-        },
         ["judgebane-tichondrius"] = {
             displayName = "Judgebane-tichondrius",
             specKey = "PALADIN_RETRIBUTION",
@@ -134852,15 +134843,6 @@ PvPLedgerLadderData.US.shuffle = {
             rank = 538,
             wins = 2,
             losses = 4,
-            faction = "ALLIANCE",
-        },
-        ["kaptirx-tichondrius"] = {
-            displayName = "Kaptirx-tichondrius",
-            specKey = "ROGUE_OUTLAW",
-            rating = 2158,
-            rank = 402,
-            wins = 64,
-            losses = 74,
             faction = "ALLIANCE",
         },
         ["kapua-sargeras"] = {
@@ -157066,6 +157048,15 @@ PvPLedgerLadderData.US.shuffle = {
             losses = 168,
             faction = "HORDE",
         },
+        ["légendaddy-ragnaros"] = {
+            displayName = "Légendaddy-ragnaros",
+            specKey = "PRIEST_DISCIPLINE",
+            rating = 2678,
+            rank = 439,
+            wins = 82,
+            losses = 44,
+            faction = "HORDE",
+        },
         ["légz-zuljin"] = {
             displayName = "Légz-zuljin",
             specKey = "DRUID_RESTORATION",
@@ -166633,15 +166624,6 @@ PvPLedgerLadderData.US.shuffle = {
             losses = 493,
             faction = "ALLIANCE",
         },
-        ["microveggie-illidan"] = {
-            displayName = "Microveggie-illidan",
-            specKey = "WARRIOR_ARMS",
-            rating = 2552,
-            rank = 398,
-            wins = 165,
-            losses = 152,
-            faction = "ALLIANCE",
-        },
         ["microvoid-malganis"] = {
             displayName = "Microvoid-malganis",
             specKey = "PRIEST_HOLY",
@@ -167667,6 +167649,15 @@ PvPLedgerLadderData.US.shuffle = {
             wins = 71,
             losses = 37,
             faction = "ALLIANCE",
+        },
+        ["mindfreezex-frostmourne"] = {
+            displayName = "Mindfreezex-frostmourne",
+            specKey = "DEATHKNIGHT_UNHOLY",
+            rating = 2349,
+            rank = 687,
+            wins = 48,
+            losses = 30,
+            faction = "HORDE",
         },
         ["mindfreãk-tichondrius"] = {
             displayName = "Mindfreãk-tichondrius",
@@ -216070,8 +216061,8 @@ PvPLedgerLadderData.US.shuffle = {
             losses = 110,
             faction = "ALLIANCE",
         },
-        ["rookiethrash-kelthuzad"] = {
-            displayName = "Rookiethrash-kelthuzad",
+        ["rookiexb-kelthuzad"] = {
+            displayName = "Rookiexb-kelthuzad",
             specKey = "DRUID_RESTORATION",
             rating = 2349,
             rank = 952,
@@ -247075,6 +247066,15 @@ PvPLedgerLadderData.US.shuffle = {
             losses = 87,
             faction = "ALLIANCE",
         },
+        ["sugarveggie-illidan"] = {
+            displayName = "Sugarveggie-illidan",
+            specKey = "WARRIOR_ARMS",
+            rating = 2552,
+            rank = 398,
+            wins = 165,
+            losses = 152,
+            faction = "ALLIANCE",
+        },
         ["sugemight-thrall"] = {
             displayName = "Sugemight-thrall",
             specKey = "WARRIOR_FURY",
@@ -254669,15 +254669,6 @@ PvPLedgerLadderData.US.shuffle = {
             rank = 629,
             wins = 177,
             losses = 127,
-            faction = "ALLIANCE",
-        },
-        ["teleiosx-moonguard"] = {
-            displayName = "Teleiosx-moon-guard",
-            specKey = "MONK_MISTWEAVER",
-            rating = 2723,
-            rank = 237,
-            wins = 184,
-            losses = 141,
             faction = "ALLIANCE",
         },
         ["telidrus-eonar"] = {
@@ -278179,6 +278170,15 @@ PvPLedgerLadderData.US.shuffle = {
             losses = 32,
             faction = "ALLIANCE",
         },
+        ["vàseline-tichondrius"] = {
+            displayName = "Vàseline-tichondrius",
+            specKey = "PALADIN_RETRIBUTION",
+            rating = 2530,
+            rank = 701,
+            wins = 177,
+            losses = 160,
+            faction = "ALLIANCE",
+        },
         ["válcrist-ragnaros"] = {
             displayName = "Válcrist-ragnaros",
             specKey = "WARRIOR_FURY",
@@ -278240,15 +278240,6 @@ PvPLedgerLadderData.US.shuffle = {
             rank = 834,
             wins = 99,
             losses = 116,
-            faction = "ALLIANCE",
-        },
-        ["vãseline-zuljin"] = {
-            displayName = "Vãseline-zuljin",
-            specKey = "PALADIN_RETRIBUTION",
-            rating = 2530,
-            rank = 701,
-            wins = 177,
-            losses = 160,
             faction = "ALLIANCE",
         },
         ["väl-blackrock"] = {
@@ -300454,6 +300445,15 @@ PvPLedgerLadderData.US.shuffle = {
             losses = 45,
             faction = "ALLIANCE",
         },
+        ["àzúla-moonguard"] = {
+            displayName = "Àzúla-moon-guard",
+            specKey = "MONK_MISTWEAVER",
+            rating = 2723,
+            rank = 237,
+            wins = 184,
+            losses = 141,
+            faction = "ALLIANCE",
+        },
         ["ágios-tichondrius"] = {
             displayName = "Ágios-tichondrius",
             specKey = "PRIEST_DISCIPLINE",
@@ -300552,6 +300552,15 @@ PvPLedgerLadderData.US.shuffle = {
             wins = 112,
             losses = 102,
             faction = "HORDE",
+        },
+        ["ázúla-moonguard"] = {
+            displayName = "Ázúla-moon-guard",
+            specKey = "PRIEST_DISCIPLINE",
+            rating = 2664,
+            rank = 476,
+            wins = 132,
+            losses = 106,
+            faction = "ALLIANCE",
         },
         ["âccurate-area52"] = {
             displayName = "Âccurate-area-52",
@@ -302073,15 +302082,6 @@ PvPLedgerLadderData.US.shuffle = {
             wins = 185,
             losses = 176,
             faction = "HORDE",
-        },
-        ["ìcanfixher-moonguard"] = {
-            displayName = "Ìcanfixher-moon-guard",
-            specKey = "PRIEST_DISCIPLINE",
-            rating = 2664,
-            rank = 476,
-            wins = 132,
-            losses = 106,
-            faction = "ALLIANCE",
         },
         ["ìfrìt-deathwing"] = {
             displayName = "Ìfrìt-deathwing",
