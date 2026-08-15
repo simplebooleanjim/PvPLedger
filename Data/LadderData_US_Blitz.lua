@@ -7,7 +7,7 @@ PvPLedgerLadderData.US.blitz = {
     bracket = "blitz",
     season = 41,
     snapshotDate = "2026-08-15",
-    generatedAt = "2026-08-15T21:59:44Z",
+    generatedAt = "2026-08-15T22:31:02Z",
     source = "blizzard-api",
     overall = {
         listedCount = 37714,
@@ -444,7 +444,7 @@ PvPLedgerLadderData.US.blitz = {
                 },
             },
             ["HUNTER_MARKSMANSHIP"] = {
-                population = 4875,
+                population = 4874,
                 cutoffs = {
                     {
                         pct = 0.1,
@@ -694,7 +694,7 @@ PvPLedgerLadderData.US.blitz = {
                 },
             },
             ["PALADIN_RETRIBUTION"] = {
-                population = 5004,
+                population = 5005,
                 cutoffs = {
                     {
                         pct = 0.1,
@@ -844,7 +844,7 @@ PvPLedgerLadderData.US.blitz = {
                 },
             },
             ["ROGUE_SUBTLETY"] = {
-                population = 4495,
+                population = 4496,
                 cutoffs = {
                     {
                         pct = 0.1,
@@ -1019,7 +1019,7 @@ PvPLedgerLadderData.US.blitz = {
                 },
             },
             ["WARRIOR_ARMS"] = {
-                population = 4195,
+                population = 4194,
                 cutoffs = {
                     {
                         pct = 0.1,
@@ -10250,6 +10250,15 @@ PvPLedgerLadderData.US.blitz = {
             wins = 44,
             losses = 43,
             faction = "ALLIANCE",
+        },
+        ["amneezha-wyrmrestaccord"] = {
+            displayName = "Amneezha-wyrmrest-accord",
+            specKey = "EVOKER_AUGMENTATION",
+            rating = 1711,
+            rank = 71,
+            wins = 13,
+            losses = 19,
+            faction = "HORDE",
         },
         ["amnesiac-sargeras"] = {
             displayName = "Amnesiac-sargeras",
@@ -29987,15 +29996,6 @@ PvPLedgerLadderData.US.blitz = {
             wins = 14,
             losses = 11,
             faction = "ALLIANCE",
-        },
-        ["blacula-wyrmrestaccord"] = {
-            displayName = "Blacula-wyrmrest-accord",
-            specKey = "EVOKER_AUGMENTATION",
-            rating = 1711,
-            rank = 71,
-            wins = 13,
-            losses = 19,
-            faction = "HORDE",
         },
         ["bladan-gnomeregan"] = {
             displayName = "Bladan-gnomeregan",
@@ -54198,6 +54198,15 @@ PvPLedgerLadderData.US.blitz = {
             losses = 4,
             faction = "ALLIANCE",
         },
+        ["croutón-sargeras"] = {
+            displayName = "Croutón-sargeras",
+            specKey = "PALADIN_PROTECTION",
+            rating = 1611,
+            rank = 177,
+            wins = 35,
+            losses = 41,
+            faction = "ALLIANCE",
+        },
         ["crovain-moonguard"] = {
             displayName = "Crovain-moon-guard",
             specKey = "ROGUE_SUBTLETY",
@@ -54476,15 +54485,6 @@ PvPLedgerLadderData.US.blitz = {
             wins = 10,
             losses = 6,
             faction = "HORDE",
-        },
-        ["crusaton-malganis"] = {
-            displayName = "Crusaton-malganis",
-            specKey = "PALADIN_PROTECTION",
-            rating = 1611,
-            rank = 177,
-            wins = 35,
-            losses = 41,
-            faction = "ALLIANCE",
         },
         ["crushedlol-bleedinghollow"] = {
             displayName = "Crushedlol-bleeding-hollow",
@@ -64348,15 +64348,6 @@ PvPLedgerLadderData.US.blitz = {
             rank = 206,
             wins = 18,
             losses = 18,
-            faction = "ALLIANCE",
-        },
-        ["derpmobb0a21-tichondrius"] = {
-            displayName = "DerpmoBB0A21-tichondrius",
-            specKey = "DEMONHUNTER_HAVOC",
-            rating = 1696,
-            rank = 885,
-            wins = 8,
-            losses = 5,
             faction = "ALLIANCE",
         },
         ["derpqt-arthas"] = {
@@ -190251,6 +190242,15 @@ PvPLedgerLadderData.US.blitz = {
             losses = 17,
             faction = "HORDE",
         },
+        ["noots-stormrage"] = {
+            displayName = "Noots-stormrage",
+            specKey = "WARRIOR_FURY",
+            rating = 1762,
+            rank = 911,
+            wins = 9,
+            losses = 8,
+            faction = "HORDE",
+        },
         ["nope-moonguard"] = {
             displayName = "Nope-moon-guard",
             specKey = "DRUID_FERAL",
@@ -210861,6 +210861,15 @@ PvPLedgerLadderData.US.blitz = {
             losses = 18,
             faction = "ALLIANCE",
         },
+        ["pwnczek-tichondrius"] = {
+            displayName = "Pwnczek-tichondrius",
+            specKey = "DEMONHUNTER_HAVOC",
+            rating = 1696,
+            rank = 885,
+            wins = 8,
+            losses = 5,
+            faction = "ALLIANCE",
+        },
         ["pwndead-zuluhed"] = {
             displayName = "Pwndead-zuluhed",
             specKey = "DEATHKNIGHT_UNHOLY",
@@ -210888,8 +210897,8 @@ PvPLedgerLadderData.US.blitz = {
             losses = 3,
             faction = "ALLIANCE",
         },
-        ["pwnholygnome-tichondrius"] = {
-            displayName = "Pwnholygnome-tichondrius",
+        ["pwnholygrips-tichondrius"] = {
+            displayName = "Pwnholygrips-tichondrius",
             specKey = "DEATHKNIGHT_BLOOD",
             rating = 1825,
             rank = 70,
@@ -246014,15 +246023,6 @@ PvPLedgerLadderData.US.blitz = {
             wins = 21,
             losses = 21,
             faction = "ALLIANCE",
-        },
-        ["snut-bleedinghollow"] = {
-            displayName = "Snut-bleeding-hollow",
-            specKey = "WARRIOR_FURY",
-            rating = 1762,
-            rank = 911,
-            wins = 9,
-            losses = 8,
-            faction = "HORDE",
         },
         ["snyaiper-ragnaros"] = {
             displayName = "Snyaiper-ragnaros",
