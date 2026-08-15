@@ -7,7 +7,7 @@ PvPLedgerLadderData.US.blitz = {
     bracket = "blitz",
     season = 41,
     snapshotDate = "2026-08-15",
-    generatedAt = "2026-08-15T05:32:55Z",
+    generatedAt = "2026-08-15T06:00:44Z",
     source = "blizzard-api",
     overall = {
         listedCount = 37713,
@@ -69,7 +69,7 @@ PvPLedgerLadderData.US.blitz = {
             ["800-899"] = 751,
             ["900-999"] = 28,
         },
-        ratedPopulation = 86712,
+        ratedPopulation = 86713,
         titleCutoffs = {
             {
                 pct = 0.1,
@@ -1019,7 +1019,7 @@ PvPLedgerLadderData.US.blitz = {
                 },
             },
             ["WARRIOR_ARMS"] = {
-                population = 4193,
+                population = 4194,
                 cutoffs = {
                     {
                         pct = 0.1,
@@ -20059,6 +20059,15 @@ PvPLedgerLadderData.US.blitz = {
             rank = 341,
             wins = 8,
             losses = 4,
+            faction = "HORDE",
+        },
+        ["azravaan-emeralddream"] = {
+            displayName = "Azravaan-emerald-dream",
+            specKey = "PALADIN_RETRIBUTION",
+            rating = 2232,
+            rank = 662,
+            wins = 33,
+            losses = 35,
             faction = "HORDE",
         },
         ["azre-tichondrius"] = {
@@ -45007,6 +45016,15 @@ PvPLedgerLadderData.US.blitz = {
             rank = 761,
             wins = 10,
             losses = 14,
+            faction = "HORDE",
+        },
+        ["chaperw-sargeras"] = {
+            displayName = "Chaperw-sargeras",
+            specKey = "ROGUE_OUTLAW",
+            rating = 2621,
+            rank = 31,
+            wins = 71,
+            losses = 67,
             faction = "HORDE",
         },
         ["chapmän-ragnaros"] = {
@@ -135981,15 +135999,6 @@ PvPLedgerLadderData.US.blitz = {
             losses = 10,
             faction = "ALLIANCE",
         },
-        ["judersi-sargeras"] = {
-            displayName = "Judersi-sargeras",
-            specKey = "ROGUE_OUTLAW",
-            rating = 2621,
-            rank = 31,
-            wins = 71,
-            losses = 67,
-            faction = "HORDE",
-        },
         ["judex-moonguard"] = {
             displayName = "Judex-moon-guard",
             specKey = "ROGUE_OUTLAW",
@@ -139661,15 +139670,6 @@ PvPLedgerLadderData.US.blitz = {
             wins = 2,
             losses = 2,
             faction = "HORDE",
-        },
-        ["kanyeglazer-stormrage"] = {
-            displayName = "Kanyeglazer-stormrage",
-            specKey = "MAGE_ARCANE",
-            rating = 3123,
-            rank = 11,
-            wins = 96,
-            losses = 88,
-            faction = "ALLIANCE",
         },
         ["kanyekitty-tichondrius"] = {
             displayName = "Kanyekitty-tichondrius",
@@ -193608,6 +193608,15 @@ PvPLedgerLadderData.US.blitz = {
             losses = 4,
             faction = "ALLIANCE",
         },
+        ["occultmaxxed-illidan"] = {
+            displayName = "Occultmaxxed-illidan",
+            specKey = "ROGUE_ASSASSINATION",
+            rating = 1806,
+            rank = 518,
+            wins = 23,
+            losses = 22,
+            faction = "ALLIANCE",
+        },
         ["occuts-stormrage"] = {
             displayName = "Occuts-stormrage",
             specKey = "WARLOCK_DEMONOLOGY",
@@ -234279,15 +234288,6 @@ PvPLedgerLadderData.US.blitz = {
             losses = 8,
             faction = "ALLIANCE",
         },
-        ["shadowmaxxng-illidan"] = {
-            displayName = "Shadowmaxxng-illidan",
-            specKey = "ROGUE_ASSASSINATION",
-            rating = 1806,
-            rank = 518,
-            wins = 23,
-            losses = 22,
-            faction = "ALLIANCE",
-        },
         ["shadowmeld-blackrock"] = {
             displayName = "Shadowmeld-blackrock",
             specKey = "HUNTER_SURVIVAL",
@@ -258127,6 +258127,15 @@ PvPLedgerLadderData.US.blitz = {
             rank = 418,
             wins = 19,
             losses = 6,
+            faction = "ALLIANCE",
+        },
+        ["sydnysweeny-stormrage"] = {
+            displayName = "Sydnysweeny-stormrage",
+            specKey = "MAGE_ARCANE",
+            rating = 3123,
+            rank = 11,
+            wins = 96,
+            losses = 88,
             faction = "ALLIANCE",
         },
         ["sydol-sargeras"] = {
@@ -300229,15 +300238,6 @@ PvPLedgerLadderData.US.blitz = {
             rank = 548,
             wins = 29,
             losses = 18,
-            faction = "HORDE",
-        },
-        ["yazan-emeralddream"] = {
-            displayName = "Yazan-emerald-dream",
-            specKey = "PALADIN_RETRIBUTION",
-            rating = 2232,
-            rank = 662,
-            wins = 33,
-            losses = 35,
             faction = "HORDE",
         },
         ["yazler-frostmourne"] = {
