@@ -7,7 +7,7 @@ PvPLedgerLadderData.US.shuffle = {
     bracket = "shuffle",
     season = 41,
     snapshotDate = "2026-08-15",
-    generatedAt = "2026-08-15T19:27:50Z",
+    generatedAt = "2026-08-15T19:47:23Z",
     source = "blizzard-api",
     overall = {
         listedCount = 38237,
@@ -67,7 +67,7 @@ PvPLedgerLadderData.US.shuffle = {
             ["800-899"] = 133,
             ["900-999"] = 136,
         },
-        ratedPopulation = 137177,
+        ratedPopulation = 137175,
         titleCutoffs = {
             {
                 pct = 0.1,
@@ -367,7 +367,7 @@ PvPLedgerLadderData.US.shuffle = {
                 },
             },
             ["EVOKER_DEVASTATION"] = {
-                population = 2557,
+                population = 2556,
                 cutoffs = {
                     {
                         pct = 0.1,
@@ -742,7 +742,7 @@ PvPLedgerLadderData.US.shuffle = {
                 },
             },
             ["PRIEST_HOLY"] = {
-                population = 5005,
+                population = 5004,
                 cutoffs = {
                     {
                         pct = 0.1,
@@ -24558,15 +24558,6 @@ PvPLedgerLadderData.US.shuffle = {
             wins = 223,
             losses = 213,
             faction = "HORDE",
-        },
-        ["bigboix-moonguard"] = {
-            displayName = "Bigboix-moon-guard",
-            specKey = "ROGUE_SUBTLETY",
-            rating = 2523,
-            rank = 283,
-            wins = 62,
-            losses = 52,
-            faction = "ALLIANCE",
         },
         ["bigbombz-tichondrius"] = {
             displayName = "Bigbombz-tichondrius",
@@ -92365,15 +92356,6 @@ PvPLedgerLadderData.US.shuffle = {
             losses = 49,
             faction = "ALLIANCE",
         },
-        ["fríeren-misha"] = {
-            displayName = "Fríeren-misha",
-            specKey = "WARLOCK_DESTRUCTION",
-            rating = 1965,
-            rank = 961,
-            wins = 71,
-            losses = 58,
-            faction = "HORDE",
-        },
         ["frîday-tichondrius"] = {
             displayName = "Frîday-tichondrius",
             specKey = "MONK_MISTWEAVER",
@@ -108259,6 +108241,15 @@ PvPLedgerLadderData.US.shuffle = {
             losses = 203,
             faction = "ALLIANCE",
         },
+        ["hawaahh-sargeras"] = {
+            displayName = "Hawaahh-sargeras",
+            specKey = "HUNTER_SURVIVAL",
+            rating = 2427,
+            rank = 255,
+            wins = 223,
+            losses = 209,
+            faction = "ALLIANCE",
+        },
         ["hawaiifiveox-tichondrius"] = {
             displayName = "Hawaiifiveox-tichondrius",
             specKey = "HUNTER_BEASTMASTERY",
@@ -123980,15 +123971,6 @@ PvPLedgerLadderData.US.shuffle = {
             rank = 593,
             wins = 54,
             losses = 44,
-            faction = "ALLIANCE",
-        },
-        ["ivankatrumpx-tichondrius"] = {
-            displayName = "Ivankatrumpx-tichondrius",
-            specKey = "SHAMAN_ELEMENTAL",
-            rating = 2300,
-            rank = 588,
-            wins = 255,
-            losses = 239,
             faction = "ALLIANCE",
         },
         ["ivanlord-azralon"] = {
@@ -169070,15 +169052,6 @@ PvPLedgerLadderData.US.shuffle = {
             rank = 681,
             wins = 73,
             losses = 67,
-            faction = "ALLIANCE",
-        },
-        ["mizanageh-tichondrius"] = {
-            displayName = "Mizanageh-tichondrius",
-            specKey = "MAGE_FROST",
-            rating = 2576,
-            rank = 447,
-            wins = 792,
-            losses = 763,
             faction = "ALLIANCE",
         },
         ["mizerakill-azralon"] = {
@@ -216430,6 +216403,15 @@ PvPLedgerLadderData.US.shuffle = {
             losses = 81,
             faction = "ALLIANCE",
         },
+        ["rotiprata-tichondrius"] = {
+            displayName = "Rotiprata-tichondrius",
+            specKey = "MAGE_FROST",
+            rating = 2576,
+            rank = 447,
+            wins = 792,
+            losses = 763,
+            faction = "ALLIANCE",
+        },
         ["rotleaf-chogall"] = {
             displayName = "Rotleaf-chogall",
             specKey = "PRIEST_SHADOW",
@@ -222260,6 +222242,15 @@ PvPLedgerLadderData.US.shuffle = {
             rank = 409,
             wins = 58,
             losses = 32,
+            faction = "HORDE",
+        },
+        ["satella-misha"] = {
+            displayName = "Satella-misha",
+            specKey = "WARLOCK_DESTRUCTION",
+            rating = 1965,
+            rank = 961,
+            wins = 71,
+            losses = 58,
             faction = "HORDE",
         },
         ["sathanis-anubarak"] = {
@@ -268144,15 +268135,6 @@ PvPLedgerLadderData.US.shuffle = {
             losses = 41,
             faction = "ALLIANCE",
         },
-        ["uglyshunter-sargeras"] = {
-            displayName = "Uglyshunter-sargeras",
-            specKey = "HUNTER_SURVIVAL",
-            rating = 2427,
-            rank = 255,
-            wins = 223,
-            losses = 209,
-            faction = "ALLIANCE",
-        },
         ["uglysister-malganis"] = {
             displayName = "Uglysister-malganis",
             specKey = "WARLOCK_DEMONOLOGY",
@@ -272696,6 +272678,15 @@ PvPLedgerLadderData.US.shuffle = {
             rank = 575,
             wins = 106,
             losses = 100,
+            faction = "ALLIANCE",
+        },
+        ["vasqxo-tichondrius"] = {
+            displayName = "Vasqxo-tichondrius",
+            specKey = "SHAMAN_ELEMENTAL",
+            rating = 2300,
+            rank = 588,
+            wins = 255,
+            losses = 239,
             faction = "ALLIANCE",
         },
         ["vassagô-moonguard"] = {
@@ -300543,6 +300534,15 @@ PvPLedgerLadderData.US.shuffle = {
             wins = 112,
             losses = 102,
             faction = "HORDE",
+        },
+        ["ázulà-moonguard"] = {
+            displayName = "ázulà-moon-guard",
+            specKey = "ROGUE_SUBTLETY",
+            rating = 2523,
+            rank = 283,
+            wins = 62,
+            losses = 52,
+            faction = "ALLIANCE",
         },
         ["ázúla-moonguard"] = {
             displayName = "Ázúla-moon-guard",

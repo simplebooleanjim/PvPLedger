@@ -7,7 +7,7 @@ PvPLedgerLadderData.US.blitz = {
     bracket = "blitz",
     season = 41,
     snapshotDate = "2026-08-15",
-    generatedAt = "2026-08-15T19:27:20Z",
+    generatedAt = "2026-08-15T19:46:47Z",
     source = "blizzard-api",
     overall = {
         listedCount = 37714,
@@ -69,7 +69,7 @@ PvPLedgerLadderData.US.blitz = {
             ["800-899"] = 751,
             ["900-999"] = 28,
         },
-        ratedPopulation = 86715,
+        ratedPopulation = 86713,
         titleCutoffs = {
             {
                 pct = 0.1,
@@ -544,7 +544,7 @@ PvPLedgerLadderData.US.blitz = {
                 },
             },
             ["MAGE_FROST"] = {
-                population = 4977,
+                population = 4976,
                 cutoffs = {
                     {
                         pct = 0.1,
@@ -844,7 +844,7 @@ PvPLedgerLadderData.US.blitz = {
                 },
             },
             ["ROGUE_SUBTLETY"] = {
-                population = 4496,
+                population = 4495,
                 cutoffs = {
                     {
                         pct = 0.1,
