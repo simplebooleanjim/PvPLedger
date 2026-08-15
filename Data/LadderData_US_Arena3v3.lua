@@ -7,7 +7,7 @@ PvPLedgerLadderData.US.arena3v3 = {
     bracket = "arena3v3",
     season = 41,
     snapshotDate = "2026-08-15",
-    generatedAt = "2026-08-15T06:53:53Z",
+    generatedAt = "2026-08-15T07:30:59Z",
     source = "blizzard-api+seramate",
     overall = {
         listedCount = 1002,
@@ -247,9 +247,9 @@ PvPLedgerLadderData.US.arena3v3 = {
         },
         ["WARRIOR"] = {
             listedCount = 78,
-            avgListedRating = 2800.9,
-            medianListedRating = 2731.5,
-            top100Avg = 2800.9,
+            avgListedRating = 2770.6,
+            medianListedRating = 2729.5,
+            top100Avg = 2770.6,
             highest = 3209,
             buckets = {
                 ["2600-2699"] = 29,
@@ -747,14 +747,14 @@ PvPLedgerLadderData.US.arena3v3 = {
             },
         },
         ["WARRIOR_ARMS"] = {
-            listedCount = 65,
-            avgListedRating = 2837.4,
-            medianListedRating = 2728,
-            top100Avg = 2837.4,
+            listedCount = 64,
+            avgListedRating = 2839.4,
+            medianListedRating = 2729.5,
+            top100Avg = 2839.4,
             highest = 3209,
             buckets = {
                 ["2600-2699"] = 25,
-                ["2700-2799"] = 12,
+                ["2700-2799"] = 11,
                 ["2800-2899"] = 6,
                 ["2900-2999"] = 6,
                 ["3000-3099"] = 3,
@@ -773,6 +773,16 @@ PvPLedgerLadderData.US.arena3v3 = {
                 ["2700-2799"] = 5,
                 ["2800-2899"] = 3,
                 ["3100-3199"] = 1,
+            },
+        },
+        ["WARRIOR_PROTECTION"] = {
+            listedCount = 1,
+            avgListedRating = 2708,
+            medianListedRating = 2708,
+            top100Avg = 2708,
+            highest = 2708,
+            buckets = {
+                ["2700-2799"] = 1,
             },
         },
     },
@@ -8123,7 +8133,7 @@ PvPLedgerLadderData.US.arena3v3 = {
         },
         ["tank-stormrage"] = {
             displayName = "Tank-stormrage",
-            specKey = "WARRIOR_ARMS",
+            specKey = "WARRIOR_PROTECTION",
             rating = 2708,
             rank = 664,
             wins = 147,
