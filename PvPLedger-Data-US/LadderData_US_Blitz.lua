@@ -7,7 +7,7 @@ PvPLedgerLadderData.US.blitz = {
     bracket = "blitz",
     season = 41,
     snapshotDate = "2026-08-15",
-    generatedAt = "2026-08-15T11:19:41Z",
+    generatedAt = "2026-08-15T11:45:44Z",
     source = "blizzard-api",
     overall = {
         listedCount = 37713,
@@ -266751,15 +266751,6 @@ PvPLedgerLadderData.US.blitz = {
             losses = 8,
             faction = "HORDE",
         },
-        ["thirol-stormrage"] = {
-            displayName = "Thirol-stormrage",
-            specKey = "MAGE_FIRE",
-            rating = 1996,
-            rank = 137,
-            wins = 16,
-            losses = 10,
-            faction = "ALLIANCE",
-        },
         ["thiror-stormrage"] = {
             displayName = "Thiror-stormrage",
             specKey = "ROGUE_OUTLAW",
@@ -290438,6 +290429,15 @@ PvPLedgerLadderData.US.blitz = {
             wins = 4,
             losses = 2,
             faction = "HORDE",
+        },
+        ["water-exodar"] = {
+            displayName = "Water-exodar",
+            specKey = "MAGE_FIRE",
+            rating = 1996,
+            rank = 137,
+            wins = 16,
+            losses = 10,
+            faction = "ALLIANCE",
         },
         ["wateralike-illidan"] = {
             displayName = "Wateralike-illidan",
