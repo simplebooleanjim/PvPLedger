@@ -3,8 +3,8 @@
 --- DO NOT EDIT MANUALLY.
 PVL_AppHelperPendingSnapshots = PVL_AppHelperPendingSnapshots or {}
 PVL_AppHelperSyncInfo = {
-    lastSync = 1786830383,
-    generatedAt = "2026-08-15T21:46:23Z",
+    lastSync = 1786831259,
+    generatedAt = "2026-08-15T22:00:59Z",
     region = "US",
     source = "collector",
 }
@@ -15,7 +15,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
     bracket = "arena2v2",
     season = 41,
     snapshotDate = "2026-08-15",
-    generatedAt = "2026-08-15T21:46:14Z",
+    generatedAt = "2026-08-15T22:00:46Z",
     source = "blizzard-api+seramate",
     overall = {
         listedCount = 1002,
@@ -178,9 +178,9 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["PRIEST"] = {
             listedCount = 223,
-            avgListedRating = 2505.4,
-            medianListedRating = 2491,
-            top100Avg = 2518.9,
+            avgListedRating = 2508.7,
+            medianListedRating = 2490.5,
+            top100Avg = 2521.9,
             highest = 2859,
             buckets = {
                 ["2400-2499"] = 115,
@@ -522,15 +522,15 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
             },
         },
         ["PRIEST_DISCIPLINE"] = {
-            listedCount = 159,
-            avgListedRating = 2512.9,
-            medianListedRating = 2491,
-            top100Avg = 2553.4,
+            listedCount = 158,
+            avgListedRating = 2512.2,
+            medianListedRating = 2490.5,
+            top100Avg = 2551.8,
             highest = 2816,
             buckets = {
                 ["2400-2499"] = 83,
                 ["2500-2599"] = 53,
-                ["2600-2699"] = 14,
+                ["2600-2699"] = 13,
                 ["2700-2799"] = 7,
                 ["2800-2899"] = 2,
             },
@@ -550,14 +550,15 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
             },
         },
         ["PRIEST_SHADOW"] = {
-            listedCount = 13,
-            avgListedRating = 2475.1,
-            medianListedRating = 2468,
-            top100Avg = 2475.1,
-            highest = 2556,
+            listedCount = 14,
+            avgListedRating = 2485.7,
+            medianListedRating = 2471.5,
+            top100Avg = 2485.7,
+            highest = 2624,
             buckets = {
                 ["2400-2499"] = 10,
                 ["2500-2599"] = 3,
+                ["2600-2699"] = 1,
             },
         },
         ["ROGUE_ASSASSINATION"] = {
@@ -773,7 +774,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["aintnowimp-sargeras"] = {
             displayName = "Aintnowimp-sargeras",
-            specKey = "PRIEST_DISCIPLINE",
+            specKey = "PRIEST_SHADOW",
             rating = 2624,
             rank = 130,
             wins = 272,
@@ -9735,7 +9736,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
     bracket = "arena3v3",
     season = 41,
     snapshotDate = "2026-08-15",
-    generatedAt = "2026-08-15T21:46:22Z",
+    generatedAt = "2026-08-15T22:00:58Z",
     source = "blizzard-api+seramate",
     overall = {
         listedCount = 1002,
@@ -9851,9 +9852,9 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["HUNTER"] = {
             listedCount = 54,
-            avgListedRating = 2798.9,
+            avgListedRating = 2808.1,
             medianListedRating = 2772.5,
-            top100Avg = 2798.9,
+            top100Avg = 2808.1,
             highest = 3145,
             buckets = {
                 ["2600-2699"] = 13,
@@ -10142,22 +10143,23 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
             },
         },
         ["HUNTER_BEASTMASTERY"] = {
-            listedCount = 10,
-            avgListedRating = 2738.4,
-            medianListedRating = 2702.5,
-            top100Avg = 2738.4,
-            highest = 2979,
+            listedCount = 11,
+            avgListedRating = 2773.7,
+            medianListedRating = 2704,
+            top100Avg = 2773.7,
+            highest = 3127,
             buckets = {
                 ["2600-2699"] = 3,
                 ["2700-2799"] = 6,
                 ["2900-2999"] = 1,
+                ["3100-3199"] = 1,
             },
         },
         ["HUNTER_MARKSMANSHIP"] = {
-            listedCount = 34,
-            avgListedRating = 2872.3,
-            medianListedRating = 2852.0,
-            top100Avg = 2872.3,
+            listedCount = 33,
+            avgListedRating = 2864.5,
+            medianListedRating = 2819,
+            top100Avg = 2864.5,
             highest = 3145,
             buckets = {
                 ["2600-2699"] = 8,
@@ -10165,7 +10167,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
                 ["2800-2899"] = 5,
                 ["2900-2999"] = 3,
                 ["3000-3099"] = 3,
-                ["3100-3199"] = 8,
+                ["3100-3199"] = 7,
             },
         },
         ["HUNTER_SURVIVAL"] = {
@@ -14226,7 +14228,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["jwz-tichondrius"] = {
             displayName = "Jwz-tichondrius",
-            specKey = "HUNTER_MARKSMANSHIP",
+            specKey = "HUNTER_BEASTMASTERY",
             rating = 3127,
             rank = 146,
             wins = 462,
@@ -19534,7 +19536,7 @@ PVL_AppHelperPendingSnapshots.blitz = {
     bracket = "blitz",
     season = 41,
     snapshotDate = "2026-08-15",
-    generatedAt = "2026-08-15T21:45:23Z",
+    generatedAt = "2026-08-15T21:59:44Z",
     source = "blizzard-api",
     overall = {
         listedCount = 37714,
@@ -334248,7 +334250,7 @@ PVL_AppHelperPendingSnapshots.rbg = {
     bracket = "rbg",
     season = 41,
     snapshotDate = "2026-08-15",
-    generatedAt = "2026-08-15T21:46:04Z",
+    generatedAt = "2026-08-15T22:00:34Z",
     source = "blizzard-api+seramate",
     overall = {
         listedCount = 1002,
@@ -344143,7 +344145,7 @@ PVL_AppHelperPendingSnapshots.shuffle = {
     bracket = "shuffle",
     season = 41,
     snapshotDate = "2026-08-15",
-    generatedAt = "2026-08-15T21:45:53Z",
+    generatedAt = "2026-08-15T22:00:21Z",
     source = "blizzard-api",
     overall = {
         listedCount = 38237,

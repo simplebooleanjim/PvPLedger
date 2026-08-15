@@ -7,7 +7,7 @@ PvPLedgerLadderData.US.arena2v2 = {
     bracket = "arena2v2",
     season = 41,
     snapshotDate = "2026-08-15",
-    generatedAt = "2026-08-15T21:46:14Z",
+    generatedAt = "2026-08-15T22:00:46Z",
     source = "blizzard-api+seramate",
     overall = {
         listedCount = 1002,
@@ -170,9 +170,9 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["PRIEST"] = {
             listedCount = 223,
-            avgListedRating = 2505.4,
-            medianListedRating = 2491,
-            top100Avg = 2518.9,
+            avgListedRating = 2508.7,
+            medianListedRating = 2490.5,
+            top100Avg = 2521.9,
             highest = 2859,
             buckets = {
                 ["2400-2499"] = 115,
@@ -514,15 +514,15 @@ PvPLedgerLadderData.US.arena2v2 = {
             },
         },
         ["PRIEST_DISCIPLINE"] = {
-            listedCount = 159,
-            avgListedRating = 2512.9,
-            medianListedRating = 2491,
-            top100Avg = 2553.4,
+            listedCount = 158,
+            avgListedRating = 2512.2,
+            medianListedRating = 2490.5,
+            top100Avg = 2551.8,
             highest = 2816,
             buckets = {
                 ["2400-2499"] = 83,
                 ["2500-2599"] = 53,
-                ["2600-2699"] = 14,
+                ["2600-2699"] = 13,
                 ["2700-2799"] = 7,
                 ["2800-2899"] = 2,
             },
@@ -542,14 +542,15 @@ PvPLedgerLadderData.US.arena2v2 = {
             },
         },
         ["PRIEST_SHADOW"] = {
-            listedCount = 13,
-            avgListedRating = 2475.1,
-            medianListedRating = 2468,
-            top100Avg = 2475.1,
-            highest = 2556,
+            listedCount = 14,
+            avgListedRating = 2485.7,
+            medianListedRating = 2471.5,
+            top100Avg = 2485.7,
+            highest = 2624,
             buckets = {
                 ["2400-2499"] = 10,
                 ["2500-2599"] = 3,
+                ["2600-2699"] = 1,
             },
         },
         ["ROGUE_ASSASSINATION"] = {
@@ -765,7 +766,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["aintnowimp-sargeras"] = {
             displayName = "Aintnowimp-sargeras",
-            specKey = "PRIEST_DISCIPLINE",
+            specKey = "PRIEST_SHADOW",
             rating = 2624,
             rank = 130,
             wins = 272,

@@ -7,7 +7,7 @@ PvPLedgerLadderData.US.arena3v3 = {
     bracket = "arena3v3",
     season = 41,
     snapshotDate = "2026-08-15",
-    generatedAt = "2026-08-15T21:46:22Z",
+    generatedAt = "2026-08-15T22:00:58Z",
     source = "blizzard-api+seramate",
     overall = {
         listedCount = 1002,
@@ -123,9 +123,9 @@ PvPLedgerLadderData.US.arena3v3 = {
         },
         ["HUNTER"] = {
             listedCount = 54,
-            avgListedRating = 2798.9,
+            avgListedRating = 2808.1,
             medianListedRating = 2772.5,
-            top100Avg = 2798.9,
+            top100Avg = 2808.1,
             highest = 3145,
             buckets = {
                 ["2600-2699"] = 13,
@@ -414,22 +414,23 @@ PvPLedgerLadderData.US.arena3v3 = {
             },
         },
         ["HUNTER_BEASTMASTERY"] = {
-            listedCount = 10,
-            avgListedRating = 2738.4,
-            medianListedRating = 2702.5,
-            top100Avg = 2738.4,
-            highest = 2979,
+            listedCount = 11,
+            avgListedRating = 2773.7,
+            medianListedRating = 2704,
+            top100Avg = 2773.7,
+            highest = 3127,
             buckets = {
                 ["2600-2699"] = 3,
                 ["2700-2799"] = 6,
                 ["2900-2999"] = 1,
+                ["3100-3199"] = 1,
             },
         },
         ["HUNTER_MARKSMANSHIP"] = {
-            listedCount = 34,
-            avgListedRating = 2872.3,
-            medianListedRating = 2852.0,
-            top100Avg = 2872.3,
+            listedCount = 33,
+            avgListedRating = 2864.5,
+            medianListedRating = 2819,
+            top100Avg = 2864.5,
             highest = 3145,
             buckets = {
                 ["2600-2699"] = 8,
@@ -437,7 +438,7 @@ PvPLedgerLadderData.US.arena3v3 = {
                 ["2800-2899"] = 5,
                 ["2900-2999"] = 3,
                 ["3000-3099"] = 3,
-                ["3100-3199"] = 8,
+                ["3100-3199"] = 7,
             },
         },
         ["HUNTER_SURVIVAL"] = {
@@ -4498,7 +4499,7 @@ PvPLedgerLadderData.US.arena3v3 = {
         },
         ["jwz-tichondrius"] = {
             displayName = "Jwz-tichondrius",
-            specKey = "HUNTER_MARKSMANSHIP",
+            specKey = "HUNTER_BEASTMASTERY",
             rating = 3127,
             rank = 146,
             wins = 462,
