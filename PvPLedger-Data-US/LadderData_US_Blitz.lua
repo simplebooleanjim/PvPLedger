@@ -7,7 +7,7 @@ PvPLedgerLadderData.US.blitz = {
     bracket = "blitz",
     season = 41,
     snapshotDate = "2026-08-15",
-    generatedAt = "2026-08-15T18:29:04Z",
+    generatedAt = "2026-08-15T18:58:43Z",
     source = "blizzard-api",
     overall = {
         listedCount = 37714,
@@ -10763,6 +10763,15 @@ PvPLedgerLadderData.US.blitz = {
             wins = 24,
             losses = 18,
             faction = "ALLIANCE",
+        },
+        ["ancyn-illidan"] = {
+            displayName = "Ancyn-illidan",
+            specKey = "PALADIN_HOLY",
+            rating = 1741,
+            rank = 669,
+            wins = 8,
+            losses = 3,
+            faction = "HORDE",
         },
         ["ancàlágon-wyrmrestaccord"] = {
             displayName = "Ancàlágon-wyrmrest-accord",
@@ -190601,15 +190610,6 @@ PvPLedgerLadderData.US.blitz = {
             wins = 23,
             losses = 24,
             faction = "ALLIANCE",
-        },
-        ["nosher-illidan"] = {
-            displayName = "Nosher-illidan",
-            specKey = "PALADIN_HOLY",
-            rating = 1741,
-            rank = 669,
-            wins = 8,
-            losses = 3,
-            faction = "HORDE",
         },
         ["noshotlolx-tichondrius"] = {
             displayName = "Noshotlolx-tichondrius",

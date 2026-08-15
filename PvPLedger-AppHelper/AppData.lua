@@ -3,8 +3,8 @@
 --- DO NOT EDIT MANUALLY.
 PVL_AppHelperPendingSnapshots = PVL_AppHelperPendingSnapshots or {}
 PVL_AppHelperSyncInfo = {
-    lastSync = 1786818604,
-    generatedAt = "2026-08-15T18:30:04Z",
+    lastSync = 1786820383,
+    generatedAt = "2026-08-15T18:59:43Z",
     region = "US",
     source = "collector",
 }
@@ -15,7 +15,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
     bracket = "arena2v2",
     season = 41,
     snapshotDate = "2026-08-15",
-    generatedAt = "2026-08-15T18:29:54Z",
+    generatedAt = "2026-08-15T18:59:33Z",
     source = "blizzard-api+seramate",
     overall = {
         listedCount = 1002,
@@ -9735,7 +9735,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
     bracket = "arena3v3",
     season = 41,
     snapshotDate = "2026-08-15",
-    generatedAt = "2026-08-15T18:30:03Z",
+    generatedAt = "2026-08-15T18:59:42Z",
     source = "blizzard-api+seramate",
     overall = {
         listedCount = 1002,
@@ -19533,7 +19533,7 @@ PVL_AppHelperPendingSnapshots.blitz = {
     bracket = "blitz",
     season = 41,
     snapshotDate = "2026-08-15",
-    generatedAt = "2026-08-15T18:29:04Z",
+    generatedAt = "2026-08-15T18:58:43Z",
     source = "blizzard-api",
     overall = {
         listedCount = 37714,
@@ -30289,6 +30289,15 @@ PVL_AppHelperPendingSnapshots.blitz = {
             wins = 24,
             losses = 18,
             faction = "ALLIANCE",
+        },
+        ["ancyn-illidan"] = {
+            displayName = "Ancyn-illidan",
+            specKey = "PALADIN_HOLY",
+            rating = 1741,
+            rank = 669,
+            wins = 8,
+            losses = 3,
+            faction = "HORDE",
         },
         ["ancàlágon-wyrmrestaccord"] = {
             displayName = "Ancàlágon-wyrmrest-accord",
@@ -210128,15 +210137,6 @@ PVL_AppHelperPendingSnapshots.blitz = {
             losses = 24,
             faction = "ALLIANCE",
         },
-        ["nosher-illidan"] = {
-            displayName = "Nosher-illidan",
-            specKey = "PALADIN_HOLY",
-            rating = 1741,
-            rank = 669,
-            wins = 8,
-            losses = 3,
-            faction = "HORDE",
-        },
         ["noshotlolx-tichondrius"] = {
             displayName = "Noshotlolx-tichondrius",
             specKey = "MONK_MISTWEAVER",
@@ -334247,7 +334247,7 @@ PVL_AppHelperPendingSnapshots.rbg = {
     bracket = "rbg",
     season = 41,
     snapshotDate = "2026-08-15",
-    generatedAt = "2026-08-15T18:29:45Z",
+    generatedAt = "2026-08-15T18:59:24Z",
     source = "blizzard-api+seramate",
     overall = {
         listedCount = 1002,
@@ -344142,7 +344142,7 @@ PVL_AppHelperPendingSnapshots.shuffle = {
     bracket = "shuffle",
     season = 41,
     snapshotDate = "2026-08-15",
-    generatedAt = "2026-08-15T18:29:34Z",
+    generatedAt = "2026-08-15T18:59:13Z",
     source = "blizzard-api",
     overall = {
         listedCount = 38237,
@@ -344202,7 +344202,7 @@ PVL_AppHelperPendingSnapshots.shuffle = {
             ["800-899"] = 133,
             ["900-999"] = 136,
         },
-        ratedPopulation = 137178,
+        ratedPopulation = 137177,
         titleCutoffs = {
             {
                 pct = 0.1,
@@ -344277,7 +344277,7 @@ PVL_AppHelperPendingSnapshots.shuffle = {
                 },
             },
             ["DEATHKNIGHT_UNHOLY"] = {
-                population = 5006,
+                population = 5005,
                 cutoffs = {
                     {
                         pct = 0.1,

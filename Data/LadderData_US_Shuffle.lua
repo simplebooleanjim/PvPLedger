@@ -7,7 +7,7 @@ PvPLedgerLadderData.US.shuffle = {
     bracket = "shuffle",
     season = 41,
     snapshotDate = "2026-08-15",
-    generatedAt = "2026-08-15T18:29:34Z",
+    generatedAt = "2026-08-15T18:59:13Z",
     source = "blizzard-api",
     overall = {
         listedCount = 38237,
@@ -67,7 +67,7 @@ PvPLedgerLadderData.US.shuffle = {
             ["800-899"] = 133,
             ["900-999"] = 136,
         },
-        ratedPopulation = 137178,
+        ratedPopulation = 137177,
         titleCutoffs = {
             {
                 pct = 0.1,
@@ -142,7 +142,7 @@ PvPLedgerLadderData.US.shuffle = {
                 },
             },
             ["DEATHKNIGHT_UNHOLY"] = {
-                population = 5006,
+                population = 5005,
                 cutoffs = {
                     {
                         pct = 0.1,
