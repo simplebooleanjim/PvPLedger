@@ -7,7 +7,7 @@ PvPLedgerLadderData.US.blitz = {
     bracket = "blitz",
     season = 41,
     snapshotDate = "2026-08-15",
-    generatedAt = "2026-08-15T08:28:02Z",
+    generatedAt = "2026-08-15T08:57:01Z",
     source = "blizzard-api",
     overall = {
         listedCount = 37713,
@@ -69,7 +69,7 @@ PvPLedgerLadderData.US.blitz = {
             ["800-899"] = 751,
             ["900-999"] = 28,
         },
-        ratedPopulation = 86713,
+        ratedPopulation = 86714,
         titleCutoffs = {
             {
                 pct = 0.1,
@@ -144,7 +144,7 @@ PvPLedgerLadderData.US.blitz = {
                 },
             },
             ["DEATHKNIGHT_UNHOLY"] = {
-                population = 3993,
+                population = 3994,
                 cutoffs = {
                     {
                         pct = 0.1,
@@ -64341,8 +64341,8 @@ PvPLedgerLadderData.US.blitz = {
             losses = 18,
             faction = "ALLIANCE",
         },
-        ["derpmode-staghelm"] = {
-            displayName = "Derpmode-staghelm",
+        ["derpmobb0a21-tichondrius"] = {
+            displayName = "DerpmoBB0A21-tichondrius",
             specKey = "DEMONHUNTER_HAVOC",
             rating = 1696,
             rank = 885,
@@ -130255,6 +130255,15 @@ PvPLedgerLadderData.US.blitz = {
             rank = 147,
             wins = 33,
             losses = 36,
+            faction = "HORDE",
+        },
+        ["jahrakal-tolbarad"] = {
+            displayName = "Jahrakal-tol-barad",
+            specKey = "HUNTER_SURVIVAL",
+            rating = 1611,
+            rank = 476,
+            wins = 10,
+            losses = 5,
             faction = "HORDE",
         },
         ["jahseh-tichondrius"] = {
@@ -214504,15 +214513,6 @@ PvPLedgerLadderData.US.blitz = {
             rank = 352,
             wins = 4,
             losses = 6,
-            faction = "HORDE",
-        },
-        ["ralathor-tolbarad"] = {
-            displayName = "Ralathor-tol-barad",
-            specKey = "HUNTER_SURVIVAL",
-            rating = 1611,
-            rank = 476,
-            wins = 10,
-            losses = 5,
             faction = "HORDE",
         },
         ["ralerath-azshara"] = {
