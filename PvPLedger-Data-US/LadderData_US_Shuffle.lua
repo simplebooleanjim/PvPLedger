@@ -7,7 +7,7 @@ PvPLedgerLadderData.US.shuffle = {
     bracket = "shuffle",
     season = 41,
     snapshotDate = "2026-08-16",
-    generatedAt = "2026-08-16T12:00:39Z",
+    generatedAt = "2026-08-16T13:31:21Z",
     source = "blizzard-api",
     overall = {
         listedCount = 38235,
@@ -24387,15 +24387,6 @@ PvPLedgerLadderData.US.shuffle = {
             wins = 70,
             losses = 74,
             faction = "HORDE",
-        },
-        ["bigangybear-moonguard"] = {
-            displayName = "Bigangybear-moon-guard",
-            specKey = "DRUID_GUARDIAN",
-            rating = 1736,
-            rank = 84,
-            wins = 26,
-            losses = 27,
-            faction = "ALLIANCE",
         },
         ["bigazzbird-illidan"] = {
             displayName = "Bigazzbird-illidan",
@@ -119932,6 +119923,15 @@ PvPLedgerLadderData.US.shuffle = {
             losses = 67,
             faction = "HORDE",
         },
+        ["imdírtydan-area52"] = {
+            displayName = "Imdírtydan-area-52",
+            specKey = "MONK_WINDWALKER",
+            rating = 2349,
+            rank = 621,
+            wins = 63,
+            losses = 45,
+            faction = "HORDE",
+        },
         ["imeanlike-illidan"] = {
             displayName = "Imeanlike-illidan",
             specKey = "HUNTER_BEASTMASTERY",
@@ -161762,15 +161762,6 @@ PvPLedgerLadderData.US.shuffle = {
             rank = 273,
             wins = 149,
             losses = 138,
-            faction = "HORDE",
-        },
-        ["masonfutafur-area52"] = {
-            displayName = "Masonfutafur-area-52",
-            specKey = "MONK_WINDWALKER",
-            rating = 2349,
-            rank = 621,
-            wins = 63,
-            losses = 45,
             faction = "HORDE",
         },
         ["masse-proudmoore"] = {
@@ -300533,6 +300524,15 @@ PvPLedgerLadderData.US.shuffle = {
             rank = 476,
             wins = 132,
             losses = 106,
+            faction = "ALLIANCE",
+        },
+        ["ázúlá-moonguard"] = {
+            displayName = "Ázúlá-moon-guard",
+            specKey = "DRUID_GUARDIAN",
+            rating = 1736,
+            rank = 84,
+            wins = 26,
+            losses = 27,
             faction = "ALLIANCE",
         },
         ["âccurate-area52"] = {

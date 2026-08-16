@@ -7,7 +7,7 @@ PvPLedgerLadderData.US.blitz = {
     bracket = "blitz",
     season = 41,
     snapshotDate = "2026-08-16",
-    generatedAt = "2026-08-16T12:00:11Z",
+    generatedAt = "2026-08-16T13:30:52Z",
     source = "blizzard-api",
     overall = {
         listedCount = 37715,
@@ -27386,15 +27386,6 @@ PvPLedgerLadderData.US.blitz = {
             wins = 13,
             losses = 20,
             faction = "HORDE",
-        },
-        ["bigangybear-moonguard"] = {
-            displayName = "Bigangybear-moon-guard",
-            specKey = "DRUID_GUARDIAN",
-            rating = 2319,
-            rank = 58,
-            wins = 32,
-            losses = 23,
-            faction = "ALLIANCE",
         },
         ["bigbacktotem-tichondrius"] = {
             displayName = "Bigbacktotem-tichondrius",
@@ -70047,8 +70038,8 @@ PvPLedgerLadderData.US.blitz = {
             losses = 15,
             faction = "HORDE",
         },
-        ["dortanis-tichondrius"] = {
-            displayName = "Dortanis-tichondrius",
+        ["dortanis-stormrage"] = {
+            displayName = "Dortanis-stormrage",
             specKey = "PALADIN_RETRIBUTION",
             rating = 2407,
             rank = 413,
@@ -189576,8 +189567,8 @@ PvPLedgerLadderData.US.blitz = {
             losses = 10,
             faction = "HORDE",
         },
-        ["nodöts-illidan"] = {
-            displayName = "Nodöts-illidan",
+        ["nodöts-uldum"] = {
+            displayName = "Nodöts-uldum",
             specKey = "WARLOCK_AFFLICTION",
             rating = 2305,
             rank = 240,
@@ -196171,15 +196162,6 @@ PvPLedgerLadderData.US.blitz = {
             rank = 102,
             wins = 34,
             losses = 34,
-            faction = "HORDE",
-        },
-        ["onlain-area52"] = {
-            displayName = "Onlain-area-52",
-            specKey = "WARLOCK_AFFLICTION",
-            rating = 1826,
-            rank = 917,
-            wins = 9,
-            losses = 5,
             faction = "HORDE",
         },
         ["onlinemonk-area52"] = {
@@ -304047,6 +304029,15 @@ PvPLedgerLadderData.US.blitz = {
             losses = 11,
             faction = "ALLIANCE",
         },
+        ["zaniens-area52"] = {
+            displayName = "Zaniens-area-52",
+            specKey = "WARLOCK_AFFLICTION",
+            rating = 1826,
+            rank = 917,
+            wins = 9,
+            losses = 5,
+            faction = "HORDE",
+        },
         ["zannada-moonguard"] = {
             displayName = "Zannada-moon-guard",
             specKey = "WARLOCK_DESTRUCTION",
@@ -311110,6 +311101,15 @@ PvPLedgerLadderData.US.blitz = {
             rank = 107,
             wins = 119,
             losses = 165,
+            faction = "ALLIANCE",
+        },
+        ["ázúlá-moonguard"] = {
+            displayName = "Ázúlá-moon-guard",
+            specKey = "DRUID_GUARDIAN",
+            rating = 2319,
+            rank = 58,
+            wins = 32,
+            losses = 23,
             faction = "ALLIANCE",
         },
         ["áéíóù-khazmodan"] = {
