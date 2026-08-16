@@ -3,8 +3,8 @@
 --- DO NOT EDIT MANUALLY.
 PVL_AppHelperPendingSnapshots = PVL_AppHelperPendingSnapshots or {}
 PVL_AppHelperSyncInfo = {
-    lastSync = 1786903214,
-    generatedAt = "2026-08-16T18:00:14Z",
+    lastSync = 1786905629,
+    generatedAt = "2026-08-16T18:40:29Z",
     region = "US",
     source = "collector",
 }
@@ -15,7 +15,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
     bracket = "arena2v2",
     season = 41,
     snapshotDate = "2026-08-16",
-    generatedAt = "2026-08-16T18:00:03Z",
+    generatedAt = "2026-08-16T18:40:17Z",
     source = "blizzard-api+seramate",
     overall = {
         listedCount = 1002,
@@ -92,13 +92,13 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
             },
         },
         ["DRUID"] = {
-            listedCount = 99,
-            avgListedRating = 2522.7,
+            listedCount = 98,
+            avgListedRating = 2523.1,
             medianListedRating = 2509,
-            top100Avg = 2522.7,
+            top100Avg = 2523.1,
             highest = 2876,
             buckets = {
-                ["2400-2499"] = 46,
+                ["2400-2499"] = 45,
                 ["2500-2599"] = 35,
                 ["2600-2699"] = 13,
                 ["2700-2799"] = 3,
@@ -120,13 +120,13 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
             },
         },
         ["HUNTER"] = {
-            listedCount = 75,
-            avgListedRating = 2524.1,
+            listedCount = 76,
+            avgListedRating = 2522.5,
             medianListedRating = 2500.0,
-            top100Avg = 2524.1,
+            top100Avg = 2522.5,
             highest = 2880,
             buckets = {
-                ["2400-2499"] = 35,
+                ["2400-2499"] = 36,
                 ["2500-2599"] = 23,
                 ["2600-2699"] = 11,
                 ["2700-2799"] = 2,
@@ -325,13 +325,13 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
             },
         },
         ["DRUID_RESTORATION"] = {
-            listedCount = 72,
-            avgListedRating = 2528.9,
-            medianListedRating = 2503.0,
-            top100Avg = 2528.9,
+            listedCount = 71,
+            avgListedRating = 2530.1,
+            medianListedRating = 2503,
+            top100Avg = 2530.1,
             highest = 2876,
             buckets = {
-                ["2400-2499"] = 35,
+                ["2400-2499"] = 34,
                 ["2500-2599"] = 23,
                 ["2600-2699"] = 9,
                 ["2700-2799"] = 3,
@@ -387,13 +387,13 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
             },
         },
         ["HUNTER_MARKSMANSHIP"] = {
-            listedCount = 20,
-            avgListedRating = 2528.6,
-            medianListedRating = 2514.5,
-            top100Avg = 2528.6,
+            listedCount = 21,
+            avgListedRating = 2523.6,
+            medianListedRating = 2514,
+            top100Avg = 2523.6,
             highest = 2657,
             buckets = {
-                ["2400-2499"] = 7,
+                ["2400-2499"] = 8,
                 ["2500-2599"] = 8,
                 ["2600-2699"] = 5,
             },
@@ -1314,7 +1314,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["berz-frostmourne"] = {
             displayName = "Berz-frostmourne",
-            specKey = "DRUID_RESTORATION",
+            specKey = "",
             rating = 2447,
             rank = 791,
             wins = 98,
@@ -7875,7 +7875,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["stephcurry-dentarg"] = {
             displayName = "Stephcurry-dentarg",
-            specKey = "",
+            specKey = "HUNTER_MARKSMANSHIP",
             rating = 2424,
             rank = 993,
             wins = 108,
@@ -9736,7 +9736,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
     bracket = "arena3v3",
     season = 41,
     snapshotDate = "2026-08-16",
-    generatedAt = "2026-08-16T18:00:13Z",
+    generatedAt = "2026-08-16T18:40:28Z",
     source = "blizzard-api+seramate",
     overall = {
         listedCount = 1002,
@@ -19539,7 +19539,7 @@ PVL_AppHelperPendingSnapshots.blitz = {
     bracket = "blitz",
     season = 41,
     snapshotDate = "2026-08-16",
-    generatedAt = "2026-08-16T17:59:11Z",
+    generatedAt = "2026-08-16T18:39:25Z",
     source = "blizzard-api",
     overall = {
         listedCount = 37714,
@@ -334244,7 +334244,7 @@ PVL_AppHelperPendingSnapshots.rbg = {
     bracket = "rbg",
     season = 41,
     snapshotDate = "2026-08-16",
-    generatedAt = "2026-08-16T17:59:55Z",
+    generatedAt = "2026-08-16T18:40:06Z",
     source = "blizzard-api+seramate",
     overall = {
         listedCount = 1002,
@@ -344141,7 +344141,7 @@ PVL_AppHelperPendingSnapshots.shuffle = {
     bracket = "shuffle",
     season = 41,
     snapshotDate = "2026-08-16",
-    generatedAt = "2026-08-16T17:59:43Z",
+    generatedAt = "2026-08-16T18:39:54Z",
     source = "blizzard-api",
     overall = {
         listedCount = 38235,
