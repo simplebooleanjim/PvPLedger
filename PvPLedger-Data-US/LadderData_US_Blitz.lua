@@ -7,7 +7,7 @@ PvPLedgerLadderData.US.blitz = {
     bracket = "blitz",
     season = 41,
     snapshotDate = "2026-08-16",
-    generatedAt = "2026-08-16T04:21:06Z",
+    generatedAt = "2026-08-16T05:01:00Z",
     source = "blizzard-api",
     overall = {
         listedCount = 37714,
@@ -69,7 +69,7 @@ PvPLedgerLadderData.US.blitz = {
             ["800-899"] = 751,
             ["900-999"] = 28,
         },
-        ratedPopulation = 86712,
+        ratedPopulation = 86714,
         titleCutoffs = {
             {
                 pct = 0.1,
@@ -419,7 +419,7 @@ PvPLedgerLadderData.US.blitz = {
                 },
             },
             ["HUNTER_BEASTMASTERY"] = {
-                population = 2886,
+                population = 2887,
                 cutoffs = {
                     {
                         pct = 0.1,
@@ -1044,7 +1044,7 @@ PvPLedgerLadderData.US.blitz = {
                 },
             },
             ["WARRIOR_FURY"] = {
-                population = 2660,
+                population = 2661,
                 cutoffs = {
                     {
                         pct = 0.1,
@@ -17161,15 +17161,6 @@ PvPLedgerLadderData.US.blitz = {
             rank = 638,
             wins = 17,
             losses = 16,
-            faction = "ALLIANCE",
-        },
-        ["aszesda-tichondrius"] = {
-            displayName = "Aszesda-tichondrius",
-            specKey = "MAGE_ARCANE",
-            rating = 576,
-            rank = 643,
-            wins = 2,
-            losses = 0,
             faction = "ALLIANCE",
         },
         ["aszharas-area52"] = {
@@ -156256,6 +156247,15 @@ PvPLedgerLadderData.US.blitz = {
             rank = 431,
             wins = 26,
             losses = 20,
+            faction = "ALLIANCE",
+        },
+        ["lilmager-tichondrius"] = {
+            displayName = "Lilmager-tichondrius",
+            specKey = "MAGE_ARCANE",
+            rating = 576,
+            rank = 643,
+            wins = 2,
+            losses = 0,
             faction = "ALLIANCE",
         },
         ["lilmoogician-stormrage"] = {
