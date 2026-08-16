@@ -3,8 +3,8 @@
 --- DO NOT EDIT MANUALLY.
 PVL_AppHelperPendingSnapshots = PVL_AppHelperPendingSnapshots or {}
 PVL_AppHelperSyncInfo = {
-    lastSync = 1786916713,
-    generatedAt = "2026-08-16T21:45:13Z",
+    lastSync = 1786917603,
+    generatedAt = "2026-08-16T22:00:03Z",
     region = "US",
     source = "collector",
 }
@@ -15,7 +15,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
     bracket = "arena2v2",
     season = 41,
     snapshotDate = "2026-08-16",
-    generatedAt = "2026-08-16T21:45:03Z",
+    generatedAt = "2026-08-16T21:59:52Z",
     source = "blizzard-api+seramate",
     overall = {
         listedCount = 1002,
@@ -9736,7 +9736,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
     bracket = "arena3v3",
     season = 41,
     snapshotDate = "2026-08-16",
-    generatedAt = "2026-08-16T21:45:12Z",
+    generatedAt = "2026-08-16T22:00:02Z",
     source = "blizzard-api+seramate",
     overall = {
         listedCount = 1002,
@@ -9867,9 +9867,9 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["MAGE"] = {
             listedCount = 98,
-            avgListedRating = 2820.1,
-            medianListedRating = 2743.0,
-            top100Avg = 2820.1,
+            avgListedRating = 2819.5,
+            medianListedRating = 2745,
+            top100Avg = 2819.5,
             highest = 3200,
             buckets = {
                 ["2600-2699"] = 27,
@@ -9976,9 +9976,9 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["WARRIOR"] = {
             listedCount = 78,
-            avgListedRating = 2771.2,
-            medianListedRating = 2731,
-            top100Avg = 2771.2,
+            avgListedRating = 2772.1,
+            medianListedRating = 2729.5,
+            top100Avg = 2772.1,
             highest = 3209,
             buckets = {
                 ["2600-2699"] = 29,
@@ -10185,14 +10185,14 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
             },
         },
         ["MAGE_ARCANE"] = {
-            listedCount = 13,
-            avgListedRating = 2757.7,
-            medianListedRating = 2712,
-            top100Avg = 2757.7,
+            listedCount = 14,
+            avgListedRating = 2754.1,
+            medianListedRating = 2710.0,
+            top100Avg = 2754.1,
             highest = 3144,
             buckets = {
                 ["2600-2699"] = 5,
-                ["2700-2799"] = 6,
+                ["2700-2799"] = 7,
                 ["2800-2899"] = 1,
                 ["3100-3199"] = 1,
             },
@@ -10214,14 +10214,14 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
             },
         },
         ["MAGE_FROST"] = {
-            listedCount = 66,
-            avgListedRating = 2813.2,
-            medianListedRating = 2743.0,
-            top100Avg = 2813.2,
+            listedCount = 65,
+            avgListedRating = 2814.8,
+            medianListedRating = 2745,
+            top100Avg = 2814.8,
             highest = 3146,
             buckets = {
                 ["2600-2699"] = 19,
-                ["2700-2799"] = 20,
+                ["2700-2799"] = 19,
                 ["2800-2899"] = 13,
                 ["2900-2999"] = 2,
                 ["3000-3099"] = 3,
@@ -10471,15 +10471,15 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
             },
         },
         ["WARRIOR_ARMS"] = {
-            listedCount = 63,
-            avgListedRating = 2836.6,
-            medianListedRating = 2731,
-            top100Avg = 2836.6,
+            listedCount = 62,
+            avgListedRating = 2836.8,
+            medianListedRating = 2729.5,
+            top100Avg = 2836.8,
             highest = 3209,
             buckets = {
                 ["2600-2699"] = 24,
                 ["2700-2799"] = 12,
-                ["2800-2899"] = 6,
+                ["2800-2899"] = 5,
                 ["2900-2999"] = 6,
                 ["3000-3099"] = 3,
                 ["3100-3199"] = 11,
@@ -10487,15 +10487,15 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
             },
         },
         ["WARRIOR_FURY"] = {
-            listedCount = 13,
-            avgListedRating = 2792.1,
-            medianListedRating = 2735,
-            top100Avg = 2792.1,
+            listedCount = 14,
+            avgListedRating = 2794.4,
+            medianListedRating = 2746.5,
+            top100Avg = 2794.4,
             highest = 3144,
             buckets = {
                 ["2600-2699"] = 4,
                 ["2700-2799"] = 4,
-                ["2800-2899"] = 3,
+                ["2800-2899"] = 4,
                 ["3100-3199"] = 2,
             },
         },
@@ -12890,7 +12890,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["fbk-sargeras"] = {
             displayName = "Fbk-sargeras",
-            specKey = "MAGE_FROST",
+            specKey = "MAGE_ARCANE",
             rating = 2708,
             rank = 664,
             wins = 236,
@@ -18713,7 +18713,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["wallee-nordrassil"] = {
             displayName = "Wallee-nordrassil",
-            specKey = "WARRIOR_ARMS",
+            specKey = "WARRIOR_FURY",
             rating = 2824,
             rank = 370,
             wins = 298,
@@ -19539,7 +19539,7 @@ PVL_AppHelperPendingSnapshots.blitz = {
     bracket = "blitz",
     season = 41,
     snapshotDate = "2026-08-16",
-    generatedAt = "2026-08-16T21:44:28Z",
+    generatedAt = "2026-08-16T21:58:59Z",
     source = "blizzard-api",
     overall = {
         listedCount = 37714,
@@ -334244,7 +334244,7 @@ PVL_AppHelperPendingSnapshots.rbg = {
     bracket = "rbg",
     season = 41,
     snapshotDate = "2026-08-16",
-    generatedAt = "2026-08-16T21:44:54Z",
+    generatedAt = "2026-08-16T21:59:40Z",
     source = "blizzard-api+seramate",
     overall = {
         listedCount = 1002,
@@ -344141,7 +344141,7 @@ PVL_AppHelperPendingSnapshots.shuffle = {
     bracket = "shuffle",
     season = 41,
     snapshotDate = "2026-08-16",
-    generatedAt = "2026-08-16T21:44:43Z",
+    generatedAt = "2026-08-16T21:59:28Z",
     source = "blizzard-api",
     overall = {
         listedCount = 38234,
