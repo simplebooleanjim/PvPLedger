@@ -7,7 +7,7 @@ PvPLedgerLadderData.US.blitz = {
     bracket = "blitz",
     season = 41,
     snapshotDate = "2026-08-16",
-    generatedAt = "2026-08-16T01:16:46Z",
+    generatedAt = "2026-08-16T02:42:19Z",
     source = "blizzard-api",
     overall = {
         listedCount = 37714,
@@ -69,7 +69,7 @@ PvPLedgerLadderData.US.blitz = {
             ["800-899"] = 751,
             ["900-999"] = 28,
         },
-        ratedPopulation = 86713,
+        ratedPopulation = 86712,
         titleCutoffs = {
             {
                 pct = 0.1,
@@ -844,7 +844,7 @@ PvPLedgerLadderData.US.blitz = {
                 },
             },
             ["ROGUE_SUBTLETY"] = {
-                population = 4496,
+                population = 4495,
                 cutoffs = {
                     {
                         pct = 0.1,
@@ -10566,8 +10566,8 @@ PvPLedgerLadderData.US.blitz = {
             losses = 42,
             faction = "HORDE",
         },
-        ["anakìn-thunderlord"] = {
-            displayName = "Anakìn-thunderlord",
+        ["anakiñ-skywall"] = {
+            displayName = "Anakiñ-skywall",
             specKey = "DEMONHUNTER_DEVOURER",
             rating = 3039,
             rank = 23,
@@ -61929,8 +61929,8 @@ PvPLedgerLadderData.US.blitz = {
             losses = 27,
             faction = "ALLIANCE",
         },
-        ["deathwwing-azralon"] = {
-            displayName = "Deathwwing-azralon",
+        ["deathwwing-area52"] = {
+            displayName = "Deathwwing-area-52",
             specKey = "EVOKER_DEVASTATION",
             rating = 1743,
             rank = 530,
@@ -73316,11 +73316,11 @@ PvPLedgerLadderData.US.blitz = {
         },
         ["dreta-stormrage"] = {
             displayName = "Dreta-stormrage",
-            specKey = "WARRIOR_FURY",
-            rating = 2399,
-            rank = 126,
-            wins = 57,
-            losses = 47,
+            specKey = "MAGE_ARCANE",
+            rating = 1670,
+            rank = 281,
+            wins = 9,
+            losses = 6,
             faction = "ALLIANCE",
         },
         ["drettoc-tichondrius"] = {
@@ -215991,6 +215991,15 @@ PvPLedgerLadderData.US.blitz = {
             losses = 74,
             faction = "ALLIANCE",
         },
+        ["rayeh-stormrage"] = {
+            displayName = "Rayeh-stormrage",
+            specKey = "WARRIOR_FURY",
+            rating = 2399,
+            rank = 126,
+            wins = 57,
+            losses = 47,
+            faction = "ALLIANCE",
+        },
         ["rayfkdme-barthilas"] = {
             displayName = "Rayfkdme-barthilas",
             specKey = "MAGE_FROST",
@@ -218211,15 +218220,6 @@ PvPLedgerLadderData.US.blitz = {
             rating = 1708,
             rank = 665,
             wins = 8,
-            losses = 6,
-            faction = "ALLIANCE",
-        },
-        ["rendreta-stormrage"] = {
-            displayName = "Rendreta-stormrage",
-            specKey = "MAGE_ARCANE",
-            rating = 1670,
-            rank = 281,
-            wins = 9,
             losses = 6,
             faction = "ALLIANCE",
         },
@@ -311409,8 +311409,8 @@ PvPLedgerLadderData.US.blitz = {
             losses = 15,
             faction = "ALLIANCE",
         },
-        ["änakin-thunderlord"] = {
-            displayName = "Änakin-thunderlord",
+        ["änakin-skywall"] = {
+            displayName = "Änakin-skywall",
             specKey = "DEMONHUNTER_DEVOURER",
             rating = 1926,
             rank = 588,

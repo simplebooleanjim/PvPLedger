@@ -7,7 +7,7 @@ PvPLedgerLadderData.US.shuffle = {
     bracket = "shuffle",
     season = 41,
     snapshotDate = "2026-08-16",
-    generatedAt = "2026-08-16T01:17:18Z",
+    generatedAt = "2026-08-16T02:42:44Z",
     source = "blizzard-api",
     overall = {
         listedCount = 38237,
@@ -67,7 +67,7 @@ PvPLedgerLadderData.US.shuffle = {
             ["800-899"] = 133,
             ["900-999"] = 136,
         },
-        ratedPopulation = 137168,
+        ratedPopulation = 137167,
         titleCutoffs = {
             {
                 pct = 0.1,
@@ -1042,7 +1042,7 @@ PvPLedgerLadderData.US.shuffle = {
                 },
             },
             ["WARRIOR_FURY"] = {
-                population = 4855,
+                population = 4854,
                 cutoffs = {
                     {
                         pct = 0.1,
@@ -5713,6 +5713,15 @@ PvPLedgerLadderData.US.shuffle = {
             losses = 354,
             faction = "HORDE",
         },
+        ["airiha-stormrage"] = {
+            displayName = "Airiha-stormrage",
+            specKey = "DEMONHUNTER_HAVOC",
+            rating = 2243,
+            rank = 841,
+            wins = 426,
+            losses = 403,
+            faction = "ALLIANCE",
+        },
         ["airjumper-tichondrius"] = {
             displayName = "Airjumper-tichondrius",
             specKey = "DEMONHUNTER_HAVOC",
@@ -9142,8 +9151,8 @@ PvPLedgerLadderData.US.shuffle = {
             losses = 7,
             faction = "HORDE",
         },
-        ["anakìn-thunderlord"] = {
-            displayName = "Anakìn-thunderlord",
+        ["anakiñ-skywall"] = {
+            displayName = "Anakiñ-skywall",
             specKey = "DEMONHUNTER_DEVOURER",
             rating = 2704,
             rank = 145,
@@ -16538,15 +16547,6 @@ PvPLedgerLadderData.US.shuffle = {
             rank = 308,
             wins = 259,
             losses = 244,
-            faction = "ALLIANCE",
-        },
-        ["awz-frostmane"] = {
-            displayName = "Awz-frostmane",
-            specKey = "DEMONHUNTER_HAVOC",
-            rating = 2243,
-            rank = 841,
-            wins = 426,
-            losses = 403,
             faction = "ALLIANCE",
         },
         ["awârz-drakkari"] = {
@@ -69786,11 +69786,11 @@ PvPLedgerLadderData.US.shuffle = {
         },
         ["dreta-stormrage"] = {
             displayName = "Dreta-stormrage",
-            specKey = "WARRIOR_FURY",
-            rating = 2258,
-            rank = 478,
-            wins = 163,
-            losses = 159,
+            specKey = "MAGE_ARCANE",
+            rating = 976,
+            rank = 940,
+            wins = 11,
+            losses = 20,
             faction = "ALLIANCE",
         },
         ["drethz-area52"] = {
@@ -78665,15 +78665,6 @@ PvPLedgerLadderData.US.shuffle = {
             rank = 171,
             wins = 120,
             losses = 82,
-            faction = "ALLIANCE",
-        },
-        ["enjoy-frostmourne"] = {
-            displayName = "Enjoy-frostmourne",
-            specKey = "HUNTER_SURVIVAL",
-            rating = 2312,
-            rank = 441,
-            wins = 62,
-            losses = 58,
             faction = "ALLIANCE",
         },
         ["enjyn-malganis"] = {
@@ -148210,6 +148201,15 @@ PvPLedgerLadderData.US.shuffle = {
             losses = 111,
             faction = "ALLIANCE",
         },
+        ["leechgodx-moonguard"] = {
+            displayName = "Leechgodx-moon-guard",
+            specKey = "DEMONHUNTER_HAVOC",
+            rating = 2202,
+            rank = 935,
+            wins = 178,
+            losses = 171,
+            faction = "HORDE",
+        },
         ["leegmä-stormrage"] = {
             displayName = "Leegmä-stormrage",
             specKey = "DEATHKNIGHT_UNHOLY",
@@ -149342,6 +149342,15 @@ PvPLedgerLadderData.US.shuffle = {
             rank = 166,
             wins = 62,
             losses = 40,
+            faction = "ALLIANCE",
+        },
+        ["lesson-frostmourne"] = {
+            displayName = "Lesson-frostmourne",
+            specKey = "HUNTER_SURVIVAL",
+            rating = 2312,
+            rank = 441,
+            wins = 62,
+            losses = 58,
             faction = "ALLIANCE",
         },
         ["lesteroaks-mannoroth"] = {
@@ -208960,6 +208969,15 @@ PvPLedgerLadderData.US.shuffle = {
             losses = 19,
             faction = "ALLIANCE",
         },
+        ["rayeh-stormrage"] = {
+            displayName = "Rayeh-stormrage",
+            specKey = "WARRIOR_FURY",
+            rating = 2258,
+            rank = 478,
+            wins = 163,
+            losses = 159,
+            faction = "ALLIANCE",
+        },
         ["rayflex-area52"] = {
             displayName = "Rayflex-area-52",
             specKey = "PALADIN_RETRIBUTION",
@@ -211119,15 +211137,6 @@ PvPLedgerLadderData.US.shuffle = {
             wins = 706,
             losses = 723,
             faction = "HORDE",
-        },
-        ["rendreta-stormrage"] = {
-            displayName = "Rendreta-stormrage",
-            specKey = "MAGE_ARCANE",
-            rating = 976,
-            rank = 940,
-            wins = 11,
-            losses = 20,
-            faction = "ALLIANCE",
         },
         ["rendstefani-tichondrius"] = {
             displayName = "Rendstefani-tichondrius",
@@ -290463,15 +290472,6 @@ PvPLedgerLadderData.US.shuffle = {
             wins = 72,
             losses = 36,
             faction = "ALLIANCE",
-        },
-        ["yeskingg-moonguard"] = {
-            displayName = "Yeskingg-moon-guard",
-            specKey = "DEMONHUNTER_HAVOC",
-            rating = 2202,
-            rank = 935,
-            wins = 178,
-            losses = 171,
-            faction = "HORDE",
         },
         ["yesmans-tichondrius"] = {
             displayName = "Yesmans-tichondrius",
