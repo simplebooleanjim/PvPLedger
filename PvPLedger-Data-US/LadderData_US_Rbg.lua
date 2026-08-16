@@ -7,7 +7,7 @@ PvPLedgerLadderData.US.rbg = {
     bracket = "rbg",
     season = 41,
     snapshotDate = "2026-08-16",
-    generatedAt = "2026-08-16T23:19:41Z",
+    generatedAt = "2026-08-16T23:45:13Z",
     source = "blizzard-api+seramate",
     overall = {
         listedCount = 1002,
@@ -282,9 +282,9 @@ PvPLedgerLadderData.US.rbg = {
         },
         ["WARRIOR"] = {
             listedCount = 56,
-            avgListedRating = 2082.4,
+            avgListedRating = 2080.2,
             medianListedRating = 2041.5,
-            top100Avg = 2082.4,
+            top100Avg = 2080.2,
             highest = 2794,
             buckets = {
                 ["1800-1899"] = 14,
@@ -832,10 +832,10 @@ PvPLedgerLadderData.US.rbg = {
             },
         },
         ["WARRIOR_ARMS"] = {
-            listedCount = 31,
-            avgListedRating = 2086.3,
-            medianListedRating = 2049,
-            top100Avg = 2086.3,
+            listedCount = 32,
+            avgListedRating = 2103.8,
+            medianListedRating = 2059.5,
+            top100Avg = 2103.8,
             highest = 2700,
             buckets = {
                 ["1800-1899"] = 7,
@@ -845,14 +845,15 @@ PvPLedgerLadderData.US.rbg = {
                 ["2200-2299"] = 4,
                 ["2300-2399"] = 3,
                 ["2500-2599"] = 1,
+                ["2600-2699"] = 1,
                 ["2700-2799"] = 1,
             },
         },
         ["WARRIOR_FURY"] = {
-            listedCount = 23,
-            avgListedRating = 2119.3,
-            medianListedRating = 2021,
-            top100Avg = 2119.3,
+            listedCount = 22,
+            avgListedRating = 2095.4,
+            medianListedRating = 2015.0,
+            top100Avg = 2095.4,
             highest = 2794,
             buckets = {
                 ["1800-1899"] = 7,
@@ -861,7 +862,6 @@ PvPLedgerLadderData.US.rbg = {
                 ["2100-2199"] = 5,
                 ["2400-2499"] = 2,
                 ["2500-2599"] = 1,
-                ["2600-2699"] = 1,
                 ["2700-2799"] = 1,
             },
         },
@@ -7890,7 +7890,7 @@ PvPLedgerLadderData.US.rbg = {
         },
         ["shîntâ-ragnaros"] = {
             displayName = "Shîntâ-ragnaros",
-            specKey = "WARRIOR_FURY",
+            specKey = "WARRIOR_ARMS",
             rating = 2645,
             rank = 25,
             wins = 161,

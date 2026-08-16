@@ -1,13 +1,13 @@
 {
   "region": "US",
   "generatedDate": "2026-08-16",
-  "generatedAt": "2026-08-16T23:19:58Z",
+  "generatedAt": "2026-08-16T23:45:39Z",
   "brackets": {
     "blitz": {
       "snapshotId": "us-blitz-s41-2026-08-16",
       "source": "blizzard-api",
       "season": 41,
-      "listedPlayers": 37714,
+      "listedPlayers": 37713,
       "file": "LadderData_US_Blitz.lua"
     },
     "shuffle": {
