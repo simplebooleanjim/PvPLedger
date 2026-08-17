@@ -7,7 +7,7 @@ PvPLedgerLadderData.US.shuffle = {
     bracket = "shuffle",
     season = 41,
     snapshotDate = "2026-08-17",
-    generatedAt = "2026-08-17T22:50:53Z",
+    generatedAt = "2026-08-17T23:21:58Z",
     source = "blizzard-api",
     overall = {
         listedCount = 38232,
@@ -67,7 +67,7 @@ PvPLedgerLadderData.US.shuffle = {
             ["800-899"] = 133,
             ["900-999"] = 136,
         },
-        ratedPopulation = 137182,
+        ratedPopulation = 137183,
         titleCutoffs = {
             {
                 pct = 0.1,
@@ -117,7 +117,7 @@ PvPLedgerLadderData.US.shuffle = {
                 },
             },
             ["DEATHKNIGHT_FROST"] = {
-                population = 3473,
+                population = 3474,
                 cutoffs = {
                     {
                         pct = 0.1,
@@ -22478,15 +22478,6 @@ PvPLedgerLadderData.US.shuffle = {
             rank = 183,
             wins = 79,
             losses = 77,
-            faction = "HORDE",
-        },
-        ["beeftko-nerzhul"] = {
-            displayName = "Beeftko-nerzhul",
-            specKey = "WARRIOR_FURY",
-            rating = 2939,
-            rank = 27,
-            wins = 231,
-            losses = 195,
             faction = "HORDE",
         },
         ["beeftown-emeralddream"] = {
@@ -79288,15 +79279,6 @@ PvPLedgerLadderData.US.shuffle = {
             losses = 125,
             faction = "ALLIANCE",
         },
-        ["epspeenislan-zuljin"] = {
-            displayName = "Epspeenislan-zuljin",
-            specKey = "ROGUE_ASSASSINATION",
-            rating = 2335,
-            rank = 711,
-            wins = 113,
-            losses = 104,
-            faction = "ALLIANCE",
-        },
         ["epstelnfiles-sargeras"] = {
             displayName = "Epstelnfiles-sargeras",
             specKey = "HUNTER_MARKSMANSHIP",
@@ -122226,6 +122208,15 @@ PvPLedgerLadderData.US.shuffle = {
             wins = 24,
             losses = 18,
             faction = "HORDE",
+        },
+        ["invisipeen-zuljin"] = {
+            displayName = "Invisipeen-zuljin",
+            specKey = "ROGUE_ASSASSINATION",
+            rating = 2335,
+            rank = 711,
+            wins = 113,
+            losses = 104,
+            faction = "ALLIANCE",
         },
         ["invorker-frostmourne"] = {
             displayName = "Invorker-frostmourne",
@@ -193777,8 +193768,8 @@ PvPLedgerLadderData.US.shuffle = {
             losses = 36,
             faction = "ALLIANCE",
         },
-        ["pdrk-stormrage"] = {
-            displayName = "Pdrk-stormrage",
+        ["pdrblast-stormrage"] = {
+            displayName = "Pdrblast-stormrage",
             specKey = "WARRIOR_ARMS",
             rating = 2475,
             rank = 594,
@@ -220497,6 +220488,15 @@ PvPLedgerLadderData.US.shuffle = {
             wins = 259,
             losses = 249,
             faction = "ALLIANCE",
+        },
+        ["saladtko-nerzhul"] = {
+            displayName = "Saladtko-nerzhul",
+            specKey = "WARRIOR_FURY",
+            rating = 2939,
+            rank = 27,
+            wins = 231,
+            losses = 195,
+            faction = "HORDE",
         },
         ["salamander-hyjal"] = {
             displayName = "Salamander-hyjal",
