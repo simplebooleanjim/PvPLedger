@@ -7,7 +7,7 @@ PvPLedgerLadderData.US.shuffle = {
     bracket = "shuffle",
     season = 41,
     snapshotDate = "2026-08-17",
-    generatedAt = "2026-08-17T04:44:48Z",
+    generatedAt = "2026-08-17T05:22:31Z",
     source = "blizzard-api",
     overall = {
         listedCount = 38233,
@@ -67,7 +67,7 @@ PvPLedgerLadderData.US.shuffle = {
             ["800-899"] = 133,
             ["900-999"] = 136,
         },
-        ratedPopulation = 137182,
+        ratedPopulation = 137181,
         titleCutoffs = {
             {
                 pct = 0.1,
@@ -267,7 +267,7 @@ PvPLedgerLadderData.US.shuffle = {
                 },
             },
             ["DRUID_FERAL"] = {
-                population = 3524,
+                population = 3523,
                 cutoffs = {
                     {
                         pct = 0.1,
@@ -592,7 +592,7 @@ PvPLedgerLadderData.US.shuffle = {
                 },
             },
             ["MONK_MISTWEAVER"] = {
-                population = 5004,
+                population = 5003,
                 cutoffs = {
                     {
                         pct = 0.1,
@@ -642,7 +642,7 @@ PvPLedgerLadderData.US.shuffle = {
                 },
             },
             ["PALADIN_HOLY"] = {
-                population = 5006,
+                population = 5007,
                 cutoffs = {
                     {
                         pct = 0.1,
@@ -717,7 +717,7 @@ PvPLedgerLadderData.US.shuffle = {
                 },
             },
             ["PRIEST_DISCIPLINE"] = {
-                population = 5001,
+                population = 5000,
                 cutoffs = {
                     {
                         pct = 0.1,
@@ -726,18 +726,18 @@ PvPLedgerLadderData.US.shuffle = {
                     },
                     {
                         pct = 0.5,
-                        rank = 26,
-                        rating = 3144,
+                        rank = 25,
+                        rating = 3147,
                     },
                     {
                         pct = 1.0,
-                        rank = 51,
-                        rating = 3054,
+                        rank = 50,
+                        rating = 3056,
                     },
                     {
                         pct = 3.0,
-                        rank = 151,
-                        rating = 2822,
+                        rank = 150,
+                        rating = 2823,
                     },
                 },
             },
@@ -1017,7 +1017,7 @@ PvPLedgerLadderData.US.shuffle = {
                 },
             },
             ["WARRIOR_ARMS"] = {
-                population = 5005,
+                population = 5006,
                 cutoffs = {
                     {
                         pct = 0.1,
@@ -22649,15 +22649,6 @@ PvPLedgerLadderData.US.shuffle = {
             rank = 758,
             wins = 2,
             losses = 4,
-            faction = "HORDE",
-        },
-        ["bees-steamwheedlecartel"] = {
-            displayName = "Bees-steamwheedle-cartel",
-            specKey = "HUNTER_BEASTMASTERY",
-            rating = 2469,
-            rank = 668,
-            wins = 90,
-            losses = 76,
             faction = "HORDE",
         },
         ["beestwithin-illidan"] = {
@@ -51127,15 +51118,6 @@ PvPLedgerLadderData.US.shuffle = {
             losses = 114,
             faction = "ALLIANCE",
         },
-        ["croaker-kultiras"] = {
-            displayName = "Croaker-kul-tiras",
-            specKey = "SHAMAN_ELEMENTAL",
-            rating = 2324,
-            rank = 514,
-            wins = 93,
-            losses = 81,
-            faction = "ALLIANCE",
-        },
         ["croces-daggerspine"] = {
             displayName = "Croces-daggerspine",
             specKey = "DEMONHUNTER_DEVOURER",
@@ -61620,6 +61602,15 @@ PvPLedgerLadderData.US.shuffle = {
             wins = 89,
             losses = 93,
             faction = "ALLIANCE",
+        },
+        ["dhaxu-tichondrius"] = {
+            displayName = "Dhaxu-tichondrius",
+            specKey = "DEATHKNIGHT_FROST",
+            rating = 2119,
+            rank = 663,
+            wins = 43,
+            losses = 35,
+            faction = "HORDE",
         },
         ["dhezz-goldrinn"] = {
             displayName = "Dhezz-goldrinn",
@@ -72518,6 +72509,15 @@ PvPLedgerLadderData.US.shuffle = {
             rank = 116,
             wins = 57,
             losses = 38,
+            faction = "ALLIANCE",
+        },
+        ["dundermann-kultiras"] = {
+            displayName = "Dundermann-kul-tiras",
+            specKey = "SHAMAN_ELEMENTAL",
+            rating = 2324,
+            rank = 514,
+            wins = 93,
+            losses = 81,
             faction = "ALLIANCE",
         },
         ["dundundance-tichondrius"] = {
@@ -86963,15 +86963,6 @@ PvPLedgerLadderData.US.shuffle = {
             rank = 967,
             wins = 249,
             losses = 246,
-            faction = "HORDE",
-        },
-        ["firrestarter-barthilas"] = {
-            displayName = "Firrestarter-barthilas",
-            specKey = "MAGE_FIRE",
-            rating = 2081,
-            rank = 489,
-            wins = 40,
-            losses = 33,
             faction = "HORDE",
         },
         ["fisaran-moonguard"] = {
@@ -149398,6 +149389,15 @@ PvPLedgerLadderData.US.shuffle = {
             losses = 14,
             faction = "HORDE",
         },
+        ["letsaim-steamwheedlecartel"] = {
+            displayName = "Letsaim-steamwheedle-cartel",
+            specKey = "HUNTER_BEASTMASTERY",
+            rating = 2469,
+            rank = 668,
+            wins = 90,
+            losses = 76,
+            faction = "HORDE",
+        },
         ["letsbefriend-nagrand"] = {
             displayName = "Letsbefriend-nagrand",
             specKey = "WARRIOR_FURY",
@@ -167002,8 +167002,8 @@ PvPLedgerLadderData.US.shuffle = {
             losses = 10,
             faction = "HORDE",
         },
-        ["mikoxboomy-area52"] = {
-            displayName = "Mikoxboomy-area-52",
+        ["mikoxaflopin-area52"] = {
+            displayName = "Mikoxaflopin-area-52",
             specKey = "DRUID_BALANCE",
             rating = 2005,
             rank = 788,
@@ -187306,6 +187306,15 @@ PvPLedgerLadderData.US.shuffle = {
             losses = 492,
             faction = "ALLIANCE",
         },
+        ["oldkent-barthilas"] = {
+            displayName = "Oldkent-barthilas",
+            specKey = "MAGE_FIRE",
+            rating = 2081,
+            rank = 489,
+            wins = 40,
+            losses = 33,
+            faction = "HORDE",
+        },
         ["oldmanboomer-saurfang"] = {
             displayName = "Oldmanboomer-saurfang",
             specKey = "DRUID_GUARDIAN",
@@ -200075,6 +200084,15 @@ PvPLedgerLadderData.US.shuffle = {
             rank = 518,
             wins = 153,
             losses = 136,
+            faction = "ALLIANCE",
+        },
+        ["prana-tichondrius"] = {
+            displayName = "Prana-tichondrius",
+            specKey = "MONK_WINDWALKER",
+            rating = 2555,
+            rank = 244,
+            wins = 154,
+            losses = 138,
             faction = "ALLIANCE",
         },
         ["prank-area52"] = {
@@ -250918,15 +250936,6 @@ PvPLedgerLadderData.US.shuffle = {
             losses = 355,
             faction = "HORDE",
         },
-        ["sínsayer-tichondrius"] = {
-            displayName = "Sínsayer-tichondrius",
-            specKey = "MONK_WINDWALKER",
-            rating = 2555,
-            rank = 244,
-            wins = 154,
-            losses = 138,
-            faction = "ALLIANCE",
-        },
         ["sísíum-quelthalas"] = {
             displayName = "Sísíum-quelthalas",
             specKey = "PRIEST_HOLY",
@@ -255012,15 +255021,6 @@ PvPLedgerLadderData.US.shuffle = {
             wins = 394,
             losses = 343,
             faction = "ALLIANCE",
-        },
-        ["terask-ragnaros"] = {
-            displayName = "Terask-ragnaros",
-            specKey = "DEATHKNIGHT_FROST",
-            rating = 2119,
-            rank = 663,
-            wins = 43,
-            losses = 35,
-            faction = "HORDE",
         },
         ["terebor-tichondrius"] = {
             displayName = "Terebor-tichondrius",
