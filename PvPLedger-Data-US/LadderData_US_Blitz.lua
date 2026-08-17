@@ -7,7 +7,7 @@ PvPLedgerLadderData.US.blitz = {
     bracket = "blitz",
     season = 41,
     snapshotDate = "2026-08-17",
-    generatedAt = "2026-08-17T11:02:27Z",
+    generatedAt = "2026-08-17T11:40:41Z",
     source = "blizzard-api",
     overall = {
         listedCount = 37711,
@@ -69,7 +69,7 @@ PvPLedgerLadderData.US.blitz = {
             ["800-899"] = 752,
             ["900-999"] = 28,
         },
-        ratedPopulation = 86717,
+        ratedPopulation = 86716,
         titleCutoffs = {
             {
                 pct = 0.1,
@@ -694,7 +694,7 @@ PvPLedgerLadderData.US.blitz = {
                 },
             },
             ["PALADIN_RETRIBUTION"] = {
-                population = 5005,
+                population = 5004,
                 cutoffs = {
                     {
                         pct = 0.1,
@@ -224667,15 +224667,6 @@ PvPLedgerLadderData.US.blitz = {
             losses = 23,
             faction = "ALLIANCE",
         },
-        ["rumchaser-wyrmrestaccord"] = {
-            displayName = "Rumchaser-wyrmrest-accord",
-            specKey = "DRUID_GUARDIAN",
-            rating = 1956,
-            rank = 161,
-            wins = 14,
-            losses = 5,
-            faction = "ALLIANCE",
-        },
         ["rumcole-coilfang"] = {
             displayName = "Rumcole-coilfang",
             specKey = "MAGE_FIRE",
@@ -243718,6 +243709,15 @@ PvPLedgerLadderData.US.blitz = {
             rank = 2,
             wins = 160,
             losses = 109,
+            faction = "ALLIANCE",
+        },
+        ["sloejin-wyrmrestaccord"] = {
+            displayName = "Sloejin-wyrmrest-accord",
+            specKey = "DRUID_GUARDIAN",
+            rating = 1956,
+            rank = 161,
+            wins = 14,
+            losses = 5,
             faction = "ALLIANCE",
         },
         ["sloggy-tichondrius"] = {
