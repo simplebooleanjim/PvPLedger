@@ -3,8 +3,8 @@
 --- DO NOT EDIT MANUALLY.
 PVL_AppHelperPendingSnapshots = PVL_AppHelperPendingSnapshots or {}
 PVL_AppHelperSyncInfo = {
-    lastSync = 1786989511,
-    generatedAt = "2026-08-17T17:58:31Z",
+    lastSync = 1786992282,
+    generatedAt = "2026-08-17T18:44:42Z",
     region = "US",
     source = "collector",
 }
@@ -15,7 +15,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
     bracket = "arena2v2",
     season = 41,
     snapshotDate = "2026-08-17",
-    generatedAt = "2026-08-17T17:58:17Z",
+    generatedAt = "2026-08-17T18:44:30Z",
     source = "blizzard-api+seramate",
     overall = {
         listedCount = 1002,
@@ -9735,7 +9735,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
     bracket = "arena3v3",
     season = 41,
     snapshotDate = "2026-08-17",
-    generatedAt = "2026-08-17T17:58:30Z",
+    generatedAt = "2026-08-17T18:44:40Z",
     source = "blizzard-api+seramate",
     overall = {
         listedCount = 1002,
@@ -9820,16 +9820,16 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
             },
         },
         ["DRUID"] = {
-            listedCount = 92,
-            avgListedRating = 2801.8,
+            listedCount = 91,
+            avgListedRating = 2801.4,
             medianListedRating = 2781.8,
-            top100Avg = 2801.8,
+            top100Avg = 2801.4,
             highest = 3193,
             buckets = {
                 ["2600-2699"] = 22,
                 ["2700-2799"] = 22,
                 ["2800-2899"] = 17,
-                ["2900-2999"] = 7,
+                ["2900-2999"] = 6,
                 ["3000-3099"] = 4,
                 ["3100-3199"] = 20,
             },
@@ -9850,13 +9850,13 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
             },
         },
         ["HUNTER"] = {
-            listedCount = 53,
-            avgListedRating = 2825.1,
-            medianListedRating = 2783,
-            top100Avg = 2825.1,
+            listedCount = 54,
+            avgListedRating = 2823.1,
+            medianListedRating = 2762,
+            top100Avg = 2823.1,
             highest = 3145,
             buckets = {
-                ["2600-2699"] = 12,
+                ["2600-2699"] = 13,
                 ["2700-2799"] = 18,
                 ["2800-2899"] = 7,
                 ["2900-2999"] = 4,
@@ -10101,16 +10101,16 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
             },
         },
         ["DRUID_RESTORATION"] = {
-            listedCount = 43,
-            avgListedRating = 2864.3,
-            medianListedRating = 2826,
-            top100Avg = 2864.3,
+            listedCount = 42,
+            avgListedRating = 2862.9,
+            medianListedRating = 2824.0,
+            top100Avg = 2862.9,
             highest = 3193,
             buckets = {
                 ["2600-2699"] = 9,
                 ["2700-2799"] = 7,
                 ["2800-2899"] = 13,
-                ["2900-2999"] = 4,
+                ["2900-2999"] = 3,
                 ["3000-3099"] = 2,
                 ["3100-3199"] = 8,
             },
@@ -10156,13 +10156,13 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
             },
         },
         ["HUNTER_MARKSMANSHIP"] = {
-            listedCount = 32,
-            avgListedRating = 2849.3,
-            medianListedRating = 2788.0,
-            top100Avg = 2849.3,
+            listedCount = 33,
+            avgListedRating = 2843.1,
+            medianListedRating = 2762,
+            top100Avg = 2843.1,
             highest = 3144,
             buckets = {
-                ["2600-2699"] = 8,
+                ["2600-2699"] = 9,
                 ["2700-2799"] = 8,
                 ["2800-2899"] = 4,
                 ["2900-2999"] = 4,
@@ -13529,7 +13529,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["habibieu-area52"] = {
             displayName = "Habibieu-area-52",
-            specKey = "DRUID_RESTORATION",
+            specKey = "",
             rating = 2924,
             rank = 249,
             wins = 233,
@@ -15968,7 +15968,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["paradiseone-stormrage"] = {
             displayName = "Paradiseone-stormrage",
-            specKey = "",
+            specKey = "HUNTER_MARKSMANSHIP",
             rating = 2642,
             rank = 986,
             wins = 291,
@@ -19539,7 +19539,7 @@ PVL_AppHelperPendingSnapshots.blitz = {
     bracket = "blitz",
     season = 41,
     snapshotDate = "2026-08-17",
-    generatedAt = "2026-08-17T17:57:12Z",
+    generatedAt = "2026-08-17T18:43:38Z",
     source = "blizzard-api",
     overall = {
         listedCount = 37711,
@@ -334208,7 +334208,7 @@ PVL_AppHelperPendingSnapshots.rbg = {
     bracket = "rbg",
     season = 41,
     snapshotDate = "2026-08-17",
-    generatedAt = "2026-08-17T17:58:04Z",
+    generatedAt = "2026-08-17T18:44:19Z",
     source = "blizzard-api+seramate",
     overall = {
         listedCount = 1002,
@@ -344105,7 +344105,7 @@ PVL_AppHelperPendingSnapshots.shuffle = {
     bracket = "shuffle",
     season = 41,
     snapshotDate = "2026-08-17",
-    generatedAt = "2026-08-17T17:57:50Z",
+    generatedAt = "2026-08-17T18:44:07Z",
     source = "blizzard-api",
     overall = {
         listedCount = 38231,
