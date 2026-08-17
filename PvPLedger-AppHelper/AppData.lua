@@ -3,8 +3,8 @@
 --- DO NOT EDIT MANUALLY.
 PVL_AppHelperPendingSnapshots = PVL_AppHelperPendingSnapshots or {}
 PVL_AppHelperSyncInfo = {
-    lastSync = 1786924836,
-    generatedAt = "2026-08-17T00:00:36Z",
+    lastSync = 1786931416,
+    generatedAt = "2026-08-17T01:50:16Z",
     region = "US",
     source = "collector",
 }
@@ -15,7 +15,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
     bracket = "arena2v2",
     season = 41,
     snapshotDate = "2026-08-17",
-    generatedAt = "2026-08-17T00:00:26Z",
+    generatedAt = "2026-08-17T01:50:04Z",
     source = "blizzard-api+seramate",
     overall = {
         listedCount = 1002,
@@ -9736,7 +9736,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
     bracket = "arena3v3",
     season = 41,
     snapshotDate = "2026-08-17",
-    generatedAt = "2026-08-17T00:00:35Z",
+    generatedAt = "2026-08-17T01:50:15Z",
     source = "blizzard-api+seramate",
     overall = {
         listedCount = 1002,
@@ -19534,12 +19534,12 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
 }
 
 PVL_AppHelperPendingSnapshots.blitz = {
-    snapshotId = "us-blitz-s41-2026-08-16",
+    snapshotId = "us-blitz-s41-2026-08-17",
     region = "US",
     bracket = "blitz",
     season = 41,
-    snapshotDate = "2026-08-16",
-    generatedAt = "2026-08-16T23:59:32Z",
+    snapshotDate = "2026-08-17",
+    generatedAt = "2026-08-17T01:49:12Z",
     source = "blizzard-api",
     overall = {
         listedCount = 37713,
@@ -334235,7 +334235,7 @@ PVL_AppHelperPendingSnapshots.rbg = {
     bracket = "rbg",
     season = 41,
     snapshotDate = "2026-08-17",
-    generatedAt = "2026-08-17T00:00:17Z",
+    generatedAt = "2026-08-17T01:49:53Z",
     source = "blizzard-api+seramate",
     overall = {
         listedCount = 1002,
@@ -334458,9 +334458,9 @@ PVL_AppHelperPendingSnapshots.rbg = {
         },
         ["ROGUE"] = {
             listedCount = 88,
-            avgListedRating = 2121.1,
-            medianListedRating = 2110.5,
-            top100Avg = 2121.1,
+            avgListedRating = 2173.7,
+            medianListedRating = 2084,
+            top100Avg = 2173.7,
             highest = 2848,
             buckets = {
                 ["1800-1899"] = 15,
@@ -334941,11 +334941,11 @@ PVL_AppHelperPendingSnapshots.rbg = {
             },
         },
         ["ROGUE_ASSASSINATION"] = {
-            listedCount = 22,
-            avgListedRating = 2153.2,
-            medianListedRating = 2110.5,
-            top100Avg = 2153.2,
-            highest = 2848,
+            listedCount = 21,
+            avgListedRating = 2120.1,
+            medianListedRating = 2083,
+            top100Avg = 2120.1,
+            highest = 2609,
             buckets = {
                 ["1800-1899"] = 4,
                 ["1900-1999"] = 1,
@@ -334955,19 +334955,19 @@ PVL_AppHelperPendingSnapshots.rbg = {
                 ["2300-2399"] = 1,
                 ["2400-2499"] = 1,
                 ["2600-2699"] = 1,
-                ["2800-2899"] = 1,
             },
         },
         ["ROGUE_OUTLAW"] = {
-            listedCount = 3,
-            avgListedRating = 2084,
-            medianListedRating = 2127,
-            top100Avg = 2084,
-            highest = 2277,
+            listedCount = 4,
+            avgListedRating = 2275,
+            medianListedRating = 2202.0,
+            top100Avg = 2275,
+            highest = 2848,
             buckets = {
                 ["1800-1899"] = 1,
                 ["2100-2199"] = 1,
                 ["2200-2299"] = 1,
+                ["2800-2899"] = 1,
             },
         },
         ["ROGUE_SUBTLETY"] = {
@@ -344089,7 +344089,7 @@ PVL_AppHelperPendingSnapshots.rbg = {
         },
         ["ñìghtmare-kelthuzad"] = {
             displayName = "Ñìghtmare-kelthuzad",
-            specKey = "ROGUE_ASSASSINATION",
+            specKey = "ROGUE_OUTLAW",
             rating = 2848,
             rank = 1,
             wins = 126,
@@ -344132,7 +344132,7 @@ PVL_AppHelperPendingSnapshots.shuffle = {
     bracket = "shuffle",
     season = 41,
     snapshotDate = "2026-08-17",
-    generatedAt = "2026-08-17T00:00:06Z",
+    generatedAt = "2026-08-17T01:49:41Z",
     source = "blizzard-api",
     overall = {
         listedCount = 38234,
