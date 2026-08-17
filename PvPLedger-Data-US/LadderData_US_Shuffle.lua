@@ -7,7 +7,7 @@ PvPLedgerLadderData.US.shuffle = {
     bracket = "shuffle",
     season = 41,
     snapshotDate = "2026-08-17",
-    generatedAt = "2026-08-17T14:27:44Z",
+    generatedAt = "2026-08-17T14:56:08Z",
     source = "blizzard-api",
     overall = {
         listedCount = 38232,
@@ -60028,8 +60028,8 @@ PvPLedgerLadderData.US.shuffle = {
             losses = 1175,
             faction = "ALLIANCE",
         },
-        ["denadiirx-stormrage"] = {
-            displayName = "Denadiirx-stormrage",
+        ["denadhx-stormrage"] = {
+            displayName = "Denadhx-stormrage",
             specKey = "DEMONHUNTER_HAVOC",
             rating = 2295,
             rank = 751,
@@ -208546,15 +208546,6 @@ PvPLedgerLadderData.US.shuffle = {
             losses = 78,
             faction = "ALLIANCE",
         },
-        ["ratserum-barthilas"] = {
-            displayName = "Ratserum-barthilas",
-            specKey = "MONK_WINDWALKER",
-            rating = 2570,
-            rank = 218,
-            wins = 235,
-            losses = 207,
-            faction = "HORDE",
-        },
         ["ratslop-dalaran"] = {
             displayName = "Ratslop-dalaran",
             specKey = "SHAMAN_RESTORATION",
@@ -224834,6 +224825,15 @@ PvPLedgerLadderData.US.shuffle = {
             rank = 12,
             wins = 155,
             losses = 116,
+            faction = "HORDE",
+        },
+        ["secreting-barthilas"] = {
+            displayName = "Secreting-barthilas",
+            specKey = "MONK_WINDWALKER",
+            rating = 2570,
+            rank = 218,
+            wins = 235,
+            losses = 207,
             faction = "HORDE",
         },
         ["secretlysus-moonguard"] = {
