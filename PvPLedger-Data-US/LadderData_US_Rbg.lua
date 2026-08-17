@@ -7,7 +7,7 @@ PvPLedgerLadderData.US.rbg = {
     bracket = "rbg",
     season = 41,
     snapshotDate = "2026-08-17",
-    generatedAt = "2026-08-17T08:07:52Z",
+    generatedAt = "2026-08-17T09:01:15Z",
     source = "blizzard-api+seramate",
     overall = {
         listedCount = 1002,
@@ -137,9 +137,9 @@ PvPLedgerLadderData.US.rbg = {
         },
         ["HUNTER"] = {
             listedCount = 70,
-            avgListedRating = 2070.0,
-            medianListedRating = 2042,
-            top100Avg = 2070.0,
+            avgListedRating = 2080.2,
+            medianListedRating = 2041.0,
+            top100Avg = 2080.2,
             highest = 2832,
             buckets = {
                 ["1800-1899"] = 9,
@@ -499,14 +499,14 @@ PvPLedgerLadderData.US.rbg = {
             },
         },
         ["HUNTER_MARKSMANSHIP"] = {
-            listedCount = 55,
-            avgListedRating = 2089.7,
-            medianListedRating = 2042,
-            top100Avg = 2089.7,
+            listedCount = 56,
+            avgListedRating = 2087.8,
+            medianListedRating = 2041.0,
+            top100Avg = 2087.8,
             highest = 2832,
             buckets = {
                 ["1800-1899"] = 7,
-                ["1900-1999"] = 14,
+                ["1900-1999"] = 15,
                 ["2000-2099"] = 15,
                 ["2100-2199"] = 7,
                 ["2200-2299"] = 3,
@@ -518,13 +518,12 @@ PvPLedgerLadderData.US.rbg = {
             },
         },
         ["HUNTER_SURVIVAL"] = {
-            listedCount = 4,
-            avgListedRating = 2079.8,
-            medianListedRating = 2054.0,
-            top100Avg = 2079.8,
+            listedCount = 3,
+            avgListedRating = 2112.3,
+            medianListedRating = 2093,
+            top100Avg = 2112.3,
             highest = 2229,
             buckets = {
-                ["1900-1999"] = 1,
                 ["2000-2099"] = 2,
                 ["2200-2299"] = 1,
             },
@@ -7936,7 +7935,7 @@ PvPLedgerLadderData.US.rbg = {
         },
         ["silkysmoothe-darkspear"] = {
             displayName = "Silkysmoothe-darkspear",
-            specKey = "HUNTER_SURVIVAL",
+            specKey = "HUNTER_MARKSMANSHIP",
             rating = 1982,
             rank = 591,
             wins = 30,
