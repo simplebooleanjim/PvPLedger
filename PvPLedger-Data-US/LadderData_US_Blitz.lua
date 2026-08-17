@@ -7,7 +7,7 @@ PvPLedgerLadderData.US.blitz = {
     bracket = "blitz",
     season = 41,
     snapshotDate = "2026-08-17",
-    generatedAt = "2026-08-17T16:56:48Z",
+    generatedAt = "2026-08-17T17:57:12Z",
     source = "blizzard-api",
     overall = {
         listedCount = 37711,
@@ -69,7 +69,7 @@ PvPLedgerLadderData.US.blitz = {
             ["800-899"] = 752,
             ["900-999"] = 28,
         },
-        ratedPopulation = 86716,
+        ratedPopulation = 86717,
         titleCutoffs = {
             {
                 pct = 0.1,
@@ -119,7 +119,7 @@ PvPLedgerLadderData.US.blitz = {
                 },
             },
             ["DEATHKNIGHT_FROST"] = {
-                population = 1537,
+                population = 1538,
                 cutoffs = {
                     {
                         pct = 0.1,
@@ -98541,15 +98541,6 @@ PvPLedgerLadderData.US.blitz = {
             losses = 53,
             faction = "HORDE",
         },
-        ["galantis-demonsoul"] = {
-            displayName = "Galantis-demon-soul",
-            specKey = "HUNTER_MARKSMANSHIP",
-            rating = 2276,
-            rank = 451,
-            wins = 46,
-            losses = 42,
-            faction = "ALLIANCE",
-        },
         ["galashlailaa-duskwood"] = {
             displayName = "Galashlailaa-duskwood",
             specKey = "ROGUE_OUTLAW",
@@ -169505,6 +169496,15 @@ PvPLedgerLadderData.US.blitz = {
             wins = 18,
             losses = 13,
             faction = "HORDE",
+        },
+        ["me-demonsoul"] = {
+            displayName = "Me-demon-soul",
+            specKey = "HUNTER_MARKSMANSHIP",
+            rating = 2276,
+            rank = 451,
+            wins = 46,
+            losses = 42,
+            faction = "ALLIANCE",
         },
         ["meadamemnon-tichondrius"] = {
             displayName = "Meadamemnon-tichondrius",
