@@ -7,7 +7,7 @@ PvPLedgerLadderData.US.blitz = {
     bracket = "blitz",
     season = 41,
     snapshotDate = "2026-08-17",
-    generatedAt = "2026-08-17T19:51:26Z",
+    generatedAt = "2026-08-17T20:26:10Z",
     source = "blizzard-api",
     overall = {
         listedCount = 37711,
@@ -100591,15 +100591,6 @@ PvPLedgerLadderData.US.blitz = {
             rank = 632,
             wins = 10,
             losses = 7,
-            faction = "ALLIANCE",
-        },
-        ["genoskide-sargeras"] = {
-            displayName = "Genoskide-sargeras",
-            specKey = "WARLOCK_AFFLICTION",
-            rating = 2533,
-            rank = 106,
-            wins = 45,
-            losses = 36,
             faction = "ALLIANCE",
         },
         ["genralvdkolf-zuljin"] = {
@@ -241774,6 +241765,15 @@ PvPLedgerLadderData.US.blitz = {
             rank = 284,
             wins = 26,
             losses = 31,
+            faction = "ALLIANCE",
+        },
+        ["skide-sargeras"] = {
+            displayName = "Skide-sargeras",
+            specKey = "WARLOCK_AFFLICTION",
+            rating = 2533,
+            rank = 106,
+            wins = 45,
+            losses = 36,
             faction = "ALLIANCE",
         },
         ["skidrow-turalyon"] = {
