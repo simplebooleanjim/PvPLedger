@@ -7,7 +7,7 @@ PvPLedgerLadderData.US.arena2v2 = {
     bracket = "arena2v2",
     season = 41,
     snapshotDate = "2026-08-17",
-    generatedAt = "2026-08-17T01:50:04Z",
+    generatedAt = "2026-08-17T02:59:52Z",
     source = "blizzard-api+seramate",
     overall = {
         listedCount = 1002,
@@ -60,13 +60,13 @@ PvPLedgerLadderData.US.arena2v2 = {
     },
     byClass = {
         ["DEATHKNIGHT"] = {
-            listedCount = 23,
-            avgListedRating = 2487.6,
-            medianListedRating = 2480.2,
-            top100Avg = 2487.6,
+            listedCount = 24,
+            avgListedRating = 2484.2,
+            medianListedRating = 2477.5,
+            top100Avg = 2484.2,
             highest = 2672,
             buckets = {
-                ["2400-2499"] = 13,
+                ["2400-2499"] = 14,
                 ["2500-2599"] = 9,
                 ["2600-2699"] = 1,
             },
@@ -156,13 +156,13 @@ PvPLedgerLadderData.US.arena2v2 = {
             },
         },
         ["PALADIN"] = {
-            listedCount = 55,
-            avgListedRating = 2500.4,
-            medianListedRating = 2483,
-            top100Avg = 2500.4,
+            listedCount = 54,
+            avgListedRating = 2501.1,
+            medianListedRating = 2485.0,
+            top100Avg = 2501.1,
             highest = 2856,
             buckets = {
-                ["2400-2499"] = 31,
+                ["2400-2499"] = 30,
                 ["2500-2599"] = 14,
                 ["2600-2699"] = 8,
                 ["2800-2899"] = 2,
@@ -238,13 +238,13 @@ PvPLedgerLadderData.US.arena2v2 = {
     },
     bySpec = {
         ["DEATHKNIGHT_FROST"] = {
-            listedCount = 7,
-            avgListedRating = 2480.3,
-            medianListedRating = 2468,
-            top100Avg = 2480.3,
+            listedCount = 8,
+            avgListedRating = 2473.4,
+            medianListedRating = 2462.5,
+            top100Avg = 2473.4,
             highest = 2545,
             buckets = {
-                ["2400-2499"] = 4,
+                ["2400-2499"] = 5,
                 ["2500-2599"] = 3,
             },
         },
@@ -477,13 +477,13 @@ PvPLedgerLadderData.US.arena2v2 = {
             },
         },
         ["PALADIN_HOLY"] = {
-            listedCount = 39,
-            avgListedRating = 2507.3,
-            medianListedRating = 2483,
-            top100Avg = 2507.3,
+            listedCount = 38,
+            avgListedRating = 2509.5,
+            medianListedRating = 2485.0,
+            top100Avg = 2509.5,
             highest = 2807,
             buckets = {
-                ["2400-2499"] = 22,
+                ["2400-2499"] = 21,
                 ["2500-2599"] = 10,
                 ["2600-2699"] = 6,
                 ["2800-2899"] = 1,
@@ -1162,7 +1162,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["bannable-tichondrius"] = {
             displayName = "Bannable-tichondrius",
-            specKey = "",
+            specKey = "DEATHKNIGHT_FROST",
             rating = 2425,
             rank = 987,
             wins = 60,
@@ -5653,7 +5653,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["mutombo-shatteredhand"] = {
             displayName = "Mutombo-shattered-hand",
-            specKey = "PALADIN_HOLY",
+            specKey = "",
             rating = 2425,
             rank = 987,
             wins = 70,
