@@ -7,7 +7,7 @@ PvPLedgerLadderData.US.shuffle = {
     bracket = "shuffle",
     season = 41,
     snapshotDate = "2026-08-18",
-    generatedAt = "2026-08-18T04:07:43Z",
+    generatedAt = "2026-08-18T04:52:28Z",
     source = "blizzard-api",
     overall = {
         listedCount = 38229,
@@ -242,7 +242,7 @@ PvPLedgerLadderData.US.shuffle = {
                 },
             },
             ["DRUID_BALANCE"] = {
-                population = 3173,
+                population = 3172,
                 cutoffs = {
                     {
                         pct = 0.1,
@@ -267,7 +267,7 @@ PvPLedgerLadderData.US.shuffle = {
                 },
             },
             ["DRUID_FERAL"] = {
-                population = 3525,
+                population = 3526,
                 cutoffs = {
                     {
                         pct = 0.1,
@@ -130624,8 +130624,8 @@ PvPLedgerLadderData.US.shuffle = {
             losses = 48,
             faction = "ALLIANCE",
         },
-        ["joxueb-drakkari"] = {
-            displayName = "Joxueb-drakkari",
+        ["joxueb-ragnaros"] = {
+            displayName = "Joxueb-ragnaros",
             specKey = "DEATHKNIGHT_BLOOD",
             rating = 96,
             rank = 531,
