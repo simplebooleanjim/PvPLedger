@@ -7,7 +7,7 @@ PvPLedgerLadderData.US.blitz = {
     bracket = "blitz",
     season = 41,
     snapshotDate = "2026-08-18",
-    generatedAt = "2026-08-18T02:29:31Z",
+    generatedAt = "2026-08-18T04:07:26Z",
     source = "blizzard-api",
     overall = {
         listedCount = 37709,
@@ -69,7 +69,7 @@ PvPLedgerLadderData.US.blitz = {
             ["800-899"] = 752,
             ["900-999"] = 28,
         },
-        ratedPopulation = 86715,
+        ratedPopulation = 86716,
         titleCutoffs = {
             {
                 pct = 0.1,
@@ -1019,7 +1019,7 @@ PvPLedgerLadderData.US.blitz = {
                 },
             },
             ["WARRIOR_ARMS"] = {
-                population = 4194,
+                population = 4195,
                 cutoffs = {
                     {
                         pct = 0.1,
@@ -56528,15 +56528,6 @@ PvPLedgerLadderData.US.blitz = {
             wins = 5,
             losses = 9,
             faction = "HORDE",
-        },
-        ["còrpsê-moonguard"] = {
-            displayName = "Còrpsê-moon-guard",
-            specKey = "DEATHKNIGHT_BLOOD",
-            rating = 856,
-            rank = 333,
-            wins = 3,
-            losses = 5,
-            faction = "ALLIANCE",
         },
         ["còwabunga-bleedinghollow"] = {
             displayName = "Còwabunga-bleeding-hollow",
@@ -184878,8 +184869,8 @@ PvPLedgerLadderData.US.blitz = {
             losses = 104,
             faction = "HORDE",
         },
-        ["nayura-bleedinghollow"] = {
-            displayName = "Nayura-bleeding-hollow",
+        ["nayuri-bleedinghollow"] = {
+            displayName = "Nayuri-bleeding-hollow",
             specKey = "PRIEST_SHADOW",
             rating = 1708,
             rank = 803,
@@ -231190,6 +231181,15 @@ PvPLedgerLadderData.US.blitz = {
             rank = 883,
             wins = 14,
             losses = 10,
+            faction = "ALLIANCE",
+        },
+        ["scourgê-moonguard"] = {
+            displayName = "Scourgê-moon-guard",
+            specKey = "DEATHKNIGHT_BLOOD",
+            rating = 856,
+            rank = 333,
+            wins = 3,
+            losses = 5,
             faction = "ALLIANCE",
         },
         ["scovilla-emeralddream"] = {
