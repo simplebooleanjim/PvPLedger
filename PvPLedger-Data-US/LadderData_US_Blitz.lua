@@ -7,7 +7,7 @@ PvPLedgerLadderData.US.blitz = {
     bracket = "blitz",
     season = 41,
     snapshotDate = "2026-08-18",
-    generatedAt = "2026-08-18T13:31:01Z",
+    generatedAt = "2026-08-18T14:16:44Z",
     source = "blizzard-api",
     overall = {
         listedCount = 37711,
@@ -69,7 +69,7 @@ PvPLedgerLadderData.US.blitz = {
             ["800-899"] = 752,
             ["900-999"] = 28,
         },
-        ratedPopulation = 86719,
+        ratedPopulation = 86720,
         titleCutoffs = {
             {
                 pct = 0.1,
@@ -944,7 +944,7 @@ PvPLedgerLadderData.US.blitz = {
                 },
             },
             ["WARLOCK_AFFLICTION"] = {
-                population = 3158,
+                population = 3159,
                 cutoffs = {
                     {
                         pct = 0.1,
@@ -180099,6 +180099,15 @@ PvPLedgerLadderData.US.blitz = {
             losses = 20,
             faction = "HORDE",
         },
+        ["munter-caelestrasz"] = {
+            displayName = "Munter-caelestrasz",
+            specKey = "PALADIN_PROTECTION",
+            rating = 576,
+            rank = 443,
+            wins = 2,
+            losses = 0,
+            faction = "ALLIANCE",
+        },
         ["muppetgronk-frostmourne"] = {
             displayName = "Muppetgronk-frostmourne",
             specKey = "EVOKER_PRESERVATION",
@@ -204676,15 +204685,6 @@ PvPLedgerLadderData.US.blitz = {
             rank = 167,
             wins = 44,
             losses = 30,
-            faction = "ALLIANCE",
-        },
-        ["pinkies-frostmourne"] = {
-            displayName = "Pinkies-frostmourne",
-            specKey = "PALADIN_PROTECTION",
-            rating = 576,
-            rank = 443,
-            wins = 2,
-            losses = 0,
             faction = "ALLIANCE",
         },
         ["pinkorange-gurubashi"] = {
