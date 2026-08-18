@@ -7,7 +7,7 @@ PvPLedgerLadderData.US.arena3v3 = {
     bracket = "arena3v3",
     season = 42,
     snapshotDate = "2026-08-18",
-    generatedAt = "2026-08-18T20:50:35Z",
+    generatedAt = "2026-08-18T21:24:10Z",
     source = "blizzard-api+seramate",
     overall = {
         listedCount = 339,
@@ -105,9 +105,9 @@ PvPLedgerLadderData.US.arena3v3 = {
         },
         ["MAGE"] = {
             listedCount = 5,
-            avgListedRating = 887.8,
-            medianListedRating = 935.5,
-            top100Avg = 887.8,
+            avgListedRating = 895.8,
+            medianListedRating = 960,
+            top100Avg = 895.8,
             highest = 960,
             buckets = {
                 ["400-499"] = 1,
@@ -270,6 +270,16 @@ PvPLedgerLadderData.US.arena3v3 = {
                 ["700-799"] = 1,
             },
         },
+        ["MAGE_ARCANE"] = {
+            listedCount = 1,
+            avgListedRating = 960,
+            medianListedRating = 960,
+            top100Avg = 960,
+            highest = 960,
+            buckets = {
+                ["900-999"] = 1,
+            },
+        },
         ["MAGE_FIRE"] = {
             listedCount = 1,
             avgListedRating = 960,
@@ -281,15 +291,15 @@ PvPLedgerLadderData.US.arena3v3 = {
             },
         },
         ["MAGE_FROST"] = {
-            listedCount = 4,
-            avgListedRating = 815.5,
-            medianListedRating = 911.0,
-            top100Avg = 815.5,
-            highest = 960,
+            listedCount = 3,
+            avgListedRating = 767.3,
+            medianListedRating = 864,
+            top100Avg = 767.3,
+            highest = 958,
             buckets = {
                 ["400-499"] = 1,
                 ["800-899"] = 1,
-                ["900-999"] = 2,
+                ["900-999"] = 1,
             },
         },
         ["MONK_MISTWEAVER"] = {
@@ -1057,7 +1067,7 @@ PvPLedgerLadderData.US.arena3v3 = {
         },
         ["dopaminex-dalaran"] = {
             displayName = "Dopaminex-dalaran",
-            specKey = "MAGE_FROST",
+            specKey = "MAGE_ARCANE",
             rating = 960,
             rank = 5,
             wins = 10,

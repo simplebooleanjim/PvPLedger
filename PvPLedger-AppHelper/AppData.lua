@@ -3,8 +3,8 @@
 --- DO NOT EDIT MANUALLY.
 PVL_AppHelperPendingSnapshots = PVL_AppHelperPendingSnapshots or {}
 PVL_AppHelperSyncInfo = {
-    lastSync = 1787086235,
-    generatedAt = "2026-08-18T20:50:35Z",
+    lastSync = 1787088250,
+    generatedAt = "2026-08-18T21:24:10Z",
     region = "US",
     source = "collector",
 }
@@ -15,7 +15,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
     bracket = "arena2v2",
     season = 42,
     snapshotDate = "2026-08-18",
-    generatedAt = "2026-08-18T20:50:26Z",
+    generatedAt = "2026-08-18T21:23:57Z",
     source = "blizzard-api+seramate",
     overall = {
         listedCount = 891,
@@ -106,15 +106,15 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
             },
         },
         ["EVOKER"] = {
-            listedCount = 7,
-            avgListedRating = 575.4,
-            medianListedRating = 576,
-            top100Avg = 575.4,
+            listedCount = 8,
+            avgListedRating = 539.5,
+            medianListedRating = 432.0,
+            top100Avg = 539.5,
             highest = 1436,
             buckets = {
                 ["0-99"] = 2,
                 ["1400-1499"] = 1,
-                ["200-299"] = 1,
+                ["200-299"] = 2,
                 ["500-599"] = 1,
                 ["600-699"] = 1,
                 ["800-899"] = 1,
@@ -172,10 +172,10 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
             },
         },
         ["PRIEST"] = {
-            listedCount = 17,
-            avgListedRating = 591.1,
-            medianListedRating = 576.0,
-            top100Avg = 591.1,
+            listedCount = 16,
+            avgListedRating = 579.5,
+            medianListedRating = 552.0,
+            top100Avg = 579.5,
             highest = 1152,
             buckets = {
                 ["0-99"] = 3,
@@ -187,7 +187,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
                 ["600-699"] = 1,
                 ["700-799"] = 1,
                 ["800-899"] = 2,
-                ["900-999"] = 2,
+                ["900-999"] = 1,
             },
         },
         ["ROGUE"] = {
@@ -309,15 +309,15 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
             },
         },
         ["EVOKER_PRESERVATION"] = {
-            listedCount = 7,
-            avgListedRating = 575.4,
-            medianListedRating = 576,
-            top100Avg = 575.4,
+            listedCount = 8,
+            avgListedRating = 539.5,
+            medianListedRating = 432.0,
+            top100Avg = 539.5,
             highest = 1436,
             buckets = {
                 ["0-99"] = 2,
                 ["1400-1499"] = 1,
-                ["200-299"] = 1,
+                ["200-299"] = 2,
                 ["500-599"] = 1,
                 ["600-699"] = 1,
                 ["800-899"] = 1,
@@ -403,10 +403,10 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
             },
         },
         ["PRIEST_DISCIPLINE"] = {
-            listedCount = 13,
-            avgListedRating = 678.8,
-            medianListedRating = 768,
-            top100Avg = 678.8,
+            listedCount = 12,
+            avgListedRating = 655.4,
+            medianListedRating = 720.0,
+            top100Avg = 655.4,
             highest = 1149,
             buckets = {
                 ["0-99"] = 2,
@@ -417,7 +417,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
                 ["600-699"] = 1,
                 ["700-799"] = 1,
                 ["800-899"] = 2,
-                ["900-999"] = 2,
+                ["900-999"] = 1,
             },
         },
         ["PRIEST_HOLY"] = {
@@ -1617,7 +1617,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["cosmodrake-area52"] = {
             displayName = "Cosmodrake-area-52",
-            specKey = "",
+            specKey = "EVOKER_PRESERVATION",
             rating = 288,
             rank = 297,
             wins = 3,
@@ -5262,7 +5262,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["pizzagagte-dalaran"] = {
             displayName = "Pizzagagte-dalaran",
-            specKey = "PRIEST_DISCIPLINE",
+            specKey = "",
             rating = 959,
             rank = 30,
             wins = 10,
@@ -8554,7 +8554,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
     bracket = "arena3v3",
     season = 42,
     snapshotDate = "2026-08-18",
-    generatedAt = "2026-08-18T20:50:35Z",
+    generatedAt = "2026-08-18T21:24:10Z",
     source = "blizzard-api+seramate",
     overall = {
         listedCount = 339,
@@ -8652,9 +8652,9 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["MAGE"] = {
             listedCount = 5,
-            avgListedRating = 887.8,
-            medianListedRating = 935.5,
-            top100Avg = 887.8,
+            avgListedRating = 895.8,
+            medianListedRating = 960,
+            top100Avg = 895.8,
             highest = 960,
             buckets = {
                 ["400-499"] = 1,
@@ -8817,6 +8817,16 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
                 ["700-799"] = 1,
             },
         },
+        ["MAGE_ARCANE"] = {
+            listedCount = 1,
+            avgListedRating = 960,
+            medianListedRating = 960,
+            top100Avg = 960,
+            highest = 960,
+            buckets = {
+                ["900-999"] = 1,
+            },
+        },
         ["MAGE_FIRE"] = {
             listedCount = 1,
             avgListedRating = 960,
@@ -8828,15 +8838,15 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
             },
         },
         ["MAGE_FROST"] = {
-            listedCount = 4,
-            avgListedRating = 815.5,
-            medianListedRating = 911.0,
-            top100Avg = 815.5,
-            highest = 960,
+            listedCount = 3,
+            avgListedRating = 767.3,
+            medianListedRating = 864,
+            top100Avg = 767.3,
+            highest = 958,
             buckets = {
                 ["400-499"] = 1,
                 ["800-899"] = 1,
-                ["900-999"] = 2,
+                ["900-999"] = 1,
             },
         },
         ["MONK_MISTWEAVER"] = {
@@ -9604,7 +9614,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["dopaminex-dalaran"] = {
             displayName = "Dopaminex-dalaran",
-            specKey = "MAGE_FROST",
+            specKey = "MAGE_ARCANE",
             rating = 960,
             rank = 5,
             wins = 10,
@@ -12041,7 +12051,7 @@ PVL_AppHelperPendingSnapshots.blitz = {
     bracket = "blitz",
     season = 42,
     snapshotDate = "2026-08-18",
-    generatedAt = "2026-08-18T20:49:56Z",
+    generatedAt = "2026-08-18T21:23:28Z",
     source = "blizzard-api",
     overall = {
         listedCount = 518,
@@ -27729,7 +27739,7 @@ PVL_AppHelperPendingSnapshots.shuffle = {
     bracket = "shuffle",
     season = 42,
     snapshotDate = "2026-08-18",
-    generatedAt = "2026-08-18T20:50:14Z",
+    generatedAt = "2026-08-18T21:23:42Z",
     source = "blizzard-api",
     overall = {
         listedCount = 2339,
