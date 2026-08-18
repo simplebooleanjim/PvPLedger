@@ -7,7 +7,7 @@ PvPLedgerLadderData.US.blitz = {
     bracket = "blitz",
     season = 41,
     snapshotDate = "2026-08-18",
-    generatedAt = "2026-08-18T10:46:25Z",
+    generatedAt = "2026-08-18T11:24:46Z",
     source = "blizzard-api",
     overall = {
         listedCount = 37711,
@@ -69,7 +69,7 @@ PvPLedgerLadderData.US.blitz = {
             ["800-899"] = 752,
             ["900-999"] = 28,
         },
-        ratedPopulation = 86720,
+        ratedPopulation = 86719,
         titleCutoffs = {
             {
                 pct = 0.1,
@@ -719,7 +719,7 @@ PvPLedgerLadderData.US.blitz = {
                 },
             },
             ["PRIEST_DISCIPLINE"] = {
-                population = 5002,
+                population = 5001,
                 cutoffs = {
                     {
                         pct = 0.1,

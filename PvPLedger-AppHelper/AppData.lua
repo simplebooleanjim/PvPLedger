@@ -3,8 +3,8 @@
 --- DO NOT EDIT MANUALLY.
 PVL_AppHelperPendingSnapshots = PVL_AppHelperPendingSnapshots or {}
 PVL_AppHelperSyncInfo = {
-    lastSync = 1787050042,
-    generatedAt = "2026-08-18T10:47:22Z",
+    lastSync = 1787052353,
+    generatedAt = "2026-08-18T11:25:53Z",
     region = "US",
     source = "collector",
 }
@@ -15,7 +15,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
     bracket = "arena2v2",
     season = 41,
     snapshotDate = "2026-08-18",
-    generatedAt = "2026-08-18T10:47:13Z",
+    generatedAt = "2026-08-18T11:25:40Z",
     source = "blizzard-api+seramate",
     overall = {
         listedCount = 1002,
@@ -68,13 +68,13 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
     },
     byClass = {
         ["DEATHKNIGHT"] = {
-            listedCount = 24,
-            avgListedRating = 2479.8,
-            medianListedRating = 2476.0,
-            top100Avg = 2479.8,
+            listedCount = 23,
+            avgListedRating = 2483.7,
+            medianListedRating = 2478.2,
+            top100Avg = 2483.7,
             highest = 2672,
             buckets = {
-                ["2400-2499"] = 14,
+                ["2400-2499"] = 13,
                 ["2500-2599"] = 9,
                 ["2600-2699"] = 1,
             },
@@ -149,13 +149,13 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
             },
         },
         ["MONK"] = {
-            listedCount = 117,
-            avgListedRating = 2516.2,
-            medianListedRating = 2509,
-            top100Avg = 2516.2,
+            listedCount = 116,
+            avgListedRating = 2516.4,
+            medianListedRating = 2508.0,
+            top100Avg = 2516.4,
             highest = 2957,
             buckets = {
-                ["2400-2499"] = 52,
+                ["2400-2499"] = 51,
                 ["2500-2599"] = 38,
                 ["2600-2699"] = 21,
                 ["2700-2799"] = 4,
@@ -178,9 +178,9 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["PRIEST"] = {
             listedCount = 223,
-            avgListedRating = 2509.8,
-            medianListedRating = 2486.5,
-            top100Avg = 2520.7,
+            avgListedRating = 2509.7,
+            medianListedRating = 2485.0,
+            top100Avg = 2520.6,
             highest = 2859,
             buckets = {
                 ["2400-2499"] = 115,
@@ -231,14 +231,14 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
             },
         },
         ["WARRIOR"] = {
-            listedCount = 45,
-            avgListedRating = 2480.6,
-            medianListedRating = 2469.0,
-            top100Avg = 2480.6,
+            listedCount = 46,
+            avgListedRating = 2480.7,
+            medianListedRating = 2471,
+            top100Avg = 2480.7,
             highest = 2957,
             buckets = {
                 ["2400-2499"] = 29,
-                ["2500-2599"] = 13,
+                ["2500-2599"] = 14,
                 ["2600-2699"] = 2,
                 ["2900-2999"] = 1,
             },
@@ -246,13 +246,13 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
     },
     bySpec = {
         ["DEATHKNIGHT_FROST"] = {
-            listedCount = 6,
-            avgListedRating = 2464,
-            medianListedRating = 2452.5,
-            top100Avg = 2464,
+            listedCount = 5,
+            avgListedRating = 2471.8,
+            medianListedRating = 2457,
+            top100Avg = 2471.8,
             highest = 2545,
             buckets = {
-                ["2400-2499"] = 5,
+                ["2400-2499"] = 4,
                 ["2500-2599"] = 1,
             },
         },
@@ -457,13 +457,13 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
             },
         },
         ["MONK_MISTWEAVER"] = {
-            listedCount = 77,
-            avgListedRating = 2532.1,
-            medianListedRating = 2509,
-            top100Avg = 2532.1,
+            listedCount = 75,
+            avgListedRating = 2534.5,
+            medianListedRating = 2514,
+            top100Avg = 2534.5,
             highest = 2957,
             buckets = {
-                ["2400-2499"] = 33,
+                ["2400-2499"] = 31,
                 ["2500-2599"] = 29,
                 ["2600-2699"] = 13,
                 ["2800-2899"] = 1,
@@ -471,13 +471,13 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
             },
         },
         ["MONK_WINDWALKER"] = {
-            listedCount = 39,
-            avgListedRating = 2539.6,
-            medianListedRating = 2509,
-            top100Avg = 2539.6,
+            listedCount = 40,
+            avgListedRating = 2537.7,
+            medianListedRating = 2508.0,
+            top100Avg = 2537.7,
             highest = 2777,
             buckets = {
-                ["2400-2499"] = 18,
+                ["2400-2499"] = 19,
                 ["2500-2599"] = 9,
                 ["2600-2699"] = 8,
                 ["2700-2799"] = 4,
@@ -521,9 +521,9 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["PRIEST_DISCIPLINE"] = {
             listedCount = 146,
-            avgListedRating = 2510.9,
-            medianListedRating = 2486.5,
-            top100Avg = 2543.6,
+            avgListedRating = 2510.5,
+            medianListedRating = 2485.0,
+            top100Avg = 2543.3,
             highest = 2816,
             buckets = {
                 ["2400-2499"] = 79,
@@ -674,14 +674,14 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
             },
         },
         ["WARRIOR_ARMS"] = {
-            listedCount = 32,
-            avgListedRating = 2495.1,
-            medianListedRating = 2469.0,
-            top100Avg = 2495.1,
+            listedCount = 33,
+            avgListedRating = 2495.5,
+            medianListedRating = 2471,
+            top100Avg = 2495.5,
             highest = 2957,
             buckets = {
                 ["2400-2499"] = 22,
-                ["2500-2599"] = 9,
+                ["2500-2599"] = 10,
                 ["2900-2999"] = 1,
             },
         },
@@ -756,7 +756,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["adhdeedee-sargeras"] = {
             displayName = "Adhdeedee-sargeras",
-            specKey = "",
+            specKey = "PRIEST_DISCIPLINE",
             rating = 2425,
             rank = 987,
             wins = 196,
@@ -1179,7 +1179,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["bannable-tichondrius"] = {
             displayName = "Bannable-tichondrius",
-            specKey = "DEATHKNIGHT_FROST",
+            specKey = "",
             rating = 2425,
             rank = 987,
             wins = 60,
@@ -3429,7 +3429,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["gooball-malganis"] = {
             displayName = "Gooball-malganis",
-            specKey = "",
+            specKey = "WARRIOR_ARMS",
             rating = 2507,
             rank = 430,
             wins = 79,
@@ -3762,7 +3762,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["highlands-frostmourne"] = {
             displayName = "Highlands-frostmourne",
-            specKey = "PRIEST_DISCIPLINE",
+            specKey = "",
             rating = 2493,
             rank = 521,
             wins = 512,
@@ -4437,7 +4437,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["jonesbonez-tichondrius"] = {
             displayName = "Jonesbonez-tichondrius",
-            specKey = "MONK_MISTWEAVER",
+            specKey = "",
             rating = 2425,
             rank = 987,
             wins = 131,
@@ -5967,7 +5967,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["ninakins-sargeras"] = {
             displayName = "Ninakins-sargeras",
-            specKey = "MONK_MISTWEAVER",
+            specKey = "MONK_WINDWALKER",
             rating = 2462,
             rank = 685,
             wins = 71,
@@ -9736,7 +9736,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
     bracket = "arena3v3",
     season = 41,
     snapshotDate = "2026-08-18",
-    generatedAt = "2026-08-18T10:47:21Z",
+    generatedAt = "2026-08-18T11:25:52Z",
     source = "blizzard-api+seramate",
     overall = {
         listedCount = 1002,
@@ -19551,7 +19551,7 @@ PVL_AppHelperPendingSnapshots.blitz = {
     bracket = "blitz",
     season = 41,
     snapshotDate = "2026-08-18",
-    generatedAt = "2026-08-18T10:46:25Z",
+    generatedAt = "2026-08-18T11:24:46Z",
     source = "blizzard-api",
     overall = {
         listedCount = 37711,
@@ -19613,7 +19613,7 @@ PVL_AppHelperPendingSnapshots.blitz = {
             ["800-899"] = 752,
             ["900-999"] = 28,
         },
-        ratedPopulation = 86720,
+        ratedPopulation = 86719,
         titleCutoffs = {
             {
                 pct = 0.1,
@@ -20263,7 +20263,7 @@ PVL_AppHelperPendingSnapshots.blitz = {
                 },
             },
             ["PRIEST_DISCIPLINE"] = {
-                population = 5002,
+                population = 5001,
                 cutoffs = {
                     {
                         pct = 0.1,
@@ -334220,7 +334220,7 @@ PVL_AppHelperPendingSnapshots.rbg = {
     bracket = "rbg",
     season = 41,
     snapshotDate = "2026-08-18",
-    generatedAt = "2026-08-18T10:47:05Z",
+    generatedAt = "2026-08-18T11:25:28Z",
     source = "blizzard-api+seramate",
     overall = {
         listedCount = 1002,
@@ -334311,14 +334311,14 @@ PVL_AppHelperPendingSnapshots.rbg = {
             },
         },
         ["DRUID"] = {
-            listedCount = 161,
-            avgListedRating = 2065.4,
-            medianListedRating = 2059.2,
-            top100Avg = 2065.4,
+            listedCount = 162,
+            avgListedRating = 2064.9,
+            medianListedRating = 2058.2,
+            top100Avg = 2064.9,
             highest = 2834,
             buckets = {
                 ["1800-1899"] = 37,
-                ["1900-1999"] = 33,
+                ["1900-1999"] = 34,
                 ["2000-2099"] = 27,
                 ["2100-2199"] = 24,
                 ["2200-2299"] = 16,
@@ -334349,14 +334349,14 @@ PVL_AppHelperPendingSnapshots.rbg = {
             },
         },
         ["HUNTER"] = {
-            listedCount = 70,
-            avgListedRating = 2064.9,
-            medianListedRating = 2029,
-            top100Avg = 2064.9,
+            listedCount = 69,
+            avgListedRating = 2072.5,
+            medianListedRating = 2042.5,
+            top100Avg = 2072.5,
             highest = 2832,
             buckets = {
                 ["1800-1899"] = 9,
-                ["1900-1999"] = 18,
+                ["1900-1999"] = 17,
                 ["2000-2099"] = 21,
                 ["2100-2199"] = 7,
                 ["2200-2299"] = 4,
@@ -334598,14 +334598,14 @@ PVL_AppHelperPendingSnapshots.rbg = {
             },
         },
         ["DRUID_BALANCE"] = {
-            listedCount = 83,
-            avgListedRating = 2111.3,
-            medianListedRating = 2068,
-            top100Avg = 2111.3,
+            listedCount = 84,
+            avgListedRating = 2109.3,
+            medianListedRating = 2066.0,
+            top100Avg = 2109.3,
             highest = 2832,
             buckets = {
                 ["1800-1899"] = 15,
-                ["1900-1999"] = 18,
+                ["1900-1999"] = 19,
                 ["2000-2099"] = 14,
                 ["2100-2199"] = 11,
                 ["2200-2299"] = 6,
@@ -334714,9 +334714,9 @@ PVL_AppHelperPendingSnapshots.rbg = {
         },
         ["HUNTER_MARKSMANSHIP"] = {
             listedCount = 54,
-            avgListedRating = 2092.4,
+            avgListedRating = 2093.2,
             medianListedRating = 2042.5,
-            top100Avg = 2092.4,
+            top100Avg = 2093.2,
             highest = 2832,
             buckets = {
                 ["1800-1899"] = 7,
@@ -334732,13 +334732,12 @@ PVL_AppHelperPendingSnapshots.rbg = {
             },
         },
         ["HUNTER_SURVIVAL"] = {
-            listedCount = 5,
-            avgListedRating = 2069.6,
-            medianListedRating = 2029,
-            top100Avg = 2069.6,
+            listedCount = 4,
+            avgListedRating = 2091.5,
+            medianListedRating = 2061.0,
+            top100Avg = 2091.5,
             highest = 2229,
             buckets = {
-                ["1900-1999"] = 1,
                 ["2000-2099"] = 3,
                 ["2200-2299"] = 1,
             },
@@ -338938,7 +338937,7 @@ PVL_AppHelperPendingSnapshots.rbg = {
         },
         ["kahelian-drakkari"] = {
             displayName = "Kahelian-drakkari",
-            specKey = "HUNTER_MARKSMANSHIP",
+            specKey = "DRUID_BALANCE",
             rating = 1940,
             rank = 658,
             wins = 49,
@@ -342151,7 +342150,7 @@ PVL_AppHelperPendingSnapshots.rbg = {
         },
         ["silkysmoothe-darkspear"] = {
             displayName = "Silkysmoothe-darkspear",
-            specKey = "HUNTER_SURVIVAL",
+            specKey = "HUNTER_MARKSMANSHIP",
             rating = 1982,
             rank = 591,
             wins = 30,
@@ -344120,7 +344119,7 @@ PVL_AppHelperPendingSnapshots.shuffle = {
     bracket = "shuffle",
     season = 41,
     snapshotDate = "2026-08-18",
-    generatedAt = "2026-08-18T10:46:54Z",
+    generatedAt = "2026-08-18T11:25:15Z",
     source = "blizzard-api",
     overall = {
         listedCount = 38228,
@@ -344180,7 +344179,7 @@ PVL_AppHelperPendingSnapshots.shuffle = {
             ["800-899"] = 133,
             ["900-999"] = 136,
         },
-        ratedPopulation = 137177,
+        ratedPopulation = 137185,
         titleCutoffs = {
             {
                 pct = 0.1,
@@ -344830,7 +344829,7 @@ PVL_AppHelperPendingSnapshots.shuffle = {
                 },
             },
             ["PRIEST_DISCIPLINE"] = {
-                population = 5000,
+                population = 5008,
                 cutoffs = {
                     {
                         pct = 0.1,
@@ -344839,18 +344838,18 @@ PVL_AppHelperPendingSnapshots.shuffle = {
                     },
                     {
                         pct = 0.5,
-                        rank = 25,
-                        rating = 3147,
+                        rank = 26,
+                        rating = 3144,
                     },
                     {
                         pct = 1.0,
-                        rank = 50,
-                        rating = 3056,
+                        rank = 51,
+                        rating = 3054,
                     },
                     {
                         pct = 3.0,
-                        rank = 150,
-                        rating = 2823,
+                        rank = 151,
+                        rating = 2822,
                     },
                 },
             },
@@ -510989,15 +510988,6 @@ PVL_AppHelperPendingSnapshots.shuffle = {
             losses = 82,
             faction = "HORDE",
         },
-        ["mikegronato-malganis"] = {
-            displayName = "Mikegronato-malganis",
-            specKey = "SHAMAN_RESTORATION",
-            rating = 2560,
-            rank = 413,
-            wins = 176,
-            losses = 124,
-            faction = "HORDE",
-        },
         ["mikemint-illidan"] = {
             displayName = "Mikemint-illidan",
             specKey = "MONK_MISTWEAVER",
@@ -591213,6 +591203,15 @@ PVL_AppHelperPendingSnapshots.shuffle = {
             rank = 499,
             wins = 368,
             losses = 360,
+            faction = "HORDE",
+        },
+        ["suicunë-malganis"] = {
+            displayName = "Suicunë-malganis",
+            specKey = "SHAMAN_RESTORATION",
+            rating = 2560,
+            rank = 413,
+            wins = 176,
+            losses = 124,
             faction = "HORDE",
         },
         ["suinasoo-illidan"] = {

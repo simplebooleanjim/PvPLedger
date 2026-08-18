@@ -7,7 +7,7 @@ PvPLedgerLadderData.US.shuffle = {
     bracket = "shuffle",
     season = 41,
     snapshotDate = "2026-08-18",
-    generatedAt = "2026-08-18T10:46:54Z",
+    generatedAt = "2026-08-18T11:25:15Z",
     source = "blizzard-api",
     overall = {
         listedCount = 38228,
@@ -67,7 +67,7 @@ PvPLedgerLadderData.US.shuffle = {
             ["800-899"] = 133,
             ["900-999"] = 136,
         },
-        ratedPopulation = 137177,
+        ratedPopulation = 137185,
         titleCutoffs = {
             {
                 pct = 0.1,
@@ -717,7 +717,7 @@ PvPLedgerLadderData.US.shuffle = {
                 },
             },
             ["PRIEST_DISCIPLINE"] = {
-                population = 5000,
+                population = 5008,
                 cutoffs = {
                     {
                         pct = 0.1,
@@ -726,18 +726,18 @@ PvPLedgerLadderData.US.shuffle = {
                     },
                     {
                         pct = 0.5,
-                        rank = 25,
-                        rating = 3147,
+                        rank = 26,
+                        rating = 3144,
                     },
                     {
                         pct = 1.0,
-                        rank = 50,
-                        rating = 3056,
+                        rank = 51,
+                        rating = 3054,
                     },
                     {
                         pct = 3.0,
-                        rank = 150,
-                        rating = 2823,
+                        rank = 151,
+                        rating = 2822,
                     },
                 },
             },
@@ -166876,15 +166876,6 @@ PvPLedgerLadderData.US.shuffle = {
             losses = 82,
             faction = "HORDE",
         },
-        ["mikegronato-malganis"] = {
-            displayName = "Mikegronato-malganis",
-            specKey = "SHAMAN_RESTORATION",
-            rating = 2560,
-            rank = 413,
-            wins = 176,
-            losses = 124,
-            faction = "HORDE",
-        },
         ["mikemint-illidan"] = {
             displayName = "Mikemint-illidan",
             specKey = "MONK_MISTWEAVER",
@@ -247100,6 +247091,15 @@ PvPLedgerLadderData.US.shuffle = {
             rank = 499,
             wins = 368,
             losses = 360,
+            faction = "HORDE",
+        },
+        ["suicunë-malganis"] = {
+            displayName = "Suicunë-malganis",
+            specKey = "SHAMAN_RESTORATION",
+            rating = 2560,
+            rank = 413,
+            wins = 176,
+            losses = 124,
             faction = "HORDE",
         },
         ["suinasoo-illidan"] = {
