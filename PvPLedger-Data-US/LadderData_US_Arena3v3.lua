@@ -2,12 +2,12 @@
 PvPLedgerLadderData = PvPLedgerLadderData or {}
 PvPLedgerLadderData.US = PvPLedgerLadderData.US or {}
 PvPLedgerLadderData.US.arena3v3 = {
-    snapshotId = "us-arena3v3-s41-2026-08-17",
+    snapshotId = "us-arena3v3-s41-2026-08-18",
     region = "US",
     bracket = "arena3v3",
     season = 41,
-    snapshotDate = "2026-08-17",
-    generatedAt = "2026-08-17T23:48:12Z",
+    snapshotDate = "2026-08-18",
+    generatedAt = "2026-08-18T01:12:37Z",
     source = "blizzard-api+seramate",
     overall = {
         listedCount = 1002,
@@ -35,7 +35,7 @@ PvPLedgerLadderData.US.arena3v3 = {
             ["3100-3199"] = 142,
             ["3200-3299"] = 13,
         },
-        ratedPopulation = 5006,
+        ratedPopulation = 5005,
         titleCutoffs = {
             {
                 pct = 0.1,
@@ -138,9 +138,9 @@ PvPLedgerLadderData.US.arena3v3 = {
         },
         ["MAGE"] = {
             listedCount = 98,
-            avgListedRating = 2827.5,
-            medianListedRating = 2745,
-            top100Avg = 2827.5,
+            avgListedRating = 2828.3,
+            medianListedRating = 2743.0,
+            top100Avg = 2828.3,
             highest = 3200,
             buckets = {
                 ["2600-2699"] = 27,
@@ -217,9 +217,9 @@ PvPLedgerLadderData.US.arena3v3 = {
         },
         ["SHAMAN"] = {
             listedCount = 52,
-            avgListedRating = 2819.5,
-            medianListedRating = 2741.0,
-            top100Avg = 2819.5,
+            avgListedRating = 2818.0,
+            medianListedRating = 2748,
+            top100Avg = 2818.0,
             highest = 3240,
             buckets = {
                 ["2600-2699"] = 16,
@@ -246,14 +246,14 @@ PvPLedgerLadderData.US.arena3v3 = {
             },
         },
         ["WARRIOR"] = {
-            listedCount = 77,
-            avgListedRating = 2774.4,
+            listedCount = 78,
+            avgListedRating = 2772.1,
             medianListedRating = 2729.5,
-            top100Avg = 2774.4,
+            top100Avg = 2772.1,
             highest = 3209,
             buckets = {
                 ["2600-2699"] = 29,
-                ["2700-2799"] = 16,
+                ["2700-2799"] = 17,
                 ["2800-2899"] = 9,
                 ["2900-2999"] = 6,
                 ["3000-3099"] = 3,
@@ -457,13 +457,13 @@ PvPLedgerLadderData.US.arena3v3 = {
             },
         },
         ["MAGE_ARCANE"] = {
-            listedCount = 16,
-            avgListedRating = 2756.8,
-            medianListedRating = 2710.0,
-            top100Avg = 2756.8,
+            listedCount = 15,
+            avgListedRating = 2760.8,
+            medianListedRating = 2712,
+            top100Avg = 2760.8,
             highest = 3144,
             buckets = {
-                ["2600-2699"] = 6,
+                ["2600-2699"] = 5,
                 ["2700-2799"] = 7,
                 ["2800-2899"] = 2,
                 ["3100-3199"] = 1,
@@ -486,13 +486,13 @@ PvPLedgerLadderData.US.arena3v3 = {
             },
         },
         ["MAGE_FROST"] = {
-            listedCount = 63,
-            avgListedRating = 2807.3,
-            medianListedRating = 2745,
-            top100Avg = 2807.3,
+            listedCount = 64,
+            avgListedRating = 2805.6,
+            medianListedRating = 2743.0,
+            top100Avg = 2805.6,
             highest = 3146,
             buckets = {
-                ["2600-2699"] = 18,
+                ["2600-2699"] = 19,
                 ["2700-2799"] = 19,
                 ["2800-2899"] = 14,
                 ["2900-2999"] = 2,
@@ -660,13 +660,13 @@ PvPLedgerLadderData.US.arena3v3 = {
             },
         },
         ["SHAMAN_ELEMENTAL"] = {
-            listedCount = 13,
-            avgListedRating = 2825.2,
-            medianListedRating = 2737,
-            top100Avg = 2825.2,
+            listedCount = 14,
+            avgListedRating = 2813.6,
+            medianListedRating = 2733.0,
+            top100Avg = 2813.6,
             highest = 3240,
             buckets = {
-                ["2600-2699"] = 2,
+                ["2600-2699"] = 3,
                 ["2700-2799"] = 6,
                 ["2800-2899"] = 2,
                 ["2900-2999"] = 1,
@@ -689,13 +689,13 @@ PvPLedgerLadderData.US.arena3v3 = {
             },
         },
         ["SHAMAN_RESTORATION"] = {
-            listedCount = 16,
-            avgListedRating = 2766.4,
-            medianListedRating = 2741.0,
-            top100Avg = 2766.4,
+            listedCount = 15,
+            avgListedRating = 2773.4,
+            medianListedRating = 2749,
+            top100Avg = 2773.4,
             highest = 2958,
             buckets = {
-                ["2600-2699"] = 5,
+                ["2600-2699"] = 4,
                 ["2700-2799"] = 6,
                 ["2800-2899"] = 3,
                 ["2900-2999"] = 2,
@@ -759,14 +759,14 @@ PvPLedgerLadderData.US.arena3v3 = {
             },
         },
         ["WARRIOR_FURY"] = {
-            listedCount = 13,
-            avgListedRating = 2801.5,
-            medianListedRating = 2758,
-            top100Avg = 2801.5,
+            listedCount = 14,
+            avgListedRating = 2794.4,
+            medianListedRating = 2746.5,
+            top100Avg = 2794.4,
             highest = 3144,
             buckets = {
                 ["2600-2699"] = 4,
-                ["2700-2799"] = 3,
+                ["2700-2799"] = 4,
                 ["2800-2899"] = 4,
                 ["3100-3199"] = 2,
             },
@@ -1218,7 +1218,7 @@ PvPLedgerLadderData.US.arena3v3 = {
         },
         ["babysockzxd-stormrage"] = {
             displayName = "Babysockzxd-stormrage",
-            specKey = "SHAMAN_RESTORATION",
+            specKey = "SHAMAN_ELEMENTAL",
             rating = 2662,
             rank = 879,
             wins = 138,
@@ -2919,7 +2919,7 @@ PvPLedgerLadderData.US.arena3v3 = {
         },
         ["elx-arygos"] = {
             displayName = "Elx-arygos",
-            specKey = "MAGE_ARCANE",
+            specKey = "MAGE_FROST",
             rating = 2697,
             rank = 737,
             wins = 171,
@@ -7158,7 +7158,7 @@ PvPLedgerLadderData.US.arena3v3 = {
         },
         ["saladtko-nerzhul"] = {
             displayName = "Saladtko-nerzhul",
-            specKey = "",
+            specKey = "WARRIOR_FURY",
             rating = 2701,
             rank = 709,
             wins = 103,
