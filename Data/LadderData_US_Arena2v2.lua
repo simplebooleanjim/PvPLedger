@@ -7,7 +7,7 @@ PvPLedgerLadderData.US.arena2v2 = {
     bracket = "arena2v2",
     season = 41,
     snapshotDate = "2026-08-18",
-    generatedAt = "2026-08-18T04:52:49Z",
+    generatedAt = "2026-08-18T05:29:55Z",
     source = "blizzard-api+seramate",
     overall = {
         listedCount = 1002,
@@ -157,9 +157,9 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["PALADIN"] = {
             listedCount = 55,
-            avgListedRating = 2498.5,
+            avgListedRating = 2536.1,
             medianListedRating = 2483,
-            top100Avg = 2498.5,
+            top100Avg = 2536.1,
             highest = 2856,
             buckets = {
                 ["2400-2499"] = 31,
@@ -489,26 +489,26 @@ PvPLedgerLadderData.US.arena2v2 = {
             },
         },
         ["PALADIN_PROTECTION"] = {
-            listedCount = 2,
-            avgListedRating = 2453,
-            medianListedRating = 2453.0,
-            top100Avg = 2453,
-            highest = 2476,
+            listedCount = 3,
+            avgListedRating = 2587.3,
+            medianListedRating = 2476,
+            top100Avg = 2587.3,
+            highest = 2856,
             buckets = {
                 ["2400-2499"] = 2,
+                ["2800-2899"] = 1,
             },
         },
         ["PALADIN_RETRIBUTION"] = {
-            listedCount = 16,
-            avgListedRating = 2534,
-            medianListedRating = 2498.0,
-            top100Avg = 2534,
-            highest = 2856,
+            listedCount = 15,
+            avgListedRating = 2512.5,
+            medianListedRating = 2493,
+            top100Avg = 2512.5,
+            highest = 2686,
             buckets = {
                 ["2400-2499"] = 8,
                 ["2500-2599"] = 5,
                 ["2600-2699"] = 2,
-                ["2800-2899"] = 1,
             },
         },
         ["PRIEST_DISCIPLINE"] = {
@@ -7255,7 +7255,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["scarlet-skywall"] = {
             displayName = "Scarlet-skywall",
-            specKey = "PALADIN_RETRIBUTION",
+            specKey = "PALADIN_PROTECTION",
             rating = 2856,
             rank = 9,
             wins = 122,
