@@ -6,4 +6,8 @@
 ## IconTexture: Interface\AddOns\PvPLedger\Media\Icon.tga
 ## Dependencies: PvPLedger
 
+LadderData_US_Blitz.lua
+LadderData_US_Shuffle.lua
+LadderData_US_Rbg.lua
+LadderData_US_Arena2v2.lua
 LadderData_US_Arena3v3.lua
