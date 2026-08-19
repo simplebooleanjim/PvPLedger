@@ -3,8 +3,8 @@
 --- DO NOT EDIT MANUALLY.
 PVL_AppHelperPendingSnapshots = PVL_AppHelperPendingSnapshots or {}
 PVL_AppHelperSyncInfo = {
-    lastSync = 1787135328,
-    generatedAt = "2026-08-19T10:28:48Z",
+    lastSync = 1787138922,
+    generatedAt = "2026-08-19T11:28:42Z",
     region = "US",
     source = "collector",
 }
@@ -15,7 +15,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
     bracket = "arena2v2",
     season = 42,
     snapshotDate = "2026-08-19",
-    generatedAt = "2026-08-19T10:28:37Z",
+    generatedAt = "2026-08-19T11:28:31Z",
     source = "blizzard-api+seramate",
     overall = {
         listedCount = 1127,
@@ -234,9 +234,9 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["SHAMAN"] = {
             listedCount = 8,
-            avgListedRating = 1001,
-            medianListedRating = 1055,
-            top100Avg = 1001,
+            avgListedRating = 1022.5,
+            medianListedRating = 1078.0,
+            top100Avg = 1022.5,
             highest = 1343,
             buckets = {
                 ["1000-1099"] = 2,
@@ -560,24 +560,15 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
                 ["900-999"] = 1,
             },
         },
-        ["SHAMAN_ELEMENTAL"] = {
-            listedCount = 1,
-            avgListedRating = 861,
-            medianListedRating = 861,
-            top100Avg = 861,
-            highest = 861,
-            buckets = {
-                ["800-899"] = 1,
-            },
-        },
         ["SHAMAN_ENHANCEMENT"] = {
-            listedCount = 1,
-            avgListedRating = 1055,
-            medianListedRating = 1055,
-            top100Avg = 1055,
+            listedCount = 2,
+            avgListedRating = 958,
+            medianListedRating = 958.0,
+            top100Avg = 958,
             highest = 1055,
             buckets = {
                 ["1000-1099"] = 1,
+                ["800-899"] = 1,
             },
         },
         ["SHAMAN_RESTORATION"] = {
@@ -5625,7 +5616,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["loganhawk-tichondrius"] = {
             displayName = "Loganhawk-tichondrius",
-            specKey = "SHAMAN_ELEMENTAL",
+            specKey = "SHAMAN_ENHANCEMENT",
             rating = 861,
             rank = 717,
             wins = 9,
@@ -10807,7 +10798,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
     bracket = "arena3v3",
     season = 42,
     snapshotDate = "2026-08-19",
-    generatedAt = "2026-08-19T10:28:48Z",
+    generatedAt = "2026-08-19T11:28:42Z",
     source = "blizzard-api+seramate",
     overall = {
         listedCount = 1118,
@@ -10926,17 +10917,17 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
             },
         },
         ["HUNTER"] = {
-            listedCount = 11,
-            avgListedRating = 1075.0,
-            medianListedRating = 864,
-            top100Avg = 1075.0,
+            listedCount = 10,
+            avgListedRating = 1088.6,
+            medianListedRating = 1149.5,
+            top100Avg = 1088.6,
             highest = 1651,
             buckets = {
                 ["1400-1499"] = 2,
                 ["1500-1599"] = 2,
                 ["1600-1699"] = 1,
                 ["600-699"] = 2,
-                ["800-899"] = 4,
+                ["800-899"] = 3,
             },
         },
         ["MAGE"] = {
@@ -11182,16 +11173,16 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
             },
         },
         ["HUNTER_MARKSMANSHIP"] = {
-            listedCount = 7,
-            avgListedRating = 1108.4,
-            medianListedRating = 864,
-            top100Avg = 1108.4,
+            listedCount = 6,
+            avgListedRating = 1149.2,
+            medianListedRating = 1149.5,
+            top100Avg = 1149.2,
             highest = 1538,
             buckets = {
                 ["1400-1499"] = 1,
                 ["1500-1599"] = 2,
                 ["600-699"] = 1,
-                ["800-899"] = 3,
+                ["800-899"] = 2,
             },
         },
         ["HUNTER_SURVIVAL"] = {
@@ -20001,7 +19992,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["toddmolovski-frostmourne"] = {
             displayName = "Toddmolovski-frostmourne",
-            specKey = "HUNTER_MARKSMANSHIP",
+            specKey = "",
             rating = 864,
             rank = 478,
             wins = 9,
@@ -21565,7 +21556,7 @@ PVL_AppHelperPendingSnapshots.blitz = {
     bracket = "blitz",
     season = 42,
     snapshotDate = "2026-08-19",
-    generatedAt = "2026-08-19T10:28:03Z",
+    generatedAt = "2026-08-19T11:27:44Z",
     source = "blizzard-api",
     overall = {
         listedCount = 3428,
@@ -53776,7 +53767,7 @@ PVL_AppHelperPendingSnapshots.rbg = {
     bracket = "rbg",
     season = 42,
     snapshotDate = "2026-08-19",
-    generatedAt = "2026-08-19T10:28:25Z",
+    generatedAt = "2026-08-19T11:28:18Z",
     source = "blizzard-api+seramate",
     overall = {
         listedCount = 274,
@@ -56784,7 +56775,7 @@ PVL_AppHelperPendingSnapshots.shuffle = {
     bracket = "shuffle",
     season = 42,
     snapshotDate = "2026-08-19",
-    generatedAt = "2026-08-19T10:28:13Z",
+    generatedAt = "2026-08-19T11:28:06Z",
     source = "blizzard-api",
     overall = {
         listedCount = 9708,

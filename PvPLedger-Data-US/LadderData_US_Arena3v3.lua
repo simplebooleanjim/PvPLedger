@@ -7,7 +7,7 @@ PvPLedgerLadderData.US.arena3v3 = {
     bracket = "arena3v3",
     season = 42,
     snapshotDate = "2026-08-19",
-    generatedAt = "2026-08-19T10:28:48Z",
+    generatedAt = "2026-08-19T11:28:42Z",
     source = "blizzard-api+seramate",
     overall = {
         listedCount = 1118,
@@ -126,17 +126,17 @@ PvPLedgerLadderData.US.arena3v3 = {
             },
         },
         ["HUNTER"] = {
-            listedCount = 11,
-            avgListedRating = 1075.0,
-            medianListedRating = 864,
-            top100Avg = 1075.0,
+            listedCount = 10,
+            avgListedRating = 1088.6,
+            medianListedRating = 1149.5,
+            top100Avg = 1088.6,
             highest = 1651,
             buckets = {
                 ["1400-1499"] = 2,
                 ["1500-1599"] = 2,
                 ["1600-1699"] = 1,
                 ["600-699"] = 2,
-                ["800-899"] = 4,
+                ["800-899"] = 3,
             },
         },
         ["MAGE"] = {
@@ -382,16 +382,16 @@ PvPLedgerLadderData.US.arena3v3 = {
             },
         },
         ["HUNTER_MARKSMANSHIP"] = {
-            listedCount = 7,
-            avgListedRating = 1108.4,
-            medianListedRating = 864,
-            top100Avg = 1108.4,
+            listedCount = 6,
+            avgListedRating = 1149.2,
+            medianListedRating = 1149.5,
+            top100Avg = 1149.2,
             highest = 1538,
             buckets = {
                 ["1400-1499"] = 1,
                 ["1500-1599"] = 2,
                 ["600-699"] = 1,
-                ["800-899"] = 3,
+                ["800-899"] = 2,
             },
         },
         ["HUNTER_SURVIVAL"] = {
@@ -9201,7 +9201,7 @@ PvPLedgerLadderData.US.arena3v3 = {
         },
         ["toddmolovski-frostmourne"] = {
             displayName = "Toddmolovski-frostmourne",
-            specKey = "HUNTER_MARKSMANSHIP",
+            specKey = "",
             rating = 864,
             rank = 478,
             wins = 9,
