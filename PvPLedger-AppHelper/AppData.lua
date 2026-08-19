@@ -3,8 +3,8 @@
 --- DO NOT EDIT MANUALLY.
 PVL_AppHelperPendingSnapshots = PVL_AppHelperPendingSnapshots or {}
 PVL_AppHelperSyncInfo = {
-    lastSync = 1787157074,
-    generatedAt = "2026-08-19T16:31:14Z",
+    lastSync = 1787158997,
+    generatedAt = "2026-08-19T17:03:17Z",
     region = "US",
     source = "collector",
 }
@@ -15,7 +15,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
     bracket = "arena2v2",
     season = 42,
     snapshotDate = "2026-08-19",
-    generatedAt = "2026-08-19T16:31:02Z",
+    generatedAt = "2026-08-19T17:03:07Z",
     source = "blizzard-api+seramate",
     overall = {
         listedCount = 1021,
@@ -76,571 +76,864 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
     },
     byClass = {
         ["DEATHKNIGHT"] = {
-            listedCount = 4,
-            avgListedRating = 910,
-            medianListedRating = 864.0,
-            top100Avg = 910,
-            highest = 1051,
+            listedCount = 15,
+            avgListedRating = 973.5,
+            medianListedRating = 959.0,
+            top100Avg = 973.5,
+            highest = 1618,
             buckets = {
-                ["1000-1099"] = 1,
-                ["800-899"] = 3,
+                ["1000-1099"] = 2,
+                ["1100-1199"] = 1,
+                ["1300-1399"] = 1,
+                ["1600-1699"] = 1,
+                ["700-799"] = 2,
+                ["800-899"] = 5,
+                ["900-999"] = 3,
             },
         },
         ["DEMONHUNTER"] = {
-            listedCount = 3,
-            avgListedRating = 1486.2,
-            medianListedRating = 1486.2,
-            top100Avg = 1486.2,
-            highest = 1654,
+            listedCount = 30,
+            avgListedRating = 1233.0,
+            medianListedRating = 1239.5,
+            top100Avg = 1233.0,
+            highest = 1818,
             buckets = {
+                ["1000-1099"] = 2,
+                ["1100-1199"] = 6,
                 ["1300-1399"] = 1,
-                ["1600-1699"] = 2,
+                ["1500-1599"] = 1,
+                ["1600-1699"] = 7,
+                ["1700-1799"] = 1,
+                ["1800-1899"] = 1,
+                ["700-799"] = 3,
+                ["800-899"] = 6,
+                ["900-999"] = 2,
             },
         },
         ["DRUID"] = {
-            listedCount = 20,
-            avgListedRating = 1102.5,
-            medianListedRating = 1247.0,
-            top100Avg = 1102.5,
-            highest = 1665,
+            listedCount = 91,
+            avgListedRating = 1078.0,
+            medianListedRating = 1007.0,
+            top100Avg = 1078.0,
+            highest = 1703,
             buckets = {
-                ["1200-1299"] = 2,
-                ["1400-1499"] = 1,
-                ["1500-1599"] = 2,
-                ["1600-1699"] = 6,
-                ["700-799"] = 4,
-                ["800-899"] = 1,
-                ["900-999"] = 4,
+                ["1000-1099"] = 12,
+                ["1100-1199"] = 5,
+                ["1200-1299"] = 6,
+                ["1300-1399"] = 1,
+                ["1400-1499"] = 3,
+                ["1500-1599"] = 7,
+                ["1600-1699"] = 10,
+                ["1700-1799"] = 1,
+                ["700-799"] = 13,
+                ["800-899"] = 17,
+                ["900-999"] = 16,
             },
         },
         ["EVOKER"] = {
-            listedCount = 10,
-            avgListedRating = 1195.4,
-            medianListedRating = 1102.0,
-            top100Avg = 1195.4,
-            highest = 1666,
+            listedCount = 28,
+            avgListedRating = 1089.9,
+            medianListedRating = 1049,
+            top100Avg = 1089.9,
+            highest = 1766,
             buckets = {
+                ["1000-1099"] = 3,
+                ["1100-1199"] = 2,
                 ["1200-1299"] = 1,
                 ["1400-1499"] = 2,
-                ["1600-1699"] = 2,
-                ["800-899"] = 3,
-                ["900-999"] = 2,
+                ["1600-1699"] = 5,
+                ["1700-1799"] = 1,
+                ["700-799"] = 3,
+                ["800-899"] = 7,
+                ["900-999"] = 4,
             },
         },
         ["HUNTER"] = {
-            listedCount = 13,
-            avgListedRating = 1213.5,
-            medianListedRating = 1246.0,
-            top100Avg = 1213.5,
+            listedCount = 79,
+            avgListedRating = 1122.9,
+            medianListedRating = 1046,
+            top100Avg = 1122.9,
             highest = 1958,
             buckets = {
-                ["1000-1099"] = 1,
-                ["1200-1299"] = 2,
+                ["1000-1099"] = 12,
+                ["1100-1199"] = 2,
+                ["1200-1299"] = 7,
+                ["1300-1399"] = 1,
                 ["1400-1499"] = 1,
-                ["1500-1599"] = 2,
+                ["1500-1599"] = 6,
+                ["1600-1699"] = 11,
                 ["1900-1999"] = 1,
-                ["700-799"] = 1,
-                ["800-899"] = 3,
-                ["900-999"] = 2,
+                ["700-799"] = 12,
+                ["800-899"] = 17,
+                ["900-999"] = 9,
             },
         },
         ["MAGE"] = {
-            listedCount = 4,
-            avgListedRating = 1167.8,
-            medianListedRating = 1006.5,
-            top100Avg = 1167.8,
-            highest = 1537,
+            listedCount = 27,
+            avgListedRating = 1087.6,
+            medianListedRating = 1056,
+            top100Avg = 1087.6,
+            highest = 1643,
             buckets = {
-                ["1200-1299"] = 1,
+                ["1000-1099"] = 3,
+                ["1100-1199"] = 3,
+                ["1200-1299"] = 3,
+                ["1300-1399"] = 1,
+                ["1400-1499"] = 1,
                 ["1500-1599"] = 1,
-                ["700-799"] = 1,
-                ["900-999"] = 1,
+                ["1600-1699"] = 3,
+                ["700-799"] = 3,
+                ["800-899"] = 2,
+                ["900-999"] = 7,
             },
         },
         ["MONK"] = {
-            listedCount = 16,
-            avgListedRating = 1193.7,
-            medianListedRating = 1103.8,
-            top100Avg = 1193.7,
+            listedCount = 91,
+            avgListedRating = 1089.4,
+            medianListedRating = 1007.0,
+            top100Avg = 1089.4,
             highest = 2004,
             buckets = {
-                ["1000-1099"] = 1,
-                ["1100-1199"] = 1,
-                ["1200-1299"] = 1,
+                ["1000-1099"] = 14,
+                ["1100-1199"] = 10,
+                ["1200-1299"] = 4,
                 ["1300-1399"] = 2,
-                ["1600-1699"] = 2,
-                ["1900-1999"] = 1,
-                ["2000-2099"] = 1,
-                ["700-799"] = 1,
-                ["800-899"] = 4,
-                ["900-999"] = 2,
+                ["1400-1499"] = 3,
+                ["1600-1699"] = 8,
+                ["1900-1999"] = 2,
+                ["2000-2099"] = 2,
+                ["700-799"] = 12,
+                ["800-899"] = 22,
+                ["900-999"] = 12,
             },
         },
         ["PALADIN"] = {
-            listedCount = 10,
-            avgListedRating = 1212.6,
-            medianListedRating = 1248,
-            top100Avg = 1212.6,
+            listedCount = 86,
+            avgListedRating = 1086.6,
+            medianListedRating = 1079.5,
+            top100Avg = 1086.6,
             highest = 2012,
             buckets = {
-                ["1000-1099"] = 1,
-                ["1200-1299"] = 1,
-                ["1300-1399"] = 1,
-                ["1500-1599"] = 1,
+                ["1000-1099"] = 12,
+                ["1100-1199"] = 8,
+                ["1200-1299"] = 3,
+                ["1300-1399"] = 5,
+                ["1400-1499"] = 6,
+                ["1500-1599"] = 6,
+                ["1600-1699"] = 5,
                 ["2000-2099"] = 1,
-                ["700-799"] = 2,
-                ["800-899"] = 1,
-                ["900-999"] = 2,
+                ["700-799"] = 16,
+                ["800-899"] = 16,
+                ["900-999"] = 8,
             },
         },
         ["PRIEST"] = {
-            listedCount = 38,
-            avgListedRating = 1194.9,
-            medianListedRating = 1151.5,
-            top100Avg = 1194.9,
-            highest = 1820,
+            listedCount = 215,
+            avgListedRating = 1166.9,
+            medianListedRating = 1147,
+            top100Avg = 1182.2,
+            highest = 1960,
             buckets = {
-                ["1000-1099"] = 4,
-                ["1100-1199"] = 2,
-                ["1200-1299"] = 1,
-                ["1300-1399"] = 3,
-                ["1500-1599"] = 4,
-                ["1600-1699"] = 5,
+                ["1000-1099"] = 27,
+                ["1100-1199"] = 21,
+                ["1200-1299"] = 8,
+                ["1300-1399"] = 8,
+                ["1400-1499"] = 7,
+                ["1500-1599"] = 21,
+                ["1600-1699"] = 27,
                 ["1700-1799"] = 1,
-                ["1800-1899"] = 2,
-                ["700-799"] = 5,
-                ["800-899"] = 5,
-                ["900-999"] = 6,
+                ["1800-1899"] = 3,
+                ["1900-1999"] = 1,
+                ["700-799"] = 30,
+                ["800-899"] = 31,
+                ["900-999"] = 30,
             },
         },
         ["ROGUE"] = {
-            listedCount = 21,
-            avgListedRating = 1281.0,
-            medianListedRating = 1388.0,
-            top100Avg = 1281.0,
-            highest = 1745,
+            listedCount = 111,
+            avgListedRating = 1106.2,
+            medianListedRating = 1054,
+            top100Avg = 1106.2,
+            highest = 1765,
             buckets = {
-                ["1000-1099"] = 1,
-                ["1100-1199"] = 1,
-                ["1300-1399"] = 4,
-                ["1400-1499"] = 1,
-                ["1500-1599"] = 2,
-                ["1600-1699"] = 6,
-                ["1700-1799"] = 1,
-                ["700-799"] = 1,
-                ["800-899"] = 2,
-                ["900-999"] = 2,
+                ["1000-1099"] = 14,
+                ["1100-1199"] = 13,
+                ["1200-1299"] = 6,
+                ["1300-1399"] = 8,
+                ["1400-1499"] = 2,
+                ["1500-1599"] = 7,
+                ["1600-1699"] = 17,
+                ["1700-1799"] = 2,
+                ["700-799"] = 11,
+                ["800-899"] = 17,
+                ["900-999"] = 14,
             },
         },
         ["SHAMAN"] = {
-            listedCount = 6,
-            avgListedRating = 1078.5,
-            medianListedRating = 1150.2,
-            top100Avg = 1078.5,
-            highest = 1343,
+            listedCount = 50,
+            avgListedRating = 1008.3,
+            medianListedRating = 864.0,
+            top100Avg = 1008.3,
+            highest = 1617,
             buckets = {
-                ["1000-1099"] = 1,
-                ["1300-1399"] = 3,
-                ["700-799"] = 1,
-                ["800-899"] = 1,
+                ["1000-1099"] = 7,
+                ["1100-1199"] = 7,
+                ["1200-1299"] = 2,
+                ["1300-1399"] = 5,
+                ["1400-1499"] = 1,
+                ["1500-1599"] = 1,
+                ["1600-1699"] = 2,
+                ["700-799"] = 7,
+                ["800-899"] = 15,
+                ["900-999"] = 3,
             },
         },
         ["WARLOCK"] = {
-            listedCount = 8,
-            avgListedRating = 1092.9,
-            medianListedRating = 1055,
-            top100Avg = 1092.9,
-            highest = 1663,
+            listedCount = 40,
+            avgListedRating = 1079.4,
+            medianListedRating = 960,
+            top100Avg = 1079.4,
+            highest = 1810,
             buckets = {
-                ["1000-1099"] = 1,
+                ["1000-1099"] = 4,
+                ["1100-1199"] = 2,
+                ["1200-1299"] = 2,
+                ["1300-1399"] = 1,
                 ["1400-1499"] = 2,
-                ["1600-1699"] = 2,
-                ["700-799"] = 1,
-                ["800-899"] = 2,
+                ["1500-1599"] = 1,
+                ["1600-1699"] = 7,
+                ["1800-1899"] = 1,
+                ["700-799"] = 9,
+                ["800-899"] = 9,
+                ["900-999"] = 2,
             },
         },
         ["WARRIOR"] = {
-            listedCount = 10,
-            avgListedRating = 1228.3,
-            medianListedRating = 1185.0,
-            top100Avg = 1228.3,
-            highest = 1680,
+            listedCount = 59,
+            avgListedRating = 1040.6,
+            medianListedRating = 960.0,
+            top100Avg = 1040.6,
+            highest = 1683,
             buckets = {
+                ["1000-1099"] = 7,
+                ["1100-1199"] = 1,
+                ["1200-1299"] = 3,
                 ["1300-1399"] = 1,
-                ["1600-1699"] = 5,
-                ["700-799"] = 2,
-                ["800-899"] = 1,
-                ["900-999"] = 1,
+                ["1400-1499"] = 1,
+                ["1500-1599"] = 2,
+                ["1600-1699"] = 12,
+                ["700-799"] = 10,
+                ["800-899"] = 13,
+                ["900-999"] = 9,
             },
         },
     },
     bySpec = {
-        ["DEATHKNIGHT_UNHOLY"] = {
-            listedCount = 4,
-            avgListedRating = 910,
-            medianListedRating = 864.0,
-            top100Avg = 910,
-            highest = 1051,
+        ["DEATHKNIGHT_BLOOD"] = {
+            listedCount = 2,
+            avgListedRating = 959,
+            medianListedRating = 959.0,
+            top100Avg = 959,
+            highest = 1054,
             buckets = {
                 ["1000-1099"] = 1,
-                ["800-899"] = 3,
+                ["800-899"] = 1,
+            },
+        },
+        ["DEATHKNIGHT_FROST"] = {
+            listedCount = 1,
+            avgListedRating = 959,
+            medianListedRating = 959,
+            top100Avg = 959,
+            highest = 959,
+            buckets = {
+                ["900-999"] = 1,
+            },
+        },
+        ["DEATHKNIGHT_UNHOLY"] = {
+            listedCount = 12,
+            avgListedRating = 1002.6,
+            medianListedRating = 912.0,
+            top100Avg = 1002.6,
+            highest = 1618,
+            buckets = {
+                ["1000-1099"] = 1,
+                ["1100-1199"] = 1,
+                ["1300-1399"] = 1,
+                ["1600-1699"] = 1,
+                ["700-799"] = 2,
+                ["800-899"] = 4,
+                ["900-999"] = 2,
+            },
+        },
+        ["DEMONHUNTER_DEVOURER"] = {
+            listedCount = 4,
+            avgListedRating = 1264.5,
+            medianListedRating = 1282.5,
+            top100Avg = 1264.5,
+            highest = 1725,
+            buckets = {
+                ["1600-1699"] = 1,
+                ["1700-1799"] = 1,
+                ["700-799"] = 1,
+                ["900-999"] = 1,
             },
         },
         ["DEMONHUNTER_HAVOC"] = {
-            listedCount = 2,
-            avgListedRating = 1645.5,
-            medianListedRating = 1645.5,
-            top100Avg = 1645.5,
-            highest = 1654,
+            listedCount = 24,
+            avgListedRating = 1195,
+            medianListedRating = 1148.5,
+            top100Avg = 1195,
+            highest = 1818,
             buckets = {
-                ["1600-1699"] = 2,
+                ["1000-1099"] = 2,
+                ["1100-1199"] = 5,
+                ["1500-1599"] = 1,
+                ["1600-1699"] = 6,
+                ["1800-1899"] = 1,
+                ["700-799"] = 2,
+                ["800-899"] = 6,
+                ["900-999"] = 1,
             },
         },
         ["DEMONHUNTER_VENGEANCE"] = {
-            listedCount = 1,
-            avgListedRating = 1327,
-            medianListedRating = 1327,
-            top100Avg = 1327,
+            listedCount = 2,
+            avgListedRating = 1239.5,
+            medianListedRating = 1239.5,
+            top100Avg = 1239.5,
             highest = 1327,
             buckets = {
+                ["1100-1199"] = 1,
                 ["1300-1399"] = 1,
             },
         },
         ["DRUID_BALANCE"] = {
-            listedCount = 1,
-            avgListedRating = 768,
-            medianListedRating = 768,
-            top100Avg = 768,
-            highest = 768,
-            buckets = {
-                ["700-799"] = 1,
-            },
-        },
-        ["DRUID_FERAL"] = {
-            listedCount = 3,
-            avgListedRating = 1289.7,
-            medianListedRating = 1436,
-            top100Avg = 1289.7,
-            highest = 1665,
-            buckets = {
-                ["1400-1499"] = 1,
-                ["1600-1699"] = 1,
-                ["700-799"] = 1,
-            },
-        },
-        ["DRUID_RESTORATION"] = {
-            listedCount = 16,
-            avgListedRating = 1249.8,
-            medianListedRating = 1247.0,
-            top100Avg = 1249.8,
-            highest = 1657,
-            buckets = {
-                ["1200-1299"] = 2,
-                ["1500-1599"] = 2,
-                ["1600-1699"] = 5,
-                ["700-799"] = 2,
-                ["800-899"] = 1,
-                ["900-999"] = 4,
-            },
-        },
-        ["EVOKER_PRESERVATION"] = {
-            listedCount = 10,
-            avgListedRating = 1195.4,
-            medianListedRating = 1102.0,
-            top100Avg = 1195.4,
-            highest = 1666,
-            buckets = {
-                ["1200-1299"] = 1,
-                ["1400-1499"] = 2,
-                ["1600-1699"] = 2,
-                ["800-899"] = 3,
-                ["900-999"] = 2,
-            },
-        },
-        ["HUNTER_BEASTMASTERY"] = {
-            listedCount = 7,
-            avgListedRating = 1082.1,
-            medianListedRating = 1056,
-            top100Avg = 1082.1,
-            highest = 1435,
+            listedCount = 12,
+            avgListedRating = 942.8,
+            medianListedRating = 863.5,
+            top100Avg = 942.8,
+            highest = 1245,
             buckets = {
                 ["1000-1099"] = 1,
                 ["1200-1299"] = 2,
+                ["700-799"] = 2,
+                ["800-899"] = 5,
+                ["900-999"] = 2,
+            },
+        },
+        ["DRUID_FERAL"] = {
+            listedCount = 24,
+            avgListedRating = 1150.4,
+            medianListedRating = 1055.0,
+            top100Avg = 1150.4,
+            highest = 1665,
+            buckets = {
+                ["1000-1099"] = 5,
+                ["1100-1199"] = 2,
+                ["1200-1299"] = 1,
+                ["1400-1499"] = 2,
+                ["1500-1599"] = 1,
+                ["1600-1699"] = 4,
+                ["700-799"] = 3,
+                ["800-899"] = 2,
+                ["900-999"] = 4,
+            },
+        },
+        ["DRUID_GUARDIAN"] = {
+            listedCount = 2,
+            avgListedRating = 1102.5,
+            medianListedRating = 1102.5,
+            top100Avg = 1102.5,
+            highest = 1151,
+            buckets = {
+                ["1000-1099"] = 1,
+                ["1100-1199"] = 1,
+            },
+        },
+        ["DRUID_RESTORATION"] = {
+            listedCount = 53,
+            avgListedRating = 1116.5,
+            medianListedRating = 959,
+            top100Avg = 1116.5,
+            highest = 1703,
+            buckets = {
+                ["1000-1099"] = 5,
+                ["1100-1199"] = 2,
+                ["1200-1299"] = 3,
+                ["1300-1399"] = 1,
                 ["1400-1499"] = 1,
-                ["800-899"] = 3,
+                ["1500-1599"] = 6,
+                ["1600-1699"] = 6,
+                ["1700-1799"] = 1,
+                ["700-799"] = 8,
+                ["800-899"] = 10,
+                ["900-999"] = 10,
+            },
+        },
+        ["EVOKER_AUGMENTATION"] = {
+            listedCount = 1,
+            avgListedRating = 1152,
+            medianListedRating = 1152,
+            top100Avg = 1152,
+            highest = 1152,
+            buckets = {
+                ["1100-1199"] = 1,
+            },
+        },
+        ["EVOKER_DEVASTATION"] = {
+            listedCount = 4,
+            avgListedRating = 956.2,
+            medianListedRating = 910.5,
+            top100Avg = 956.2,
+            highest = 1152,
+            buckets = {
+                ["1100-1199"] = 1,
+                ["800-899"] = 2,
+                ["900-999"] = 1,
+            },
+        },
+        ["EVOKER_PRESERVATION"] = {
+            listedCount = 23,
+            avgListedRating = 1161.5,
+            medianListedRating = 1049,
+            top100Avg = 1161.5,
+            highest = 1766,
+            buckets = {
+                ["1000-1099"] = 3,
+                ["1200-1299"] = 1,
+                ["1400-1499"] = 2,
+                ["1600-1699"] = 5,
+                ["1700-1799"] = 1,
+                ["700-799"] = 3,
+                ["800-899"] = 5,
+                ["900-999"] = 3,
+            },
+        },
+        ["HUNTER_BEASTMASTERY"] = {
+            listedCount = 45,
+            avgListedRating = 1079.5,
+            medianListedRating = 1046,
+            top100Avg = 1079.5,
+            highest = 1631,
+            buckets = {
+                ["1000-1099"] = 7,
+                ["1100-1199"] = 2,
+                ["1200-1299"] = 5,
+                ["1400-1499"] = 1,
+                ["1500-1599"] = 1,
+                ["1600-1699"] = 7,
+                ["700-799"] = 9,
+                ["800-899"] = 10,
+                ["900-999"] = 3,
             },
         },
         ["HUNTER_MARKSMANSHIP"] = {
-            listedCount = 4,
-            avgListedRating = 1304.5,
-            medianListedRating = 1246.0,
-            top100Avg = 1304.5,
+            listedCount = 19,
+            avgListedRating = 1241.1,
+            medianListedRating = 1247,
+            top100Avg = 1241.1,
             highest = 1958,
             buckets = {
-                ["1500-1599"] = 1,
+                ["1000-1099"] = 1,
+                ["1200-1299"] = 1,
+                ["1300-1399"] = 1,
+                ["1500-1599"] = 4,
+                ["1600-1699"] = 3,
                 ["1900-1999"] = 1,
-                ["700-799"] = 1,
-                ["900-999"] = 1,
+                ["700-799"] = 2,
+                ["800-899"] = 3,
+                ["900-999"] = 3,
             },
         },
         ["HUNTER_SURVIVAL"] = {
-            listedCount = 2,
-            avgListedRating = 1254,
-            medianListedRating = 1254.0,
-            top100Avg = 1254,
-            highest = 1548,
+            listedCount = 15,
+            avgListedRating = 1048.2,
+            medianListedRating = 960,
+            top100Avg = 1048.2,
+            highest = 1610,
             buckets = {
+                ["1000-1099"] = 4,
+                ["1200-1299"] = 1,
                 ["1500-1599"] = 1,
-                ["900-999"] = 1,
+                ["1600-1699"] = 1,
+                ["700-799"] = 1,
+                ["800-899"] = 4,
+                ["900-999"] = 3,
             },
         },
         ["MAGE_ARCANE"] = {
-            listedCount = 1,
-            avgListedRating = 960,
-            medianListedRating = 960,
-            top100Avg = 960,
-            highest = 960,
+            listedCount = 5,
+            avgListedRating = 938.4,
+            medianListedRating = 855,
+            top100Avg = 938.4,
+            highest = 1341,
             buckets = {
+                ["1300-1399"] = 1,
+                ["700-799"] = 2,
+                ["800-899"] = 1,
                 ["900-999"] = 1,
             },
         },
         ["MAGE_FIRE"] = {
-            listedCount = 2,
-            avgListedRating = 1006.5,
-            medianListedRating = 1006.5,
-            top100Avg = 1006.5,
-            highest = 1245,
+            listedCount = 11,
+            avgListedRating = 1071.8,
+            medianListedRating = 1056,
+            top100Avg = 1071.8,
+            highest = 1429,
             buckets = {
-                ["1200-1299"] = 1,
+                ["1000-1099"] = 1,
+                ["1100-1199"] = 2,
+                ["1200-1299"] = 2,
+                ["1400-1499"] = 1,
                 ["700-799"] = 1,
+                ["800-899"] = 1,
+                ["900-999"] = 3,
             },
         },
         ["MAGE_FROST"] = {
-            listedCount = 1,
-            avgListedRating = 1537,
-            medianListedRating = 1537,
-            top100Avg = 1537,
-            highest = 1537,
+            listedCount = 11,
+            avgListedRating = 1252.5,
+            medianListedRating = 1148,
+            top100Avg = 1252.5,
+            highest = 1643,
             buckets = {
+                ["1000-1099"] = 2,
+                ["1100-1199"] = 1,
+                ["1200-1299"] = 1,
                 ["1500-1599"] = 1,
+                ["1600-1699"] = 3,
+                ["900-999"] = 3,
             },
         },
         ["MONK_MISTWEAVER"] = {
-            listedCount = 10,
-            avgListedRating = 1270.6,
-            medianListedRating = 1103.5,
-            top100Avg = 1270.6,
+            listedCount = 55,
+            avgListedRating = 1066.3,
+            medianListedRating = 958,
+            top100Avg = 1066.3,
             highest = 2004,
             buckets = {
-                ["1200-1299"] = 1,
-                ["1600-1699"] = 2,
-                ["1900-1999"] = 1,
-                ["2000-2099"] = 1,
-                ["700-799"] = 1,
-                ["800-899"] = 3,
-                ["900-999"] = 1,
+                ["1000-1099"] = 6,
+                ["1100-1199"] = 2,
+                ["1200-1299"] = 2,
+                ["1400-1499"] = 3,
+                ["1600-1699"] = 4,
+                ["1900-1999"] = 2,
+                ["2000-2099"] = 2,
+                ["700-799"] = 12,
+                ["800-899"] = 14,
+                ["900-999"] = 8,
             },
         },
         ["MONK_WINDWALKER"] = {
-            listedCount = 6,
-            avgListedRating = 1116.8,
-            medianListedRating = 1104.0,
-            top100Avg = 1116.8,
-            highest = 1344,
+            listedCount = 36,
+            avgListedRating = 1112.6,
+            medianListedRating = 1056.0,
+            top100Avg = 1112.6,
+            highest = 1670,
             buckets = {
-                ["1000-1099"] = 1,
-                ["1100-1199"] = 1,
+                ["1000-1099"] = 8,
+                ["1100-1199"] = 8,
+                ["1200-1299"] = 2,
                 ["1300-1399"] = 2,
-                ["800-899"] = 1,
-                ["900-999"] = 1,
+                ["1600-1699"] = 4,
+                ["800-899"] = 8,
+                ["900-999"] = 4,
             },
         },
         ["PALADIN_HOLY"] = {
-            listedCount = 7,
-            avgListedRating = 1094.3,
-            medianListedRating = 960,
-            top100Avg = 1094.3,
+            listedCount = 58,
+            avgListedRating = 1147.8,
+            medianListedRating = 1079.5,
+            top100Avg = 1147.8,
             highest = 2012,
             buckets = {
-                ["1300-1399"] = 1,
+                ["1000-1099"] = 8,
+                ["1100-1199"] = 8,
+                ["1200-1299"] = 2,
+                ["1300-1399"] = 3,
+                ["1400-1499"] = 6,
+                ["1500-1599"] = 5,
+                ["1600-1699"] = 4,
                 ["2000-2099"] = 1,
-                ["700-799"] = 2,
-                ["800-899"] = 1,
-                ["900-999"] = 2,
+                ["700-799"] = 10,
+                ["800-899"] = 7,
+                ["900-999"] = 4,
             },
         },
         ["PALADIN_PROTECTION"] = {
-            listedCount = 1,
-            avgListedRating = 1248,
-            medianListedRating = 1248,
-            top100Avg = 1248,
+            listedCount = 2,
+            avgListedRating = 1142.5,
+            medianListedRating = 1142.5,
+            top100Avg = 1142.5,
             highest = 1248,
             buckets = {
+                ["1000-1099"] = 1,
                 ["1200-1299"] = 1,
             },
         },
         ["PALADIN_RETRIBUTION"] = {
-            listedCount = 2,
-            avgListedRating = 1295.5,
-            medianListedRating = 1295.5,
-            top100Avg = 1295.5,
-            highest = 1535,
+            listedCount = 26,
+            avgListedRating = 969.4,
+            medianListedRating = 864.0,
+            top100Avg = 969.4,
+            highest = 1638,
             buckets = {
-                ["1000-1099"] = 1,
+                ["1000-1099"] = 3,
+                ["1300-1399"] = 2,
                 ["1500-1599"] = 1,
+                ["1600-1699"] = 1,
+                ["700-799"] = 6,
+                ["800-899"] = 9,
+                ["900-999"] = 4,
             },
         },
         ["PRIEST_DISCIPLINE"] = {
-            listedCount = 19,
-            avgListedRating = 1304.4,
-            medianListedRating = 1343,
-            top100Avg = 1304.4,
+            listedCount = 113,
+            avgListedRating = 1118.9,
+            medianListedRating = 1053,
+            top100Avg = 1164.6,
             highest = 1820,
             buckets = {
-                ["1000-1099"] = 2,
-                ["1300-1399"] = 2,
-                ["1500-1599"] = 2,
-                ["1600-1699"] = 4,
+                ["1000-1099"] = 16,
+                ["1100-1199"] = 9,
+                ["1200-1299"] = 6,
+                ["1300-1399"] = 3,
+                ["1400-1499"] = 2,
+                ["1500-1599"] = 9,
+                ["1600-1699"] = 13,
                 ["1700-1799"] = 1,
                 ["1800-1899"] = 2,
-                ["700-799"] = 2,
-                ["800-899"] = 4,
+                ["700-799"] = 18,
+                ["800-899"] = 21,
+                ["900-999"] = 13,
             },
         },
         ["PRIEST_HOLY"] = {
-            listedCount = 19,
-            avgListedRating = 1085.4,
-            medianListedRating = 960,
-            top100Avg = 1085.4,
-            highest = 1607,
+            listedCount = 83,
+            avgListedRating = 1183.8,
+            medianListedRating = 1147,
+            top100Avg = 1183.8,
+            highest = 1960,
             buckets = {
-                ["1000-1099"] = 2,
-                ["1100-1199"] = 2,
-                ["1200-1299"] = 1,
-                ["1300-1399"] = 1,
+                ["1000-1099"] = 8,
+                ["1100-1199"] = 9,
+                ["1200-1299"] = 2,
+                ["1300-1399"] = 5,
+                ["1400-1499"] = 4,
+                ["1500-1599"] = 10,
+                ["1600-1699"] = 10,
+                ["1800-1899"] = 1,
+                ["1900-1999"] = 1,
+                ["700-799"] = 11,
+                ["800-899"] = 6,
+                ["900-999"] = 16,
+            },
+        },
+        ["PRIEST_SHADOW"] = {
+            listedCount = 19,
+            avgListedRating = 1198.1,
+            medianListedRating = 1147,
+            top100Avg = 1198.1,
+            highest = 1617,
+            buckets = {
+                ["1000-1099"] = 3,
+                ["1100-1199"] = 3,
+                ["1400-1499"] = 1,
                 ["1500-1599"] = 2,
-                ["1600-1699"] = 1,
-                ["700-799"] = 3,
-                ["800-899"] = 1,
-                ["900-999"] = 6,
+                ["1600-1699"] = 4,
+                ["700-799"] = 1,
+                ["800-899"] = 4,
+                ["900-999"] = 1,
             },
         },
         ["ROGUE_ASSASSINATION"] = {
-            listedCount = 15,
-            avgListedRating = 1410.7,
-            medianListedRating = 1577,
-            top100Avg = 1410.7,
-            highest = 1745,
+            listedCount = 59,
+            avgListedRating = 1212.8,
+            medianListedRating = 1152,
+            top100Avg = 1212.8,
+            highest = 1765,
             buckets = {
+                ["1000-1099"] = 5,
+                ["1100-1199"] = 9,
+                ["1200-1299"] = 4,
+                ["1300-1399"] = 2,
+                ["1400-1499"] = 2,
+                ["1500-1599"] = 5,
+                ["1600-1699"] = 11,
+                ["1700-1799"] = 2,
+                ["700-799"] = 7,
+                ["800-899"] = 8,
+                ["900-999"] = 4,
+            },
+        },
+        ["ROGUE_OUTLAW"] = {
+            listedCount = 5,
+            avgListedRating = 977.6,
+            medianListedRating = 959,
+            top100Avg = 977.6,
+            highest = 1150,
+            buckets = {
+                ["1000-1099"] = 1,
                 ["1100-1199"] = 1,
-                ["1300-1399"] = 1,
-                ["1400-1499"] = 1,
-                ["1500-1599"] = 2,
-                ["1600-1699"] = 6,
-                ["1700-1799"] = 1,
-                ["700-799"] = 1,
-                ["800-899"] = 1,
+                ["800-899"] = 2,
                 ["900-999"] = 1,
             },
         },
         ["ROGUE_SUBTLETY"] = {
-            listedCount = 6,
-            avgListedRating = 1151.2,
-            medianListedRating = 1199.0,
-            top100Avg = 1151.2,
-            highest = 1343,
+            listedCount = 47,
+            avgListedRating = 1128.3,
+            medianListedRating = 1054,
+            top100Avg = 1128.3,
+            highest = 1651,
             buckets = {
-                ["1000-1099"] = 1,
-                ["1300-1399"] = 3,
-                ["800-899"] = 1,
-                ["900-999"] = 1,
+                ["1000-1099"] = 8,
+                ["1100-1199"] = 3,
+                ["1200-1299"] = 2,
+                ["1300-1399"] = 6,
+                ["1500-1599"] = 2,
+                ["1600-1699"] = 6,
+                ["700-799"] = 4,
+                ["800-899"] = 7,
+                ["900-999"] = 9,
+            },
+        },
+        ["SHAMAN_ELEMENTAL"] = {
+            listedCount = 4,
+            avgListedRating = 959.8,
+            medianListedRating = 864.0,
+            top100Avg = 959.8,
+            highest = 1247,
+            buckets = {
+                ["1200-1299"] = 1,
+                ["800-899"] = 3,
             },
         },
         ["SHAMAN_ENHANCEMENT"] = {
-            listedCount = 2,
-            avgListedRating = 958,
-            medianListedRating = 958.0,
-            top100Avg = 958,
-            highest = 1055,
+            listedCount = 7,
+            avgListedRating = 1011.1,
+            medianListedRating = 861,
+            top100Avg = 1011.1,
+            highest = 1439,
             buckets = {
                 ["1000-1099"] = 1,
-                ["800-899"] = 1,
+                ["1300-1399"] = 1,
+                ["1400-1499"] = 1,
+                ["700-799"] = 2,
+                ["800-899"] = 2,
             },
         },
         ["SHAMAN_RESTORATION"] = {
-            listedCount = 4,
-            avgListedRating = 1199,
-            medianListedRating = 1342.5,
-            top100Avg = 1199,
-            highest = 1343,
+            listedCount = 39,
+            avgListedRating = 1054.1,
+            medianListedRating = 1054,
+            top100Avg = 1054.1,
+            highest = 1617,
             buckets = {
-                ["1300-1399"] = 3,
-                ["700-799"] = 1,
+                ["1000-1099"] = 6,
+                ["1100-1199"] = 7,
+                ["1200-1299"] = 1,
+                ["1300-1399"] = 4,
+                ["1500-1599"] = 1,
+                ["1600-1699"] = 2,
+                ["700-799"] = 5,
+                ["800-899"] = 10,
+                ["900-999"] = 3,
             },
         },
         ["WARLOCK_AFFLICTION"] = {
-            listedCount = 4,
-            avgListedRating = 1392,
-            medianListedRating = 1520.5,
-            top100Avg = 1392,
-            highest = 1663,
-            buckets = {
-                ["1400-1499"] = 1,
-                ["1600-1699"] = 2,
-                ["800-899"] = 1,
-            },
-        },
-        ["WARLOCK_DEMONOLOGY"] = {
-            listedCount = 1,
-            avgListedRating = 768,
-            medianListedRating = 768,
-            top100Avg = 768,
-            highest = 768,
-            buckets = {
-                ["700-799"] = 1,
-            },
-        },
-        ["WARLOCK_DESTRUCTION"] = {
-            listedCount = 3,
-            avgListedRating = 1118.7,
-            medianListedRating = 1055,
-            top100Avg = 1118.7,
-            highest = 1437,
+            listedCount = 17,
+            avgListedRating = 1171.5,
+            medianListedRating = 960,
+            top100Avg = 1171.5,
+            highest = 1810,
             buckets = {
                 ["1000-1099"] = 1,
                 ["1400-1499"] = 1,
-                ["800-899"] = 1,
-            },
-        },
-        ["WARRIOR_ARMS"] = {
-            listedCount = 7,
-            avgListedRating = 1385,
-            medianListedRating = 1602,
-            top100Avg = 1385,
-            highest = 1668,
-            buckets = {
-                ["1300-1399"] = 1,
+                ["1500-1599"] = 1,
                 ["1600-1699"] = 4,
-                ["800-899"] = 1,
-                ["900-999"] = 1,
+                ["1800-1899"] = 1,
+                ["700-799"] = 4,
+                ["800-899"] = 3,
+                ["900-999"] = 2,
             },
         },
-        ["WARRIOR_FURY"] = {
-            listedCount = 3,
-            avgListedRating = 1071.7,
-            medianListedRating = 768,
-            top100Avg = 1071.7,
-            highest = 1680,
+        ["WARLOCK_DEMONOLOGY"] = {
+            listedCount = 6,
+            avgListedRating = 955.8,
+            medianListedRating = 860.5,
+            top100Avg = 955.8,
+            highest = 1614,
             buckets = {
                 ["1600-1699"] = 1,
                 ["700-799"] = 2,
+                ["800-899"] = 3,
+            },
+        },
+        ["WARLOCK_DESTRUCTION"] = {
+            listedCount = 17,
+            avgListedRating = 1110.9,
+            medianListedRating = 1056,
+            top100Avg = 1110.9,
+            highest = 1638,
+            buckets = {
+                ["1000-1099"] = 3,
+                ["1100-1199"] = 2,
+                ["1200-1299"] = 2,
+                ["1300-1399"] = 1,
+                ["1400-1499"] = 1,
+                ["1600-1699"] = 2,
+                ["700-799"] = 3,
+                ["800-899"] = 3,
+            },
+        },
+        ["WARRIOR_ARMS"] = {
+            listedCount = 48,
+            avgListedRating = 1127.7,
+            medianListedRating = 960.0,
+            top100Avg = 1127.7,
+            highest = 1683,
+            buckets = {
+                ["1000-1099"] = 5,
+                ["1100-1199"] = 1,
+                ["1200-1299"] = 3,
+                ["1300-1399"] = 1,
+                ["1400-1499"] = 1,
+                ["1500-1599"] = 2,
+                ["1600-1699"] = 10,
+                ["700-799"] = 7,
+                ["800-899"] = 9,
+                ["900-999"] = 9,
+            },
+        },
+        ["WARRIOR_FURY"] = {
+            listedCount = 9,
+            avgListedRating = 1034.1,
+            medianListedRating = 861,
+            top100Avg = 1034.1,
+            highest = 1683,
+            buckets = {
+                ["1000-1099"] = 1,
+                ["1600-1699"] = 2,
+                ["700-799"] = 3,
+                ["800-899"] = 3,
+            },
+        },
+        ["WARRIOR_PROTECTION"] = {
+            listedCount = 2,
+            avgListedRating = 960,
+            medianListedRating = 960.0,
+            top100Avg = 960,
+            highest = 1056,
+            buckets = {
+                ["1000-1099"] = 1,
+                ["800-899"] = 1,
             },
         },
     },
     players = {
         ["aavro-stormrage"] = {
             displayName = "Aavro-stormrage",
-            specKey = "",
+            specKey = "ROGUE_SUBTLETY",
             rating = 1247,
             rank = 263,
             wins = 13,
@@ -649,7 +942,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["aazua-frostmourne"] = {
             displayName = "Aazua-frostmourne",
-            specKey = "",
+            specKey = "HUNTER_BEASTMASTERY",
             rating = 1053,
             rank = 469,
             wins = 11,
@@ -658,7 +951,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["abeldra-moonguard"] = {
             displayName = "Abeldra-moon-guard",
-            specKey = "",
+            specKey = "MONK_MISTWEAVER",
             rating = 861,
             rank = 803,
             wins = 9,
@@ -667,7 +960,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["abnlx-kelthuzad"] = {
             displayName = "Abnlx-kelthuzad",
-            specKey = "",
+            specKey = "ROGUE_SUBTLETY",
             rating = 1056,
             rank = 382,
             wins = 11,
@@ -676,7 +969,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["aboveavrg-bleedinghollow"] = {
             displayName = "Aboveavrg-bleeding-hollow",
-            specKey = "",
+            specKey = "PRIEST_DISCIPLINE",
             rating = 1292,
             rank = 253,
             wins = 14,
@@ -685,7 +978,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["abstractf-sargeras"] = {
             displayName = "Abstractf-sargeras",
-            specKey = "",
+            specKey = "DRUID_GUARDIAN",
             rating = 1054,
             rank = 456,
             wins = 11,
@@ -694,7 +987,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["aby-cenarius"] = {
             displayName = "Aby-cenarius",
-            specKey = "",
+            specKey = "PRIEST_HOLY",
             rating = 1056,
             rank = 382,
             wins = 11,
@@ -712,7 +1005,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["accretían-tichondrius"] = {
             displayName = "Accretían-tichondrius",
-            specKey = "",
+            specKey = "WARRIOR_ARMS",
             rating = 1621,
             rank = 68,
             wins = 20,
@@ -721,7 +1014,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["ad-chogall"] = {
             displayName = "Ad-chogall",
-            specKey = "",
+            specKey = "PALADIN_HOLY",
             rating = 1056,
             rank = 382,
             wins = 11,
@@ -730,7 +1023,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["adderal-malganis"] = {
             displayName = "Adderal-malganis",
-            specKey = "",
+            specKey = "PALADIN_HOLY",
             rating = 1056,
             rank = 382,
             wins = 11,
@@ -748,7 +1041,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["adored-sargeras"] = {
             displayName = "Adored-sargeras",
-            specKey = "",
+            specKey = "PRIEST_HOLY",
             rating = 768,
             rank = 846,
             wins = 8,
@@ -766,7 +1059,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["adumm-emeralddream"] = {
             displayName = "Adumm-emerald-dream",
-            specKey = "",
+            specKey = "MONK_WINDWALKER",
             rating = 1601,
             rank = 130,
             wins = 19,
@@ -775,7 +1068,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["aelinessa-hellscream"] = {
             displayName = "Aelinessa-hellscream",
-            specKey = "",
+            specKey = "PRIEST_DISCIPLINE",
             rating = 1524,
             rank = 179,
             wins = 17,
@@ -784,7 +1077,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["agathokako-area52"] = {
             displayName = "Agathokako-area-52",
-            specKey = "",
+            specKey = "PRIEST_DISCIPLINE",
             rating = 1573,
             rank = 143,
             wins = 19,
@@ -793,7 +1086,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["agoraphobik-moonguard"] = {
             displayName = "Agoraphobik-moon-guard",
-            specKey = "",
+            specKey = "PRIEST_HOLY",
             rating = 1574,
             rank = 142,
             wins = 18,
@@ -802,7 +1095,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["akkatsuki-tichondrius"] = {
             displayName = "Akkatsuki-tichondrius",
-            specKey = "",
+            specKey = "PRIEST_DISCIPLINE",
             rating = 858,
             rank = 834,
             wins = 9,
@@ -811,7 +1104,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["alaitha-moonguard"] = {
             displayName = "Alaitha-moon-guard",
-            specKey = "",
+            specKey = "PRIEST_SHADOW",
             rating = 1617,
             rank = 77,
             wins = 20,
@@ -820,7 +1113,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["albion-sargeras"] = {
             displayName = "Albion-sargeras",
-            specKey = "",
+            specKey = "PALADIN_RETRIBUTION",
             rating = 768,
             rank = 846,
             wins = 8,
@@ -829,7 +1122,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["alcoric-illidan"] = {
             displayName = "Alcoric-illidan",
-            specKey = "",
+            specKey = "PRIEST_DISCIPLINE",
             rating = 1601,
             rank = 130,
             wins = 19,
@@ -838,7 +1131,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["alien-andorhal"] = {
             displayName = "Alien-andorhal",
-            specKey = "",
+            specKey = "WARLOCK_AFFLICTION",
             rating = 860,
             rank = 818,
             wins = 9,
@@ -847,7 +1140,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["aligheri-drakkari"] = {
             displayName = "Aligheri-drakkari",
-            specKey = "",
+            specKey = "PALADIN_HOLY",
             rating = 768,
             rank = 846,
             wins = 8,
@@ -874,7 +1167,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["amethana-suramar"] = {
             displayName = "Amethana-suramar",
-            specKey = "",
+            specKey = "PALADIN_HOLY",
             rating = 1439,
             rank = 195,
             wins = 15,
@@ -892,7 +1185,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["anatist-moonguard"] = {
             displayName = "Anatist-moon-guard",
-            specKey = "",
+            specKey = "SHAMAN_RESTORATION",
             rating = 1617,
             rank = 77,
             wins = 20,
@@ -901,7 +1194,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["angele-moonguard"] = {
             displayName = "Angele-moon-guard",
-            specKey = "",
+            specKey = "PRIEST_DISCIPLINE",
             rating = 855,
             rank = 837,
             wins = 9,
@@ -928,7 +1221,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["angrynalayu-tichondrius"] = {
             displayName = "Angrynalayu-tichondrius",
-            specKey = "",
+            specKey = "DRUID_FERAL",
             rating = 1130,
             rank = 380,
             wins = 12,
@@ -937,7 +1230,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["angrypucca-tichondrius"] = {
             displayName = "Angrypucca-tichondrius",
-            specKey = "",
+            specKey = "MONK_MISTWEAVER",
             rating = 768,
             rank = 846,
             wins = 8,
@@ -946,7 +1239,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["aniqa-tichondrius"] = {
             displayName = "Aniqa-tichondrius",
-            specKey = "",
+            specKey = "PRIEST_DISCIPLINE",
             rating = 1242,
             rank = 289,
             wins = 13,
@@ -964,7 +1257,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["antheiana-barthilas"] = {
             displayName = "Antheiana-barthilas",
-            specKey = "",
+            specKey = "PRIEST_HOLY",
             rating = 1583,
             rank = 135,
             wins = 18,
@@ -973,7 +1266,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["antipathyx-tichondrius"] = {
             displayName = "Antipathyx-tichondrius",
-            specKey = "",
+            specKey = "SHAMAN_ELEMENTAL",
             rating = 864,
             rank = 648,
             wins = 9,
@@ -991,7 +1284,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["anttix-zuljin"] = {
             displayName = "Anttix-zuljin",
-            specKey = "",
+            specKey = "WARLOCK_DESTRUCTION",
             rating = 1244,
             rank = 283,
             wins = 13,
@@ -1018,7 +1311,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["arcalight-tichondrius"] = {
             displayName = "Arcalight-tichondrius",
-            specKey = "",
+            specKey = "PALADIN_HOLY",
             rating = 768,
             rank = 846,
             wins = 8,
@@ -1027,7 +1320,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["arguzzy-sargeras"] = {
             displayName = "Arguzzy-sargeras",
-            specKey = "",
+            specKey = "WARRIOR_FURY",
             rating = 859,
             rank = 827,
             wins = 9,
@@ -1036,7 +1329,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["aryawilliams-area52"] = {
             displayName = "Aryawilliams-area-52",
-            specKey = "",
+            specKey = "DRUID_RESTORATION",
             rating = 864,
             rank = 648,
             wins = 9,
@@ -1045,7 +1338,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["atarii-emeralddream"] = {
             displayName = "Atarii-emerald-dream",
-            specKey = "",
+            specKey = "MONK_WINDWALKER",
             rating = 861,
             rank = 803,
             wins = 9,
@@ -1054,7 +1347,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["atdeathsdoor-malygos"] = {
             displayName = "Atdeathsdoor-malygos",
-            specKey = "",
+            specKey = "PRIEST_DISCIPLINE",
             rating = 864,
             rank = 648,
             wins = 9,
@@ -1063,7 +1356,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["athlete-emeralddream"] = {
             displayName = "Athlete-emerald-dream",
-            specKey = "",
+            specKey = "DRUID_RESTORATION",
             rating = 1565,
             rank = 148,
             wins = 19,
@@ -1072,7 +1365,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["atrapx-ragnaros"] = {
             displayName = "Atrapx-ragnaros",
-            specKey = "",
+            specKey = "PALADIN_RETRIBUTION",
             rating = 862,
             rank = 781,
             wins = 9,
@@ -1081,7 +1374,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["autoshield-proudmoore"] = {
             displayName = "Autoshield-proudmoore",
-            specKey = "",
+            specKey = "PRIEST_DISCIPLINE",
             rating = 859,
             rank = 827,
             wins = 9,
@@ -1090,7 +1383,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["aveil-echoisles"] = {
             displayName = "Aveil-echo-isles",
-            specKey = "",
+            specKey = "PRIEST_DISCIPLINE",
             rating = 1055,
             rank = 432,
             wins = 11,
@@ -1117,7 +1410,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["axtin-stormrage"] = {
             displayName = "Axtin-stormrage",
-            specKey = "",
+            specKey = "DRUID_FERAL",
             rating = 1608,
             rank = 96,
             wins = 19,
@@ -1126,7 +1419,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["axvish-tichondrius"] = {
             displayName = "Axvish-tichondrius",
-            specKey = "",
+            specKey = "SHAMAN_RESTORATION",
             rating = 1149,
             rank = 348,
             wins = 12,
@@ -1135,7 +1428,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["aydenxd-stormrage"] = {
             displayName = "Aydenxd-stormrage",
-            specKey = "",
+            specKey = "HUNTER_SURVIVAL",
             rating = 1051,
             rank = 481,
             wins = 11,
@@ -1144,7 +1437,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["ayerborne-kelthuzad"] = {
             displayName = "Ayerborne-kelthuzad",
-            specKey = "",
+            specKey = "MAGE_FROST",
             rating = 1604,
             rank = 117,
             wins = 19,
@@ -1153,7 +1446,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["azerothgg-tichondrius"] = {
             displayName = "Azerothgg-tichondrius",
-            specKey = "",
+            specKey = "PALADIN_HOLY",
             rating = 864,
             rank = 648,
             wins = 9,
@@ -1180,7 +1473,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["bahbi-tichondrius"] = {
             displayName = "Bahbi-tichondrius",
-            specKey = "",
+            specKey = "WARLOCK_AFFLICTION",
             rating = 960,
             rank = 508,
             wins = 10,
@@ -1189,7 +1482,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["bajheera-sargeras"] = {
             displayName = "Bajheera-sargeras",
-            specKey = "",
+            specKey = "WARRIOR_ARMS",
             rating = 1632,
             rank = 56,
             wins = 20,
@@ -1198,7 +1491,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["bakusami-zuljin"] = {
             displayName = "Bakusami-zuljin",
-            specKey = "",
+            specKey = "MONK_WINDWALKER",
             rating = 1150,
             rank = 339,
             wins = 12,
@@ -1216,7 +1509,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["bandaidboyxx-sargeras"] = {
             displayName = "Bandaidboyxx-sargeras",
-            specKey = "PRIEST_DISCIPLINE",
+            specKey = "",
             rating = 864,
             rank = 648,
             wins = 9,
@@ -1225,7 +1518,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["bblsleave-moonguard"] = {
             displayName = "Bblsleave-moon-guard",
-            specKey = "",
+            specKey = "PRIEST_DISCIPLINE",
             rating = 767,
             rank = 983,
             wins = 8,
@@ -1234,7 +1527,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["bbqchicken-azuremyst"] = {
             displayName = "Bbqchicken-azuremyst",
-            specKey = "",
+            specKey = "DRUID_BALANCE",
             rating = 862,
             rank = 781,
             wins = 9,
@@ -1252,7 +1545,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["beamzee-tichondrius"] = {
             displayName = "Beamzee-tichondrius",
-            specKey = "",
+            specKey = "HUNTER_BEASTMASTERY",
             rating = 1631,
             rank = 58,
             wins = 22,
@@ -1261,7 +1554,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["beastmonk-scarletcrusade"] = {
             displayName = "Beastmonk-scarlet-crusade",
-            specKey = "",
+            specKey = "MONK_MISTWEAVER",
             rating = 950,
             rank = 642,
             wins = 10,
@@ -1270,7 +1563,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["beertyler-alteracmountains"] = {
             displayName = "Beertyler-alterac-mountains",
-            specKey = "",
+            specKey = "HUNTER_MARKSMANSHIP",
             rating = 1541,
             rank = 166,
             wins = 17,
@@ -1279,7 +1572,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["bellsback-dathremar"] = {
             displayName = "Bellsback-dathremar",
-            specKey = "",
+            specKey = "PALADIN_HOLY",
             rating = 1445,
             rank = 193,
             wins = 16,
@@ -1288,7 +1581,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["belàriá-tichondrius"] = {
             displayName = "Belàriá-tichondrius",
-            specKey = "",
+            specKey = "WARRIOR_ARMS",
             rating = 768,
             rank = 846,
             wins = 8,
@@ -1315,7 +1608,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["bethory-aegwynn"] = {
             displayName = "Bethory-aegwynn",
-            specKey = "",
+            specKey = "PRIEST_DISCIPLINE",
             rating = 768,
             rank = 846,
             wins = 8,
@@ -1324,7 +1617,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["bhen-tichondrius"] = {
             displayName = "Bhen-tichondrius",
-            specKey = "",
+            specKey = "DRUID_FERAL",
             rating = 1055,
             rank = 432,
             wins = 11,
@@ -1333,7 +1626,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["bigdamjudge-blackrock"] = {
             displayName = "Bigdamjudge-blackrock",
-            specKey = "",
+            specKey = "PALADIN_HOLY",
             rating = 1339,
             rank = 235,
             wins = 14,
@@ -1342,7 +1635,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["biiggwhammy-tichondrius"] = {
             displayName = "Biiggwhammy-tichondrius",
-            specKey = "",
+            specKey = "PALADIN_RETRIBUTION",
             rating = 1056,
             rank = 382,
             wins = 11,
@@ -1369,7 +1662,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["biofly-thrall"] = {
             displayName = "Biofly-thrall",
-            specKey = "",
+            specKey = "SHAMAN_RESTORATION",
             rating = 1056,
             rank = 382,
             wins = 11,
@@ -1378,7 +1671,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["bishoparoty-stormrage"] = {
             displayName = "Bishoparoty-stormrage",
-            specKey = "",
+            specKey = "PRIEST_HOLY",
             rating = 1412,
             rank = 215,
             wins = 15,
@@ -1387,7 +1680,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["bitcorn-tichondrius"] = {
             displayName = "Bitcorn-tichondrius",
-            specKey = "",
+            specKey = "HUNTER_SURVIVAL",
             rating = 1610,
             rank = 92,
             wins = 20,
@@ -1396,7 +1689,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["blackbubba-tichondrius"] = {
             displayName = "Blackbubba-tichondrius",
-            specKey = "",
+            specKey = "PRIEST_DISCIPLINE",
             rating = 1297,
             rank = 252,
             wins = 14,
@@ -1405,7 +1698,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["blakktaboo-zuljin"] = {
             displayName = "Blakktaboo-zuljin",
-            specKey = "",
+            specKey = "PRIEST_DISCIPLINE",
             rating = 864,
             rank = 648,
             wins = 9,
@@ -1414,7 +1707,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["blastr-tichondrius"] = {
             displayName = "Blastr-tichondrius",
-            specKey = "",
+            specKey = "PRIEST_HOLY",
             rating = 768,
             rank = 846,
             wins = 8,
@@ -1423,7 +1716,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["blazedblue-tichondrius"] = {
             displayName = "Blazedblue-tichondrius",
-            specKey = "",
+            specKey = "SHAMAN_RESTORATION",
             rating = 768,
             rank = 846,
             wins = 8,
@@ -1432,7 +1725,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["blickys-area52"] = {
             displayName = "Blickys-area-52",
-            specKey = "",
+            specKey = "HUNTER_SURVIVAL",
             rating = 863,
             rank = 751,
             wins = 9,
@@ -1441,7 +1734,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["bloodstone-norgannon"] = {
             displayName = "Bloodstone-norgannon",
-            specKey = "",
+            specKey = "DEMONHUNTER_HAVOC",
             rating = 861,
             rank = 803,
             wins = 9,
@@ -1450,7 +1743,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["bluemandan-garrosh"] = {
             displayName = "Bluemandan-garrosh",
-            specKey = "",
+            specKey = "SHAMAN_RESTORATION",
             rating = 768,
             rank = 846,
             wins = 8,
@@ -1468,7 +1761,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["bobkasa-proudmoore"] = {
             displayName = "Bobkasa-proudmoore",
-            specKey = "",
+            specKey = "ROGUE_ASSASSINATION",
             rating = 1245,
             rank = 279,
             wins = 13,
@@ -1477,7 +1770,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["boneappétit-tichondrius"] = {
             displayName = "Boneappétit-tichondrius",
-            specKey = "",
+            specKey = "PRIEST_HOLY",
             rating = 954,
             rank = 638,
             wins = 10,
@@ -1486,7 +1779,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["booee-sargeras"] = {
             displayName = "Booee-sargeras",
-            specKey = "",
+            specKey = "PRIEST_DISCIPLINE",
             rating = 863,
             rank = 751,
             wins = 9,
@@ -1504,7 +1797,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["bordistor-dalaran"] = {
             displayName = "Bordistor-dalaran",
-            specKey = "",
+            specKey = "WARRIOR_ARMS",
             rating = 864,
             rank = 648,
             wins = 9,
@@ -1522,7 +1815,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["borune-proudmoore"] = {
             displayName = "Borune-proudmoore",
-            specKey = "",
+            specKey = "PRIEST_DISCIPLINE",
             rating = 862,
             rank = 781,
             wins = 9,
@@ -1531,7 +1824,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["boykeeper-drakthul"] = {
             displayName = "Boykeeper-drakthul",
-            specKey = "PRIEST_HOLY",
+            specKey = "",
             rating = 960,
             rank = 508,
             wins = 10,
@@ -1549,7 +1842,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["branasou-emeralddream"] = {
             displayName = "Branasou-emerald-dream",
-            specKey = "",
+            specKey = "SHAMAN_RESTORATION",
             rating = 861,
             rank = 803,
             wins = 9,
@@ -1558,7 +1851,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["brandon-dunemaul"] = {
             displayName = "Brandon-dunemaul",
-            specKey = "",
+            specKey = "WARLOCK_DESTRUCTION",
             rating = 1152,
             rank = 297,
             wins = 12,
@@ -1567,7 +1860,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["brynnhild-stormrage"] = {
             displayName = "Brynnhild-stormrage",
-            specKey = "",
+            specKey = "PALADIN_HOLY",
             rating = 1247,
             rank = 263,
             wins = 13,
@@ -1576,7 +1869,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["bubbleaid-tichondrius"] = {
             displayName = "Bubbleaid-tichondrius",
-            specKey = "",
+            specKey = "PALADIN_HOLY",
             rating = 1145,
             rank = 373,
             wins = 12,
@@ -1585,7 +1878,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["bubbletoolz-illidan"] = {
             displayName = "Bubbletoolz-illidan",
-            specKey = "",
+            specKey = "PRIEST_DISCIPLINE",
             rating = 859,
             rank = 827,
             wins = 9,
@@ -1594,7 +1887,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["buckbroken-darkspear"] = {
             displayName = "Buckbroken-darkspear",
-            specKey = "",
+            specKey = "HUNTER_SURVIVAL",
             rating = 1056,
             rank = 382,
             wins = 11,
@@ -1603,7 +1896,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["buffrdruid-sargeras"] = {
             displayName = "Buffrdruid-sargeras",
-            specKey = "",
+            specKey = "MAGE_ARCANE",
             rating = 768,
             rank = 846,
             wins = 8,
@@ -1612,7 +1905,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["buongìorno-kelthuzad"] = {
             displayName = "Buongìorno-kelthuzad",
-            specKey = "",
+            specKey = "ROGUE_ASSASSINATION",
             rating = 1056,
             rank = 382,
             wins = 11,
@@ -1621,7 +1914,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["bustinatem-illidan"] = {
             displayName = "Bustinatem-illidan",
-            specKey = "",
+            specKey = "HUNTER_MARKSMANSHIP",
             rating = 861,
             rank = 803,
             wins = 9,
@@ -1630,7 +1923,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["buttonmashx-tichondrius"] = {
             displayName = "Buttonmashx-tichondrius",
-            specKey = "",
+            specKey = "PRIEST_HOLY",
             rating = 1960,
             rank = 4,
             wins = 37,
@@ -1639,7 +1932,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["bwonaias-moonguard"] = {
             displayName = "Bwonaias-moon-guard",
-            specKey = "",
+            specKey = "SHAMAN_RESTORATION",
             rating = 1147,
             rank = 366,
             wins = 12,
@@ -1648,7 +1941,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["bêardusah-area52"] = {
             displayName = "Bêardusah-area-52",
-            specKey = "",
+            specKey = "PRIEST_DISCIPLINE",
             rating = 1483,
             rank = 190,
             wins = 16,
@@ -1657,7 +1950,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["cacitizen-tichondrius"] = {
             displayName = "Cacitizen-tichondrius",
-            specKey = "",
+            specKey = "ROGUE_ASSASSINATION",
             rating = 1616,
             rank = 80,
             wins = 22,
@@ -1666,7 +1959,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["caged-onyxia"] = {
             displayName = "Caged-onyxia",
-            specKey = "",
+            specKey = "MONK_MISTWEAVER",
             rating = 1663,
             rank = 32,
             wins = 23,
@@ -1675,7 +1968,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["calarith-stormrage"] = {
             displayName = "Calarith-stormrage",
-            specKey = "",
+            specKey = "PRIEST_HOLY",
             rating = 1151,
             rank = 329,
             wins = 12,
@@ -1693,7 +1986,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["calmtwo-sargeras"] = {
             displayName = "Calmtwo-sargeras",
-            specKey = "",
+            specKey = "ROGUE_SUBTLETY",
             rating = 1600,
             rank = 132,
             wins = 19,
@@ -1702,7 +1995,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["calvincy-illidan"] = {
             displayName = "Calvincy-illidan",
-            specKey = "PRIEST_HOLY",
+            specKey = "",
             rating = 960,
             rank = 508,
             wins = 10,
@@ -1711,7 +2004,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["cassiar-illidan"] = {
             displayName = "Cassiar-illidan",
-            specKey = "",
+            specKey = "PALADIN_RETRIBUTION",
             rating = 863,
             rank = 751,
             wins = 9,
@@ -1720,7 +2013,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["catdreams-sargeras"] = {
             displayName = "Catdreams-sargeras",
-            specKey = "",
+            specKey = "DRUID_RESTORATION",
             rating = 767,
             rank = 983,
             wins = 8,
@@ -1729,7 +2022,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["cattastrophe-kelthuzad"] = {
             displayName = "Cattastrophe-kelthuzad",
-            specKey = "",
+            specKey = "DRUID_FERAL",
             rating = 1150,
             rank = 339,
             wins = 12,
@@ -1747,7 +2040,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["cearáa-azralon"] = {
             displayName = "Cearáa-azralon",
-            specKey = "",
+            specKey = "PRIEST_HOLY",
             rating = 1534,
             rank = 173,
             wins = 16,
@@ -1756,7 +2049,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["cedpally-akama"] = {
             displayName = "Cedpally-akama",
-            specKey = "",
+            specKey = "PALADIN_HOLY",
             rating = 1439,
             rank = 195,
             wins = 15,
@@ -1765,7 +2058,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["celyp-moonguard"] = {
             displayName = "Celyp-moon-guard",
-            specKey = "",
+            specKey = "PRIEST_HOLY",
             rating = 1049,
             rank = 493,
             wins = 11,
@@ -1774,7 +2067,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["cg-shuhalo"] = {
             displayName = "Cg-shuhalo",
-            specKey = "",
+            specKey = "MAGE_ARCANE",
             rating = 1341,
             rank = 230,
             wins = 14,
@@ -1783,7 +2076,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["chachsp-tichondrius"] = {
             displayName = "Chachsp-tichondrius",
-            specKey = "",
+            specKey = "PRIEST_SHADOW",
             rating = 1152,
             rank = 297,
             wins = 12,
@@ -1810,7 +2103,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["cheapdeal-frostmourne"] = {
             displayName = "Cheapdeal-frostmourne",
-            specKey = "",
+            specKey = "ROGUE_SUBTLETY",
             rating = 959,
             rank = 572,
             wins = 10,
@@ -1819,7 +2112,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["cheeksi-dathremar"] = {
             displayName = "Cheeksi-dathremar",
-            specKey = "",
+            specKey = "HUNTER_BEASTMASTERY",
             rating = 959,
             rank = 572,
             wins = 10,
@@ -1828,7 +2121,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["chickfilaye-auchindoun"] = {
             displayName = "Chickfilaye-auchindoun",
-            specKey = "",
+            specKey = "ROGUE_ASSASSINATION",
             rating = 1579,
             rank = 138,
             wins = 18,
@@ -1846,7 +2139,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["chiprockets-proudmoore"] = {
             displayName = "Chiprockets-proudmoore",
-            specKey = "",
+            specKey = "WARRIOR_ARMS",
             rating = 852,
             rank = 840,
             wins = 9,
@@ -1855,7 +2148,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["chonest-barthilas"] = {
             displayName = "Chonest-barthilas",
-            specKey = "",
+            specKey = "PRIEST_DISCIPLINE",
             rating = 1231,
             rank = 294,
             wins = 13,
@@ -1864,7 +2157,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["choppin-sargeras"] = {
             displayName = "Choppin-sargeras",
-            specKey = "",
+            specKey = "WARRIOR_ARMS",
             rating = 768,
             rank = 846,
             wins = 8,
@@ -1873,7 +2166,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["chromaticszz-sargeras"] = {
             displayName = "Chromaticszz-sargeras",
-            specKey = "SHAMAN_ENHANCEMENT",
+            specKey = "",
             rating = 1055,
             rank = 432,
             wins = 11,
@@ -1882,7 +2175,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["cimorene-moonguard"] = {
             displayName = "Cimorene-moon-guard",
-            specKey = "",
+            specKey = "MONK_MISTWEAVER",
             rating = 1056,
             rank = 382,
             wins = 11,
@@ -1891,7 +2184,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["cinematics-illidan"] = {
             displayName = "Cinematics-illidan",
-            specKey = "",
+            specKey = "PRIEST_DISCIPLINE",
             rating = 768,
             rank = 846,
             wins = 8,
@@ -1900,7 +2193,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["civyxdh-proudmoore"] = {
             displayName = "Civyxdh-proudmoore",
-            specKey = "",
+            specKey = "DEMONHUNTER_DEVOURER",
             rating = 1605,
             rank = 114,
             wins = 21,
@@ -1918,7 +2211,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["cleodhxttv-garrosh"] = {
             displayName = "Cleodhxttv-garrosh",
-            specKey = "",
+            specKey = "DEMONHUNTER_HAVOC",
             rating = 1818,
             rank = 10,
             wins = 29,
@@ -1927,7 +2220,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["cloudzzy-illidan"] = {
             displayName = "Cloudzzy-illidan",
-            specKey = "",
+            specKey = "DEMONHUNTER_DEVOURER",
             rating = 960,
             rank = 508,
             wins = 10,
@@ -1936,7 +2229,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["clubfafo-tichondrius"] = {
             displayName = "Clubfafo-tichondrius",
-            specKey = "",
+            specKey = "PRIEST_DISCIPLINE",
             rating = 1042,
             rank = 505,
             wins = 11,
@@ -1954,7 +2247,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["cntbefuqwit-tichondrius"] = {
             displayName = "Cntbefuqwit-tichondrius",
-            specKey = "",
+            specKey = "HUNTER_BEASTMASTERY",
             rating = 1616,
             rank = 80,
             wins = 21,
@@ -1963,7 +2256,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["codys-magtheridon"] = {
             displayName = "Codys-magtheridon",
-            specKey = "",
+            specKey = "MAGE_FIRE",
             rating = 1247,
             rank = 263,
             wins = 13,
@@ -1972,7 +2265,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["coffindance-darkspear"] = {
             displayName = "Coffindance-darkspear",
-            specKey = "",
+            specKey = "ROGUE_SUBTLETY",
             rating = 1047,
             rank = 499,
             wins = 11,
@@ -1981,7 +2274,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["colton-alteracmountains"] = {
             displayName = "Colton-alterac-mountains",
-            specKey = "",
+            specKey = "PALADIN_HOLY",
             rating = 1541,
             rank = 166,
             wins = 17,
@@ -1990,7 +2283,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["commodore-dalaran"] = {
             displayName = "Commodore-dalaran",
-            specKey = "",
+            specKey = "ROGUE_SUBTLETY",
             rating = 959,
             rank = 572,
             wins = 10,
@@ -1999,7 +2292,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["condavist-stormrage"] = {
             displayName = "Condavist-stormrage",
-            specKey = "",
+            specKey = "PALADIN_HOLY",
             rating = 1053,
             rank = 469,
             wins = 11,
@@ -2008,7 +2301,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["coolwala-tichondrius"] = {
             displayName = "Coolwala-tichondrius",
-            specKey = "",
+            specKey = "WARLOCK_AFFLICTION",
             rating = 1553,
             rank = 161,
             wins = 18,
@@ -2017,7 +2310,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["couthdead-tichondrius"] = {
             displayName = "Couthdead-tichondrius",
-            specKey = "",
+            specKey = "PRIEST_DISCIPLINE",
             rating = 1149,
             rank = 348,
             wins = 12,
@@ -2026,7 +2319,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["cowboydanhh-malganis"] = {
             displayName = "Cowboydanhh-malganis",
-            specKey = "",
+            specKey = "HUNTER_BEASTMASTERY",
             rating = 1055,
             rank = 432,
             wins = 11,
@@ -2035,7 +2328,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["crayóns-stormreaver"] = {
             displayName = "Crayóns-stormreaver",
-            specKey = "",
+            specKey = "MONK_WINDWALKER",
             rating = 1248,
             rank = 254,
             wins = 13,
@@ -2044,7 +2337,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["crazydogwoof-stormrage"] = {
             displayName = "Crazydogwoof-stormrage",
-            specKey = "",
+            specKey = "PRIEST_SHADOW",
             rating = 1605,
             rank = 114,
             wins = 20,
@@ -2053,7 +2346,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["crazystabz-khazmodan"] = {
             displayName = "Crazystabz-khaz-modan",
-            specKey = "",
+            specKey = "ROGUE_ASSASSINATION",
             rating = 1244,
             rank = 283,
             wins = 13,
@@ -2062,7 +2355,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["creedsham-tichondrius"] = {
             displayName = "Creedsham-tichondrius",
-            specKey = "",
+            specKey = "SHAMAN_RESTORATION",
             rating = 864,
             rank = 648,
             wins = 9,
@@ -2071,7 +2364,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["crucix-moonguard"] = {
             displayName = "Crucix-moon-guard",
-            specKey = "",
+            specKey = "DEMONHUNTER_HAVOC",
             rating = 1151,
             rank = 329,
             wins = 12,
@@ -2080,7 +2373,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["crudos-tichondrius"] = {
             displayName = "Crudos-tichondrius",
-            specKey = "",
+            specKey = "PALADIN_RETRIBUTION",
             rating = 768,
             rank = 846,
             wins = 8,
@@ -2089,7 +2382,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["crushedlol-bleedinghollow"] = {
             displayName = "Crushedlol-bleeding-hollow",
-            specKey = "",
+            specKey = "WARRIOR_ARMS",
             rating = 1622,
             rank = 67,
             wins = 20,
@@ -2098,7 +2391,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["crypteze-maiev"] = {
             displayName = "Crypteze-maiev",
-            specKey = "",
+            specKey = "DRUID_RESTORATION",
             rating = 1456,
             rank = 192,
             wins = 17,
@@ -2125,7 +2418,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["cyn-bleedinghollow"] = {
             displayName = "Cyn-bleeding-hollow",
-            specKey = "",
+            specKey = "ROGUE_ASSASSINATION",
             rating = 864,
             rank = 648,
             wins = 9,
@@ -2134,7 +2427,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["czer-tichondrius"] = {
             displayName = "Czer-tichondrius",
-            specKey = "",
+            specKey = "PALADIN_RETRIBUTION",
             rating = 1638,
             rank = 53,
             wins = 22,
@@ -2143,7 +2436,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["cßeár-kaelthas"] = {
             displayName = "Cßeár-kaelthas",
-            specKey = "",
+            specKey = "SHAMAN_RESTORATION",
             rating = 1142,
             rank = 379,
             wins = 12,
@@ -2152,7 +2445,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["cåstîel-tichondrius"] = {
             displayName = "Cåstîel-tichondrius",
-            specKey = "",
+            specKey = "PRIEST_DISCIPLINE",
             rating = 768,
             rank = 846,
             wins = 8,
@@ -2161,7 +2454,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["cøerce-tichondrius"] = {
             displayName = "Cøerce-tichondrius",
-            specKey = "",
+            specKey = "MAGE_FROST",
             rating = 1148,
             rank = 358,
             wins = 12,
@@ -2170,7 +2463,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["cùrlyfry-darkspear"] = {
             displayName = "Cùrlyfry-darkspear",
-            specKey = "",
+            specKey = "PALADIN_RETRIBUTION",
             rating = 862,
             rank = 781,
             wins = 9,
@@ -2179,7 +2472,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["dailyblues-tichondrius"] = {
             displayName = "Dailyblues-tichondrius",
-            specKey = "",
+            specKey = "DRUID_RESTORATION",
             rating = 1703,
             rank = 18,
             wins = 25,
@@ -2188,7 +2481,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["dairou-bleedinghollow"] = {
             displayName = "Dairou-bleeding-hollow",
-            specKey = "",
+            specKey = "WARRIOR_FURY",
             rating = 768,
             rank = 846,
             wins = 8,
@@ -2206,7 +2499,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["damshrek-sargeras"] = {
             displayName = "Damshrek-sargeras",
-            specKey = "",
+            specKey = "ROGUE_ASSASSINATION",
             rating = 1765,
             rank = 15,
             wins = 26,
@@ -2215,7 +2508,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["danaowns-spirestone"] = {
             displayName = "Danaowns-spirestone",
-            specKey = "",
+            specKey = "WARLOCK_DESTRUCTION",
             rating = 1341,
             rank = 230,
             wins = 14,
@@ -2224,7 +2517,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["dance-runetotem"] = {
             displayName = "Dance-runetotem",
-            specKey = "",
+            specKey = "ROGUE_SUBTLETY",
             rating = 959,
             rank = 572,
             wins = 10,
@@ -2269,7 +2562,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["dartolina-azralon"] = {
             displayName = "Dartolina-azralon",
-            specKey = "",
+            specKey = "PALADIN_HOLY",
             rating = 1559,
             rank = 155,
             wins = 17,
@@ -2278,7 +2571,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["dashaz-frostmane"] = {
             displayName = "Dashaz-frostmane",
-            specKey = "",
+            specKey = "PRIEST_DISCIPLINE",
             rating = 1056,
             rank = 382,
             wins = 11,
@@ -2287,7 +2580,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["dataseth-azralon"] = {
             displayName = "Dataseth-azralon",
-            specKey = "",
+            specKey = "HUNTER_BEASTMASTERY",
             rating = 768,
             rank = 846,
             wins = 8,
@@ -2296,7 +2589,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["davidsw-emeralddream"] = {
             displayName = "Davidsw-emerald-dream",
-            specKey = "",
+            specKey = "WARRIOR_ARMS",
             rating = 1560,
             rank = 154,
             wins = 18,
@@ -2305,7 +2598,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["dawx-arygos"] = {
             displayName = "Dawx-arygos",
-            specKey = "",
+            specKey = "ROGUE_SUBTLETY",
             rating = 1151,
             rank = 329,
             wins = 12,
@@ -2314,7 +2607,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["dayx-malganis"] = {
             displayName = "Dayx-malganis",
-            specKey = "",
+            specKey = "PRIEST_DISCIPLINE",
             rating = 1608,
             rank = 96,
             wins = 19,
@@ -2323,7 +2616,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["deathboundtv-kiljaeden"] = {
             displayName = "Deathboundtv-kiljaeden",
-            specKey = "",
+            specKey = "EVOKER_PRESERVATION",
             rating = 768,
             rank = 846,
             wins = 8,
@@ -2332,7 +2625,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["deathboundtv-sargeras"] = {
             displayName = "Deathboundtv-sargeras",
-            specKey = "",
+            specKey = "PALADIN_RETRIBUTION",
             rating = 767,
             rank = 983,
             wins = 8,
@@ -2341,7 +2634,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["deathsweep-tichondrius"] = {
             displayName = "Deathsweep-tichondrius",
-            specKey = "",
+            specKey = "DEMONHUNTER_HAVOC",
             rating = 863,
             rank = 751,
             wins = 9,
@@ -2350,7 +2643,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["decepper-area52"] = {
             displayName = "Decepper-area-52",
-            specKey = "",
+            specKey = "PRIEST_SHADOW",
             rating = 864,
             rank = 648,
             wins = 9,
@@ -2359,7 +2652,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["dechain-korgath"] = {
             displayName = "Dechain-korgath",
-            specKey = "",
+            specKey = "DEMONHUNTER_HAVOC",
             rating = 1573,
             rank = 143,
             wins = 19,
@@ -2368,7 +2661,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["delaolla-tichondrius"] = {
             displayName = "Delaolla-tichondrius",
-            specKey = "",
+            specKey = "ROGUE_ASSASSINATION",
             rating = 767,
             rank = 983,
             wins = 8,
@@ -2377,7 +2670,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["delinquent-demonsoul"] = {
             displayName = "Delinquent-demon-soul",
-            specKey = "",
+            specKey = "DEATHKNIGHT_UNHOLY",
             rating = 960,
             rank = 508,
             wins = 10,
@@ -2386,7 +2679,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["dematic-illidan"] = {
             displayName = "Dematic-illidan",
-            specKey = "",
+            specKey = "WARLOCK_DEMONOLOGY",
             rating = 768,
             rank = 846,
             wins = 8,
@@ -2395,7 +2688,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["demondust-sargeras"] = {
             displayName = "Demondust-sargeras",
-            specKey = "",
+            specKey = "SHAMAN_RESTORATION",
             rating = 1152,
             rank = 297,
             wins = 12,
@@ -2404,7 +2697,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["desamonk-wyrmrestaccord"] = {
             displayName = "Desamonk-wyrmrest-accord",
-            specKey = "",
+            specKey = "MONK_MISTWEAVER",
             rating = 767,
             rank = 983,
             wins = 8,
@@ -2413,7 +2706,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["deshmina-blackdragonflight"] = {
             displayName = "Deshmina-black-dragonflight",
-            specKey = "",
+            specKey = "PRIEST_DISCIPLINE",
             rating = 768,
             rank = 846,
             wins = 8,
@@ -2431,7 +2724,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["deuce-drenden"] = {
             displayName = "Deuce-drenden",
-            specKey = "",
+            specKey = "WARLOCK_DESTRUCTION",
             rating = 768,
             rank = 846,
             wins = 8,
@@ -2449,7 +2742,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["dinglespamx-sargeras"] = {
             displayName = "Dinglespamx-sargeras",
-            specKey = "",
+            specKey = "PRIEST_HOLY",
             rating = 768,
             rank = 846,
             wins = 8,
@@ -2458,7 +2751,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["dirtyelf-sargeras"] = {
             displayName = "Dirtyelf-sargeras",
-            specKey = "",
+            specKey = "ROGUE_OUTLAW",
             rating = 862,
             rank = 781,
             wins = 9,
@@ -2476,7 +2769,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["dislayer-khadgar"] = {
             displayName = "Dislayer-khadgar",
-            specKey = "",
+            specKey = "WARRIOR_ARMS",
             rating = 768,
             rank = 846,
             wins = 8,
@@ -2485,7 +2778,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["diz-darkspear"] = {
             displayName = "Diz-darkspear",
-            specKey = "",
+            specKey = "PRIEST_DISCIPLINE",
             rating = 954,
             rank = 638,
             wins = 10,
@@ -2494,7 +2787,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["diábolical-sargeras"] = {
             displayName = "Diábolical-sargeras",
-            specKey = "",
+            specKey = "WARLOCK_DESTRUCTION",
             rating = 1617,
             rank = 77,
             wins = 21,
@@ -2503,7 +2796,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["dkwinter-illidan"] = {
             displayName = "Dkwinter-illidan",
-            specKey = "",
+            specKey = "DEATHKNIGHT_BLOOD",
             rating = 864,
             rank = 648,
             wins = 9,
@@ -2512,7 +2805,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["dllfspice-tichondrius"] = {
             displayName = "Dllfspice-tichondrius",
-            specKey = "",
+            specKey = "EVOKER_PRESERVATION",
             rating = 1766,
             rank = 14,
             wins = 29,
@@ -2521,7 +2814,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["dodds-burningblade"] = {
             displayName = "Dodds-burning-blade",
-            specKey = "",
+            specKey = "PALADIN_RETRIBUTION",
             rating = 864,
             rank = 648,
             wins = 9,
@@ -2539,7 +2832,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["dopescopes-illidan"] = {
             displayName = "Dopescopes-illidan",
-            specKey = "",
+            specKey = "HUNTER_MARKSMANSHIP",
             rating = 828,
             rank = 844,
             wins = 9,
@@ -2557,7 +2850,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["doubt-eredar"] = {
             displayName = "Doubt-eredar",
-            specKey = "",
+            specKey = "PRIEST_DISCIPLINE",
             rating = 1512,
             rank = 184,
             wins = 16,
@@ -2566,7 +2859,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["dougyfreshx-illidan"] = {
             displayName = "Dougyfreshx-illidan",
-            specKey = "",
+            specKey = "PALADIN_HOLY",
             rating = 1152,
             rank = 297,
             wins = 12,
@@ -2575,7 +2868,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["dragoyero-ragnaros"] = {
             displayName = "Dragoyero-ragnaros",
-            specKey = "",
+            specKey = "EVOKER_PRESERVATION",
             rating = 1049,
             rank = 493,
             wins = 11,
@@ -2584,7 +2877,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["draxtabull-tichondrius"] = {
             displayName = "Draxtabull-tichondrius",
-            specKey = "",
+            specKey = "DEATHKNIGHT_UNHOLY",
             rating = 1618,
             rank = 76,
             wins = 21,
@@ -2593,7 +2886,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["drcaos-madoran"] = {
             displayName = "Drcaos-madoran",
-            specKey = "",
+            specKey = "PALADIN_HOLY",
             rating = 1246,
             rank = 274,
             wins = 13,
@@ -2602,7 +2895,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["drescor-arathor"] = {
             displayName = "Drescor-arathor",
-            specKey = "",
+            specKey = "WARRIOR_FURY",
             rating = 768,
             rank = 846,
             wins = 8,
@@ -2620,7 +2913,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["driedupworm-sargeras"] = {
             displayName = "Driedupworm-sargeras",
-            specKey = "",
+            specKey = "PRIEST_DISCIPLINE",
             rating = 960,
             rank = 508,
             wins = 10,
@@ -2638,7 +2931,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["drizzydizzy-malganis"] = {
             displayName = "Drizzydizzy-malganis",
-            specKey = "",
+            specKey = "ROGUE_ASSASSINATION",
             rating = 1437,
             rank = 199,
             wins = 15,
@@ -2647,7 +2940,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["drjacqueoff-dalaran"] = {
             displayName = "Drjacqueoff-dalaran",
-            specKey = "",
+            specKey = "MONK_MISTWEAVER",
             rating = 959,
             rank = 572,
             wins = 10,
@@ -2656,7 +2949,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["drlackz-malganis"] = {
             displayName = "Drlackz-malganis",
-            specKey = "",
+            specKey = "DRUID_RESTORATION",
             rating = 1055,
             rank = 432,
             wins = 11,
@@ -2665,7 +2958,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["drue-korgath"] = {
             displayName = "Drue-korgath",
-            specKey = "",
+            specKey = "HUNTER_MARKSMANSHIP",
             rating = 957,
             rank = 624,
             wins = 10,
@@ -2674,7 +2967,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["drugdilla-zuljin"] = {
             displayName = "Drugdilla-zuljin",
-            specKey = "",
+            specKey = "WARRIOR_ARMS",
             rating = 960,
             rank = 508,
             wins = 10,
@@ -2683,7 +2976,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["drxo-tichondrius"] = {
             displayName = "Drxo-tichondrius",
-            specKey = "",
+            specKey = "MONK_WINDWALKER",
             rating = 954,
             rank = 638,
             wins = 10,
@@ -2692,7 +2985,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["duality-nazjatar"] = {
             displayName = "Duality-nazjatar",
-            specKey = "",
+            specKey = "PRIEST_HOLY",
             rating = 1411,
             rank = 216,
             wins = 15,
@@ -2701,7 +2994,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["dualkor-goldrinn"] = {
             displayName = "Dualkor-goldrinn",
-            specKey = "",
+            specKey = "PALADIN_HOLY",
             rating = 768,
             rank = 846,
             wins = 8,
@@ -2710,7 +3003,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["duallkorejob-goldrinn"] = {
             displayName = "Duallkorejob-goldrinn",
-            specKey = "",
+            specKey = "PALADIN_HOLY",
             rating = 1557,
             rank = 157,
             wins = 17,
@@ -2719,7 +3012,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["dumbmuttxoxo-moonguard"] = {
             displayName = "Dumbmuttxoxo-moon-guard",
-            specKey = "",
+            specKey = "DRUID_RESTORATION",
             rating = 864,
             rank = 648,
             wins = 9,
@@ -2728,7 +3021,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["durrgan-emeralddream"] = {
             displayName = "Durrgan-emerald-dream",
-            specKey = "HUNTER_MARKSMANSHIP",
+            specKey = "",
             rating = 768,
             rank = 846,
             wins = 8,
@@ -2737,7 +3030,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["durzza-sargeras"] = {
             displayName = "Durzza-sargeras",
-            specKey = "",
+            specKey = "ROGUE_SUBTLETY",
             rating = 1343,
             rank = 219,
             wins = 14,
@@ -2746,7 +3039,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["duux-area52"] = {
             displayName = "Duux-area-52",
-            specKey = "",
+            specKey = "SHAMAN_ELEMENTAL",
             rating = 1247,
             rank = 263,
             wins = 13,
@@ -2755,7 +3048,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["dxzh-moonguard"] = {
             displayName = "Dxzh-moon-guard",
-            specKey = "",
+            specKey = "HUNTER_MARKSMANSHIP",
             rating = 1556,
             rank = 158,
             wins = 18,
@@ -2773,7 +3066,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["dylanww-stormrage"] = {
             displayName = "Dylanww-stormrage",
-            specKey = "",
+            specKey = "MONK_WINDWALKER",
             rating = 1152,
             rank = 297,
             wins = 12,
@@ -2791,7 +3084,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["dzdh-stormrage"] = {
             displayName = "Dzdh-stormrage",
-            specKey = "",
+            specKey = "DEMONHUNTER_HAVOC",
             rating = 768,
             rank = 846,
             wins = 8,
@@ -2800,7 +3093,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["dzdm-stormrage"] = {
             displayName = "Dzdm-stormrage",
-            specKey = "",
+            specKey = "MONK_WINDWALKER",
             rating = 1607,
             rank = 106,
             wins = 20,
@@ -2809,7 +3102,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["däzëd-stormrage"] = {
             displayName = "Däzëd-stormrage",
-            specKey = "",
+            specKey = "ROGUE_ASSASSINATION",
             rating = 768,
             rank = 846,
             wins = 8,
@@ -2818,7 +3111,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["déathstrøké-tichondrius"] = {
             displayName = "Déathstrøké-tichondrius",
-            specKey = "",
+            specKey = "PALADIN_RETRIBUTION",
             rating = 862,
             rank = 781,
             wins = 9,
@@ -2827,7 +3120,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["dïscîplè-ghostlands"] = {
             displayName = "Dïscîplè-ghostlands",
-            specKey = "PRIEST_DISCIPLINE",
+            specKey = "",
             rating = 768,
             rank = 846,
             wins = 8,
@@ -2836,7 +3129,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["ectoplasm-area52"] = {
             displayName = "Ectoplasm-area-52",
-            specKey = "",
+            specKey = "WARLOCK_DEMONOLOGY",
             rating = 862,
             rank = 781,
             wins = 9,
@@ -2845,7 +3138,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["edocx-tichondrius"] = {
             displayName = "Edocx-tichondrius",
-            specKey = "",
+            specKey = "ROGUE_SUBTLETY",
             rating = 864,
             rank = 648,
             wins = 9,
@@ -2854,7 +3147,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["ehnó-illidan"] = {
             displayName = "Ehnó-illidan",
-            specKey = "",
+            specKey = "HUNTER_BEASTMASTERY",
             rating = 768,
             rank = 846,
             wins = 8,
@@ -2863,7 +3156,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["elaiza-alexstrasza"] = {
             displayName = "Elaiza-alexstrasza",
-            specKey = "",
+            specKey = "PRIEST_DISCIPLINE",
             rating = 935,
             rank = 646,
             wins = 10,
@@ -2872,7 +3165,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["elfbrew-bleedinghollow"] = {
             displayName = "Elfbrew-bleeding-hollow",
-            specKey = "",
+            specKey = "MONK_MISTWEAVER",
             rating = 862,
             rank = 781,
             wins = 9,
@@ -2881,7 +3174,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["eli-scarletcrusade"] = {
             displayName = "Eli-scarlet-crusade",
-            specKey = "PRIEST_HOLY",
+            specKey = "",
             rating = 960,
             rank = 508,
             wins = 10,
@@ -2890,7 +3183,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["elinastra-tichondrius"] = {
             displayName = "Elinastra-tichondrius",
-            specKey = "",
+            specKey = "ROGUE_ASSASSINATION",
             rating = 1608,
             rank = 96,
             wins = 19,
@@ -2899,7 +3192,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["elvesnknives-stormrage"] = {
             displayName = "Elvesnknives-stormrage",
-            specKey = "",
+            specKey = "ROGUE_SUBTLETY",
             rating = 1152,
             rank = 297,
             wins = 12,
@@ -2908,7 +3201,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["elëktra-hydraxis"] = {
             displayName = "Elëktra-hydraxis",
-            specKey = "",
+            specKey = "ROGUE_SUBTLETY",
             rating = 1050,
             rank = 489,
             wins = 11,
@@ -2917,7 +3210,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["emmireth-moonguard"] = {
             displayName = "Emmireth-moon-guard",
-            specKey = "",
+            specKey = "EVOKER_PRESERVATION",
             rating = 1055,
             rank = 432,
             wins = 11,
@@ -2926,7 +3219,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["emotemp-chogall"] = {
             displayName = "Emotemp-chogall",
-            specKey = "",
+            specKey = "SHAMAN_ELEMENTAL",
             rating = 864,
             rank = 648,
             wins = 9,
@@ -2935,7 +3228,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["endcredits-stormrage"] = {
             displayName = "Endcredits-stormrage",
-            specKey = "",
+            specKey = "ROGUE_ASSASSINATION",
             rating = 1558,
             rank = 156,
             wins = 17,
@@ -2944,7 +3237,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["endeavour-illidan"] = {
             displayName = "Endeavour-illidan",
-            specKey = "",
+            specKey = "HUNTER_BEASTMASTERY",
             rating = 1056,
             rank = 382,
             wins = 11,
@@ -2953,7 +3246,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["endoriaxe-mannoroth"] = {
             displayName = "Endoriaxe-mannoroth",
-            specKey = "",
+            specKey = "DRUID_RESTORATION",
             rating = 1045,
             rank = 501,
             wins = 11,
@@ -2962,7 +3255,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["engle-arathor"] = {
             displayName = "Engle-arathor",
-            specKey = "",
+            specKey = "PRIEST_DISCIPLINE",
             rating = 768,
             rank = 846,
             wins = 8,
@@ -2971,7 +3264,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["entaza-turalyon"] = {
             displayName = "Entaza-turalyon",
-            specKey = "",
+            specKey = "HUNTER_SURVIVAL",
             rating = 768,
             rank = 846,
             wins = 8,
@@ -2989,7 +3282,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["enutrof-bleedinghollow"] = {
             displayName = "Enutrof-bleeding-hollow",
-            specKey = "",
+            specKey = "ROGUE_OUTLAW",
             rating = 861,
             rank = 803,
             wins = 9,
@@ -3007,7 +3300,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["envyion-sargeras"] = {
             displayName = "Envyion-sargeras",
-            specKey = "",
+            specKey = "PRIEST_SHADOW",
             rating = 1538,
             rank = 168,
             wins = 17,
@@ -3016,7 +3309,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["epididymis-echoisles"] = {
             displayName = "Epididymis-echo-isles",
-            specKey = "",
+            specKey = "ROGUE_SUBTLETY",
             rating = 1055,
             rank = 432,
             wins = 11,
@@ -3034,7 +3327,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["eugordrater-tichondrius"] = {
             displayName = "Eugordrater-tichondrius",
-            specKey = "",
+            specKey = "ROGUE_ASSASSINATION",
             rating = 1147,
             rank = 366,
             wins = 12,
@@ -3043,7 +3336,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["everlornqt-frostmourne"] = {
             displayName = "Everlornqt-frostmourne",
-            specKey = "",
+            specKey = "WARLOCK_AFFLICTION",
             rating = 1051,
             rank = 481,
             wins = 11,
@@ -3061,7 +3354,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["evnine-illidan"] = {
             displayName = "Evnine-illidan",
-            specKey = "",
+            specKey = "PALADIN_RETRIBUTION",
             rating = 956,
             rank = 632,
             wins = 10,
@@ -3070,7 +3363,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["evoketage-malganis"] = {
             displayName = "Evoketage-malganis",
-            specKey = "",
+            specKey = "EVOKER_AUGMENTATION",
             rating = 1152,
             rank = 297,
             wins = 12,
@@ -3106,7 +3399,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["eîri-sargeras"] = {
             displayName = "Eîri-sargeras",
-            specKey = "",
+            specKey = "PALADIN_HOLY",
             rating = 864,
             rank = 648,
             wins = 9,
@@ -3115,7 +3408,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["faermôrn-illidan"] = {
             displayName = "Faermôrn-illidan",
-            specKey = "",
+            specKey = "DRUID_RESTORATION",
             rating = 862,
             rank = 781,
             wins = 9,
@@ -3133,7 +3426,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["failside-kelthuzad"] = {
             displayName = "Failside-kelthuzad",
-            specKey = "PRIEST_HOLY",
+            specKey = "",
             rating = 768,
             rank = 846,
             wins = 8,
@@ -3142,7 +3435,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["fairyfloral-wyrmrestaccord"] = {
             displayName = "Fairyfloral-wyrmrest-accord",
-            specKey = "",
+            specKey = "MONK_MISTWEAVER",
             rating = 1421,
             rank = 214,
             wins = 15,
@@ -3151,7 +3444,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["fastkhaz-area52"] = {
             displayName = "Fastkhaz-area-52",
-            specKey = "",
+            specKey = "HUNTER_BEASTMASTERY",
             rating = 862,
             rank = 781,
             wins = 9,
@@ -3169,7 +3462,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["faxxax-area52"] = {
             displayName = "Faxxax-area-52",
-            specKey = "",
+            specKey = "MONK_MISTWEAVER",
             rating = 1055,
             rank = 432,
             wins = 11,
@@ -3187,7 +3480,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["feariocities-bleedinghollow"] = {
             displayName = "Feariocities-bleeding-hollow",
-            specKey = "",
+            specKey = "PRIEST_HOLY",
             rating = 1152,
             rank = 297,
             wins = 12,
@@ -3196,7 +3489,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["fearofgodd-sargeras"] = {
             displayName = "Fearofgodd-sargeras",
-            specKey = "",
+            specKey = "ROGUE_ASSASSINATION",
             rating = 1239,
             rank = 292,
             wins = 13,
@@ -3205,7 +3498,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["fearphreak-bleedinghollow"] = {
             displayName = "Fearphreak-bleeding-hollow",
-            specKey = "",
+            specKey = "WARLOCK_DESTRUCTION",
             rating = 863,
             rank = 751,
             wins = 9,
@@ -3214,7 +3507,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["feedback-darkspear"] = {
             displayName = "Feedback-darkspear",
-            specKey = "",
+            specKey = "MAGE_FROST",
             rating = 960,
             rank = 508,
             wins = 10,
@@ -3223,7 +3516,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["fionstiffana-tichondrius"] = {
             displayName = "Fionstiffana-tichondrius",
-            specKey = "",
+            specKey = "PRIEST_DISCIPLINE",
             rating = 768,
             rank = 846,
             wins = 8,
@@ -3232,7 +3525,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["firstdance-tichondrius"] = {
             displayName = "Firstdance-tichondrius",
-            specKey = "",
+            specKey = "ROGUE_SUBTLETY",
             rating = 1040,
             rank = 506,
             wins = 11,
@@ -3241,7 +3534,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["fivestarg-terokkar"] = {
             displayName = "Fivestarg-terokkar",
-            specKey = "",
+            specKey = "PRIEST_DISCIPLINE",
             rating = 1146,
             rank = 372,
             wins = 12,
@@ -3259,7 +3552,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["flapz-illidan"] = {
             displayName = "Flapz-illidan",
-            specKey = "",
+            specKey = "DRUID_BALANCE",
             rating = 863,
             rank = 751,
             wins = 9,
@@ -3268,7 +3561,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["flashv-barthilas"] = {
             displayName = "Flashv-barthilas",
-            specKey = "",
+            specKey = "PALADIN_HOLY",
             rating = 1340,
             rank = 234,
             wins = 14,
@@ -3277,7 +3570,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["flipprd-tichondrius"] = {
             displayName = "Flipprd-tichondrius",
-            specKey = "",
+            specKey = "WARRIOR_ARMS",
             rating = 1610,
             rank = 92,
             wins = 20,
@@ -3286,7 +3579,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["flowstate-mugthol"] = {
             displayName = "Flowstate-mugthol",
-            specKey = "",
+            specKey = "ROGUE_ASSASSINATION",
             rating = 1668,
             rank = 28,
             wins = 22,
@@ -3295,7 +3588,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["fléecy-tichondrius"] = {
             displayName = "Fléecy-tichondrius",
-            specKey = "",
+            specKey = "ROGUE_SUBTLETY",
             rating = 1646,
             rank = 45,
             wins = 21,
@@ -3304,7 +3597,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["folt-tichondrius"] = {
             displayName = "Folt-tichondrius",
-            specKey = "",
+            specKey = "DRUID_FERAL",
             rating = 1602,
             rank = 126,
             wins = 21,
@@ -3313,7 +3606,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["fookinghobo-sargeras"] = {
             displayName = "Fookinghobo-sargeras",
-            specKey = "",
+            specKey = "DRUID_BALANCE",
             rating = 1244,
             rank = 283,
             wins = 13,
@@ -3322,7 +3615,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["foozey-kelthuzad"] = {
             displayName = "Foozey-kelthuzad",
-            specKey = "",
+            specKey = "WARRIOR_ARMS",
             rating = 1056,
             rank = 382,
             wins = 11,
@@ -3331,7 +3624,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["forestfrenzy-emeralddream"] = {
             displayName = "Forestfrenzy-emerald-dream",
-            specKey = "DRUID_RESTORATION",
+            specKey = "",
             rating = 1608,
             rank = 96,
             wins = 19,
@@ -3349,7 +3642,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["framewogged-malganis"] = {
             displayName = "Framewogged-malganis",
-            specKey = "",
+            specKey = "PALADIN_HOLY",
             rating = 1152,
             rank = 297,
             wins = 12,
@@ -3358,7 +3651,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["freecog-moonguard"] = {
             displayName = "Freecog-moon-guard",
-            specKey = "",
+            specKey = "DRUID_RESTORATION",
             rating = 768,
             rank = 846,
             wins = 8,
@@ -3367,7 +3660,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["freijejüjü-bleedinghollow"] = {
             displayName = "Freijejüjü-bleeding-hollow",
-            specKey = "",
+            specKey = "SHAMAN_RESTORATION",
             rating = 1054,
             rank = 456,
             wins = 11,
@@ -3376,7 +3669,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["fremhi-stormrage"] = {
             displayName = "Fremhi-stormrage",
-            specKey = "",
+            specKey = "ROGUE_ASSASSINATION",
             rating = 1613,
             rank = 87,
             wins = 19,
@@ -3385,7 +3678,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["freshpjs-emeralddream"] = {
             displayName = "Freshpjs-emerald-dream",
-            specKey = "",
+            specKey = "DRUID_RESTORATION",
             rating = 958,
             rank = 610,
             wins = 10,
@@ -3394,7 +3687,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["freyil-sargeras"] = {
             displayName = "Freyil-sargeras",
-            specKey = "",
+            specKey = "HUNTER_BEASTMASTERY",
             rating = 863,
             rank = 751,
             wins = 9,
@@ -3403,7 +3696,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["frightknight-tichondrius"] = {
             displayName = "Frightknight-tichondrius",
-            specKey = "",
+            specKey = "DEATHKNIGHT_FROST",
             rating = 959,
             rank = 572,
             wins = 10,
@@ -3412,7 +3705,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["frozenbyte-sargeras"] = {
             displayName = "Frozenbyte-sargeras",
-            specKey = "",
+            specKey = "ROGUE_ASSASSINATION",
             rating = 1151,
             rank = 329,
             wins = 12,
@@ -3421,7 +3714,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["frozenmeows-tichondrius"] = {
             displayName = "Frozenmeows-tichondrius",
-            specKey = "",
+            specKey = "HUNTER_BEASTMASTERY",
             rating = 863,
             rank = 751,
             wins = 9,
@@ -3430,7 +3723,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["frãk-twistingnether"] = {
             displayName = "Frãk-twisting-nether",
-            specKey = "",
+            specKey = "MONK_MISTWEAVER",
             rating = 857,
             rank = 836,
             wins = 9,
@@ -3439,7 +3732,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["fröstyyqt-tichondrius"] = {
             displayName = "Fröstyyqt-tichondrius",
-            specKey = "",
+            specKey = "PALADIN_HOLY",
             rating = 864,
             rank = 648,
             wins = 9,
@@ -3448,7 +3741,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["fuden-illidan"] = {
             displayName = "Fuden-illidan",
-            specKey = "",
+            specKey = "PALADIN_RETRIBUTION",
             rating = 863,
             rank = 751,
             wins = 9,
@@ -3457,7 +3750,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["fuknak-illidan"] = {
             displayName = "Fuknak-illidan",
-            specKey = "",
+            specKey = "MONK_WINDWALKER",
             rating = 1627,
             rank = 64,
             wins = 20,
@@ -3466,7 +3759,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["fullbush-illidan"] = {
             displayName = "Fullbush-illidan",
-            specKey = "",
+            specKey = "PRIEST_HOLY",
             rating = 1581,
             rank = 137,
             wins = 18,
@@ -3475,7 +3768,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["fum-frostmourne"] = {
             displayName = "Fum-frostmourne",
-            specKey = "",
+            specKey = "SHAMAN_ENHANCEMENT",
             rating = 1439,
             rank = 195,
             wins = 15,
@@ -3484,7 +3777,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["fyne-kelthuzad"] = {
             displayName = "Fyne-kelthuzad",
-            specKey = "",
+            specKey = "PRIEST_DISCIPLINE",
             rating = 1150,
             rank = 339,
             wins = 12,
@@ -3493,7 +3786,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["fãte-tichondrius"] = {
             displayName = "Fãte-tichondrius",
-            specKey = "",
+            specKey = "ROGUE_SUBTLETY",
             rating = 768,
             rank = 846,
             wins = 8,
@@ -3502,7 +3795,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["fïstoffurry-tichondrius"] = {
             displayName = "Fïstoffurry-tichondrius",
-            specKey = "",
+            specKey = "MONK_WINDWALKER",
             rating = 864,
             rank = 648,
             wins = 9,
@@ -3511,7 +3804,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["garbagedruid-scilla"] = {
             displayName = "Garbagedruid-scilla",
-            specKey = "",
+            specKey = "DRUID_RESTORATION",
             rating = 863,
             rank = 751,
             wins = 9,
@@ -3520,7 +3813,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["garrahx-stormrage"] = {
             displayName = "Garrahx-stormrage",
-            specKey = "",
+            specKey = "PRIEST_DISCIPLINE",
             rating = 1565,
             rank = 148,
             wins = 19,
@@ -3529,7 +3822,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["gazekk-stormrage"] = {
             displayName = "Gazekk-stormrage",
-            specKey = "",
+            specKey = "WARLOCK_AFFLICTION",
             rating = 768,
             rank = 846,
             wins = 8,
@@ -3538,7 +3831,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["genghoul-darkiron"] = {
             displayName = "Genghoul-dark-iron",
-            specKey = "",
+            specKey = "PRIEST_DISCIPLINE",
             rating = 1043,
             rank = 504,
             wins = 11,
@@ -3547,7 +3840,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["genie-kelthuzad"] = {
             displayName = "Genie-kelthuzad",
-            specKey = "",
+            specKey = "PRIEST_HOLY",
             rating = 1341,
             rank = 230,
             wins = 14,
@@ -3556,7 +3849,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["gennarohunt-tichondrius"] = {
             displayName = "Gennarohunt-tichondrius",
-            specKey = "",
+            specKey = "HUNTER_BEASTMASTERY",
             rating = 1248,
             rank = 254,
             wins = 13,
@@ -3565,7 +3858,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["gennarohunts-tichondrius"] = {
             displayName = "Gennarohunts-tichondrius",
-            specKey = "",
+            specKey = "HUNTER_BEASTMASTERY",
             rating = 958,
             rank = 610,
             wins = 10,
@@ -3583,7 +3876,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["ggtrappedez-tichondrius"] = {
             displayName = "Ggtrappedez-tichondrius",
-            specKey = "",
+            specKey = "HUNTER_BEASTMASTERY",
             rating = 768,
             rank = 846,
             wins = 8,
@@ -3592,7 +3885,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["gharagon-senjin"] = {
             displayName = "Gharagon-senjin",
-            specKey = "",
+            specKey = "DRUID_RESTORATION",
             rating = 1144,
             rank = 376,
             wins = 12,
@@ -3610,7 +3903,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["glloom-dalaran"] = {
             displayName = "Glloom-dalaran",
-            specKey = "",
+            specKey = "EVOKER_PRESERVATION",
             rating = 1644,
             rank = 47,
             wins = 21,
@@ -3619,7 +3912,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["gloydius-illidan"] = {
             displayName = "Gloydius-illidan",
-            specKey = "",
+            specKey = "PRIEST_DISCIPLINE",
             rating = 768,
             rank = 846,
             wins = 8,
@@ -3628,7 +3921,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["gokkunqt-tichondrius"] = {
             displayName = "Gokkunqt-tichondrius",
-            specKey = "",
+            specKey = "MONK_WINDWALKER",
             rating = 864,
             rank = 648,
             wins = 9,
@@ -3637,7 +3930,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["goldenkitty-tichondrius"] = {
             displayName = "Goldenkitty-tichondrius",
-            specKey = "",
+            specKey = "SHAMAN_RESTORATION",
             rating = 1056,
             rank = 382,
             wins = 11,
@@ -3646,7 +3939,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["golff-bladesedge"] = {
             displayName = "Golff-blades-edge",
-            specKey = "",
+            specKey = "HUNTER_MARKSMANSHIP",
             rating = 950,
             rank = 642,
             wins = 10,
@@ -3655,7 +3948,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["goochiemon-nazgrel"] = {
             displayName = "Goochiemon-nazgrel",
-            specKey = "",
+            specKey = "HUNTER_BEASTMASTERY",
             rating = 767,
             rank = 983,
             wins = 8,
@@ -3664,7 +3957,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["goodbyes-tichondrius"] = {
             displayName = "Goodbyes-tichondrius",
-            specKey = "",
+            specKey = "WARLOCK_AFFLICTION",
             rating = 768,
             rank = 846,
             wins = 8,
@@ -3682,7 +3975,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["goyfist-khazmodan"] = {
             displayName = "Goyfist-khaz-modan",
-            specKey = "",
+            specKey = "MONK_WINDWALKER",
             rating = 864,
             rank = 648,
             wins = 9,
@@ -3691,7 +3984,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["gracexø-tichondrius"] = {
             displayName = "Gracexø-tichondrius",
-            specKey = "",
+            specKey = "MONK_MISTWEAVER",
             rating = 960,
             rank = 508,
             wins = 10,
@@ -3700,7 +3993,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["grai-bleedinghollow"] = {
             displayName = "Grai-bleeding-hollow",
-            specKey = "",
+            specKey = "EVOKER_DEVASTATION",
             rating = 861,
             rank = 803,
             wins = 9,
@@ -3709,7 +4002,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["gratiiens-zuljin"] = {
             displayName = "Gratiiens-zuljin",
-            specKey = "",
+            specKey = "SHAMAN_RESTORATION",
             rating = 864,
             rank = 648,
             wins = 9,
@@ -3727,7 +4020,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["grenadeslol-destromath"] = {
             displayName = "Grenadeslol-destromath",
-            specKey = "",
+            specKey = "ROGUE_OUTLAW",
             rating = 1056,
             rank = 382,
             wins = 11,
@@ -3736,7 +4029,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["grenzle-tichondrius"] = {
             displayName = "Grenzle-tichondrius",
-            specKey = "",
+            specKey = "SHAMAN_RESTORATION",
             rating = 1054,
             rank = 456,
             wins = 11,
@@ -3745,7 +4038,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["grimgrip-frostmane"] = {
             displayName = "Grimgrip-frostmane",
-            specKey = "WARRIOR_FURY",
+            specKey = "",
             rating = 768,
             rank = 846,
             wins = 8,
@@ -3754,7 +4047,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["grins-spirestone"] = {
             displayName = "Grins-spirestone",
-            specKey = "",
+            specKey = "DRUID_FERAL",
             rating = 1051,
             rank = 481,
             wins = 11,
@@ -3772,7 +4065,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["grunmonk-gallywix"] = {
             displayName = "Grunmonk-gallywix",
-            specKey = "",
+            specKey = "MONK_MISTWEAVER",
             rating = 1054,
             rank = 456,
             wins = 11,
@@ -3781,7 +4074,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["gscu-tichondrius"] = {
             displayName = "Gscu-tichondrius",
-            specKey = "",
+            specKey = "WARLOCK_DESTRUCTION",
             rating = 1056,
             rank = 382,
             wins = 11,
@@ -3799,7 +4092,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["gunwalk-tichondrius"] = {
             displayName = "Gunwalk-tichondrius",
-            specKey = "",
+            specKey = "HUNTER_MARKSMANSHIP",
             rating = 1527,
             rank = 178,
             wins = 17,
@@ -3808,7 +4101,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["gutrot-shadowsong"] = {
             displayName = "Gutrot-shadowsong",
-            specKey = "",
+            specKey = "MONK_MISTWEAVER",
             rating = 768,
             rank = 846,
             wins = 8,
@@ -3817,7 +4110,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["guyutë-sargeras"] = {
             displayName = "Guyutë-sargeras",
-            specKey = "",
+            specKey = "DRUID_RESTORATION",
             rating = 1331,
             rank = 245,
             wins = 14,
@@ -3835,7 +4128,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["hairyweaver-darkspear"] = {
             displayName = "Hairyweaver-darkspear",
-            specKey = "",
+            specKey = "MONK_WINDWALKER",
             rating = 1049,
             rank = 493,
             wins = 11,
@@ -3844,7 +4137,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["hananuki-stormrage"] = {
             displayName = "Hananuki-stormrage",
-            specKey = "",
+            specKey = "PRIEST_HOLY",
             rating = 958,
             rank = 610,
             wins = 10,
@@ -3853,7 +4146,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["hanon-tichondrius"] = {
             displayName = "Hanon-tichondrius",
-            specKey = "",
+            specKey = "ROGUE_SUBTLETY",
             rating = 960,
             rank = 508,
             wins = 10,
@@ -3862,7 +4155,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["hardtekk-illidan"] = {
             displayName = "Hardtekk-illidan",
-            specKey = "",
+            specKey = "DEMONHUNTER_HAVOC",
             rating = 1631,
             rank = 58,
             wins = 21,
@@ -3871,7 +4164,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["harshc-darrowmere"] = {
             displayName = "Harshc-darrowmere",
-            specKey = "",
+            specKey = "PRIEST_HOLY",
             rating = 1053,
             rank = 469,
             wins = 11,
@@ -3880,7 +4173,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["hattorikun-proudmoore"] = {
             displayName = "Hattorikun-proudmoore",
-            specKey = "",
+            specKey = "ROGUE_ASSASSINATION",
             rating = 864,
             rank = 648,
             wins = 9,
@@ -3889,7 +4182,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["hawkret-illidan"] = {
             displayName = "Hawkret-illidan",
-            specKey = "",
+            specKey = "PALADIN_RETRIBUTION",
             rating = 768,
             rank = 846,
             wins = 8,
@@ -3898,7 +4191,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["healingcat-tichondrius"] = {
             displayName = "Healingcat-tichondrius",
-            specKey = "",
+            specKey = "PRIEST_HOLY",
             rating = 1054,
             rank = 456,
             wins = 11,
@@ -3907,7 +4200,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["healingxdx-bleedinghollow"] = {
             displayName = "Healingxdx-bleeding-hollow",
-            specKey = "",
+            specKey = "PRIEST_DISCIPLINE",
             rating = 862,
             rank = 781,
             wins = 9,
@@ -3916,7 +4209,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["heartside-tichondrius"] = {
             displayName = "Heartside-tichondrius",
-            specKey = "",
+            specKey = "PALADIN_HOLY",
             rating = 1055,
             rank = 432,
             wins = 11,
@@ -3934,7 +4227,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["hevenessence-illidan"] = {
             displayName = "Hevenessence-illidan",
-            specKey = "",
+            specKey = "PALADIN_PROTECTION",
             rating = 1037,
             rank = 507,
             wins = 11,
@@ -3943,7 +4236,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["heål-tichondrius"] = {
             displayName = "Heål-tichondrius",
-            specKey = "",
+            specKey = "PRIEST_HOLY",
             rating = 1604,
             rank = 117,
             wins = 19,
@@ -3970,7 +4263,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["hinä-sargeras"] = {
             displayName = "Hinä-sargeras",
-            specKey = "",
+            specKey = "PRIEST_HOLY",
             rating = 1152,
             rank = 297,
             wins = 12,
@@ -3979,7 +4272,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["hitomila-tichondrius"] = {
             displayName = "Hitomila-tichondrius",
-            specKey = "",
+            specKey = "SHAMAN_RESTORATION",
             rating = 864,
             rank = 648,
             wins = 9,
@@ -4006,7 +4299,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["holykecti-tichondrius"] = {
             displayName = "Holykecti-tichondrius",
-            specKey = "",
+            specKey = "PRIEST_HOLY",
             rating = 959,
             rank = 572,
             wins = 10,
@@ -4015,7 +4308,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["holyshizerr-frostmane"] = {
             displayName = "Holyshizerr-frostmane",
-            specKey = "",
+            specKey = "PRIEST_SHADOW",
             rating = 1054,
             rank = 456,
             wins = 11,
@@ -4024,7 +4317,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["holyvengance-akama"] = {
             displayName = "Holyvengance-akama",
-            specKey = "",
+            specKey = "PRIEST_DISCIPLINE",
             rating = 1051,
             rank = 481,
             wins = 11,
@@ -4033,7 +4326,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["homeshealsya-gurubashi"] = {
             displayName = "Homeshealsya-gurubashi",
-            specKey = "",
+            specKey = "PRIEST_DISCIPLINE",
             rating = 767,
             rank = 983,
             wins = 8,
@@ -4042,7 +4335,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["horyx-zuljin"] = {
             displayName = "Horyx-zuljin",
-            specKey = "",
+            specKey = "ROGUE_ASSASSINATION",
             rating = 864,
             rank = 648,
             wins = 9,
@@ -4069,7 +4362,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["htm-bleedinghollow"] = {
             displayName = "Htm-bleeding-hollow",
-            specKey = "",
+            specKey = "DEMONHUNTER_HAVOC",
             rating = 864,
             rank = 648,
             wins = 9,
@@ -4078,7 +4371,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["hunterxd-alexstrasza"] = {
             displayName = "Hunterxd-alexstrasza",
-            specKey = "",
+            specKey = "PRIEST_HOLY",
             rating = 863,
             rank = 751,
             wins = 9,
@@ -4087,7 +4380,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["hydropønics-bloodscalp"] = {
             displayName = "Hydropønics-bloodscalp",
-            specKey = "",
+            specKey = "ROGUE_ASSASSINATION",
             rating = 864,
             rank = 648,
             wins = 9,
@@ -4096,7 +4389,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["hydryl-wyrmrestaccord"] = {
             displayName = "Hydryl-wyrmrest-accord",
-            specKey = "",
+            specKey = "ROGUE_ASSASSINATION",
             rating = 768,
             rank = 846,
             wins = 8,
@@ -4114,7 +4407,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["hèlfar-wyrmrestaccord"] = {
             displayName = "Hèlfar-wyrmrest-accord",
-            specKey = "",
+            specKey = "PALADIN_RETRIBUTION",
             rating = 959,
             rank = 572,
             wins = 10,
@@ -4123,7 +4416,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["hïghgrade-area52"] = {
             displayName = "Hïghgrade-area-52",
-            specKey = "",
+            specKey = "ROGUE_SUBTLETY",
             rating = 958,
             rank = 610,
             wins = 10,
@@ -4132,7 +4425,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["hótlinebling-kelthuzad"] = {
             displayName = "Hótlinebling-kelthuzad",
-            specKey = "",
+            specKey = "PALADIN_HOLY",
             rating = 1052,
             rank = 479,
             wins = 11,
@@ -4159,7 +4452,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["iarceny-tichondrius"] = {
             displayName = "Iarceny-tichondrius",
-            specKey = "",
+            specKey = "ROGUE_ASSASSINATION",
             rating = 862,
             rank = 781,
             wins = 9,
@@ -4168,7 +4461,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["ichikokomo-tichondrius"] = {
             displayName = "Ichikokomo-tichondrius",
-            specKey = "",
+            specKey = "HUNTER_BEASTMASTERY",
             rating = 1608,
             rank = 96,
             wins = 20,
@@ -4177,7 +4470,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["idowhatcdont-kelthuzad"] = {
             displayName = "Idowhatcdont-kelthuzad",
-            specKey = "",
+            specKey = "SHAMAN_RESTORATION",
             rating = 1148,
             rank = 358,
             wins = 12,
@@ -4186,7 +4479,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["iegoland-sargeras"] = {
             displayName = "Iegoland-sargeras",
-            specKey = "",
+            specKey = "PRIEST_HOLY",
             rating = 960,
             rank = 508,
             wins = 10,
@@ -4204,7 +4497,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["iintha-gurubashi"] = {
             displayName = "Iintha-gurubashi",
-            specKey = "",
+            specKey = "PRIEST_DISCIPLINE",
             rating = 957,
             rank = 624,
             wins = 10,
@@ -4213,7 +4506,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["illiteratex-area52"] = {
             displayName = "Illiteratex-area-52",
-            specKey = "",
+            specKey = "SHAMAN_RESTORATION",
             rating = 1055,
             rank = 432,
             wins = 11,
@@ -4222,7 +4515,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["illixx-area52"] = {
             displayName = "Illixx-area-52",
-            specKey = "",
+            specKey = "SHAMAN_RESTORATION",
             rating = 864,
             rank = 648,
             wins = 9,
@@ -4231,7 +4524,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["ilovekief-malganis"] = {
             displayName = "Ilovekief-malganis",
-            specKey = "",
+            specKey = "PRIEST_HOLY",
             rating = 1152,
             rank = 297,
             wins = 12,
@@ -4240,7 +4533,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["imbaack-stormrage"] = {
             displayName = "Imbaack-stormrage",
-            specKey = "",
+            specKey = "PRIEST_DISCIPLINE",
             rating = 960,
             rank = 508,
             wins = 10,
@@ -4249,7 +4542,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["imcrazyforu-bleedinghollow"] = {
             displayName = "Imcrazyforu-bleeding-hollow",
-            specKey = "",
+            specKey = "HUNTER_BEASTMASTERY",
             rating = 863,
             rank = 751,
             wins = 9,
@@ -4267,7 +4560,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["imperviously-area52"] = {
             displayName = "Imperviously-area-52",
-            specKey = "",
+            specKey = "HUNTER_MARKSMANSHIP",
             rating = 1247,
             rank = 263,
             wins = 13,
@@ -4276,7 +4569,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["incelslayèrx-sargeras"] = {
             displayName = "Incelslayèrx-sargeras",
-            specKey = "",
+            specKey = "PRIEST_SHADOW",
             rating = 1429,
             rank = 209,
             wins = 15,
@@ -4285,7 +4578,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["indoconqfarm-frostmourne"] = {
             displayName = "Indoconqfarm-frostmourne",
-            specKey = "",
+            specKey = "ROGUE_SUBTLETY",
             rating = 768,
             rank = 846,
             wins = 8,
@@ -4294,7 +4587,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["ineffaby-theunderbog"] = {
             displayName = "Ineffaby-the-underbog",
-            specKey = "",
+            specKey = "PRIEST_HOLY",
             rating = 768,
             rank = 846,
             wins = 8,
@@ -4303,7 +4596,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["inewigkeit-moonguard"] = {
             displayName = "Inewigkeit-moon-guard",
-            specKey = "",
+            specKey = "PRIEST_DISCIPLINE",
             rating = 1056,
             rank = 382,
             wins = 11,
@@ -4312,7 +4605,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["injeckx-tichondrius"] = {
             displayName = "Injeckx-tichondrius",
-            specKey = "",
+            specKey = "DRUID_RESTORATION",
             rating = 768,
             rank = 846,
             wins = 8,
@@ -4321,7 +4614,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["injxx-tichondrius"] = {
             displayName = "Injxx-tichondrius",
-            specKey = "",
+            specKey = "PRIEST_SHADOW",
             rating = 864,
             rank = 648,
             wins = 9,
@@ -4330,7 +4623,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["innerverse-tichondrius"] = {
             displayName = "Innerverse-tichondrius",
-            specKey = "",
+            specKey = "MONK_WINDWALKER",
             rating = 1056,
             rank = 382,
             wins = 11,
@@ -4339,7 +4632,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["inoheals-frostmourne"] = {
             displayName = "Inoheals-frostmourne",
-            specKey = "",
+            specKey = "PRIEST_DISCIPLINE",
             rating = 1502,
             rank = 187,
             wins = 17,
@@ -4348,7 +4641,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["inrad-stormrage"] = {
             displayName = "Inrad-stormrage",
-            specKey = "",
+            specKey = "PALADIN_RETRIBUTION",
             rating = 768,
             rank = 846,
             wins = 8,
@@ -4357,7 +4650,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["insecures-moonguard"] = {
             displayName = "Insecures-moon-guard",
-            specKey = "",
+            specKey = "WARRIOR_ARMS",
             rating = 1611,
             rank = 89,
             wins = 19,
@@ -4366,7 +4659,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["intervensham-illidan"] = {
             displayName = "Intervensham-illidan",
-            specKey = "",
+            specKey = "SHAMAN_RESTORATION",
             rating = 958,
             rank = 610,
             wins = 10,
@@ -4375,7 +4668,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["intervention-blackdragonflight"] = {
             displayName = "Intervention-black-dragonflight",
-            specKey = "",
+            specKey = "PRIEST_HOLY",
             rating = 1524,
             rank = 179,
             wins = 16,
@@ -4384,7 +4677,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["invoice-bloodscalp"] = {
             displayName = "Invoice-bloodscalp",
-            specKey = "",
+            specKey = "PRIEST_HOLY",
             rating = 1565,
             rank = 148,
             wins = 22,
@@ -4402,7 +4695,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["iq-tichondrius"] = {
             displayName = "Iq-tichondrius",
-            specKey = "",
+            specKey = "PRIEST_HOLY",
             rating = 1056,
             rank = 382,
             wins = 11,
@@ -4411,7 +4704,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["itdoor-magtheridon"] = {
             displayName = "Itdoor-magtheridon",
-            specKey = "",
+            specKey = "WARRIOR_FURY",
             rating = 861,
             rank = 803,
             wins = 9,
@@ -4420,7 +4713,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["itwasmee-tichondrius"] = {
             displayName = "Itwasmee-tichondrius",
-            specKey = "",
+            specKey = "HUNTER_BEASTMASTERY",
             rating = 768,
             rank = 846,
             wins = 8,
@@ -4438,7 +4731,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["iwdqtpietwog-drakthul"] = {
             displayName = "Iwdqtpietwog-drakthul",
-            specKey = "PRIEST_HOLY",
+            specKey = "",
             rating = 959,
             rank = 572,
             wins = 10,
@@ -4447,7 +4740,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["jabyn-blackwaterraiders"] = {
             displayName = "Jabyn-blackwater-raiders",
-            specKey = "",
+            specKey = "MONK_MISTWEAVER",
             rating = 864,
             rank = 648,
             wins = 9,
@@ -4456,7 +4749,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["jag-haomarush"] = {
             displayName = "Jag-haomarush",
-            specKey = "",
+            specKey = "SHAMAN_RESTORATION",
             rating = 767,
             rank = 983,
             wins = 8,
@@ -4465,7 +4758,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["jaykulina-bleedinghollow"] = {
             displayName = "Jaykulina-bleeding-hollow",
-            specKey = "",
+            specKey = "PRIEST_DISCIPLINE",
             rating = 767,
             rank = 983,
             wins = 8,
@@ -4474,7 +4767,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["jaysdisc-sargeras"] = {
             displayName = "Jaysdisc-sargeras",
-            specKey = "",
+            specKey = "PRIEST_DISCIPLINE",
             rating = 1696,
             rank = 20,
             wins = 25,
@@ -4483,7 +4776,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["jects-tichondrius"] = {
             displayName = "Jects-tichondrius",
-            specKey = "",
+            specKey = "ROGUE_ASSASSINATION",
             rating = 1055,
             rank = 432,
             wins = 11,
@@ -4492,7 +4785,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["jimbobhoe-frostmourne"] = {
             displayName = "Jimbobhoe-frostmourne",
-            specKey = "",
+            specKey = "PALADIN_RETRIBUTION",
             rating = 1056,
             rank = 382,
             wins = 11,
@@ -4510,7 +4803,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["johnonymous-malganis"] = {
             displayName = "Johnonymous-malganis",
-            specKey = "",
+            specKey = "ROGUE_ASSASSINATION",
             rating = 960,
             rank = 508,
             wins = 10,
@@ -4528,7 +4821,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["jordanqt-barthilas"] = {
             displayName = "Jordanqt-barthilas",
-            specKey = "",
+            specKey = "MONK_MISTWEAVER",
             rating = 1143,
             rank = 377,
             wins = 12,
@@ -4537,7 +4830,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["juiced-thunderhorn"] = {
             displayName = "Juiced-thunderhorn",
-            specKey = "",
+            specKey = "DEMONHUNTER_HAVOC",
             rating = 864,
             rank = 648,
             wins = 9,
@@ -4546,7 +4839,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["june-magtheridon"] = {
             displayName = "June-magtheridon",
-            specKey = "",
+            specKey = "HUNTER_SURVIVAL",
             rating = 1247,
             rank = 263,
             wins = 13,
@@ -4555,7 +4848,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["junglebush-frostmourne"] = {
             displayName = "Junglebush-frostmourne",
-            specKey = "",
+            specKey = "PRIEST_DISCIPLINE",
             rating = 864,
             rank = 648,
             wins = 9,
@@ -4564,7 +4857,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["jurseyshore-area52"] = {
             displayName = "Jurseyshore-area-52",
-            specKey = "",
+            specKey = "PALADIN_HOLY",
             rating = 1103,
             rank = 381,
             wins = 12,
@@ -4573,7 +4866,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["justßlaze-sargeras"] = {
             displayName = "Justßlaze-sargeras",
-            specKey = "",
+            specKey = "HUNTER_MARKSMANSHIP",
             rating = 859,
             rank = 827,
             wins = 9,
@@ -4591,7 +4884,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["jèricho-thrall"] = {
             displayName = "Jèricho-thrall",
-            specKey = "",
+            specKey = "MONK_MISTWEAVER",
             rating = 778,
             rank = 845,
             wins = 9,
@@ -4600,7 +4893,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["jübaa-azralon"] = {
             displayName = "Jübaa-azralon",
-            specKey = "",
+            specKey = "PRIEST_HOLY",
             rating = 958,
             rank = 610,
             wins = 10,
@@ -4618,7 +4911,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["kalioh-stormrage"] = {
             displayName = "Kalioh-stormrage",
-            specKey = "",
+            specKey = "WARRIOR_FURY",
             rating = 864,
             rank = 648,
             wins = 9,
@@ -4627,7 +4920,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["kalvish-dalaran"] = {
             displayName = "Kalvish-dalaran",
-            specKey = "",
+            specKey = "ROGUE_SUBTLETY",
             rating = 1648,
             rank = 43,
             wins = 21,
@@ -4645,7 +4938,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["kaoscaotico-stormrage"] = {
             displayName = "Kaoscaotico-stormrage",
-            specKey = "",
+            specKey = "WARLOCK_AFFLICTION",
             rating = 960,
             rank = 508,
             wins = 10,
@@ -4663,7 +4956,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["kasho-altarofstorms"] = {
             displayName = "Kasho-altar-of-storms",
-            specKey = "",
+            specKey = "MONK_MISTWEAVER",
             rating = 863,
             rank = 751,
             wins = 9,
@@ -4672,7 +4965,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["katheranna-stormrage"] = {
             displayName = "Katheranna-stormrage",
-            specKey = "",
+            specKey = "ROGUE_ASSASSINATION",
             rating = 1551,
             rank = 163,
             wins = 17,
@@ -4681,7 +4974,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["katie-malganis"] = {
             displayName = "Katie-malganis",
-            specKey = "",
+            specKey = "PALADIN_HOLY",
             rating = 960,
             rank = 508,
             wins = 10,
@@ -4690,7 +4983,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["kazzd-stormrage"] = {
             displayName = "Kazzd-stormrage",
-            specKey = "",
+            specKey = "DRUID_RESTORATION",
             rating = 863,
             rank = 751,
             wins = 9,
@@ -4699,7 +4992,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["kazzx-stormrage"] = {
             displayName = "Kazzx-stormrage",
-            specKey = "",
+            specKey = "HUNTER_MARKSMANSHIP",
             rating = 767,
             rank = 983,
             wins = 8,
@@ -4717,7 +5010,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["kelinao-sargeras"] = {
             displayName = "Kelinao-sargeras",
-            specKey = "",
+            specKey = "PALADIN_HOLY",
             rating = 1640,
             rank = 52,
             wins = 21,
@@ -4726,7 +5019,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["kemy-moonguard"] = {
             displayName = "Kemy-moon-guard",
-            specKey = "",
+            specKey = "DRUID_BALANCE",
             rating = 1245,
             rank = 279,
             wins = 13,
@@ -4735,7 +5028,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["kennz-sargeras"] = {
             displayName = "Kennz-sargeras",
-            specKey = "",
+            specKey = "PRIEST_DISCIPLINE",
             rating = 1055,
             rank = 432,
             wins = 11,
@@ -4744,7 +5037,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["kenstlols-tichondrius"] = {
             displayName = "Kenstlols-tichondrius",
-            specKey = "",
+            specKey = "WARRIOR_FURY",
             rating = 768,
             rank = 846,
             wins = 8,
@@ -4753,7 +5046,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["kev-drenden"] = {
             displayName = "Kev-drenden",
-            specKey = "",
+            specKey = "PALADIN_HOLY",
             rating = 768,
             rank = 846,
             wins = 8,
@@ -4762,7 +5055,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["key-zuluhed"] = {
             displayName = "Key-zuluhed",
-            specKey = "",
+            specKey = "PALADIN_HOLY",
             rating = 1150,
             rank = 339,
             wins = 12,
@@ -4789,7 +5082,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["khayd-stormrage"] = {
             displayName = "Khayd-stormrage",
-            specKey = "",
+            specKey = "ROGUE_ASSASSINATION",
             rating = 1152,
             rank = 297,
             wins = 12,
@@ -4798,7 +5091,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["khaydarin-sargeras"] = {
             displayName = "Khaydarin-sargeras",
-            specKey = "",
+            specKey = "HUNTER_BEASTMASTERY",
             rating = 864,
             rank = 648,
             wins = 9,
@@ -4807,7 +5100,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["khungfeu-sargeras"] = {
             displayName = "Khungfeu-sargeras",
-            specKey = "",
+            specKey = "MONK_WINDWALKER",
             rating = 1147,
             rank = 366,
             wins = 12,
@@ -4816,7 +5109,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["ki-korgath"] = {
             displayName = "Ki-korgath",
-            specKey = "",
+            specKey = "MONK_MISTWEAVER",
             rating = 862,
             rank = 781,
             wins = 9,
@@ -4825,7 +5118,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["kikioo-ragnaros"] = {
             displayName = "Kikioo-ragnaros",
-            specKey = "",
+            specKey = "PRIEST_DISCIPLINE",
             rating = 1213,
             rank = 296,
             wins = 13,
@@ -4834,7 +5127,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["killarina-dragonmaw"] = {
             displayName = "Killarina-dragonmaw",
-            specKey = "",
+            specKey = "HUNTER_BEASTMASTERY",
             rating = 1230,
             rank = 295,
             wins = 13,
@@ -4843,7 +5136,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["killbørn-azralon"] = {
             displayName = "Killbørn-azralon",
-            specKey = "",
+            specKey = "WARRIOR_ARMS",
             rating = 768,
             rank = 846,
             wins = 8,
@@ -4852,7 +5145,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["kissyface-illidan"] = {
             displayName = "Kissyface-illidan",
-            specKey = "",
+            specKey = "HUNTER_BEASTMASTERY",
             rating = 1054,
             rank = 456,
             wins = 11,
@@ -4861,7 +5154,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["kkohekmatyar-tichondrius"] = {
             displayName = "Kkohekmatyar-tichondrius",
-            specKey = "",
+            specKey = "PALADIN_HOLY",
             rating = 768,
             rank = 846,
             wins = 8,
@@ -4870,7 +5163,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["knottymutt-moonguard"] = {
             displayName = "Knottymutt-moon-guard",
-            specKey = "",
+            specKey = "ROGUE_ASSASSINATION",
             rating = 1056,
             rank = 382,
             wins = 11,
@@ -4879,7 +5172,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["kokohoney-tichondrius"] = {
             displayName = "Kokohoney-tichondrius",
-            specKey = "",
+            specKey = "PRIEST_HOLY",
             rating = 863,
             rank = 751,
             wins = 9,
@@ -4906,7 +5199,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["kosakî-proudmoore"] = {
             displayName = "Kosakî-proudmoore",
-            specKey = "",
+            specKey = "PALADIN_HOLY",
             rating = 1553,
             rank = 161,
             wins = 17,
@@ -4924,7 +5217,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["krankenwagen-stormrage"] = {
             displayName = "Krankenwagen-stormrage",
-            specKey = "",
+            specKey = "PALADIN_RETRIBUTION",
             rating = 1324,
             rank = 249,
             wins = 14,
@@ -4933,7 +5226,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["kritterx-illidan"] = {
             displayName = "Kritterx-illidan",
-            specKey = "",
+            specKey = "PALADIN_RETRIBUTION",
             rating = 864,
             rank = 648,
             wins = 9,
@@ -4951,7 +5244,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["kungfooze-area52"] = {
             displayName = "Kungfooze-area-52",
-            specKey = "",
+            specKey = "MONK_WINDWALKER",
             rating = 960,
             rank = 508,
             wins = 10,
@@ -4960,7 +5253,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["kungfuuk-sargeras"] = {
             displayName = "Kungfuuk-sargeras",
-            specKey = "",
+            specKey = "MONK_MISTWEAVER",
             rating = 1048,
             rank = 496,
             wins = 11,
@@ -4969,7 +5262,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["kurumî-proudmoore"] = {
             displayName = "Kurumî-proudmoore",
-            specKey = "",
+            specKey = "PRIEST_DISCIPLINE",
             rating = 768,
             rank = 846,
             wins = 8,
@@ -4978,7 +5271,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["kydrav-khadgar"] = {
             displayName = "Kydrav-khadgar",
-            specKey = "",
+            specKey = "WARRIOR_ARMS",
             rating = 768,
             rank = 846,
             wins = 8,
@@ -4987,7 +5280,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["kylorii-stormrage"] = {
             displayName = "Kylorii-stormrage",
-            specKey = "",
+            specKey = "PRIEST_HOLY",
             rating = 955,
             rank = 635,
             wins = 10,
@@ -5005,7 +5298,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["kájomef-stormrage"] = {
             displayName = "Kájomef-stormrage",
-            specKey = "",
+            specKey = "ROGUE_SUBTLETY",
             rating = 958,
             rank = 610,
             wins = 10,
@@ -5014,7 +5307,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["káorii-tichondrius"] = {
             displayName = "Káorii-tichondrius",
-            specKey = "",
+            specKey = "PALADIN_HOLY",
             rating = 1535,
             rank = 170,
             wins = 16,
@@ -5023,7 +5316,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["køtt-frostmourne"] = {
             displayName = "Køtt-frostmourne",
-            specKey = "",
+            specKey = "PRIEST_HOLY",
             rating = 959,
             rank = 572,
             wins = 10,
@@ -5050,7 +5343,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["lastresource-tichondrius"] = {
             displayName = "Lastresource-tichondrius",
-            specKey = "",
+            specKey = "PRIEST_DISCIPLINE",
             rating = 1247,
             rank = 263,
             wins = 13,
@@ -5059,7 +5352,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["late-darkspear"] = {
             displayName = "Late-darkspear",
-            specKey = "",
+            specKey = "PRIEST_HOLY",
             rating = 1339,
             rank = 235,
             wins = 14,
@@ -5068,7 +5361,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["latspread-bleedinghollow"] = {
             displayName = "Latspread-bleeding-hollow",
-            specKey = "",
+            specKey = "ROGUE_ASSASSINATION",
             rating = 954,
             rank = 638,
             wins = 10,
@@ -5077,7 +5370,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["layingpipe-sargeras"] = {
             displayName = "Layingpipe-sargeras",
-            specKey = "",
+            specKey = "MAGE_FIRE",
             rating = 864,
             rank = 648,
             wins = 9,
@@ -5086,7 +5379,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["leasherw-sargeras"] = {
             displayName = "Leasherw-sargeras",
-            specKey = "",
+            specKey = "WARRIOR_ARMS",
             rating = 1437,
             rank = 199,
             wins = 15,
@@ -5131,7 +5424,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["lilhuntt-tichondrius"] = {
             displayName = "Lilhuntt-tichondrius",
-            specKey = "",
+            specKey = "DEMONHUNTER_HAVOC",
             rating = 864,
             rank = 648,
             wins = 9,
@@ -5140,7 +5433,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["lilmager-tichondrius"] = {
             displayName = "Lilmager-tichondrius",
-            specKey = "",
+            specKey = "MAGE_FIRE",
             rating = 1056,
             rank = 382,
             wins = 11,
@@ -5149,7 +5442,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["liqùid-moonguard"] = {
             displayName = "Liqùid-moon-guard",
-            specKey = "",
+            specKey = "DEATHKNIGHT_UNHOLY",
             rating = 767,
             rank = 983,
             wins = 8,
@@ -5167,7 +5460,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["locklist-frostmourne"] = {
             displayName = "Locklist-frostmourne",
-            specKey = "",
+            specKey = "WARLOCK_DESTRUCTION",
             rating = 1638,
             rank = 53,
             wins = 20,
@@ -5185,7 +5478,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["lostvoidbee-stormrage"] = {
             displayName = "Lostvoidbee-stormrage",
-            specKey = "",
+            specKey = "PRIEST_DISCIPLINE",
             rating = 1429,
             rank = 209,
             wins = 15,
@@ -5194,7 +5487,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["loverimjobs-sargeras"] = {
             displayName = "Loverimjobs-sargeras",
-            specKey = "",
+            specKey = "MONK_MISTWEAVER",
             rating = 1916,
             rank = 7,
             wins = 39,
@@ -5212,7 +5505,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["lucidstorm-tichondrius"] = {
             displayName = "Lucidstorm-tichondrius",
-            specKey = "",
+            specKey = "ROGUE_ASSASSINATION",
             rating = 1239,
             rank = 292,
             wins = 13,
@@ -5221,7 +5514,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["lugobrious-korgath"] = {
             displayName = "Lugobrious-korgath",
-            specKey = "",
+            specKey = "WARRIOR_ARMS",
             rating = 864,
             rank = 648,
             wins = 9,
@@ -5230,7 +5523,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["lunayla-tichondrius"] = {
             displayName = "Lunayla-tichondrius",
-            specKey = "",
+            specKey = "PRIEST_DISCIPLINE",
             rating = 1660,
             rank = 35,
             wins = 24,
@@ -5239,7 +5532,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["lundyswung-doomhammer"] = {
             displayName = "Lundyswung-doomhammer",
-            specKey = "",
+            specKey = "WARRIOR_ARMS",
             rating = 768,
             rank = 846,
             wins = 8,
@@ -5248,7 +5541,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["luobai-tichondrius"] = {
             displayName = "Luobai-tichondrius",
-            specKey = "",
+            specKey = "PRIEST_SHADOW",
             rating = 862,
             rank = 781,
             wins = 9,
@@ -5257,7 +5550,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["lurler-tichondrius"] = {
             displayName = "Lurler-tichondrius",
-            specKey = "",
+            specKey = "MAGE_FROST",
             rating = 1242,
             rank = 289,
             wins = 13,
@@ -5266,7 +5559,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["lvladen-sargeras"] = {
             displayName = "Lvladen-sargeras",
-            specKey = "",
+            specKey = "PALADIN_RETRIBUTION",
             rating = 768,
             rank = 846,
             wins = 8,
@@ -5284,7 +5577,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["løyal-wyrmrestaccord"] = {
             displayName = "Løyal-wyrmrest-accord",
-            specKey = "",
+            specKey = "HUNTER_BEASTMASTERY",
             rating = 1150,
             rank = 339,
             wins = 12,
@@ -5293,7 +5586,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["mackstatus-kelthuzad"] = {
             displayName = "Mackstatus-kelthuzad",
-            specKey = "",
+            specKey = "PALADIN_HOLY",
             rating = 1056,
             rank = 382,
             wins = 11,
@@ -5302,7 +5595,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["mackthëknife-tichondrius"] = {
             displayName = "Mackthëknife-tichondrius",
-            specKey = "",
+            specKey = "EVOKER_PRESERVATION",
             rating = 1050,
             rank = 489,
             wins = 11,
@@ -5311,7 +5604,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["macoña-area52"] = {
             displayName = "Macoña-area-52",
-            specKey = "",
+            specKey = "DRUID_RESTORATION",
             rating = 768,
             rank = 846,
             wins = 8,
@@ -5320,7 +5613,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["maeveoliviae-stormrage"] = {
             displayName = "Maeveoliviae-stormrage",
-            specKey = "",
+            specKey = "PRIEST_DISCIPLINE",
             rating = 1151,
             rank = 329,
             wins = 12,
@@ -5338,7 +5631,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["makingitwork-sargeras"] = {
             displayName = "Makingitwork-sargeras",
-            specKey = "",
+            specKey = "DRUID_FERAL",
             rating = 1607,
             rank = 106,
             wins = 19,
@@ -5356,7 +5649,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["mangøblack-burninglegion"] = {
             displayName = "Mangøblack-burning-legion",
-            specKey = "",
+            specKey = "MONK_WINDWALKER",
             rating = 1670,
             rank = 26,
             wins = 22,
@@ -5365,7 +5658,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["manigold-illidan"] = {
             displayName = "Manigold-illidan",
-            specKey = "",
+            specKey = "DRUID_RESTORATION",
             rating = 1621,
             rank = 68,
             wins = 20,
@@ -5383,7 +5676,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["marky-magtheridon"] = {
             displayName = "Marky-magtheridon",
-            specKey = "",
+            specKey = "PRIEST_DISCIPLINE",
             rating = 768,
             rank = 846,
             wins = 8,
@@ -5401,7 +5694,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["marvdog-stormrage"] = {
             displayName = "Marvdog-stormrage",
-            specKey = "",
+            specKey = "DRUID_FERAL",
             rating = 864,
             rank = 648,
             wins = 9,
@@ -5419,7 +5712,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["matantu-zuljin"] = {
             displayName = "Matantu-zuljin",
-            specKey = "",
+            specKey = "MONK_WINDWALKER",
             rating = 960,
             rank = 508,
             wins = 10,
@@ -5428,7 +5721,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["maximilla-area52"] = {
             displayName = "Maximilla-area-52",
-            specKey = "",
+            specKey = "PRIEST_DISCIPLINE",
             rating = 1053,
             rank = 469,
             wins = 11,
@@ -5446,7 +5739,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["mcnastier-dunemaul"] = {
             displayName = "Mcnastier-dunemaul",
-            specKey = "",
+            specKey = "ROGUE_SUBTLETY",
             rating = 1643,
             rank = 48,
             wins = 22,
@@ -5455,7 +5748,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["mechachomby-stormrage"] = {
             displayName = "Mechachomby-stormrage",
-            specKey = "",
+            specKey = "WARRIOR_ARMS",
             rating = 959,
             rank = 572,
             wins = 10,
@@ -5464,7 +5757,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["medeiev-sargeras"] = {
             displayName = "Medeiev-sargeras",
-            specKey = "",
+            specKey = "EVOKER_PRESERVATION",
             rating = 1602,
             rank = 126,
             wins = 20,
@@ -5473,7 +5766,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["mehhxp-tichondrius"] = {
             displayName = "Mehhxp-tichondrius",
-            specKey = "",
+            specKey = "PRIEST_DISCIPLINE",
             rating = 1151,
             rank = 329,
             wins = 12,
@@ -5482,7 +5775,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["melooetta-illidan"] = {
             displayName = "Melooetta-illidan",
-            specKey = "",
+            specKey = "WARLOCK_AFFLICTION",
             rating = 768,
             rank = 846,
             wins = 8,
@@ -5491,7 +5784,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["melyon-tichondrius"] = {
             displayName = "Melyon-tichondrius",
-            specKey = "",
+            specKey = "MONK_MISTWEAVER",
             rating = 960,
             rank = 508,
             wins = 10,
@@ -5500,7 +5793,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["meowdegozaru-icecrown"] = {
             displayName = "Meowdegozaru-icecrown",
-            specKey = "",
+            specKey = "DRUID_RESTORATION",
             rating = 959,
             rank = 572,
             wins = 10,
@@ -5509,7 +5802,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["merp-arthas"] = {
             displayName = "Merp-arthas",
-            specKey = "",
+            specKey = "WARLOCK_AFFLICTION",
             rating = 1611,
             rank = 89,
             wins = 19,
@@ -5518,7 +5811,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["meshunt-tichondrius"] = {
             displayName = "Meshunt-tichondrius",
-            specKey = "",
+            specKey = "HUNTER_BEASTMASTERY",
             rating = 1604,
             rank = 117,
             wins = 21,
@@ -5527,7 +5820,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["mesidan-illidan"] = {
             displayName = "Mesidan-illidan",
-            specKey = "",
+            specKey = "DEMONHUNTER_HAVOC",
             rating = 1152,
             rank = 297,
             wins = 12,
@@ -5536,7 +5829,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["metafloyd-illidan"] = {
             displayName = "Metafloyd-illidan",
-            specKey = "",
+            specKey = "MONK_MISTWEAVER",
             rating = 1600,
             rank = 132,
             wins = 19,
@@ -5545,7 +5838,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["metals-azralon"] = {
             displayName = "Metals-azralon",
-            specKey = "",
+            specKey = "PRIEST_DISCIPLINE",
             rating = 864,
             rank = 648,
             wins = 9,
@@ -5554,7 +5847,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["metaphør-moonguard"] = {
             displayName = "Metaphør-moon-guard",
-            specKey = "",
+            specKey = "DRUID_FERAL",
             rating = 1496,
             rank = 188,
             wins = 18,
@@ -5581,7 +5874,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["michaela-illidan"] = {
             displayName = "Michaela-illidan",
-            specKey = "",
+            specKey = "PRIEST_SHADOW",
             rating = 863,
             rank = 751,
             wins = 9,
@@ -5617,7 +5910,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["mileslol-azgalor"] = {
             displayName = "Mileslol-azgalor",
-            specKey = "",
+            specKey = "PRIEST_SHADOW",
             rating = 1148,
             rank = 358,
             wins = 12,
@@ -5635,7 +5928,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["mimick-sargeras"] = {
             displayName = "Mimick-sargeras",
-            specKey = "",
+            specKey = "ROGUE_SUBTLETY",
             rating = 1651,
             rank = 42,
             wins = 22,
@@ -5644,7 +5937,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["mistakechild-tichondrius"] = {
             displayName = "Mistakechild-tichondrius",
-            specKey = "",
+            specKey = "PRIEST_HOLY",
             rating = 1487,
             rank = 189,
             wins = 18,
@@ -5653,7 +5946,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["mnzw-sargeras"] = {
             displayName = "Mnzw-sargeras",
-            specKey = "",
+            specKey = "WARRIOR_ARMS",
             rating = 768,
             rank = 846,
             wins = 8,
@@ -5662,7 +5955,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["molemeat-detheroc"] = {
             displayName = "Molemeat-detheroc",
-            specKey = "",
+            specKey = "DEMONHUNTER_HAVOC",
             rating = 960,
             rank = 508,
             wins = 10,
@@ -5671,7 +5964,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["monari-moonguard"] = {
             displayName = "Monari-moon-guard",
-            specKey = "",
+            specKey = "MONK_WINDWALKER",
             rating = 1248,
             rank = 254,
             wins = 13,
@@ -5680,7 +5973,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["mongomav-illidan"] = {
             displayName = "Mongomav-illidan",
-            specKey = "",
+            specKey = "DEMONHUNTER_HAVOC",
             rating = 768,
             rank = 846,
             wins = 8,
@@ -5689,7 +5982,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["mongrol-nazgrel"] = {
             displayName = "Mongrol-nazgrel",
-            specKey = "",
+            specKey = "MONK_MISTWEAVER",
             rating = 767,
             rank = 983,
             wins = 8,
@@ -5698,7 +5991,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["monsterwhite-azralon"] = {
             displayName = "Monsterwhite-azralon",
-            specKey = "",
+            specKey = "DEMONHUNTER_HAVOC",
             rating = 1056,
             rank = 382,
             wins = 11,
@@ -5707,7 +6000,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["moonsap-tichondrius"] = {
             displayName = "Moonsap-tichondrius",
-            specKey = "",
+            specKey = "ROGUE_SUBTLETY",
             rating = 863,
             rank = 751,
             wins = 9,
@@ -5716,7 +6009,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["mopvibes-ursin"] = {
             displayName = "Mopvibes-ursin",
-            specKey = "",
+            specKey = "PRIEST_SHADOW",
             rating = 1583,
             rank = 135,
             wins = 19,
@@ -5725,7 +6018,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["mshamjr-tichondrius"] = {
             displayName = "Mshamjr-tichondrius",
-            specKey = "",
+            specKey = "SHAMAN_RESTORATION",
             rating = 1562,
             rank = 153,
             wins = 18,
@@ -5734,7 +6027,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["mtix-tichondrius"] = {
             displayName = "Mtix-tichondrius",
-            specKey = "",
+            specKey = "PRIEST_DISCIPLINE",
             rating = 956,
             rank = 632,
             wins = 10,
@@ -5752,7 +6045,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["muggz-sargeras"] = {
             displayName = "Muggz-sargeras",
-            specKey = "",
+            specKey = "SHAMAN_RESTORATION",
             rating = 960,
             rank = 508,
             wins = 10,
@@ -5824,7 +6117,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["namek-tichondrius"] = {
             displayName = "Namek-tichondrius",
-            specKey = "",
+            specKey = "HUNTER_BEASTMASTERY",
             rating = 860,
             rank = 818,
             wins = 9,
@@ -5851,7 +6144,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["natooeasy-area52"] = {
             displayName = "Natooeasy-area-52",
-            specKey = "",
+            specKey = "DEMONHUNTER_HAVOC",
             rating = 1611,
             rank = 89,
             wins = 20,
@@ -5860,7 +6153,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["naughtyswipe-tichondrius"] = {
             displayName = "Naughtyswipe-tichondrius",
-            specKey = "",
+            specKey = "WARRIOR_ARMS",
             rating = 1575,
             rank = 141,
             wins = 18,
@@ -5869,7 +6162,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["needbuldak-malganis"] = {
             displayName = "Needbuldak-malganis",
-            specKey = "",
+            specKey = "ROGUE_SUBTLETY",
             rating = 1607,
             rank = 106,
             wins = 21,
@@ -5878,7 +6171,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["neekolas-lightbringer"] = {
             displayName = "Neekolas-lightbringer",
-            specKey = "",
+            specKey = "EVOKER_PRESERVATION",
             rating = 1605,
             rank = 114,
             wins = 20,
@@ -5887,7 +6180,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["nekopeepers-bloodfurnace"] = {
             displayName = "Nekopeepers-blood-furnace",
-            specKey = "",
+            specKey = "WARRIOR_ARMS",
             rating = 959,
             rank = 572,
             wins = 10,
@@ -5896,7 +6189,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["nekopets-tichondrius"] = {
             displayName = "Nekopets-tichondrius",
-            specKey = "",
+            specKey = "HUNTER_BEASTMASTERY",
             rating = 767,
             rank = 983,
             wins = 8,
@@ -5914,7 +6207,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["nenami-kelthuzad"] = {
             displayName = "Nenami-kelthuzad",
-            specKey = "",
+            specKey = "PRIEST_HOLY",
             rating = 768,
             rank = 846,
             wins = 8,
@@ -5923,7 +6216,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["neoinsanity-proudmoore"] = {
             displayName = "Neoinsanity-proudmoore",
-            specKey = "",
+            specKey = "DRUID_FERAL",
             rating = 1055,
             rank = 432,
             wins = 11,
@@ -5932,7 +6225,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["neurosurgeon-burningblade"] = {
             displayName = "Neurosurgeon-burning-blade",
-            specKey = "",
+            specKey = "SHAMAN_RESTORATION",
             rating = 864,
             rank = 648,
             wins = 9,
@@ -5941,7 +6234,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["neverfeignx-khazgoroth"] = {
             displayName = "Neverfeignx-khazgoroth",
-            specKey = "",
+            specKey = "HUNTER_BEASTMASTERY",
             rating = 768,
             rank = 846,
             wins = 8,
@@ -5959,7 +6252,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["nikkoo-aegwynn"] = {
             displayName = "Nikkoo-aegwynn",
-            specKey = "",
+            specKey = "MONK_MISTWEAVER",
             rating = 1432,
             rank = 206,
             wins = 15,
@@ -5968,7 +6261,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["nikomonk-aegwynn"] = {
             displayName = "Nikomonk-aegwynn",
-            specKey = "",
+            specKey = "MONK_MISTWEAVER",
             rating = 768,
             rank = 846,
             wins = 8,
@@ -5986,7 +6279,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["nirgnala-area52"] = {
             displayName = "Nirgnala-area-52",
-            specKey = "",
+            specKey = "DEMONHUNTER_HAVOC",
             rating = 1151,
             rank = 329,
             wins = 12,
@@ -6004,7 +6297,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["nojjmilk-tichondrius"] = {
             displayName = "Nojjmilk-tichondrius",
-            specKey = "WARRIOR_FURY",
+            specKey = "",
             rating = 767,
             rank = 983,
             wins = 8,
@@ -6013,7 +6306,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["nonamenoname-tichondrius"] = {
             displayName = "Nonamenoname-tichondrius",
-            specKey = "",
+            specKey = "PRIEST_DISCIPLINE",
             rating = 1678,
             rank = 25,
             wins = 23,
@@ -6022,7 +6315,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["notaglad-sargeras"] = {
             displayName = "Notaglad-sargeras",
-            specKey = "",
+            specKey = "DRUID_BALANCE",
             rating = 1055,
             rank = 432,
             wins = 11,
@@ -6031,7 +6324,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["notjay-tichondrius"] = {
             displayName = "Notjay-tichondrius",
-            specKey = "",
+            specKey = "DEMONHUNTER_DEVOURER",
             rating = 1725,
             rank = 17,
             wins = 24,
@@ -6040,7 +6333,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["notnotmes-tichondrius"] = {
             displayName = "Notnotmes-tichondrius",
-            specKey = "",
+            specKey = "WARRIOR_ARMS",
             rating = 1055,
             rank = 432,
             wins = 11,
@@ -6049,7 +6342,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["nottkuro-tichondrius"] = {
             displayName = "Nottkuro-tichondrius",
-            specKey = "",
+            specKey = "DRUID_GUARDIAN",
             rating = 1151,
             rank = 329,
             wins = 12,
@@ -6058,7 +6351,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["nowave-boulderfist"] = {
             displayName = "Nowave-boulderfist",
-            specKey = "",
+            specKey = "MONK_MISTWEAVER",
             rating = 860,
             rank = 818,
             wins = 9,
@@ -6067,7 +6360,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["nscloneabuse-thrall"] = {
             displayName = "Nscloneabuse-thrall",
-            specKey = "",
+            specKey = "DRUID_RESTORATION",
             rating = 955,
             rank = 635,
             wins = 10,
@@ -6076,7 +6369,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["ntp-stormrage"] = {
             displayName = "Ntp-stormrage",
-            specKey = "",
+            specKey = "PRIEST_HOLY",
             rating = 1343,
             rank = 219,
             wins = 14,
@@ -6085,7 +6378,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["nudithree-illidan"] = {
             displayName = "Nudithree-illidan",
-            specKey = "",
+            specKey = "PRIEST_DISCIPLINE",
             rating = 1150,
             rank = 339,
             wins = 12,
@@ -6094,7 +6387,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["nuggsdk-tichondrius"] = {
             displayName = "Nuggsdk-tichondrius",
-            specKey = "",
+            specKey = "DEATHKNIGHT_UNHOLY",
             rating = 1145,
             rank = 373,
             wins = 12,
@@ -6103,7 +6396,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["nuqipq-tichondrius"] = {
             displayName = "Nuqipq-tichondrius",
-            specKey = "",
+            specKey = "WARRIOR_ARMS",
             rating = 1056,
             rank = 382,
             wins = 11,
@@ -6121,7 +6414,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["nyjal-illidan"] = {
             displayName = "Nyjal-illidan",
-            specKey = "",
+            specKey = "DRUID_BALANCE",
             rating = 864,
             rank = 648,
             wins = 9,
@@ -6130,7 +6423,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["nyloras-illidan"] = {
             displayName = "Nyloras-illidan",
-            specKey = "",
+            specKey = "WARRIOR_PROTECTION",
             rating = 864,
             rank = 648,
             wins = 9,
@@ -6139,7 +6432,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["nåxah-bleedinghollow"] = {
             displayName = "Nåxah-bleeding-hollow",
-            specKey = "",
+            specKey = "DEMONHUNTER_HAVOC",
             rating = 1148,
             rank = 358,
             wins = 12,
@@ -6148,7 +6441,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["nébèl-zuljin"] = {
             displayName = "Nébèl-zuljin",
-            specKey = "",
+            specKey = "MONK_MISTWEAVER",
             rating = 958,
             rank = 610,
             wins = 10,
@@ -6175,7 +6468,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["nörthstår-tichondrius"] = {
             displayName = "Nörthstår-tichondrius",
-            specKey = "",
+            specKey = "MAGE_ARCANE",
             rating = 768,
             rank = 846,
             wins = 8,
@@ -6184,7 +6477,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["nümbers-area52"] = {
             displayName = "Nümbers-area-52",
-            specKey = "",
+            specKey = "DEMONHUNTER_HAVOC",
             rating = 1603,
             rank = 123,
             wins = 20,
@@ -6193,7 +6486,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["ocat-tichondrius"] = {
             displayName = "Ocat-tichondrius",
-            specKey = "",
+            specKey = "SHAMAN_ENHANCEMENT",
             rating = 1054,
             rank = 456,
             wins = 11,
@@ -6211,7 +6504,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["ogclasix-tichondrius"] = {
             displayName = "Ogclasix-tichondrius",
-            specKey = "",
+            specKey = "WARRIOR_ARMS",
             rating = 960,
             rank = 508,
             wins = 10,
@@ -6220,7 +6513,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["oh-anetheron"] = {
             displayName = "Oh-anetheron",
-            specKey = "",
+            specKey = "DEATHKNIGHT_BLOOD",
             rating = 1054,
             rank = 456,
             wins = 11,
@@ -6247,7 +6540,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["okhomie-tichondrius"] = {
             displayName = "Okhomie-tichondrius",
-            specKey = "",
+            specKey = "MONK_WINDWALKER",
             rating = 863,
             rank = 751,
             wins = 9,
@@ -6256,7 +6549,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["oldorio-moknathal"] = {
             displayName = "Oldorio-moknathal",
-            specKey = "",
+            specKey = "ROGUE_ASSASSINATION",
             rating = 957,
             rank = 624,
             wins = 10,
@@ -6265,7 +6558,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["omenx-emeralddream"] = {
             displayName = "Omenx-emerald-dream",
-            specKey = "",
+            specKey = "PRIEST_SHADOW",
             rating = 958,
             rank = 610,
             wins = 10,
@@ -6292,7 +6585,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["onemission-whisperwind"] = {
             displayName = "Onemission-whisperwind",
-            specKey = "",
+            specKey = "PRIEST_DISCIPLINE",
             rating = 957,
             rank = 624,
             wins = 10,
@@ -6301,7 +6594,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["onioutlawttv-sargeras"] = {
             displayName = "Onioutlawttv-sargeras",
-            specKey = "",
+            specKey = "PRIEST_HOLY",
             rating = 864,
             rank = 648,
             wins = 9,
@@ -6310,7 +6603,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["oojo-illidan"] = {
             displayName = "Oojo-illidan",
-            specKey = "",
+            specKey = "PRIEST_DISCIPLINE",
             rating = 1519,
             rank = 181,
             wins = 16,
@@ -6319,7 +6612,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["ootanari-illidan"] = {
             displayName = "Ootanari-illidan",
-            specKey = "",
+            specKey = "DRUID_RESTORATION",
             rating = 860,
             rank = 818,
             wins = 9,
@@ -6328,7 +6621,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["opendtcheka-stormrage"] = {
             displayName = "Opendtcheka-stormrage",
-            specKey = "",
+            specKey = "DRUID_RESTORATION",
             rating = 1051,
             rank = 481,
             wins = 11,
@@ -6337,7 +6630,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["orcins-emeralddream"] = {
             displayName = "Orcins-emerald-dream",
-            specKey = "",
+            specKey = "SHAMAN_RESTORATION",
             rating = 864,
             rank = 648,
             wins = 9,
@@ -6346,7 +6639,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["orcstrength-balnazzar"] = {
             displayName = "Orcstrength-balnazzar",
-            specKey = "",
+            specKey = "ROGUE_SUBTLETY",
             rating = 1245,
             rank = 279,
             wins = 13,
@@ -6355,7 +6648,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["oreë-tichondrius"] = {
             displayName = "Oreë-tichondrius",
-            specKey = "",
+            specKey = "PRIEST_DISCIPLINE",
             rating = 767,
             rank = 983,
             wins = 8,
@@ -6373,7 +6666,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["orphanww-bleedinghollow"] = {
             displayName = "Orphanww-bleeding-hollow",
-            specKey = "",
+            specKey = "MONK_WINDWALKER",
             rating = 1152,
             rank = 297,
             wins = 12,
@@ -6400,7 +6693,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["ozdagreat-tichondrius"] = {
             displayName = "Ozdagreat-tichondrius",
-            specKey = "",
+            specKey = "ROGUE_SUBTLETY",
             rating = 960,
             rank = 508,
             wins = 10,
@@ -6409,7 +6702,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["palmex-magtheridon"] = {
             displayName = "Palmex-magtheridon",
-            specKey = "",
+            specKey = "MONK_MISTWEAVER",
             rating = 864,
             rank = 648,
             wins = 9,
@@ -6418,7 +6711,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["papitoh-azralon"] = {
             displayName = "Papitoh-azralon",
-            specKey = "",
+            specKey = "DEMONHUNTER_DEVOURER",
             rating = 768,
             rank = 846,
             wins = 8,
@@ -6436,7 +6729,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["parishealton-anubarak"] = {
             displayName = "Parishealton-anubarak",
-            specKey = "",
+            specKey = "PRIEST_DISCIPLINE",
             rating = 960,
             rank = 508,
             wins = 10,
@@ -6445,7 +6738,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["pattrice-tichondrius"] = {
             displayName = "Pattrice-tichondrius",
-            specKey = "",
+            specKey = "HUNTER_SURVIVAL",
             rating = 864,
             rank = 648,
             wins = 9,
@@ -6454,7 +6747,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["pawgixo-moonguard"] = {
             displayName = "Pawgixo-moon-guard",
-            specKey = "",
+            specKey = "MONK_MISTWEAVER",
             rating = 1248,
             rank = 254,
             wins = 13,
@@ -6463,7 +6756,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["pebbelss-nesingwary"] = {
             displayName = "Pebbelss-nesingwary",
-            specKey = "",
+            specKey = "PRIEST_DISCIPLINE",
             rating = 960,
             rank = 508,
             wins = 10,
@@ -6472,7 +6765,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["peekychu-tichondrius"] = {
             displayName = "Peekychu-tichondrius",
-            specKey = "",
+            specKey = "MONK_MISTWEAVER",
             rating = 1148,
             rank = 358,
             wins = 12,
@@ -6490,7 +6783,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["pewnee-eonar"] = {
             displayName = "Pewnee-eonar",
-            specKey = "",
+            specKey = "EVOKER_DEVASTATION",
             rating = 960,
             rank = 508,
             wins = 10,
@@ -6499,7 +6792,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["pexist-tichondrius"] = {
             displayName = "Pexist-tichondrius",
-            specKey = "",
+            specKey = "PRIEST_DISCIPLINE",
             rating = 863,
             rank = 751,
             wins = 9,
@@ -6526,7 +6819,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["pherix-sargeras"] = {
             displayName = "Pherix-sargeras",
-            specKey = "",
+            specKey = "MAGE_FIRE",
             rating = 1152,
             rank = 297,
             wins = 12,
@@ -6535,7 +6828,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["phisha-kelthuzad"] = {
             displayName = "Phisha-kelthuzad",
-            specKey = "",
+            specKey = "WARLOCK_DESTRUCTION",
             rating = 768,
             rank = 846,
             wins = 8,
@@ -6544,7 +6837,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["pibbzeros-emeralddream"] = {
             displayName = "Pibbzeros-emerald-dream",
-            specKey = "",
+            specKey = "ROGUE_SUBTLETY",
             rating = 863,
             rank = 751,
             wins = 9,
@@ -6553,7 +6846,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["pigeonman-grizzlyhills"] = {
             displayName = "Pigeonman-grizzly-hills",
-            specKey = "",
+            specKey = "HUNTER_BEASTMASTERY",
             rating = 768,
             rank = 846,
             wins = 8,
@@ -6571,7 +6864,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["pizzagagte-dalaran"] = {
             displayName = "Pizzagagte-dalaran",
-            specKey = "",
+            specKey = "PRIEST_HOLY",
             rating = 1631,
             rank = 58,
             wins = 21,
@@ -6580,7 +6873,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["plaything-demonsoul"] = {
             displayName = "Plaything-demon-soul",
-            specKey = "",
+            specKey = "PALADIN_HOLY",
             rating = 1051,
             rank = 481,
             wins = 11,
@@ -6589,7 +6882,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["plumlet-area52"] = {
             displayName = "Plumlet-area-52",
-            specKey = "",
+            specKey = "DEATHKNIGHT_UNHOLY",
             rating = 864,
             rank = 648,
             wins = 9,
@@ -6598,7 +6891,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["plv-zuljin"] = {
             displayName = "Plv-zuljin",
-            specKey = "",
+            specKey = "ROGUE_SUBTLETY",
             rating = 862,
             rank = 781,
             wins = 9,
@@ -6625,7 +6918,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["poorandugly-kelthuzad"] = {
             displayName = "Poorandugly-kelthuzad",
-            specKey = "",
+            specKey = "PRIEST_HOLY",
             rating = 1431,
             rank = 207,
             wins = 15,
@@ -6634,7 +6927,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["popejeb-tichondrius"] = {
             displayName = "Popejeb-tichondrius",
-            specKey = "",
+            specKey = "PRIEST_HOLY",
             rating = 960,
             rank = 508,
             wins = 10,
@@ -6643,7 +6936,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["poppapal-dalaran"] = {
             displayName = "Poppapal-dalaran",
-            specKey = "",
+            specKey = "PALADIN_HOLY",
             rating = 864,
             rank = 648,
             wins = 9,
@@ -6652,7 +6945,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["porkstomper-illidan"] = {
             displayName = "Porkstomper-illidan",
-            specKey = "",
+            specKey = "HUNTER_BEASTMASTERY",
             rating = 1046,
             rank = 500,
             wins = 11,
@@ -6661,7 +6954,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["pororie-tichondrius"] = {
             displayName = "Pororie-tichondrius",
-            specKey = "",
+            specKey = "PRIEST_HOLY",
             rating = 960,
             rank = 508,
             wins = 10,
@@ -6670,7 +6963,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["postphysique-malganis"] = {
             displayName = "Postphysique-malganis",
-            specKey = "",
+            specKey = "ROGUE_ASSASSINATION",
             rating = 768,
             rank = 846,
             wins = 8,
@@ -6688,7 +6981,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["presheep-bleedinghollow"] = {
             displayName = "Presheep-bleeding-hollow",
-            specKey = "",
+            specKey = "MAGE_FIRE",
             rating = 1429,
             rank = 209,
             wins = 15,
@@ -6697,7 +6990,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["pressbloom-malganis"] = {
             displayName = "Pressbloom-malganis",
-            specKey = "",
+            specKey = "DRUID_RESTORATION",
             rating = 1051,
             rank = 481,
             wins = 11,
@@ -6706,7 +6999,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["presstab-tichondrius"] = {
             displayName = "Presstab-tichondrius",
-            specKey = "",
+            specKey = "WARLOCK_DEMONOLOGY",
             rating = 1614,
             rank = 85,
             wins = 20,
@@ -6715,7 +7008,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["pristorano-azralon"] = {
             displayName = "Pristorano-azralon",
-            specKey = "",
+            specKey = "PRIEST_DISCIPLINE",
             rating = 1053,
             rank = 469,
             wins = 11,
@@ -6724,7 +7017,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["prophet-shadowmoon"] = {
             displayName = "Prophet-shadowmoon",
-            specKey = "",
+            specKey = "PRIEST_HOLY",
             rating = 959,
             rank = 572,
             wins = 10,
@@ -6733,7 +7026,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["pstar-illidan"] = {
             displayName = "Pstar-illidan",
-            specKey = "",
+            specKey = "PRIEST_HOLY",
             rating = 864,
             rank = 648,
             wins = 9,
@@ -6742,7 +7035,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["psychx-kelthuzad"] = {
             displayName = "Psychx-kelthuzad",
-            specKey = "",
+            specKey = "PRIEST_DISCIPLINE",
             rating = 1152,
             rank = 297,
             wins = 12,
@@ -6751,7 +7044,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["psàlm-tichondrius"] = {
             displayName = "Psàlm-tichondrius",
-            specKey = "",
+            specKey = "PRIEST_DISCIPLINE",
             rating = 1152,
             rank = 297,
             wins = 12,
@@ -6760,7 +7053,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["psïren-quelthalas"] = {
             displayName = "Psïren-quelthalas",
-            specKey = "",
+            specKey = "PRIEST_HOLY",
             rating = 960,
             rank = 508,
             wins = 10,
@@ -6769,7 +7062,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["punchinator-eonar"] = {
             displayName = "Punchinator-eonar",
-            specKey = "",
+            specKey = "MONK_MISTWEAVER",
             rating = 768,
             rank = 846,
             wins = 8,
@@ -6778,7 +7071,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["purplelights-dawnbringer"] = {
             displayName = "Purplelights-dawnbringer",
-            specKey = "",
+            specKey = "WARRIOR_ARMS",
             rating = 851,
             rank = 842,
             wins = 9,
@@ -6787,7 +7080,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["putes-stormrage"] = {
             displayName = "Putes-stormrage",
-            specKey = "",
+            specKey = "PRIEST_HOLY",
             rating = 958,
             rank = 610,
             wins = 10,
@@ -6796,7 +7089,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["páïgèvêntürã-bleedinghollow"] = {
             displayName = "Páïgèvêntürã-bleeding-hollow",
-            specKey = "",
+            specKey = "ROGUE_ASSASSINATION",
             rating = 1056,
             rank = 382,
             wins = 11,
@@ -6805,7 +7098,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["pøstman-tichondrius"] = {
             displayName = "Pøstman-tichondrius",
-            specKey = "",
+            specKey = "DRUID_FERAL",
             rating = 1535,
             rank = 170,
             wins = 16,
@@ -6814,7 +7107,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["qtipped-kelthuzad"] = {
             displayName = "Qtipped-kelthuzad",
-            specKey = "",
+            specKey = "HUNTER_BEASTMASTERY",
             rating = 1620,
             rank = 71,
             wins = 20,
@@ -6832,7 +7125,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["ranch-darkspear"] = {
             displayName = "Ranch-darkspear",
-            specKey = "",
+            specKey = "DEATHKNIGHT_UNHOLY",
             rating = 1309,
             rank = 250,
             wins = 14,
@@ -6841,7 +7134,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["randomheal-dunemaul"] = {
             displayName = "Randomheal-dunemaul",
-            specKey = "",
+            specKey = "PRIEST_DISCIPLINE",
             rating = 1608,
             rank = 96,
             wins = 19,
@@ -6850,7 +7143,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["rapttors-zuljin"] = {
             displayName = "Rapttors-zuljin",
-            specKey = "",
+            specKey = "DRUID_RESTORATION",
             rating = 861,
             rank = 803,
             wins = 9,
@@ -6859,7 +7152,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["raxon-turalyon"] = {
             displayName = "Raxon-turalyon",
-            specKey = "",
+            specKey = "PRIEST_HOLY",
             rating = 768,
             rank = 846,
             wins = 8,
@@ -6877,7 +7170,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["readyforwar-sargeras"] = {
             displayName = "Readyforwar-sargeras",
-            specKey = "",
+            specKey = "PRIEST_HOLY",
             rating = 768,
             rank = 846,
             wins = 8,
@@ -6886,7 +7179,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["realdh-azralon"] = {
             displayName = "Realdh-azralon",
-            specKey = "",
+            specKey = "DEMONHUNTER_HAVOC",
             rating = 1615,
             rank = 84,
             wins = 20,
@@ -6895,7 +7188,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["redkiwi-illidan"] = {
             displayName = "Redkiwi-illidan",
-            specKey = "",
+            specKey = "PRIEST_DISCIPLINE",
             rating = 1608,
             rank = 96,
             wins = 20,
@@ -6922,7 +7215,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["relerocker-area52"] = {
             displayName = "Relerocker-area-52",
-            specKey = "",
+            specKey = "WARRIOR_PROTECTION",
             rating = 1056,
             rank = 382,
             wins = 11,
@@ -6931,7 +7224,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["reneymarjr-area52"] = {
             displayName = "Reneymarjr-area-52",
-            specKey = "DRUID_RESTORATION",
+            specKey = "",
             rating = 768,
             rank = 846,
             wins = 8,
@@ -6958,7 +7251,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["rennyxo-moonguard"] = {
             displayName = "Rennyxo-moon-guard",
-            specKey = "",
+            specKey = "DRUID_RESTORATION",
             rating = 859,
             rank = 827,
             wins = 9,
@@ -6967,7 +7260,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["reqzy-tichondrius"] = {
             displayName = "Reqzy-tichondrius",
-            specKey = "",
+            specKey = "ROGUE_ASSASSINATION",
             rating = 1339,
             rank = 235,
             wins = 14,
@@ -6976,7 +7269,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["restinpeep-sargeras"] = {
             displayName = "Restinpeep-sargeras",
-            specKey = "",
+            specKey = "MONK_WINDWALKER",
             rating = 959,
             rank = 572,
             wins = 10,
@@ -6985,7 +7278,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["resto-crushridge"] = {
             displayName = "Resto-crushridge",
-            specKey = "",
+            specKey = "DRUID_RESTORATION",
             rating = 768,
             rank = 846,
             wins = 8,
@@ -6994,7 +7287,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["resto-gurubashi"] = {
             displayName = "Resto-gurubashi",
-            specKey = "",
+            specKey = "DRUID_RESTORATION",
             rating = 1510,
             rank = 185,
             wins = 16,
@@ -7003,7 +7296,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["restobyte-moonguard"] = {
             displayName = "Restobyte-moon-guard",
-            specKey = "",
+            specKey = "SHAMAN_RESTORATION",
             rating = 864,
             rank = 648,
             wins = 9,
@@ -7012,7 +7305,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["retwarx-proudmoore"] = {
             displayName = "Retwarx-proudmoore",
-            specKey = "",
+            specKey = "WARRIOR_FURY",
             rating = 1683,
             rank = 22,
             wins = 24,
@@ -7021,7 +7314,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["reweina-sargeras"] = {
             displayName = "Reweina-sargeras",
-            specKey = "",
+            specKey = "PRIEST_SHADOW",
             rating = 1050,
             rank = 489,
             wins = 11,
@@ -7030,7 +7323,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["rezispacqt-icecrown"] = {
             displayName = "Rezispacqt-icecrown",
-            specKey = "",
+            specKey = "PALADIN_RETRIBUTION",
             rating = 959,
             rank = 572,
             wins = 10,
@@ -7039,7 +7332,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["rhod-hyjal"] = {
             displayName = "Rhod-hyjal",
-            specKey = "",
+            specKey = "HUNTER_BEASTMASTERY",
             rating = 863,
             rank = 751,
             wins = 9,
@@ -7066,7 +7359,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["riitzzxx-ragnaros"] = {
             displayName = "Riitzzxx-ragnaros",
-            specKey = "",
+            specKey = "PRIEST_DISCIPLINE",
             rating = 957,
             rank = 624,
             wins = 10,
@@ -7075,7 +7368,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["rikdon-wyrmrestaccord"] = {
             displayName = "Rikdon-wyrmrest-accord",
-            specKey = "",
+            specKey = "EVOKER_PRESERVATION",
             rating = 958,
             rank = 610,
             wins = 10,
@@ -7084,7 +7377,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["ripjeje-blackhand"] = {
             displayName = "Ripjeje-blackhand",
-            specKey = "",
+            specKey = "MAGE_FROST",
             rating = 960,
             rank = 508,
             wins = 10,
@@ -7093,7 +7386,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["ripperz-thrall"] = {
             displayName = "Ripperz-thrall",
-            specKey = "",
+            specKey = "HUNTER_MARKSMANSHIP",
             rating = 768,
             rank = 846,
             wins = 8,
@@ -7102,7 +7395,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["riptide-kiljaeden"] = {
             displayName = "Riptide-kiljaeden",
-            specKey = "",
+            specKey = "SHAMAN_ENHANCEMENT",
             rating = 1328,
             rank = 246,
             wins = 14,
@@ -7120,7 +7413,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["rlzpriest-tichondrius"] = {
             displayName = "Rlzpriest-tichondrius",
-            specKey = "",
+            specKey = "PRIEST_DISCIPLINE",
             rating = 768,
             rank = 846,
             wins = 8,
@@ -7129,7 +7422,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["roadrunna-windrunner"] = {
             displayName = "Roadrunna-windrunner",
-            specKey = "",
+            specKey = "MONK_MISTWEAVER",
             rating = 768,
             rank = 846,
             wins = 8,
@@ -7138,7 +7431,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["robin-undermine"] = {
             displayName = "Robin-undermine",
-            specKey = "",
+            specKey = "DRUID_RESTORATION",
             rating = 768,
             rank = 846,
             wins = 8,
@@ -7147,7 +7440,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["robotwo-illidan"] = {
             displayName = "Robotwo-illidan",
-            specKey = "",
+            specKey = "HUNTER_SURVIVAL",
             rating = 864,
             rank = 648,
             wins = 9,
@@ -7156,7 +7449,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["rockxtv-illidan"] = {
             displayName = "Rockxtv-illidan",
-            specKey = "",
+            specKey = "MONK_WINDWALKER",
             rating = 864,
             rank = 648,
             wins = 9,
@@ -7165,7 +7458,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["rollinbones-alexstrasza"] = {
             displayName = "Rollinbones-alexstrasza",
-            specKey = "",
+            specKey = "MONK_WINDWALKER",
             rating = 861,
             rank = 803,
             wins = 9,
@@ -7174,7 +7467,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["ronpauladina-stormrage"] = {
             displayName = "Ronpauladina-stormrage",
-            specKey = "",
+            specKey = "PALADIN_HOLY",
             rating = 1632,
             rank = 56,
             wins = 20,
@@ -7183,7 +7476,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["rotdank-korgath"] = {
             displayName = "Rotdank-korgath",
-            specKey = "",
+            specKey = "PRIEST_HOLY",
             rating = 1055,
             rank = 432,
             wins = 11,
@@ -7192,7 +7485,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["roxxadin-kelthuzad"] = {
             displayName = "Roxxadin-kelthuzad",
-            specKey = "",
+            specKey = "PALADIN_RETRIBUTION",
             rating = 860,
             rank = 818,
             wins = 9,
@@ -7201,7 +7494,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["rp-andorhal"] = {
             displayName = "Rp-andorhal",
-            specKey = "",
+            specKey = "ROGUE_SUBTLETY",
             rating = 860,
             rank = 818,
             wins = 9,
@@ -7210,7 +7503,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["rtd-frostmourne"] = {
             displayName = "Rtd-frostmourne",
-            specKey = "",
+            specKey = "HUNTER_BEASTMASTERY",
             rating = 1151,
             rank = 329,
             wins = 12,
@@ -7219,7 +7512,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["rukiyou-frostwolf"] = {
             displayName = "Rukiyou-frostwolf",
-            specKey = "",
+            specKey = "PRIEST_DISCIPLINE",
             rating = 1056,
             rank = 382,
             wins = 11,
@@ -7228,7 +7521,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["rumikpop-malganis"] = {
             displayName = "Rumikpop-malganis",
-            specKey = "",
+            specKey = "DEMONHUNTER_VENGEANCE",
             rating = 1152,
             rank = 297,
             wins = 12,
@@ -7237,7 +7530,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["rushiez-quelthalas"] = {
             displayName = "Rushiez-quelthalas",
-            specKey = "",
+            specKey = "MONK_MISTWEAVER",
             rating = 768,
             rank = 846,
             wins = 8,
@@ -7246,7 +7539,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["ráemonk-moonguard"] = {
             displayName = "Ráemonk-moon-guard",
-            specKey = "",
+            specKey = "MONK_MISTWEAVER",
             rating = 768,
             rank = 846,
             wins = 8,
@@ -7255,7 +7548,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["réý-sargeras"] = {
             displayName = "Réý-sargeras",
-            specKey = "",
+            specKey = "SHAMAN_RESTORATION",
             rating = 959,
             rank = 572,
             wins = 10,
@@ -7264,7 +7557,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["sacredsong-tichondrius"] = {
             displayName = "Sacredsong-tichondrius",
-            specKey = "",
+            specKey = "PALADIN_HOLY",
             rating = 1435,
             rank = 204,
             wins = 15,
@@ -7273,7 +7566,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["sacrider-emeralddream"] = {
             displayName = "Sacrider-emerald-dream",
-            specKey = "",
+            specKey = "PALADIN_HOLY",
             rating = 768,
             rank = 846,
             wins = 8,
@@ -7291,7 +7584,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["saeler-eitrigg"] = {
             displayName = "Saeler-eitrigg",
-            specKey = "",
+            specKey = "MAGE_ARCANE",
             rating = 960,
             rank = 508,
             wins = 10,
@@ -7300,7 +7593,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["sakuralove-emeralddream"] = {
             displayName = "Sakuralove-emerald-dream",
-            specKey = "",
+            specKey = "ROGUE_SUBTLETY",
             rating = 1336,
             rank = 239,
             wins = 14,
@@ -7309,7 +7602,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["salthouse-sargeras"] = {
             displayName = "Salthouse-sargeras",
-            specKey = "",
+            specKey = "WARRIOR_ARMS",
             rating = 1054,
             rank = 456,
             wins = 11,
@@ -7318,7 +7611,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["saltÿ-quelthalas"] = {
             displayName = "Saltÿ-quelthalas",
-            specKey = "",
+            specKey = "PALADIN_RETRIBUTION",
             rating = 1335,
             rank = 242,
             wins = 14,
@@ -7327,7 +7620,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["salvations-dunemaul"] = {
             displayName = "Salvations-dunemaul",
-            specKey = "",
+            specKey = "MONK_MISTWEAVER",
             rating = 960,
             rank = 508,
             wins = 10,
@@ -7336,7 +7629,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["sandorc-sargeras"] = {
             displayName = "Sandorc-sargeras",
-            specKey = "ROGUE_SUBTLETY",
+            specKey = "",
             rating = 1056,
             rank = 382,
             wins = 11,
@@ -7363,7 +7656,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["sapkick-veknilash"] = {
             displayName = "Sapkick-veknilash",
-            specKey = "",
+            specKey = "ROGUE_SUBTLETY",
             rating = 1556,
             rank = 158,
             wins = 18,
@@ -7381,7 +7674,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["saraxes-moonguard"] = {
             displayName = "Saraxes-moon-guard",
-            specKey = "PRIEST_HOLY",
+            specKey = "",
             rating = 768,
             rank = 846,
             wins = 8,
@@ -7390,7 +7683,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["saudita-stormrage"] = {
             displayName = "Saudita-stormrage",
-            specKey = "",
+            specKey = "PRIEST_DISCIPLINE",
             rating = 1336,
             rank = 239,
             wins = 14,
@@ -7408,7 +7701,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["scalasevtwo-illidan"] = {
             displayName = "Scalasevtwo-illidan",
-            specKey = "",
+            specKey = "HUNTER_BEASTMASTERY",
             rating = 859,
             rank = 827,
             wins = 9,
@@ -7417,7 +7710,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["scalebob-proudmoore"] = {
             displayName = "Scalebob-proudmoore",
-            specKey = "",
+            specKey = "EVOKER_DEVASTATION",
             rating = 852,
             rank = 840,
             wins = 9,
@@ -7435,7 +7728,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["scriest-tichondrius"] = {
             displayName = "Scriest-tichondrius",
-            specKey = "",
+            specKey = "PRIEST_SHADOW",
             rating = 1604,
             rank = 117,
             wins = 19,
@@ -7444,7 +7737,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["seleris-exodar"] = {
             displayName = "Seleris-exodar",
-            specKey = "",
+            specKey = "WARLOCK_DESTRUCTION",
             rating = 864,
             rank = 648,
             wins = 9,
@@ -7453,7 +7746,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["semvetax-alleria"] = {
             displayName = "Semvetax-alleria",
-            specKey = "",
+            specKey = "DRUID_FERAL",
             rating = 1056,
             rank = 382,
             wins = 11,
@@ -7462,7 +7755,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["sensitivthug-sargeras"] = {
             displayName = "Sensitivthug-sargeras",
-            specKey = "",
+            specKey = "HUNTER_MARKSMANSHIP",
             rating = 1662,
             rank = 34,
             wins = 22,
@@ -7489,7 +7782,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["shadxz-tichondrius"] = {
             displayName = "Shadxz-tichondrius",
-            specKey = "",
+            specKey = "MONK_WINDWALKER",
             rating = 1056,
             rank = 382,
             wins = 11,
@@ -7498,7 +7791,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["shamtastic-perenolde"] = {
             displayName = "Shamtastic-perenolde",
-            specKey = "",
+            specKey = "SHAMAN_RESTORATION",
             rating = 1143,
             rank = 377,
             wins = 12,
@@ -7507,7 +7800,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["shankédqt-illidan"] = {
             displayName = "Shankédqt-illidan",
-            specKey = "",
+            specKey = "ROGUE_SUBTLETY",
             rating = 1147,
             rank = 366,
             wins = 12,
@@ -7516,7 +7809,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["shards-illidan"] = {
             displayName = "Shards-illidan",
-            specKey = "",
+            specKey = "WARLOCK_AFFLICTION",
             rating = 1607,
             rank = 106,
             wins = 19,
@@ -7525,7 +7818,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["sharkzooka-illidan"] = {
             displayName = "Sharkzooka-illidan",
-            specKey = "",
+            specKey = "HUNTER_MARKSMANSHIP",
             rating = 1607,
             rank = 106,
             wins = 20,
@@ -7534,7 +7827,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["shayamalan-nerzhul"] = {
             displayName = "Shayamalan-nerzhul",
-            specKey = "",
+            specKey = "SHAMAN_RESTORATION",
             rating = 1338,
             rank = 238,
             wins = 14,
@@ -7543,7 +7836,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["shaymie-moonguard"] = {
             displayName = "Shaymie-moon-guard",
-            specKey = "",
+            specKey = "PRIEST_HOLY",
             rating = 1603,
             rank = 123,
             wins = 19,
@@ -7552,7 +7845,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["shirubamoya-wyrmrestaccord"] = {
             displayName = "Shirubamoya-wyrmrest-accord",
-            specKey = "",
+            specKey = "PRIEST_HOLY",
             rating = 768,
             rank = 846,
             wins = 8,
@@ -7561,7 +7854,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["shizükesa-stormrage"] = {
             displayName = "Shizükesa-stormrage",
-            specKey = "",
+            specKey = "MONK_MISTWEAVER",
             rating = 960,
             rank = 508,
             wins = 10,
@@ -7570,7 +7863,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["shiñobi-tichondrius"] = {
             displayName = "Shiñobi-tichondrius",
-            specKey = "",
+            specKey = "ROGUE_SUBTLETY",
             rating = 1534,
             rank = 173,
             wins = 17,
@@ -7579,7 +7872,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["shoop-saurfang"] = {
             displayName = "Shoop-saurfang",
-            specKey = "MAGE_ARCANE",
+            specKey = "",
             rating = 960,
             rank = 508,
             wins = 10,
@@ -7588,7 +7881,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["shufbrainrot-tichondrius"] = {
             displayName = "Shufbrainrot-tichondrius",
-            specKey = "",
+            specKey = "PALADIN_HOLY",
             rating = 1152,
             rank = 297,
             wins = 12,
@@ -7606,7 +7899,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["shukumei-aeriepeak"] = {
             displayName = "Shukumei-aerie-peak",
-            specKey = "",
+            specKey = "SHAMAN_ELEMENTAL",
             rating = 864,
             rank = 648,
             wins = 9,
@@ -7615,7 +7908,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["shukuméi-aeriepeak"] = {
             displayName = "Shukuméi-aerie-peak",
-            specKey = "",
+            specKey = "PALADIN_RETRIBUTION",
             rating = 864,
             rank = 648,
             wins = 9,
@@ -7633,7 +7926,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["shîntâ-ragnaros"] = {
             displayName = "Shîntâ-ragnaros",
-            specKey = "",
+            specKey = "WARRIOR_ARMS",
             rating = 959,
             rank = 572,
             wins = 10,
@@ -7660,7 +7953,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["silentpalm-sargeras"] = {
             displayName = "Silentpalm-sargeras",
-            specKey = "",
+            specKey = "MONK_WINDWALKER",
             rating = 1152,
             rank = 297,
             wins = 12,
@@ -7669,7 +7962,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["sinlol-kelthuzad"] = {
             displayName = "Sinlol-kelthuzad",
-            specKey = "",
+            specKey = "PRIEST_DISCIPLINE",
             rating = 858,
             rank = 834,
             wins = 9,
@@ -7678,7 +7971,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["sinofdeath-tichondrius"] = {
             displayName = "Sinofdeath-tichondrius",
-            specKey = "",
+            specKey = "PRIEST_HOLY",
             rating = 957,
             rank = 624,
             wins = 10,
@@ -7687,7 +7980,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["sixcombopts-area52"] = {
             displayName = "Sixcombopts-area-52",
-            specKey = "",
+            specKey = "ROGUE_SUBTLETY",
             rating = 1056,
             rank = 382,
             wins = 11,
@@ -7696,7 +7989,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["sixfiveirl-stormreaver"] = {
             displayName = "Sixfiveirl-stormreaver",
-            specKey = "",
+            specKey = "PRIEST_HOLY",
             rating = 958,
             rank = 610,
             wins = 10,
@@ -7705,7 +7998,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["sixmgs-stormrage"] = {
             displayName = "Sixmgs-stormrage",
-            specKey = "",
+            specKey = "SHAMAN_ENHANCEMENT",
             rating = 861,
             rank = 803,
             wins = 9,
@@ -7714,7 +8007,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["sizz-stormreaver"] = {
             displayName = "Sizz-stormreaver",
-            specKey = "",
+            specKey = "MAGE_FIRE",
             rating = 1152,
             rank = 297,
             wins = 12,
@@ -7723,7 +8016,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["skeena-tichondrius"] = {
             displayName = "Skeena-tichondrius",
-            specKey = "",
+            specKey = "HUNTER_SURVIVAL",
             rating = 1056,
             rank = 382,
             wins = 11,
@@ -7732,7 +8025,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["sketchymage-proudmoore"] = {
             displayName = "Sketchymage-proudmoore",
-            specKey = "",
+            specKey = "MAGE_FIRE",
             rating = 959,
             rank = 572,
             wins = 10,
@@ -7741,7 +8034,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["skiavi-sargeras"] = {
             displayName = "Skiavi-sargeras",
-            specKey = "",
+            specKey = "PRIEST_DISCIPLINE",
             rating = 862,
             rank = 781,
             wins = 9,
@@ -7750,7 +8043,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["skillshanks-tichondrius"] = {
             displayName = "Skillshanks-tichondrius",
-            specKey = "",
+            specKey = "PALADIN_HOLY",
             rating = 864,
             rank = 648,
             wins = 9,
@@ -7759,7 +8052,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["skryte-mannoroth"] = {
             displayName = "Skryte-mannoroth",
-            specKey = "",
+            specKey = "MAGE_FROST",
             rating = 1045,
             rank = 501,
             wins = 11,
@@ -7768,7 +8061,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["skyblood-sargeras"] = {
             displayName = "Skyblood-sargeras",
-            specKey = "",
+            specKey = "HUNTER_BEASTMASTERY",
             rating = 947,
             rank = 644,
             wins = 10,
@@ -7795,7 +8088,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["skyus-stormrage"] = {
             displayName = "Skyus-stormrage",
-            specKey = "",
+            specKey = "EVOKER_PRESERVATION",
             rating = 863,
             rank = 751,
             wins = 9,
@@ -7804,7 +8097,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["skýwalker-dalaran"] = {
             displayName = "Skýwalker-dalaran",
-            specKey = "",
+            specKey = "MAGE_FROST",
             rating = 1625,
             rank = 66,
             wins = 20,
@@ -7822,7 +8115,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["slantsix-tichondrius"] = {
             displayName = "Slantsix-tichondrius",
-            specKey = "",
+            specKey = "WARLOCK_DESTRUCTION",
             rating = 768,
             rank = 846,
             wins = 8,
@@ -7831,7 +8124,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["slayerpriest-tichondrius"] = {
             displayName = "Slayerpriest-tichondrius",
-            specKey = "",
+            specKey = "PRIEST_DISCIPLINE",
             rating = 1620,
             rank = 71,
             wins = 20,
@@ -7849,7 +8142,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["smallarms-malganis"] = {
             displayName = "Smallarms-malganis",
-            specKey = "",
+            specKey = "WARRIOR_ARMS",
             rating = 1246,
             rank = 274,
             wins = 13,
@@ -7867,7 +8160,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["smolders-illidan"] = {
             displayName = "Smolders-illidan",
-            specKey = "",
+            specKey = "PALADIN_RETRIBUTION",
             rating = 960,
             rank = 508,
             wins = 10,
@@ -7876,7 +8169,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["smxxn-tichondrius"] = {
             displayName = "Smxxn-tichondrius",
-            specKey = "",
+            specKey = "SHAMAN_ENHANCEMENT",
             rating = 768,
             rank = 846,
             wins = 8,
@@ -7885,7 +8178,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["sneakydemon-shadowsong"] = {
             displayName = "Sneakydemon-shadowsong",
-            specKey = "",
+            specKey = "ROGUE_OUTLAW",
             rating = 959,
             rank = 572,
             wins = 10,
@@ -7903,7 +8196,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["snky-tichondrius"] = {
             displayName = "Snky-tichondrius",
-            specKey = "",
+            specKey = "DRUID_FERAL",
             rating = 768,
             rank = 846,
             wins = 8,
@@ -7912,7 +8205,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["snmp-stormrage"] = {
             displayName = "Snmp-stormrage",
-            specKey = "",
+            specKey = "DRUID_FERAL",
             rating = 1053,
             rank = 469,
             wins = 11,
@@ -7930,7 +8223,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["sofax-tichondrius"] = {
             displayName = "Sofax-tichondrius",
-            specKey = "",
+            specKey = "PALADIN_HOLY",
             rating = 1646,
             rank = 45,
             wins = 21,
@@ -7939,7 +8232,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["softscars-illidan"] = {
             displayName = "Softscars-illidan",
-            specKey = "",
+            specKey = "MONK_MISTWEAVER",
             rating = 1426,
             rank = 212,
             wins = 15,
@@ -7948,7 +8241,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["solushun-sargeras"] = {
             displayName = "Solushun-sargeras",
-            specKey = "",
+            specKey = "DRUID_RESTORATION",
             rating = 1564,
             rank = 151,
             wins = 18,
@@ -7957,7 +8250,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["solushunx-sargeras"] = {
             displayName = "Solushunx-sargeras",
-            specKey = "",
+            specKey = "DRUID_RESTORATION",
             rating = 1152,
             rank = 297,
             wins = 12,
@@ -7966,7 +8259,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["sooey-wyrmrestaccord"] = {
             displayName = "Sooey-wyrmrest-accord",
-            specKey = "",
+            specKey = "DRUID_RESTORATION",
             rating = 1247,
             rank = 263,
             wins = 13,
@@ -7975,7 +8268,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["souldrift-malganis"] = {
             displayName = "Souldrift-malganis",
-            specKey = "",
+            specKey = "PRIEST_SHADOW",
             rating = 768,
             rank = 846,
             wins = 8,
@@ -7993,7 +8286,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["sovm-kelthuzad"] = {
             displayName = "Sovm-kelthuzad",
-            specKey = "",
+            specKey = "MAGE_FIRE",
             rating = 959,
             rank = 572,
             wins = 10,
@@ -8002,7 +8295,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["space-crushridge"] = {
             displayName = "Space-crushridge",
-            specKey = "",
+            specKey = "PALADIN_HOLY",
             rating = 1056,
             rank = 382,
             wins = 11,
@@ -8020,7 +8313,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["spicypri-proudmoore"] = {
             displayName = "Spicypri-proudmoore",
-            specKey = "",
+            specKey = "PRIEST_DISCIPLINE",
             rating = 864,
             rank = 648,
             wins = 9,
@@ -8029,7 +8322,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["spicywhite-tichondrius"] = {
             displayName = "Spicywhite-tichondrius",
-            specKey = "",
+            specKey = "WARLOCK_DEMONOLOGY",
             rating = 864,
             rank = 648,
             wins = 9,
@@ -8038,7 +8331,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["spins-terenas"] = {
             displayName = "Spins-terenas",
-            specKey = "MONK_WINDWALKER",
+            specKey = "",
             rating = 960,
             rank = 508,
             wins = 10,
@@ -8047,7 +8340,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["spooke-illidan"] = {
             displayName = "Spooke-illidan",
-            specKey = "",
+            specKey = "PRIEST_SHADOW",
             rating = 1147,
             rank = 366,
             wins = 12,
@@ -8056,7 +8349,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["spyrogodx-area52"] = {
             displayName = "Spyrogodx-area-52",
-            specKey = "",
+            specKey = "EVOKER_PRESERVATION",
             rating = 864,
             rank = 648,
             wins = 9,
@@ -8065,7 +8358,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["squatx-tichondrius"] = {
             displayName = "Squatx-tichondrius",
-            specKey = "",
+            specKey = "WARRIOR_ARMS",
             rating = 1044,
             rank = 503,
             wins = 11,
@@ -8074,7 +8367,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["squeemer-tichondrius"] = {
             displayName = "Squeemer-tichondrius",
-            specKey = "",
+            specKey = "PRIEST_DISCIPLINE",
             rating = 959,
             rank = 572,
             wins = 10,
@@ -8083,7 +8376,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["squishiefish-tichondrius"] = {
             displayName = "Squishiefish-tichondrius",
-            specKey = "",
+            specKey = "PRIEST_DISCIPLINE",
             rating = 959,
             rank = 572,
             wins = 10,
@@ -8101,7 +8394,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["ssibal-suramar"] = {
             displayName = "Ssibal-suramar",
-            specKey = "",
+            specKey = "WARLOCK_AFFLICTION",
             rating = 1810,
             rank = 11,
             wins = 30,
@@ -8110,7 +8403,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["staa-kelthuzad"] = {
             displayName = "Staa-kelthuzad",
-            specKey = "",
+            specKey = "PRIEST_HOLY",
             rating = 1620,
             rank = 71,
             wins = 20,
@@ -8119,7 +8412,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["stabbysweetz-zuljin"] = {
             displayName = "Stabbysweetz-zuljin",
-            specKey = "",
+            specKey = "ROGUE_OUTLAW",
             rating = 1150,
             rank = 339,
             wins = 12,
@@ -8128,7 +8421,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["starlinkgamr-dalaran"] = {
             displayName = "Starlinkgamr-dalaran",
-            specKey = "",
+            specKey = "ROGUE_ASSASSINATION",
             rating = 1152,
             rank = 297,
             wins = 12,
@@ -8137,7 +8430,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["starshiph-tichondrius"] = {
             displayName = "Starshiph-tichondrius",
-            specKey = "",
+            specKey = "HUNTER_BEASTMASTERY",
             rating = 1604,
             rank = 117,
             wins = 19,
@@ -8146,7 +8439,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["statespace-muradin"] = {
             displayName = "Statespace-muradin",
-            specKey = "",
+            specKey = "HUNTER_MARKSMANSHIP",
             rating = 1612,
             rank = 88,
             wins = 21,
@@ -8164,7 +8457,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["steal-moonguard"] = {
             displayName = "Steal-moon-guard",
-            specKey = "",
+            specKey = "ROGUE_ASSASSINATION",
             rating = 1697,
             rank = 19,
             wins = 23,
@@ -8182,7 +8475,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["stoneski-malganis"] = {
             displayName = "Stoneski-malganis",
-            specKey = "",
+            specKey = "HUNTER_MARKSMANSHIP",
             rating = 1056,
             rank = 382,
             wins = 11,
@@ -8191,7 +8484,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["stupid-deathwing"] = {
             displayName = "Stupid-deathwing",
-            specKey = "",
+            specKey = "PRIEST_HOLY",
             rating = 863,
             rank = 751,
             wins = 9,
@@ -8200,7 +8493,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["stupidmode-kelthuzad"] = {
             displayName = "Stupidmode-kelthuzad",
-            specKey = "",
+            specKey = "PALADIN_HOLY",
             rating = 1440,
             rank = 194,
             wins = 15,
@@ -8218,7 +8511,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["stícky-zuluhed"] = {
             displayName = "Stícky-zuluhed",
-            specKey = "",
+            specKey = "PRIEST_SHADOW",
             rating = 1053,
             rank = 469,
             wins = 11,
@@ -8236,7 +8529,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["sudou-tichondrius"] = {
             displayName = "Sudou-tichondrius",
-            specKey = "",
+            specKey = "DRUID_RESTORATION",
             rating = 932,
             rank = 647,
             wins = 10,
@@ -8245,7 +8538,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["sumerie-emeralddream"] = {
             displayName = "Sumerie-emerald-dream",
-            specKey = "",
+            specKey = "PRIEST_HOLY",
             rating = 1152,
             rank = 297,
             wins = 12,
@@ -8254,7 +8547,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["sunderedsoul-stormrage"] = {
             displayName = "Sunderedsoul-stormrage",
-            specKey = "",
+            specKey = "WARRIOR_ARMS",
             rating = 1244,
             rank = 283,
             wins = 13,
@@ -8263,7 +8556,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["sunshìnes-wyrmrestaccord"] = {
             displayName = "Sunshìnes-wyrmrest-accord",
-            specKey = "",
+            specKey = "MONK_MISTWEAVER",
             rating = 768,
             rank = 846,
             wins = 8,
@@ -8272,7 +8565,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["svw-tichondrius"] = {
             displayName = "Svw-tichondrius",
-            specKey = "",
+            specKey = "PRIEST_DISCIPLINE",
             rating = 1056,
             rank = 382,
             wins = 11,
@@ -8281,7 +8574,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["sweetjonesjr-ysera"] = {
             displayName = "Sweetjonesjr-ysera",
-            specKey = "",
+            specKey = "PALADIN_HOLY",
             rating = 864,
             rank = 648,
             wins = 9,
@@ -8290,7 +8583,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["swirv-area52"] = {
             displayName = "Swirv-area-52",
-            specKey = "",
+            specKey = "HUNTER_BEASTMASTERY",
             rating = 768,
             rank = 846,
             wins = 8,
@@ -8308,7 +8601,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["switchsermon-illidan"] = {
             displayName = "Switchsermon-illidan",
-            specKey = "",
+            specKey = "PRIEST_DISCIPLINE",
             rating = 861,
             rank = 803,
             wins = 9,
@@ -8317,7 +8610,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["swordfish-trollbane"] = {
             displayName = "Swordfish-trollbane",
-            specKey = "",
+            specKey = "PRIEST_HOLY",
             rating = 1629,
             rank = 62,
             wins = 24,
@@ -8326,7 +8619,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["swxxzy-quelthalas"] = {
             displayName = "Swxxzy-quelthalas",
-            specKey = "",
+            specKey = "DRUID_FERAL",
             rating = 960,
             rank = 508,
             wins = 10,
@@ -8335,7 +8628,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["syvarris-medivh"] = {
             displayName = "Syvarris-medivh",
-            specKey = "",
+            specKey = "HUNTER_SURVIVAL",
             rating = 1053,
             rank = 469,
             wins = 11,
@@ -8344,7 +8637,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["sñugglëz-illidan"] = {
             displayName = "Sñugglëz-illidan",
-            specKey = "",
+            specKey = "MONK_MISTWEAVER",
             rating = 768,
             rank = 846,
             wins = 8,
@@ -8371,7 +8664,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["taev-kiljaeden"] = {
             displayName = "Taev-kiljaeden",
-            specKey = "",
+            specKey = "PALADIN_HOLY",
             rating = 960,
             rank = 508,
             wins = 10,
@@ -8389,7 +8682,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["tamer-terenas"] = {
             displayName = "Tamer-terenas",
-            specKey = "",
+            specKey = "HUNTER_BEASTMASTERY",
             rating = 1050,
             rank = 489,
             wins = 11,
@@ -8398,7 +8691,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["tappy-proudmoore"] = {
             displayName = "Tappy-proudmoore",
-            specKey = "",
+            specKey = "EVOKER_DEVASTATION",
             rating = 1152,
             rank = 297,
             wins = 12,
@@ -8416,7 +8709,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["tatunga-tichondrius"] = {
             displayName = "Tatunga-tichondrius",
-            specKey = "",
+            specKey = "PRIEST_DISCIPLINE",
             rating = 1055,
             rank = 432,
             wins = 11,
@@ -8425,7 +8718,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["tawahka-hyjal"] = {
             displayName = "Tawahka-hyjal",
-            specKey = "",
+            specKey = "SHAMAN_RESTORATION",
             rating = 1048,
             rank = 496,
             wins = 11,
@@ -8443,7 +8736,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["tdales-kelthuzad"] = {
             displayName = "Tdales-kelthuzad",
-            specKey = "",
+            specKey = "PRIEST_HOLY",
             rating = 1342,
             rank = 227,
             wins = 14,
@@ -8452,7 +8745,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["tealanazar-korgath"] = {
             displayName = "Tealanazar-korgath",
-            specKey = "",
+            specKey = "EVOKER_PRESERVATION",
             rating = 768,
             rank = 846,
             wins = 8,
@@ -8461,7 +8754,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["teamz-wyrmrestaccord"] = {
             displayName = "Teamz-wyrmrest-accord",
-            specKey = "",
+            specKey = "PALADIN_HOLY",
             rating = 1150,
             rank = 339,
             wins = 12,
@@ -8470,7 +8763,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["tenpmhotdog-stormrage"] = {
             displayName = "Tenpmhotdog-stormrage",
-            specKey = "",
+            specKey = "DRUID_RESTORATION",
             rating = 936,
             rank = 645,
             wins = 10,
@@ -8479,7 +8772,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["tenvix-illidan"] = {
             displayName = "Tenvix-illidan",
-            specKey = "",
+            specKey = "PRIEST_DISCIPLINE",
             rating = 768,
             rank = 846,
             wins = 8,
@@ -8488,7 +8781,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["terkpla-tichondrius"] = {
             displayName = "Terkpla-tichondrius",
-            specKey = "",
+            specKey = "DRUID_RESTORATION",
             rating = 1563,
             rank = 152,
             wins = 18,
@@ -8497,7 +8790,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["themulletman-demonsoul"] = {
             displayName = "Themulletman-demon-soul",
-            specKey = "",
+            specKey = "WARLOCK_DESTRUCTION",
             rating = 1149,
             rank = 348,
             wins = 12,
@@ -8506,7 +8799,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["thenewrogue-tichondrius"] = {
             displayName = "Thenewrogue-tichondrius",
-            specKey = "",
+            specKey = "ROGUE_ASSASSINATION",
             rating = 1152,
             rank = 297,
             wins = 12,
@@ -8515,7 +8808,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["therogue-drenden"] = {
             displayName = "Therogue-drenden",
-            specKey = "",
+            specKey = "ROGUE_SUBTLETY",
             rating = 1055,
             rank = 432,
             wins = 11,
@@ -8524,7 +8817,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["thrator-wyrmrestaccord"] = {
             displayName = "Thrator-wyrmrest-accord",
-            specKey = "",
+            specKey = "WARRIOR_ARMS",
             rating = 864,
             rank = 648,
             wins = 9,
@@ -8533,7 +8826,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["throatgodess-tichondrius"] = {
             displayName = "Throatgodess-tichondrius",
-            specKey = "",
+            specKey = "PRIEST_DISCIPLINE",
             rating = 956,
             rank = 632,
             wins = 10,
@@ -8542,7 +8835,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["thss-illidan"] = {
             displayName = "Thss-illidan",
-            specKey = "",
+            specKey = "PRIEST_HOLY",
             rating = 1607,
             rank = 106,
             wins = 19,
@@ -8569,7 +8862,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["tirrony-tichondrius"] = {
             displayName = "Tirrony-tichondrius",
-            specKey = "",
+            specKey = "DRUID_BALANCE",
             rating = 862,
             rank = 781,
             wins = 9,
@@ -8578,7 +8871,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["tirêd-illidan"] = {
             displayName = "Tirêd-illidan",
-            specKey = "",
+            specKey = "SHAMAN_RESTORATION",
             rating = 864,
             rank = 648,
             wins = 9,
@@ -8587,7 +8880,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["tirëd-azuremyst"] = {
             displayName = "Tirëd-azuremyst",
-            specKey = "",
+            specKey = "PRIEST_DISCIPLINE",
             rating = 864,
             rank = 648,
             wins = 9,
@@ -8614,7 +8907,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["tobensz-sargeras"] = {
             displayName = "Tobensz-sargeras",
-            specKey = "",
+            specKey = "ROGUE_SUBTLETY",
             rating = 768,
             rank = 846,
             wins = 8,
@@ -8623,7 +8916,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["toddmolovski-frostmourne"] = {
             displayName = "Toddmolovski-frostmourne",
-            specKey = "",
+            specKey = "HUNTER_SURVIVAL",
             rating = 959,
             rank = 572,
             wins = 10,
@@ -8632,7 +8925,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["toetim-sargeras"] = {
             displayName = "Toetim-sargeras",
-            specKey = "",
+            specKey = "SHAMAN_RESTORATION",
             rating = 767,
             rank = 983,
             wins = 8,
@@ -8641,7 +8934,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["tokiiozen-sargeras"] = {
             displayName = "Tokiiozen-sargeras",
-            specKey = "",
+            specKey = "MONK_MISTWEAVER",
             rating = 855,
             rank = 837,
             wins = 9,
@@ -8650,7 +8943,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["toonah-area52"] = {
             displayName = "Toonah-area-52",
-            specKey = "",
+            specKey = "DRUID_RESTORATION",
             rating = 1608,
             rank = 96,
             wins = 19,
@@ -8668,7 +8961,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["topgtate-aegwynn"] = {
             displayName = "Topgtate-aegwynn",
-            specKey = "",
+            specKey = "HUNTER_BEASTMASTERY",
             rating = 1547,
             rank = 165,
             wins = 17,
@@ -8677,7 +8970,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["toryboltz-sargeras"] = {
             displayName = "Toryboltz-sargeras",
-            specKey = "",
+            specKey = "WARLOCK_DESTRUCTION",
             rating = 1247,
             rank = 263,
             wins = 13,
@@ -8686,7 +8979,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["toumia-tichondrius"] = {
             displayName = "Toumia-tichondrius",
-            specKey = "",
+            specKey = "ROGUE_ASSASSINATION",
             rating = 768,
             rank = 846,
             wins = 8,
@@ -8695,7 +8988,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["trainindummy-malganis"] = {
             displayName = "Trainindummy-malganis",
-            specKey = "",
+            specKey = "WARLOCK_AFFLICTION",
             rating = 768,
             rank = 846,
             wins = 8,
@@ -8704,7 +8997,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["trantis-tichondrius"] = {
             displayName = "Trantis-tichondrius",
-            specKey = "",
+            specKey = "EVOKER_PRESERVATION",
             rating = 768,
             rank = 846,
             wins = 8,
@@ -8713,7 +9006,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["trapbois-tichondrius"] = {
             displayName = "Trapbois-tichondrius",
-            specKey = "",
+            specKey = "WARRIOR_ARMS",
             rating = 959,
             rank = 572,
             wins = 10,
@@ -8722,7 +9015,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["trapflex-barthilas"] = {
             displayName = "Trapflex-barthilas",
-            specKey = "",
+            specKey = "HUNTER_BEASTMASTERY",
             rating = 1240,
             rank = 291,
             wins = 13,
@@ -8731,7 +9024,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["trapzlt-wyrmrestaccord"] = {
             displayName = "Trapzlt-wyrmrest-accord",
-            specKey = "",
+            specKey = "HUNTER_SURVIVAL",
             rating = 960,
             rank = 508,
             wins = 10,
@@ -8740,7 +9033,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["travisteez-illidan"] = {
             displayName = "Travisteez-illidan",
-            specKey = "",
+            specKey = "PRIEST_HOLY",
             rating = 1823,
             rank = 8,
             wins = 33,
@@ -8749,7 +9042,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["tribbey-area52"] = {
             displayName = "Tribbey-area-52",
-            specKey = "",
+            specKey = "PRIEST_HOLY",
             rating = 1147,
             rank = 366,
             wins = 12,
@@ -8758,7 +9051,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["trollbadinha-area52"] = {
             displayName = "Trollbadinha-area-52",
-            specKey = "",
+            specKey = "WARRIOR_ARMS",
             rating = 960,
             rank = 508,
             wins = 10,
@@ -8767,7 +9060,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["turec-illidan"] = {
             displayName = "Turec-illidan",
-            specKey = "",
+            specKey = "ROGUE_SUBTLETY",
             rating = 1054,
             rank = 456,
             wins = 11,
@@ -8776,7 +9069,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["twichy-tichondrius"] = {
             displayName = "Twichy-tichondrius",
-            specKey = "",
+            specKey = "PALADIN_HOLY",
             rating = 1149,
             rank = 348,
             wins = 12,
@@ -8785,7 +9078,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["twopawshakur-sargeras"] = {
             displayName = "Twopawshakur-sargeras",
-            specKey = "",
+            specKey = "DRUID_FERAL",
             rating = 959,
             rank = 572,
             wins = 10,
@@ -8794,7 +9087,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["twotacolips-illidan"] = {
             displayName = "Twotacolips-illidan",
-            specKey = "",
+            specKey = "WARLOCK_AFFLICTION",
             rating = 864,
             rank = 648,
             wins = 9,
@@ -8803,7 +9096,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["tx-demonsoul"] = {
             displayName = "Tx-demon-soul",
-            specKey = "",
+            specKey = "DEATHKNIGHT_UNHOLY",
             rating = 960,
             rank = 508,
             wins = 10,
@@ -8812,7 +9105,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["tái-tichondrius"] = {
             displayName = "Tái-tichondrius",
-            specKey = "",
+            specKey = "DRUID_RESTORATION",
             rating = 1056,
             rank = 382,
             wins = 11,
@@ -8821,7 +9114,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["tëki-illidan"] = {
             displayName = "Tëki-illidan",
-            specKey = "",
+            specKey = "DEMONHUNTER_HAVOC",
             rating = 1149,
             rank = 348,
             wins = 12,
@@ -8830,7 +9123,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["tôpdadwôrld-sargeras"] = {
             displayName = "Tôpdadwôrld-sargeras",
-            specKey = "",
+            specKey = "DRUID_BALANCE",
             rating = 959,
             rank = 572,
             wins = 10,
@@ -8848,7 +9141,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["udogs-frostmourne"] = {
             displayName = "Udogs-frostmourne",
-            specKey = "",
+            specKey = "DRUID_RESTORATION",
             rating = 860,
             rank = 818,
             wins = 9,
@@ -8857,7 +9150,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["udungoofedd-theunderbog"] = {
             displayName = "Udungoofedd-the-underbog",
-            specKey = "",
+            specKey = "SHAMAN_RESTORATION",
             rating = 1609,
             rank = 95,
             wins = 20,
@@ -8866,7 +9159,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["uglukz-tichondrius"] = {
             displayName = "Uglukz-tichondrius",
-            specKey = "",
+            specKey = "WARRIOR_ARMS",
             rating = 958,
             rank = 610,
             wins = 10,
@@ -8875,7 +9168,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["umreehz-stormrage"] = {
             displayName = "Umreehz-stormrage",
-            specKey = "",
+            specKey = "MONK_WINDWALKER",
             rating = 1056,
             rank = 382,
             wins = 11,
@@ -8884,7 +9177,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["undeadp-tichondrius"] = {
             displayName = "Undeadp-tichondrius",
-            specKey = "",
+            specKey = "PRIEST_DISCIPLINE",
             rating = 768,
             rank = 846,
             wins = 8,
@@ -8893,7 +9186,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["unjusthunt-magtheridon"] = {
             displayName = "Unjusthunt-magtheridon",
-            specKey = "",
+            specKey = "DEMONHUNTER_HAVOC",
             rating = 864,
             rank = 648,
             wins = 9,
@@ -8902,7 +9195,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["unsubbedd-sargeras"] = {
             displayName = "Unsubbedd-sargeras",
-            specKey = "",
+            specKey = "PRIEST_HOLY",
             rating = 768,
             rank = 846,
             wins = 8,
@@ -8911,7 +9204,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["urdem-moonguard"] = {
             displayName = "Urdem-moon-guard",
-            specKey = "",
+            specKey = "WARRIOR_ARMS",
             rating = 864,
             rank = 648,
             wins = 9,
@@ -8920,7 +9213,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["usedefensive-area52"] = {
             displayName = "Usedefensive-area-52",
-            specKey = "",
+            specKey = "PRIEST_DISCIPLINE",
             rating = 863,
             rank = 751,
             wins = 9,
@@ -8938,7 +9231,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["valliean-illidan"] = {
             displayName = "Valliean-illidan",
-            specKey = "",
+            specKey = "ROGUE_ASSASSINATION",
             rating = 768,
             rank = 846,
             wins = 8,
@@ -8947,7 +9240,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["vampthyr-stormrage"] = {
             displayName = "Vampthyr-stormrage",
-            specKey = "",
+            specKey = "WARLOCK_DEMONOLOGY",
             rating = 859,
             rank = 827,
             wins = 9,
@@ -8974,7 +9267,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["varyags-emeralddream"] = {
             displayName = "Varyags-emerald-dream",
-            specKey = "",
+            specKey = "SHAMAN_ENHANCEMENT",
             rating = 767,
             rank = 983,
             wins = 8,
@@ -8992,7 +9285,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["vendarith-kiljaeden"] = {
             displayName = "Vendarith-kiljaeden",
-            specKey = "",
+            specKey = "ROGUE_SUBTLETY",
             rating = 861,
             rank = 803,
             wins = 9,
@@ -9001,7 +9294,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["verkara-stormrage"] = {
             displayName = "Verkara-stormrage",
-            specKey = "",
+            specKey = "DRUID_RESTORATION",
             rating = 767,
             rank = 983,
             wins = 8,
@@ -9010,7 +9303,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["vertîgo-tichondrius"] = {
             displayName = "Vertîgo-tichondrius",
-            specKey = "",
+            specKey = "MONK_WINDWALKER",
             rating = 1054,
             rank = 456,
             wins = 11,
@@ -9019,7 +9312,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["verv-boulderfist"] = {
             displayName = "Verv-boulderfist",
-            specKey = "",
+            specKey = "MONK_MISTWEAVER",
             rating = 864,
             rank = 648,
             wins = 9,
@@ -9037,7 +9330,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["vexed-illidan"] = {
             displayName = "Vexed-illidan",
-            specKey = "",
+            specKey = "MONK_MISTWEAVER",
             rating = 1056,
             rank = 382,
             wins = 11,
@@ -9064,7 +9357,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["voidcc-tichondrius"] = {
             displayName = "Voidcc-tichondrius",
-            specKey = "",
+            specKey = "PRIEST_HOLY",
             rating = 768,
             rank = 846,
             wins = 8,
@@ -9082,7 +9375,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["voidgauntlet-proudmoore"] = {
             displayName = "Voidgauntlet-proudmoore",
-            specKey = "",
+            specKey = "PRIEST_HOLY",
             rating = 1247,
             rank = 263,
             wins = 13,
@@ -9091,7 +9384,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["voidqnarisha-tichondrius"] = {
             displayName = "Voidqnarisha-tichondrius",
-            specKey = "",
+            specKey = "PRIEST_HOLY",
             rating = 1530,
             rank = 176,
             wins = 17,
@@ -9100,7 +9393,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["volkova-altarofstorms"] = {
             displayName = "Volkova-altar-of-storms",
-            specKey = "",
+            specKey = "ROGUE_ASSASSINATION",
             rating = 864,
             rank = 648,
             wins = 9,
@@ -9118,7 +9411,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["vpé-sargeras"] = {
             displayName = "Vpé-sargeras",
-            specKey = "",
+            specKey = "WARRIOR_ARMS",
             rating = 1683,
             rank = 22,
             wins = 24,
@@ -9127,7 +9420,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["vx-trollbane"] = {
             displayName = "Vx-trollbane",
-            specKey = "",
+            specKey = "DRUID_RESTORATION",
             rating = 959,
             rank = 572,
             wins = 10,
@@ -9145,7 +9438,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["vèganghøul-barthilas"] = {
             displayName = "Vèganghøul-barthilas",
-            specKey = "",
+            specKey = "PALADIN_HOLY",
             rating = 1439,
             rank = 195,
             wins = 15,
@@ -9154,7 +9447,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["wackranger-drakthul"] = {
             displayName = "Wackranger-drakthul",
-            specKey = "",
+            specKey = "PALADIN_HOLY",
             rating = 768,
             rank = 846,
             wins = 8,
@@ -9163,7 +9456,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["wafflebandit-kelthuzad"] = {
             displayName = "Wafflebandit-kelthuzad",
-            specKey = "",
+            specKey = "MAGE_FIRE",
             rating = 959,
             rank = 572,
             wins = 10,
@@ -9172,7 +9465,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["waggs-illidan"] = {
             displayName = "Waggs-illidan",
-            specKey = "",
+            specKey = "DRUID_FERAL",
             rating = 957,
             rank = 624,
             wins = 10,
@@ -9181,7 +9474,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["waifu-area52"] = {
             displayName = "Waifu-area-52",
-            specKey = "",
+            specKey = "PALADIN_HOLY",
             rating = 1603,
             rank = 123,
             wins = 19,
@@ -9190,7 +9483,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["wakeenphnx-tichondrius"] = {
             displayName = "Wakeenphnx-tichondrius",
-            specKey = "",
+            specKey = "DRUID_BALANCE",
             rating = 768,
             rank = 846,
             wins = 8,
@@ -9199,7 +9492,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["waleresc-tichondrius"] = {
             displayName = "Waleresc-tichondrius",
-            specKey = "",
+            specKey = "PRIEST_DISCIPLINE",
             rating = 1503,
             rank = 186,
             wins = 16,
@@ -9208,7 +9501,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["watersheep-emeralddream"] = {
             displayName = "Watersheep-emerald-dream",
-            specKey = "",
+            specKey = "MONK_MISTWEAVER",
             rating = 2002,
             rank = 3,
             wins = 44,
@@ -9235,7 +9528,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["wes-gorefiend"] = {
             displayName = "Wes-gorefiend",
-            specKey = "",
+            specKey = "MONK_WINDWALKER",
             rating = 1152,
             rank = 297,
             wins = 12,
@@ -9262,7 +9555,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["whoopinfeet-tichondrius"] = {
             displayName = "Whoopinfeet-tichondrius",
-            specKey = "",
+            specKey = "ROGUE_ASSASSINATION",
             rating = 1149,
             rank = 348,
             wins = 12,
@@ -9280,7 +9573,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["wildspeaker-burninglegion"] = {
             displayName = "Wildspeaker-burning-legion",
-            specKey = "",
+            specKey = "ROGUE_ASSASSINATION",
             rating = 864,
             rank = 648,
             wins = 9,
@@ -9289,7 +9582,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["winkemoji-thrall"] = {
             displayName = "Winkemoji-thrall",
-            specKey = "",
+            specKey = "MONK_WINDWALKER",
             rating = 1056,
             rank = 382,
             wins = 11,
@@ -9307,7 +9600,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["wochtlaets-blackdragonflight"] = {
             displayName = "Wochtlaets-black-dragonflight",
-            specKey = "",
+            specKey = "ROGUE_SUBTLETY",
             rating = 768,
             rank = 846,
             wins = 8,
@@ -9316,7 +9609,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["woolxd-tichondrius"] = {
             displayName = "Woolxd-tichondrius",
-            specKey = "",
+            specKey = "PRIEST_DISCIPLINE",
             rating = 1152,
             rank = 297,
             wins = 12,
@@ -9325,7 +9618,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["worldtaker-emeralddream"] = {
             displayName = "Worldtaker-emerald-dream",
-            specKey = "",
+            specKey = "DEATHKNIGHT_UNHOLY",
             rating = 768,
             rank = 846,
             wins = 8,
@@ -9334,7 +9627,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["worships-zuljin"] = {
             displayName = "Worships-zuljin",
-            specKey = "",
+            specKey = "PRIEST_HOLY",
             rating = 1518,
             rank = 183,
             wins = 16,
@@ -9343,7 +9636,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["worstdpsna-kelthuzad"] = {
             displayName = "Worstdpsna-kelthuzad",
-            specKey = "",
+            specKey = "ROGUE_ASSASSINATION",
             rating = 1148,
             rank = 358,
             wins = 12,
@@ -9361,7 +9654,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["wtsgoldpst-arthas"] = {
             displayName = "Wtsgoldpst-arthas",
-            specKey = "",
+            specKey = "HUNTER_SURVIVAL",
             rating = 864,
             rank = 648,
             wins = 9,
@@ -9370,7 +9663,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["wuser-terokkar"] = {
             displayName = "Wuser-terokkar",
-            specKey = "",
+            specKey = "DRUID_FERAL",
             rating = 768,
             rank = 846,
             wins = 8,
@@ -9379,7 +9672,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["wynrys-stormrage"] = {
             displayName = "Wynrys-stormrage",
-            specKey = "",
+            specKey = "MAGE_ARCANE",
             rating = 855,
             rank = 837,
             wins = 9,
@@ -9388,7 +9681,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["wîsa-moonguard"] = {
             displayName = "Wîsa-moon-guard",
-            specKey = "",
+            specKey = "PRIEST_DISCIPLINE",
             rating = 1056,
             rank = 382,
             wins = 11,
@@ -9397,7 +9690,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["xandon-stormrage"] = {
             displayName = "Xandon-stormrage",
-            specKey = "HUNTER_BEASTMASTERY",
+            specKey = "",
             rating = 864,
             rank = 648,
             wins = 9,
@@ -9406,7 +9699,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["xm-sargeras"] = {
             displayName = "Xm-sargeras",
-            specKey = "",
+            specKey = "ROGUE_ASSASSINATION",
             rating = 1148,
             rank = 358,
             wins = 12,
@@ -9424,7 +9717,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["xsynthy-tichondrius"] = {
             displayName = "Xsynthy-tichondrius",
-            specKey = "",
+            specKey = "ROGUE_SUBTLETY",
             rating = 960,
             rank = 508,
             wins = 10,
@@ -9433,7 +9726,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["xtremeorc-area52"] = {
             displayName = "Xtremeorc-area-52",
-            specKey = "",
+            specKey = "SHAMAN_RESTORATION",
             rating = 864,
             rank = 648,
             wins = 9,
@@ -9442,7 +9735,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["xyän-bleedinghollow"] = {
             displayName = "Xyän-bleeding-hollow",
-            specKey = "",
+            specKey = "MONK_WINDWALKER",
             rating = 1056,
             rank = 382,
             wins = 11,
@@ -9451,7 +9744,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["xànn-barthilas"] = {
             displayName = "Xànn-barthilas",
-            specKey = "",
+            specKey = "WARRIOR_ARMS",
             rating = 862,
             rank = 781,
             wins = 9,
@@ -9460,7 +9753,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["yayobabyy-tichondrius"] = {
             displayName = "Yayobabyy-tichondrius",
-            specKey = "",
+            specKey = "SHAMAN_RESTORATION",
             rating = 1152,
             rank = 297,
             wins = 12,
@@ -9469,7 +9762,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["yeowh-illidan"] = {
             displayName = "Yeowh-illidan",
-            specKey = "",
+            specKey = "PRIEST_HOLY",
             rating = 1655,
             rank = 38,
             wins = 29,
@@ -9487,7 +9780,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["yeshuasaves-stormrage"] = {
             displayName = "Yeshuasaves-stormrage",
-            specKey = "",
+            specKey = "DRUID_FERAL",
             rating = 864,
             rank = 648,
             wins = 9,
@@ -9496,7 +9789,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["yeshuasaveu-stormrage"] = {
             displayName = "Yeshuasaveu-stormrage",
-            specKey = "",
+            specKey = "PRIEST_HOLY",
             rating = 1629,
             rank = 62,
             wins = 22,
@@ -9505,7 +9798,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["yibz-tichondrius"] = {
             displayName = "Yibz-tichondrius",
-            specKey = "",
+            specKey = "MONK_MISTWEAVER",
             rating = 1048,
             rank = 496,
             wins = 11,
@@ -9514,7 +9807,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["yokoshukumeì-aeriepeak"] = {
             displayName = "Yokoshukumeì-aerie-peak",
-            specKey = "",
+            specKey = "PRIEST_HOLY",
             rating = 1151,
             rank = 329,
             wins = 12,
@@ -9523,7 +9816,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["youngkarl-tichondrius"] = {
             displayName = "Youngkarl-tichondrius",
-            specKey = "",
+            specKey = "PRIEST_HOLY",
             rating = 1689,
             rank = 21,
             wins = 23,
@@ -9532,7 +9825,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["youyong-shadowsong"] = {
             displayName = "Youyong-shadowsong",
-            specKey = "",
+            specKey = "WARRIOR_ARMS",
             rating = 864,
             rank = 648,
             wins = 9,
@@ -9541,7 +9834,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["ysl-aegwynn"] = {
             displayName = "Ysl-aegwynn",
-            specKey = "",
+            specKey = "DEMONHUNTER_HAVOC",
             rating = 1055,
             rank = 432,
             wins = 11,
@@ -9550,7 +9843,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["yøüwillßlèéd-sargeras"] = {
             displayName = "Yøüwillßlèéd-sargeras",
-            specKey = "",
+            specKey = "DRUID_FERAL",
             rating = 1243,
             rank = 288,
             wins = 13,
@@ -9559,7 +9852,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["zaef-kelthuzad"] = {
             displayName = "Zaef-kelthuzad",
-            specKey = "",
+            specKey = "WARLOCK_DESTRUCTION",
             rating = 1054,
             rank = 456,
             wins = 11,
@@ -9568,7 +9861,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["zaepray-moonrunner"] = {
             displayName = "Zaepray-moonrunner",
-            specKey = "",
+            specKey = "PRIEST_DISCIPLINE",
             rating = 768,
             rank = 846,
             wins = 8,
@@ -9577,7 +9870,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["zahmanetv-tichondrius"] = {
             displayName = "Zahmanetv-tichondrius",
-            specKey = "",
+            specKey = "ROGUE_ASSASSINATION",
             rating = 1053,
             rank = 469,
             wins = 11,
@@ -9604,7 +9897,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["zayd-dragonblight"] = {
             displayName = "Zayd-dragonblight",
-            specKey = "",
+            specKey = "DRUID_BALANCE",
             rating = 863,
             rank = 751,
             wins = 9,
@@ -9613,7 +9906,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["zaynerys-dalaran"] = {
             displayName = "Zaynerys-dalaran",
-            specKey = "",
+            specKey = "MAGE_FROST",
             rating = 959,
             rank = 572,
             wins = 10,
@@ -9622,7 +9915,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["zein-ursin"] = {
             displayName = "Zein-ursin",
-            specKey = "",
+            specKey = "WARRIOR_ARMS",
             rating = 1248,
             rank = 254,
             wins = 13,
@@ -9631,7 +9924,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["zervez-tichondrius"] = {
             displayName = "Zervez-tichondrius",
-            specKey = "",
+            specKey = "PALADIN_HOLY",
             rating = 768,
             rank = 846,
             wins = 8,
@@ -9640,7 +9933,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["zeusqt-velen"] = {
             displayName = "Zeusqt-velen",
-            specKey = "",
+            specKey = "DRUID_BALANCE",
             rating = 960,
             rank = 508,
             wins = 10,
@@ -9649,7 +9942,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["zife-ursin"] = {
             displayName = "Zife-ursin",
-            specKey = "",
+            specKey = "MONK_WINDWALKER",
             rating = 1150,
             rank = 339,
             wins = 12,
@@ -9658,7 +9951,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["zitto-ragnaros"] = {
             displayName = "Zitto-ragnaros",
-            specKey = "",
+            specKey = "HUNTER_MARKSMANSHIP",
             rating = 1333,
             rank = 243,
             wins = 15,
@@ -9676,7 +9969,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["zodiiak-tichondrius"] = {
             displayName = "Zodiiak-tichondrius",
-            specKey = "",
+            specKey = "WARRIOR_ARMS",
             rating = 1145,
             rank = 373,
             wins = 12,
@@ -9685,7 +9978,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["zokorzik-area52"] = {
             displayName = "Zokorzik-area-52",
-            specKey = "",
+            specKey = "MAGE_FROST",
             rating = 1055,
             rank = 432,
             wins = 11,
@@ -9694,7 +9987,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["zugtony-frostmane"] = {
             displayName = "Zugtony-frostmane",
-            specKey = "",
+            specKey = "MONK_MISTWEAVER",
             rating = 851,
             rank = 842,
             wins = 9,
@@ -9703,7 +9996,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["zunniez-tichondrius"] = {
             displayName = "Zunniez-tichondrius",
-            specKey = "",
+            specKey = "PRIEST_DISCIPLINE",
             rating = 1656,
             rank = 37,
             wins = 22,
@@ -9712,7 +10005,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["zyi-hyjal"] = {
             displayName = "Zyi-hyjal",
-            specKey = "",
+            specKey = "SHAMAN_RESTORATION",
             rating = 1247,
             rank = 263,
             wins = 13,
@@ -9721,7 +10014,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["zðldyck-tichondrius"] = {
             displayName = "Zðldyck-tichondrius",
-            specKey = "",
+            specKey = "ROGUE_SUBTLETY",
             rating = 1344,
             rank = 217,
             wins = 14,
@@ -9730,7 +10023,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["ßladesong-moonguard"] = {
             displayName = "ßladesong-moon-guard",
-            specKey = "",
+            specKey = "WARRIOR_FURY",
             rating = 1056,
             rank = 382,
             wins = 11,
@@ -9748,7 +10041,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["ßowmance-area52"] = {
             displayName = "ßowmance-area-52",
-            specKey = "",
+            specKey = "HUNTER_BEASTMASTERY",
             rating = 1631,
             rank = 58,
             wins = 21,
@@ -9757,7 +10050,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["æú-area52"] = {
             displayName = "Æú-area-52",
-            specKey = "",
+            specKey = "PRIEST_SHADOW",
             rating = 1604,
             rank = 117,
             wins = 19,
@@ -9766,7 +10059,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["çhloe-azgalor"] = {
             displayName = "Çhloe-azgalor",
-            specKey = "",
+            specKey = "PRIEST_DISCIPLINE",
             rating = 1052,
             rank = 479,
             wins = 11,
@@ -9775,7 +10068,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["çurtdiesel-tichondrius"] = {
             displayName = "Çurtdiesel-tichondrius",
-            specKey = "MONK_MISTWEAVER",
+            specKey = "",
             rating = 767,
             rank = 983,
             wins = 8,
@@ -9811,7 +10104,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["öff-tichondrius"] = {
             displayName = "Öff-tichondrius",
-            specKey = "",
+            specKey = "DRUID_FERAL",
             rating = 959,
             rank = 572,
             wins = 10,
@@ -9820,7 +10113,7 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
         },
         ["ööf-dunemaul"] = {
             displayName = "Ööf-dunemaul",
-            specKey = "",
+            specKey = "MAGE_FROST",
             rating = 1643,
             rank = 48,
             wins = 22,
@@ -9836,7 +10129,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
     bracket = "arena3v3",
     season = 42,
     snapshotDate = "2026-08-19",
-    generatedAt = "2026-08-19T16:31:13Z",
+    generatedAt = "2026-08-19T17:03:17Z",
     source = "blizzard-api+seramate",
     overall = {
         listedCount = 1025,
@@ -9898,632 +10191,949 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
     },
     byClass = {
         ["DEATHKNIGHT"] = {
-            listedCount = 4,
-            avgListedRating = 1435.5,
-            medianListedRating = 1431.0,
-            top100Avg = 1435.5,
+            listedCount = 26,
+            avgListedRating = 991.0,
+            medianListedRating = 959.0,
+            top100Avg = 991.0,
             highest = 2112,
             buckets = {
-                ["1000-1099"] = 1,
+                ["1000-1099"] = 2,
+                ["1300-1399"] = 1,
+                ["1400-1499"] = 2,
+                ["1500-1599"] = 1,
+                ["1600-1699"] = 1,
                 ["1800-1899"] = 1,
                 ["2100-2199"] = 1,
-                ["700-799"] = 1,
+                ["600-699"] = 3,
+                ["700-799"] = 3,
+                ["800-899"] = 2,
+                ["900-999"] = 9,
             },
         },
         ["DEMONHUNTER"] = {
-            listedCount = 5,
-            avgListedRating = 1305,
-            medianListedRating = 1149,
-            top100Avg = 1305,
+            listedCount = 20,
+            avgListedRating = 890,
+            medianListedRating = 815.0,
+            top100Avg = 890,
             highest = 2112,
             buckets = {
-                ["1100-1199"] = 1,
+                ["1100-1199"] = 2,
+                ["1200-1299"] = 2,
                 ["1300-1399"] = 1,
                 ["2100-2199"] = 1,
-                ["900-999"] = 2,
+                ["600-699"] = 2,
+                ["700-799"] = 5,
+                ["800-899"] = 3,
+                ["900-999"] = 4,
             },
         },
         ["DRUID"] = {
-            listedCount = 17,
-            avgListedRating = 1404.5,
-            medianListedRating = 1385.5,
-            top100Avg = 1404.5,
+            listedCount = 62,
+            avgListedRating = 1066.0,
+            medianListedRating = 1005.5,
+            top100Avg = 1066.0,
             highest = 1844,
             buckets = {
-                ["1000-1099"] = 1,
+                ["1000-1099"] = 2,
+                ["1100-1199"] = 4,
+                ["1200-1299"] = 3,
+                ["1300-1399"] = 3,
+                ["1400-1499"] = 1,
+                ["1500-1599"] = 4,
+                ["1600-1699"] = 7,
+                ["1800-1899"] = 5,
+                ["600-699"] = 3,
+                ["700-799"] = 8,
+                ["800-899"] = 10,
+                ["900-999"] = 12,
+            },
+        },
+        ["EVOKER"] = {
+            listedCount = 22,
+            avgListedRating = 1289.7,
+            medianListedRating = 1199.5,
+            top100Avg = 1289.7,
+            highest = 1798,
+            buckets = {
+                ["1000-1099"] = 2,
                 ["1100-1199"] = 1,
                 ["1200-1299"] = 2,
                 ["1300-1399"] = 1,
                 ["1400-1499"] = 1,
-                ["1500-1599"] = 2,
-                ["1800-1899"] = 5,
-                ["600-699"] = 1,
-                ["800-899"] = 1,
-                ["900-999"] = 2,
-            },
-        },
-        ["EVOKER"] = {
-            listedCount = 7,
-            avgListedRating = 1392.6,
-            medianListedRating = 1452.5,
-            top100Avg = 1392.6,
-            highest = 1798,
-            buckets = {
-                ["1200-1299"] = 2,
-                ["1300-1399"] = 1,
-                ["1600-1699"] = 2,
+                ["1600-1699"] = 4,
                 ["1700-1799"] = 1,
-                ["700-799"] = 1,
+                ["700-799"] = 5,
+                ["800-899"] = 4,
+                ["900-999"] = 1,
             },
         },
         ["HUNTER"] = {
-            listedCount = 10,
-            avgListedRating = 1284.4,
-            medianListedRating = 1435,
-            top100Avg = 1284.4,
+            listedCount = 65,
+            avgListedRating = 1099.2,
+            medianListedRating = 960,
+            top100Avg = 1099.2,
+            highest = 1807,
+            buckets = {
+                ["1000-1099"] = 2,
+                ["1100-1199"] = 4,
+                ["1200-1299"] = 3,
+                ["1300-1399"] = 3,
+                ["1400-1499"] = 6,
+                ["1500-1599"] = 9,
+                ["1600-1699"] = 3,
+                ["1800-1899"] = 1,
+                ["600-699"] = 8,
+                ["700-799"] = 12,
+                ["800-899"] = 4,
+                ["900-999"] = 10,
+            },
+        },
+        ["MAGE"] = {
+            listedCount = 70,
+            avgListedRating = 1126.6,
+            medianListedRating = 1054,
+            top100Avg = 1126.6,
+            highest = 1773,
+            buckets = {
+                ["1000-1099"] = 8,
+                ["1100-1199"] = 4,
+                ["1200-1299"] = 4,
+                ["1300-1399"] = 2,
+                ["1400-1499"] = 3,
+                ["1500-1599"] = 4,
+                ["1600-1699"] = 7,
+                ["1700-1799"] = 2,
+                ["600-699"] = 6,
+                ["700-799"] = 5,
+                ["800-899"] = 12,
+                ["900-999"] = 13,
+            },
+        },
+        ["MONK"] = {
+            listedCount = 44,
+            avgListedRating = 1214.2,
+            medianListedRating = 1102.5,
+            top100Avg = 1214.2,
+            highest = 1947,
+            buckets = {
+                ["1000-1099"] = 7,
+                ["1200-1299"] = 2,
+                ["1400-1499"] = 3,
+                ["1500-1599"] = 11,
+                ["1600-1699"] = 3,
+                ["1800-1899"] = 1,
+                ["1900-1999"] = 1,
+                ["600-699"] = 4,
+                ["700-799"] = 3,
+                ["800-899"] = 5,
+                ["900-999"] = 4,
+            },
+        },
+        ["PALADIN"] = {
+            listedCount = 89,
+            avgListedRating = 959.4,
+            medianListedRating = 960.0,
+            top100Avg = 959.4,
+            highest = 2112,
+            buckets = {
+                ["1000-1099"] = 6,
+                ["1100-1199"] = 6,
+                ["1200-1299"] = 7,
+                ["1300-1399"] = 4,
+                ["1400-1499"] = 3,
+                ["1500-1599"] = 6,
+                ["1600-1699"] = 5,
+                ["1700-1799"] = 3,
+                ["2100-2199"] = 1,
+                ["600-699"] = 10,
+                ["700-799"] = 15,
+                ["800-899"] = 15,
+                ["900-999"] = 8,
+            },
+        },
+        ["PRIEST"] = {
+            listedCount = 146,
+            avgListedRating = 1086.3,
+            medianListedRating = 958,
+            top100Avg = 1086.3,
+            highest = 1873,
+            buckets = {
+                ["1000-1099"] = 9,
+                ["1100-1199"] = 9,
+                ["1200-1299"] = 7,
+                ["1300-1399"] = 5,
+                ["1400-1499"] = 7,
+                ["1500-1599"] = 10,
+                ["1600-1699"] = 11,
+                ["1700-1799"] = 4,
+                ["1800-1899"] = 2,
+                ["600-699"] = 14,
+                ["700-799"] = 24,
+                ["800-899"] = 22,
+                ["900-999"] = 22,
+            },
+        },
+        ["ROGUE"] = {
+            listedCount = 82,
+            avgListedRating = 1129.4,
+            medianListedRating = 1056,
+            top100Avg = 1129.4,
+            highest = 1817,
+            buckets = {
+                ["1000-1099"] = 9,
+                ["1100-1199"] = 7,
+                ["1200-1299"] = 7,
+                ["1300-1399"] = 5,
+                ["1400-1499"] = 4,
+                ["1500-1599"] = 10,
+                ["1600-1699"] = 5,
+                ["1700-1799"] = 1,
+                ["1800-1899"] = 1,
+                ["600-699"] = 5,
+                ["700-799"] = 11,
+                ["800-899"] = 5,
+                ["900-999"] = 12,
+            },
+        },
+        ["SHAMAN"] = {
+            listedCount = 59,
+            avgListedRating = 1111.9,
+            medianListedRating = 1054.0,
+            top100Avg = 1111.9,
+            highest = 1763,
+            buckets = {
+                ["1000-1099"] = 5,
+                ["1100-1199"] = 4,
+                ["1200-1299"] = 5,
+                ["1300-1399"] = 5,
+                ["1400-1499"] = 2,
+                ["1500-1599"] = 5,
+                ["1600-1699"] = 4,
+                ["1700-1799"] = 2,
+                ["600-699"] = 9,
+                ["700-799"] = 7,
+                ["800-899"] = 5,
+                ["900-999"] = 6,
+            },
+        },
+        ["WARLOCK"] = {
+            listedCount = 61,
+            avgListedRating = 1165.9,
+            medianListedRating = 1049,
+            top100Avg = 1165.9,
+            highest = 1865,
+            buckets = {
+                ["1000-1099"] = 8,
+                ["1100-1199"] = 5,
+                ["1200-1299"] = 4,
+                ["1300-1399"] = 7,
+                ["1400-1499"] = 2,
+                ["1500-1599"] = 7,
+                ["1600-1699"] = 4,
+                ["1700-1799"] = 1,
+                ["1800-1899"] = 1,
+                ["600-699"] = 1,
+                ["700-799"] = 5,
+                ["800-899"] = 9,
+                ["900-999"] = 7,
+            },
+        },
+        ["WARRIOR"] = {
+            listedCount = 55,
+            avgListedRating = 1096.6,
+            medianListedRating = 1055,
+            top100Avg = 1096.6,
+            highest = 1886,
+            buckets = {
+                ["1000-1099"] = 8,
+                ["1100-1199"] = 6,
+                ["1200-1299"] = 4,
+                ["1300-1399"] = 3,
+                ["1400-1499"] = 1,
+                ["1500-1599"] = 3,
+                ["1600-1699"] = 4,
+                ["1700-1799"] = 2,
+                ["1800-1899"] = 2,
+                ["700-799"] = 9,
+                ["800-899"] = 2,
+                ["900-999"] = 11,
+            },
+        },
+    },
+    bySpec = {
+        ["DEATHKNIGHT_BLOOD"] = {
+            listedCount = 2,
+            avgListedRating = 863,
+            medianListedRating = 863.0,
+            top100Avg = 863,
+            highest = 958,
+            buckets = {
+                ["700-799"] = 1,
+                ["900-999"] = 1,
+            },
+        },
+        ["DEATHKNIGHT_FROST"] = {
+            listedCount = 2,
+            avgListedRating = 1006,
+            medianListedRating = 1006.0,
+            top100Avg = 1006,
+            highest = 1055,
+            buckets = {
+                ["1000-1099"] = 1,
+                ["900-999"] = 1,
+            },
+        },
+        ["DEATHKNIGHT_UNHOLY"] = {
+            listedCount = 22,
+            avgListedRating = 1104.0,
+            medianListedRating = 959.0,
+            top100Avg = 1104.0,
+            highest = 2112,
+            buckets = {
+                ["1000-1099"] = 1,
+                ["1300-1399"] = 1,
+                ["1400-1499"] = 2,
+                ["1500-1599"] = 1,
+                ["1600-1699"] = 1,
+                ["1800-1899"] = 1,
+                ["2100-2199"] = 1,
+                ["600-699"] = 3,
+                ["700-799"] = 2,
+                ["800-899"] = 2,
+                ["900-999"] = 7,
+            },
+        },
+        ["DEMONHUNTER_DEVOURER"] = {
+            listedCount = 4,
+            avgListedRating = 860,
+            medianListedRating = 815.0,
+            top100Avg = 860,
+            highest = 1138,
+            buckets = {
+                ["1100-1199"] = 1,
+                ["600-699"] = 1,
+                ["700-799"] = 1,
+                ["800-899"] = 1,
+            },
+        },
+        ["DEMONHUNTER_HAVOC"] = {
+            listedCount = 15,
+            avgListedRating = 1042,
+            medianListedRating = 958,
+            top100Avg = 1042,
+            highest = 2112,
+            buckets = {
+                ["1100-1199"] = 1,
+                ["1200-1299"] = 2,
+                ["1300-1399"] = 1,
+                ["2100-2199"] = 1,
+                ["600-699"] = 1,
+                ["700-799"] = 3,
+                ["800-899"] = 2,
+                ["900-999"] = 4,
+            },
+        },
+        ["DEMONHUNTER_VENGEANCE"] = {
+            listedCount = 1,
+            avgListedRating = 768,
+            medianListedRating = 768,
+            top100Avg = 768,
+            highest = 768,
+            buckets = {
+                ["700-799"] = 1,
+            },
+        },
+        ["DRUID_BALANCE"] = {
+            listedCount = 16,
+            avgListedRating = 1168.9,
+            medianListedRating = 1051.5,
+            top100Avg = 1168.9,
+            highest = 1801,
+            buckets = {
+                ["1100-1199"] = 1,
+                ["1200-1299"] = 1,
+                ["1300-1399"] = 1,
+                ["1400-1499"] = 1,
+                ["1600-1699"] = 3,
+                ["1800-1899"] = 1,
+                ["600-699"] = 1,
+                ["700-799"] = 1,
+                ["800-899"] = 3,
+                ["900-999"] = 3,
+            },
+        },
+        ["DRUID_FERAL"] = {
+            listedCount = 12,
+            avgListedRating = 1051.2,
+            medianListedRating = 959.5,
+            top100Avg = 1051.2,
+            highest = 1568,
+            buckets = {
+                ["1200-1299"] = 1,
+                ["1300-1399"] = 1,
+                ["1500-1599"] = 2,
+                ["600-699"] = 1,
+                ["700-799"] = 1,
+                ["800-899"] = 3,
+                ["900-999"] = 3,
+            },
+        },
+        ["DRUID_GUARDIAN"] = {
+            listedCount = 2,
+            avgListedRating = 863.5,
+            medianListedRating = 863.5,
+            top100Avg = 863.5,
+            highest = 959,
+            buckets = {
+                ["700-799"] = 1,
+                ["900-999"] = 1,
+            },
+        },
+        ["DRUID_RESTORATION"] = {
+            listedCount = 32,
+            avgListedRating = 1180.2,
+            medianListedRating = 1054.5,
+            top100Avg = 1180.2,
+            highest = 1844,
+            buckets = {
+                ["1000-1099"] = 2,
+                ["1100-1199"] = 3,
+                ["1200-1299"] = 1,
+                ["1300-1399"] = 1,
+                ["1500-1599"] = 2,
+                ["1600-1699"] = 4,
+                ["1800-1899"] = 4,
+                ["600-699"] = 1,
+                ["700-799"] = 5,
+                ["800-899"] = 4,
+                ["900-999"] = 5,
+            },
+        },
+        ["EVOKER_AUGMENTATION"] = {
+            listedCount = 1,
+            avgListedRating = 1607,
+            medianListedRating = 1607,
+            top100Avg = 1607,
+            highest = 1607,
+            buckets = {
+                ["1600-1699"] = 1,
+            },
+        },
+        ["EVOKER_DEVASTATION"] = {
+            listedCount = 8,
+            avgListedRating = 1197.1,
+            medianListedRating = 1199.5,
+            top100Avg = 1197.1,
+            highest = 1633,
+            buckets = {
+                ["1100-1199"] = 1,
+                ["1200-1299"] = 1,
+                ["1400-1499"] = 1,
+                ["1600-1699"] = 2,
+                ["700-799"] = 2,
+                ["900-999"] = 1,
+            },
+        },
+        ["EVOKER_PRESERVATION"] = {
+            listedCount = 13,
+            avgListedRating = 1065.1,
+            medianListedRating = 864,
+            top100Avg = 1065.1,
+            highest = 1798,
+            buckets = {
+                ["1000-1099"] = 2,
+                ["1200-1299"] = 1,
+                ["1300-1399"] = 1,
+                ["1600-1699"] = 1,
+                ["1700-1799"] = 1,
+                ["700-799"] = 3,
+                ["800-899"] = 4,
+            },
+        },
+        ["HUNTER_BEASTMASTERY"] = {
+            listedCount = 41,
+            avgListedRating = 1108.3,
+            medianListedRating = 960,
+            top100Avg = 1108.3,
+            highest = 1807,
+            buckets = {
+                ["1000-1099"] = 1,
+                ["1100-1199"] = 3,
+                ["1200-1299"] = 2,
+                ["1300-1399"] = 2,
+                ["1400-1499"] = 3,
+                ["1500-1599"] = 6,
+                ["1600-1699"] = 2,
+                ["1800-1899"] = 1,
+                ["600-699"] = 4,
+                ["700-799"] = 8,
+                ["800-899"] = 3,
+                ["900-999"] = 6,
+            },
+        },
+        ["HUNTER_MARKSMANSHIP"] = {
+            listedCount = 16,
+            avgListedRating = 1026.6,
+            medianListedRating = 958.0,
+            top100Avg = 1026.6,
+            highest = 1522,
+            buckets = {
+                ["1100-1199"] = 1,
+                ["1300-1399"] = 1,
+                ["1400-1499"] = 2,
+                ["1500-1599"] = 2,
+                ["600-699"] = 3,
+                ["700-799"] = 3,
+                ["800-899"] = 1,
+                ["900-999"] = 3,
+            },
+        },
+        ["HUNTER_SURVIVAL"] = {
+            listedCount = 8,
+            avgListedRating = 1162.8,
+            medianListedRating = 1148.5,
+            top100Avg = 1162.8,
             highest = 1651,
             buckets = {
-                ["1400-1499"] = 2,
+                ["1000-1099"] = 1,
+                ["1200-1299"] = 1,
+                ["1400-1499"] = 1,
+                ["1500-1599"] = 1,
+                ["1600-1699"] = 1,
+                ["600-699"] = 1,
+                ["700-799"] = 1,
+                ["900-999"] = 1,
+            },
+        },
+        ["MAGE_ARCANE"] = {
+            listedCount = 11,
+            avgListedRating = 1202.8,
+            medianListedRating = 1248,
+            top100Avg = 1202.8,
+            highest = 1644,
+            buckets = {
+                ["1200-1299"] = 2,
+                ["1300-1399"] = 1,
                 ["1500-1599"] = 3,
                 ["1600-1699"] = 1,
                 ["600-699"] = 2,
                 ["800-899"] = 2,
             },
         },
-        ["MAGE"] = {
-            listedCount = 20,
-            avgListedRating = 1307.3,
-            medianListedRating = 1245.5,
-            top100Avg = 1307.3,
+        ["MAGE_FIRE"] = {
+            listedCount = 21,
+            avgListedRating = 1126.3,
+            medianListedRating = 1054,
+            top100Avg = 1126.3,
+            highest = 1773,
+            buckets = {
+                ["1000-1099"] = 3,
+                ["1100-1199"] = 1,
+                ["1200-1299"] = 1,
+                ["1300-1399"] = 1,
+                ["1400-1499"] = 1,
+                ["1600-1699"] = 3,
+                ["1700-1799"] = 1,
+                ["600-699"] = 1,
+                ["700-799"] = 2,
+                ["800-899"] = 2,
+                ["900-999"] = 5,
+            },
+        },
+        ["MAGE_FROST"] = {
+            listedCount = 38,
+            avgListedRating = 1050.7,
+            medianListedRating = 960.0,
+            top100Avg = 1050.7,
+            highest = 1764,
+            buckets = {
+                ["1000-1099"] = 5,
+                ["1100-1199"] = 3,
+                ["1200-1299"] = 1,
+                ["1400-1499"] = 2,
+                ["1500-1599"] = 1,
+                ["1600-1699"] = 3,
+                ["1700-1799"] = 1,
+                ["600-699"] = 3,
+                ["700-799"] = 3,
+                ["800-899"] = 8,
+                ["900-999"] = 8,
+            },
+        },
+        ["MONK_MISTWEAVER"] = {
+            listedCount = 26,
+            avgListedRating = 1202.5,
+            medianListedRating = 1149.5,
+            top100Avg = 1202.5,
+            highest = 1807,
+            buckets = {
+                ["1000-1099"] = 4,
+                ["1200-1299"] = 2,
+                ["1400-1499"] = 2,
+                ["1500-1599"] = 7,
+                ["1600-1699"] = 1,
+                ["1800-1899"] = 1,
+                ["600-699"] = 2,
+                ["700-799"] = 2,
+                ["800-899"] = 5,
+            },
+        },
+        ["MONK_WINDWALKER"] = {
+            listedCount = 18,
+            avgListedRating = 1225.9,
+            medianListedRating = 1055.5,
+            top100Avg = 1225.9,
+            highest = 1947,
+            buckets = {
+                ["1000-1099"] = 3,
+                ["1400-1499"] = 1,
+                ["1500-1599"] = 4,
+                ["1600-1699"] = 2,
+                ["1900-1999"] = 1,
+                ["600-699"] = 2,
+                ["700-799"] = 1,
+                ["900-999"] = 4,
+            },
+        },
+        ["PALADIN_HOLY"] = {
+            listedCount = 38,
+            avgListedRating = 1086.3,
+            medianListedRating = 960.0,
+            top100Avg = 1086.3,
+            highest = 2112,
+            buckets = {
+                ["1000-1099"] = 4,
+                ["1100-1199"] = 2,
+                ["1200-1299"] = 2,
+                ["1300-1399"] = 1,
+                ["1400-1499"] = 1,
+                ["1500-1599"] = 3,
+                ["1600-1699"] = 2,
+                ["1700-1799"] = 1,
+                ["2100-2199"] = 1,
+                ["600-699"] = 2,
+                ["700-799"] = 6,
+                ["800-899"] = 7,
+                ["900-999"] = 6,
+            },
+        },
+        ["PALADIN_PROTECTION"] = {
+            listedCount = 2,
+            avgListedRating = 720,
+            medianListedRating = 720.0,
+            top100Avg = 720,
+            highest = 768,
+            buckets = {
+                ["600-699"] = 1,
+                ["700-799"] = 1,
+            },
+        },
+        ["PALADIN_RETRIBUTION"] = {
+            listedCount = 49,
+            avgListedRating = 1071.8,
+            medianListedRating = 960,
+            top100Avg = 1071.8,
+            highest = 1713,
+            buckets = {
+                ["1000-1099"] = 2,
+                ["1100-1199"] = 4,
+                ["1200-1299"] = 5,
+                ["1300-1399"] = 3,
+                ["1400-1499"] = 2,
+                ["1500-1599"] = 3,
+                ["1600-1699"] = 3,
+                ["1700-1799"] = 2,
+                ["600-699"] = 7,
+                ["700-799"] = 8,
+                ["800-899"] = 8,
+                ["900-999"] = 2,
+            },
+        },
+        ["PRIEST_DISCIPLINE"] = {
+            listedCount = 55,
+            avgListedRating = 1010.2,
+            medianListedRating = 957,
+            top100Avg = 1010.2,
+            highest = 1750,
+            buckets = {
+                ["1000-1099"] = 5,
+                ["1100-1199"] = 3,
+                ["1200-1299"] = 2,
+                ["1300-1399"] = 4,
+                ["1400-1499"] = 1,
+                ["1600-1699"] = 5,
+                ["1700-1799"] = 1,
+                ["600-699"] = 8,
+                ["700-799"] = 11,
+                ["800-899"] = 5,
+                ["900-999"] = 10,
+            },
+        },
+        ["PRIEST_HOLY"] = {
+            listedCount = 64,
+            avgListedRating = 1105.1,
+            medianListedRating = 960.0,
+            top100Avg = 1105.1,
+            highest = 1805,
+            buckets = {
+                ["1000-1099"] = 3,
+                ["1100-1199"] = 5,
+                ["1200-1299"] = 4,
+                ["1300-1399"] = 1,
+                ["1400-1499"] = 2,
+                ["1500-1599"] = 9,
+                ["1600-1699"] = 4,
+                ["1700-1799"] = 1,
+                ["1800-1899"] = 1,
+                ["600-699"] = 4,
+                ["700-799"] = 9,
+                ["800-899"] = 11,
+                ["900-999"] = 10,
+            },
+        },
+        ["PRIEST_SHADOW"] = {
+            listedCount = 27,
+            avgListedRating = 1143.7,
+            medianListedRating = 958,
+            top100Avg = 1143.7,
+            highest = 1873,
+            buckets = {
+                ["1000-1099"] = 1,
+                ["1100-1199"] = 1,
+                ["1200-1299"] = 1,
+                ["1400-1499"] = 4,
+                ["1500-1599"] = 1,
+                ["1600-1699"] = 2,
+                ["1700-1799"] = 2,
+                ["1800-1899"] = 1,
+                ["600-699"] = 2,
+                ["700-799"] = 4,
+                ["800-899"] = 6,
+                ["900-999"] = 2,
+            },
+        },
+        ["ROGUE_ASSASSINATION"] = {
+            listedCount = 51,
+            avgListedRating = 1126.1,
+            medianListedRating = 1056,
+            top100Avg = 1126.1,
+            highest = 1817,
+            buckets = {
+                ["1000-1099"] = 4,
+                ["1100-1199"] = 6,
+                ["1200-1299"] = 6,
+                ["1300-1399"] = 1,
+                ["1400-1499"] = 1,
+                ["1500-1599"] = 8,
+                ["1600-1699"] = 1,
+                ["1700-1799"] = 1,
+                ["1800-1899"] = 1,
+                ["600-699"] = 3,
+                ["700-799"] = 9,
+                ["900-999"] = 10,
+            },
+        },
+        ["ROGUE_OUTLAW"] = {
+            listedCount = 6,
+            avgListedRating = 1081.8,
+            medianListedRating = 959.0,
+            top100Avg = 1081.8,
+            highest = 1600,
+            buckets = {
+                ["1000-1099"] = 1,
+                ["1400-1499"] = 1,
+                ["1600-1699"] = 1,
+                ["600-699"] = 1,
+                ["800-899"] = 2,
+            },
+        },
+        ["ROGUE_SUBTLETY"] = {
+            listedCount = 25,
+            avgListedRating = 1180.4,
+            medianListedRating = 1147,
+            top100Avg = 1180.4,
+            highest = 1667,
+            buckets = {
+                ["1000-1099"] = 4,
+                ["1100-1199"] = 1,
+                ["1200-1299"] = 1,
+                ["1300-1399"] = 4,
+                ["1400-1499"] = 2,
+                ["1500-1599"] = 2,
+                ["1600-1699"] = 3,
+                ["600-699"] = 1,
+                ["700-799"] = 2,
+                ["800-899"] = 3,
+                ["900-999"] = 2,
+            },
+        },
+        ["SHAMAN_ELEMENTAL"] = {
+            listedCount = 16,
+            avgListedRating = 1062.4,
+            medianListedRating = 1054.0,
+            top100Avg = 1062.4,
+            highest = 1597,
+            buckets = {
+                ["1000-1099"] = 2,
+                ["1100-1199"] = 2,
+                ["1200-1299"] = 1,
+                ["1300-1399"] = 1,
+                ["1400-1499"] = 1,
+                ["1500-1599"] = 2,
+                ["600-699"] = 3,
+                ["700-799"] = 1,
+                ["800-899"] = 2,
+                ["900-999"] = 1,
+            },
+        },
+        ["SHAMAN_ENHANCEMENT"] = {
+            listedCount = 16,
+            avgListedRating = 1211.3,
+            medianListedRating = 1191.0,
+            top100Avg = 1211.3,
+            highest = 1763,
+            buckets = {
+                ["1000-1099"] = 2,
+                ["1100-1199"] = 1,
+                ["1200-1299"] = 2,
+                ["1300-1399"] = 1,
+                ["1400-1499"] = 1,
+                ["1500-1599"] = 1,
+                ["1600-1699"] = 1,
+                ["1700-1799"] = 2,
+                ["600-699"] = 1,
+                ["700-799"] = 1,
+                ["800-899"] = 2,
+                ["900-999"] = 1,
+            },
+        },
+        ["SHAMAN_RESTORATION"] = {
+            listedCount = 27,
+            avgListedRating = 1061.9,
+            medianListedRating = 959,
+            top100Avg = 1061.9,
+            highest = 1649,
+            buckets = {
+                ["1000-1099"] = 1,
+                ["1100-1199"] = 1,
+                ["1200-1299"] = 2,
+                ["1300-1399"] = 3,
+                ["1500-1599"] = 2,
+                ["1600-1699"] = 3,
+                ["600-699"] = 5,
+                ["700-799"] = 5,
+                ["800-899"] = 1,
+                ["900-999"] = 4,
+            },
+        },
+        ["WARLOCK_AFFLICTION"] = {
+            listedCount = 26,
+            avgListedRating = 1240.4,
+            medianListedRating = 1282.0,
+            top100Avg = 1240.4,
+            highest = 1697,
+            buckets = {
+                ["1000-1099"] = 4,
+                ["1100-1199"] = 2,
+                ["1200-1299"] = 2,
+                ["1300-1399"] = 7,
+                ["1500-1599"] = 3,
+                ["1600-1699"] = 3,
+                ["700-799"] = 2,
+                ["800-899"] = 2,
+                ["900-999"] = 1,
+            },
+        },
+        ["WARLOCK_DEMONOLOGY"] = {
+            listedCount = 14,
+            avgListedRating = 1158.1,
+            medianListedRating = 1008.0,
+            top100Avg = 1158.1,
+            highest = 1865,
+            buckets = {
+                ["1000-1099"] = 1,
+                ["1100-1199"] = 1,
+                ["1200-1299"] = 1,
+                ["1500-1599"] = 2,
+                ["1600-1699"] = 1,
+                ["1800-1899"] = 1,
+                ["700-799"] = 1,
+                ["800-899"] = 4,
+                ["900-999"] = 2,
+            },
+        },
+        ["WARLOCK_DESTRUCTION"] = {
+            listedCount = 21,
+            avgListedRating = 1099.1,
+            medianListedRating = 1049,
+            top100Avg = 1099.1,
             highest = 1764,
             buckets = {
                 ["1000-1099"] = 3,
                 ["1100-1199"] = 2,
                 ["1200-1299"] = 1,
-                ["1400-1499"] = 1,
+                ["1400-1499"] = 2,
                 ["1500-1599"] = 2,
-                ["1600-1699"] = 4,
                 ["1700-1799"] = 1,
                 ["600-699"] = 1,
-                ["900-999"] = 5,
-            },
-        },
-        ["MONK"] = {
-            listedCount = 10,
-            avgListedRating = 1466.3,
-            medianListedRating = 1542.5,
-            top100Avg = 1466.3,
-            highest = 1947,
-            buckets = {
-                ["1000-1099"] = 1,
-                ["1200-1299"] = 1,
-                ["1400-1499"] = 1,
-                ["1500-1599"] = 4,
-                ["1600-1699"] = 1,
-                ["1900-1999"] = 1,
-                ["800-899"] = 1,
-            },
-        },
-        ["PALADIN"] = {
-            listedCount = 16,
-            avgListedRating = 1091.2,
-            medianListedRating = 1242,
-            top100Avg = 1091.2,
-            highest = 2112,
-            buckets = {
-                ["1000-1099"] = 2,
-                ["1200-1299"] = 1,
-                ["1300-1399"] = 1,
-                ["1500-1599"] = 1,
-                ["1600-1699"] = 2,
-                ["1700-1799"] = 2,
-                ["2100-2199"] = 1,
-                ["600-699"] = 2,
-                ["700-799"] = 1,
-                ["800-899"] = 2,
-                ["900-999"] = 1,
-            },
-        },
-        ["PRIEST"] = {
-            listedCount = 14,
-            avgListedRating = 1338.6,
-            medianListedRating = 1281.5,
-            top100Avg = 1338.6,
-            highest = 1805,
-            buckets = {
-                ["1000-1099"] = 2,
-                ["1100-1199"] = 2,
-                ["1200-1299"] = 1,
-                ["1400-1499"] = 1,
-                ["1600-1699"] = 1,
-                ["1700-1799"] = 3,
-                ["1800-1899"] = 1,
-                ["800-899"] = 1,
-                ["900-999"] = 2,
-            },
-        },
-        ["ROGUE"] = {
-            listedCount = 18,
-            avgListedRating = 1150.9,
-            medianListedRating = 1341,
-            top100Avg = 1150.9,
-            highest = 1817,
-            buckets = {
-                ["1000-1099"] = 2,
-                ["1200-1299"] = 1,
-                ["1300-1399"] = 1,
-                ["1400-1499"] = 1,
-                ["1500-1599"] = 4,
-                ["1600-1699"] = 3,
-                ["1700-1799"] = 1,
-                ["1800-1899"] = 1,
-                ["600-699"] = 2,
-                ["800-899"] = 1,
-                ["900-999"] = 1,
-            },
-        },
-        ["SHAMAN"] = {
-            listedCount = 8,
-            avgListedRating = 1125.3,
-            medianListedRating = 1102.5,
-            top100Avg = 1125.3,
-            highest = 1763,
-            buckets = {
-                ["1000-1099"] = 1,
-                ["1100-1199"] = 1,
-                ["1200-1299"] = 1,
-                ["1500-1599"] = 1,
-                ["1700-1799"] = 2,
-                ["600-699"] = 2,
-            },
-        },
-        ["WARLOCK"] = {
-            listedCount = 11,
-            avgListedRating = 1180.0,
-            medianListedRating = 960,
-            top100Avg = 1180.0,
-            highest = 1865,
-            buckets = {
-                ["1100-1199"] = 3,
-                ["1400-1499"] = 1,
-                ["1600-1699"] = 1,
-                ["1800-1899"] = 1,
-                ["700-799"] = 1,
-                ["800-899"] = 2,
-                ["900-999"] = 2,
-            },
-        },
-        ["WARRIOR"] = {
-            listedCount = 10,
-            avgListedRating = 1335.8,
-            medianListedRating = 1356.8,
-            top100Avg = 1335.8,
-            highest = 1886,
-            buckets = {
-                ["1000-1099"] = 1,
-                ["1100-1199"] = 1,
-                ["1300-1399"] = 1,
-                ["1500-1599"] = 2,
-                ["1600-1699"] = 1,
-                ["1800-1899"] = 2,
-                ["800-899"] = 2,
-            },
-        },
-    },
-    bySpec = {
-        ["DEATHKNIGHT_UNHOLY"] = {
-            listedCount = 4,
-            avgListedRating = 1435.5,
-            medianListedRating = 1431.0,
-            top100Avg = 1435.5,
-            highest = 2112,
-            buckets = {
-                ["1000-1099"] = 1,
-                ["1800-1899"] = 1,
-                ["2100-2199"] = 1,
-                ["700-799"] = 1,
-            },
-        },
-        ["DEMONHUNTER_HAVOC"] = {
-            listedCount = 5,
-            avgListedRating = 1305,
-            medianListedRating = 1149,
-            top100Avg = 1305,
-            highest = 2112,
-            buckets = {
-                ["1100-1199"] = 1,
-                ["1300-1399"] = 1,
-                ["2100-2199"] = 1,
-                ["900-999"] = 2,
-            },
-        },
-        ["DRUID_BALANCE"] = {
-            listedCount = 2,
-            avgListedRating = 1616,
-            medianListedRating = 1616.0,
-            top100Avg = 1616,
-            highest = 1801,
-            buckets = {
-                ["1400-1499"] = 1,
-                ["1800-1899"] = 1,
-            },
-        },
-        ["DRUID_FERAL"] = {
-            listedCount = 5,
-            avgListedRating = 1230.2,
-            medianListedRating = 1246,
-            top100Avg = 1230.2,
-            highest = 1546,
-            buckets = {
-                ["1000-1099"] = 1,
-                ["1200-1299"] = 1,
-                ["1300-1399"] = 1,
-                ["1500-1599"] = 1,
-                ["900-999"] = 1,
-            },
-        },
-        ["DRUID_RESTORATION"] = {
-            listedCount = 10,
-            avgListedRating = 1367.4,
-            medianListedRating = 1385.5,
-            top100Avg = 1367.4,
-            highest = 1844,
-            buckets = {
-                ["1100-1199"] = 1,
-                ["1200-1299"] = 1,
-                ["1500-1599"] = 1,
-                ["1800-1899"] = 4,
-                ["600-699"] = 1,
-                ["800-899"] = 1,
-                ["900-999"] = 1,
-            },
-        },
-        ["EVOKER_DEVASTATION"] = {
-            listedCount = 3,
-            avgListedRating = 1497.7,
-            medianListedRating = 1613,
-            top100Avg = 1497.7,
-            highest = 1633,
-            buckets = {
-                ["1200-1299"] = 1,
-                ["1600-1699"] = 2,
-            },
-        },
-        ["EVOKER_PRESERVATION"] = {
-            listedCount = 4,
-            avgListedRating = 1287.5,
-            medianListedRating = 1292.0,
-            top100Avg = 1287.5,
-            highest = 1798,
-            buckets = {
-                ["1200-1299"] = 1,
-                ["1300-1399"] = 1,
-                ["1700-1799"] = 1,
-                ["700-799"] = 1,
-            },
-        },
-        ["HUNTER_BEASTMASTERY"] = {
-            listedCount = 2,
-            avgListedRating = 1529,
-            medianListedRating = 1529.0,
-            top100Avg = 1529,
-            highest = 1538,
-            buckets = {
-                ["1500-1599"] = 2,
-            },
-        },
-        ["HUNTER_MARKSMANSHIP"] = {
-            listedCount = 5,
-            avgListedRating = 1071.4,
-            medianListedRating = 864,
-            top100Avg = 1071.4,
-            highest = 1522,
-            buckets = {
-                ["1400-1499"] = 1,
-                ["1500-1599"] = 1,
-                ["600-699"] = 1,
-                ["800-899"] = 2,
-            },
-        },
-        ["HUNTER_SURVIVAL"] = {
-            listedCount = 3,
-            avgListedRating = 1252.7,
-            medianListedRating = 1435,
-            top100Avg = 1252.7,
-            highest = 1651,
-            buckets = {
-                ["1400-1499"] = 1,
-                ["1600-1699"] = 1,
-                ["600-699"] = 1,
-            },
-        },
-        ["MAGE_ARCANE"] = {
-            listedCount = 4,
-            avgListedRating = 1510.5,
-            medianListedRating = 1575.0,
-            top100Avg = 1510.5,
-            highest = 1644,
-            buckets = {
-                ["1200-1299"] = 1,
-                ["1500-1599"] = 2,
-                ["1600-1699"] = 1,
-            },
-        },
-        ["MAGE_FIRE"] = {
-            listedCount = 6,
-            avgListedRating = 1287.8,
-            medianListedRating = 1245.5,
-            top100Avg = 1287.8,
-            highest = 1617,
-            buckets = {
-                ["1000-1099"] = 2,
-                ["1400-1499"] = 1,
-                ["1600-1699"] = 2,
-                ["900-999"] = 1,
-            },
-        },
-        ["MAGE_FROST"] = {
-            listedCount = 10,
-            avgListedRating = 1123.6,
-            medianListedRating = 1008.0,
-            top100Avg = 1123.6,
-            highest = 1764,
-            buckets = {
-                ["1000-1099"] = 1,
-                ["1100-1199"] = 2,
-                ["1600-1699"] = 1,
-                ["1700-1799"] = 1,
-                ["600-699"] = 1,
+                ["700-799"] = 2,
+                ["800-899"] = 3,
                 ["900-999"] = 4,
             },
         },
-        ["MONK_MISTWEAVER"] = {
-            listedCount = 7,
-            avgListedRating = 1414.7,
-            medianListedRating = 1533,
-            top100Avg = 1414.7,
-            highest = 1667,
-            buckets = {
-                ["1200-1299"] = 1,
-                ["1400-1499"] = 1,
-                ["1500-1599"] = 3,
-                ["1600-1699"] = 1,
-                ["800-899"] = 1,
-            },
-        },
-        ["MONK_WINDWALKER"] = {
-            listedCount = 3,
-            avgListedRating = 1518,
-            medianListedRating = 1552,
-            top100Avg = 1518,
-            highest = 1947,
-            buckets = {
-                ["1000-1099"] = 1,
-                ["1500-1599"] = 1,
-                ["1900-1999"] = 1,
-            },
-        },
-        ["PALADIN_HOLY"] = {
-            listedCount = 6,
-            avgListedRating = 1392.3,
-            medianListedRating = 1352.5,
-            top100Avg = 1392.3,
-            highest = 2112,
-            buckets = {
-                ["1000-1099"] = 2,
-                ["1600-1699"] = 1,
-                ["1700-1799"] = 1,
-                ["2100-2199"] = 1,
-                ["700-799"] = 1,
-            },
-        },
-        ["PALADIN_PROTECTION"] = {
-            listedCount = 1,
-            avgListedRating = 672,
-            medianListedRating = 672,
-            top100Avg = 672,
-            highest = 672,
-            buckets = {
-                ["600-699"] = 1,
-            },
-        },
-        ["PALADIN_RETRIBUTION"] = {
-            listedCount = 9,
-            avgListedRating = 1209.3,
-            medianListedRating = 1242,
-            top100Avg = 1209.3,
-            highest = 1713,
-            buckets = {
-                ["1200-1299"] = 1,
-                ["1300-1399"] = 1,
-                ["1500-1599"] = 1,
-                ["1600-1699"] = 1,
-                ["1700-1799"] = 1,
-                ["600-699"] = 1,
-                ["800-899"] = 2,
-                ["900-999"] = 1,
-            },
-        },
-        ["PRIEST_DISCIPLINE"] = {
-            listedCount = 2,
-            avgListedRating = 1281.5,
-            medianListedRating = 1281.5,
-            top100Avg = 1281.5,
-            highest = 1699,
-            buckets = {
-                ["1600-1699"] = 1,
-                ["800-899"] = 1,
-            },
-        },
-        ["PRIEST_HOLY"] = {
-            listedCount = 8,
-            avgListedRating = 1274.4,
-            medianListedRating = 1150.5,
-            top100Avg = 1274.4,
-            highest = 1805,
-            buckets = {
-                ["1000-1099"] = 2,
-                ["1100-1199"] = 2,
-                ["1200-1299"] = 1,
-                ["1700-1799"] = 1,
-                ["1800-1899"] = 1,
-                ["900-999"] = 1,
-            },
-        },
-        ["PRIEST_SHADOW"] = {
-            listedCount = 4,
-            avgListedRating = 1460,
-            medianListedRating = 1562.0,
-            top100Avg = 1460,
-            highest = 1756,
-            buckets = {
-                ["1400-1499"] = 1,
-                ["1700-1799"] = 2,
-                ["900-999"] = 1,
-            },
-        },
-        ["ROGUE_ASSASSINATION"] = {
-            listedCount = 6,
-            avgListedRating = 1477.7,
-            medianListedRating = 1573.0,
-            top100Avg = 1477.7,
-            highest = 1817,
-            buckets = {
-                ["1500-1599"] = 2,
-                ["1600-1699"] = 1,
-                ["1700-1799"] = 1,
-                ["1800-1899"] = 1,
-                ["600-699"] = 1,
-            },
-        },
-        ["ROGUE_OUTLAW"] = {
-            listedCount = 1,
-            avgListedRating = 672,
-            medianListedRating = 672,
-            top100Avg = 672,
-            highest = 672,
-            buckets = {
-                ["600-699"] = 1,
-            },
-        },
-        ["ROGUE_SUBTLETY"] = {
-            listedCount = 11,
-            avgListedRating = 1302.9,
-            medianListedRating = 1341,
-            top100Avg = 1302.9,
-            highest = 1667,
-            buckets = {
-                ["1000-1099"] = 2,
-                ["1200-1299"] = 1,
-                ["1300-1399"] = 1,
-                ["1400-1499"] = 1,
-                ["1500-1599"] = 2,
-                ["1600-1699"] = 2,
-                ["800-899"] = 1,
-                ["900-999"] = 1,
-            },
-        },
-        ["SHAMAN_ELEMENTAL"] = {
-            listedCount = 4,
-            avgListedRating = 1118.5,
-            medianListedRating = 1102.5,
-            top100Avg = 1118.5,
-            highest = 1597,
-            buckets = {
-                ["1000-1099"] = 1,
-                ["1100-1199"] = 1,
-                ["1500-1599"] = 1,
-                ["600-699"] = 1,
-            },
-        },
-        ["SHAMAN_ENHANCEMENT"] = {
-            listedCount = 3,
-            avgListedRating = 1585.3,
-            medianListedRating = 1750,
-            top100Avg = 1585.3,
-            highest = 1763,
-            buckets = {
-                ["1200-1299"] = 1,
-                ["1700-1799"] = 2,
-            },
-        },
-        ["SHAMAN_RESTORATION"] = {
-            listedCount = 1,
-            avgListedRating = 672,
-            medianListedRating = 672,
-            top100Avg = 672,
-            highest = 672,
-            buckets = {
-                ["600-699"] = 1,
-            },
-        },
-        ["WARLOCK_AFFLICTION"] = {
-            listedCount = 3,
-            avgListedRating = 1318.7,
-            medianListedRating = 1150,
-            top100Avg = 1318.7,
-            highest = 1657,
-            buckets = {
-                ["1100-1199"] = 2,
-                ["1600-1699"] = 1,
-            },
-        },
-        ["WARLOCK_DEMONOLOGY"] = {
-            listedCount = 5,
-            avgListedRating = 1102.6,
-            medianListedRating = 864,
-            top100Avg = 1102.6,
-            highest = 1865,
-            buckets = {
-                ["1100-1199"] = 1,
-                ["1800-1899"] = 1,
-                ["700-799"] = 1,
-                ["800-899"] = 2,
-            },
-        },
-        ["WARLOCK_DESTRUCTION"] = {
-            listedCount = 3,
-            avgListedRating = 1118.7,
-            medianListedRating = 960,
-            top100Avg = 1118.7,
-            highest = 1437,
-            buckets = {
-                ["1400-1499"] = 1,
-                ["900-999"] = 2,
-            },
-        },
         ["WARRIOR_ARMS"] = {
-            listedCount = 6,
-            avgListedRating = 1520.5,
-            medianListedRating = 1609.5,
-            top100Avg = 1520.5,
+            listedCount = 43,
+            avgListedRating = 1149.4,
+            medianListedRating = 1055,
+            top100Avg = 1149.4,
             highest = 1886,
             buckets = {
-                ["1300-1399"] = 1,
-                ["1500-1599"] = 1,
-                ["1600-1699"] = 1,
+                ["1000-1099"] = 7,
+                ["1100-1199"] = 3,
+                ["1200-1299"] = 3,
+                ["1300-1399"] = 3,
+                ["1500-1599"] = 2,
+                ["1600-1699"] = 3,
+                ["1700-1799"] = 2,
                 ["1800-1899"] = 2,
+                ["700-799"] = 8,
                 ["800-899"] = 1,
+                ["900-999"] = 9,
             },
         },
         ["WARRIOR_FURY"] = {
-            listedCount = 4,
-            avgListedRating = 1151,
-            medianListedRating = 1104.0,
-            top100Avg = 1151,
-            highest = 1532,
+            listedCount = 11,
+            avgListedRating = 1180.5,
+            medianListedRating = 1149,
+            top100Avg = 1180.5,
+            highest = 1682,
             buckets = {
                 ["1000-1099"] = 1,
-                ["1100-1199"] = 1,
+                ["1100-1199"] = 3,
+                ["1200-1299"] = 1,
+                ["1400-1499"] = 1,
                 ["1500-1599"] = 1,
+                ["1600-1699"] = 1,
+                ["700-799"] = 1,
                 ["800-899"] = 1,
+                ["900-999"] = 1,
+            },
+        },
+        ["WARRIOR_PROTECTION"] = {
+            listedCount = 1,
+            avgListedRating = 960,
+            medianListedRating = 960,
+            top100Avg = 960,
+            highest = 960,
+            buckets = {
+                ["900-999"] = 1,
             },
         },
     },
     players = {
         ["aakma-tichondrius"] = {
             displayName = "Aakma-tichondrius",
-            specKey = "",
+            specKey = "DEMONHUNTER_DEVOURER",
             rating = 864,
             rank = 543,
             wins = 9,
@@ -10532,7 +11142,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["aavro-stormrage"] = {
             displayName = "Aavro-stormrage",
-            specKey = "",
+            specKey = "ROGUE_SUBTLETY",
             rating = 1416,
             rank = 192,
             wins = 15,
@@ -10559,7 +11169,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["acherondtf-cenarioncircle"] = {
             displayName = "Acherondtf-cenarion-circle",
-            specKey = "",
+            specKey = "PALADIN_HOLY",
             rating = 766,
             rank = 838,
             wins = 8,
@@ -10577,7 +11187,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["adonege-tichondrius"] = {
             displayName = "Adonege-tichondrius",
-            specKey = "",
+            specKey = "WARLOCK_DEMONOLOGY",
             rating = 1056,
             rank = 341,
             wins = 11,
@@ -10586,7 +11196,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["aintchu-tichondrius"] = {
             displayName = "Aintchu-tichondrius",
-            specKey = "",
+            specKey = "ROGUE_SUBTLETY",
             rating = 862,
             rank = 657,
             wins = 9,
@@ -10595,7 +11205,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["airros-frostmourne"] = {
             displayName = "Airros-frostmourne",
-            specKey = "",
+            specKey = "EVOKER_DEVASTATION",
             rating = 767,
             rank = 803,
             wins = 8,
@@ -10613,7 +11223,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["ajwizk-thrall"] = {
             displayName = "Ajwizk-thrall",
-            specKey = "",
+            specKey = "PRIEST_HOLY",
             rating = 960,
             rank = 417,
             wins = 10,
@@ -10622,7 +11232,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["akatsùki-tichondrius"] = {
             displayName = "Akatsùki-tichondrius",
-            specKey = "",
+            specKey = "PRIEST_HOLY",
             rating = 1053,
             rank = 397,
             wins = 11,
@@ -10631,7 +11241,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["akhmage-frostmourne"] = {
             displayName = "Akhmage-frostmourne",
-            specKey = "",
+            specKey = "MAGE_FROST",
             rating = 863,
             rank = 637,
             wins = 9,
@@ -10640,7 +11250,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["akop-illidan"] = {
             displayName = "Akop-illidan",
-            specKey = "",
+            specKey = "DEATHKNIGHT_UNHOLY",
             rating = 957,
             rank = 518,
             wins = 10,
@@ -10649,7 +11259,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["albeda-blackrock"] = {
             displayName = "Albeda-blackrock",
-            specKey = "",
+            specKey = "PRIEST_DISCIPLINE",
             rating = 959,
             rank = 469,
             wins = 10,
@@ -10676,7 +11286,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["allmotor-zuljin"] = {
             displayName = "Allmotor-zuljin",
-            specKey = "",
+            specKey = "WARRIOR_ARMS",
             rating = 1051,
             rank = 410,
             wins = 11,
@@ -10685,7 +11295,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["allmîght-barthilas"] = {
             displayName = "Allmîght-barthilas",
-            specKey = "",
+            specKey = "WARRIOR_FURY",
             rating = 956,
             rank = 533,
             wins = 10,
@@ -10694,7 +11304,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["alphaswagboy-sargeras"] = {
             displayName = "Alphaswagboy-sargeras",
-            specKey = "",
+            specKey = "HUNTER_BEASTMASTERY",
             rating = 864,
             rank = 543,
             wins = 9,
@@ -10703,7 +11313,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["alphawolf-kilrogg"] = {
             displayName = "Alphawolf-kilrogg",
-            specKey = "",
+            specKey = "DRUID_RESTORATION",
             rating = 1056,
             rank = 341,
             wins = 11,
@@ -10712,7 +11322,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["alureä-zuljin"] = {
             displayName = "Alureä-zuljin",
-            specKey = "",
+            specKey = "MAGE_FROST",
             rating = 768,
             rank = 677,
             wins = 8,
@@ -10748,7 +11358,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["aniqa-tichondrius"] = {
             displayName = "Aniqa-tichondrius",
-            specKey = "",
+            specKey = "PRIEST_DISCIPLINE",
             rating = 959,
             rank = 469,
             wins = 10,
@@ -10757,7 +11367,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["anomaly-emeralddream"] = {
             displayName = "Anomaly-emerald-dream",
-            specKey = "",
+            specKey = "ROGUE_ASSASSINATION",
             rating = 1420,
             rank = 189,
             wins = 15,
@@ -10766,7 +11376,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["anttix-zuljin"] = {
             displayName = "Anttix-zuljin",
-            specKey = "",
+            specKey = "WARLOCK_DESTRUCTION",
             rating = 768,
             rank = 677,
             wins = 8,
@@ -10775,7 +11385,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["apparitions-illidan"] = {
             displayName = "Apparitions-illidan",
-            specKey = "",
+            specKey = "PRIEST_SHADOW",
             rating = 766,
             rank = 838,
             wins = 8,
@@ -10784,7 +11394,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["aquasx-sargeras"] = {
             displayName = "Aquasx-sargeras",
-            specKey = "",
+            specKey = "SHAMAN_RESTORATION",
             rating = 959,
             rank = 469,
             wins = 10,
@@ -10793,7 +11403,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["aquatixrog-tichondrius"] = {
             displayName = "Aquatixrog-tichondrius",
-            specKey = "",
+            specKey = "ROGUE_ASSASSINATION",
             rating = 1152,
             rank = 289,
             wins = 12,
@@ -10802,7 +11412,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["aryawilliams-area52"] = {
             displayName = "Aryawilliams-area-52",
-            specKey = "",
+            specKey = "DRUID_RESTORATION",
             rating = 1053,
             rank = 397,
             wins = 11,
@@ -10811,7 +11421,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["arzenelupin-tichondrius"] = {
             displayName = "Arzenelupin-tichondrius",
-            specKey = "",
+            specKey = "MONK_WINDWALKER",
             rating = 1056,
             rank = 341,
             wins = 11,
@@ -10829,7 +11439,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["arýanne-skullcrusher"] = {
             displayName = "Arýanne-skullcrusher",
-            specKey = "",
+            specKey = "PRIEST_SHADOW",
             rating = 1056,
             rank = 341,
             wins = 11,
@@ -10838,7 +11448,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["askira-frostmane"] = {
             displayName = "Askira-frostmane",
-            specKey = "",
+            specKey = "DRUID_FERAL",
             rating = 768,
             rank = 677,
             wins = 8,
@@ -10847,7 +11457,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["asuna-burningblade"] = {
             displayName = "Asuna-burning-blade",
-            specKey = "",
+            specKey = "WARRIOR_FURY",
             rating = 768,
             rank = 677,
             wins = 8,
@@ -10856,7 +11466,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["atillart-hyjal"] = {
             displayName = "Atillart-hyjal",
-            specKey = "",
+            specKey = "WARRIOR_ARMS",
             rating = 959,
             rank = 469,
             wins = 10,
@@ -10865,7 +11475,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["atomicturtle-tichondrius"] = {
             displayName = "Atomicturtle-tichondrius",
-            specKey = "",
+            specKey = "WARRIOR_ARMS",
             rating = 767,
             rank = 803,
             wins = 8,
@@ -10874,7 +11484,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["aultys-malganis"] = {
             displayName = "Aultys-malganis",
-            specKey = "",
+            specKey = "SHAMAN_ELEMENTAL",
             rating = 1247,
             rank = 239,
             wins = 13,
@@ -10892,7 +11502,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["avengedwr-illidan"] = {
             displayName = "Avengedwr-illidan",
-            specKey = "",
+            specKey = "PALADIN_PROTECTION",
             rating = 768,
             rank = 677,
             wins = 8,
@@ -10919,7 +11529,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["awfulmoron-stormrage"] = {
             displayName = "Awfulmoron-stormrage",
-            specKey = "",
+            specKey = "DRUID_GUARDIAN",
             rating = 959,
             rank = 469,
             wins = 10,
@@ -10928,7 +11538,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["ayaame-proudmoore"] = {
             displayName = "Ayaame-proudmoore",
-            specKey = "",
+            specKey = "PRIEST_DISCIPLINE",
             rating = 1600,
             rank = 91,
             wins = 20,
@@ -10946,7 +11556,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["ayobroski-stormrage"] = {
             displayName = "Ayobroski-stormrage",
-            specKey = "",
+            specKey = "ROGUE_ASSASSINATION",
             rating = 672,
             rank = 857,
             wins = 7,
@@ -10955,7 +11565,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["ayy-kelthuzad"] = {
             displayName = "Ayy-kelthuzad",
-            specKey = "",
+            specKey = "WARLOCK_DEMONOLOGY",
             rating = 1562,
             rank = 125,
             wins = 18,
@@ -10964,7 +11574,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["azerothgg-tichondrius"] = {
             displayName = "Azerothgg-tichondrius",
-            specKey = "",
+            specKey = "PALADIN_HOLY",
             rating = 1149,
             rank = 308,
             wins = 12,
@@ -10991,7 +11601,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["badxbagel-stormrage"] = {
             displayName = "Badxbagel-stormrage",
-            specKey = "",
+            specKey = "PALADIN_HOLY",
             rating = 864,
             rank = 543,
             wins = 9,
@@ -11000,7 +11610,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["baglock-bleedinghollow"] = {
             displayName = "Baglock-bleeding-hollow",
-            specKey = "",
+            specKey = "WARLOCK_DESTRUCTION",
             rating = 1764,
             rank = 23,
             wins = 31,
@@ -11009,7 +11619,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["bahamas-bleedinghollow"] = {
             displayName = "Bahamas-bleeding-hollow",
-            specKey = "",
+            specKey = "WARLOCK_AFFLICTION",
             rating = 1697,
             rank = 36,
             wins = 26,
@@ -11027,7 +11637,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["bajiisheng-barthilas"] = {
             displayName = "Bajiisheng-barthilas",
-            specKey = "",
+            specKey = "PALADIN_RETRIBUTION",
             rating = 864,
             rank = 543,
             wins = 9,
@@ -11036,7 +11646,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["bakusami-zuljin"] = {
             displayName = "Bakusami-zuljin",
-            specKey = "",
+            specKey = "MONK_WINDWALKER",
             rating = 957,
             rank = 518,
             wins = 10,
@@ -11045,7 +11655,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["bamhoof-sargeras"] = {
             displayName = "Bamhoof-sargeras",
-            specKey = "",
+            specKey = "WARRIOR_ARMS",
             rating = 1151,
             rank = 298,
             wins = 12,
@@ -11063,7 +11673,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["battlefrog-tichondrius"] = {
             displayName = "Battlefrog-tichondrius",
-            specKey = "",
+            specKey = "DRUID_RESTORATION",
             rating = 768,
             rank = 677,
             wins = 8,
@@ -11081,7 +11691,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["benny-rexxar"] = {
             displayName = "Benny-rexxar",
-            specKey = "",
+            specKey = "MONK_WINDWALKER",
             rating = 672,
             rank = 857,
             wins = 7,
@@ -11099,7 +11709,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["berylhwit-emeralddream"] = {
             displayName = "Berylhwit-emerald-dream",
-            specKey = "",
+            specKey = "EVOKER_DEVASTATION",
             rating = 767,
             rank = 803,
             wins = 8,
@@ -11108,7 +11718,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["bfarogue-stormrage"] = {
             displayName = "Bfarogue-stormrage",
-            specKey = "",
+            specKey = "ROGUE_ASSASSINATION",
             rating = 768,
             rank = 677,
             wins = 8,
@@ -11126,7 +11736,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["bigblacktiny-bleedinghollow"] = {
             displayName = "Bigblacktiny-bleeding-hollow",
-            specKey = "",
+            specKey = "WARRIOR_ARMS",
             rating = 768,
             rank = 677,
             wins = 8,
@@ -11135,7 +11745,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["bigchieftan-tichondrius"] = {
             displayName = "Bigchieftan-tichondrius",
-            specKey = "",
+            specKey = "PALADIN_RETRIBUTION",
             rating = 768,
             rank = 677,
             wins = 8,
@@ -11144,7 +11754,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["bigdamfears-malganis"] = {
             displayName = "Bigdamfears-malganis",
-            specKey = "",
+            specKey = "PRIEST_SHADOW",
             rating = 864,
             rank = 543,
             wins = 9,
@@ -11153,7 +11763,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["bigdamjudge-blackrock"] = {
             displayName = "Bigdamjudge-blackrock",
-            specKey = "",
+            specKey = "PALADIN_HOLY",
             rating = 1578,
             rank = 110,
             wins = 19,
@@ -11162,7 +11772,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["bigdipper-stormrage"] = {
             displayName = "Bigdipper-stormrage",
-            specKey = "",
+            specKey = "DRUID_BALANCE",
             rating = 864,
             rank = 543,
             wins = 9,
@@ -11171,7 +11781,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["biglawn-tichondrius"] = {
             displayName = "Biglawn-tichondrius",
-            specKey = "",
+            specKey = "SHAMAN_ENHANCEMENT",
             rating = 1456,
             rank = 167,
             wins = 16,
@@ -11198,7 +11808,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["bleegblog-area52"] = {
             displayName = "Bleegblog-area-52",
-            specKey = "",
+            specKey = "DRUID_RESTORATION",
             rating = 960,
             rank = 417,
             wins = 10,
@@ -11216,7 +11826,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["blitzbuddy-stormrage"] = {
             displayName = "Blitzbuddy-stormrage",
-            specKey = "",
+            specKey = "HUNTER_BEASTMASTERY",
             rating = 1053,
             rank = 397,
             wins = 11,
@@ -11225,7 +11835,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["blockka-area52"] = {
             displayName = "Blockka-area-52",
-            specKey = "",
+            specKey = "WARRIOR_ARMS",
             rating = 762,
             rank = 855,
             wins = 8,
@@ -11234,7 +11844,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["blood-executus"] = {
             displayName = "Blood-executus",
-            specKey = "",
+            specKey = "DEMONHUNTER_VENGEANCE",
             rating = 768,
             rank = 677,
             wins = 8,
@@ -11252,7 +11862,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["bludream-tichondrius"] = {
             displayName = "Bludream-tichondrius",
-            specKey = "",
+            specKey = "WARLOCK_AFFLICTION",
             rating = 1369,
             rank = 199,
             wins = 15,
@@ -11261,7 +11871,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["bluegator-tichondrius"] = {
             displayName = "Bluegator-tichondrius",
-            specKey = "",
+            specKey = "SHAMAN_RESTORATION",
             rating = 1344,
             rank = 200,
             wins = 14,
@@ -11270,7 +11880,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["blàckpïnk-tichondrius"] = {
             displayName = "Blàckpïnk-tichondrius",
-            specKey = "",
+            specKey = "WARRIOR_ARMS",
             rating = 958,
             rank = 502,
             wins = 10,
@@ -11288,7 +11898,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["bobkasa-proudmoore"] = {
             displayName = "Bobkasa-proudmoore",
-            specKey = "",
+            specKey = "ROGUE_ASSASSINATION",
             rating = 1578,
             rank = 110,
             wins = 19,
@@ -11297,7 +11907,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["bombadil-korgath"] = {
             displayName = "Bombadil-korgath",
-            specKey = "",
+            specKey = "SHAMAN_RESTORATION",
             rating = 959,
             rank = 469,
             wins = 10,
@@ -11315,7 +11925,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["boringspec-thrall"] = {
             displayName = "Boringspec-thrall",
-            specKey = "",
+            specKey = "PRIEST_HOLY",
             rating = 768,
             rank = 677,
             wins = 8,
@@ -11324,7 +11934,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["borkdru-area52"] = {
             displayName = "Borkdru-area-52",
-            specKey = "DRUID_FERAL",
+            specKey = "",
             rating = 1246,
             rank = 248,
             wins = 13,
@@ -11342,7 +11952,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["borracho-anvilmar"] = {
             displayName = "Borracho-anvilmar",
-            specKey = "",
+            specKey = "PALADIN_RETRIBUTION",
             rating = 1606,
             rank = 78,
             wins = 19,
@@ -11360,7 +11970,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["bracib-bleedinghollow"] = {
             displayName = "Bracib-bleeding-hollow",
-            specKey = "",
+            specKey = "MAGE_FROST",
             rating = 1054,
             rank = 386,
             wins = 11,
@@ -11396,7 +12006,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["brynnhild-stormrage"] = {
             displayName = "Brynnhild-stormrage",
-            specKey = "",
+            specKey = "PALADIN_HOLY",
             rating = 958,
             rank = 502,
             wins = 10,
@@ -11414,7 +12024,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["buckyz-zuljin"] = {
             displayName = "Buckyz-zuljin",
-            specKey = "",
+            specKey = "PALADIN_HOLY",
             rating = 1055,
             rank = 372,
             wins = 11,
@@ -11423,7 +12033,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["budknight-staghelm"] = {
             displayName = "Budknight-staghelm",
-            specKey = "",
+            specKey = "PALADIN_RETRIBUTION",
             rating = 672,
             rank = 857,
             wins = 7,
@@ -11432,7 +12042,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["budíng-tichondrius"] = {
             displayName = "Budíng-tichondrius",
-            specKey = "",
+            specKey = "PRIEST_DISCIPLINE",
             rating = 1056,
             rank = 341,
             wins = 11,
@@ -11441,7 +12051,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["buffsp-tichondrius"] = {
             displayName = "Buffsp-tichondrius",
-            specKey = "",
+            specKey = "WARLOCK_AFFLICTION",
             rating = 958,
             rank = 502,
             wins = 10,
@@ -11450,7 +12060,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["bumblebee-alteracmountains"] = {
             displayName = "Bumblebee-alterac-mountains",
-            specKey = "",
+            specKey = "EVOKER_DEVASTATION",
             rating = 960,
             rank = 417,
             wins = 10,
@@ -11468,7 +12078,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["bêardusah-area52"] = {
             displayName = "Bêardusah-area-52",
-            specKey = "",
+            specKey = "PRIEST_DISCIPLINE",
             rating = 954,
             rank = 539,
             wins = 10,
@@ -11477,7 +12087,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["bøa-moonguard"] = {
             displayName = "Bøa-moon-guard",
-            specKey = "",
+            specKey = "EVOKER_PRESERVATION",
             rating = 864,
             rank = 543,
             wins = 9,
@@ -11486,7 +12096,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["cacitizen-tichondrius"] = {
             displayName = "Cacitizen-tichondrius",
-            specKey = "",
+            specKey = "ROGUE_ASSASSINATION",
             rating = 1241,
             rank = 274,
             wins = 13,
@@ -11495,7 +12105,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["calberda-stormrage"] = {
             displayName = "Calberda-stormrage",
-            specKey = "",
+            specKey = "HUNTER_BEASTMASTERY",
             rating = 1542,
             rank = 140,
             wins = 18,
@@ -11504,7 +12114,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["calferx-area52"] = {
             displayName = "Calferx-area-52",
-            specKey = "",
+            specKey = "PALADIN_RETRIBUTION",
             rating = 672,
             rank = 857,
             wins = 7,
@@ -11540,7 +12150,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["canicä-illidan"] = {
             displayName = "Canicä-illidan",
-            specKey = "",
+            specKey = "HUNTER_BEASTMASTERY",
             rating = 767,
             rank = 803,
             wins = 8,
@@ -11549,7 +12159,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["captnmurphy-bleedinghollow"] = {
             displayName = "Captnmurphy-bleeding-hollow",
-            specKey = "",
+            specKey = "MONK_WINDWALKER",
             rating = 1612,
             rank = 69,
             wins = 20,
@@ -11558,7 +12168,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["carebéar-bleedinghollow"] = {
             displayName = "Carebéar-bleeding-hollow",
-            specKey = "",
+            specKey = "DRUID_RESTORATION",
             rating = 1149,
             rank = 308,
             wins = 12,
@@ -11567,7 +12177,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["catfromfarm-tichondrius"] = {
             displayName = "Catfromfarm-tichondrius",
-            specKey = "",
+            specKey = "DRUID_RESTORATION",
             rating = 960,
             rank = 417,
             wins = 10,
@@ -11576,7 +12186,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["catmorph-moonguard"] = {
             displayName = "Catmorph-moon-guard",
-            specKey = "",
+            specKey = "MAGE_FROST",
             rating = 1612,
             rank = 69,
             wins = 22,
@@ -11594,7 +12204,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["ccxx-tichondrius"] = {
             displayName = "Ccxx-tichondrius",
-            specKey = "",
+            specKey = "WARLOCK_DEMONOLOGY",
             rating = 1582,
             rank = 105,
             wins = 18,
@@ -11603,7 +12213,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["cesah-tichondrius"] = {
             displayName = "Cesah-tichondrius",
-            specKey = "",
+            specKey = "PALADIN_RETRIBUTION",
             rating = 862,
             rank = 657,
             wins = 9,
@@ -11630,7 +12240,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["chariakin-tichondrius"] = {
             displayName = "Chariakin-tichondrius",
-            specKey = "",
+            specKey = "ROGUE_ASSASSINATION",
             rating = 768,
             rank = 677,
             wins = 8,
@@ -11639,7 +12249,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["charlieshiv-tichondrius"] = {
             displayName = "Charlieshiv-tichondrius",
-            specKey = "",
+            specKey = "ROGUE_OUTLAW",
             rating = 1054,
             rank = 386,
             wins = 11,
@@ -11648,7 +12258,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["chatahoochee-kelthuzad"] = {
             displayName = "Chatahoochee-kelthuzad",
-            specKey = "",
+            specKey = "SHAMAN_RESTORATION",
             rating = 672,
             rank = 857,
             wins = 7,
@@ -11657,7 +12267,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["chazdisc-drakthul"] = {
             displayName = "Chazdisc-drakthul",
-            specKey = "",
+            specKey = "PRIEST_HOLY",
             rating = 1518,
             rank = 156,
             wins = 16,
@@ -11666,7 +12276,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["chillgames-tichondrius"] = {
             displayName = "Chillgames-tichondrius",
-            specKey = "",
+            specKey = "ROGUE_ASSASSINATION",
             rating = 768,
             rank = 677,
             wins = 8,
@@ -11684,7 +12294,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["chiropr-illidan"] = {
             displayName = "Chiropr-illidan",
-            specKey = "",
+            specKey = "PRIEST_DISCIPLINE",
             rating = 767,
             rank = 803,
             wins = 8,
@@ -11693,7 +12303,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["chocopaládin-tichondrius"] = {
             displayName = "Chocopaládin-tichondrius",
-            specKey = "",
+            specKey = "PALADIN_HOLY",
             rating = 1245,
             rank = 252,
             wins = 13,
@@ -11702,7 +12312,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["chompsbb-illidan"] = {
             displayName = "Chompsbb-illidan",
-            specKey = "",
+            specKey = "DRUID_BALANCE",
             rating = 672,
             rank = 857,
             wins = 7,
@@ -11711,7 +12321,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["chongdruid-illidan"] = {
             displayName = "Chongdruid-illidan",
-            specKey = "",
+            specKey = "DRUID_RESTORATION",
             rating = 1630,
             rank = 60,
             wins = 21,
@@ -11720,7 +12330,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["christopher-arthas"] = {
             displayName = "Christopher-arthas",
-            specKey = "",
+            specKey = "ROGUE_SUBTLETY",
             rating = 959,
             rank = 469,
             wins = 10,
@@ -11729,7 +12339,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["chyme-illidan"] = {
             displayName = "Chyme-illidan",
-            specKey = "",
+            specKey = "DEATHKNIGHT_UNHOLY",
             rating = 672,
             rank = 857,
             wins = 7,
@@ -11738,7 +12348,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["chópstícks-area52"] = {
             displayName = "Chópstícks-area-52",
-            specKey = "",
+            specKey = "MONK_WINDWALKER",
             rating = 960,
             rank = 417,
             wins = 10,
@@ -11747,7 +12357,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["clichedru-emeralddream"] = {
             displayName = "Clichedru-emerald-dream",
-            specKey = "",
+            specKey = "DRUID_RESTORATION",
             rating = 960,
             rank = 417,
             wins = 10,
@@ -11756,7 +12366,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["click-tichondrius"] = {
             displayName = "Click-tichondrius",
-            specKey = "",
+            specKey = "DRUID_RESTORATION",
             rating = 1690,
             rank = 37,
             wins = 25,
@@ -11783,7 +12393,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["cloudzww-tichondrius"] = {
             displayName = "Cloudzww-tichondrius",
-            specKey = "",
+            specKey = "MONK_WINDWALKER",
             rating = 672,
             rank = 857,
             wins = 7,
@@ -11792,7 +12402,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["cluckuhunt-tichondrius"] = {
             displayName = "Cluckuhunt-tichondrius",
-            specKey = "",
+            specKey = "HUNTER_BEASTMASTERY",
             rating = 767,
             rank = 803,
             wins = 8,
@@ -11801,7 +12411,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["cntbefuqwit-tichondrius"] = {
             displayName = "Cntbefuqwit-tichondrius",
-            specKey = "",
+            specKey = "HUNTER_BEASTMASTERY",
             rating = 958,
             rank = 502,
             wins = 10,
@@ -11828,7 +12438,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["comicsalt-tichondrius"] = {
             displayName = "Comicsalt-tichondrius",
-            specKey = "",
+            specKey = "PRIEST_SHADOW",
             rating = 1549,
             rank = 131,
             wins = 17,
@@ -11837,7 +12447,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["commodore-dalaran"] = {
             displayName = "Commodore-dalaran",
-            specKey = "",
+            specKey = "ROGUE_SUBTLETY",
             rating = 767,
             rank = 803,
             wins = 8,
@@ -11846,7 +12456,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["conjecture-moonguard"] = {
             displayName = "Conjecture-moon-guard",
-            specKey = "",
+            specKey = "ROGUE_ASSASSINATION",
             rating = 767,
             rank = 803,
             wins = 8,
@@ -11855,7 +12465,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["coracuck-barthilas"] = {
             displayName = "Coracuck-barthilas",
-            specKey = "",
+            specKey = "DEATHKNIGHT_UNHOLY",
             rating = 1566,
             rank = 119,
             wins = 18,
@@ -11864,7 +12474,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["corawing-proudmoore"] = {
             displayName = "Corawing-proudmoore",
-            specKey = "",
+            specKey = "EVOKER_AUGMENTATION",
             rating = 1607,
             rank = 77,
             wins = 20,
@@ -11873,7 +12483,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["couthdead-tichondrius"] = {
             displayName = "Couthdead-tichondrius",
-            specKey = "",
+            specKey = "PRIEST_DISCIPLINE",
             rating = 1613,
             rank = 65,
             wins = 20,
@@ -11891,7 +12501,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["cowcowoh-tichondrius"] = {
             displayName = "Cowcowoh-tichondrius",
-            specKey = "",
+            specKey = "WARRIOR_ARMS",
             rating = 764,
             rank = 851,
             wins = 8,
@@ -11900,7 +12510,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["crazybood-ragnaros"] = {
             displayName = "Crazybood-ragnaros",
-            specKey = "",
+            specKey = "MAGE_FIRE",
             rating = 768,
             rank = 677,
             wins = 8,
@@ -11918,7 +12528,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["crazywoodowl-tichondrius"] = {
             displayName = "Crazywoodowl-tichondrius",
-            specKey = "",
+            specKey = "DRUID_RESTORATION",
             rating = 864,
             rank = 543,
             wins = 9,
@@ -11945,7 +12555,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["criticize-tichondrius"] = {
             displayName = "Criticize-tichondrius",
-            specKey = "",
+            specKey = "ROGUE_ASSASSINATION",
             rating = 959,
             rank = 469,
             wins = 10,
@@ -11963,7 +12573,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["csun-thrall"] = {
             displayName = "Csun-thrall",
-            specKey = "",
+            specKey = "SHAMAN_RESTORATION",
             rating = 1392,
             rank = 198,
             wins = 16,
@@ -11990,7 +12600,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["cuzxo-barthilas"] = {
             displayName = "Cuzxo-barthilas",
-            specKey = "",
+            specKey = "WARLOCK_AFFLICTION",
             rating = 1327,
             rank = 229,
             wins = 14,
@@ -11999,7 +12609,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["cybermooke-zuljin"] = {
             displayName = "Cybermooke-zuljin",
-            specKey = "",
+            specKey = "WARLOCK_DEMONOLOGY",
             rating = 959,
             rank = 469,
             wins = 10,
@@ -12008,7 +12618,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["cyclone-darkspear"] = {
             displayName = "Cyclone-darkspear",
-            specKey = "",
+            specKey = "DRUID_BALANCE",
             rating = 864,
             rank = 543,
             wins = 9,
@@ -12026,7 +12636,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["cyst-thrall"] = {
             displayName = "Cyst-thrall",
-            specKey = "",
+            specKey = "PRIEST_SHADOW",
             rating = 859,
             rank = 675,
             wins = 9,
@@ -12035,7 +12645,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["czer-tichondrius"] = {
             displayName = "Czer-tichondrius",
-            specKey = "",
+            specKey = "PALADIN_RETRIBUTION",
             rating = 767,
             rank = 803,
             wins = 8,
@@ -12053,7 +12663,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["cùrlyfry-darkspear"] = {
             displayName = "Cùrlyfry-darkspear",
-            specKey = "",
+            specKey = "PALADIN_RETRIBUTION",
             rating = 1148,
             rank = 321,
             wins = 12,
@@ -12071,7 +12681,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["daddydomchav-stormrage"] = {
             displayName = "Daddydomchav-stormrage",
-            specKey = "",
+            specKey = "WARRIOR_ARMS",
             rating = 863,
             rank = 637,
             wins = 9,
@@ -12089,7 +12699,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["dajuguan-tichondrius"] = {
             displayName = "Dajuguan-tichondrius",
-            specKey = "",
+            specKey = "PRIEST_HOLY",
             rating = 768,
             rank = 677,
             wins = 8,
@@ -12098,7 +12708,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["dakarblood-kelthuzad"] = {
             displayName = "Dakarblood-kelthuzad",
-            specKey = "",
+            specKey = "WARRIOR_ARMS",
             rating = 1342,
             rank = 205,
             wins = 14,
@@ -12116,7 +12726,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["daoc-illidan"] = {
             displayName = "Daoc-illidan",
-            specKey = "",
+            specKey = "PRIEST_HOLY",
             rating = 863,
             rank = 637,
             wins = 9,
@@ -12125,7 +12735,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["darkduke-tichondrius"] = {
             displayName = "Darkduke-tichondrius",
-            specKey = "",
+            specKey = "WARRIOR_FURY",
             rating = 1149,
             rank = 308,
             wins = 12,
@@ -12152,7 +12762,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["dashikì-tichondrius"] = {
             displayName = "Dashikì-tichondrius",
-            specKey = "",
+            specKey = "ROGUE_ASSASSINATION",
             rating = 1149,
             rank = 308,
             wins = 12,
@@ -12161,7 +12771,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["datsyoass-darkspear"] = {
             displayName = "Datsyoass-darkspear",
-            specKey = "",
+            specKey = "WARLOCK_AFFLICTION",
             rating = 767,
             rank = 803,
             wins = 8,
@@ -12179,7 +12789,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["db-darkspear"] = {
             displayName = "Db-darkspear",
-            specKey = "",
+            specKey = "MAGE_FIRE",
             rating = 672,
             rank = 857,
             wins = 7,
@@ -12197,7 +12807,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["ddingshao-tichondrius"] = {
             displayName = "Ddingshao-tichondrius",
-            specKey = "",
+            specKey = "SHAMAN_ELEMENTAL",
             rating = 768,
             rank = 677,
             wins = 8,
@@ -12206,7 +12816,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["ddoongmonk-tichondrius"] = {
             displayName = "Ddoongmonk-tichondrius",
-            specKey = "",
+            specKey = "MONK_WINDWALKER",
             rating = 1052,
             rank = 407,
             wins = 11,
@@ -12215,7 +12825,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["deathblind-kelthuzad"] = {
             displayName = "Deathblind-kelthuzad",
-            specKey = "",
+            specKey = "PRIEST_DISCIPLINE",
             rating = 768,
             rank = 677,
             wins = 8,
@@ -12224,7 +12834,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["deathofhope-tichondrius"] = {
             displayName = "Deathofhope-tichondrius",
-            specKey = "",
+            specKey = "PRIEST_HOLY",
             rating = 1435,
             rank = 174,
             wins = 15,
@@ -12242,7 +12852,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["dekgames-zuljin"] = {
             displayName = "Dekgames-zuljin",
-            specKey = "",
+            specKey = "PRIEST_HOLY",
             rating = 864,
             rank = 543,
             wins = 9,
@@ -12260,7 +12870,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["dematic-illidan"] = {
             displayName = "Dematic-illidan",
-            specKey = "",
+            specKey = "WARLOCK_DEMONOLOGY",
             rating = 768,
             rank = 677,
             wins = 8,
@@ -12278,7 +12888,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["demow-area52"] = {
             displayName = "Demow-area-52",
-            specKey = "",
+            specKey = "WARLOCK_AFFLICTION",
             rating = 864,
             rank = 543,
             wins = 9,
@@ -12287,7 +12897,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["deniah-kelthuzad"] = {
             displayName = "Deniah-kelthuzad",
-            specKey = "",
+            specKey = "SHAMAN_RESTORATION",
             rating = 960,
             rank = 417,
             wins = 10,
@@ -12296,7 +12906,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["dhbrain-zuljin"] = {
             displayName = "Dhbrain-zuljin",
-            specKey = "",
+            specKey = "DEMONHUNTER_HAVOC",
             rating = 672,
             rank = 857,
             wins = 7,
@@ -12314,7 +12924,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["diamondruntz-tichondrius"] = {
             displayName = "Diamondruntz-tichondrius",
-            specKey = "",
+            specKey = "HUNTER_MARKSMANSHIP",
             rating = 1406,
             rank = 197,
             wins = 15,
@@ -12332,7 +12942,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["diskoh-malganis"] = {
             displayName = "Diskoh-malganis",
-            specKey = "",
+            specKey = "ROGUE_ASSASSINATION",
             rating = 959,
             rank = 469,
             wins = 10,
@@ -12341,7 +12951,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["dissilient-hyjal"] = {
             displayName = "Dissilient-hyjal",
-            specKey = "",
+            specKey = "WARLOCK_AFFLICTION",
             rating = 1324,
             rank = 231,
             wins = 14,
@@ -12350,7 +12960,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["diuneihunter-tichondrius"] = {
             displayName = "Diuneihunter-tichondrius",
-            specKey = "",
+            specKey = "HUNTER_BEASTMASTERY",
             rating = 958,
             rank = 502,
             wins = 10,
@@ -12368,7 +12978,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["djthor-stormrage"] = {
             displayName = "Djthor-stormrage",
-            specKey = "",
+            specKey = "SHAMAN_ELEMENTAL",
             rating = 1514,
             rank = 159,
             wins = 16,
@@ -12377,7 +12987,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["dkwinter-illidan"] = {
             displayName = "Dkwinter-illidan",
-            specKey = "",
+            specKey = "DEATHKNIGHT_BLOOD",
             rating = 768,
             rank = 677,
             wins = 8,
@@ -12386,7 +12996,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["dokko-spirestone"] = {
             displayName = "Dokko-spirestone",
-            specKey = "",
+            specKey = "DEMONHUNTER_HAVOC",
             rating = 766,
             rank = 838,
             wins = 8,
@@ -12395,7 +13005,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["dolmm-tichondrius"] = {
             displayName = "Dolmm-tichondrius",
-            specKey = "",
+            specKey = "SHAMAN_RESTORATION",
             rating = 767,
             rank = 803,
             wins = 8,
@@ -12404,7 +13014,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["dominicano-quelthalas"] = {
             displayName = "Dominicano-quelthalas",
-            specKey = "",
+            specKey = "EVOKER_PRESERVATION",
             rating = 1052,
             rank = 407,
             wins = 11,
@@ -12413,7 +13023,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["doopers-kiljaeden"] = {
             displayName = "Doopers-kiljaeden",
-            specKey = "",
+            specKey = "HUNTER_BEASTMASTERY",
             rating = 1417,
             rank = 191,
             wins = 15,
@@ -12449,7 +13059,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["dornagan-illidan"] = {
             displayName = "Dornagan-illidan",
-            specKey = "",
+            specKey = "WARRIOR_ARMS",
             rating = 766,
             rank = 838,
             wins = 8,
@@ -12476,7 +13086,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["dragontrees-illidan"] = {
             displayName = "Dragontrees-illidan",
-            specKey = "",
+            specKey = "EVOKER_PRESERVATION",
             rating = 1606,
             rank = 78,
             wins = 20,
@@ -12485,7 +13095,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["dragrip-zuljin"] = {
             displayName = "Dragrip-zuljin",
-            specKey = "",
+            specKey = "DEATHKNIGHT_UNHOLY",
             rating = 960,
             rank = 417,
             wins = 10,
@@ -12494,7 +13104,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["drasen-sargeras"] = {
             displayName = "Drasen-sargeras",
-            specKey = "",
+            specKey = "HUNTER_SURVIVAL",
             rating = 1052,
             rank = 407,
             wins = 11,
@@ -12530,7 +13140,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["drizl-blackrock"] = {
             displayName = "Drizl-blackrock",
-            specKey = "",
+            specKey = "DEATHKNIGHT_UNHOLY",
             rating = 1606,
             rank = 78,
             wins = 20,
@@ -12548,7 +13158,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["droopyy-malganis"] = {
             displayName = "Droopyy-malganis",
-            specKey = "",
+            specKey = "ROGUE_SUBTLETY",
             rating = 767,
             rank = 803,
             wins = 8,
@@ -12557,7 +13167,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["drugdilla-zuljin"] = {
             displayName = "Drugdilla-zuljin",
-            specKey = "",
+            specKey = "WARRIOR_ARMS",
             rating = 1244,
             rank = 262,
             wins = 13,
@@ -12566,7 +13176,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["druzak-tichondrius"] = {
             displayName = "Druzak-tichondrius",
-            specKey = "",
+            specKey = "HUNTER_BEASTMASTERY",
             rating = 1613,
             rank = 65,
             wins = 20,
@@ -12584,7 +13194,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["duallkorejob-goldrinn"] = {
             displayName = "Duallkorejob-goldrinn",
-            specKey = "",
+            specKey = "PALADIN_HOLY",
             rating = 862,
             rank = 657,
             wins = 9,
@@ -12638,7 +13248,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["ebonlemon-stormrage"] = {
             displayName = "Ebonlemon-stormrage",
-            specKey = "",
+            specKey = "DEATHKNIGHT_UNHOLY",
             rating = 1339,
             rank = 213,
             wins = 14,
@@ -12647,7 +13257,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["edrees-kelthuzad"] = {
             displayName = "Edrees-kelthuzad",
-            specKey = "",
+            specKey = "MAGE_FROST",
             rating = 863,
             rank = 637,
             wins = 9,
@@ -12656,7 +13266,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["eklipzo-tichondrius"] = {
             displayName = "Eklipzo-tichondrius",
-            specKey = "",
+            specKey = "SHAMAN_ELEMENTAL",
             rating = 864,
             rank = 543,
             wins = 9,
@@ -12683,7 +13293,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["eli-skywall"] = {
             displayName = "Eli-skywall",
-            specKey = "",
+            specKey = "MAGE_FIRE",
             rating = 958,
             rank = 502,
             wins = 10,
@@ -12692,7 +13302,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["elinastra-tichondrius"] = {
             displayName = "Elinastra-tichondrius",
-            specKey = "",
+            specKey = "ROGUE_ASSASSINATION",
             rating = 1056,
             rank = 341,
             wins = 11,
@@ -12701,7 +13311,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["eloinflated-malganis"] = {
             displayName = "Eloinflated-malganis",
-            specKey = "",
+            specKey = "PALADIN_HOLY",
             rating = 768,
             rank = 677,
             wins = 8,
@@ -12710,7 +13320,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["elprez-tichondrius"] = {
             displayName = "Elprez-tichondrius",
-            specKey = "",
+            specKey = "PRIEST_SHADOW",
             rating = 862,
             rank = 657,
             wins = 9,
@@ -12719,7 +13329,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["elsated-illidan"] = {
             displayName = "Elsated-illidan",
-            specKey = "",
+            specKey = "PRIEST_SHADOW",
             rating = 1435,
             rank = 174,
             wins = 15,
@@ -12728,7 +13338,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["elvishragee-zuljin"] = {
             displayName = "Elvishragee-zuljin",
-            specKey = "",
+            specKey = "DRUID_BALANCE",
             rating = 1331,
             rank = 224,
             wins = 14,
@@ -12737,7 +13347,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["emdew-illidan"] = {
             displayName = "Emdew-illidan",
-            specKey = "",
+            specKey = "DRUID_RESTORATION",
             rating = 864,
             rank = 543,
             wins = 9,
@@ -12746,7 +13356,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["emjey-tichondrius"] = {
             displayName = "Emjey-tichondrius",
-            specKey = "",
+            specKey = "DRUID_RESTORATION",
             rating = 765,
             rank = 847,
             wins = 8,
@@ -12755,7 +13365,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["emotemp-chogall"] = {
             displayName = "Emotemp-chogall",
-            specKey = "",
+            specKey = "SHAMAN_ELEMENTAL",
             rating = 1146,
             rank = 331,
             wins = 12,
@@ -12764,7 +13374,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["enhalipe-tichondrius"] = {
             displayName = "Enhalipe-tichondrius",
-            specKey = "",
+            specKey = "SHAMAN_ELEMENTAL",
             rating = 864,
             rank = 543,
             wins = 9,
@@ -12773,7 +13383,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["enhance-sargeras"] = {
             displayName = "Enhance-sargeras",
-            specKey = "",
+            specKey = "SHAMAN_ENHANCEMENT",
             rating = 1244,
             rank = 262,
             wins = 13,
@@ -12791,7 +13401,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["envenumb-stormrage"] = {
             displayName = "Envenumb-stormrage",
-            specKey = "",
+            specKey = "ROGUE_ASSASSINATION",
             rating = 1584,
             rank = 104,
             wins = 20,
@@ -12800,7 +13410,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["envious-gallywix"] = {
             displayName = "Envious-gallywix",
-            specKey = "",
+            specKey = "PRIEST_DISCIPLINE",
             rating = 768,
             rank = 677,
             wins = 8,
@@ -12818,7 +13428,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["epictism-tichondrius"] = {
             displayName = "Epictism-tichondrius",
-            specKey = "",
+            specKey = "PALADIN_RETRIBUTION",
             rating = 862,
             rank = 657,
             wins = 9,
@@ -12827,7 +13437,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["epriest-lethon"] = {
             displayName = "Epriest-lethon",
-            specKey = "",
+            specKey = "PRIEST_DISCIPLINE",
             rating = 768,
             rank = 677,
             wins = 8,
@@ -12836,7 +13446,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["epícburn-illidan"] = {
             displayName = "Epícburn-illidan",
-            specKey = "",
+            specKey = "WARLOCK_DESTRUCTION",
             rating = 1239,
             rank = 281,
             wins = 13,
@@ -12845,7 +13455,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["esq-sargeras"] = {
             displayName = "Esq-sargeras",
-            specKey = "",
+            specKey = "SHAMAN_RESTORATION",
             rating = 672,
             rank = 857,
             wins = 7,
@@ -12872,7 +13482,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["etsira-moonguard"] = {
             displayName = "Etsira-moon-guard",
-            specKey = "",
+            specKey = "PRIEST_HOLY",
             rating = 864,
             rank = 543,
             wins = 9,
@@ -12881,7 +13491,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["eugordrater-tichondrius"] = {
             displayName = "Eugordrater-tichondrius",
-            specKey = "",
+            specKey = "ROGUE_ASSASSINATION",
             rating = 959,
             rank = 469,
             wins = 10,
@@ -12899,7 +13509,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["exitfee-frostmourne"] = {
             displayName = "Exitfee-frostmourne",
-            specKey = "",
+            specKey = "PRIEST_HOLY",
             rating = 1510,
             rank = 162,
             wins = 16,
@@ -12926,7 +13536,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["exus-tichondrius"] = {
             displayName = "Exus-tichondrius",
-            specKey = "",
+            specKey = "MONK_WINDWALKER",
             rating = 1613,
             rank = 65,
             wins = 21,
@@ -12935,7 +13545,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["exxeqt-tichondrius"] = {
             displayName = "Exxeqt-tichondrius",
-            specKey = "",
+            specKey = "WARRIOR_ARMS",
             rating = 1055,
             rank = 372,
             wins = 11,
@@ -12953,7 +13563,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["ezway-zuljin"] = {
             displayName = "Ezway-zuljin",
-            specKey = "",
+            specKey = "PALADIN_RETRIBUTION",
             rating = 1342,
             rank = 205,
             wins = 14,
@@ -12971,7 +13581,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["faceghost-malganis"] = {
             displayName = "Faceghost-malganis",
-            specKey = "",
+            specKey = "HUNTER_BEASTMASTERY",
             rating = 957,
             rank = 518,
             wins = 10,
@@ -12989,7 +13599,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["fadeyourcc-tichondrius"] = {
             displayName = "Fadeyourcc-tichondrius",
-            specKey = "",
+            specKey = "PRIEST_HOLY",
             rating = 1149,
             rank = 308,
             wins = 12,
@@ -12998,7 +13608,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["faithdevoted-nerzhul"] = {
             displayName = "Faithdevoted-nerzhul",
-            specKey = "",
+            specKey = "PRIEST_HOLY",
             rating = 768,
             rank = 677,
             wins = 8,
@@ -13016,7 +13626,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["fancypigeonh-sargeras"] = {
             displayName = "Fancypigeonh-sargeras",
-            specKey = "",
+            specKey = "HUNTER_BEASTMASTERY",
             rating = 960,
             rank = 417,
             wins = 10,
@@ -13025,7 +13635,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["fantasyxx-illidan"] = {
             displayName = "Fantasyxx-illidan",
-            specKey = "",
+            specKey = "PALADIN_RETRIBUTION",
             rating = 862,
             rank = 657,
             wins = 9,
@@ -13034,7 +13644,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["fathergunz-illidan"] = {
             displayName = "Fathergunz-illidan",
-            specKey = "",
+            specKey = "PRIEST_DISCIPLINE",
             rating = 1340,
             rank = 211,
             wins = 14,
@@ -13061,7 +13671,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["fcklove-tichondrius"] = {
             displayName = "Fcklove-tichondrius",
-            specKey = "",
+            specKey = "PRIEST_DISCIPLINE",
             rating = 1056,
             rank = 341,
             wins = 11,
@@ -13079,7 +13689,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["fearofgodd-sargeras"] = {
             displayName = "Fearofgodd-sargeras",
-            specKey = "",
+            specKey = "ROGUE_ASSASSINATION",
             rating = 960,
             rank = 417,
             wins = 10,
@@ -13088,7 +13698,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["fearwangwang-illidan"] = {
             displayName = "Fearwangwang-illidan",
-            specKey = "",
+            specKey = "PALADIN_RETRIBUTION",
             rating = 1150,
             rank = 301,
             wins = 12,
@@ -13124,7 +13734,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["fiend-gnomeregan"] = {
             displayName = "Fiend-gnomeregan",
-            specKey = "",
+            specKey = "WARRIOR_ARMS",
             rating = 960,
             rank = 417,
             wins = 10,
@@ -13133,7 +13743,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["fifthpriest-illidan"] = {
             displayName = "Fifthpriest-illidan",
-            specKey = "",
+            specKey = "PRIEST_HOLY",
             rating = 959,
             rank = 469,
             wins = 10,
@@ -13142,7 +13752,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["finallyop-stormrage"] = {
             displayName = "Finallyop-stormrage",
-            specKey = "",
+            specKey = "PRIEST_HOLY",
             rating = 672,
             rank = 857,
             wins = 7,
@@ -13151,7 +13761,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["fitschi-zuljin"] = {
             displayName = "Fitschi-zuljin",
-            specKey = "",
+            specKey = "MONK_MISTWEAVER",
             rating = 672,
             rank = 857,
             wins = 7,
@@ -13169,7 +13779,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["flapnclap-moonguard"] = {
             displayName = "Flapnclap-moon-guard",
-            specKey = "",
+            specKey = "PRIEST_SHADOW",
             rating = 672,
             rank = 857,
             wins = 7,
@@ -13178,7 +13788,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["floorsndoors-darkspear"] = {
             displayName = "Floorsndoors-darkspear",
-            specKey = "",
+            specKey = "PRIEST_HOLY",
             rating = 864,
             rank = 543,
             wins = 9,
@@ -13187,7 +13797,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["floppcity-bleedinghollow"] = {
             displayName = "Floppcity-bleeding-hollow",
-            specKey = "",
+            specKey = "MAGE_ARCANE",
             rating = 1329,
             rank = 225,
             wins = 14,
@@ -13196,7 +13806,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["flowstate-mugthol"] = {
             displayName = "Flowstate-mugthol",
-            specKey = "",
+            specKey = "ROGUE_ASSASSINATION",
             rating = 1530,
             rank = 149,
             wins = 17,
@@ -13214,7 +13824,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["flyingknee-barthilas"] = {
             displayName = "Flyingknee-barthilas",
-            specKey = "",
+            specKey = "PALADIN_HOLY",
             rating = 764,
             rank = 851,
             wins = 8,
@@ -13223,7 +13833,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["fmp-burninglegion"] = {
             displayName = "Fmp-burning-legion",
-            specKey = "",
+            specKey = "PRIEST_HOLY",
             rating = 1566,
             rank = 119,
             wins = 18,
@@ -13232,7 +13842,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["fmp-scilla"] = {
             displayName = "Fmp-scilla",
-            specKey = "",
+            specKey = "MAGE_FIRE",
             rating = 959,
             rank = 469,
             wins = 10,
@@ -13241,7 +13851,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["fonyvoid-area52"] = {
             displayName = "Fonyvoid-area-52",
-            specKey = "",
+            specKey = "PRIEST_HOLY",
             rating = 1617,
             rank = 63,
             wins = 21,
@@ -13250,7 +13860,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["forecastx-tichondrius"] = {
             displayName = "Forecastx-tichondrius",
-            specKey = "",
+            specKey = "MAGE_FROST",
             rating = 1647,
             rank = 54,
             wins = 20,
@@ -13277,7 +13887,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["frequentlee-illidan"] = {
             displayName = "Frequentlee-illidan",
-            specKey = "",
+            specKey = "EVOKER_DEVASTATION",
             rating = 1152,
             rank = 289,
             wins = 12,
@@ -13286,7 +13896,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["fro-terenas"] = {
             displayName = "Fro-terenas",
-            specKey = "",
+            specKey = "MONK_WINDWALKER",
             rating = 1586,
             rank = 102,
             wins = 21,
@@ -13331,7 +13941,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["furious-tichondrius"] = {
             displayName = "Furious-tichondrius",
-            specKey = "",
+            specKey = "DEMONHUNTER_DEVOURER",
             rating = 1138,
             rank = 340,
             wins = 12,
@@ -13340,7 +13950,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["fyrar-doomhammer"] = {
             displayName = "Fyrar-doomhammer",
-            specKey = "",
+            specKey = "ROGUE_ASSASSINATION",
             rating = 768,
             rank = 677,
             wins = 8,
@@ -13349,7 +13959,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["gaberr-tichondrius"] = {
             displayName = "Gaberr-tichondrius",
-            specKey = "",
+            specKey = "ROGUE_SUBTLETY",
             rating = 863,
             rank = 637,
             wins = 9,
@@ -13385,7 +13995,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["galaxyeraser-illidan"] = {
             displayName = "Galaxyeraser-illidan",
-            specKey = "",
+            specKey = "WARRIOR_ARMS",
             rating = 1055,
             rank = 372,
             wins = 11,
@@ -13394,7 +14004,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["galgy-illidan"] = {
             displayName = "Galgy-illidan",
-            specKey = "",
+            specKey = "HUNTER_MARKSMANSHIP",
             rating = 957,
             rank = 518,
             wins = 10,
@@ -13403,7 +14013,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["garacant-barthilas"] = {
             displayName = "Garacant-barthilas",
-            specKey = "",
+            specKey = "DEATHKNIGHT_UNHOLY",
             rating = 862,
             rank = 657,
             wins = 9,
@@ -13430,7 +14040,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["gdeezy-sargeras"] = {
             displayName = "Gdeezy-sargeras",
-            specKey = "",
+            specKey = "PALADIN_HOLY",
             rating = 1407,
             rank = 196,
             wins = 15,
@@ -13448,7 +14058,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["geppetto-illidan"] = {
             displayName = "Geppetto-illidan",
-            specKey = "",
+            specKey = "WARRIOR_ARMS",
             rating = 766,
             rank = 838,
             wins = 8,
@@ -13457,7 +14067,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["ggeegeegeegg-tichondrius"] = {
             displayName = "Ggeegeegeegg-tichondrius",
-            specKey = "WARLOCK_DEMONOLOGY",
+            specKey = "",
             rating = 768,
             rank = 677,
             wins = 8,
@@ -13466,7 +14076,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["ggtrappedez-tichondrius"] = {
             displayName = "Ggtrappedez-tichondrius",
-            specKey = "",
+            specKey = "HUNTER_BEASTMASTERY",
             rating = 1476,
             rank = 166,
             wins = 16,
@@ -13493,7 +14103,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["gimmedome-zuljin"] = {
             displayName = "Gimmedome-zuljin",
-            specKey = "",
+            specKey = "PRIEST_DISCIPLINE",
             rating = 1340,
             rank = 211,
             wins = 14,
@@ -13502,7 +14112,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["gisami-tichondrius"] = {
             displayName = "Gisami-tichondrius",
-            specKey = "",
+            specKey = "DEATHKNIGHT_UNHOLY",
             rating = 672,
             rank = 857,
             wins = 7,
@@ -13511,7 +14121,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["givemercy-tichondrius"] = {
             displayName = "Givemercy-tichondrius",
-            specKey = "",
+            specKey = "PRIEST_SHADOW",
             rating = 767,
             rank = 803,
             wins = 8,
@@ -13520,7 +14130,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["gnossie-tichondrius"] = {
             displayName = "Gnossie-tichondrius",
-            specKey = "",
+            specKey = "SHAMAN_RESTORATION",
             rating = 672,
             rank = 857,
             wins = 7,
@@ -13547,7 +14157,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["goodyear-illidan"] = {
             displayName = "Goodyear-illidan",
-            specKey = "",
+            specKey = "HUNTER_BEASTMASTERY",
             rating = 1322,
             rank = 233,
             wins = 14,
@@ -13556,7 +14166,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["goostoe-area52"] = {
             displayName = "Goostoe-area-52",
-            specKey = "",
+            specKey = "PRIEST_DISCIPLINE",
             rating = 957,
             rank = 518,
             wins = 10,
@@ -13565,7 +14175,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["gorar-ravenholdt"] = {
             displayName = "Gorar-ravenholdt",
-            specKey = "",
+            specKey = "WARRIOR_ARMS",
             rating = 767,
             rank = 803,
             wins = 8,
@@ -13574,7 +14184,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["gouchigo-ursin"] = {
             displayName = "Gouchigo-ursin",
-            specKey = "",
+            specKey = "MAGE_FROST",
             rating = 863,
             rank = 637,
             wins = 9,
@@ -13583,7 +14193,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["grabmydballs-tichondrius"] = {
             displayName = "Grabmydballs-tichondrius",
-            specKey = "",
+            specKey = "PRIEST_HOLY",
             rating = 864,
             rank = 543,
             wins = 9,
@@ -13610,7 +14220,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["grenadeslol-destromath"] = {
             displayName = "Grenadeslol-destromath",
-            specKey = "",
+            specKey = "ROGUE_OUTLAW",
             rating = 1437,
             rank = 171,
             wins = 15,
@@ -13619,7 +14229,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["grikoo-barthilas"] = {
             displayName = "Grikoo-barthilas",
-            specKey = "",
+            specKey = "HUNTER_BEASTMASTERY",
             rating = 768,
             rank = 677,
             wins = 8,
@@ -13628,7 +14238,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["gripdeez-area52"] = {
             displayName = "Gripdeez-area-52",
-            specKey = "",
+            specKey = "DEATHKNIGHT_FROST",
             rating = 957,
             rank = 518,
             wins = 10,
@@ -13646,7 +14256,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["gripstunwin-drakkari"] = {
             displayName = "Gripstunwin-drakkari",
-            specKey = "",
+            specKey = "DEATHKNIGHT_BLOOD",
             rating = 958,
             rank = 502,
             wins = 10,
@@ -13655,7 +14265,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["guccisaurusx-sargeras"] = {
             displayName = "Guccisaurusx-sargeras",
-            specKey = "",
+            specKey = "WARRIOR_ARMS",
             rating = 1659,
             rank = 46,
             wins = 24,
@@ -13664,7 +14274,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["guchcheese-stormrage"] = {
             displayName = "Guchcheese-stormrage",
-            specKey = "",
+            specKey = "PRIEST_DISCIPLINE",
             rating = 672,
             rank = 857,
             wins = 7,
@@ -13682,7 +14292,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["guidedarrow-tichondrius"] = {
             displayName = "Guidedarrow-tichondrius",
-            specKey = "",
+            specKey = "HUNTER_BEASTMASTERY",
             rating = 767,
             rank = 803,
             wins = 8,
@@ -13691,7 +14301,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["gummers-zuljin"] = {
             displayName = "Gummers-zuljin",
-            specKey = "",
+            specKey = "ROGUE_ASSASSINATION",
             rating = 1148,
             rank = 321,
             wins = 12,
@@ -13709,7 +14319,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["gunwalk-tichondrius"] = {
             displayName = "Gunwalk-tichondrius",
-            specKey = "",
+            specKey = "HUNTER_MARKSMANSHIP",
             rating = 1335,
             rank = 216,
             wins = 14,
@@ -13718,7 +14328,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["gus-staghelm"] = {
             displayName = "Gus-staghelm",
-            specKey = "",
+            specKey = "MONK_MISTWEAVER",
             rating = 1551,
             rank = 129,
             wins = 17,
@@ -13727,7 +14337,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["gutrot-shadowsong"] = {
             displayName = "Gutrot-shadowsong",
-            specKey = "",
+            specKey = "MONK_MISTWEAVER",
             rating = 862,
             rank = 657,
             wins = 9,
@@ -13754,7 +14364,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["habibig-tichondrius"] = {
             displayName = "Habibig-tichondrius",
-            specKey = "",
+            specKey = "PRIEST_DISCIPLINE",
             rating = 1147,
             rank = 325,
             wins = 12,
@@ -13763,7 +14373,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["haiarisucks-dalaran"] = {
             displayName = "Haiarisucks-dalaran",
-            specKey = "",
+            specKey = "HUNTER_BEASTMASTERY",
             rating = 1239,
             rank = 281,
             wins = 13,
@@ -13772,7 +14382,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["halcyonz-tichondrius"] = {
             displayName = "Halcyonz-tichondrius",
-            specKey = "",
+            specKey = "DRUID_GUARDIAN",
             rating = 768,
             rank = 677,
             wins = 8,
@@ -13790,7 +14400,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["hampr-tichondrius"] = {
             displayName = "Hampr-tichondrius",
-            specKey = "",
+            specKey = "PRIEST_DISCIPLINE",
             rating = 862,
             rank = 657,
             wins = 9,
@@ -13799,7 +14409,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["hamstip-sargeras"] = {
             displayName = "Hamstip-sargeras",
-            specKey = "",
+            specKey = "PRIEST_HOLY",
             rating = 960,
             rank = 417,
             wins = 10,
@@ -13817,7 +14427,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["healmeedaddy-zuljin"] = {
             displayName = "Healmeedaddy-zuljin",
-            specKey = "",
+            specKey = "MAGE_FIRE",
             rating = 864,
             rank = 543,
             wins = 9,
@@ -13853,7 +14463,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["hewuahua-tichondrius"] = {
             displayName = "Hewuahua-tichondrius",
-            specKey = "",
+            specKey = "WARRIOR_ARMS",
             rating = 959,
             rank = 469,
             wins = 10,
@@ -13862,7 +14472,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["heywhofarted-tichondrius"] = {
             displayName = "Heywhofarted-tichondrius",
-            specKey = "",
+            specKey = "WARLOCK_DESTRUCTION",
             rating = 1054,
             rank = 386,
             wins = 11,
@@ -13871,7 +14481,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["heål-tichondrius"] = {
             displayName = "Heål-tichondrius",
-            specKey = "",
+            specKey = "PRIEST_HOLY",
             rating = 960,
             rank = 417,
             wins = 10,
@@ -13880,7 +14490,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["him-jubeithos"] = {
             displayName = "Him-jubeithos",
-            specKey = "",
+            specKey = "PALADIN_HOLY",
             rating = 864,
             rank = 543,
             wins = 9,
@@ -13889,7 +14499,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["himcrab-tichondrius"] = {
             displayName = "Himcrab-tichondrius",
-            specKey = "",
+            specKey = "ROGUE_ASSASSINATION",
             rating = 1238,
             rank = 284,
             wins = 13,
@@ -13916,7 +14526,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["holybyte-moonguard"] = {
             displayName = "Holybyte-moon-guard",
-            specKey = "",
+            specKey = "PALADIN_HOLY",
             rating = 1535,
             rank = 145,
             wins = 17,
@@ -13925,7 +14535,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["holyjerrzi-illidan"] = {
             displayName = "Holyjerrzi-illidan",
-            specKey = "",
+            specKey = "PALADIN_HOLY",
             rating = 1151,
             rank = 298,
             wins = 12,
@@ -13934,7 +14544,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["holywordhug-tichondrius"] = {
             displayName = "Holywordhug-tichondrius",
-            specKey = "",
+            specKey = "PRIEST_HOLY",
             rating = 959,
             rank = 469,
             wins = 10,
@@ -13943,7 +14553,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["honzø-illidan"] = {
             displayName = "Honzø-illidan",
-            specKey = "",
+            specKey = "PALADIN_HOLY",
             rating = 863,
             rank = 637,
             wins = 9,
@@ -13952,7 +14562,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["howtodestro-sargeras"] = {
             displayName = "Howtodestro-sargeras",
-            specKey = "",
+            specKey = "WARLOCK_AFFLICTION",
             rating = 1055,
             rank = 372,
             wins = 11,
@@ -13961,7 +14571,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["hozzar-barthilas"] = {
             displayName = "Hozzar-barthilas",
-            specKey = "",
+            specKey = "DEATHKNIGHT_UNHOLY",
             rating = 864,
             rank = 543,
             wins = 9,
@@ -13970,7 +14580,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["htm-bleedinghollow"] = {
             displayName = "Htm-bleeding-hollow",
-            specKey = "",
+            specKey = "DEMONHUNTER_HAVOC",
             rating = 956,
             rank = 533,
             wins = 10,
@@ -13988,7 +14598,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["hunterlist-frostmourne"] = {
             displayName = "Hunterlist-frostmourne",
-            specKey = "",
+            specKey = "HUNTER_BEASTMASTERY",
             rating = 960,
             rank = 417,
             wins = 10,
@@ -13997,7 +14607,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["hunterpinga-illidan"] = {
             displayName = "Hunterpinga-illidan",
-            specKey = "",
+            specKey = "HUNTER_BEASTMASTERY",
             rating = 768,
             rank = 677,
             wins = 8,
@@ -14006,7 +14616,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["hushahu-illidan"] = {
             displayName = "Hushahu-illidan",
-            specKey = "",
+            specKey = "SHAMAN_RESTORATION",
             rating = 1649,
             rank = 51,
             wins = 24,
@@ -14015,7 +14625,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["hydroponicz-tichondrius"] = {
             displayName = "Hydroponicz-tichondrius",
-            specKey = "",
+            specKey = "PALADIN_RETRIBUTION",
             rating = 1324,
             rank = 231,
             wins = 14,
@@ -14051,7 +14661,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["hzïra-ragnaros"] = {
             displayName = "Hzïra-ragnaros",
-            specKey = "",
+            specKey = "WARLOCK_DEMONOLOGY",
             rating = 864,
             rank = 543,
             wins = 9,
@@ -14060,7 +14670,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["hølyg-ragnaros"] = {
             displayName = "Hølyg-ragnaros",
-            specKey = "",
+            specKey = "PRIEST_HOLY",
             rating = 864,
             rank = 543,
             wins = 9,
@@ -14069,7 +14679,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["húfflepuff-illidan"] = {
             displayName = "Húfflepuff-illidan",
-            specKey = "",
+            specKey = "MAGE_FROST",
             rating = 1055,
             rank = 372,
             wins = 11,
@@ -14078,7 +14688,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["iaptops-illidan"] = {
             displayName = "Iaptops-illidan",
-            specKey = "",
+            specKey = "WARLOCK_DESTRUCTION",
             rating = 864,
             rank = 543,
             wins = 9,
@@ -14087,7 +14697,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["iaptops-tichondrius"] = {
             displayName = "Iaptops-tichondrius",
-            specKey = "",
+            specKey = "SHAMAN_ELEMENTAL",
             rating = 1421,
             rank = 188,
             wins = 15,
@@ -14096,7 +14706,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["icantcast-baelgun"] = {
             displayName = "Icantcast-baelgun",
-            specKey = "",
+            specKey = "MAGE_FROST",
             rating = 1051,
             rank = 410,
             wins = 11,
@@ -14105,7 +14715,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["iegoland-sargeras"] = {
             displayName = "Iegoland-sargeras",
-            specKey = "PRIEST_HOLY",
+            specKey = "",
             rating = 1056,
             rank = 341,
             wins = 11,
@@ -14114,7 +14724,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["iggyjones-drakthul"] = {
             displayName = "Iggyjones-drakthul",
-            specKey = "",
+            specKey = "ROGUE_ASSASSINATION",
             rating = 960,
             rank = 417,
             wins = 10,
@@ -14123,7 +14733,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["iintha-gurubashi"] = {
             displayName = "Iintha-gurubashi",
-            specKey = "",
+            specKey = "PRIEST_DISCIPLINE",
             rating = 1237,
             rank = 286,
             wins = 13,
@@ -14132,7 +14742,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["iissham-darkspear"] = {
             displayName = "Iissham-darkspear",
-            specKey = "",
+            specKey = "SHAMAN_ELEMENTAL",
             rating = 672,
             rank = 857,
             wins = 7,
@@ -14141,7 +14751,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["ilidariban-stormrage"] = {
             displayName = "Ilidariban-stormrage",
-            specKey = "",
+            specKey = "HUNTER_MARKSMANSHIP",
             rating = 672,
             rank = 857,
             wins = 7,
@@ -14150,7 +14760,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["illiticious-tichondrius"] = {
             displayName = "Illiticious-tichondrius",
-            specKey = "",
+            specKey = "PRIEST_DISCIPLINE",
             rating = 960,
             rank = 417,
             wins = 10,
@@ -14159,7 +14769,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["illitot-blackrock"] = {
             displayName = "Illitot-blackrock",
-            specKey = "",
+            specKey = "DEMONHUNTER_HAVOC",
             rating = 863,
             rank = 637,
             wins = 9,
@@ -14168,7 +14778,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["ilovecaushus-tichondrius"] = {
             displayName = "Ilovecaushus-tichondrius",
-            specKey = "",
+            specKey = "MAGE_FIRE",
             rating = 1147,
             rank = 325,
             wins = 12,
@@ -14177,7 +14787,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["imcockroach-terenas"] = {
             displayName = "Imcockroach-terenas",
-            specKey = "",
+            specKey = "WARRIOR_ARMS",
             rating = 1143,
             rank = 336,
             wins = 12,
@@ -14186,7 +14796,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["imhung-tichondrius"] = {
             displayName = "Imhung-tichondrius",
-            specKey = "",
+            specKey = "HUNTER_MARKSMANSHIP",
             rating = 768,
             rank = 677,
             wins = 8,
@@ -14195,7 +14805,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["immaculate-frostmourne"] = {
             displayName = "Immaculate-frostmourne",
-            specKey = "",
+            specKey = "PALADIN_RETRIBUTION",
             rating = 767,
             rank = 803,
             wins = 8,
@@ -14204,7 +14814,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["immadkx-area52"] = {
             displayName = "Immadkx-area-52",
-            specKey = "",
+            specKey = "DEATHKNIGHT_UNHOLY",
             rating = 1412,
             rank = 194,
             wins = 15,
@@ -14258,7 +14868,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["ireallylikeu-tichondrius"] = {
             displayName = "Ireallylikeu-tichondrius",
-            specKey = "",
+            specKey = "WARRIOR_ARMS",
             rating = 1056,
             rank = 341,
             wins = 11,
@@ -14267,7 +14877,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["irlbuild-thrall"] = {
             displayName = "Irlbuild-thrall",
-            specKey = "",
+            specKey = "SHAMAN_ENHANCEMENT",
             rating = 1628,
             rank = 61,
             wins = 19,
@@ -14276,7 +14886,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["isawthedevil-area52"] = {
             displayName = "Isawthedevil-area-52",
-            specKey = "",
+            specKey = "MONK_MISTWEAVER",
             rating = 1056,
             rank = 341,
             wins = 11,
@@ -14285,7 +14895,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["itsjbigz-stormrage"] = {
             displayName = "Itsjbigz-stormrage",
-            specKey = "",
+            specKey = "PALADIN_RETRIBUTION",
             rating = 1051,
             rank = 410,
             wins = 11,
@@ -14294,7 +14904,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["itzcompadre-altarofstorms"] = {
             displayName = "Itzcompadre-altar-of-storms",
-            specKey = "PRIEST_SHADOW",
+            specKey = "",
             rating = 960,
             rank = 417,
             wins = 10,
@@ -14321,7 +14931,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["jack-duskwood"] = {
             displayName = "Jack-duskwood",
-            specKey = "",
+            specKey = "PRIEST_SHADOW",
             rating = 864,
             rank = 543,
             wins = 9,
@@ -14339,7 +14949,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["jason-dalvengyr"] = {
             displayName = "Jason-dalvengyr",
-            specKey = "",
+            specKey = "WARRIOR_ARMS",
             rating = 1606,
             rank = 78,
             wins = 20,
@@ -14348,7 +14958,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["jawwseus-sargeras"] = {
             displayName = "Jawwseus-sargeras",
-            specKey = "",
+            specKey = "MAGE_FROST",
             rating = 862,
             rank = 657,
             wins = 9,
@@ -14366,7 +14976,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["jazd-stormrage"] = {
             displayName = "Jazd-stormrage",
-            specKey = "",
+            specKey = "EVOKER_PRESERVATION",
             rating = 863,
             rank = 637,
             wins = 9,
@@ -14393,7 +15003,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["jeffdacious-stormrage"] = {
             displayName = "Jeffdacious-stormrage",
-            specKey = "",
+            specKey = "PALADIN_HOLY",
             rating = 1571,
             rank = 114,
             wins = 18,
@@ -14402,7 +15012,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["jeffshunter-moonguard"] = {
             displayName = "Jeffshunter-moon-guard",
-            specKey = "",
+            specKey = "HUNTER_BEASTMASTERY",
             rating = 1571,
             rank = 114,
             wins = 18,
@@ -14420,7 +15030,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["jerrzi-illidan"] = {
             displayName = "Jerrzi-illidan",
-            specKey = "EVOKER_PRESERVATION",
+            specKey = "",
             rating = 768,
             rank = 677,
             wins = 8,
@@ -14429,7 +15039,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["jessicajin-tichondrius"] = {
             displayName = "Jessicajin-tichondrius",
-            specKey = "",
+            specKey = "WARRIOR_ARMS",
             rating = 1054,
             rank = 386,
             wins = 11,
@@ -14447,7 +15057,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["jmaxx-wyrmrestaccord"] = {
             displayName = "Jmaxx-wyrmrest-accord",
-            specKey = "",
+            specKey = "ROGUE_ASSASSINATION",
             rating = 1242,
             rank = 272,
             wins = 13,
@@ -14456,7 +15066,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["johnonymous-malganis"] = {
             displayName = "Johnonymous-malganis",
-            specKey = "",
+            specKey = "ROGUE_ASSASSINATION",
             rating = 1054,
             rank = 386,
             wins = 11,
@@ -14465,7 +15075,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["jopshield-tichondrius"] = {
             displayName = "Jopshield-tichondrius",
-            specKey = "",
+            specKey = "PRIEST_HOLY",
             rating = 1519,
             rank = 154,
             wins = 17,
@@ -14474,7 +15084,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["jordz-sargeras"] = {
             displayName = "Jordz-sargeras",
-            specKey = "",
+            specKey = "PRIEST_DISCIPLINE",
             rating = 1336,
             rank = 215,
             wins = 14,
@@ -14483,7 +15093,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["josberry-emeralddream"] = {
             displayName = "Josberry-emerald-dream",
-            specKey = "",
+            specKey = "PALADIN_HOLY",
             rating = 767,
             rank = 803,
             wins = 8,
@@ -14492,7 +15102,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["jsnlol-illidan"] = {
             displayName = "Jsnlol-illidan",
-            specKey = "ROGUE_ASSASSINATION",
+            specKey = "",
             rating = 672,
             rank = 857,
             wins = 7,
@@ -14519,7 +15129,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["jungsa-tichondrius"] = {
             displayName = "Jungsa-tichondrius",
-            specKey = "",
+            specKey = "SHAMAN_RESTORATION",
             rating = 768,
             rank = 677,
             wins = 8,
@@ -14546,7 +15156,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["jvilla-area52"] = {
             displayName = "Jvilla-area-52",
-            specKey = "",
+            specKey = "WARLOCK_DESTRUCTION",
             rating = 1147,
             rank = 325,
             wins = 12,
@@ -14555,7 +15165,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["jwrots-ragnaros"] = {
             displayName = "Jwrots-ragnaros",
-            specKey = "",
+            specKey = "HUNTER_BEASTMASTERY",
             rating = 1231,
             rank = 288,
             wins = 13,
@@ -14582,7 +15192,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["kadoink-illidan"] = {
             displayName = "Kadoink-illidan",
-            specKey = "",
+            specKey = "HUNTER_BEASTMASTERY",
             rating = 672,
             rank = 857,
             wins = 7,
@@ -14600,7 +15210,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["kalioh-stormrage"] = {
             displayName = "Kalioh-stormrage",
-            specKey = "",
+            specKey = "WARRIOR_FURY",
             rating = 1146,
             rank = 331,
             wins = 12,
@@ -14609,7 +15219,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["kalkei-quelthalas"] = {
             displayName = "Kalkei-quelthalas",
-            specKey = "",
+            specKey = "MONK_WINDWALKER",
             rating = 1597,
             rank = 93,
             wins = 19,
@@ -14636,7 +15246,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["kamuél-azralon"] = {
             displayName = "Kamuél-azralon",
-            specKey = "",
+            specKey = "ROGUE_ASSASSINATION",
             rating = 1592,
             rank = 97,
             wins = 18,
@@ -14645,7 +15255,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["kandague-tolbarad"] = {
             displayName = "Kandague-tol-barad",
-            specKey = "",
+            specKey = "HUNTER_MARKSMANSHIP",
             rating = 960,
             rank = 417,
             wins = 10,
@@ -14663,7 +15273,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["karnas-zuljin"] = {
             displayName = "Karnas-zuljin",
-            specKey = "",
+            specKey = "ROGUE_ASSASSINATION",
             rating = 672,
             rank = 857,
             wins = 7,
@@ -14681,7 +15291,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["katazahn-area52"] = {
             displayName = "Katazahn-area-52",
-            specKey = "",
+            specKey = "MAGE_ARCANE",
             rating = 672,
             rank = 857,
             wins = 7,
@@ -14699,7 +15309,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["kelemvor-blackdragonflight"] = {
             displayName = "Kelemvor-black-dragonflight",
-            specKey = "",
+            specKey = "PRIEST_DISCIPLINE",
             rating = 1148,
             rank = 321,
             wins = 12,
@@ -14708,7 +15318,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["kelinao-sargeras"] = {
             displayName = "Kelinao-sargeras",
-            specKey = "",
+            specKey = "PALADIN_HOLY",
             rating = 672,
             rank = 857,
             wins = 7,
@@ -14717,7 +15327,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["kenner-kultiras"] = {
             displayName = "Kenner-kul-tiras",
-            specKey = "",
+            specKey = "WARRIOR_ARMS",
             rating = 957,
             rank = 518,
             wins = 10,
@@ -14735,7 +15345,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["kenswag-tichondrius"] = {
             displayName = "Kenswag-tichondrius",
-            specKey = "",
+            specKey = "ROGUE_ASSASSINATION",
             rating = 672,
             rank = 857,
             wins = 7,
@@ -14771,7 +15381,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["ki-korgath"] = {
             displayName = "Ki-korgath",
-            specKey = "",
+            specKey = "MONK_MISTWEAVER",
             rating = 1489,
             rank = 163,
             wins = 16,
@@ -14780,7 +15390,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["kidseeghost-tichondrius"] = {
             displayName = "Kidseeghost-tichondrius",
-            specKey = "DEATHKNIGHT_UNHOLY",
+            specKey = "",
             rating = 768,
             rank = 677,
             wins = 8,
@@ -14798,7 +15408,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["kirke-queldorei"] = {
             displayName = "Kirke-queldorei",
-            specKey = "",
+            specKey = "PALADIN_RETRIBUTION",
             rating = 768,
             rank = 677,
             wins = 8,
@@ -14807,7 +15417,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["kisho-sargeras"] = {
             displayName = "Kisho-sargeras",
-            specKey = "",
+            specKey = "PRIEST_SHADOW",
             rating = 1668,
             rank = 43,
             wins = 23,
@@ -14816,7 +15426,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["kissnhomiegn-tichondrius"] = {
             displayName = "Kissnhomiegn-tichondrius",
-            specKey = "",
+            specKey = "PRIEST_HOLY",
             rating = 768,
             rank = 677,
             wins = 8,
@@ -14825,7 +15435,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["kittymunchër-tichondrius"] = {
             displayName = "Kittymunchër-tichondrius",
-            specKey = "",
+            specKey = "PRIEST_DISCIPLINE",
             rating = 1056,
             rank = 341,
             wins = 11,
@@ -14834,7 +15444,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["kkohekmatyar-tichondrius"] = {
             displayName = "Kkohekmatyar-tichondrius",
-            specKey = "",
+            specKey = "PALADIN_HOLY",
             rating = 959,
             rank = 469,
             wins = 10,
@@ -14852,7 +15462,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["kokohoney-tichondrius"] = {
             displayName = "Kokohoney-tichondrius",
-            specKey = "",
+            specKey = "PRIEST_HOLY",
             rating = 767,
             rank = 803,
             wins = 8,
@@ -14861,7 +15471,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["kosakî-proudmoore"] = {
             displayName = "Kosakî-proudmoore",
-            specKey = "PALADIN_HOLY",
+            specKey = "",
             rating = 768,
             rank = 677,
             wins = 8,
@@ -14870,7 +15480,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["kowwabunga-frostmourne"] = {
             displayName = "Kowwabunga-frostmourne",
-            specKey = "",
+            specKey = "ROGUE_SUBTLETY",
             rating = 1147,
             rank = 325,
             wins = 12,
@@ -14888,7 +15498,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["kujah-stormrage"] = {
             displayName = "Kujah-stormrage",
-            specKey = "",
+            specKey = "PALADIN_RETRIBUTION",
             rating = 1245,
             rank = 252,
             wins = 13,
@@ -14897,7 +15507,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["kurorox-altarofstorms"] = {
             displayName = "Kurorox-altar-of-storms",
-            specKey = "",
+            specKey = "PRIEST_HOLY",
             rating = 862,
             rank = 657,
             wins = 9,
@@ -14906,7 +15516,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["kyphosis-illidan"] = {
             displayName = "Kyphosis-illidan",
-            specKey = "",
+            specKey = "MAGE_FROST",
             rating = 959,
             rank = 469,
             wins = 10,
@@ -14924,7 +15534,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["kájomef-stormrage"] = {
             displayName = "Kájomef-stormrage",
-            specKey = "",
+            specKey = "ROGUE_SUBTLETY",
             rating = 1608,
             rank = 75,
             wins = 20,
@@ -14933,7 +15543,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["káorii-tichondrius"] = {
             displayName = "Káorii-tichondrius",
-            specKey = "",
+            specKey = "PALADIN_HOLY",
             rating = 960,
             rank = 417,
             wins = 10,
@@ -14942,7 +15552,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["kùtless-tichondrius"] = {
             displayName = "Kùtless-tichondrius",
-            specKey = "PALADIN_RETRIBUTION",
+            specKey = "",
             rating = 864,
             rank = 543,
             wins = 9,
@@ -14951,7 +15561,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["lafufufuk-tichondrius"] = {
             displayName = "Lafufufuk-tichondrius",
-            specKey = "",
+            specKey = "PRIEST_HOLY",
             rating = 861,
             rank = 671,
             wins = 9,
@@ -14960,7 +15570,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["landino-tichondrius"] = {
             displayName = "Landino-tichondrius",
-            specKey = "",
+            specKey = "WARLOCK_DESTRUCTION",
             rating = 1049,
             rank = 416,
             wins = 11,
@@ -14969,7 +15579,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["laplacee-stormrage"] = {
             displayName = "Laplacee-stormrage",
-            specKey = "",
+            specKey = "ROGUE_SUBTLETY",
             rating = 1053,
             rank = 397,
             wins = 11,
@@ -14978,7 +15588,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["lasháqt-dunemaul"] = {
             displayName = "Lasháqt-dunemaul",
-            specKey = "",
+            specKey = "MAGE_FIRE",
             rating = 1056,
             rank = 341,
             wins = 11,
@@ -15005,7 +15615,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["lavenderhaze-kelthuzad"] = {
             displayName = "Lavenderhaze-kelthuzad",
-            specKey = "",
+            specKey = "HUNTER_MARKSMANSHIP",
             rating = 768,
             rank = 677,
             wins = 8,
@@ -15014,7 +15624,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["lazrs-illidan"] = {
             displayName = "Lazrs-illidan",
-            specKey = "",
+            specKey = "PALADIN_RETRIBUTION",
             rating = 1710,
             rank = 33,
             wins = 29,
@@ -15023,7 +15633,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["leadfeather-area52"] = {
             displayName = "Leadfeather-area-52",
-            specKey = "",
+            specKey = "HUNTER_SURVIVAL",
             rating = 768,
             rank = 677,
             wins = 8,
@@ -15032,7 +15642,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["legendary-ragnaros"] = {
             displayName = "Legendary-ragnaros",
-            specKey = "",
+            specKey = "PRIEST_DISCIPLINE",
             rating = 768,
             rank = 677,
             wins = 8,
@@ -15041,7 +15651,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["lellos-moonguard"] = {
             displayName = "Lellos-moon-guard",
-            specKey = "",
+            specKey = "PRIEST_HOLY",
             rating = 1604,
             rank = 84,
             wins = 21,
@@ -15050,7 +15660,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["lemmehex-illidan"] = {
             displayName = "Lemmehex-illidan",
-            specKey = "",
+            specKey = "SHAMAN_RESTORATION",
             rating = 1055,
             rank = 372,
             wins = 11,
@@ -15059,7 +15669,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["lemoncurd-zangarmarsh"] = {
             displayName = "Lemoncurd-zangarmarsh",
-            specKey = "",
+            specKey = "PRIEST_HOLY",
             rating = 864,
             rank = 543,
             wins = 9,
@@ -15068,7 +15678,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["lhordaine-area52"] = {
             displayName = "Lhordaine-area-52",
-            specKey = "",
+            specKey = "WARLOCK_DEMONOLOGY",
             rating = 864,
             rank = 543,
             wins = 9,
@@ -15086,7 +15696,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["lilprimary-tichondrius"] = {
             displayName = "Lilprimary-tichondrius",
-            specKey = "",
+            specKey = "HUNTER_BEASTMASTERY",
             rating = 864,
             rank = 543,
             wins = 9,
@@ -15104,7 +15714,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["littlemessy-tichondrius"] = {
             displayName = "Littlemessy-tichondrius",
-            specKey = "",
+            specKey = "DEMONHUNTER_HAVOC",
             rating = 767,
             rank = 803,
             wins = 8,
@@ -15113,7 +15723,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["littz-malganis"] = {
             displayName = "Littz-malganis",
-            specKey = "",
+            specKey = "SHAMAN_ENHANCEMENT",
             rating = 959,
             rank = 469,
             wins = 10,
@@ -15122,7 +15732,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["lmage-sargeras"] = {
             displayName = "Lmage-sargeras",
-            specKey = "",
+            specKey = "MAGE_FROST",
             rating = 1239,
             rank = 281,
             wins = 13,
@@ -15131,7 +15741,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["longtimenose-tichondrius"] = {
             displayName = "Longtimenose-tichondrius",
-            specKey = "",
+            specKey = "PALADIN_HOLY",
             rating = 1240,
             rank = 275,
             wins = 13,
@@ -15158,7 +15768,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["lsy-tichondrius"] = {
             displayName = "Lsy-tichondrius",
-            specKey = "",
+            specKey = "PRIEST_DISCIPLINE",
             rating = 1319,
             rank = 234,
             wins = 14,
@@ -15167,7 +15777,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["lubellie-tichondrius"] = {
             displayName = "Lubellie-tichondrius",
-            specKey = "",
+            specKey = "MAGE_FROST",
             rating = 1485,
             rank = 164,
             wins = 16,
@@ -15185,7 +15795,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["luckylucíano-malganis"] = {
             displayName = "Luckylucíano-malganis",
-            specKey = "",
+            specKey = "PRIEST_DISCIPLINE",
             rating = 960,
             rank = 417,
             wins = 10,
@@ -15194,7 +15804,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["luckystep-burninglegion"] = {
             displayName = "Luckystep-burning-legion",
-            specKey = "",
+            specKey = "ROGUE_ASSASSINATION",
             rating = 1566,
             rank = 119,
             wins = 18,
@@ -15212,7 +15822,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["lurler-tichondrius"] = {
             displayName = "Lurler-tichondrius",
-            specKey = "",
+            specKey = "MAGE_FROST",
             rating = 1431,
             rank = 180,
             wins = 15,
@@ -15230,7 +15840,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["luvgpt-frostmourne"] = {
             displayName = "Luvgpt-frostmourne",
-            specKey = "",
+            specKey = "DEATHKNIGHT_UNHOLY",
             rating = 959,
             rank = 469,
             wins = 10,
@@ -15239,7 +15849,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["lvladen-sargeras"] = {
             displayName = "Lvladen-sargeras",
-            specKey = "",
+            specKey = "PALADIN_RETRIBUTION",
             rating = 1056,
             rank = 341,
             wins = 11,
@@ -15248,7 +15858,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["lwy-illidan"] = {
             displayName = "Lwy-illidan",
-            specKey = "",
+            specKey = "DEATHKNIGHT_UNHOLY",
             rating = 672,
             rank = 857,
             wins = 7,
@@ -15257,7 +15867,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["lyrath-emeralddream"] = {
             displayName = "Lyrath-emerald-dream",
-            specKey = "",
+            specKey = "HUNTER_BEASTMASTERY",
             rating = 1427,
             rank = 186,
             wins = 15,
@@ -15284,7 +15894,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["lêtÿxcêroz-illidan"] = {
             displayName = "Lêtÿxcêroz-illidan",
-            specKey = "",
+            specKey = "MONK_MISTWEAVER",
             rating = 1581,
             rank = 106,
             wins = 19,
@@ -15293,7 +15903,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["lïghtbrïnger-nordrassil"] = {
             displayName = "Lïghtbrïnger-nordrassil",
-            specKey = "",
+            specKey = "PRIEST_HOLY",
             rating = 956,
             rank = 533,
             wins = 10,
@@ -15302,7 +15912,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["mageyoulunch-tichondrius"] = {
             displayName = "Mageyoulunch-tichondrius",
-            specKey = "",
+            specKey = "MAGE_FIRE",
             rating = 959,
             rank = 469,
             wins = 10,
@@ -15338,7 +15948,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["magothy-tichondrius"] = {
             displayName = "Magothy-tichondrius",
-            specKey = "",
+            specKey = "PRIEST_DISCIPLINE",
             rating = 1431,
             rank = 180,
             wins = 15,
@@ -15356,7 +15966,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["malumíta-quelthalas"] = {
             displayName = "Malumíta-quelthalas",
-            specKey = "",
+            specKey = "SHAMAN_ELEMENTAL",
             rating = 672,
             rank = 857,
             wins = 7,
@@ -15365,7 +15975,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["manapolý-tichondrius"] = {
             displayName = "Manapolý-tichondrius",
-            specKey = "",
+            specKey = "MAGE_FIRE",
             rating = 1245,
             rank = 252,
             wins = 13,
@@ -15374,7 +15984,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["manigold-illidan"] = {
             displayName = "Manigold-illidan",
-            specKey = "",
+            specKey = "DRUID_RESTORATION",
             rating = 1648,
             rank = 53,
             wins = 23,
@@ -15383,7 +15993,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["manongauz-area52"] = {
             displayName = "Manongauz-area-52",
-            specKey = "",
+            specKey = "WARRIOR_ARMS",
             rating = 958,
             rank = 502,
             wins = 10,
@@ -15392,7 +16002,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["maraagy-tichondrius"] = {
             displayName = "Maraagy-tichondrius",
-            specKey = "",
+            specKey = "WARLOCK_DESTRUCTION",
             rating = 960,
             rank = 417,
             wins = 10,
@@ -15410,7 +16020,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["marimbo-stormrage"] = {
             displayName = "Marimbo-stormrage",
-            specKey = "",
+            specKey = "PRIEST_HOLY",
             rating = 960,
             rank = 417,
             wins = 10,
@@ -15419,7 +16029,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["marllow-dalaran"] = {
             displayName = "Marllow-dalaran",
-            specKey = "",
+            specKey = "MONK_MISTWEAVER",
             rating = 1807,
             rank = 11,
             wins = 32,
@@ -15428,7 +16038,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["marothius-nathrezim"] = {
             displayName = "Marothius-nathrezim",
-            specKey = "",
+            specKey = "WARLOCK_DEMONOLOGY",
             rating = 1245,
             rank = 252,
             wins = 13,
@@ -15437,7 +16047,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["mashed-zuljin"] = {
             displayName = "Mashed-zuljin",
-            specKey = "",
+            specKey = "PALADIN_HOLY",
             rating = 672,
             rank = 857,
             wins = 7,
@@ -15446,7 +16056,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["maurty-tichondrius"] = {
             displayName = "Maurty-tichondrius",
-            specKey = "",
+            specKey = "EVOKER_PRESERVATION",
             rating = 1050,
             rank = 415,
             wins = 11,
@@ -15455,7 +16065,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["mavtharipper-illidan"] = {
             displayName = "Mavtharipper-illidan",
-            specKey = "",
+            specKey = "SHAMAN_ENHANCEMENT",
             rating = 768,
             rank = 677,
             wins = 8,
@@ -15464,7 +16074,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["mazror-kiljaeden"] = {
             displayName = "Mazror-kiljaeden",
-            specKey = "",
+            specKey = "DRUID_BALANCE",
             rating = 959,
             rank = 469,
             wins = 10,
@@ -15482,7 +16092,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["mearas-kelthuzad"] = {
             displayName = "Mearas-kelthuzad",
-            specKey = "",
+            specKey = "PRIEST_SHADOW",
             rating = 1686,
             rank = 38,
             wins = 25,
@@ -15491,7 +16101,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["megashambox-sargeras"] = {
             displayName = "Megashambox-sargeras",
-            specKey = "",
+            specKey = "SHAMAN_ENHANCEMENT",
             rating = 1139,
             rank = 339,
             wins = 12,
@@ -15509,7 +16119,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["menethîl-tichondrius"] = {
             displayName = "Menethîl-tichondrius",
-            specKey = "",
+            specKey = "WARRIOR_ARMS",
             rating = 1245,
             rank = 252,
             wins = 13,
@@ -15518,7 +16128,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["merrellpal-tichondrius"] = {
             displayName = "Merrellpal-tichondrius",
-            specKey = "",
+            specKey = "PALADIN_HOLY",
             rating = 1328,
             rank = 226,
             wins = 14,
@@ -15527,7 +16137,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["metafloyd-illidan"] = {
             displayName = "Metafloyd-illidan",
-            specKey = "MONK_MISTWEAVER",
+            specKey = "",
             rating = 864,
             rank = 543,
             wins = 9,
@@ -15545,7 +16155,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["metaluhlx-tichondrius"] = {
             displayName = "Metaluhlx-tichondrius",
-            specKey = "",
+            specKey = "PALADIN_HOLY",
             rating = 1055,
             rank = 372,
             wins = 11,
@@ -15554,7 +16164,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["metaslavee-stormrage"] = {
             displayName = "Metaslavee-stormrage",
-            specKey = "",
+            specKey = "PRIEST_DISCIPLINE",
             rating = 1144,
             rank = 335,
             wins = 12,
@@ -15563,7 +16173,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["miamage-malganis"] = {
             displayName = "Miamage-malganis",
-            specKey = "",
+            specKey = "MAGE_ARCANE",
             rating = 864,
             rank = 543,
             wins = 9,
@@ -15599,7 +16209,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["miryl-sargeras"] = {
             displayName = "Miryl-sargeras",
-            specKey = "",
+            specKey = "MAGE_FROST",
             rating = 959,
             rank = 469,
             wins = 10,
@@ -15608,7 +16218,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["mitigate-daggerspine"] = {
             displayName = "Mitigate-daggerspine",
-            specKey = "",
+            specKey = "DRUID_RESTORATION",
             rating = 764,
             rank = 851,
             wins = 8,
@@ -15617,7 +16227,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["mixlol-illidan"] = {
             displayName = "Mixlol-illidan",
-            specKey = "",
+            specKey = "PALADIN_RETRIBUTION",
             rating = 957,
             rank = 518,
             wins = 10,
@@ -15635,7 +16245,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["mocassin-terenas"] = {
             displayName = "Mocassin-terenas",
-            specKey = "",
+            specKey = "MONK_MISTWEAVER",
             rating = 864,
             rank = 543,
             wins = 9,
@@ -15653,7 +16263,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["monkswamdi-illidan"] = {
             displayName = "Monkswamdi-illidan",
-            specKey = "",
+            specKey = "MONK_MISTWEAVER",
             rating = 860,
             rank = 674,
             wins = 9,
@@ -15680,7 +16290,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["motionparty-stormrage"] = {
             displayName = "Motionparty-stormrage",
-            specKey = "",
+            specKey = "HUNTER_BEASTMASTERY",
             rating = 1807,
             rank = 11,
             wins = 32,
@@ -15716,7 +16326,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["moxiesipper-malganis"] = {
             displayName = "Moxiesipper-malganis",
-            specKey = "",
+            specKey = "PALADIN_HOLY",
             rating = 767,
             rank = 803,
             wins = 8,
@@ -15734,7 +16344,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["mqo-tichondrius"] = {
             displayName = "Mqo-tichondrius",
-            specKey = "",
+            specKey = "PALADIN_RETRIBUTION",
             rating = 672,
             rank = 857,
             wins = 7,
@@ -15743,7 +16353,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["mshamjr-tichondrius"] = {
             displayName = "Mshamjr-tichondrius",
-            specKey = "",
+            specKey = "SHAMAN_RESTORATION",
             rating = 1151,
             rank = 298,
             wins = 12,
@@ -15752,7 +16362,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["msr-bleedinghollow"] = {
             displayName = "Msr-bleeding-hollow",
-            specKey = "",
+            specKey = "HUNTER_BEASTMASTERY",
             rating = 672,
             rank = 857,
             wins = 7,
@@ -15761,7 +16371,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["muggz-sargeras"] = {
             displayName = "Muggz-sargeras",
-            specKey = "",
+            specKey = "SHAMAN_RESTORATION",
             rating = 1342,
             rank = 205,
             wins = 14,
@@ -15770,7 +16380,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["muteypie-doomhammer"] = {
             displayName = "Muteypie-doomhammer",
-            specKey = "",
+            specKey = "PRIEST_HOLY",
             rating = 768,
             rank = 677,
             wins = 8,
@@ -15797,7 +16407,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["myue-barthilas"] = {
             displayName = "Myue-barthilas",
-            specKey = "",
+            specKey = "PRIEST_DISCIPLINE",
             rating = 1051,
             rank = 410,
             wins = 11,
@@ -15815,7 +16425,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["naarubloomz-sargeras"] = {
             displayName = "Naarubloomz-sargeras",
-            specKey = "",
+            specKey = "DRUID_RESTORATION",
             rating = 1604,
             rank = 84,
             wins = 20,
@@ -15824,7 +16434,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["naelarin-bleedinghollow"] = {
             displayName = "Naelarin-bleeding-hollow",
-            specKey = "",
+            specKey = "DRUID_BALANCE",
             rating = 1636,
             rank = 58,
             wins = 22,
@@ -15833,7 +16443,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["namahserai-kiljaeden"] = {
             displayName = "Namahserai-kiljaeden",
-            specKey = "",
+            specKey = "SHAMAN_RESTORATION",
             rating = 1245,
             rank = 252,
             wins = 13,
@@ -15851,7 +16461,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["narorc-tichondrius"] = {
             displayName = "Narorc-tichondrius",
-            specKey = "",
+            specKey = "ROGUE_SUBTLETY",
             rating = 1056,
             rank = 341,
             wins = 11,
@@ -15860,7 +16470,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["nazumar-frostmourne"] = {
             displayName = "Nazumar-frostmourne",
-            specKey = "WARLOCK_DEMONOLOGY",
+            specKey = "",
             rating = 864,
             rank = 543,
             wins = 9,
@@ -15878,7 +16488,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["neex-zuljin"] = {
             displayName = "Neex-zuljin",
-            specKey = "",
+            specKey = "PALADIN_HOLY",
             rating = 864,
             rank = 543,
             wins = 9,
@@ -15887,7 +16497,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["negidam-area52"] = {
             displayName = "Negidam-area-52",
-            specKey = "",
+            specKey = "DRUID_FERAL",
             rating = 960,
             rank = 417,
             wins = 10,
@@ -15896,7 +16506,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["nenami-kelthuzad"] = {
             displayName = "Nenami-kelthuzad",
-            specKey = "",
+            specKey = "PRIEST_HOLY",
             rating = 1055,
             rank = 372,
             wins = 11,
@@ -15923,7 +16533,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["neverquit-bleedinghollow"] = {
             displayName = "Neverquit-bleeding-hollow",
-            specKey = "",
+            specKey = "PALADIN_HOLY",
             rating = 960,
             rank = 417,
             wins = 10,
@@ -15932,7 +16542,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["newvariant-runetotem"] = {
             displayName = "Newvariant-runetotem",
-            specKey = "",
+            specKey = "PALADIN_RETRIBUTION",
             rating = 1452,
             rank = 168,
             wins = 16,
@@ -15950,7 +16560,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["nightdeww-ragnaros"] = {
             displayName = "Nightdeww-ragnaros",
-            specKey = "",
+            specKey = "HUNTER_BEASTMASTERY",
             rating = 672,
             rank = 857,
             wins = 7,
@@ -15977,7 +16587,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["nikero-blackrock"] = {
             displayName = "Nikero-blackrock",
-            specKey = "",
+            specKey = "MAGE_FROST",
             rating = 863,
             rank = 637,
             wins = 9,
@@ -15986,7 +16596,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["nildryck-malganis"] = {
             displayName = "Nildryck-malganis",
-            specKey = "",
+            specKey = "PRIEST_HOLY",
             rating = 1247,
             rank = 239,
             wins = 13,
@@ -15995,7 +16605,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["ninbara-tichondrius"] = {
             displayName = "Ninbara-tichondrius",
-            specKey = "",
+            specKey = "PRIEST_HOLY",
             rating = 1590,
             rank = 98,
             wins = 19,
@@ -16004,7 +16614,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["nohesita-drakkari"] = {
             displayName = "Nohesita-drakkari",
-            specKey = "",
+            specKey = "PRIEST_HOLY",
             rating = 958,
             rank = 502,
             wins = 10,
@@ -16013,7 +16623,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["nojjmilk-tichondrius"] = {
             displayName = "Nojjmilk-tichondrius",
-            specKey = "",
+            specKey = "WARRIOR_FURY",
             rating = 1682,
             rank = 40,
             wins = 24,
@@ -16022,7 +16632,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["nomnomnomnom-garrosh"] = {
             displayName = "Nomnomnomnom-garrosh",
-            specKey = "",
+            specKey = "WARLOCK_AFFLICTION",
             rating = 1051,
             rank = 410,
             wins = 11,
@@ -16031,7 +16641,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["nopk-tichondrius"] = {
             displayName = "Nopk-tichondrius",
-            specKey = "",
+            specKey = "WARLOCK_AFFLICTION",
             rating = 1325,
             rank = 230,
             wins = 14,
@@ -16040,7 +16650,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["notaglad-sargeras"] = {
             displayName = "Notaglad-sargeras",
-            specKey = "",
+            specKey = "DRUID_BALANCE",
             rating = 953,
             rank = 540,
             wins = 10,
@@ -16067,7 +16677,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["noworriesbro-zuljin"] = {
             displayName = "Noworriesbro-zuljin",
-            specKey = "",
+            specKey = "DRUID_RESTORATION",
             rating = 1145,
             rank = 334,
             wins = 12,
@@ -16076,7 +16686,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["nulechupapin-area52"] = {
             displayName = "Nulechupapin-area-52",
-            specKey = "",
+            specKey = "SHAMAN_RESTORATION",
             rating = 957,
             rank = 518,
             wins = 10,
@@ -16094,7 +16704,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["nuremburg-moonguard"] = {
             displayName = "Nuremburg-moon-guard",
-            specKey = "",
+            specKey = "DEMONHUNTER_HAVOC",
             rating = 767,
             rank = 803,
             wins = 8,
@@ -16103,7 +16713,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["nuttyreborn-moonguard"] = {
             displayName = "Nuttyreborn-moon-guard",
-            specKey = "",
+            specKey = "ROGUE_ASSASSINATION",
             rating = 1245,
             rank = 252,
             wins = 13,
@@ -16112,7 +16722,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["nyloras-illidan"] = {
             displayName = "Nyloras-illidan",
-            specKey = "",
+            specKey = "WARRIOR_PROTECTION",
             rating = 960,
             rank = 417,
             wins = 10,
@@ -16121,7 +16731,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["nörthstår-tichondrius"] = {
             displayName = "Nörthstår-tichondrius",
-            specKey = "",
+            specKey = "MAGE_ARCANE",
             rating = 864,
             rank = 543,
             wins = 9,
@@ -16139,7 +16749,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["númb-tichondrius"] = {
             displayName = "Númb-tichondrius",
-            specKey = "",
+            specKey = "ROGUE_SUBTLETY",
             rating = 672,
             rank = 857,
             wins = 7,
@@ -16148,7 +16758,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["obansol-tichondrius"] = {
             displayName = "Obansol-tichondrius",
-            specKey = "",
+            specKey = "DEATHKNIGHT_UNHOLY",
             rating = 766,
             rank = 838,
             wins = 8,
@@ -16166,7 +16776,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["ocdgaming-gnomeregan"] = {
             displayName = "Ocdgaming-gnomeregan",
-            specKey = "",
+            specKey = "EVOKER_DEVASTATION",
             rating = 1438,
             rank = 169,
             wins = 15,
@@ -16184,7 +16794,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["ohnahnah-khadgar"] = {
             displayName = "Ohnahnah-khadgar",
-            specKey = "",
+            specKey = "PRIEST_SHADOW",
             rating = 1149,
             rank = 308,
             wins = 12,
@@ -16211,7 +16821,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["onlymists-stormrage"] = {
             displayName = "Onlymists-stormrage",
-            specKey = "",
+            specKey = "MONK_MISTWEAVER",
             rating = 1597,
             rank = 93,
             wins = 18,
@@ -16220,7 +16830,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["oohoo-frostmourne"] = {
             displayName = "Oohoo-frostmourne",
-            specKey = "",
+            specKey = "PRIEST_HOLY",
             rating = 1549,
             rank = 131,
             wins = 17,
@@ -16229,7 +16839,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["oopyz-stormrage"] = {
             displayName = "Oopyz-stormrage",
-            specKey = "",
+            specKey = "WARRIOR_ARMS",
             rating = 1146,
             rank = 331,
             wins = 12,
@@ -16238,7 +16848,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["opebubble-tichondrius"] = {
             displayName = "Opebubble-tichondrius",
-            specKey = "",
+            specKey = "PALADIN_RETRIBUTION",
             rating = 1428,
             rank = 184,
             wins = 15,
@@ -16256,7 +16866,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["ornodynn-zuljin"] = {
             displayName = "Ornodynn-zuljin",
-            specKey = "",
+            specKey = "DEMONHUNTER_HAVOC",
             rating = 864,
             rank = 543,
             wins = 9,
@@ -16274,7 +16884,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["osameshtar-bleedinghollow"] = {
             displayName = "Osameshtar-bleeding-hollow",
-            specKey = "",
+            specKey = "MONK_MISTWEAVER",
             rating = 1547,
             rank = 134,
             wins = 18,
@@ -16283,7 +16893,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["oshoo-tichondrius"] = {
             displayName = "Oshoo-tichondrius",
-            specKey = "",
+            specKey = "MONK_MISTWEAVER",
             rating = 864,
             rank = 543,
             wins = 9,
@@ -16301,7 +16911,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["packyouabowl-tichondrius"] = {
             displayName = "Packyouabowl-tichondrius",
-            specKey = "",
+            specKey = "WARLOCK_AFFLICTION",
             rating = 1334,
             rank = 218,
             wins = 14,
@@ -16319,7 +16929,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["palmangels-bleedinghollow"] = {
             displayName = "Palmangels-bleeding-hollow",
-            specKey = "",
+            specKey = "PALADIN_RETRIBUTION",
             rating = 768,
             rank = 677,
             wins = 8,
@@ -16328,7 +16938,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["pandaforce-tichondrius"] = {
             displayName = "Pandaforce-tichondrius",
-            specKey = "",
+            specKey = "HUNTER_MARKSMANSHIP",
             rating = 1518,
             rank = 156,
             wins = 16,
@@ -16337,7 +16947,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["papitoh-azralon"] = {
             displayName = "Papitoh-azralon",
-            specKey = "",
+            specKey = "DEMONHUNTER_DEVOURER",
             rating = 672,
             rank = 857,
             wins = 7,
@@ -16364,7 +16974,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["pathtwox-tichondrius"] = {
             displayName = "Pathtwox-tichondrius",
-            specKey = "",
+            specKey = "PRIEST_HOLY",
             rating = 863,
             rank = 637,
             wins = 9,
@@ -16373,7 +16983,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["pce-area52"] = {
             displayName = "Pce-area-52",
-            specKey = "",
+            specKey = "ROGUE_ASSASSINATION",
             rating = 957,
             rank = 518,
             wins = 10,
@@ -16382,7 +16992,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["pedodragon-thrall"] = {
             displayName = "Pedodragon-thrall",
-            specKey = "",
+            specKey = "EVOKER_PRESERVATION",
             rating = 863,
             rank = 637,
             wins = 9,
@@ -16391,7 +17001,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["pepguardiola-ragnaros"] = {
             displayName = "Pepguardiola-ragnaros",
-            specKey = "",
+            specKey = "PALADIN_HOLY",
             rating = 864,
             rank = 543,
             wins = 9,
@@ -16400,7 +17010,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["pephometownh-aggramar"] = {
             displayName = "Pephometownh-aggramar",
-            specKey = "",
+            specKey = "WARLOCK_DESTRUCTION",
             rating = 1566,
             rank = 119,
             wins = 19,
@@ -16409,7 +17019,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["percentx-stormrage"] = {
             displayName = "Percentx-stormrage",
-            specKey = "",
+            specKey = "MONK_WINDWALKER",
             rating = 959,
             rank = 469,
             wins = 10,
@@ -16418,7 +17028,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["percypopper-illidan"] = {
             displayName = "Percypopper-illidan",
-            specKey = "",
+            specKey = "HUNTER_BEASTMASTERY",
             rating = 1149,
             rank = 308,
             wins = 12,
@@ -16427,7 +17037,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["periphery-frostwolf"] = {
             displayName = "Periphery-frostwolf",
-            specKey = "",
+            specKey = "DEATHKNIGHT_UNHOLY",
             rating = 766,
             rank = 838,
             wins = 8,
@@ -16454,7 +17064,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["philcoutinho-emeralddream"] = {
             displayName = "Philcoutinho-emerald-dream",
-            specKey = "",
+            specKey = "PRIEST_HOLY",
             rating = 768,
             rank = 677,
             wins = 8,
@@ -16463,7 +17073,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["pikachú-sargeras"] = {
             displayName = "Pikachú-sargeras",
-            specKey = "",
+            specKey = "PRIEST_SHADOW",
             rating = 864,
             rank = 543,
             wins = 9,
@@ -16472,7 +17082,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["pinkie-nerzhul"] = {
             displayName = "Pinkie-nerzhul",
-            specKey = "",
+            specKey = "PRIEST_HOLY",
             rating = 1334,
             rank = 218,
             wins = 14,
@@ -16481,7 +17091,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["pkmage-proudmoore"] = {
             displayName = "Pkmage-proudmoore",
-            specKey = "",
+            specKey = "MAGE_FROST",
             rating = 768,
             rank = 677,
             wins = 8,
@@ -16499,7 +17109,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["plils-sargeras"] = {
             displayName = "Plils-sargeras",
-            specKey = "",
+            specKey = "EVOKER_PRESERVATION",
             rating = 768,
             rank = 677,
             wins = 8,
@@ -16508,7 +17118,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["plzdontccme-frostmourne"] = {
             displayName = "Plzdontccme-frostmourne",
-            specKey = "",
+            specKey = "PRIEST_HOLY",
             rating = 959,
             rank = 469,
             wins = 10,
@@ -16517,7 +17127,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["poeter-stormrage"] = {
             displayName = "Poeter-stormrage",
-            specKey = "",
+            specKey = "WARRIOR_ARMS",
             rating = 960,
             rank = 417,
             wins = 10,
@@ -16553,7 +17163,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["poofrombutt-tichondrius"] = {
             displayName = "Poofrombutt-tichondrius",
-            specKey = "DEATHKNIGHT_UNHOLY",
+            specKey = "",
             rating = 1056,
             rank = 341,
             wins = 11,
@@ -16562,7 +17172,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["poppyp-stormrage"] = {
             displayName = "Poppyp-stormrage",
-            specKey = "",
+            specKey = "PRIEST_DISCIPLINE",
             rating = 672,
             rank = 857,
             wins = 7,
@@ -16571,7 +17181,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["porkstomper-illidan"] = {
             displayName = "Porkstomper-illidan",
-            specKey = "",
+            specKey = "HUNTER_BEASTMASTERY",
             rating = 1147,
             rank = 325,
             wins = 12,
@@ -16580,7 +17190,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["poxlxod-tichondrius"] = {
             displayName = "Poxlxod-tichondrius",
-            specKey = "",
+            specKey = "PRIEST_SHADOW",
             rating = 1422,
             rank = 187,
             wins = 15,
@@ -16589,7 +17199,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["presheep-bleedinghollow"] = {
             displayName = "Presheep-bleeding-hollow",
-            specKey = "",
+            specKey = "MAGE_FIRE",
             rating = 1054,
             rank = 386,
             wins = 11,
@@ -16598,7 +17208,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["pressbloom-malganis"] = {
             displayName = "Pressbloom-malganis",
-            specKey = "",
+            specKey = "DRUID_RESTORATION",
             rating = 1305,
             rank = 235,
             wins = 14,
@@ -16625,7 +17235,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["primearcanis-tolbarad"] = {
             displayName = "Primearcanis-tol-barad",
-            specKey = "",
+            specKey = "MAGE_ARCANE",
             rating = 672,
             rank = 857,
             wins = 7,
@@ -16634,7 +17244,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["progerîa-malganis"] = {
             displayName = "Progerîa-malganis",
-            specKey = "",
+            specKey = "DRUID_BALANCE",
             rating = 1247,
             rank = 239,
             wins = 13,
@@ -16661,7 +17271,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["pumptime-kelthuzad"] = {
             displayName = "Pumptime-kelthuzad",
-            specKey = "",
+            specKey = "SHAMAN_RESTORATION",
             rating = 1562,
             rank = 125,
             wins = 18,
@@ -16670,7 +17280,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["punremix-smolderthorn"] = {
             displayName = "Punremix-smolderthorn",
-            specKey = "",
+            specKey = "SHAMAN_RESTORATION",
             rating = 1603,
             rank = 86,
             wins = 20,
@@ -16679,7 +17289,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["pupdad-sargeras"] = {
             displayName = "Pupdad-sargeras",
-            specKey = "",
+            specKey = "WARRIOR_ARMS",
             rating = 1776,
             rank = 20,
             wins = 31,
@@ -16688,7 +17298,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["purpledaddy-malganis"] = {
             displayName = "Purpledaddy-malganis",
-            specKey = "",
+            specKey = "WARLOCK_AFFLICTION",
             rating = 1586,
             rank = 102,
             wins = 20,
@@ -16697,7 +17307,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["purìfied-area52"] = {
             displayName = "Purìfied-area-52",
-            specKey = "",
+            specKey = "PALADIN_HOLY",
             rating = 1645,
             rank = 55,
             wins = 21,
@@ -16706,7 +17316,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["putes-stormrage"] = {
             displayName = "Putes-stormrage",
-            specKey = "",
+            specKey = "PRIEST_HOLY",
             rating = 1608,
             rank = 75,
             wins = 20,
@@ -16733,7 +17343,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["pzor-tichondrius"] = {
             displayName = "Pzor-tichondrius",
-            specKey = "",
+            specKey = "WARLOCK_AFFLICTION",
             rating = 1056,
             rank = 341,
             wins = 11,
@@ -16751,7 +17361,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["püsh-aegwynn"] = {
             displayName = "Püsh-aegwynn",
-            specKey = "",
+            specKey = "PRIEST_DISCIPLINE",
             rating = 1612,
             rank = 69,
             wins = 22,
@@ -16760,7 +17370,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["qq-bonechewer"] = {
             displayName = "Qq-bonechewer",
-            specKey = "",
+            specKey = "HUNTER_MARKSMANSHIP",
             rating = 959,
             rank = 469,
             wins = 10,
@@ -16769,7 +17379,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["qtipped-kelthuzad"] = {
             displayName = "Qtipped-kelthuzad",
-            specKey = "",
+            specKey = "HUNTER_BEASTMASTERY",
             rating = 767,
             rank = 803,
             wins = 8,
@@ -16787,7 +17397,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["qutago-tichondrius"] = {
             displayName = "Qutago-tichondrius",
-            specKey = "",
+            specKey = "HUNTER_BEASTMASTERY",
             rating = 672,
             rank = 857,
             wins = 7,
@@ -16805,7 +17415,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["ragebaitx-bleedinghollow"] = {
             displayName = "Ragebaitx-bleeding-hollow",
-            specKey = "",
+            specKey = "DRUID_RESTORATION",
             rating = 1566,
             rank = 119,
             wins = 18,
@@ -16823,7 +17433,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["rakalaka-sargeras"] = {
             displayName = "Rakalaka-sargeras",
-            specKey = "",
+            specKey = "MONK_MISTWEAVER",
             rating = 672,
             rank = 857,
             wins = 7,
@@ -16832,7 +17442,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["ramuzan-frostmourne"] = {
             displayName = "Ramuzan-frostmourne",
-            specKey = "",
+            specKey = "WARLOCK_DEMONOLOGY",
             rating = 1609,
             rank = 73,
             wins = 20,
@@ -16841,7 +17451,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["ranch-darkspear"] = {
             displayName = "Ranch-darkspear",
-            specKey = "",
+            specKey = "DEATHKNIGHT_UNHOLY",
             rating = 952,
             rank = 542,
             wins = 10,
@@ -16850,7 +17460,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["rangoons-tichondrius"] = {
             displayName = "Rangoons-tichondrius",
-            specKey = "",
+            specKey = "ROGUE_OUTLAW",
             rating = 1600,
             rank = 91,
             wins = 20,
@@ -16859,7 +17469,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["rankonebad-tichondrius"] = {
             displayName = "Rankonebad-tichondrius",
-            specKey = "",
+            specKey = "WARRIOR_ARMS",
             rating = 1764,
             rank = 23,
             wins = 31,
@@ -16868,7 +17478,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["rantön-bleedinghollow"] = {
             displayName = "Rantön-bleeding-hollow",
-            specKey = "",
+            specKey = "SHAMAN_ENHANCEMENT",
             rating = 672,
             rank = 857,
             wins = 7,
@@ -16877,7 +17487,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["rapidshizz-tichondrius"] = {
             displayName = "Rapidshizz-tichondrius",
-            specKey = "",
+            specKey = "PRIEST_HOLY",
             rating = 1244,
             rank = 262,
             wins = 13,
@@ -16895,7 +17505,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["raxiedoll-tichondrius"] = {
             displayName = "Raxiedoll-tichondrius",
-            specKey = "",
+            specKey = "ROGUE_ASSASSINATION",
             rating = 1150,
             rank = 301,
             wins = 12,
@@ -16913,7 +17523,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["rbtz-illidan"] = {
             displayName = "Rbtz-illidan",
-            specKey = "HUNTER_MARKSMANSHIP",
+            specKey = "",
             rating = 864,
             rank = 543,
             wins = 9,
@@ -16922,7 +17532,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["rdythearmada-tichondrius"] = {
             displayName = "Rdythearmada-tichondrius",
-            specKey = "",
+            specKey = "EVOKER_PRESERVATION",
             rating = 862,
             rank = 657,
             wins = 9,
@@ -16931,7 +17541,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["read-illidan"] = {
             displayName = "Read-illidan",
-            specKey = "",
+            specKey = "WARRIOR_ARMS",
             rating = 1053,
             rank = 397,
             wins = 11,
@@ -16940,7 +17550,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["reezx-illidan"] = {
             displayName = "Reezx-illidan",
-            specKey = "",
+            specKey = "SHAMAN_ELEMENTAL",
             rating = 1343,
             rank = 203,
             wins = 14,
@@ -16967,7 +17577,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["revenancy-moonguard"] = {
             displayName = "Revenancy-moon-guard",
-            specKey = "",
+            specKey = "WARRIOR_ARMS",
             rating = 1243,
             rank = 265,
             wins = 13,
@@ -16985,7 +17595,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["revoredo-azralon"] = {
             displayName = "Revoredo-azralon",
-            specKey = "",
+            specKey = "PRIEST_HOLY",
             rating = 1246,
             rank = 248,
             wins = 13,
@@ -17003,7 +17613,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["rhyzo-laughingskull"] = {
             displayName = "Rhyzo-laughing-skull",
-            specKey = "",
+            specKey = "PRIEST_DISCIPLINE",
             rating = 767,
             rank = 803,
             wins = 8,
@@ -17057,7 +17667,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["rokar-zuljin"] = {
             displayName = "Rokar-zuljin",
-            specKey = "",
+            specKey = "ROGUE_OUTLAW",
             rating = 864,
             rank = 543,
             wins = 9,
@@ -17066,7 +17676,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["rokmage-hellscream"] = {
             displayName = "Rokmage-hellscream",
-            specKey = "",
+            specKey = "MAGE_FROST",
             rating = 864,
             rank = 543,
             wins = 9,
@@ -17084,7 +17694,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["rotleaf-chogall"] = {
             displayName = "Rotleaf-chogall",
-            specKey = "",
+            specKey = "PRIEST_SHADOW",
             rating = 1240,
             rank = 275,
             wins = 13,
@@ -17102,7 +17712,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["rubypvp-tichondrius"] = {
             displayName = "Rubypvp-tichondrius",
-            specKey = "",
+            specKey = "MAGE_FIRE",
             rating = 959,
             rank = 469,
             wins = 10,
@@ -17111,7 +17721,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["ruelara-wyrmrestaccord"] = {
             displayName = "Ruelara-wyrmrest-accord",
-            specKey = "",
+            specKey = "MAGE_FROST",
             rating = 767,
             rank = 803,
             wins = 8,
@@ -17120,7 +17730,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["ryhnm-tichondrius"] = {
             displayName = "Ryhnm-tichondrius",
-            specKey = "",
+            specKey = "MONK_WINDWALKER",
             rating = 1569,
             rank = 116,
             wins = 18,
@@ -17129,7 +17739,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["rymang-area52"] = {
             displayName = "Rymang-area-52",
-            specKey = "",
+            specKey = "WARLOCK_DEMONOLOGY",
             rating = 864,
             rank = 543,
             wins = 9,
@@ -17147,7 +17757,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["ryouzi-sargeras"] = {
             displayName = "Ryouzi-sargeras",
-            specKey = "",
+            specKey = "MAGE_FROST",
             rating = 864,
             rank = 543,
             wins = 9,
@@ -17156,7 +17766,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["rytes-moonguard"] = {
             displayName = "Rytes-moon-guard",
-            specKey = "",
+            specKey = "DEMONHUNTER_HAVOC",
             rating = 1247,
             rank = 239,
             wins = 13,
@@ -17192,7 +17802,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["sakuraluv-emeralddream"] = {
             displayName = "Sakuraluv-emerald-dream",
-            specKey = "",
+            specKey = "ROGUE_ASSASSINATION",
             rating = 1581,
             rank = 106,
             wins = 18,
@@ -17219,7 +17829,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["santi-destromath"] = {
             displayName = "Santi-destromath",
-            specKey = "",
+            specKey = "WARRIOR_FURY",
             rating = 1438,
             rank = 169,
             wins = 15,
@@ -17237,7 +17847,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["sarazed-illidan"] = {
             displayName = "Sarazed-illidan",
-            specKey = "",
+            specKey = "DRUID_BALANCE",
             rating = 960,
             rank = 417,
             wins = 10,
@@ -17264,7 +17874,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["schwellin-stormscale"] = {
             displayName = "Schwellin-stormscale",
-            specKey = "",
+            specKey = "WARLOCK_AFFLICTION",
             rating = 1514,
             rank = 159,
             wins = 16,
@@ -17282,7 +17892,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["sebb-gorefiend"] = {
             displayName = "Sebb-gorefiend",
-            specKey = "",
+            specKey = "HUNTER_BEASTMASTERY",
             rating = 768,
             rank = 677,
             wins = 8,
@@ -17291,7 +17901,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["seleris-exodar"] = {
             displayName = "Seleris-exodar",
-            specKey = "",
+            specKey = "WARLOCK_DESTRUCTION",
             rating = 1567,
             rank = 118,
             wins = 18,
@@ -17309,7 +17919,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["sentínel-shatteredhalls"] = {
             displayName = "Sentínel-shattered-halls",
-            specKey = "",
+            specKey = "HUNTER_SURVIVAL",
             rating = 960,
             rank = 417,
             wins = 10,
@@ -17318,7 +17928,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["setback-illidan"] = {
             displayName = "Setback-illidan",
-            specKey = "",
+            specKey = "PRIEST_SHADOW",
             rating = 672,
             rank = 857,
             wins = 7,
@@ -17327,7 +17937,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["seúl-tichondrius"] = {
             displayName = "Seúl-tichondrius",
-            specKey = "",
+            specKey = "PRIEST_DISCIPLINE",
             rating = 672,
             rank = 857,
             wins = 7,
@@ -17336,7 +17946,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["sgtdamp-moonguard"] = {
             displayName = "Sgtdamp-moon-guard",
-            specKey = "",
+            specKey = "PRIEST_SHADOW",
             rating = 958,
             rank = 502,
             wins = 10,
@@ -17345,7 +17955,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["sgtheals-moonguard"] = {
             displayName = "Sgtheals-moon-guard",
-            specKey = "",
+            specKey = "SHAMAN_RESTORATION",
             rating = 1240,
             rank = 275,
             wins = 13,
@@ -17390,7 +18000,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["sheeptag-kelthuzad"] = {
             displayName = "Sheeptag-kelthuzad",
-            specKey = "",
+            specKey = "MAGE_FIRE",
             rating = 1601,
             rank = 90,
             wins = 21,
@@ -17399,7 +18009,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["shemicka-area52"] = {
             displayName = "Shemicka-area-52",
-            specKey = "",
+            specKey = "DRUID_BALANCE",
             rating = 1143,
             rank = 336,
             wins = 12,
@@ -17408,7 +18018,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["shenkiro-shuhalo"] = {
             displayName = "Shenkiro-shuhalo",
-            specKey = "",
+            specKey = "MONK_MISTWEAVER",
             rating = 861,
             rank = 671,
             wins = 9,
@@ -17417,7 +18027,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["sherlokbones-tichondrius"] = {
             displayName = "Sherlokbones-tichondrius",
-            specKey = "",
+            specKey = "MAGE_FROST",
             rating = 958,
             rank = 502,
             wins = 10,
@@ -17426,7 +18036,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["shibatoshi-tichondrius"] = {
             displayName = "Shibatoshi-tichondrius",
-            specKey = "",
+            specKey = "PRIEST_HOLY",
             rating = 1431,
             rank = 180,
             wins = 15,
@@ -17444,7 +18054,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["shlootybooty-area52"] = {
             displayName = "Shlootybooty-area-52",
-            specKey = "",
+            specKey = "HUNTER_BEASTMASTERY",
             rating = 1152,
             rank = 289,
             wins = 12,
@@ -17462,7 +18072,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["shryan-illidan"] = {
             displayName = "Shryan-illidan",
-            specKey = "",
+            specKey = "PRIEST_HOLY",
             rating = 1581,
             rank = 106,
             wins = 18,
@@ -17471,7 +18081,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["shuffleifbad-tichondrius"] = {
             displayName = "Shuffleifbad-tichondrius",
-            specKey = "",
+            specKey = "ROGUE_ASSASSINATION",
             rating = 1152,
             rank = 289,
             wins = 12,
@@ -17480,7 +18090,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["shufflesucks-tichondrius"] = {
             displayName = "Shufflesucks-tichondrius",
-            specKey = "",
+            specKey = "SHAMAN_ELEMENTAL",
             rating = 958,
             rank = 502,
             wins = 10,
@@ -17498,7 +18108,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["sicebol-frostmourne"] = {
             displayName = "Sicebol-frostmourne",
-            specKey = "",
+            specKey = "WARRIOR_ARMS",
             rating = 1304,
             rank = 236,
             wins = 14,
@@ -17507,7 +18117,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["sifù-malganis"] = {
             displayName = "Sifù-malganis",
-            specKey = "",
+            specKey = "MONK_MISTWEAVER",
             rating = 1243,
             rank = 265,
             wins = 13,
@@ -17516,7 +18126,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["sigmaman-illidan"] = {
             displayName = "Sigmaman-illidan",
-            specKey = "",
+            specKey = "PALADIN_RETRIBUTION",
             rating = 1548,
             rank = 133,
             wins = 18,
@@ -17525,7 +18135,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["siha-tichondrius"] = {
             displayName = "Siha-tichondrius",
-            specKey = "",
+            specKey = "SHAMAN_RESTORATION",
             rating = 766,
             rank = 838,
             wins = 8,
@@ -17534,7 +18144,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["sillybilly-hyjal"] = {
             displayName = "Sillybilly-hyjal",
-            specKey = "",
+            specKey = "HUNTER_BEASTMASTERY",
             rating = 1590,
             rank = 98,
             wins = 19,
@@ -17552,7 +18162,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["sineex-illidan"] = {
             displayName = "Sineex-illidan",
-            specKey = "",
+            specKey = "DEMONHUNTER_DEVOURER",
             rating = 766,
             rank = 838,
             wins = 8,
@@ -17570,7 +18180,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["skriniar-tichondrius"] = {
             displayName = "Skriniar-tichondrius",
-            specKey = "",
+            specKey = "PRIEST_SHADOW",
             rating = 863,
             rank = 637,
             wins = 9,
@@ -17579,7 +18189,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["skóll-shatteredhalls"] = {
             displayName = "Skóll-shattered-halls",
-            specKey = "",
+            specKey = "WARLOCK_DESTRUCTION",
             rating = 1055,
             rank = 372,
             wins = 11,
@@ -17588,7 +18198,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["skýwalker-dalaran"] = {
             displayName = "Skýwalker-dalaran",
-            specKey = "",
+            specKey = "MAGE_FROST",
             rating = 672,
             rank = 857,
             wins = 7,
@@ -17597,7 +18207,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["slantsix-tichondrius"] = {
             displayName = "Slantsix-tichondrius",
-            specKey = "",
+            specKey = "WARLOCK_DESTRUCTION",
             rating = 1428,
             rank = 184,
             wins = 15,
@@ -17606,7 +18216,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["slayerpriest-tichondrius"] = {
             displayName = "Slayerpriest-tichondrius",
-            specKey = "",
+            specKey = "PRIEST_DISCIPLINE",
             rating = 672,
             rank = 857,
             wins = 7,
@@ -17615,7 +18225,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["slimeszn-tichondrius"] = {
             displayName = "Slimeszn-tichondrius",
-            specKey = "",
+            specKey = "WARRIOR_ARMS",
             rating = 768,
             rank = 677,
             wins = 8,
@@ -17624,7 +18234,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["slimfo-sargeras"] = {
             displayName = "Slimfo-sargeras",
-            specKey = "",
+            specKey = "PRIEST_SHADOW",
             rating = 1420,
             rank = 189,
             wins = 15,
@@ -17633,7 +18243,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["slimjd-moonguard"] = {
             displayName = "Slimjd-moon-guard",
-            specKey = "",
+            specKey = "PRIEST_SHADOW",
             rating = 1873,
             rank = 6,
             wins = 34,
@@ -17642,7 +18252,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["slipperydog-jubeithos"] = {
             displayName = "Slipperydog-jubeithos",
-            specKey = "",
+            specKey = "ROGUE_ASSASSINATION",
             rating = 765,
             rank = 847,
             wins = 8,
@@ -17651,7 +18261,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["smilesu-tichondrius"] = {
             displayName = "Smilesu-tichondrius",
-            specKey = "MAGE_FIRE",
+            specKey = "",
             rating = 1056,
             rank = 341,
             wins = 11,
@@ -17660,7 +18270,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["smxxn-tichondrius"] = {
             displayName = "Smxxn-tichondrius",
-            specKey = "",
+            specKey = "SHAMAN_ENHANCEMENT",
             rating = 1056,
             rank = 341,
             wins = 11,
@@ -17669,7 +18279,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["sneakydikns-tichondrius"] = {
             displayName = "Sneakydikns-tichondrius",
-            specKey = "",
+            specKey = "DRUID_BALANCE",
             rating = 863,
             rank = 637,
             wins = 9,
@@ -17678,7 +18288,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["sneakysoup-korgath"] = {
             displayName = "Sneakysoup-korgath",
-            specKey = "",
+            specKey = "ROGUE_ASSASSINATION",
             rating = 957,
             rank = 518,
             wins = 10,
@@ -17687,7 +18297,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["snky-tichondrius"] = {
             displayName = "Snky-tichondrius",
-            specKey = "",
+            specKey = "DRUID_FERAL",
             rating = 959,
             rank = 469,
             wins = 10,
@@ -17696,7 +18306,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["softscars-illidan"] = {
             displayName = "Softscars-illidan",
-            specKey = "",
+            specKey = "MONK_MISTWEAVER",
             rating = 1056,
             rank = 341,
             wins = 11,
@@ -17705,7 +18315,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["soggytoes-frostmourne"] = {
             displayName = "Soggytoes-frostmourne",
-            specKey = "",
+            specKey = "ROGUE_ASSASSINATION",
             rating = 958,
             rank = 502,
             wins = 10,
@@ -17714,7 +18324,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["sontíx-sargeras"] = {
             displayName = "Sontíx-sargeras",
-            specKey = "",
+            specKey = "ROGUE_ASSASSINATION",
             rating = 768,
             rank = 677,
             wins = 8,
@@ -17723,7 +18333,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["spacenat-tichondrius"] = {
             displayName = "Spacenat-tichondrius",
-            specKey = "",
+            specKey = "WARRIOR_FURY",
             rating = 1243,
             rank = 265,
             wins = 13,
@@ -17741,7 +18351,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["specialbeam-sargeras"] = {
             displayName = "Specialbeam-sargeras",
-            specKey = "",
+            specKey = "WARLOCK_AFFLICTION",
             rating = 767,
             rank = 803,
             wins = 8,
@@ -17768,7 +18378,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["sporadiclive-sargeras"] = {
             displayName = "Sporadiclive-sargeras",
-            specKey = "",
+            specKey = "DRUID_FERAL",
             rating = 1568,
             rank = 117,
             wins = 19,
@@ -17777,7 +18387,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["squivv-jubeithos"] = {
             displayName = "Squivv-jubeithos",
-            specKey = "",
+            specKey = "WARLOCK_AFFLICTION",
             rating = 864,
             rank = 543,
             wins = 9,
@@ -17786,7 +18396,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["ssabi-tichondrius"] = {
             displayName = "Ssabi-tichondrius",
-            specKey = "",
+            specKey = "PRIEST_DISCIPLINE",
             rating = 672,
             rank = 857,
             wins = 7,
@@ -17795,7 +18405,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["ssibal-suramar"] = {
             displayName = "Ssibal-suramar",
-            specKey = "",
+            specKey = "WARLOCK_AFFLICTION",
             rating = 1238,
             rank = 284,
             wins = 13,
@@ -17804,7 +18414,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["ssolemn-tichondrius"] = {
             displayName = "Ssolemn-tichondrius",
-            specKey = "",
+            specKey = "ROGUE_SUBTLETY",
             rating = 1342,
             rank = 205,
             wins = 14,
@@ -17813,7 +18423,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["staa-kelthuzad"] = {
             displayName = "Staa-kelthuzad",
-            specKey = "",
+            specKey = "PRIEST_HOLY",
             rating = 767,
             rank = 803,
             wins = 8,
@@ -17822,7 +18432,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["standerwick-tichondrius"] = {
             displayName = "Standerwick-tichondrius",
-            specKey = "",
+            specKey = "MAGE_FROST",
             rating = 1150,
             rank = 301,
             wins = 12,
@@ -17831,7 +18441,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["starlinkgamr-dalaran"] = {
             displayName = "Starlinkgamr-dalaran",
-            specKey = "",
+            specKey = "ROGUE_ASSASSINATION",
             rating = 1056,
             rank = 341,
             wins = 11,
@@ -17840,7 +18450,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["starsharts-tichondrius"] = {
             displayName = "Starsharts-tichondrius",
-            specKey = "",
+            specKey = "PRIEST_DISCIPLINE",
             rating = 672,
             rank = 857,
             wins = 7,
@@ -17849,7 +18459,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["starsørínx-dalaran"] = {
             displayName = "Starsørínx-dalaran",
-            specKey = "",
+            specKey = "PRIEST_HOLY",
             rating = 672,
             rank = 857,
             wins = 7,
@@ -17867,7 +18477,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["stegulator-kelthuzad"] = {
             displayName = "Stegulator-kelthuzad",
-            specKey = "",
+            specKey = "MAGE_FIRE",
             rating = 768,
             rank = 677,
             wins = 8,
@@ -17876,7 +18486,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["stinkie-nerzhul"] = {
             displayName = "Stinkie-nerzhul",
-            specKey = "",
+            specKey = "WARLOCK_AFFLICTION",
             rating = 1334,
             rank = 218,
             wins = 14,
@@ -17885,7 +18495,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["stinkychimp-area52"] = {
             displayName = "Stinkychimp-area-52",
-            specKey = "",
+            specKey = "MONK_WINDWALKER",
             rating = 1482,
             rank = 165,
             wins = 16,
@@ -17894,7 +18504,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["stonedmonkeý-tichondrius"] = {
             displayName = "Stonedmonkeý-tichondrius",
-            specKey = "",
+            specKey = "MAGE_FIRE",
             rating = 1335,
             rank = 216,
             wins = 14,
@@ -17903,7 +18513,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["stroodleboy-korgath"] = {
             displayName = "Stroodleboy-korgath",
-            specKey = "",
+            specKey = "HUNTER_BEASTMASTERY",
             rating = 959,
             rank = 469,
             wins = 10,
@@ -17921,7 +18531,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["stícky-zuluhed"] = {
             displayName = "Stícky-zuluhed",
-            specKey = "",
+            specKey = "PRIEST_SHADOW",
             rating = 767,
             rank = 803,
             wins = 8,
@@ -17930,7 +18540,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["sufferpoints-sargeras"] = {
             displayName = "Sufferpoints-sargeras",
-            specKey = "",
+            specKey = "DRUID_FERAL",
             rating = 864,
             rank = 543,
             wins = 9,
@@ -17939,7 +18549,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["sugandisorc-kelthuzad"] = {
             displayName = "Sugandisorc-kelthuzad",
-            specKey = "",
+            specKey = "HUNTER_BEASTMASTERY",
             rating = 768,
             rank = 677,
             wins = 8,
@@ -17948,7 +18558,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["suggarmom-area52"] = {
             displayName = "Suggarmom-area-52",
-            specKey = "",
+            specKey = "PRIEST_DISCIPLINE",
             rating = 767,
             rank = 803,
             wins = 8,
@@ -17957,7 +18567,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["suicunë-malganis"] = {
             displayName = "Suicunë-malganis",
-            specKey = "",
+            specKey = "SHAMAN_RESTORATION",
             rating = 1550,
             rank = 130,
             wins = 18,
@@ -17966,7 +18576,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["sunshìnes-wyrmrestaccord"] = {
             displayName = "Sunshìnes-wyrmrest-accord",
-            specKey = "",
+            specKey = "MONK_MISTWEAVER",
             rating = 767,
             rank = 803,
             wins = 8,
@@ -17975,7 +18585,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["superjésus-azjolnerub"] = {
             displayName = "Superjésus-azjolnerub",
-            specKey = "",
+            specKey = "DRUID_BALANCE",
             rating = 765,
             rank = 847,
             wins = 8,
@@ -17984,7 +18594,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["sushiyagi-korgath"] = {
             displayName = "Sushiyagi-korgath",
-            specKey = "",
+            specKey = "MAGE_FIRE",
             rating = 863,
             rank = 637,
             wins = 9,
@@ -17993,7 +18603,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["swampgodx-tichondrius"] = {
             displayName = "Swampgodx-tichondrius",
-            specKey = "",
+            specKey = "ROGUE_ASSASSINATION",
             rating = 960,
             rank = 417,
             wins = 10,
@@ -18011,7 +18621,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["swigs-doomhammer"] = {
             displayName = "Swigs-doomhammer",
-            specKey = "",
+            specKey = "PRIEST_DISCIPLINE",
             rating = 959,
             rank = 469,
             wins = 10,
@@ -18029,7 +18639,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["swædat-frostmourne"] = {
             displayName = "Swædat-frostmourne",
-            specKey = "",
+            specKey = "MAGE_ARCANE",
             rating = 1243,
             rank = 265,
             wins = 13,
@@ -18038,7 +18648,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["sychz-tichondrius"] = {
             displayName = "Sychz-tichondrius",
-            specKey = "",
+            specKey = "SHAMAN_RESTORATION",
             rating = 768,
             rank = 677,
             wins = 8,
@@ -18047,7 +18657,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["synn-tichondrius"] = {
             displayName = "Synn-tichondrius",
-            specKey = "",
+            specKey = "DRUID_FERAL",
             rating = 863,
             rank = 637,
             wins = 9,
@@ -18056,7 +18666,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["sñugglëz-illidan"] = {
             displayName = "Sñugglëz-illidan",
-            specKey = "",
+            specKey = "MONK_MISTWEAVER",
             rating = 1053,
             rank = 397,
             wins = 11,
@@ -18065,7 +18675,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["taconachos-illidan"] = {
             displayName = "Taconachos-illidan",
-            specKey = "",
+            specKey = "PRIEST_DISCIPLINE",
             rating = 864,
             rank = 543,
             wins = 9,
@@ -18074,7 +18684,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["taketokes-spinebreaker"] = {
             displayName = "Taketokes-spinebreaker",
-            specKey = "",
+            specKey = "PALADIN_HOLY",
             rating = 762,
             rank = 855,
             wins = 8,
@@ -18083,7 +18693,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["takotsubo-darkspear"] = {
             displayName = "Takotsubo-darkspear",
-            specKey = "",
+            specKey = "MAGE_ARCANE",
             rating = 1545,
             rank = 138,
             wins = 18,
@@ -18101,7 +18711,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["tapeworm-malganis"] = {
             displayName = "Tapeworm-malganis",
-            specKey = "",
+            specKey = "DEATHKNIGHT_UNHOLY",
             rating = 957,
             rank = 518,
             wins = 10,
@@ -18110,7 +18720,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["tarwöw-moonguard"] = {
             displayName = "Tarwöw-moon-guard",
-            specKey = "",
+            specKey = "EVOKER_PRESERVATION",
             rating = 768,
             rank = 677,
             wins = 8,
@@ -18119,7 +18729,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["tatunga-tichondrius"] = {
             displayName = "Tatunga-tichondrius",
-            specKey = "",
+            specKey = "PRIEST_DISCIPLINE",
             rating = 1609,
             rank = 73,
             wins = 19,
@@ -18128,7 +18738,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["tdlz-tichondrius"] = {
             displayName = "Tdlz-tichondrius",
-            specKey = "",
+            specKey = "SHAMAN_ENHANCEMENT",
             rating = 1053,
             rank = 397,
             wins = 11,
@@ -18146,7 +18756,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["teablacks-tichondrius"] = {
             displayName = "Teablacks-tichondrius",
-            specKey = "",
+            specKey = "PALADIN_RETRIBUTION",
             rating = 768,
             rank = 677,
             wins = 8,
@@ -18191,7 +18801,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["thefunk-tichondrius"] = {
             displayName = "Thefunk-tichondrius",
-            specKey = "",
+            specKey = "WARLOCK_AFFLICTION",
             rating = 1342,
             rank = 205,
             wins = 14,
@@ -18200,7 +18810,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["thehern-tichondrius"] = {
             displayName = "Thehern-tichondrius",
-            specKey = "",
+            specKey = "PRIEST_SHADOW",
             rating = 957,
             rank = 518,
             wins = 10,
@@ -18209,7 +18819,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["thekillerx-tichondrius"] = {
             displayName = "Thekillerx-tichondrius",
-            specKey = "",
+            specKey = "DEATHKNIGHT_FROST",
             rating = 1055,
             rank = 372,
             wins = 11,
@@ -18218,7 +18828,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["thenextx-illidan"] = {
             displayName = "Thenextx-illidan",
-            specKey = "",
+            specKey = "PALADIN_RETRIBUTION",
             rating = 672,
             rank = 857,
             wins = 7,
@@ -18227,7 +18837,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["theodöre-frostmourne"] = {
             displayName = "Theodöre-frostmourne",
-            specKey = "",
+            specKey = "PRIEST_DISCIPLINE",
             rating = 672,
             rank = 857,
             wins = 7,
@@ -18236,7 +18846,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["thiccbolt-laughingskull"] = {
             displayName = "Thiccbolt-laughing-skull",
-            specKey = "",
+            specKey = "WARLOCK_DESTRUCTION",
             rating = 767,
             rank = 803,
             wins = 8,
@@ -18245,7 +18855,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["thss-illidan"] = {
             displayName = "Thss-illidan",
-            specKey = "",
+            specKey = "PRIEST_HOLY",
             rating = 1149,
             rank = 308,
             wins = 12,
@@ -18272,7 +18882,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["ticrissdepen-zuljin"] = {
             displayName = "Ticrissdepen-zuljin",
-            specKey = "",
+            specKey = "HUNTER_MARKSMANSHIP",
             rating = 768,
             rank = 677,
             wins = 8,
@@ -18290,7 +18900,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["tivs-sargeras"] = {
             displayName = "Tivs-sargeras",
-            specKey = "",
+            specKey = "DRUID_RESTORATION",
             rating = 851,
             rank = 676,
             wins = 9,
@@ -18299,7 +18909,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["tmdigbick-tichondrius"] = {
             displayName = "Tmdigbick-tichondrius",
-            specKey = "",
+            specKey = "SHAMAN_RESTORATION",
             rating = 1642,
             rank = 57,
             wins = 23,
@@ -18317,7 +18927,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["toddmolovski-frostmourne"] = {
             displayName = "Toddmolovski-frostmourne",
-            specKey = "",
+            specKey = "HUNTER_SURVIVAL",
             rating = 1519,
             rank = 154,
             wins = 16,
@@ -18326,7 +18936,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["todory-moonguard"] = {
             displayName = "Todory-moon-guard",
-            specKey = "WARRIOR_ARMS",
+            specKey = "",
             rating = 864,
             rank = 543,
             wins = 9,
@@ -18335,7 +18945,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["tokingsr-illidan"] = {
             displayName = "Tokingsr-illidan",
-            specKey = "",
+            specKey = "ROGUE_ASSASSINATION",
             rating = 767,
             rank = 803,
             wins = 8,
@@ -18353,7 +18963,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["tomassi-bloodscalp"] = {
             displayName = "Tomassi-bloodscalp",
-            specKey = "",
+            specKey = "ROGUE_SUBTLETY",
             rating = 1339,
             rank = 213,
             wins = 14,
@@ -18362,7 +18972,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["tomkench-blackrock"] = {
             displayName = "Tomkench-blackrock",
-            specKey = "",
+            specKey = "SHAMAN_RESTORATION",
             rating = 863,
             rank = 637,
             wins = 9,
@@ -18380,7 +18990,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["tonysopranö-quelthalas"] = {
             displayName = "Tonysopranö-quelthalas",
-            specKey = "",
+            specKey = "PALADIN_RETRIBUTION",
             rating = 672,
             rank = 857,
             wins = 7,
@@ -18416,7 +19026,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["traponomics-stormrage"] = {
             displayName = "Traponomics-stormrage",
-            specKey = "",
+            specKey = "HUNTER_SURVIVAL",
             rating = 1245,
             rank = 252,
             wins = 13,
@@ -18425,7 +19035,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["trottywin-emeralddream"] = {
             displayName = "Trottywin-emerald-dream",
-            specKey = "",
+            specKey = "DRUID_BALANCE",
             rating = 1603,
             rank = 86,
             wins = 20,
@@ -18434,7 +19044,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["ttr-kelthuzad"] = {
             displayName = "Ttr-kelthuzad",
-            specKey = "",
+            specKey = "ROGUE_ASSASSINATION",
             rating = 1054,
             rank = 386,
             wins = 11,
@@ -18452,7 +19062,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["turtleqt-darkspear"] = {
             displayName = "Turtleqt-darkspear",
-            specKey = "",
+            specKey = "WARLOCK_AFFLICTION",
             rating = 1545,
             rank = 138,
             wins = 18,
@@ -18470,7 +19080,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["ungolïant-bleedinghollow"] = {
             displayName = "Ungolïant-bleeding-hollow",
-            specKey = "",
+            specKey = "DRUID_FERAL",
             rating = 672,
             rank = 857,
             wins = 7,
@@ -18488,7 +19098,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["unloading-malganis"] = {
             displayName = "Unloading-malganis",
-            specKey = "",
+            specKey = "HUNTER_MARKSMANSHIP",
             rating = 672,
             rank = 857,
             wins = 7,
@@ -18497,7 +19107,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["urdem-moonguard"] = {
             displayName = "Urdem-moon-guard",
-            specKey = "",
+            specKey = "WARRIOR_ARMS",
             rating = 960,
             rank = 417,
             wins = 10,
@@ -18506,7 +19116,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["uthredx-saurfang"] = {
             displayName = "Uthredx-saurfang",
-            specKey = "",
+            specKey = "DRUID_RESTORATION",
             rating = 767,
             rank = 803,
             wins = 8,
@@ -18515,7 +19125,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["uthér-kultiras"] = {
             displayName = "Uthér-kul-tiras",
-            specKey = "",
+            specKey = "PALADIN_RETRIBUTION",
             rating = 864,
             rank = 543,
             wins = 9,
@@ -18524,7 +19134,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["valerie-dreadmaul"] = {
             displayName = "Valerie-dreadmaul",
-            specKey = "",
+            specKey = "MONK_WINDWALKER",
             rating = 767,
             rank = 803,
             wins = 8,
@@ -18533,7 +19143,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["vallecula-mannoroth"] = {
             displayName = "Vallecula-mannoroth",
-            specKey = "",
+            specKey = "PALADIN_RETRIBUTION",
             rating = 1149,
             rank = 308,
             wins = 12,
@@ -18542,7 +19152,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["valériemeow-tichondrius"] = {
             displayName = "Valériemeow-tichondrius",
-            specKey = "",
+            specKey = "MAGE_FROST",
             rating = 1056,
             rank = 341,
             wins = 11,
@@ -18551,7 +19161,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["vampyressa-moonguard"] = {
             displayName = "Vampyressa-moon-guard",
-            specKey = "",
+            specKey = "WARLOCK_DESTRUCTION",
             rating = 864,
             rank = 543,
             wins = 9,
@@ -18560,7 +19170,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["vandaz-tichondrius"] = {
             displayName = "Vandaz-tichondrius",
-            specKey = "",
+            specKey = "PRIEST_HOLY",
             rating = 1152,
             rank = 289,
             wins = 12,
@@ -18578,7 +19188,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["vañillalatte-tichondrius"] = {
             displayName = "Vañillalatte-tichondrius",
-            specKey = "",
+            specKey = "MAGE_FROST",
             rating = 960,
             rank = 417,
             wins = 10,
@@ -18587,7 +19197,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["vendela-illidan"] = {
             displayName = "Vendela-illidan",
-            specKey = "",
+            specKey = "EVOKER_PRESERVATION",
             rating = 768,
             rank = 677,
             wins = 8,
@@ -18596,7 +19206,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["venetian-illidan"] = {
             displayName = "Venetian-illidan",
-            specKey = "",
+            specKey = "PRIEST_SHADOW",
             rating = 768,
             rank = 677,
             wins = 8,
@@ -18623,7 +19233,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["vesania-illidan"] = {
             displayName = "Vesania-illidan",
-            specKey = "",
+            specKey = "HUNTER_MARKSMANSHIP",
             rating = 672,
             rank = 857,
             wins = 7,
@@ -18632,7 +19242,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["vexed-illidan"] = {
             displayName = "Vexed-illidan",
-            specKey = "",
+            specKey = "MONK_MISTWEAVER",
             rating = 768,
             rank = 677,
             wins = 8,
@@ -18650,7 +19260,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["voidcc-tichondrius"] = {
             displayName = "Voidcc-tichondrius",
-            specKey = "",
+            specKey = "PRIEST_HOLY",
             rating = 764,
             rank = 851,
             wins = 8,
@@ -18659,7 +19269,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["voidqnarisha-tichondrius"] = {
             displayName = "Voidqnarisha-tichondrius",
-            specKey = "",
+            specKey = "PRIEST_HOLY",
             rating = 864,
             rank = 543,
             wins = 9,
@@ -18668,7 +19278,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["voo-burninglegion"] = {
             displayName = "Voo-burning-legion",
-            specKey = "",
+            specKey = "MAGE_FROST",
             rating = 1523,
             rank = 151,
             wins = 16,
@@ -18686,7 +19296,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["vvitch-illidan"] = {
             displayName = "Vvitch-illidan",
-            specKey = "",
+            specKey = "MAGE_FIRE",
             rating = 1773,
             rank = 21,
             wins = 34,
@@ -18704,7 +19314,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["vyarah-sargeras"] = {
             displayName = "Vyarah-sargeras",
-            specKey = "",
+            specKey = "PRIEST_HOLY",
             rating = 1542,
             rank = 140,
             wins = 18,
@@ -18713,7 +19323,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["vyrah-area52"] = {
             displayName = "Vyrah-area-52",
-            specKey = "",
+            specKey = "PRIEST_DISCIPLINE",
             rating = 957,
             rank = 518,
             wins = 10,
@@ -18722,7 +19332,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["vyrecks-hyjal"] = {
             displayName = "Vyrecks-hyjal",
-            specKey = "",
+            specKey = "WARLOCK_DESTRUCTION",
             rating = 1143,
             rank = 336,
             wins = 12,
@@ -18749,7 +19359,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["vèganghøul-barthilas"] = {
             displayName = "Vèganghøul-barthilas",
-            specKey = "",
+            specKey = "PALADIN_HOLY",
             rating = 956,
             rank = 533,
             wins = 10,
@@ -18776,7 +19386,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["wabuchris-wyrmrestaccord"] = {
             displayName = "Wabuchris-wyrmrest-accord",
-            specKey = "",
+            specKey = "PALADIN_RETRIBUTION",
             rating = 1659,
             rank = 46,
             wins = 24,
@@ -18785,7 +19395,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["wakeenfiendx-tichondrius"] = {
             displayName = "Wakeenfiendx-tichondrius",
-            specKey = "",
+            specKey = "DRUID_BALANCE",
             rating = 1611,
             rank = 72,
             wins = 19,
@@ -18794,7 +19404,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["walburga-malganis"] = {
             displayName = "Walburga-malganis",
-            specKey = "",
+            specKey = "PRIEST_DISCIPLINE",
             rating = 767,
             rank = 803,
             wins = 8,
@@ -18821,7 +19431,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["wanchunsan-ghostlands"] = {
             displayName = "Wanchunsan-ghostlands",
-            specKey = "",
+            specKey = "MONK_WINDWALKER",
             rating = 958,
             rank = 502,
             wins = 10,
@@ -18830,7 +19440,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["wankwuan-stormrage"] = {
             displayName = "Wankwuan-stormrage",
-            specKey = "",
+            specKey = "WARLOCK_AFFLICTION",
             rating = 1054,
             rank = 386,
             wins = 11,
@@ -18857,7 +19467,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["wbu-frostmourne"] = {
             displayName = "Wbu-frostmourne",
-            specKey = "",
+            specKey = "PRIEST_DISCIPLINE",
             rating = 1750,
             rank = 28,
             wins = 29,
@@ -18866,7 +19476,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["weike-barthilas"] = {
             displayName = "Weike-barthilas",
-            specKey = "",
+            specKey = "PALADIN_RETRIBUTION",
             rating = 768,
             rank = 677,
             wins = 8,
@@ -18893,7 +19503,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["whiplashtelv-hyjal"] = {
             displayName = "Whiplashtelv-hyjal",
-            specKey = "",
+            specKey = "MAGE_FROST",
             rating = 861,
             rank = 671,
             wins = 9,
@@ -18902,7 +19512,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["wildimp-aeriepeak"] = {
             displayName = "Wildimp-aerie-peak",
-            specKey = "",
+            specKey = "WARLOCK_DEMONOLOGY",
             rating = 960,
             rank = 417,
             wins = 10,
@@ -18911,7 +19521,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["windpal-area52"] = {
             displayName = "Windpal-area-52",
-            specKey = "",
+            specKey = "PALADIN_RETRIBUTION",
             rating = 1590,
             rank = 98,
             wins = 19,
@@ -18929,7 +19539,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["wobbleshanks-tichondrius"] = {
             displayName = "Wobbleshanks-tichondrius",
-            specKey = "",
+            specKey = "ROGUE_ASSASSINATION",
             rating = 1240,
             rank = 275,
             wins = 13,
@@ -18938,7 +19548,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["wokcats-tichondrius"] = {
             displayName = "Wokcats-tichondrius",
-            specKey = "",
+            specKey = "DRUID_FERAL",
             rating = 864,
             rank = 543,
             wins = 9,
@@ -18947,7 +19557,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["woolly-barthilas"] = {
             displayName = "Woolly-barthilas",
-            specKey = "",
+            specKey = "PRIEST_DISCIPLINE",
             rating = 768,
             rank = 677,
             wins = 8,
@@ -18965,7 +19575,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["worships-zuljin"] = {
             displayName = "Worships-zuljin",
-            specKey = "",
+            specKey = "PRIEST_HOLY",
             rating = 1652,
             rank = 49,
             wins = 22,
@@ -18974,7 +19584,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["worstmemory-sargeras"] = {
             displayName = "Worstmemory-sargeras",
-            specKey = "",
+            specKey = "PRIEST_DISCIPLINE",
             rating = 1246,
             rank = 248,
             wins = 13,
@@ -18983,7 +19593,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["wtfbliz-tichondrius"] = {
             displayName = "Wtfbliz-tichondrius",
-            specKey = "",
+            specKey = "WARLOCK_AFFLICTION",
             rating = 1240,
             rank = 275,
             wins = 13,
@@ -18992,7 +19602,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["wynson-zuljin"] = {
             displayName = "Wynson-zuljin",
-            specKey = "",
+            specKey = "PRIEST_DISCIPLINE",
             rating = 672,
             rank = 857,
             wins = 7,
@@ -19001,7 +19611,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["wésyg-akama"] = {
             displayName = "Wésyg-akama",
-            specKey = "",
+            specKey = "ROGUE_ASSASSINATION",
             rating = 1303,
             rank = 237,
             wins = 14,
@@ -19010,7 +19620,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["wîsa-moonguard"] = {
             displayName = "Wîsa-moon-guard",
-            specKey = "",
+            specKey = "PRIEST_DISCIPLINE",
             rating = 768,
             rank = 677,
             wins = 8,
@@ -19019,7 +19629,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["wølven-stormrage"] = {
             displayName = "Wølven-stormrage",
-            specKey = "",
+            specKey = "WARRIOR_ARMS",
             rating = 958,
             rank = 502,
             wins = 10,
@@ -19046,7 +19656,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["xenoboii-sargeras"] = {
             displayName = "Xenoboii-sargeras",
-            specKey = "",
+            specKey = "ROGUE_ASSASSINATION",
             rating = 1243,
             rank = 265,
             wins = 13,
@@ -19055,7 +19665,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["xezar-winterhoof"] = {
             displayName = "Xezar-winterhoof",
-            specKey = "",
+            specKey = "PRIEST_DISCIPLINE",
             rating = 864,
             rank = 543,
             wins = 9,
@@ -19064,7 +19674,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["xiaoxiamiz-illidan"] = {
             displayName = "Xiaoxiamiz-illidan",
-            specKey = "",
+            specKey = "SHAMAN_ENHANCEMENT",
             rating = 1590,
             rank = 98,
             wins = 19,
@@ -19073,7 +19683,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["xido-nemesis"] = {
             displayName = "Xido-nemesis",
-            specKey = "",
+            specKey = "WARLOCK_DESTRUCTION",
             rating = 862,
             rank = 657,
             wins = 9,
@@ -19082,7 +19692,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["xldam-kelthuzad"] = {
             displayName = "Xldam-kelthuzad",
-            specKey = "",
+            specKey = "WARLOCK_AFFLICTION",
             rating = 1683,
             rank = 39,
             wins = 26,
@@ -19091,7 +19701,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["xsilence-illidan"] = {
             displayName = "Xsilence-illidan",
-            specKey = "",
+            specKey = "PRIEST_HOLY",
             rating = 672,
             rank = 857,
             wins = 7,
@@ -19100,7 +19710,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["xxwitcherxx-stormrage"] = {
             displayName = "Xxwitcherxx-stormrage",
-            specKey = "",
+            specKey = "PALADIN_RETRIBUTION",
             rating = 1246,
             rank = 248,
             wins = 13,
@@ -19109,7 +19719,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["ybmad-area52"] = {
             displayName = "Ybmad-area-52",
-            specKey = "",
+            specKey = "DEATHKNIGHT_UNHOLY",
             rating = 960,
             rank = 417,
             wins = 10,
@@ -19118,7 +19728,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["ybmad-shatteredhand"] = {
             displayName = "Ybmad-shattered-hand",
-            specKey = "",
+            specKey = "SHAMAN_ELEMENTAL",
             rating = 1055,
             rank = 372,
             wins = 11,
@@ -19127,7 +19737,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["yearsago-kelthuzad"] = {
             displayName = "Yearsago-kelthuzad",
-            specKey = "",
+            specKey = "WARRIOR_ARMS",
             rating = 1056,
             rank = 341,
             wins = 11,
@@ -19145,7 +19755,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["yelix-tichondrius"] = {
             displayName = "Yelix-tichondrius",
-            specKey = "",
+            specKey = "PALADIN_RETRIBUTION",
             rating = 864,
             rank = 543,
             wins = 9,
@@ -19154,7 +19764,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["yellowpencil-area52"] = {
             displayName = "Yellowpencil-area-52",
-            specKey = "",
+            specKey = "PRIEST_HOLY",
             rating = 1517,
             rank = 158,
             wins = 16,
@@ -19172,7 +19782,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["yoona-kiljaeden"] = {
             displayName = "Yoona-kiljaeden",
-            specKey = "",
+            specKey = "DRUID_RESTORATION",
             rating = 767,
             rank = 803,
             wins = 8,
@@ -19181,7 +19791,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["ysl-aegwynn"] = {
             displayName = "Ysl-aegwynn",
-            specKey = "",
+            specKey = "DEMONHUNTER_HAVOC",
             rating = 1245,
             rank = 252,
             wins = 13,
@@ -19199,7 +19809,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["yuji-darkspear"] = {
             displayName = "Yuji-darkspear",
-            specKey = "",
+            specKey = "PALADIN_RETRIBUTION",
             rating = 672,
             rank = 857,
             wins = 7,
@@ -19226,7 +19836,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["yunkz-tichondrius"] = {
             displayName = "Yunkz-tichondrius",
-            specKey = "",
+            specKey = "WARLOCK_DESTRUCTION",
             rating = 956,
             rank = 533,
             wins = 10,
@@ -19235,7 +19845,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["yøske-tichondrius"] = {
             displayName = "Yøske-tichondrius",
-            specKey = "HUNTER_MARKSMANSHIP",
+            specKey = "",
             rating = 672,
             rank = 857,
             wins = 7,
@@ -19244,7 +19854,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["zabels-tichondrius"] = {
             displayName = "Zabels-tichondrius",
-            specKey = "",
+            specKey = "PALADIN_HOLY",
             rating = 960,
             rank = 417,
             wins = 10,
@@ -19280,7 +19890,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["zaepray-moonrunner"] = {
             displayName = "Zaepray-moonrunner",
-            specKey = "",
+            specKey = "PRIEST_DISCIPLINE",
             rating = 957,
             rank = 518,
             wins = 10,
@@ -19289,7 +19899,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["zalhune-tichondrius"] = {
             displayName = "Zalhune-tichondrius",
-            specKey = "",
+            specKey = "HUNTER_BEASTMASTERY",
             rating = 862,
             rank = 657,
             wins = 9,
@@ -19307,7 +19917,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["zasin-quelthalas"] = {
             displayName = "Zasin-quelthalas",
-            specKey = "",
+            specKey = "DEATHKNIGHT_UNHOLY",
             rating = 1413,
             rank = 193,
             wins = 15,
@@ -19316,7 +19926,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["zaydena-tichondrius"] = {
             displayName = "Zaydena-tichondrius",
-            specKey = "",
+            specKey = "MAGE_FROST",
             rating = 672,
             rank = 857,
             wins = 7,
@@ -19325,7 +19935,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["zeiren-jaedenar"] = {
             displayName = "Zeiren-jaedenar",
-            specKey = "",
+            specKey = "PALADIN_RETRIBUTION",
             rating = 1243,
             rank = 265,
             wins = 13,
@@ -19334,7 +19944,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["zenkaotyk-zuljin"] = {
             displayName = "Zenkaotyk-zuljin",
-            specKey = "",
+            specKey = "SHAMAN_ENHANCEMENT",
             rating = 864,
             rank = 543,
             wins = 9,
@@ -19343,7 +19953,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["zentheonxd-malganis"] = {
             displayName = "Zentheonxd-malganis",
-            specKey = "DRUID_FERAL",
+            specKey = "",
             rating = 1056,
             rank = 341,
             wins = 11,
@@ -19352,7 +19962,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["zinggi-terenas"] = {
             displayName = "Zinggi-terenas",
-            specKey = "",
+            specKey = "PALADIN_RETRIBUTION",
             rating = 768,
             rank = 677,
             wins = 8,
@@ -19379,7 +19989,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["zoeytur-illidan"] = {
             displayName = "Zoeytur-illidan",
-            specKey = "",
+            specKey = "ROGUE_ASSASSINATION",
             rating = 1150,
             rank = 301,
             wins = 12,
@@ -19388,7 +19998,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["zoeytur-sargeras"] = {
             displayName = "Zoeytur-sargeras",
-            specKey = "",
+            specKey = "SHAMAN_ENHANCEMENT",
             rating = 864,
             rank = 543,
             wins = 9,
@@ -19397,7 +20007,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["ztokes-executus"] = {
             displayName = "Ztokes-executus",
-            specKey = "",
+            specKey = "ROGUE_OUTLAW",
             rating = 864,
             rank = 543,
             wins = 9,
@@ -19406,7 +20016,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["zugtsu-area52"] = {
             displayName = "Zugtsu-area-52",
-            specKey = "",
+            specKey = "SHAMAN_RESTORATION",
             rating = 672,
             rank = 857,
             wins = 7,
@@ -19415,7 +20025,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["zujo-emeralddream"] = {
             displayName = "Zujo-emerald-dream",
-            specKey = "",
+            specKey = "HUNTER_BEASTMASTERY",
             rating = 1603,
             rank = 86,
             wins = 20,
@@ -19424,7 +20034,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["zumago-tichondrius"] = {
             displayName = "Zumago-tichondrius",
-            specKey = "",
+            specKey = "HUNTER_MARKSMANSHIP",
             rating = 1150,
             rank = 301,
             wins = 12,
@@ -19433,7 +20043,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["zurza-tichondrius"] = {
             displayName = "Zurza-tichondrius",
-            specKey = "ROGUE_SUBTLETY",
+            specKey = "",
             rating = 864,
             rank = 543,
             wins = 9,
@@ -19442,7 +20052,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["zyltan-bleedinghollow"] = {
             displayName = "Zyltan-bleeding-hollow",
-            specKey = "",
+            specKey = "ROGUE_SUBTLETY",
             rating = 1328,
             rank = 226,
             wins = 14,
@@ -19451,7 +20061,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["zyymes-tichondrius"] = {
             displayName = "Zyymes-tichondrius",
-            specKey = "",
+            specKey = "ROGUE_SUBTLETY",
             rating = 863,
             rank = 637,
             wins = 9,
@@ -19469,7 +20079,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["zöoyork-tichondrius"] = {
             displayName = "Zöoyork-tichondrius",
-            specKey = "",
+            specKey = "SHAMAN_ENHANCEMENT",
             rating = 1332,
             rank = 223,
             wins = 14,
@@ -19478,7 +20088,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["zøzouh-zuljin"] = {
             displayName = "Zøzouh-zuljin",
-            specKey = "",
+            specKey = "DEATHKNIGHT_UNHOLY",
             rating = 1055,
             rank = 372,
             wins = 11,
@@ -19496,7 +20106,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["ßait-frostmourne"] = {
             displayName = "ßait-frostmourne",
-            specKey = "",
+            specKey = "SHAMAN_RESTORATION",
             rating = 768,
             rank = 677,
             wins = 8,
@@ -19505,7 +20115,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["ßbbq-tichondrius"] = {
             displayName = "ßbbq-tichondrius",
-            specKey = "",
+            specKey = "PALADIN_RETRIBUTION",
             rating = 864,
             rank = 543,
             wins = 9,
@@ -19514,7 +20124,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["ßeth-drakkari"] = {
             displayName = "ßeth-drakkari",
-            specKey = "",
+            specKey = "PALADIN_HOLY",
             rating = 864,
             rank = 543,
             wins = 9,
@@ -19523,7 +20133,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["ßlîñðßêñðêr-laughingskull"] = {
             displayName = "ßlîñðßêñðêr-laughing-skull",
-            specKey = "",
+            specKey = "ROGUE_ASSASSINATION",
             rating = 960,
             rank = 417,
             wins = 10,
@@ -19532,7 +20142,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["ßowmance-area52"] = {
             displayName = "ßowmance-area-52",
-            specKey = "",
+            specKey = "HUNTER_BEASTMASTERY",
             rating = 1328,
             rank = 226,
             wins = 14,
@@ -19541,7 +20151,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["ßrutalíty-stormrage"] = {
             displayName = "ßrutalíty-stormrage",
-            specKey = "",
+            specKey = "ROGUE_ASSASSINATION",
             rating = 768,
             rank = 677,
             wins = 8,
@@ -19550,7 +20160,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["ßèèf-area52"] = {
             displayName = "ßèèf-area-52",
-            specKey = "",
+            specKey = "WARRIOR_ARMS",
             rating = 1541,
             rank = 142,
             wins = 17,
@@ -19568,7 +20178,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["árereas-tichondrius"] = {
             displayName = "Árereas-tichondrius",
-            specKey = "",
+            specKey = "DEMONHUNTER_HAVOC",
             rating = 958,
             rank = 502,
             wins = 10,
@@ -19577,7 +20187,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["áså-tichondrius"] = {
             displayName = "Áså-tichondrius",
-            specKey = "",
+            specKey = "PALADIN_RETRIBUTION",
             rating = 1232,
             rank = 287,
             wins = 13,
@@ -19595,7 +20205,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["çherish-stormrage"] = {
             displayName = "Çherish-stormrage",
-            specKey = "",
+            specKey = "PRIEST_HOLY",
             rating = 672,
             rank = 857,
             wins = 7,
@@ -19613,7 +20223,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["çørrúptíøñ-tichondrius"] = {
             displayName = "Çørrúptíøñ-tichondrius",
-            specKey = "",
+            specKey = "WARLOCK_DESTRUCTION",
             rating = 672,
             rank = 857,
             wins = 7,
@@ -19631,7 +20241,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["êhurricane-dalaran"] = {
             displayName = "Êhurricane-dalaran",
-            specKey = "",
+            specKey = "DRUID_RESTORATION",
             rating = 955,
             rank = 538,
             wins = 10,
@@ -19640,7 +20250,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["íí-moonguard"] = {
             displayName = "Íí-moon-guard",
-            specKey = "",
+            specKey = "PRIEST_DISCIPLINE",
             rating = 1054,
             rank = 386,
             wins = 11,
@@ -19658,7 +20268,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["ðiviníty-area52"] = {
             displayName = "Ðiviníty-area-52",
-            specKey = "",
+            specKey = "PRIEST_DISCIPLINE",
             rating = 864,
             rank = 543,
             wins = 9,
@@ -19667,7 +20277,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["ðoñè-mannoroth"] = {
             displayName = "Ðoñè-mannoroth",
-            specKey = "",
+            specKey = "PRIEST_DISCIPLINE",
             rating = 765,
             rank = 847,
             wins = 8,
@@ -19685,7 +20295,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["ðrbób-area52"] = {
             displayName = "Ðrbób-area-52",
-            specKey = "",
+            specKey = "HUNTER_BEASTMASTERY",
             rating = 1547,
             rank = 134,
             wins = 18,
@@ -19703,7 +20313,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["ónomatopoeia-sargeras"] = {
             displayName = "Ónomatopoeia-sargeras",
-            specKey = "",
+            specKey = "MONK_MISTWEAVER",
             rating = 1055,
             rank = 372,
             wins = 11,
@@ -19712,7 +20322,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["ópenthedóór-tichondrius"] = {
             displayName = "Ópenthedóór-tichondrius",
-            specKey = "",
+            specKey = "DEATHKNIGHT_UNHOLY",
             rating = 959,
             rank = 469,
             wins = 10,
@@ -19721,7 +20331,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["øath-hyjal"] = {
             displayName = "Øath-hyjal",
-            specKey = "",
+            specKey = "PRIEST_DISCIPLINE",
             rating = 959,
             rank = 469,
             wins = 10,
@@ -19730,7 +20340,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["ønegodx-nemesis"] = {
             displayName = "Ønegodx-nemesis",
-            specKey = "",
+            specKey = "PALADIN_RETRIBUTION",
             rating = 1147,
             rank = 325,
             wins = 12,
@@ -19739,7 +20349,7 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
         },
         ["ýýçykå-frostmourne"] = {
             displayName = "Ýýçykå-frostmourne",
-            specKey = "",
+            specKey = "DRUID_FERAL",
             rating = 1247,
             rank = 239,
             wins = 13,
@@ -19755,7 +20365,7 @@ PVL_AppHelperPendingSnapshots.blitz = {
     bracket = "blitz",
     season = 42,
     snapshotDate = "2026-08-19",
-    generatedAt = "2026-08-19T16:30:26Z",
+    generatedAt = "2026-08-19T17:02:31Z",
     source = "blizzard-api",
     overall = {
         listedCount = 3883,
@@ -56058,7 +56668,7 @@ PVL_AppHelperPendingSnapshots.rbg = {
     bracket = "rbg",
     season = 42,
     snapshotDate = "2026-08-19",
-    generatedAt = "2026-08-19T16:30:50Z",
+    generatedAt = "2026-08-19T17:02:56Z",
     source = "blizzard-api+seramate",
     overall = {
         listedCount = 274,
@@ -56102,234 +56712,269 @@ PVL_AppHelperPendingSnapshots.rbg = {
     },
     byClass = {
         ["DEATHKNIGHT"] = {
-            listedCount = 5,
-            avgListedRating = 503.6,
-            medianListedRating = 479.5,
-            top100Avg = 503.6,
+            listedCount = 9,
+            avgListedRating = 500.4,
+            medianListedRating = 432.0,
+            top100Avg = 500.4,
             highest = 1151,
             buckets = {
-                ["100-199"] = 2,
+                ["100-199"] = 3,
                 ["1100-1199"] = 1,
-                ["300-399"] = 1,
+                ["300-399"] = 2,
+                ["500-599"] = 2,
                 ["900-999"] = 1,
             },
         },
         ["DEMONHUNTER"] = {
-            listedCount = 2,
-            avgListedRating = 384,
+            listedCount = 12,
+            avgListedRating = 447.9,
             medianListedRating = 384.0,
-            top100Avg = 384,
-            highest = 384,
-            buckets = {
-                ["300-399"] = 2,
-            },
-        },
-        ["DRUID"] = {
-            listedCount = 26,
-            avgListedRating = 542.4,
-            medianListedRating = 576,
-            top100Avg = 542.4,
-            highest = 1340,
-            buckets = {
-                ["100-199"] = 2,
-                ["1100-1199"] = 3,
-                ["1300-1399"] = 2,
-                ["300-399"] = 10,
-                ["500-599"] = 4,
-                ["700-799"] = 5,
-            },
-        },
-        ["EVOKER"] = {
-            listedCount = 19,
-            avgListedRating = 542.9,
-            medianListedRating = 384.0,
-            top100Avg = 542.9,
-            highest = 1340,
+            top100Avg = 447.9,
+            highest = 958,
             buckets = {
                 ["100-199"] = 3,
-                ["1100-1199"] = 1,
-                ["1300-1399"] = 1,
-                ["300-399"] = 9,
-                ["500-599"] = 1,
-                ["700-799"] = 3,
-                ["900-999"] = 1,
-            },
-        },
-        ["HUNTER"] = {
-            listedCount = 7,
-            avgListedRating = 464,
-            medianListedRating = 432.0,
-            top100Avg = 464,
-            highest = 960,
-            buckets = {
-                ["100-199"] = 1,
-                ["300-399"] = 3,
-                ["500-599"] = 1,
+                ["300-399"] = 5,
+                ["500-599"] = 2,
                 ["700-799"] = 1,
                 ["900-999"] = 1,
             },
         },
+        ["DRUID"] = {
+            listedCount = 38,
+            avgListedRating = 464.2,
+            medianListedRating = 384,
+            top100Avg = 464.2,
+            highest = 1340,
+            buckets = {
+                ["100-199"] = 9,
+                ["1100-1199"] = 3,
+                ["1300-1399"] = 2,
+                ["300-399"] = 15,
+                ["500-599"] = 5,
+                ["700-799"] = 4,
+            },
+        },
+        ["EVOKER"] = {
+            listedCount = 28,
+            avgListedRating = 402.0,
+            medianListedRating = 384,
+            top100Avg = 402.0,
+            highest = 1340,
+            buckets = {
+                ["100-199"] = 5,
+                ["1100-1199"] = 1,
+                ["1300-1399"] = 1,
+                ["300-399"] = 15,
+                ["500-599"] = 1,
+                ["700-799"] = 4,
+                ["900-999"] = 1,
+            },
+        },
+        ["HUNTER"] = {
+            listedCount = 17,
+            avgListedRating = 353.5,
+            medianListedRating = 384,
+            top100Avg = 353.5,
+            highest = 960,
+            buckets = {
+                ["100-199"] = 5,
+                ["300-399"] = 7,
+                ["500-599"] = 2,
+                ["700-799"] = 2,
+                ["900-999"] = 1,
+            },
+        },
         ["MAGE"] = {
-            listedCount = 7,
-            avgListedRating = 496,
-            medianListedRating = 432.0,
-            top100Avg = 496,
+            listedCount = 16,
+            avgListedRating = 400,
+            medianListedRating = 288.0,
+            top100Avg = 400,
             highest = 768,
             buckets = {
-                ["100-199"] = 1,
-                ["300-399"] = 3,
-                ["500-599"] = 1,
+                ["100-199"] = 5,
+                ["300-399"] = 6,
+                ["500-599"] = 3,
                 ["700-799"] = 2,
             },
         },
         ["MONK"] = {
-            listedCount = 4,
-            avgListedRating = 415.6,
-            medianListedRating = 480.0,
-            top100Avg = 415.6,
+            listedCount = 10,
+            avgListedRating = 415.9,
+            medianListedRating = 384.0,
+            top100Avg = 415.9,
             highest = 958,
             buckets = {
-                ["100-199"] = 2,
+                ["100-199"] = 3,
+                ["300-399"] = 4,
+                ["500-599"] = 1,
                 ["700-799"] = 1,
                 ["900-999"] = 1,
             },
         },
         ["PALADIN"] = {
-            listedCount = 5,
-            avgListedRating = 671.5,
-            medianListedRating = 672.0,
-            top100Avg = 671.5,
+            listedCount = 16,
+            avgListedRating = 431.9,
+            medianListedRating = 336.0,
+            top100Avg = 431.9,
             highest = 1149,
             buckets = {
+                ["100-199"] = 6,
                 ["1100-1199"] = 1,
-                ["300-399"] = 2,
+                ["300-399"] = 5,
+                ["500-599"] = 1,
                 ["700-799"] = 2,
-            },
-        },
-        ["PRIEST"] = {
-            listedCount = 29,
-            avgListedRating = 454.2,
-            medianListedRating = 384,
-            top100Avg = 454.2,
-            highest = 1340,
-            buckets = {
-                ["100-199"] = 7,
-                ["1100-1199"] = 2,
-                ["1300-1399"] = 1,
-                ["300-399"] = 11,
-                ["500-599"] = 6,
-                ["700-799"] = 1,
                 ["900-999"] = 1,
             },
         },
-        ["ROGUE"] = {
-            listedCount = 14,
-            avgListedRating = 631.7,
-            medianListedRating = 528.0,
-            top100Avg = 631.7,
+        ["PRIEST"] = {
+            listedCount = 55,
+            avgListedRating = 468.8,
+            medianListedRating = 384.0,
+            top100Avg = 468.8,
             highest = 1340,
             buckets = {
+                ["100-199"] = 16,
+                ["1100-1199"] = 4,
+                ["1300-1399"] = 1,
+                ["300-399"] = 21,
+                ["500-599"] = 9,
+                ["700-799"] = 2,
+                ["900-999"] = 2,
+            },
+        },
+        ["ROGUE"] = {
+            listedCount = 18,
+            avgListedRating = 645.3,
+            medianListedRating = 384.0,
+            top100Avg = 645.3,
+            highest = 1340,
+            buckets = {
+                ["100-199"] = 2,
                 ["1100-1199"] = 1,
                 ["1300-1399"] = 1,
-                ["300-399"] = 8,
+                ["300-399"] = 10,
                 ["500-599"] = 1,
-                ["700-799"] = 3,
+                ["700-799"] = 2,
+                ["900-999"] = 1,
             },
         },
         ["SHAMAN"] = {
-            listedCount = 2,
-            avgListedRating = 575,
-            medianListedRating = 575.0,
-            top100Avg = 575,
+            listedCount = 11,
+            avgListedRating = 383.8,
+            medianListedRating = 288.0,
+            top100Avg = 383.8,
             highest = 958,
             buckets = {
-                ["100-199"] = 1,
+                ["100-199"] = 6,
+                ["300-399"] = 2,
+                ["500-599"] = 2,
                 ["900-999"] = 1,
             },
         },
         ["WARLOCK"] = {
-            listedCount = 7,
-            avgListedRating = 493.7,
-            medianListedRating = 384,
-            top100Avg = 493.7,
-            highest = 960,
+            listedCount = 15,
+            avgListedRating = 460.6,
+            medianListedRating = 384.0,
+            top100Avg = 460.6,
+            highest = 1340,
             buckets = {
-                ["100-199"] = 1,
-                ["300-399"] = 4,
+                ["100-199"] = 4,
+                ["1300-1399"] = 1,
+                ["300-399"] = 6,
+                ["500-599"] = 2,
                 ["700-799"] = 1,
                 ["900-999"] = 1,
             },
         },
         ["WARRIOR"] = {
-            listedCount = 12,
-            avgListedRating = 543.8,
-            medianListedRating = 480.0,
-            top100Avg = 543.8,
+            listedCount = 22,
+            avgListedRating = 422.3,
+            medianListedRating = 288.0,
+            top100Avg = 422.3,
             highest = 1340,
             buckets = {
-                ["100-199"] = 3,
+                ["100-199"] = 10,
                 ["1300-1399"] = 1,
-                ["300-399"] = 3,
-                ["500-599"] = 3,
-                ["700-799"] = 2,
+                ["300-399"] = 5,
+                ["500-599"] = 5,
+                ["700-799"] = 1,
             },
         },
     },
     bySpec = {
         ["DEATHKNIGHT_FROST"] = {
-            listedCount = 1,
-            avgListedRating = 384,
-            medianListedRating = 384,
-            top100Avg = 384,
-            highest = 384,
+            listedCount = 2,
+            avgListedRating = 480,
+            medianListedRating = 480.0,
+            top100Avg = 480,
+            highest = 576,
             buckets = {
                 ["300-399"] = 1,
+                ["500-599"] = 1,
             },
         },
         ["DEATHKNIGHT_UNHOLY"] = {
-            listedCount = 4,
-            avgListedRating = 623.2,
-            medianListedRating = 575.0,
-            top100Avg = 623.2,
+            listedCount = 7,
+            avgListedRating = 520.7,
+            medianListedRating = 384,
+            top100Avg = 520.7,
             highest = 1151,
             buckets = {
-                ["100-199"] = 2,
+                ["100-199"] = 3,
                 ["1100-1199"] = 1,
+                ["300-399"] = 1,
+                ["500-599"] = 1,
                 ["900-999"] = 1,
             },
         },
-        ["DEMONHUNTER_HAVOC"] = {
-            listedCount = 2,
-            avgListedRating = 384,
-            medianListedRating = 384.0,
-            top100Avg = 384,
-            highest = 384,
+        ["DEMONHUNTER_DEVOURER"] = {
+            listedCount = 3,
+            avgListedRating = 448,
+            medianListedRating = 384,
+            top100Avg = 448,
+            highest = 768,
             buckets = {
-                ["300-399"] = 2,
+                ["100-199"] = 1,
+                ["300-399"] = 1,
+                ["700-799"] = 1,
+            },
+        },
+        ["DEMONHUNTER_HAVOC"] = {
+            listedCount = 9,
+            avgListedRating = 447.8,
+            medianListedRating = 384,
+            top100Avg = 447.8,
+            highest = 958,
+            buckets = {
+                ["100-199"] = 2,
+                ["300-399"] = 4,
+                ["500-599"] = 2,
+                ["900-999"] = 1,
             },
         },
         ["DRUID_BALANCE"] = {
-            listedCount = 17,
-            avgListedRating = 654.5,
-            medianListedRating = 576,
-            top100Avg = 654.5,
+            listedCount = 25,
+            avgListedRating = 529.5,
+            medianListedRating = 384,
+            top100Avg = 529.5,
             highest = 1340,
             buckets = {
-                ["100-199"] = 1,
+                ["100-199"] = 5,
                 ["1100-1199"] = 2,
                 ["1300-1399"] = 1,
-                ["300-399"] = 6,
-                ["500-599"] = 2,
-                ["700-799"] = 5,
+                ["300-399"] = 10,
+                ["500-599"] = 3,
+                ["700-799"] = 4,
             },
         },
         ["DRUID_GUARDIAN"] = {
-            listedCount = 7,
-            avgListedRating = 684.7,
-            medianListedRating = 576,
-            top100Avg = 684.7,
+            listedCount = 9,
+            avgListedRating = 575.2,
+            medianListedRating = 384,
+            top100Avg = 575.2,
             highest = 1340,
             buckets = {
+                ["100-199"] = 2,
                 ["1100-1199"] = 1,
                 ["1300-1399"] = 1,
                 ["300-399"] = 3,
@@ -56337,105 +56982,17 @@ PVL_AppHelperPendingSnapshots.rbg = {
             },
         },
         ["DRUID_RESTORATION"] = {
-            listedCount = 2,
+            listedCount = 4,
             avgListedRating = 288,
             medianListedRating = 288.0,
             top100Avg = 288,
             highest = 384,
             buckets = {
-                ["100-199"] = 1,
-                ["300-399"] = 1,
-            },
-        },
-        ["EVOKER_DEVASTATION"] = {
-            listedCount = 11,
-            avgListedRating = 558.3,
-            medianListedRating = 384,
-            top100Avg = 558.3,
-            highest = 1149,
-            buckets = {
-                ["100-199"] = 1,
-                ["1100-1199"] = 1,
-                ["300-399"] = 6,
-                ["700-799"] = 2,
-                ["900-999"] = 1,
-            },
-        },
-        ["EVOKER_PRESERVATION"] = {
-            listedCount = 8,
-            avgListedRating = 527.5,
-            medianListedRating = 384.0,
-            top100Avg = 527.5,
-            highest = 1340,
-            buckets = {
                 ["100-199"] = 2,
-                ["1300-1399"] = 1,
-                ["300-399"] = 3,
-                ["500-599"] = 1,
-                ["700-799"] = 1,
-            },
-        },
-        ["HUNTER_BEASTMASTERY"] = {
-            listedCount = 1,
-            avgListedRating = 384,
-            medianListedRating = 384,
-            top100Avg = 384,
-            highest = 384,
-            buckets = {
-                ["300-399"] = 1,
-            },
-        },
-        ["HUNTER_MARKSMANSHIP"] = {
-            listedCount = 6,
-            avgListedRating = 544,
-            medianListedRating = 480.0,
-            top100Avg = 544,
-            highest = 960,
-            buckets = {
-                ["100-199"] = 1,
                 ["300-399"] = 2,
-                ["500-599"] = 1,
-                ["700-799"] = 1,
-                ["900-999"] = 1,
             },
         },
-        ["MAGE_ARCANE"] = {
-            listedCount = 4,
-            avgListedRating = 480,
-            medianListedRating = 480.0,
-            top100Avg = 480,
-            highest = 768,
-            buckets = {
-                ["100-199"] = 1,
-                ["300-399"] = 1,
-                ["500-599"] = 1,
-                ["700-799"] = 1,
-            },
-        },
-        ["MAGE_FROST"] = {
-            listedCount = 3,
-            avgListedRating = 512,
-            medianListedRating = 384,
-            top100Avg = 512,
-            highest = 768,
-            buckets = {
-                ["300-399"] = 2,
-                ["700-799"] = 1,
-            },
-        },
-        ["MONK_MISTWEAVER"] = {
-            listedCount = 3,
-            avgListedRating = 639.3,
-            medianListedRating = 768,
-            top100Avg = 639.3,
-            highest = 958,
-            buckets = {
-                ["100-199"] = 1,
-                ["700-799"] = 1,
-                ["900-999"] = 1,
-            },
-        },
-        ["MONK_WINDWALKER"] = {
+        ["EVOKER_AUGMENTATION"] = {
             listedCount = 1,
             avgListedRating = 192,
             medianListedRating = 192,
@@ -56445,57 +57002,122 @@ PVL_AppHelperPendingSnapshots.rbg = {
                 ["100-199"] = 1,
             },
         },
-        ["PALADIN_HOLY"] = {
-            listedCount = 2,
-            avgListedRating = 576,
-            medianListedRating = 576.0,
-            top100Avg = 576,
-            highest = 768,
-            buckets = {
-                ["300-399"] = 1,
-                ["700-799"] = 1,
-            },
-        },
-        ["PALADIN_RETRIBUTION"] = {
-            listedCount = 3,
-            avgListedRating = 767,
-            medianListedRating = 768,
-            top100Avg = 767,
+        ["EVOKER_DEVASTATION"] = {
+            listedCount = 12,
+            avgListedRating = 527.8,
+            medianListedRating = 384.0,
+            top100Avg = 527.8,
             highest = 1149,
             buckets = {
+                ["100-199"] = 2,
                 ["1100-1199"] = 1,
+                ["300-399"] = 6,
+                ["700-799"] = 2,
+                ["900-999"] = 1,
+            },
+        },
+        ["EVOKER_PRESERVATION"] = {
+            listedCount = 15,
+            avgListedRating = 486.1,
+            medianListedRating = 384,
+            top100Avg = 486.1,
+            highest = 1340,
+            buckets = {
+                ["100-199"] = 2,
+                ["1300-1399"] = 1,
+                ["300-399"] = 9,
+                ["500-599"] = 1,
+                ["700-799"] = 2,
+            },
+        },
+        ["HUNTER_BEASTMASTERY"] = {
+            listedCount = 7,
+            avgListedRating = 356.6,
+            medianListedRating = 384,
+            top100Avg = 356.6,
+            highest = 576,
+            buckets = {
+                ["100-199"] = 2,
+                ["300-399"] = 4,
+                ["500-599"] = 1,
+            },
+        },
+        ["HUNTER_MARKSMANSHIP"] = {
+            listedCount = 9,
+            avgListedRating = 512,
+            medianListedRating = 384,
+            top100Avg = 512,
+            highest = 960,
+            buckets = {
+                ["100-199"] = 2,
+                ["300-399"] = 3,
+                ["500-599"] = 1,
+                ["700-799"] = 2,
+                ["900-999"] = 1,
+            },
+        },
+        ["HUNTER_SURVIVAL"] = {
+            listedCount = 1,
+            avgListedRating = 192,
+            medianListedRating = 192,
+            top100Avg = 192,
+            highest = 192,
+            buckets = {
+                ["100-199"] = 1,
+            },
+        },
+        ["MAGE_ARCANE"] = {
+            listedCount = 6,
+            avgListedRating = 384,
+            medianListedRating = 288.0,
+            top100Avg = 384,
+            highest = 768,
+            buckets = {
+                ["100-199"] = 3,
                 ["300-399"] = 1,
+                ["500-599"] = 1,
                 ["700-799"] = 1,
             },
         },
-        ["PRIEST_DISCIPLINE"] = {
-            listedCount = 10,
-            avgListedRating = 576,
-            medianListedRating = 576.0,
-            top100Avg = 576,
-            highest = 960,
+        ["MAGE_FIRE"] = {
+            listedCount = 4,
+            avgListedRating = 336,
+            medianListedRating = 288.0,
+            top100Avg = 336,
+            highest = 576,
             buckets = {
-                ["300-399"] = 3,
-                ["500-599"] = 5,
+                ["100-199"] = 2,
+                ["300-399"] = 1,
+                ["500-599"] = 1,
+            },
+        },
+        ["MAGE_FROST"] = {
+            listedCount = 6,
+            avgListedRating = 480,
+            medianListedRating = 384.0,
+            top100Avg = 480,
+            highest = 768,
+            buckets = {
+                ["300-399"] = 4,
+                ["500-599"] = 1,
+                ["700-799"] = 1,
+            },
+        },
+        ["MONK_MISTWEAVER"] = {
+            listedCount = 6,
+            avgListedRating = 543.7,
+            medianListedRating = 480.0,
+            top100Avg = 543.7,
+            highest = 958,
+            buckets = {
+                ["100-199"] = 1,
+                ["300-399"] = 2,
+                ["500-599"] = 1,
                 ["700-799"] = 1,
                 ["900-999"] = 1,
             },
         },
-        ["PRIEST_HOLY"] = {
-            listedCount = 15,
-            avgListedRating = 498.5,
-            medianListedRating = 384,
-            top100Avg = 498.5,
-            highest = 1340,
-            buckets = {
-                ["100-199"] = 5,
-                ["1100-1199"] = 2,
-                ["1300-1399"] = 1,
-                ["300-399"] = 6,
-                ["500-599"] = 1,
-            },
-        },
-        ["PRIEST_SHADOW"] = {
+        ["MONK_WINDWALKER"] = {
             listedCount = 4,
             avgListedRating = 288,
             medianListedRating = 288.0,
@@ -56506,31 +57128,88 @@ PVL_AppHelperPendingSnapshots.rbg = {
                 ["300-399"] = 2,
             },
         },
-        ["ROGUE_ASSASSINATION"] = {
-            listedCount = 2,
-            avgListedRating = 672,
-            medianListedRating = 672.0,
-            top100Avg = 672,
+        ["PALADIN_HOLY"] = {
+            listedCount = 4,
+            avgListedRating = 384,
+            medianListedRating = 288.0,
+            top100Avg = 384,
             highest = 768,
             buckets = {
+                ["100-199"] = 2,
+                ["300-399"] = 1,
+                ["700-799"] = 1,
+            },
+        },
+        ["PALADIN_RETRIBUTION"] = {
+            listedCount = 12,
+            avgListedRating = 479.7,
+            medianListedRating = 384.0,
+            top100Avg = 479.7,
+            highest = 1149,
+            buckets = {
+                ["100-199"] = 4,
+                ["1100-1199"] = 1,
+                ["300-399"] = 4,
+                ["500-599"] = 1,
+                ["700-799"] = 1,
+                ["900-999"] = 1,
+            },
+        },
+        ["PRIEST_DISCIPLINE"] = {
+            listedCount = 22,
+            avgListedRating = 427.6,
+            medianListedRating = 384.0,
+            top100Avg = 427.6,
+            highest = 960,
+            buckets = {
+                ["100-199"] = 7,
+                ["300-399"] = 6,
+                ["500-599"] = 7,
+                ["700-799"] = 1,
+                ["900-999"] = 1,
+            },
+        },
+        ["PRIEST_HOLY"] = {
+            listedCount = 25,
+            avgListedRating = 498.8,
+            medianListedRating = 384,
+            top100Avg = 498.8,
+            highest = 1340,
+            buckets = {
+                ["100-199"] = 7,
+                ["1100-1199"] = 3,
+                ["1300-1399"] = 1,
+                ["300-399"] = 11,
+                ["500-599"] = 2,
+                ["900-999"] = 1,
+            },
+        },
+        ["PRIEST_SHADOW"] = {
+            listedCount = 8,
+            avgListedRating = 479.9,
+            medianListedRating = 384.0,
+            top100Avg = 479.9,
+            highest = 1151,
+            buckets = {
+                ["100-199"] = 2,
+                ["1100-1199"] = 1,
+                ["300-399"] = 4,
+                ["700-799"] = 1,
+            },
+        },
+        ["ROGUE_ASSASSINATION"] = {
+            listedCount = 4,
+            avgListedRating = 432,
+            medianListedRating = 384.0,
+            top100Avg = 432,
+            highest = 768,
+            buckets = {
+                ["100-199"] = 2,
                 ["500-599"] = 1,
                 ["700-799"] = 1,
             },
         },
-        ["ROGUE_SUBTLETY"] = {
-            listedCount = 12,
-            avgListedRating = 591.4,
-            medianListedRating = 384.0,
-            top100Avg = 591.4,
-            highest = 1340,
-            buckets = {
-                ["1100-1199"] = 1,
-                ["1300-1399"] = 1,
-                ["300-399"] = 8,
-                ["700-799"] = 2,
-            },
-        },
-        ["SHAMAN_ELEMENTAL"] = {
+        ["ROGUE_OUTLAW"] = {
             listedCount = 1,
             avgListedRating = 958,
             medianListedRating = 958,
@@ -56540,51 +57219,102 @@ PVL_AppHelperPendingSnapshots.rbg = {
                 ["900-999"] = 1,
             },
         },
-        ["SHAMAN_ENHANCEMENT"] = {
-            listedCount = 1,
-            avgListedRating = 192,
-            medianListedRating = 192,
-            top100Avg = 192,
-            highest = 192,
+        ["ROGUE_SUBTLETY"] = {
+            listedCount = 13,
+            avgListedRating = 545.9,
+            medianListedRating = 384,
+            top100Avg = 545.9,
+            highest = 1340,
+            buckets = {
+                ["1100-1199"] = 1,
+                ["1300-1399"] = 1,
+                ["300-399"] = 10,
+                ["700-799"] = 1,
+            },
+        },
+        ["SHAMAN_ELEMENTAL"] = {
+            listedCount = 3,
+            avgListedRating = 575.3,
+            medianListedRating = 576,
+            top100Avg = 575.3,
+            highest = 958,
             buckets = {
                 ["100-199"] = 1,
+                ["500-599"] = 1,
+                ["900-999"] = 1,
+            },
+        },
+        ["SHAMAN_ENHANCEMENT"] = {
+            listedCount = 4,
+            avgListedRating = 336,
+            medianListedRating = 288.0,
+            top100Avg = 336,
+            highest = 576,
+            buckets = {
+                ["100-199"] = 2,
+                ["300-399"] = 1,
+                ["500-599"] = 1,
+            },
+        },
+        ["SHAMAN_RESTORATION"] = {
+            listedCount = 4,
+            avgListedRating = 240,
+            medianListedRating = 192.0,
+            top100Avg = 240,
+            highest = 384,
+            buckets = {
+                ["100-199"] = 3,
+                ["300-399"] = 1,
             },
         },
         ["WARLOCK_AFFLICTION"] = {
-            listedCount = 7,
-            avgListedRating = 493.7,
-            medianListedRating = 384,
-            top100Avg = 493.7,
-            highest = 960,
+            listedCount = 10,
+            avgListedRating = 537.2,
+            medianListedRating = 384.0,
+            top100Avg = 537.2,
+            highest = 1340,
             buckets = {
-                ["100-199"] = 1,
-                ["300-399"] = 4,
+                ["100-199"] = 2,
+                ["1300-1399"] = 1,
+                ["300-399"] = 5,
                 ["700-799"] = 1,
                 ["900-999"] = 1,
             },
         },
-        ["WARRIOR_ARMS"] = {
-            listedCount = 9,
-            avgListedRating = 511.6,
+        ["WARLOCK_DESTRUCTION"] = {
+            listedCount = 5,
+            avgListedRating = 384,
             medianListedRating = 384,
-            top100Avg = 511.6,
+            top100Avg = 384,
+            highest = 576,
+            buckets = {
+                ["100-199"] = 2,
+                ["300-399"] = 1,
+                ["500-599"] = 2,
+            },
+        },
+        ["WARRIOR_ARMS"] = {
+            listedCount = 17,
+            avgListedRating = 383.8,
+            medianListedRating = 192,
+            top100Avg = 383.8,
             highest = 1340,
             buckets = {
-                ["100-199"] = 3,
+                ["100-199"] = 9,
                 ["1300-1399"] = 1,
-                ["300-399"] = 2,
-                ["500-599"] = 2,
-                ["700-799"] = 1,
+                ["300-399"] = 3,
+                ["500-599"] = 4,
             },
         },
         ["WARRIOR_FURY"] = {
-            listedCount = 3,
-            avgListedRating = 576,
-            medianListedRating = 576,
-            top100Avg = 576,
+            listedCount = 5,
+            avgListedRating = 460.8,
+            medianListedRating = 384,
+            top100Avg = 460.8,
             highest = 768,
             buckets = {
-                ["300-399"] = 1,
+                ["100-199"] = 1,
+                ["300-399"] = 2,
                 ["500-599"] = 1,
                 ["700-799"] = 1,
             },
@@ -56593,7 +57323,7 @@ PVL_AppHelperPendingSnapshots.rbg = {
     players = {
         ["abolition-moonguard"] = {
             displayName = "Abolition-moon-guard",
-            specKey = "",
+            specKey = "PRIEST_HOLY",
             rating = 960,
             rank = 19,
             wins = 5,
@@ -56602,7 +57332,7 @@ PVL_AppHelperPendingSnapshots.rbg = {
         },
         ["acidnite-area52"] = {
             displayName = "Acidnite-area-52",
-            specKey = "",
+            specKey = "WARLOCK_DESTRUCTION",
             rating = 576,
             rank = 55,
             wins = 3,
@@ -56611,7 +57341,7 @@ PVL_AppHelperPendingSnapshots.rbg = {
         },
         ["adderal-malganis"] = {
             displayName = "Adderal-malganis",
-            specKey = "",
+            specKey = "PALADIN_HOLY",
             rating = 192,
             rank = 198,
             wins = 1,
@@ -56629,7 +57359,7 @@ PVL_AppHelperPendingSnapshots.rbg = {
         },
         ["affliclock-wyrmrestaccord"] = {
             displayName = "Affliclock-wyrmrest-accord",
-            specKey = "",
+            specKey = "WARLOCK_AFFLICTION",
             rating = 192,
             rank = 198,
             wins = 1,
@@ -56647,7 +57377,7 @@ PVL_AppHelperPendingSnapshots.rbg = {
         },
         ["akatsuki-wyrmrestaccord"] = {
             displayName = "Akatsuki-wyrmrest-accord",
-            specKey = "",
+            specKey = "DEMONHUNTER_HAVOC",
             rating = 192,
             rank = 198,
             wins = 1,
@@ -56665,7 +57395,7 @@ PVL_AppHelperPendingSnapshots.rbg = {
         },
         ["aladro-kelthuzad"] = {
             displayName = "Aladro-kelthuzad",
-            specKey = "",
+            specKey = "WARRIOR_ARMS",
             rating = 192,
             rank = 198,
             wins = 1,
@@ -56674,7 +57404,7 @@ PVL_AppHelperPendingSnapshots.rbg = {
         },
         ["amaltheaá-tichondrius"] = {
             displayName = "Amaltheaá-tichondrius",
-            specKey = "",
+            specKey = "WARLOCK_DESTRUCTION",
             rating = 192,
             rank = 198,
             wins = 1,
@@ -56692,7 +57422,7 @@ PVL_AppHelperPendingSnapshots.rbg = {
         },
         ["anuj-moonguard"] = {
             displayName = "Anuj-moon-guard",
-            specKey = "",
+            specKey = "PRIEST_SHADOW",
             rating = 384,
             rank = 91,
             wins = 2,
@@ -56710,7 +57440,7 @@ PVL_AppHelperPendingSnapshots.rbg = {
         },
         ["ashfall-velen"] = {
             displayName = "Ashfall-velen",
-            specKey = "",
+            specKey = "WARLOCK_DESTRUCTION",
             rating = 576,
             rank = 55,
             wins = 3,
@@ -56719,7 +57449,7 @@ PVL_AppHelperPendingSnapshots.rbg = {
         },
         ["astarlanie-tichondrius"] = {
             displayName = "Astarlanie-tichondrius",
-            specKey = "",
+            specKey = "PRIEST_DISCIPLINE",
             rating = 192,
             rank = 198,
             wins = 1,
@@ -56755,7 +57485,7 @@ PVL_AppHelperPendingSnapshots.rbg = {
         },
         ["balan-anvilmar"] = {
             displayName = "Balan-anvilmar",
-            specKey = "",
+            specKey = "PALADIN_RETRIBUTION",
             rating = 192,
             rank = 198,
             wins = 1,
@@ -56764,7 +57494,7 @@ PVL_AppHelperPendingSnapshots.rbg = {
         },
         ["bayterade-tichondrius"] = {
             displayName = "Bayterade-tichondrius",
-            specKey = "",
+            specKey = "DRUID_BALANCE",
             rating = 576,
             rank = 55,
             wins = 3,
@@ -56773,7 +57503,7 @@ PVL_AppHelperPendingSnapshots.rbg = {
         },
         ["bearyhallsjr-sargeras"] = {
             displayName = "Bearyhallsjr-sargeras",
-            specKey = "",
+            specKey = "DRUID_BALANCE",
             rating = 384,
             rank = 91,
             wins = 2,
@@ -56782,7 +57512,7 @@ PVL_AppHelperPendingSnapshots.rbg = {
         },
         ["berylhwit-emeralddream"] = {
             displayName = "Berylhwit-emerald-dream",
-            specKey = "",
+            specKey = "EVOKER_DEVASTATION",
             rating = 384,
             rank = 91,
             wins = 2,
@@ -56800,7 +57530,7 @@ PVL_AppHelperPendingSnapshots.rbg = {
         },
         ["bigdansell-ravenholdt"] = {
             displayName = "Bigdansell-ravenholdt",
-            specKey = "",
+            specKey = "DRUID_BALANCE",
             rating = 192,
             rank = 198,
             wins = 1,
@@ -56809,7 +57539,7 @@ PVL_AppHelperPendingSnapshots.rbg = {
         },
         ["bigedumps-shadowcouncil"] = {
             displayName = "Bigedumps-shadow-council",
-            specKey = "",
+            specKey = "PALADIN_RETRIBUTION",
             rating = 384,
             rank = 91,
             wins = 2,
@@ -56818,7 +57548,7 @@ PVL_AppHelperPendingSnapshots.rbg = {
         },
         ["blazedpri-tichondrius"] = {
             displayName = "Blazedpri-tichondrius",
-            specKey = "",
+            specKey = "PRIEST_SHADOW",
             rating = 768,
             rank = 30,
             wins = 4,
@@ -56827,7 +57557,7 @@ PVL_AppHelperPendingSnapshots.rbg = {
         },
         ["bloomkinn-dalaran"] = {
             displayName = "Bloomkinn-dalaran",
-            specKey = "",
+            specKey = "DRUID_BALANCE",
             rating = 192,
             rank = 198,
             wins = 1,
@@ -56854,7 +57584,7 @@ PVL_AppHelperPendingSnapshots.rbg = {
         },
         ["booniexyz-stormrage"] = {
             displayName = "Booniexyz-stormrage",
-            specKey = "",
+            specKey = "PRIEST_DISCIPLINE",
             rating = 192,
             rank = 198,
             wins = 1,
@@ -56863,7 +57593,7 @@ PVL_AppHelperPendingSnapshots.rbg = {
         },
         ["boosting-emeralddream"] = {
             displayName = "Boosting-emerald-dream",
-            specKey = "",
+            specKey = "EVOKER_PRESERVATION",
             rating = 384,
             rank = 91,
             wins = 2,
@@ -56890,7 +57620,7 @@ PVL_AppHelperPendingSnapshots.rbg = {
         },
         ["bubbledaddy-balnazzar"] = {
             displayName = "Bubbledaddy-balnazzar",
-            specKey = "",
+            specKey = "PRIEST_HOLY",
             rating = 384,
             rank = 91,
             wins = 2,
@@ -56899,7 +57629,7 @@ PVL_AppHelperPendingSnapshots.rbg = {
         },
         ["buckybarns-area52"] = {
             displayName = "Buckybarns-area-52",
-            specKey = "",
+            specKey = "DEATHKNIGHT_UNHOLY",
             rating = 576,
             rank = 55,
             wins = 3,
@@ -56944,7 +57674,7 @@ PVL_AppHelperPendingSnapshots.rbg = {
         },
         ["capdinho-malganis"] = {
             displayName = "Capdinho-malganis",
-            specKey = "",
+            specKey = "PALADIN_RETRIBUTION",
             rating = 384,
             rank = 91,
             wins = 2,
@@ -56962,7 +57692,7 @@ PVL_AppHelperPendingSnapshots.rbg = {
         },
         ["cheekstick-blackdragonflight"] = {
             displayName = "Cheekstick-black-dragonflight",
-            specKey = "",
+            specKey = "ROGUE_SUBTLETY",
             rating = 384,
             rank = 91,
             wins = 2,
@@ -56989,7 +57719,7 @@ PVL_AppHelperPendingSnapshots.rbg = {
         },
         ["cidolem-area52"] = {
             displayName = "Cidolem-area-52",
-            specKey = "",
+            specKey = "DEMONHUNTER_HAVOC",
             rating = 576,
             rank = 55,
             wins = 3,
@@ -56998,7 +57728,7 @@ PVL_AppHelperPendingSnapshots.rbg = {
         },
         ["cinder-uther"] = {
             displayName = "Cinder-uther",
-            specKey = "",
+            specKey = "HUNTER_BEASTMASTERY",
             rating = 384,
             rank = 91,
             wins = 2,
@@ -57016,7 +57746,7 @@ PVL_AppHelperPendingSnapshots.rbg = {
         },
         ["coldthed-area52"] = {
             displayName = "Coldthed-area-52",
-            specKey = "",
+            specKey = "EVOKER_PRESERVATION",
             rating = 384,
             rank = 91,
             wins = 2,
@@ -57025,7 +57755,7 @@ PVL_AppHelperPendingSnapshots.rbg = {
         },
         ["comboe-thrall"] = {
             displayName = "Comboe-thrall",
-            specKey = "",
+            specKey = "WARLOCK_AFFLICTION",
             rating = 384,
             rank = 91,
             wins = 2,
@@ -57088,7 +57818,7 @@ PVL_AppHelperPendingSnapshots.rbg = {
         },
         ["darkxdpvp-bleedinghollow"] = {
             displayName = "Darkxdpvp-bleeding-hollow",
-            specKey = "",
+            specKey = "PRIEST_DISCIPLINE",
             rating = 384,
             rank = 91,
             wins = 2,
@@ -57097,7 +57827,7 @@ PVL_AppHelperPendingSnapshots.rbg = {
         },
         ["daxiongdi-tichondrius"] = {
             displayName = "Daxiongdi-tichondrius",
-            specKey = "",
+            specKey = "PRIEST_SHADOW",
             rating = 384,
             rank = 91,
             wins = 2,
@@ -57115,7 +57845,7 @@ PVL_AppHelperPendingSnapshots.rbg = {
         },
         ["ddeegs-darkspear"] = {
             displayName = "Ddeegs-darkspear",
-            specKey = "",
+            specKey = "PALADIN_RETRIBUTION",
             rating = 192,
             rank = 198,
             wins = 1,
@@ -57124,7 +57854,7 @@ PVL_AppHelperPendingSnapshots.rbg = {
         },
         ["delaolla-tichondrius"] = {
             displayName = "Delaolla-tichondrius",
-            specKey = "",
+            specKey = "ROGUE_ASSASSINATION",
             rating = 192,
             rank = 198,
             wins = 1,
@@ -57133,7 +57863,7 @@ PVL_AppHelperPendingSnapshots.rbg = {
         },
         ["denerion-wyrmrestaccord"] = {
             displayName = "Denerion-wyrmrest-accord",
-            specKey = "",
+            specKey = "MAGE_FIRE",
             rating = 384,
             rank = 91,
             wins = 2,
@@ -57187,7 +57917,7 @@ PVL_AppHelperPendingSnapshots.rbg = {
         },
         ["dravina-area52"] = {
             displayName = "Dravina-area-52",
-            specKey = "",
+            specKey = "PRIEST_DISCIPLINE",
             rating = 384,
             rank = 91,
             wins = 2,
@@ -57196,7 +57926,7 @@ PVL_AppHelperPendingSnapshots.rbg = {
         },
         ["drxo-tichondrius"] = {
             displayName = "Drxo-tichondrius",
-            specKey = "",
+            specKey = "MONK_WINDWALKER",
             rating = 384,
             rank = 91,
             wins = 2,
@@ -57214,7 +57944,7 @@ PVL_AppHelperPendingSnapshots.rbg = {
         },
         ["dunkinn-tichondrius"] = {
             displayName = "Dunkinn-tichondrius",
-            specKey = "",
+            specKey = "DEMONHUNTER_DEVOURER",
             rating = 768,
             rank = 30,
             wins = 4,
@@ -57223,7 +57953,7 @@ PVL_AppHelperPendingSnapshots.rbg = {
         },
         ["dzuul-stormrage"] = {
             displayName = "Dzuul-stormrage",
-            specKey = "",
+            specKey = "HUNTER_BEASTMASTERY",
             rating = 576,
             rank = 55,
             wins = 3,
@@ -57232,7 +57962,7 @@ PVL_AppHelperPendingSnapshots.rbg = {
         },
         ["eli-scarletcrusade"] = {
             displayName = "Eli-scarlet-crusade",
-            specKey = "",
+            specKey = "PRIEST_HOLY",
             rating = 384,
             rank = 91,
             wins = 2,
@@ -57241,7 +57971,7 @@ PVL_AppHelperPendingSnapshots.rbg = {
         },
         ["ellreä-zuljin"] = {
             displayName = "Ellreä-zuljin",
-            specKey = "",
+            specKey = "PRIEST_HOLY",
             rating = 384,
             rank = 91,
             wins = 2,
@@ -57250,7 +57980,7 @@ PVL_AppHelperPendingSnapshots.rbg = {
         },
         ["endearing-stormrage"] = {
             displayName = "Endearing-stormrage",
-            specKey = "",
+            specKey = "PRIEST_DISCIPLINE",
             rating = 384,
             rank = 91,
             wins = 2,
@@ -57286,7 +58016,7 @@ PVL_AppHelperPendingSnapshots.rbg = {
         },
         ["erso-hellscream"] = {
             displayName = "Erso-hellscream",
-            specKey = "",
+            specKey = "EVOKER_PRESERVATION",
             rating = 384,
             rank = 91,
             wins = 2,
@@ -57295,7 +58025,7 @@ PVL_AppHelperPendingSnapshots.rbg = {
         },
         ["extrazesty-sargeras"] = {
             displayName = "Extrazesty-sargeras",
-            specKey = "",
+            specKey = "DRUID_BALANCE",
             rating = 384,
             rank = 91,
             wins = 2,
@@ -57304,7 +58034,7 @@ PVL_AppHelperPendingSnapshots.rbg = {
         },
         ["feefiifoofum-kiljaeden"] = {
             displayName = "Feefiifoofum-kiljaeden",
-            specKey = "",
+            specKey = "WARRIOR_ARMS",
             rating = 192,
             rank = 198,
             wins = 1,
@@ -57313,7 +58043,7 @@ PVL_AppHelperPendingSnapshots.rbg = {
         },
         ["feltiddys-area52"] = {
             displayName = "Feltiddys-area-52",
-            specKey = "",
+            specKey = "DEMONHUNTER_HAVOC",
             rating = 384,
             rank = 91,
             wins = 2,
@@ -57322,7 +58052,7 @@ PVL_AppHelperPendingSnapshots.rbg = {
         },
         ["fenømenoide-stormrage"] = {
             displayName = "Fenømenoide-stormrage",
-            specKey = "",
+            specKey = "WARRIOR_FURY",
             rating = 192,
             rank = 198,
             wins = 1,
@@ -57349,7 +58079,7 @@ PVL_AppHelperPendingSnapshots.rbg = {
         },
         ["filauryâ-wyrmrestaccord"] = {
             displayName = "Filauryâ-wyrmrest-accord",
-            specKey = "",
+            specKey = "MONK_WINDWALKER",
             rating = 192,
             rank = 198,
             wins = 1,
@@ -57358,7 +58088,7 @@ PVL_AppHelperPendingSnapshots.rbg = {
         },
         ["filip-thunderlord"] = {
             displayName = "Filip-thunderlord",
-            specKey = "",
+            specKey = "PALADIN_RETRIBUTION",
             rating = 192,
             rank = 198,
             wins = 1,
@@ -57367,7 +58097,7 @@ PVL_AppHelperPendingSnapshots.rbg = {
         },
         ["fishflaps-stormrage"] = {
             displayName = "Fishflaps-stormrage",
-            specKey = "",
+            specKey = "MAGE_FROST",
             rating = 384,
             rank = 91,
             wins = 2,
@@ -57448,7 +58178,7 @@ PVL_AppHelperPendingSnapshots.rbg = {
         },
         ["glides-tichondrius"] = {
             displayName = "Glides-tichondrius",
-            specKey = "",
+            specKey = "EVOKER_PRESERVATION",
             rating = 768,
             rank = 30,
             wins = 4,
@@ -57457,7 +58187,7 @@ PVL_AppHelperPendingSnapshots.rbg = {
         },
         ["gorlôck-bleedinghollow"] = {
             displayName = "Gorlôck-bleeding-hollow",
-            specKey = "",
+            specKey = "PRIEST_DISCIPLINE",
             rating = 192,
             rank = 198,
             wins = 1,
@@ -57484,7 +58214,7 @@ PVL_AppHelperPendingSnapshots.rbg = {
         },
         ["gspx-dalaran"] = {
             displayName = "Gspx-dalaran",
-            specKey = "",
+            specKey = "DRUID_BALANCE",
             rating = 384,
             rank = 91,
             wins = 2,
@@ -57502,7 +58232,7 @@ PVL_AppHelperPendingSnapshots.rbg = {
         },
         ["habeascorpus-tichondrius"] = {
             displayName = "Habeascorpus-tichondrius",
-            specKey = "",
+            specKey = "WARRIOR_ARMS",
             rating = 192,
             rank = 198,
             wins = 1,
@@ -57529,7 +58259,7 @@ PVL_AppHelperPendingSnapshots.rbg = {
         },
         ["hellablink-sargeras"] = {
             displayName = "Hellablink-sargeras",
-            specKey = "",
+            specKey = "MAGE_ARCANE",
             rating = 192,
             rank = 198,
             wins = 1,
@@ -57538,7 +58268,7 @@ PVL_AppHelperPendingSnapshots.rbg = {
         },
         ["helsinkii-tichondrius"] = {
             displayName = "Helsinkii-tichondrius",
-            specKey = "",
+            specKey = "WARRIOR_ARMS",
             rating = 192,
             rank = 198,
             wins = 1,
@@ -57547,7 +58277,7 @@ PVL_AppHelperPendingSnapshots.rbg = {
         },
         ["hennessey-bleedinghollow"] = {
             displayName = "Hennessey-bleeding-hollow",
-            specKey = "",
+            specKey = "PALADIN_RETRIBUTION",
             rating = 959,
             rank = 24,
             wins = 5,
@@ -57565,7 +58295,7 @@ PVL_AppHelperPendingSnapshots.rbg = {
         },
         ["holic-cairne"] = {
             displayName = "Holic-cairne",
-            specKey = "",
+            specKey = "MAGE_FROST",
             rating = 384,
             rank = 91,
             wins = 2,
@@ -57574,7 +58304,7 @@ PVL_AppHelperPendingSnapshots.rbg = {
         },
         ["holyshifted-tichondrius"] = {
             displayName = "Holyshifted-tichondrius",
-            specKey = "",
+            specKey = "PRIEST_HOLY",
             rating = 192,
             rank = 198,
             wins = 1,
@@ -57610,7 +58340,7 @@ PVL_AppHelperPendingSnapshots.rbg = {
         },
         ["hugznkissez-sargeras"] = {
             displayName = "Hugznkissez-sargeras",
-            specKey = "",
+            specKey = "PRIEST_DISCIPLINE",
             rating = 192,
             rank = 198,
             wins = 1,
@@ -57646,7 +58376,7 @@ PVL_AppHelperPendingSnapshots.rbg = {
         },
         ["imnoone-quelthalas"] = {
             displayName = "Imnoone-quelthalas",
-            specKey = "DRUID_BALANCE",
+            specKey = "",
             rating = 768,
             rank = 30,
             wins = 4,
@@ -57655,7 +58385,7 @@ PVL_AppHelperPendingSnapshots.rbg = {
         },
         ["intervensham-illidan"] = {
             displayName = "Intervensham-illidan",
-            specKey = "",
+            specKey = "SHAMAN_RESTORATION",
             rating = 384,
             rank = 91,
             wins = 2,
@@ -57664,7 +58394,7 @@ PVL_AppHelperPendingSnapshots.rbg = {
         },
         ["ip-kilrogg"] = {
             displayName = "Ip-kilrogg",
-            specKey = "",
+            specKey = "MONK_MISTWEAVER",
             rating = 576,
             rank = 55,
             wins = 3,
@@ -57682,7 +58412,7 @@ PVL_AppHelperPendingSnapshots.rbg = {
         },
         ["ivanux-quelthalas"] = {
             displayName = "Ivanux-quelthalas",
-            specKey = "",
+            specKey = "WARLOCK_DESTRUCTION",
             rating = 384,
             rank = 91,
             wins = 2,
@@ -57700,7 +58430,7 @@ PVL_AppHelperPendingSnapshots.rbg = {
         },
         ["jade-hydraxis"] = {
             displayName = "Jade-hydraxis",
-            specKey = "",
+            specKey = "DRUID_GUARDIAN",
             rating = 192,
             rank = 198,
             wins = 1,
@@ -57718,7 +58448,7 @@ PVL_AppHelperPendingSnapshots.rbg = {
         },
         ["jeshkâ-drakkari"] = {
             displayName = "Jeshkâ-drakkari",
-            specKey = "ROGUE_SUBTLETY",
+            specKey = "",
             rating = 768,
             rank = 30,
             wins = 4,
@@ -57790,7 +58520,7 @@ PVL_AppHelperPendingSnapshots.rbg = {
         },
         ["karpine-wyrmrestaccord"] = {
             displayName = "Karpine-wyrmrest-accord",
-            specKey = "",
+            specKey = "DRUID_BALANCE",
             rating = 192,
             rank = 198,
             wins = 1,
@@ -57826,7 +58556,7 @@ PVL_AppHelperPendingSnapshots.rbg = {
         },
         ["khàøs-stormrage"] = {
             displayName = "Khàøs-stormrage",
-            specKey = "",
+            specKey = "DEMONHUNTER_HAVOC",
             rating = 576,
             rank = 55,
             wins = 3,
@@ -57853,7 +58583,7 @@ PVL_AppHelperPendingSnapshots.rbg = {
         },
         ["kullateral-bloodhoof"] = {
             displayName = "Kullateral-bloodhoof",
-            specKey = "",
+            specKey = "DRUID_GUARDIAN",
             rating = 192,
             rank = 198,
             wins = 1,
@@ -57862,7 +58592,7 @@ PVL_AppHelperPendingSnapshots.rbg = {
         },
         ["kuta-wyrmrestaccord"] = {
             displayName = "Kuta-wyrmrest-accord",
-            specKey = "",
+            specKey = "MAGE_ARCANE",
             rating = 192,
             rank = 198,
             wins = 1,
@@ -57871,7 +58601,7 @@ PVL_AppHelperPendingSnapshots.rbg = {
         },
         ["lajollacove-tichondrius"] = {
             displayName = "Lajollacove-tichondrius",
-            specKey = "",
+            specKey = "DRUID_BALANCE",
             rating = 192,
             rank = 198,
             wins = 1,
@@ -57889,7 +58619,7 @@ PVL_AppHelperPendingSnapshots.rbg = {
         },
         ["letgo-elune"] = {
             displayName = "Letgo-elune",
-            specKey = "",
+            specKey = "PRIEST_DISCIPLINE",
             rating = 384,
             rank = 91,
             wins = 2,
@@ -57907,7 +58637,7 @@ PVL_AppHelperPendingSnapshots.rbg = {
         },
         ["lezße-thrall"] = {
             displayName = "Lezße-thrall",
-            specKey = "",
+            specKey = "PRIEST_HOLY",
             rating = 1151,
             rank = 8,
             wins = 6,
@@ -57961,7 +58691,7 @@ PVL_AppHelperPendingSnapshots.rbg = {
         },
         ["lynxeroth-drakkari"] = {
             displayName = "Lynxeroth-drakkari",
-            specKey = "",
+            specKey = "PALADIN_RETRIBUTION",
             rating = 576,
             rank = 55,
             wins = 3,
@@ -57970,7 +58700,7 @@ PVL_AppHelperPendingSnapshots.rbg = {
         },
         ["lîonhêart-wyrmrestaccord"] = {
             displayName = "Lîonhêart-wyrmrest-accord",
-            specKey = "",
+            specKey = "HUNTER_MARKSMANSHIP",
             rating = 192,
             rank = 198,
             wins = 1,
@@ -57988,7 +58718,7 @@ PVL_AppHelperPendingSnapshots.rbg = {
         },
         ["madcleanex-tichondrius"] = {
             displayName = "Madcleanex-tichondrius",
-            specKey = "",
+            specKey = "WARRIOR_ARMS",
             rating = 576,
             rank = 55,
             wins = 3,
@@ -57997,7 +58727,7 @@ PVL_AppHelperPendingSnapshots.rbg = {
         },
         ["mariomario-tichondrius"] = {
             displayName = "Mariomario-tichondrius",
-            specKey = "",
+            specKey = "MAGE_FIRE",
             rating = 192,
             rank = 198,
             wins = 1,
@@ -58024,7 +58754,7 @@ PVL_AppHelperPendingSnapshots.rbg = {
         },
         ["mfdõõm-stormrage"] = {
             displayName = "Mfdõõm-stormrage",
-            specKey = "",
+            specKey = "DEATHKNIGHT_FROST",
             rating = 576,
             rank = 55,
             wins = 3,
@@ -58042,7 +58772,7 @@ PVL_AppHelperPendingSnapshots.rbg = {
         },
         ["miyamoto-feathermoon"] = {
             displayName = "Miyamoto-feathermoon",
-            specKey = "",
+            specKey = "WARRIOR_ARMS",
             rating = 192,
             rank = 198,
             wins = 1,
@@ -58051,7 +58781,7 @@ PVL_AppHelperPendingSnapshots.rbg = {
         },
         ["mogam-tichondrius"] = {
             displayName = "Mogam-tichondrius",
-            specKey = "",
+            specKey = "WARRIOR_ARMS",
             rating = 384,
             rank = 91,
             wins = 2,
@@ -58069,7 +58799,7 @@ PVL_AppHelperPendingSnapshots.rbg = {
         },
         ["mongargar-dalaran"] = {
             displayName = "Mongargar-dalaran",
-            specKey = "",
+            specKey = "SHAMAN_RESTORATION",
             rating = 192,
             rank = 198,
             wins = 1,
@@ -58096,7 +58826,7 @@ PVL_AppHelperPendingSnapshots.rbg = {
         },
         ["mustache-velen"] = {
             displayName = "Mustache-velen",
-            specKey = "",
+            specKey = "SHAMAN_ELEMENTAL",
             rating = 576,
             rank = 55,
             wins = 3,
@@ -58105,7 +58835,7 @@ PVL_AppHelperPendingSnapshots.rbg = {
         },
         ["måkima-tichondrius"] = {
             displayName = "Måkima-tichondrius",
-            specKey = "",
+            specKey = "DEMONHUNTER_DEVOURER",
             rating = 384,
             rank = 91,
             wins = 2,
@@ -58123,7 +58853,7 @@ PVL_AppHelperPendingSnapshots.rbg = {
         },
         ["mïsstres-area52"] = {
             displayName = "Mïsstres-area-52",
-            specKey = "",
+            specKey = "PRIEST_DISCIPLINE",
             rating = 192,
             rank = 198,
             wins = 1,
@@ -58132,7 +58862,7 @@ PVL_AppHelperPendingSnapshots.rbg = {
         },
         ["mögorrin-senjin"] = {
             displayName = "Mögorrin-senjin",
-            specKey = "",
+            specKey = "MONK_WINDWALKER",
             rating = 384,
             rank = 91,
             wins = 2,
@@ -58150,7 +58880,7 @@ PVL_AppHelperPendingSnapshots.rbg = {
         },
         ["nephyxo-kiljaeden"] = {
             displayName = "Nephyxo-kiljaeden",
-            specKey = "",
+            specKey = "HUNTER_BEASTMASTERY",
             rating = 192,
             rank = 198,
             wins = 1,
@@ -58177,7 +58907,7 @@ PVL_AppHelperPendingSnapshots.rbg = {
         },
         ["nogarra-wyrmrestaccord"] = {
             displayName = "Nogarra-wyrmrest-accord",
-            specKey = "",
+            specKey = "DRUID_RESTORATION",
             rating = 384,
             rank = 91,
             wins = 2,
@@ -58195,7 +58925,7 @@ PVL_AppHelperPendingSnapshots.rbg = {
         },
         ["nyassae-thunderhorn"] = {
             displayName = "Nyassae-thunderhorn",
-            specKey = "",
+            specKey = "PALADIN_RETRIBUTION",
             rating = 384,
             rank = 91,
             wins = 2,
@@ -58213,7 +58943,7 @@ PVL_AppHelperPendingSnapshots.rbg = {
         },
         ["onlyfiends-tichondrius"] = {
             displayName = "Onlyfiends-tichondrius",
-            specKey = "",
+            specKey = "DEMONHUNTER_HAVOC",
             rating = 192,
             rank = 198,
             wins = 1,
@@ -58222,7 +58952,7 @@ PVL_AppHelperPendingSnapshots.rbg = {
         },
         ["oraneth-area52"] = {
             displayName = "Oraneth-area-52",
-            specKey = "",
+            specKey = "EVOKER_PRESERVATION",
             rating = 384,
             rank = 91,
             wins = 2,
@@ -58240,7 +58970,7 @@ PVL_AppHelperPendingSnapshots.rbg = {
         },
         ["peigon-stormrage"] = {
             displayName = "Peigon-stormrage",
-            specKey = "",
+            specKey = "PRIEST_DISCIPLINE",
             rating = 192,
             rank = 198,
             wins = 1,
@@ -58267,7 +58997,7 @@ PVL_AppHelperPendingSnapshots.rbg = {
         },
         ["portachicken-bleedinghollow"] = {
             displayName = "Portachicken-bleeding-hollow",
-            specKey = "",
+            specKey = "DRUID_BALANCE",
             rating = 384,
             rank = 91,
             wins = 2,
@@ -58276,7 +59006,7 @@ PVL_AppHelperPendingSnapshots.rbg = {
         },
         ["presure-aegwynn"] = {
             displayName = "Presure-aegwynn",
-            specKey = "",
+            specKey = "MAGE_FROST",
             rating = 576,
             rank = 55,
             wins = 3,
@@ -58294,7 +59024,7 @@ PVL_AppHelperPendingSnapshots.rbg = {
         },
         ["puzzle-wyrmrestaccord"] = {
             displayName = "Puzzle-wyrmrest-accord",
-            specKey = "",
+            specKey = "SHAMAN_RESTORATION",
             rating = 192,
             rank = 198,
             wins = 1,
@@ -58321,7 +59051,7 @@ PVL_AppHelperPendingSnapshots.rbg = {
         },
         ["rainswptflwr-stormrage"] = {
             displayName = "Rainswptflwr-stormrage",
-            specKey = "",
+            specKey = "DRUID_RESTORATION",
             rating = 192,
             rank = 198,
             wins = 1,
@@ -58348,7 +59078,7 @@ PVL_AppHelperPendingSnapshots.rbg = {
         },
         ["redfîsh-blackdragonflight"] = {
             displayName = "Redfîsh-black-dragonflight",
-            specKey = "",
+            specKey = "PRIEST_DISCIPLINE",
             rating = 576,
             rank = 55,
             wins = 3,
@@ -58366,7 +59096,7 @@ PVL_AppHelperPendingSnapshots.rbg = {
         },
         ["ririremon-sargeras"] = {
             displayName = "Ririremon-sargeras",
-            specKey = "",
+            specKey = "DEMONHUNTER_DEVOURER",
             rating = 192,
             rank = 198,
             wins = 1,
@@ -58375,7 +59105,7 @@ PVL_AppHelperPendingSnapshots.rbg = {
         },
         ["rocckkyy-kiljaeden"] = {
             displayName = "Rocckkyy-kiljaeden",
-            specKey = "",
+            specKey = "SHAMAN_ENHANCEMENT",
             rating = 384,
             rank = 91,
             wins = 2,
@@ -58411,7 +59141,7 @@ PVL_AppHelperPendingSnapshots.rbg = {
         },
         ["ryku-anvilmar"] = {
             displayName = "Ryku-anvilmar",
-            specKey = "",
+            specKey = "HUNTER_BEASTMASTERY",
             rating = 192,
             rank = 198,
             wins = 1,
@@ -58429,7 +59159,7 @@ PVL_AppHelperPendingSnapshots.rbg = {
         },
         ["rótmaw-tichondrius"] = {
             displayName = "Rótmaw-tichondrius",
-            specKey = "",
+            specKey = "DEATHKNIGHT_UNHOLY",
             rating = 192,
             rank = 198,
             wins = 1,
@@ -58456,7 +59186,7 @@ PVL_AppHelperPendingSnapshots.rbg = {
         },
         ["satellizer-uther"] = {
             displayName = "Satellizer-uther",
-            specKey = "",
+            specKey = "DEMONHUNTER_HAVOC",
             rating = 384,
             rank = 91,
             wins = 2,
@@ -58483,7 +59213,7 @@ PVL_AppHelperPendingSnapshots.rbg = {
         },
         ["shadowfosho-sargeras"] = {
             displayName = "Shadowfosho-sargeras",
-            specKey = "",
+            specKey = "PRIEST_SHADOW",
             rating = 1151,
             rank = 8,
             wins = 6,
@@ -58492,7 +59222,7 @@ PVL_AppHelperPendingSnapshots.rbg = {
         },
         ["shahirah-area52"] = {
             displayName = "Shahirah-area-52",
-            specKey = "",
+            specKey = "HUNTER_BEASTMASTERY",
             rating = 384,
             rank = 91,
             wins = 2,
@@ -58510,7 +59240,7 @@ PVL_AppHelperPendingSnapshots.rbg = {
         },
         ["shây-hyjal"] = {
             displayName = "Shây-hyjal",
-            specKey = "",
+            specKey = "SHAMAN_ELEMENTAL",
             rating = 192,
             rank = 198,
             wins = 1,
@@ -58519,7 +59249,7 @@ PVL_AppHelperPendingSnapshots.rbg = {
         },
         ["shîntâ-ragnaros"] = {
             displayName = "Shîntâ-ragnaros",
-            specKey = "WARRIOR_ARMS",
+            specKey = "",
             rating = 768,
             rank = 30,
             wins = 4,
@@ -58528,7 +59258,7 @@ PVL_AppHelperPendingSnapshots.rbg = {
         },
         ["sixcombopts-area52"] = {
             displayName = "Sixcombopts-area-52",
-            specKey = "",
+            specKey = "ROGUE_SUBTLETY",
             rating = 384,
             rank = 91,
             wins = 2,
@@ -58537,7 +59267,7 @@ PVL_AppHelperPendingSnapshots.rbg = {
         },
         ["skïnnard-stormrage"] = {
             displayName = "Skïnnard-stormrage",
-            specKey = "",
+            specKey = "ROGUE_ASSASSINATION",
             rating = 192,
             rank = 198,
             wins = 1,
@@ -58564,7 +59294,7 @@ PVL_AppHelperPendingSnapshots.rbg = {
         },
         ["solarflexus-tichondrius"] = {
             displayName = "Solarflexus-tichondrius",
-            specKey = "",
+            specKey = "PALADIN_RETRIBUTION",
             rating = 192,
             rank = 198,
             wins = 1,
@@ -58573,7 +59303,7 @@ PVL_AppHelperPendingSnapshots.rbg = {
         },
         ["spectrüm-azralon"] = {
             displayName = "Spectrüm-azralon",
-            specKey = "",
+            specKey = "DEATHKNIGHT_UNHOLY",
             rating = 384,
             rank = 91,
             wins = 2,
@@ -58582,7 +59312,7 @@ PVL_AppHelperPendingSnapshots.rbg = {
         },
         ["spîrït-tichondrius"] = {
             displayName = "Spîrït-tichondrius",
-            specKey = "",
+            specKey = "PRIEST_HOLY",
             rating = 192,
             rank = 198,
             wins = 1,
@@ -58600,7 +59330,7 @@ PVL_AppHelperPendingSnapshots.rbg = {
         },
         ["stealthdeath-quelthalas"] = {
             displayName = "Stealthdeath-quelthalas",
-            specKey = "",
+            specKey = "ROGUE_OUTLAW",
             rating = 958,
             rank = 25,
             wins = 5,
@@ -58609,7 +59339,7 @@ PVL_AppHelperPendingSnapshots.rbg = {
         },
         ["strikester-zuluhed"] = {
             displayName = "Strikester-zuluhed",
-            specKey = "",
+            specKey = "WARRIOR_ARMS",
             rating = 576,
             rank = 55,
             wins = 3,
@@ -58618,7 +59348,7 @@ PVL_AppHelperPendingSnapshots.rbg = {
         },
         ["strøbe-silvermoon"] = {
             displayName = "Strøbe-silvermoon",
-            specKey = "",
+            specKey = "MAGE_FIRE",
             rating = 576,
             rank = 55,
             wins = 3,
@@ -58636,7 +59366,7 @@ PVL_AppHelperPendingSnapshots.rbg = {
         },
         ["swd-bonechewer"] = {
             displayName = "Swd-bonechewer",
-            specKey = "",
+            specKey = "PRIEST_HOLY",
             rating = 576,
             rank = 55,
             wins = 3,
@@ -58654,7 +59384,7 @@ PVL_AppHelperPendingSnapshots.rbg = {
         },
         ["süfferin-ragnaros"] = {
             displayName = "Süfferin-ragnaros",
-            specKey = "",
+            specKey = "HUNTER_MARKSMANSHIP",
             rating = 384,
             rank = 91,
             wins = 2,
@@ -58699,7 +59429,7 @@ PVL_AppHelperPendingSnapshots.rbg = {
         },
         ["thyridanti-area52"] = {
             displayName = "Thyridanti-area-52",
-            specKey = "",
+            specKey = "EVOKER_PRESERVATION",
             rating = 384,
             rank = 91,
             wins = 2,
@@ -58708,7 +59438,7 @@ PVL_AppHelperPendingSnapshots.rbg = {
         },
         ["timmytinkle-stormrage"] = {
             displayName = "Timmytinkle-stormrage",
-            specKey = "",
+            specKey = "PRIEST_HOLY",
             rating = 384,
             rank = 91,
             wins = 2,
@@ -58717,7 +59447,7 @@ PVL_AppHelperPendingSnapshots.rbg = {
         },
         ["toddhatesyou-stormrage"] = {
             displayName = "Toddhatesyou-stormrage",
-            specKey = "",
+            specKey = "EVOKER_AUGMENTATION",
             rating = 192,
             rank = 198,
             wins = 1,
@@ -58735,7 +59465,7 @@ PVL_AppHelperPendingSnapshots.rbg = {
         },
         ["totemanus-kelthuzad"] = {
             displayName = "Totemanus-kelthuzad",
-            specKey = "",
+            specKey = "SHAMAN_ENHANCEMENT",
             rating = 576,
             rank = 55,
             wins = 3,
@@ -58753,7 +59483,7 @@ PVL_AppHelperPendingSnapshots.rbg = {
         },
         ["trapzlt-wyrmrestaccord"] = {
             displayName = "Trapzlt-wyrmrest-accord",
-            specKey = "",
+            specKey = "HUNTER_SURVIVAL",
             rating = 192,
             rank = 198,
             wins = 1,
@@ -58762,7 +59492,7 @@ PVL_AppHelperPendingSnapshots.rbg = {
         },
         ["trashdog-bleedinghollow"] = {
             displayName = "Trashdog-bleeding-hollow",
-            specKey = "",
+            specKey = "MONK_MISTWEAVER",
             rating = 384,
             rank = 91,
             wins = 2,
@@ -58771,7 +59501,7 @@ PVL_AppHelperPendingSnapshots.rbg = {
         },
         ["travisrott-area52"] = {
             displayName = "Travisrott-area-52",
-            specKey = "",
+            specKey = "WARLOCK_AFFLICTION",
             rating = 1340,
             rank = 1,
             wins = 7,
@@ -58798,7 +59528,7 @@ PVL_AppHelperPendingSnapshots.rbg = {
         },
         ["tyrvas-stormrage"] = {
             displayName = "Tyrvas-stormrage",
-            specKey = "",
+            specKey = "PRIEST_DISCIPLINE",
             rating = 192,
             rank = 198,
             wins = 1,
@@ -58807,7 +59537,7 @@ PVL_AppHelperPendingSnapshots.rbg = {
         },
         ["umbramortìs-tichondrius"] = {
             displayName = "Umbramortìs-tichondrius",
-            specKey = "PRIEST_DISCIPLINE",
+            specKey = "",
             rating = 384,
             rank = 91,
             wins = 2,
@@ -58816,7 +59546,7 @@ PVL_AppHelperPendingSnapshots.rbg = {
         },
         ["unhingd-tichondrius"] = {
             displayName = "Unhingd-tichondrius",
-            specKey = "",
+            specKey = "MAGE_FIRE",
             rating = 192,
             rank = 198,
             wins = 1,
@@ -58834,7 +59564,7 @@ PVL_AppHelperPendingSnapshots.rbg = {
         },
         ["unkuki-stormrage"] = {
             displayName = "Unkuki-stormrage",
-            specKey = "",
+            specKey = "EVOKER_DEVASTATION",
             rating = 192,
             rank = 198,
             wins = 1,
@@ -58843,7 +59573,7 @@ PVL_AppHelperPendingSnapshots.rbg = {
         },
         ["unrealzlî-tichondrius"] = {
             displayName = "Unrealzlî-tichondrius",
-            specKey = "",
+            specKey = "MONK_MISTWEAVER",
             rating = 384,
             rank = 91,
             wins = 2,
@@ -58861,7 +59591,7 @@ PVL_AppHelperPendingSnapshots.rbg = {
         },
         ["venmzspeedz-stormrage"] = {
             displayName = "Venmzspeedz-stormrage",
-            specKey = "",
+            specKey = "HUNTER_BEASTMASTERY",
             rating = 384,
             rank = 91,
             wins = 2,
@@ -58879,7 +59609,7 @@ PVL_AppHelperPendingSnapshots.rbg = {
         },
         ["vviz-stormreaver"] = {
             displayName = "Vviz-stormreaver",
-            specKey = "",
+            specKey = "WARRIOR_FURY",
             rating = 384,
             rank = 91,
             wins = 2,
@@ -58888,7 +59618,7 @@ PVL_AppHelperPendingSnapshots.rbg = {
         },
         ["vxmt-tichondrius"] = {
             displayName = "Vxmt-tichondrius",
-            specKey = "EVOKER_DEVASTATION",
+            specKey = "",
             rating = 384,
             rank = 91,
             wins = 2,
@@ -58897,7 +59627,7 @@ PVL_AppHelperPendingSnapshots.rbg = {
         },
         ["vïv-wyrmrestaccord"] = {
             displayName = "Vïv-wyrmrest-accord",
-            specKey = "",
+            specKey = "PALADIN_HOLY",
             rating = 192,
             rank = 198,
             wins = 1,
@@ -58915,7 +59645,7 @@ PVL_AppHelperPendingSnapshots.rbg = {
         },
         ["wanted-gundrak"] = {
             displayName = "Wanted-gundrak",
-            specKey = "",
+            specKey = "WARRIOR_ARMS",
             rating = 192,
             rank = 198,
             wins = 1,
@@ -58924,7 +59654,7 @@ PVL_AppHelperPendingSnapshots.rbg = {
         },
         ["warthunda-zuljin"] = {
             displayName = "Warthunda-zuljin",
-            specKey = "",
+            specKey = "SHAMAN_ENHANCEMENT",
             rating = 192,
             rank = 198,
             wins = 1,
@@ -58933,7 +59663,7 @@ PVL_AppHelperPendingSnapshots.rbg = {
         },
         ["whipsngrams-tichondrius"] = {
             displayName = "Whipsngrams-tichondrius",
-            specKey = "",
+            specKey = "SHAMAN_RESTORATION",
             rating = 192,
             rank = 198,
             wins = 1,
@@ -58951,7 +59681,7 @@ PVL_AppHelperPendingSnapshots.rbg = {
         },
         ["worthy-runetotem"] = {
             displayName = "Worthy-runetotem",
-            specKey = "",
+            specKey = "PRIEST_DISCIPLINE",
             rating = 576,
             rank = 55,
             wins = 3,
@@ -58987,7 +59717,7 @@ PVL_AppHelperPendingSnapshots.rbg = {
         },
         ["zzirgrizz-barthilas"] = {
             displayName = "Zzirgrizz-barthilas",
-            specKey = "",
+            specKey = "HUNTER_MARKSMANSHIP",
             rating = 768,
             rank = 30,
             wins = 4,
@@ -58996,7 +59726,7 @@ PVL_AppHelperPendingSnapshots.rbg = {
         },
         ["árereas-tichondrius"] = {
             displayName = "Árereas-tichondrius",
-            specKey = "",
+            specKey = "DEMONHUNTER_HAVOC",
             rating = 958,
             rank = 25,
             wins = 5,
@@ -59005,7 +59735,7 @@ PVL_AppHelperPendingSnapshots.rbg = {
         },
         ["älexander-ragnaros"] = {
             displayName = "Älexander-ragnaros",
-            specKey = "",
+            specKey = "EVOKER_PRESERVATION",
             rating = 384,
             rank = 91,
             wins = 2,
@@ -59014,7 +59744,7 @@ PVL_AppHelperPendingSnapshots.rbg = {
         },
         ["ålee-quelthalas"] = {
             displayName = "Ålee-quelthalas",
-            specKey = "",
+            specKey = "PRIEST_HOLY",
             rating = 384,
             rank = 91,
             wins = 2,
@@ -59032,7 +59762,7 @@ PVL_AppHelperPendingSnapshots.rbg = {
         },
         ["ðreadlokz-tichondrius"] = {
             displayName = "Ðreadlokz-tichondrius",
-            specKey = "",
+            specKey = "WARLOCK_DESTRUCTION",
             rating = 192,
             rank = 198,
             wins = 1,
@@ -59066,7 +59796,7 @@ PVL_AppHelperPendingSnapshots.shuffle = {
     bracket = "shuffle",
     season = 42,
     snapshotDate = "2026-08-19",
-    generatedAt = "2026-08-19T16:30:37Z",
+    generatedAt = "2026-08-19T17:02:52Z",
     source = "blizzard-api",
     overall = {
         listedCount = 10952,

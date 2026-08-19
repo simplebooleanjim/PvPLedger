@@ -7,7 +7,7 @@ PvPLedgerLadderData.US.arena2v2 = {
     bracket = "arena2v2",
     season = 42,
     snapshotDate = "2026-08-19",
-    generatedAt = "2026-08-19T16:31:02Z",
+    generatedAt = "2026-08-19T17:03:07Z",
     source = "blizzard-api+seramate",
     overall = {
         listedCount = 1021,
@@ -68,571 +68,864 @@ PvPLedgerLadderData.US.arena2v2 = {
     },
     byClass = {
         ["DEATHKNIGHT"] = {
-            listedCount = 4,
-            avgListedRating = 910,
-            medianListedRating = 864.0,
-            top100Avg = 910,
-            highest = 1051,
+            listedCount = 15,
+            avgListedRating = 973.5,
+            medianListedRating = 959.0,
+            top100Avg = 973.5,
+            highest = 1618,
             buckets = {
-                ["1000-1099"] = 1,
-                ["800-899"] = 3,
+                ["1000-1099"] = 2,
+                ["1100-1199"] = 1,
+                ["1300-1399"] = 1,
+                ["1600-1699"] = 1,
+                ["700-799"] = 2,
+                ["800-899"] = 5,
+                ["900-999"] = 3,
             },
         },
         ["DEMONHUNTER"] = {
-            listedCount = 3,
-            avgListedRating = 1486.2,
-            medianListedRating = 1486.2,
-            top100Avg = 1486.2,
-            highest = 1654,
+            listedCount = 30,
+            avgListedRating = 1233.0,
+            medianListedRating = 1239.5,
+            top100Avg = 1233.0,
+            highest = 1818,
             buckets = {
+                ["1000-1099"] = 2,
+                ["1100-1199"] = 6,
                 ["1300-1399"] = 1,
-                ["1600-1699"] = 2,
+                ["1500-1599"] = 1,
+                ["1600-1699"] = 7,
+                ["1700-1799"] = 1,
+                ["1800-1899"] = 1,
+                ["700-799"] = 3,
+                ["800-899"] = 6,
+                ["900-999"] = 2,
             },
         },
         ["DRUID"] = {
-            listedCount = 20,
-            avgListedRating = 1102.5,
-            medianListedRating = 1247.0,
-            top100Avg = 1102.5,
-            highest = 1665,
+            listedCount = 91,
+            avgListedRating = 1078.0,
+            medianListedRating = 1007.0,
+            top100Avg = 1078.0,
+            highest = 1703,
             buckets = {
-                ["1200-1299"] = 2,
-                ["1400-1499"] = 1,
-                ["1500-1599"] = 2,
-                ["1600-1699"] = 6,
-                ["700-799"] = 4,
-                ["800-899"] = 1,
-                ["900-999"] = 4,
+                ["1000-1099"] = 12,
+                ["1100-1199"] = 5,
+                ["1200-1299"] = 6,
+                ["1300-1399"] = 1,
+                ["1400-1499"] = 3,
+                ["1500-1599"] = 7,
+                ["1600-1699"] = 10,
+                ["1700-1799"] = 1,
+                ["700-799"] = 13,
+                ["800-899"] = 17,
+                ["900-999"] = 16,
             },
         },
         ["EVOKER"] = {
-            listedCount = 10,
-            avgListedRating = 1195.4,
-            medianListedRating = 1102.0,
-            top100Avg = 1195.4,
-            highest = 1666,
+            listedCount = 28,
+            avgListedRating = 1089.9,
+            medianListedRating = 1049,
+            top100Avg = 1089.9,
+            highest = 1766,
             buckets = {
+                ["1000-1099"] = 3,
+                ["1100-1199"] = 2,
                 ["1200-1299"] = 1,
                 ["1400-1499"] = 2,
-                ["1600-1699"] = 2,
-                ["800-899"] = 3,
-                ["900-999"] = 2,
+                ["1600-1699"] = 5,
+                ["1700-1799"] = 1,
+                ["700-799"] = 3,
+                ["800-899"] = 7,
+                ["900-999"] = 4,
             },
         },
         ["HUNTER"] = {
-            listedCount = 13,
-            avgListedRating = 1213.5,
-            medianListedRating = 1246.0,
-            top100Avg = 1213.5,
+            listedCount = 79,
+            avgListedRating = 1122.9,
+            medianListedRating = 1046,
+            top100Avg = 1122.9,
             highest = 1958,
             buckets = {
-                ["1000-1099"] = 1,
-                ["1200-1299"] = 2,
+                ["1000-1099"] = 12,
+                ["1100-1199"] = 2,
+                ["1200-1299"] = 7,
+                ["1300-1399"] = 1,
                 ["1400-1499"] = 1,
-                ["1500-1599"] = 2,
+                ["1500-1599"] = 6,
+                ["1600-1699"] = 11,
                 ["1900-1999"] = 1,
-                ["700-799"] = 1,
-                ["800-899"] = 3,
-                ["900-999"] = 2,
+                ["700-799"] = 12,
+                ["800-899"] = 17,
+                ["900-999"] = 9,
             },
         },
         ["MAGE"] = {
-            listedCount = 4,
-            avgListedRating = 1167.8,
-            medianListedRating = 1006.5,
-            top100Avg = 1167.8,
-            highest = 1537,
+            listedCount = 27,
+            avgListedRating = 1087.6,
+            medianListedRating = 1056,
+            top100Avg = 1087.6,
+            highest = 1643,
             buckets = {
-                ["1200-1299"] = 1,
+                ["1000-1099"] = 3,
+                ["1100-1199"] = 3,
+                ["1200-1299"] = 3,
+                ["1300-1399"] = 1,
+                ["1400-1499"] = 1,
                 ["1500-1599"] = 1,
-                ["700-799"] = 1,
-                ["900-999"] = 1,
+                ["1600-1699"] = 3,
+                ["700-799"] = 3,
+                ["800-899"] = 2,
+                ["900-999"] = 7,
             },
         },
         ["MONK"] = {
-            listedCount = 16,
-            avgListedRating = 1193.7,
-            medianListedRating = 1103.8,
-            top100Avg = 1193.7,
+            listedCount = 91,
+            avgListedRating = 1089.4,
+            medianListedRating = 1007.0,
+            top100Avg = 1089.4,
             highest = 2004,
             buckets = {
-                ["1000-1099"] = 1,
-                ["1100-1199"] = 1,
-                ["1200-1299"] = 1,
+                ["1000-1099"] = 14,
+                ["1100-1199"] = 10,
+                ["1200-1299"] = 4,
                 ["1300-1399"] = 2,
-                ["1600-1699"] = 2,
-                ["1900-1999"] = 1,
-                ["2000-2099"] = 1,
-                ["700-799"] = 1,
-                ["800-899"] = 4,
-                ["900-999"] = 2,
+                ["1400-1499"] = 3,
+                ["1600-1699"] = 8,
+                ["1900-1999"] = 2,
+                ["2000-2099"] = 2,
+                ["700-799"] = 12,
+                ["800-899"] = 22,
+                ["900-999"] = 12,
             },
         },
         ["PALADIN"] = {
-            listedCount = 10,
-            avgListedRating = 1212.6,
-            medianListedRating = 1248,
-            top100Avg = 1212.6,
+            listedCount = 86,
+            avgListedRating = 1086.6,
+            medianListedRating = 1079.5,
+            top100Avg = 1086.6,
             highest = 2012,
             buckets = {
-                ["1000-1099"] = 1,
-                ["1200-1299"] = 1,
-                ["1300-1399"] = 1,
-                ["1500-1599"] = 1,
+                ["1000-1099"] = 12,
+                ["1100-1199"] = 8,
+                ["1200-1299"] = 3,
+                ["1300-1399"] = 5,
+                ["1400-1499"] = 6,
+                ["1500-1599"] = 6,
+                ["1600-1699"] = 5,
                 ["2000-2099"] = 1,
-                ["700-799"] = 2,
-                ["800-899"] = 1,
-                ["900-999"] = 2,
+                ["700-799"] = 16,
+                ["800-899"] = 16,
+                ["900-999"] = 8,
             },
         },
         ["PRIEST"] = {
-            listedCount = 38,
-            avgListedRating = 1194.9,
-            medianListedRating = 1151.5,
-            top100Avg = 1194.9,
-            highest = 1820,
+            listedCount = 215,
+            avgListedRating = 1166.9,
+            medianListedRating = 1147,
+            top100Avg = 1182.2,
+            highest = 1960,
             buckets = {
-                ["1000-1099"] = 4,
-                ["1100-1199"] = 2,
-                ["1200-1299"] = 1,
-                ["1300-1399"] = 3,
-                ["1500-1599"] = 4,
-                ["1600-1699"] = 5,
+                ["1000-1099"] = 27,
+                ["1100-1199"] = 21,
+                ["1200-1299"] = 8,
+                ["1300-1399"] = 8,
+                ["1400-1499"] = 7,
+                ["1500-1599"] = 21,
+                ["1600-1699"] = 27,
                 ["1700-1799"] = 1,
-                ["1800-1899"] = 2,
-                ["700-799"] = 5,
-                ["800-899"] = 5,
-                ["900-999"] = 6,
+                ["1800-1899"] = 3,
+                ["1900-1999"] = 1,
+                ["700-799"] = 30,
+                ["800-899"] = 31,
+                ["900-999"] = 30,
             },
         },
         ["ROGUE"] = {
-            listedCount = 21,
-            avgListedRating = 1281.0,
-            medianListedRating = 1388.0,
-            top100Avg = 1281.0,
-            highest = 1745,
+            listedCount = 111,
+            avgListedRating = 1106.2,
+            medianListedRating = 1054,
+            top100Avg = 1106.2,
+            highest = 1765,
             buckets = {
-                ["1000-1099"] = 1,
-                ["1100-1199"] = 1,
-                ["1300-1399"] = 4,
-                ["1400-1499"] = 1,
-                ["1500-1599"] = 2,
-                ["1600-1699"] = 6,
-                ["1700-1799"] = 1,
-                ["700-799"] = 1,
-                ["800-899"] = 2,
-                ["900-999"] = 2,
+                ["1000-1099"] = 14,
+                ["1100-1199"] = 13,
+                ["1200-1299"] = 6,
+                ["1300-1399"] = 8,
+                ["1400-1499"] = 2,
+                ["1500-1599"] = 7,
+                ["1600-1699"] = 17,
+                ["1700-1799"] = 2,
+                ["700-799"] = 11,
+                ["800-899"] = 17,
+                ["900-999"] = 14,
             },
         },
         ["SHAMAN"] = {
-            listedCount = 6,
-            avgListedRating = 1078.5,
-            medianListedRating = 1150.2,
-            top100Avg = 1078.5,
-            highest = 1343,
+            listedCount = 50,
+            avgListedRating = 1008.3,
+            medianListedRating = 864.0,
+            top100Avg = 1008.3,
+            highest = 1617,
             buckets = {
-                ["1000-1099"] = 1,
-                ["1300-1399"] = 3,
-                ["700-799"] = 1,
-                ["800-899"] = 1,
+                ["1000-1099"] = 7,
+                ["1100-1199"] = 7,
+                ["1200-1299"] = 2,
+                ["1300-1399"] = 5,
+                ["1400-1499"] = 1,
+                ["1500-1599"] = 1,
+                ["1600-1699"] = 2,
+                ["700-799"] = 7,
+                ["800-899"] = 15,
+                ["900-999"] = 3,
             },
         },
         ["WARLOCK"] = {
-            listedCount = 8,
-            avgListedRating = 1092.9,
-            medianListedRating = 1055,
-            top100Avg = 1092.9,
-            highest = 1663,
+            listedCount = 40,
+            avgListedRating = 1079.4,
+            medianListedRating = 960,
+            top100Avg = 1079.4,
+            highest = 1810,
             buckets = {
-                ["1000-1099"] = 1,
+                ["1000-1099"] = 4,
+                ["1100-1199"] = 2,
+                ["1200-1299"] = 2,
+                ["1300-1399"] = 1,
                 ["1400-1499"] = 2,
-                ["1600-1699"] = 2,
-                ["700-799"] = 1,
-                ["800-899"] = 2,
+                ["1500-1599"] = 1,
+                ["1600-1699"] = 7,
+                ["1800-1899"] = 1,
+                ["700-799"] = 9,
+                ["800-899"] = 9,
+                ["900-999"] = 2,
             },
         },
         ["WARRIOR"] = {
-            listedCount = 10,
-            avgListedRating = 1228.3,
-            medianListedRating = 1185.0,
-            top100Avg = 1228.3,
-            highest = 1680,
+            listedCount = 59,
+            avgListedRating = 1040.6,
+            medianListedRating = 960.0,
+            top100Avg = 1040.6,
+            highest = 1683,
             buckets = {
+                ["1000-1099"] = 7,
+                ["1100-1199"] = 1,
+                ["1200-1299"] = 3,
                 ["1300-1399"] = 1,
-                ["1600-1699"] = 5,
-                ["700-799"] = 2,
-                ["800-899"] = 1,
-                ["900-999"] = 1,
+                ["1400-1499"] = 1,
+                ["1500-1599"] = 2,
+                ["1600-1699"] = 12,
+                ["700-799"] = 10,
+                ["800-899"] = 13,
+                ["900-999"] = 9,
             },
         },
     },
     bySpec = {
-        ["DEATHKNIGHT_UNHOLY"] = {
-            listedCount = 4,
-            avgListedRating = 910,
-            medianListedRating = 864.0,
-            top100Avg = 910,
-            highest = 1051,
+        ["DEATHKNIGHT_BLOOD"] = {
+            listedCount = 2,
+            avgListedRating = 959,
+            medianListedRating = 959.0,
+            top100Avg = 959,
+            highest = 1054,
             buckets = {
                 ["1000-1099"] = 1,
-                ["800-899"] = 3,
+                ["800-899"] = 1,
+            },
+        },
+        ["DEATHKNIGHT_FROST"] = {
+            listedCount = 1,
+            avgListedRating = 959,
+            medianListedRating = 959,
+            top100Avg = 959,
+            highest = 959,
+            buckets = {
+                ["900-999"] = 1,
+            },
+        },
+        ["DEATHKNIGHT_UNHOLY"] = {
+            listedCount = 12,
+            avgListedRating = 1002.6,
+            medianListedRating = 912.0,
+            top100Avg = 1002.6,
+            highest = 1618,
+            buckets = {
+                ["1000-1099"] = 1,
+                ["1100-1199"] = 1,
+                ["1300-1399"] = 1,
+                ["1600-1699"] = 1,
+                ["700-799"] = 2,
+                ["800-899"] = 4,
+                ["900-999"] = 2,
+            },
+        },
+        ["DEMONHUNTER_DEVOURER"] = {
+            listedCount = 4,
+            avgListedRating = 1264.5,
+            medianListedRating = 1282.5,
+            top100Avg = 1264.5,
+            highest = 1725,
+            buckets = {
+                ["1600-1699"] = 1,
+                ["1700-1799"] = 1,
+                ["700-799"] = 1,
+                ["900-999"] = 1,
             },
         },
         ["DEMONHUNTER_HAVOC"] = {
-            listedCount = 2,
-            avgListedRating = 1645.5,
-            medianListedRating = 1645.5,
-            top100Avg = 1645.5,
-            highest = 1654,
+            listedCount = 24,
+            avgListedRating = 1195,
+            medianListedRating = 1148.5,
+            top100Avg = 1195,
+            highest = 1818,
             buckets = {
-                ["1600-1699"] = 2,
+                ["1000-1099"] = 2,
+                ["1100-1199"] = 5,
+                ["1500-1599"] = 1,
+                ["1600-1699"] = 6,
+                ["1800-1899"] = 1,
+                ["700-799"] = 2,
+                ["800-899"] = 6,
+                ["900-999"] = 1,
             },
         },
         ["DEMONHUNTER_VENGEANCE"] = {
-            listedCount = 1,
-            avgListedRating = 1327,
-            medianListedRating = 1327,
-            top100Avg = 1327,
+            listedCount = 2,
+            avgListedRating = 1239.5,
+            medianListedRating = 1239.5,
+            top100Avg = 1239.5,
             highest = 1327,
             buckets = {
+                ["1100-1199"] = 1,
                 ["1300-1399"] = 1,
             },
         },
         ["DRUID_BALANCE"] = {
-            listedCount = 1,
-            avgListedRating = 768,
-            medianListedRating = 768,
-            top100Avg = 768,
-            highest = 768,
-            buckets = {
-                ["700-799"] = 1,
-            },
-        },
-        ["DRUID_FERAL"] = {
-            listedCount = 3,
-            avgListedRating = 1289.7,
-            medianListedRating = 1436,
-            top100Avg = 1289.7,
-            highest = 1665,
-            buckets = {
-                ["1400-1499"] = 1,
-                ["1600-1699"] = 1,
-                ["700-799"] = 1,
-            },
-        },
-        ["DRUID_RESTORATION"] = {
-            listedCount = 16,
-            avgListedRating = 1249.8,
-            medianListedRating = 1247.0,
-            top100Avg = 1249.8,
-            highest = 1657,
-            buckets = {
-                ["1200-1299"] = 2,
-                ["1500-1599"] = 2,
-                ["1600-1699"] = 5,
-                ["700-799"] = 2,
-                ["800-899"] = 1,
-                ["900-999"] = 4,
-            },
-        },
-        ["EVOKER_PRESERVATION"] = {
-            listedCount = 10,
-            avgListedRating = 1195.4,
-            medianListedRating = 1102.0,
-            top100Avg = 1195.4,
-            highest = 1666,
-            buckets = {
-                ["1200-1299"] = 1,
-                ["1400-1499"] = 2,
-                ["1600-1699"] = 2,
-                ["800-899"] = 3,
-                ["900-999"] = 2,
-            },
-        },
-        ["HUNTER_BEASTMASTERY"] = {
-            listedCount = 7,
-            avgListedRating = 1082.1,
-            medianListedRating = 1056,
-            top100Avg = 1082.1,
-            highest = 1435,
+            listedCount = 12,
+            avgListedRating = 942.8,
+            medianListedRating = 863.5,
+            top100Avg = 942.8,
+            highest = 1245,
             buckets = {
                 ["1000-1099"] = 1,
                 ["1200-1299"] = 2,
+                ["700-799"] = 2,
+                ["800-899"] = 5,
+                ["900-999"] = 2,
+            },
+        },
+        ["DRUID_FERAL"] = {
+            listedCount = 24,
+            avgListedRating = 1150.4,
+            medianListedRating = 1055.0,
+            top100Avg = 1150.4,
+            highest = 1665,
+            buckets = {
+                ["1000-1099"] = 5,
+                ["1100-1199"] = 2,
+                ["1200-1299"] = 1,
+                ["1400-1499"] = 2,
+                ["1500-1599"] = 1,
+                ["1600-1699"] = 4,
+                ["700-799"] = 3,
+                ["800-899"] = 2,
+                ["900-999"] = 4,
+            },
+        },
+        ["DRUID_GUARDIAN"] = {
+            listedCount = 2,
+            avgListedRating = 1102.5,
+            medianListedRating = 1102.5,
+            top100Avg = 1102.5,
+            highest = 1151,
+            buckets = {
+                ["1000-1099"] = 1,
+                ["1100-1199"] = 1,
+            },
+        },
+        ["DRUID_RESTORATION"] = {
+            listedCount = 53,
+            avgListedRating = 1116.5,
+            medianListedRating = 959,
+            top100Avg = 1116.5,
+            highest = 1703,
+            buckets = {
+                ["1000-1099"] = 5,
+                ["1100-1199"] = 2,
+                ["1200-1299"] = 3,
+                ["1300-1399"] = 1,
                 ["1400-1499"] = 1,
-                ["800-899"] = 3,
+                ["1500-1599"] = 6,
+                ["1600-1699"] = 6,
+                ["1700-1799"] = 1,
+                ["700-799"] = 8,
+                ["800-899"] = 10,
+                ["900-999"] = 10,
+            },
+        },
+        ["EVOKER_AUGMENTATION"] = {
+            listedCount = 1,
+            avgListedRating = 1152,
+            medianListedRating = 1152,
+            top100Avg = 1152,
+            highest = 1152,
+            buckets = {
+                ["1100-1199"] = 1,
+            },
+        },
+        ["EVOKER_DEVASTATION"] = {
+            listedCount = 4,
+            avgListedRating = 956.2,
+            medianListedRating = 910.5,
+            top100Avg = 956.2,
+            highest = 1152,
+            buckets = {
+                ["1100-1199"] = 1,
+                ["800-899"] = 2,
+                ["900-999"] = 1,
+            },
+        },
+        ["EVOKER_PRESERVATION"] = {
+            listedCount = 23,
+            avgListedRating = 1161.5,
+            medianListedRating = 1049,
+            top100Avg = 1161.5,
+            highest = 1766,
+            buckets = {
+                ["1000-1099"] = 3,
+                ["1200-1299"] = 1,
+                ["1400-1499"] = 2,
+                ["1600-1699"] = 5,
+                ["1700-1799"] = 1,
+                ["700-799"] = 3,
+                ["800-899"] = 5,
+                ["900-999"] = 3,
+            },
+        },
+        ["HUNTER_BEASTMASTERY"] = {
+            listedCount = 45,
+            avgListedRating = 1079.5,
+            medianListedRating = 1046,
+            top100Avg = 1079.5,
+            highest = 1631,
+            buckets = {
+                ["1000-1099"] = 7,
+                ["1100-1199"] = 2,
+                ["1200-1299"] = 5,
+                ["1400-1499"] = 1,
+                ["1500-1599"] = 1,
+                ["1600-1699"] = 7,
+                ["700-799"] = 9,
+                ["800-899"] = 10,
+                ["900-999"] = 3,
             },
         },
         ["HUNTER_MARKSMANSHIP"] = {
-            listedCount = 4,
-            avgListedRating = 1304.5,
-            medianListedRating = 1246.0,
-            top100Avg = 1304.5,
+            listedCount = 19,
+            avgListedRating = 1241.1,
+            medianListedRating = 1247,
+            top100Avg = 1241.1,
             highest = 1958,
             buckets = {
-                ["1500-1599"] = 1,
+                ["1000-1099"] = 1,
+                ["1200-1299"] = 1,
+                ["1300-1399"] = 1,
+                ["1500-1599"] = 4,
+                ["1600-1699"] = 3,
                 ["1900-1999"] = 1,
-                ["700-799"] = 1,
-                ["900-999"] = 1,
+                ["700-799"] = 2,
+                ["800-899"] = 3,
+                ["900-999"] = 3,
             },
         },
         ["HUNTER_SURVIVAL"] = {
-            listedCount = 2,
-            avgListedRating = 1254,
-            medianListedRating = 1254.0,
-            top100Avg = 1254,
-            highest = 1548,
+            listedCount = 15,
+            avgListedRating = 1048.2,
+            medianListedRating = 960,
+            top100Avg = 1048.2,
+            highest = 1610,
             buckets = {
+                ["1000-1099"] = 4,
+                ["1200-1299"] = 1,
                 ["1500-1599"] = 1,
-                ["900-999"] = 1,
+                ["1600-1699"] = 1,
+                ["700-799"] = 1,
+                ["800-899"] = 4,
+                ["900-999"] = 3,
             },
         },
         ["MAGE_ARCANE"] = {
-            listedCount = 1,
-            avgListedRating = 960,
-            medianListedRating = 960,
-            top100Avg = 960,
-            highest = 960,
+            listedCount = 5,
+            avgListedRating = 938.4,
+            medianListedRating = 855,
+            top100Avg = 938.4,
+            highest = 1341,
             buckets = {
+                ["1300-1399"] = 1,
+                ["700-799"] = 2,
+                ["800-899"] = 1,
                 ["900-999"] = 1,
             },
         },
         ["MAGE_FIRE"] = {
-            listedCount = 2,
-            avgListedRating = 1006.5,
-            medianListedRating = 1006.5,
-            top100Avg = 1006.5,
-            highest = 1245,
+            listedCount = 11,
+            avgListedRating = 1071.8,
+            medianListedRating = 1056,
+            top100Avg = 1071.8,
+            highest = 1429,
             buckets = {
-                ["1200-1299"] = 1,
+                ["1000-1099"] = 1,
+                ["1100-1199"] = 2,
+                ["1200-1299"] = 2,
+                ["1400-1499"] = 1,
                 ["700-799"] = 1,
+                ["800-899"] = 1,
+                ["900-999"] = 3,
             },
         },
         ["MAGE_FROST"] = {
-            listedCount = 1,
-            avgListedRating = 1537,
-            medianListedRating = 1537,
-            top100Avg = 1537,
-            highest = 1537,
+            listedCount = 11,
+            avgListedRating = 1252.5,
+            medianListedRating = 1148,
+            top100Avg = 1252.5,
+            highest = 1643,
             buckets = {
+                ["1000-1099"] = 2,
+                ["1100-1199"] = 1,
+                ["1200-1299"] = 1,
                 ["1500-1599"] = 1,
+                ["1600-1699"] = 3,
+                ["900-999"] = 3,
             },
         },
         ["MONK_MISTWEAVER"] = {
-            listedCount = 10,
-            avgListedRating = 1270.6,
-            medianListedRating = 1103.5,
-            top100Avg = 1270.6,
+            listedCount = 55,
+            avgListedRating = 1066.3,
+            medianListedRating = 958,
+            top100Avg = 1066.3,
             highest = 2004,
             buckets = {
-                ["1200-1299"] = 1,
-                ["1600-1699"] = 2,
-                ["1900-1999"] = 1,
-                ["2000-2099"] = 1,
-                ["700-799"] = 1,
-                ["800-899"] = 3,
-                ["900-999"] = 1,
+                ["1000-1099"] = 6,
+                ["1100-1199"] = 2,
+                ["1200-1299"] = 2,
+                ["1400-1499"] = 3,
+                ["1600-1699"] = 4,
+                ["1900-1999"] = 2,
+                ["2000-2099"] = 2,
+                ["700-799"] = 12,
+                ["800-899"] = 14,
+                ["900-999"] = 8,
             },
         },
         ["MONK_WINDWALKER"] = {
-            listedCount = 6,
-            avgListedRating = 1116.8,
-            medianListedRating = 1104.0,
-            top100Avg = 1116.8,
-            highest = 1344,
+            listedCount = 36,
+            avgListedRating = 1112.6,
+            medianListedRating = 1056.0,
+            top100Avg = 1112.6,
+            highest = 1670,
             buckets = {
-                ["1000-1099"] = 1,
-                ["1100-1199"] = 1,
+                ["1000-1099"] = 8,
+                ["1100-1199"] = 8,
+                ["1200-1299"] = 2,
                 ["1300-1399"] = 2,
-                ["800-899"] = 1,
-                ["900-999"] = 1,
+                ["1600-1699"] = 4,
+                ["800-899"] = 8,
+                ["900-999"] = 4,
             },
         },
         ["PALADIN_HOLY"] = {
-            listedCount = 7,
-            avgListedRating = 1094.3,
-            medianListedRating = 960,
-            top100Avg = 1094.3,
+            listedCount = 58,
+            avgListedRating = 1147.8,
+            medianListedRating = 1079.5,
+            top100Avg = 1147.8,
             highest = 2012,
             buckets = {
-                ["1300-1399"] = 1,
+                ["1000-1099"] = 8,
+                ["1100-1199"] = 8,
+                ["1200-1299"] = 2,
+                ["1300-1399"] = 3,
+                ["1400-1499"] = 6,
+                ["1500-1599"] = 5,
+                ["1600-1699"] = 4,
                 ["2000-2099"] = 1,
-                ["700-799"] = 2,
-                ["800-899"] = 1,
-                ["900-999"] = 2,
+                ["700-799"] = 10,
+                ["800-899"] = 7,
+                ["900-999"] = 4,
             },
         },
         ["PALADIN_PROTECTION"] = {
-            listedCount = 1,
-            avgListedRating = 1248,
-            medianListedRating = 1248,
-            top100Avg = 1248,
+            listedCount = 2,
+            avgListedRating = 1142.5,
+            medianListedRating = 1142.5,
+            top100Avg = 1142.5,
             highest = 1248,
             buckets = {
+                ["1000-1099"] = 1,
                 ["1200-1299"] = 1,
             },
         },
         ["PALADIN_RETRIBUTION"] = {
-            listedCount = 2,
-            avgListedRating = 1295.5,
-            medianListedRating = 1295.5,
-            top100Avg = 1295.5,
-            highest = 1535,
+            listedCount = 26,
+            avgListedRating = 969.4,
+            medianListedRating = 864.0,
+            top100Avg = 969.4,
+            highest = 1638,
             buckets = {
-                ["1000-1099"] = 1,
+                ["1000-1099"] = 3,
+                ["1300-1399"] = 2,
                 ["1500-1599"] = 1,
+                ["1600-1699"] = 1,
+                ["700-799"] = 6,
+                ["800-899"] = 9,
+                ["900-999"] = 4,
             },
         },
         ["PRIEST_DISCIPLINE"] = {
-            listedCount = 19,
-            avgListedRating = 1304.4,
-            medianListedRating = 1343,
-            top100Avg = 1304.4,
+            listedCount = 113,
+            avgListedRating = 1118.9,
+            medianListedRating = 1053,
+            top100Avg = 1164.6,
             highest = 1820,
             buckets = {
-                ["1000-1099"] = 2,
-                ["1300-1399"] = 2,
-                ["1500-1599"] = 2,
-                ["1600-1699"] = 4,
+                ["1000-1099"] = 16,
+                ["1100-1199"] = 9,
+                ["1200-1299"] = 6,
+                ["1300-1399"] = 3,
+                ["1400-1499"] = 2,
+                ["1500-1599"] = 9,
+                ["1600-1699"] = 13,
                 ["1700-1799"] = 1,
                 ["1800-1899"] = 2,
-                ["700-799"] = 2,
-                ["800-899"] = 4,
+                ["700-799"] = 18,
+                ["800-899"] = 21,
+                ["900-999"] = 13,
             },
         },
         ["PRIEST_HOLY"] = {
-            listedCount = 19,
-            avgListedRating = 1085.4,
-            medianListedRating = 960,
-            top100Avg = 1085.4,
-            highest = 1607,
+            listedCount = 83,
+            avgListedRating = 1183.8,
+            medianListedRating = 1147,
+            top100Avg = 1183.8,
+            highest = 1960,
             buckets = {
-                ["1000-1099"] = 2,
-                ["1100-1199"] = 2,
-                ["1200-1299"] = 1,
-                ["1300-1399"] = 1,
+                ["1000-1099"] = 8,
+                ["1100-1199"] = 9,
+                ["1200-1299"] = 2,
+                ["1300-1399"] = 5,
+                ["1400-1499"] = 4,
+                ["1500-1599"] = 10,
+                ["1600-1699"] = 10,
+                ["1800-1899"] = 1,
+                ["1900-1999"] = 1,
+                ["700-799"] = 11,
+                ["800-899"] = 6,
+                ["900-999"] = 16,
+            },
+        },
+        ["PRIEST_SHADOW"] = {
+            listedCount = 19,
+            avgListedRating = 1198.1,
+            medianListedRating = 1147,
+            top100Avg = 1198.1,
+            highest = 1617,
+            buckets = {
+                ["1000-1099"] = 3,
+                ["1100-1199"] = 3,
+                ["1400-1499"] = 1,
                 ["1500-1599"] = 2,
-                ["1600-1699"] = 1,
-                ["700-799"] = 3,
-                ["800-899"] = 1,
-                ["900-999"] = 6,
+                ["1600-1699"] = 4,
+                ["700-799"] = 1,
+                ["800-899"] = 4,
+                ["900-999"] = 1,
             },
         },
         ["ROGUE_ASSASSINATION"] = {
-            listedCount = 15,
-            avgListedRating = 1410.7,
-            medianListedRating = 1577,
-            top100Avg = 1410.7,
-            highest = 1745,
+            listedCount = 59,
+            avgListedRating = 1212.8,
+            medianListedRating = 1152,
+            top100Avg = 1212.8,
+            highest = 1765,
             buckets = {
+                ["1000-1099"] = 5,
+                ["1100-1199"] = 9,
+                ["1200-1299"] = 4,
+                ["1300-1399"] = 2,
+                ["1400-1499"] = 2,
+                ["1500-1599"] = 5,
+                ["1600-1699"] = 11,
+                ["1700-1799"] = 2,
+                ["700-799"] = 7,
+                ["800-899"] = 8,
+                ["900-999"] = 4,
+            },
+        },
+        ["ROGUE_OUTLAW"] = {
+            listedCount = 5,
+            avgListedRating = 977.6,
+            medianListedRating = 959,
+            top100Avg = 977.6,
+            highest = 1150,
+            buckets = {
+                ["1000-1099"] = 1,
                 ["1100-1199"] = 1,
-                ["1300-1399"] = 1,
-                ["1400-1499"] = 1,
-                ["1500-1599"] = 2,
-                ["1600-1699"] = 6,
-                ["1700-1799"] = 1,
-                ["700-799"] = 1,
-                ["800-899"] = 1,
+                ["800-899"] = 2,
                 ["900-999"] = 1,
             },
         },
         ["ROGUE_SUBTLETY"] = {
-            listedCount = 6,
-            avgListedRating = 1151.2,
-            medianListedRating = 1199.0,
-            top100Avg = 1151.2,
-            highest = 1343,
+            listedCount = 47,
+            avgListedRating = 1128.3,
+            medianListedRating = 1054,
+            top100Avg = 1128.3,
+            highest = 1651,
             buckets = {
-                ["1000-1099"] = 1,
-                ["1300-1399"] = 3,
-                ["800-899"] = 1,
-                ["900-999"] = 1,
+                ["1000-1099"] = 8,
+                ["1100-1199"] = 3,
+                ["1200-1299"] = 2,
+                ["1300-1399"] = 6,
+                ["1500-1599"] = 2,
+                ["1600-1699"] = 6,
+                ["700-799"] = 4,
+                ["800-899"] = 7,
+                ["900-999"] = 9,
+            },
+        },
+        ["SHAMAN_ELEMENTAL"] = {
+            listedCount = 4,
+            avgListedRating = 959.8,
+            medianListedRating = 864.0,
+            top100Avg = 959.8,
+            highest = 1247,
+            buckets = {
+                ["1200-1299"] = 1,
+                ["800-899"] = 3,
             },
         },
         ["SHAMAN_ENHANCEMENT"] = {
-            listedCount = 2,
-            avgListedRating = 958,
-            medianListedRating = 958.0,
-            top100Avg = 958,
-            highest = 1055,
+            listedCount = 7,
+            avgListedRating = 1011.1,
+            medianListedRating = 861,
+            top100Avg = 1011.1,
+            highest = 1439,
             buckets = {
                 ["1000-1099"] = 1,
-                ["800-899"] = 1,
+                ["1300-1399"] = 1,
+                ["1400-1499"] = 1,
+                ["700-799"] = 2,
+                ["800-899"] = 2,
             },
         },
         ["SHAMAN_RESTORATION"] = {
-            listedCount = 4,
-            avgListedRating = 1199,
-            medianListedRating = 1342.5,
-            top100Avg = 1199,
-            highest = 1343,
+            listedCount = 39,
+            avgListedRating = 1054.1,
+            medianListedRating = 1054,
+            top100Avg = 1054.1,
+            highest = 1617,
             buckets = {
-                ["1300-1399"] = 3,
-                ["700-799"] = 1,
+                ["1000-1099"] = 6,
+                ["1100-1199"] = 7,
+                ["1200-1299"] = 1,
+                ["1300-1399"] = 4,
+                ["1500-1599"] = 1,
+                ["1600-1699"] = 2,
+                ["700-799"] = 5,
+                ["800-899"] = 10,
+                ["900-999"] = 3,
             },
         },
         ["WARLOCK_AFFLICTION"] = {
-            listedCount = 4,
-            avgListedRating = 1392,
-            medianListedRating = 1520.5,
-            top100Avg = 1392,
-            highest = 1663,
-            buckets = {
-                ["1400-1499"] = 1,
-                ["1600-1699"] = 2,
-                ["800-899"] = 1,
-            },
-        },
-        ["WARLOCK_DEMONOLOGY"] = {
-            listedCount = 1,
-            avgListedRating = 768,
-            medianListedRating = 768,
-            top100Avg = 768,
-            highest = 768,
-            buckets = {
-                ["700-799"] = 1,
-            },
-        },
-        ["WARLOCK_DESTRUCTION"] = {
-            listedCount = 3,
-            avgListedRating = 1118.7,
-            medianListedRating = 1055,
-            top100Avg = 1118.7,
-            highest = 1437,
+            listedCount = 17,
+            avgListedRating = 1171.5,
+            medianListedRating = 960,
+            top100Avg = 1171.5,
+            highest = 1810,
             buckets = {
                 ["1000-1099"] = 1,
                 ["1400-1499"] = 1,
-                ["800-899"] = 1,
-            },
-        },
-        ["WARRIOR_ARMS"] = {
-            listedCount = 7,
-            avgListedRating = 1385,
-            medianListedRating = 1602,
-            top100Avg = 1385,
-            highest = 1668,
-            buckets = {
-                ["1300-1399"] = 1,
+                ["1500-1599"] = 1,
                 ["1600-1699"] = 4,
-                ["800-899"] = 1,
-                ["900-999"] = 1,
+                ["1800-1899"] = 1,
+                ["700-799"] = 4,
+                ["800-899"] = 3,
+                ["900-999"] = 2,
             },
         },
-        ["WARRIOR_FURY"] = {
-            listedCount = 3,
-            avgListedRating = 1071.7,
-            medianListedRating = 768,
-            top100Avg = 1071.7,
-            highest = 1680,
+        ["WARLOCK_DEMONOLOGY"] = {
+            listedCount = 6,
+            avgListedRating = 955.8,
+            medianListedRating = 860.5,
+            top100Avg = 955.8,
+            highest = 1614,
             buckets = {
                 ["1600-1699"] = 1,
                 ["700-799"] = 2,
+                ["800-899"] = 3,
+            },
+        },
+        ["WARLOCK_DESTRUCTION"] = {
+            listedCount = 17,
+            avgListedRating = 1110.9,
+            medianListedRating = 1056,
+            top100Avg = 1110.9,
+            highest = 1638,
+            buckets = {
+                ["1000-1099"] = 3,
+                ["1100-1199"] = 2,
+                ["1200-1299"] = 2,
+                ["1300-1399"] = 1,
+                ["1400-1499"] = 1,
+                ["1600-1699"] = 2,
+                ["700-799"] = 3,
+                ["800-899"] = 3,
+            },
+        },
+        ["WARRIOR_ARMS"] = {
+            listedCount = 48,
+            avgListedRating = 1127.7,
+            medianListedRating = 960.0,
+            top100Avg = 1127.7,
+            highest = 1683,
+            buckets = {
+                ["1000-1099"] = 5,
+                ["1100-1199"] = 1,
+                ["1200-1299"] = 3,
+                ["1300-1399"] = 1,
+                ["1400-1499"] = 1,
+                ["1500-1599"] = 2,
+                ["1600-1699"] = 10,
+                ["700-799"] = 7,
+                ["800-899"] = 9,
+                ["900-999"] = 9,
+            },
+        },
+        ["WARRIOR_FURY"] = {
+            listedCount = 9,
+            avgListedRating = 1034.1,
+            medianListedRating = 861,
+            top100Avg = 1034.1,
+            highest = 1683,
+            buckets = {
+                ["1000-1099"] = 1,
+                ["1600-1699"] = 2,
+                ["700-799"] = 3,
+                ["800-899"] = 3,
+            },
+        },
+        ["WARRIOR_PROTECTION"] = {
+            listedCount = 2,
+            avgListedRating = 960,
+            medianListedRating = 960.0,
+            top100Avg = 960,
+            highest = 1056,
+            buckets = {
+                ["1000-1099"] = 1,
+                ["800-899"] = 1,
             },
         },
     },
     players = {
         ["aavro-stormrage"] = {
             displayName = "Aavro-stormrage",
-            specKey = "",
+            specKey = "ROGUE_SUBTLETY",
             rating = 1247,
             rank = 263,
             wins = 13,
@@ -641,7 +934,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["aazua-frostmourne"] = {
             displayName = "Aazua-frostmourne",
-            specKey = "",
+            specKey = "HUNTER_BEASTMASTERY",
             rating = 1053,
             rank = 469,
             wins = 11,
@@ -650,7 +943,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["abeldra-moonguard"] = {
             displayName = "Abeldra-moon-guard",
-            specKey = "",
+            specKey = "MONK_MISTWEAVER",
             rating = 861,
             rank = 803,
             wins = 9,
@@ -659,7 +952,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["abnlx-kelthuzad"] = {
             displayName = "Abnlx-kelthuzad",
-            specKey = "",
+            specKey = "ROGUE_SUBTLETY",
             rating = 1056,
             rank = 382,
             wins = 11,
@@ -668,7 +961,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["aboveavrg-bleedinghollow"] = {
             displayName = "Aboveavrg-bleeding-hollow",
-            specKey = "",
+            specKey = "PRIEST_DISCIPLINE",
             rating = 1292,
             rank = 253,
             wins = 14,
@@ -677,7 +970,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["abstractf-sargeras"] = {
             displayName = "Abstractf-sargeras",
-            specKey = "",
+            specKey = "DRUID_GUARDIAN",
             rating = 1054,
             rank = 456,
             wins = 11,
@@ -686,7 +979,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["aby-cenarius"] = {
             displayName = "Aby-cenarius",
-            specKey = "",
+            specKey = "PRIEST_HOLY",
             rating = 1056,
             rank = 382,
             wins = 11,
@@ -704,7 +997,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["accretían-tichondrius"] = {
             displayName = "Accretían-tichondrius",
-            specKey = "",
+            specKey = "WARRIOR_ARMS",
             rating = 1621,
             rank = 68,
             wins = 20,
@@ -713,7 +1006,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["ad-chogall"] = {
             displayName = "Ad-chogall",
-            specKey = "",
+            specKey = "PALADIN_HOLY",
             rating = 1056,
             rank = 382,
             wins = 11,
@@ -722,7 +1015,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["adderal-malganis"] = {
             displayName = "Adderal-malganis",
-            specKey = "",
+            specKey = "PALADIN_HOLY",
             rating = 1056,
             rank = 382,
             wins = 11,
@@ -740,7 +1033,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["adored-sargeras"] = {
             displayName = "Adored-sargeras",
-            specKey = "",
+            specKey = "PRIEST_HOLY",
             rating = 768,
             rank = 846,
             wins = 8,
@@ -758,7 +1051,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["adumm-emeralddream"] = {
             displayName = "Adumm-emerald-dream",
-            specKey = "",
+            specKey = "MONK_WINDWALKER",
             rating = 1601,
             rank = 130,
             wins = 19,
@@ -767,7 +1060,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["aelinessa-hellscream"] = {
             displayName = "Aelinessa-hellscream",
-            specKey = "",
+            specKey = "PRIEST_DISCIPLINE",
             rating = 1524,
             rank = 179,
             wins = 17,
@@ -776,7 +1069,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["agathokako-area52"] = {
             displayName = "Agathokako-area-52",
-            specKey = "",
+            specKey = "PRIEST_DISCIPLINE",
             rating = 1573,
             rank = 143,
             wins = 19,
@@ -785,7 +1078,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["agoraphobik-moonguard"] = {
             displayName = "Agoraphobik-moon-guard",
-            specKey = "",
+            specKey = "PRIEST_HOLY",
             rating = 1574,
             rank = 142,
             wins = 18,
@@ -794,7 +1087,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["akkatsuki-tichondrius"] = {
             displayName = "Akkatsuki-tichondrius",
-            specKey = "",
+            specKey = "PRIEST_DISCIPLINE",
             rating = 858,
             rank = 834,
             wins = 9,
@@ -803,7 +1096,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["alaitha-moonguard"] = {
             displayName = "Alaitha-moon-guard",
-            specKey = "",
+            specKey = "PRIEST_SHADOW",
             rating = 1617,
             rank = 77,
             wins = 20,
@@ -812,7 +1105,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["albion-sargeras"] = {
             displayName = "Albion-sargeras",
-            specKey = "",
+            specKey = "PALADIN_RETRIBUTION",
             rating = 768,
             rank = 846,
             wins = 8,
@@ -821,7 +1114,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["alcoric-illidan"] = {
             displayName = "Alcoric-illidan",
-            specKey = "",
+            specKey = "PRIEST_DISCIPLINE",
             rating = 1601,
             rank = 130,
             wins = 19,
@@ -830,7 +1123,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["alien-andorhal"] = {
             displayName = "Alien-andorhal",
-            specKey = "",
+            specKey = "WARLOCK_AFFLICTION",
             rating = 860,
             rank = 818,
             wins = 9,
@@ -839,7 +1132,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["aligheri-drakkari"] = {
             displayName = "Aligheri-drakkari",
-            specKey = "",
+            specKey = "PALADIN_HOLY",
             rating = 768,
             rank = 846,
             wins = 8,
@@ -866,7 +1159,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["amethana-suramar"] = {
             displayName = "Amethana-suramar",
-            specKey = "",
+            specKey = "PALADIN_HOLY",
             rating = 1439,
             rank = 195,
             wins = 15,
@@ -884,7 +1177,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["anatist-moonguard"] = {
             displayName = "Anatist-moon-guard",
-            specKey = "",
+            specKey = "SHAMAN_RESTORATION",
             rating = 1617,
             rank = 77,
             wins = 20,
@@ -893,7 +1186,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["angele-moonguard"] = {
             displayName = "Angele-moon-guard",
-            specKey = "",
+            specKey = "PRIEST_DISCIPLINE",
             rating = 855,
             rank = 837,
             wins = 9,
@@ -920,7 +1213,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["angrynalayu-tichondrius"] = {
             displayName = "Angrynalayu-tichondrius",
-            specKey = "",
+            specKey = "DRUID_FERAL",
             rating = 1130,
             rank = 380,
             wins = 12,
@@ -929,7 +1222,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["angrypucca-tichondrius"] = {
             displayName = "Angrypucca-tichondrius",
-            specKey = "",
+            specKey = "MONK_MISTWEAVER",
             rating = 768,
             rank = 846,
             wins = 8,
@@ -938,7 +1231,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["aniqa-tichondrius"] = {
             displayName = "Aniqa-tichondrius",
-            specKey = "",
+            specKey = "PRIEST_DISCIPLINE",
             rating = 1242,
             rank = 289,
             wins = 13,
@@ -956,7 +1249,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["antheiana-barthilas"] = {
             displayName = "Antheiana-barthilas",
-            specKey = "",
+            specKey = "PRIEST_HOLY",
             rating = 1583,
             rank = 135,
             wins = 18,
@@ -965,7 +1258,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["antipathyx-tichondrius"] = {
             displayName = "Antipathyx-tichondrius",
-            specKey = "",
+            specKey = "SHAMAN_ELEMENTAL",
             rating = 864,
             rank = 648,
             wins = 9,
@@ -983,7 +1276,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["anttix-zuljin"] = {
             displayName = "Anttix-zuljin",
-            specKey = "",
+            specKey = "WARLOCK_DESTRUCTION",
             rating = 1244,
             rank = 283,
             wins = 13,
@@ -1010,7 +1303,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["arcalight-tichondrius"] = {
             displayName = "Arcalight-tichondrius",
-            specKey = "",
+            specKey = "PALADIN_HOLY",
             rating = 768,
             rank = 846,
             wins = 8,
@@ -1019,7 +1312,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["arguzzy-sargeras"] = {
             displayName = "Arguzzy-sargeras",
-            specKey = "",
+            specKey = "WARRIOR_FURY",
             rating = 859,
             rank = 827,
             wins = 9,
@@ -1028,7 +1321,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["aryawilliams-area52"] = {
             displayName = "Aryawilliams-area-52",
-            specKey = "",
+            specKey = "DRUID_RESTORATION",
             rating = 864,
             rank = 648,
             wins = 9,
@@ -1037,7 +1330,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["atarii-emeralddream"] = {
             displayName = "Atarii-emerald-dream",
-            specKey = "",
+            specKey = "MONK_WINDWALKER",
             rating = 861,
             rank = 803,
             wins = 9,
@@ -1046,7 +1339,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["atdeathsdoor-malygos"] = {
             displayName = "Atdeathsdoor-malygos",
-            specKey = "",
+            specKey = "PRIEST_DISCIPLINE",
             rating = 864,
             rank = 648,
             wins = 9,
@@ -1055,7 +1348,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["athlete-emeralddream"] = {
             displayName = "Athlete-emerald-dream",
-            specKey = "",
+            specKey = "DRUID_RESTORATION",
             rating = 1565,
             rank = 148,
             wins = 19,
@@ -1064,7 +1357,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["atrapx-ragnaros"] = {
             displayName = "Atrapx-ragnaros",
-            specKey = "",
+            specKey = "PALADIN_RETRIBUTION",
             rating = 862,
             rank = 781,
             wins = 9,
@@ -1073,7 +1366,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["autoshield-proudmoore"] = {
             displayName = "Autoshield-proudmoore",
-            specKey = "",
+            specKey = "PRIEST_DISCIPLINE",
             rating = 859,
             rank = 827,
             wins = 9,
@@ -1082,7 +1375,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["aveil-echoisles"] = {
             displayName = "Aveil-echo-isles",
-            specKey = "",
+            specKey = "PRIEST_DISCIPLINE",
             rating = 1055,
             rank = 432,
             wins = 11,
@@ -1109,7 +1402,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["axtin-stormrage"] = {
             displayName = "Axtin-stormrage",
-            specKey = "",
+            specKey = "DRUID_FERAL",
             rating = 1608,
             rank = 96,
             wins = 19,
@@ -1118,7 +1411,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["axvish-tichondrius"] = {
             displayName = "Axvish-tichondrius",
-            specKey = "",
+            specKey = "SHAMAN_RESTORATION",
             rating = 1149,
             rank = 348,
             wins = 12,
@@ -1127,7 +1420,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["aydenxd-stormrage"] = {
             displayName = "Aydenxd-stormrage",
-            specKey = "",
+            specKey = "HUNTER_SURVIVAL",
             rating = 1051,
             rank = 481,
             wins = 11,
@@ -1136,7 +1429,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["ayerborne-kelthuzad"] = {
             displayName = "Ayerborne-kelthuzad",
-            specKey = "",
+            specKey = "MAGE_FROST",
             rating = 1604,
             rank = 117,
             wins = 19,
@@ -1145,7 +1438,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["azerothgg-tichondrius"] = {
             displayName = "Azerothgg-tichondrius",
-            specKey = "",
+            specKey = "PALADIN_HOLY",
             rating = 864,
             rank = 648,
             wins = 9,
@@ -1172,7 +1465,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["bahbi-tichondrius"] = {
             displayName = "Bahbi-tichondrius",
-            specKey = "",
+            specKey = "WARLOCK_AFFLICTION",
             rating = 960,
             rank = 508,
             wins = 10,
@@ -1181,7 +1474,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["bajheera-sargeras"] = {
             displayName = "Bajheera-sargeras",
-            specKey = "",
+            specKey = "WARRIOR_ARMS",
             rating = 1632,
             rank = 56,
             wins = 20,
@@ -1190,7 +1483,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["bakusami-zuljin"] = {
             displayName = "Bakusami-zuljin",
-            specKey = "",
+            specKey = "MONK_WINDWALKER",
             rating = 1150,
             rank = 339,
             wins = 12,
@@ -1208,7 +1501,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["bandaidboyxx-sargeras"] = {
             displayName = "Bandaidboyxx-sargeras",
-            specKey = "PRIEST_DISCIPLINE",
+            specKey = "",
             rating = 864,
             rank = 648,
             wins = 9,
@@ -1217,7 +1510,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["bblsleave-moonguard"] = {
             displayName = "Bblsleave-moon-guard",
-            specKey = "",
+            specKey = "PRIEST_DISCIPLINE",
             rating = 767,
             rank = 983,
             wins = 8,
@@ -1226,7 +1519,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["bbqchicken-azuremyst"] = {
             displayName = "Bbqchicken-azuremyst",
-            specKey = "",
+            specKey = "DRUID_BALANCE",
             rating = 862,
             rank = 781,
             wins = 9,
@@ -1244,7 +1537,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["beamzee-tichondrius"] = {
             displayName = "Beamzee-tichondrius",
-            specKey = "",
+            specKey = "HUNTER_BEASTMASTERY",
             rating = 1631,
             rank = 58,
             wins = 22,
@@ -1253,7 +1546,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["beastmonk-scarletcrusade"] = {
             displayName = "Beastmonk-scarlet-crusade",
-            specKey = "",
+            specKey = "MONK_MISTWEAVER",
             rating = 950,
             rank = 642,
             wins = 10,
@@ -1262,7 +1555,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["beertyler-alteracmountains"] = {
             displayName = "Beertyler-alterac-mountains",
-            specKey = "",
+            specKey = "HUNTER_MARKSMANSHIP",
             rating = 1541,
             rank = 166,
             wins = 17,
@@ -1271,7 +1564,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["bellsback-dathremar"] = {
             displayName = "Bellsback-dathremar",
-            specKey = "",
+            specKey = "PALADIN_HOLY",
             rating = 1445,
             rank = 193,
             wins = 16,
@@ -1280,7 +1573,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["belàriá-tichondrius"] = {
             displayName = "Belàriá-tichondrius",
-            specKey = "",
+            specKey = "WARRIOR_ARMS",
             rating = 768,
             rank = 846,
             wins = 8,
@@ -1307,7 +1600,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["bethory-aegwynn"] = {
             displayName = "Bethory-aegwynn",
-            specKey = "",
+            specKey = "PRIEST_DISCIPLINE",
             rating = 768,
             rank = 846,
             wins = 8,
@@ -1316,7 +1609,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["bhen-tichondrius"] = {
             displayName = "Bhen-tichondrius",
-            specKey = "",
+            specKey = "DRUID_FERAL",
             rating = 1055,
             rank = 432,
             wins = 11,
@@ -1325,7 +1618,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["bigdamjudge-blackrock"] = {
             displayName = "Bigdamjudge-blackrock",
-            specKey = "",
+            specKey = "PALADIN_HOLY",
             rating = 1339,
             rank = 235,
             wins = 14,
@@ -1334,7 +1627,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["biiggwhammy-tichondrius"] = {
             displayName = "Biiggwhammy-tichondrius",
-            specKey = "",
+            specKey = "PALADIN_RETRIBUTION",
             rating = 1056,
             rank = 382,
             wins = 11,
@@ -1361,7 +1654,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["biofly-thrall"] = {
             displayName = "Biofly-thrall",
-            specKey = "",
+            specKey = "SHAMAN_RESTORATION",
             rating = 1056,
             rank = 382,
             wins = 11,
@@ -1370,7 +1663,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["bishoparoty-stormrage"] = {
             displayName = "Bishoparoty-stormrage",
-            specKey = "",
+            specKey = "PRIEST_HOLY",
             rating = 1412,
             rank = 215,
             wins = 15,
@@ -1379,7 +1672,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["bitcorn-tichondrius"] = {
             displayName = "Bitcorn-tichondrius",
-            specKey = "",
+            specKey = "HUNTER_SURVIVAL",
             rating = 1610,
             rank = 92,
             wins = 20,
@@ -1388,7 +1681,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["blackbubba-tichondrius"] = {
             displayName = "Blackbubba-tichondrius",
-            specKey = "",
+            specKey = "PRIEST_DISCIPLINE",
             rating = 1297,
             rank = 252,
             wins = 14,
@@ -1397,7 +1690,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["blakktaboo-zuljin"] = {
             displayName = "Blakktaboo-zuljin",
-            specKey = "",
+            specKey = "PRIEST_DISCIPLINE",
             rating = 864,
             rank = 648,
             wins = 9,
@@ -1406,7 +1699,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["blastr-tichondrius"] = {
             displayName = "Blastr-tichondrius",
-            specKey = "",
+            specKey = "PRIEST_HOLY",
             rating = 768,
             rank = 846,
             wins = 8,
@@ -1415,7 +1708,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["blazedblue-tichondrius"] = {
             displayName = "Blazedblue-tichondrius",
-            specKey = "",
+            specKey = "SHAMAN_RESTORATION",
             rating = 768,
             rank = 846,
             wins = 8,
@@ -1424,7 +1717,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["blickys-area52"] = {
             displayName = "Blickys-area-52",
-            specKey = "",
+            specKey = "HUNTER_SURVIVAL",
             rating = 863,
             rank = 751,
             wins = 9,
@@ -1433,7 +1726,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["bloodstone-norgannon"] = {
             displayName = "Bloodstone-norgannon",
-            specKey = "",
+            specKey = "DEMONHUNTER_HAVOC",
             rating = 861,
             rank = 803,
             wins = 9,
@@ -1442,7 +1735,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["bluemandan-garrosh"] = {
             displayName = "Bluemandan-garrosh",
-            specKey = "",
+            specKey = "SHAMAN_RESTORATION",
             rating = 768,
             rank = 846,
             wins = 8,
@@ -1460,7 +1753,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["bobkasa-proudmoore"] = {
             displayName = "Bobkasa-proudmoore",
-            specKey = "",
+            specKey = "ROGUE_ASSASSINATION",
             rating = 1245,
             rank = 279,
             wins = 13,
@@ -1469,7 +1762,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["boneappétit-tichondrius"] = {
             displayName = "Boneappétit-tichondrius",
-            specKey = "",
+            specKey = "PRIEST_HOLY",
             rating = 954,
             rank = 638,
             wins = 10,
@@ -1478,7 +1771,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["booee-sargeras"] = {
             displayName = "Booee-sargeras",
-            specKey = "",
+            specKey = "PRIEST_DISCIPLINE",
             rating = 863,
             rank = 751,
             wins = 9,
@@ -1496,7 +1789,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["bordistor-dalaran"] = {
             displayName = "Bordistor-dalaran",
-            specKey = "",
+            specKey = "WARRIOR_ARMS",
             rating = 864,
             rank = 648,
             wins = 9,
@@ -1514,7 +1807,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["borune-proudmoore"] = {
             displayName = "Borune-proudmoore",
-            specKey = "",
+            specKey = "PRIEST_DISCIPLINE",
             rating = 862,
             rank = 781,
             wins = 9,
@@ -1523,7 +1816,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["boykeeper-drakthul"] = {
             displayName = "Boykeeper-drakthul",
-            specKey = "PRIEST_HOLY",
+            specKey = "",
             rating = 960,
             rank = 508,
             wins = 10,
@@ -1541,7 +1834,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["branasou-emeralddream"] = {
             displayName = "Branasou-emerald-dream",
-            specKey = "",
+            specKey = "SHAMAN_RESTORATION",
             rating = 861,
             rank = 803,
             wins = 9,
@@ -1550,7 +1843,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["brandon-dunemaul"] = {
             displayName = "Brandon-dunemaul",
-            specKey = "",
+            specKey = "WARLOCK_DESTRUCTION",
             rating = 1152,
             rank = 297,
             wins = 12,
@@ -1559,7 +1852,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["brynnhild-stormrage"] = {
             displayName = "Brynnhild-stormrage",
-            specKey = "",
+            specKey = "PALADIN_HOLY",
             rating = 1247,
             rank = 263,
             wins = 13,
@@ -1568,7 +1861,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["bubbleaid-tichondrius"] = {
             displayName = "Bubbleaid-tichondrius",
-            specKey = "",
+            specKey = "PALADIN_HOLY",
             rating = 1145,
             rank = 373,
             wins = 12,
@@ -1577,7 +1870,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["bubbletoolz-illidan"] = {
             displayName = "Bubbletoolz-illidan",
-            specKey = "",
+            specKey = "PRIEST_DISCIPLINE",
             rating = 859,
             rank = 827,
             wins = 9,
@@ -1586,7 +1879,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["buckbroken-darkspear"] = {
             displayName = "Buckbroken-darkspear",
-            specKey = "",
+            specKey = "HUNTER_SURVIVAL",
             rating = 1056,
             rank = 382,
             wins = 11,
@@ -1595,7 +1888,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["buffrdruid-sargeras"] = {
             displayName = "Buffrdruid-sargeras",
-            specKey = "",
+            specKey = "MAGE_ARCANE",
             rating = 768,
             rank = 846,
             wins = 8,
@@ -1604,7 +1897,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["buongìorno-kelthuzad"] = {
             displayName = "Buongìorno-kelthuzad",
-            specKey = "",
+            specKey = "ROGUE_ASSASSINATION",
             rating = 1056,
             rank = 382,
             wins = 11,
@@ -1613,7 +1906,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["bustinatem-illidan"] = {
             displayName = "Bustinatem-illidan",
-            specKey = "",
+            specKey = "HUNTER_MARKSMANSHIP",
             rating = 861,
             rank = 803,
             wins = 9,
@@ -1622,7 +1915,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["buttonmashx-tichondrius"] = {
             displayName = "Buttonmashx-tichondrius",
-            specKey = "",
+            specKey = "PRIEST_HOLY",
             rating = 1960,
             rank = 4,
             wins = 37,
@@ -1631,7 +1924,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["bwonaias-moonguard"] = {
             displayName = "Bwonaias-moon-guard",
-            specKey = "",
+            specKey = "SHAMAN_RESTORATION",
             rating = 1147,
             rank = 366,
             wins = 12,
@@ -1640,7 +1933,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["bêardusah-area52"] = {
             displayName = "Bêardusah-area-52",
-            specKey = "",
+            specKey = "PRIEST_DISCIPLINE",
             rating = 1483,
             rank = 190,
             wins = 16,
@@ -1649,7 +1942,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["cacitizen-tichondrius"] = {
             displayName = "Cacitizen-tichondrius",
-            specKey = "",
+            specKey = "ROGUE_ASSASSINATION",
             rating = 1616,
             rank = 80,
             wins = 22,
@@ -1658,7 +1951,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["caged-onyxia"] = {
             displayName = "Caged-onyxia",
-            specKey = "",
+            specKey = "MONK_MISTWEAVER",
             rating = 1663,
             rank = 32,
             wins = 23,
@@ -1667,7 +1960,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["calarith-stormrage"] = {
             displayName = "Calarith-stormrage",
-            specKey = "",
+            specKey = "PRIEST_HOLY",
             rating = 1151,
             rank = 329,
             wins = 12,
@@ -1685,7 +1978,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["calmtwo-sargeras"] = {
             displayName = "Calmtwo-sargeras",
-            specKey = "",
+            specKey = "ROGUE_SUBTLETY",
             rating = 1600,
             rank = 132,
             wins = 19,
@@ -1694,7 +1987,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["calvincy-illidan"] = {
             displayName = "Calvincy-illidan",
-            specKey = "PRIEST_HOLY",
+            specKey = "",
             rating = 960,
             rank = 508,
             wins = 10,
@@ -1703,7 +1996,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["cassiar-illidan"] = {
             displayName = "Cassiar-illidan",
-            specKey = "",
+            specKey = "PALADIN_RETRIBUTION",
             rating = 863,
             rank = 751,
             wins = 9,
@@ -1712,7 +2005,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["catdreams-sargeras"] = {
             displayName = "Catdreams-sargeras",
-            specKey = "",
+            specKey = "DRUID_RESTORATION",
             rating = 767,
             rank = 983,
             wins = 8,
@@ -1721,7 +2014,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["cattastrophe-kelthuzad"] = {
             displayName = "Cattastrophe-kelthuzad",
-            specKey = "",
+            specKey = "DRUID_FERAL",
             rating = 1150,
             rank = 339,
             wins = 12,
@@ -1739,7 +2032,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["cearáa-azralon"] = {
             displayName = "Cearáa-azralon",
-            specKey = "",
+            specKey = "PRIEST_HOLY",
             rating = 1534,
             rank = 173,
             wins = 16,
@@ -1748,7 +2041,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["cedpally-akama"] = {
             displayName = "Cedpally-akama",
-            specKey = "",
+            specKey = "PALADIN_HOLY",
             rating = 1439,
             rank = 195,
             wins = 15,
@@ -1757,7 +2050,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["celyp-moonguard"] = {
             displayName = "Celyp-moon-guard",
-            specKey = "",
+            specKey = "PRIEST_HOLY",
             rating = 1049,
             rank = 493,
             wins = 11,
@@ -1766,7 +2059,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["cg-shuhalo"] = {
             displayName = "Cg-shuhalo",
-            specKey = "",
+            specKey = "MAGE_ARCANE",
             rating = 1341,
             rank = 230,
             wins = 14,
@@ -1775,7 +2068,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["chachsp-tichondrius"] = {
             displayName = "Chachsp-tichondrius",
-            specKey = "",
+            specKey = "PRIEST_SHADOW",
             rating = 1152,
             rank = 297,
             wins = 12,
@@ -1802,7 +2095,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["cheapdeal-frostmourne"] = {
             displayName = "Cheapdeal-frostmourne",
-            specKey = "",
+            specKey = "ROGUE_SUBTLETY",
             rating = 959,
             rank = 572,
             wins = 10,
@@ -1811,7 +2104,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["cheeksi-dathremar"] = {
             displayName = "Cheeksi-dathremar",
-            specKey = "",
+            specKey = "HUNTER_BEASTMASTERY",
             rating = 959,
             rank = 572,
             wins = 10,
@@ -1820,7 +2113,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["chickfilaye-auchindoun"] = {
             displayName = "Chickfilaye-auchindoun",
-            specKey = "",
+            specKey = "ROGUE_ASSASSINATION",
             rating = 1579,
             rank = 138,
             wins = 18,
@@ -1838,7 +2131,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["chiprockets-proudmoore"] = {
             displayName = "Chiprockets-proudmoore",
-            specKey = "",
+            specKey = "WARRIOR_ARMS",
             rating = 852,
             rank = 840,
             wins = 9,
@@ -1847,7 +2140,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["chonest-barthilas"] = {
             displayName = "Chonest-barthilas",
-            specKey = "",
+            specKey = "PRIEST_DISCIPLINE",
             rating = 1231,
             rank = 294,
             wins = 13,
@@ -1856,7 +2149,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["choppin-sargeras"] = {
             displayName = "Choppin-sargeras",
-            specKey = "",
+            specKey = "WARRIOR_ARMS",
             rating = 768,
             rank = 846,
             wins = 8,
@@ -1865,7 +2158,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["chromaticszz-sargeras"] = {
             displayName = "Chromaticszz-sargeras",
-            specKey = "SHAMAN_ENHANCEMENT",
+            specKey = "",
             rating = 1055,
             rank = 432,
             wins = 11,
@@ -1874,7 +2167,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["cimorene-moonguard"] = {
             displayName = "Cimorene-moon-guard",
-            specKey = "",
+            specKey = "MONK_MISTWEAVER",
             rating = 1056,
             rank = 382,
             wins = 11,
@@ -1883,7 +2176,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["cinematics-illidan"] = {
             displayName = "Cinematics-illidan",
-            specKey = "",
+            specKey = "PRIEST_DISCIPLINE",
             rating = 768,
             rank = 846,
             wins = 8,
@@ -1892,7 +2185,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["civyxdh-proudmoore"] = {
             displayName = "Civyxdh-proudmoore",
-            specKey = "",
+            specKey = "DEMONHUNTER_DEVOURER",
             rating = 1605,
             rank = 114,
             wins = 21,
@@ -1910,7 +2203,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["cleodhxttv-garrosh"] = {
             displayName = "Cleodhxttv-garrosh",
-            specKey = "",
+            specKey = "DEMONHUNTER_HAVOC",
             rating = 1818,
             rank = 10,
             wins = 29,
@@ -1919,7 +2212,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["cloudzzy-illidan"] = {
             displayName = "Cloudzzy-illidan",
-            specKey = "",
+            specKey = "DEMONHUNTER_DEVOURER",
             rating = 960,
             rank = 508,
             wins = 10,
@@ -1928,7 +2221,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["clubfafo-tichondrius"] = {
             displayName = "Clubfafo-tichondrius",
-            specKey = "",
+            specKey = "PRIEST_DISCIPLINE",
             rating = 1042,
             rank = 505,
             wins = 11,
@@ -1946,7 +2239,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["cntbefuqwit-tichondrius"] = {
             displayName = "Cntbefuqwit-tichondrius",
-            specKey = "",
+            specKey = "HUNTER_BEASTMASTERY",
             rating = 1616,
             rank = 80,
             wins = 21,
@@ -1955,7 +2248,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["codys-magtheridon"] = {
             displayName = "Codys-magtheridon",
-            specKey = "",
+            specKey = "MAGE_FIRE",
             rating = 1247,
             rank = 263,
             wins = 13,
@@ -1964,7 +2257,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["coffindance-darkspear"] = {
             displayName = "Coffindance-darkspear",
-            specKey = "",
+            specKey = "ROGUE_SUBTLETY",
             rating = 1047,
             rank = 499,
             wins = 11,
@@ -1973,7 +2266,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["colton-alteracmountains"] = {
             displayName = "Colton-alterac-mountains",
-            specKey = "",
+            specKey = "PALADIN_HOLY",
             rating = 1541,
             rank = 166,
             wins = 17,
@@ -1982,7 +2275,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["commodore-dalaran"] = {
             displayName = "Commodore-dalaran",
-            specKey = "",
+            specKey = "ROGUE_SUBTLETY",
             rating = 959,
             rank = 572,
             wins = 10,
@@ -1991,7 +2284,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["condavist-stormrage"] = {
             displayName = "Condavist-stormrage",
-            specKey = "",
+            specKey = "PALADIN_HOLY",
             rating = 1053,
             rank = 469,
             wins = 11,
@@ -2000,7 +2293,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["coolwala-tichondrius"] = {
             displayName = "Coolwala-tichondrius",
-            specKey = "",
+            specKey = "WARLOCK_AFFLICTION",
             rating = 1553,
             rank = 161,
             wins = 18,
@@ -2009,7 +2302,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["couthdead-tichondrius"] = {
             displayName = "Couthdead-tichondrius",
-            specKey = "",
+            specKey = "PRIEST_DISCIPLINE",
             rating = 1149,
             rank = 348,
             wins = 12,
@@ -2018,7 +2311,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["cowboydanhh-malganis"] = {
             displayName = "Cowboydanhh-malganis",
-            specKey = "",
+            specKey = "HUNTER_BEASTMASTERY",
             rating = 1055,
             rank = 432,
             wins = 11,
@@ -2027,7 +2320,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["crayóns-stormreaver"] = {
             displayName = "Crayóns-stormreaver",
-            specKey = "",
+            specKey = "MONK_WINDWALKER",
             rating = 1248,
             rank = 254,
             wins = 13,
@@ -2036,7 +2329,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["crazydogwoof-stormrage"] = {
             displayName = "Crazydogwoof-stormrage",
-            specKey = "",
+            specKey = "PRIEST_SHADOW",
             rating = 1605,
             rank = 114,
             wins = 20,
@@ -2045,7 +2338,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["crazystabz-khazmodan"] = {
             displayName = "Crazystabz-khaz-modan",
-            specKey = "",
+            specKey = "ROGUE_ASSASSINATION",
             rating = 1244,
             rank = 283,
             wins = 13,
@@ -2054,7 +2347,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["creedsham-tichondrius"] = {
             displayName = "Creedsham-tichondrius",
-            specKey = "",
+            specKey = "SHAMAN_RESTORATION",
             rating = 864,
             rank = 648,
             wins = 9,
@@ -2063,7 +2356,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["crucix-moonguard"] = {
             displayName = "Crucix-moon-guard",
-            specKey = "",
+            specKey = "DEMONHUNTER_HAVOC",
             rating = 1151,
             rank = 329,
             wins = 12,
@@ -2072,7 +2365,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["crudos-tichondrius"] = {
             displayName = "Crudos-tichondrius",
-            specKey = "",
+            specKey = "PALADIN_RETRIBUTION",
             rating = 768,
             rank = 846,
             wins = 8,
@@ -2081,7 +2374,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["crushedlol-bleedinghollow"] = {
             displayName = "Crushedlol-bleeding-hollow",
-            specKey = "",
+            specKey = "WARRIOR_ARMS",
             rating = 1622,
             rank = 67,
             wins = 20,
@@ -2090,7 +2383,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["crypteze-maiev"] = {
             displayName = "Crypteze-maiev",
-            specKey = "",
+            specKey = "DRUID_RESTORATION",
             rating = 1456,
             rank = 192,
             wins = 17,
@@ -2117,7 +2410,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["cyn-bleedinghollow"] = {
             displayName = "Cyn-bleeding-hollow",
-            specKey = "",
+            specKey = "ROGUE_ASSASSINATION",
             rating = 864,
             rank = 648,
             wins = 9,
@@ -2126,7 +2419,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["czer-tichondrius"] = {
             displayName = "Czer-tichondrius",
-            specKey = "",
+            specKey = "PALADIN_RETRIBUTION",
             rating = 1638,
             rank = 53,
             wins = 22,
@@ -2135,7 +2428,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["cßeár-kaelthas"] = {
             displayName = "Cßeár-kaelthas",
-            specKey = "",
+            specKey = "SHAMAN_RESTORATION",
             rating = 1142,
             rank = 379,
             wins = 12,
@@ -2144,7 +2437,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["cåstîel-tichondrius"] = {
             displayName = "Cåstîel-tichondrius",
-            specKey = "",
+            specKey = "PRIEST_DISCIPLINE",
             rating = 768,
             rank = 846,
             wins = 8,
@@ -2153,7 +2446,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["cøerce-tichondrius"] = {
             displayName = "Cøerce-tichondrius",
-            specKey = "",
+            specKey = "MAGE_FROST",
             rating = 1148,
             rank = 358,
             wins = 12,
@@ -2162,7 +2455,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["cùrlyfry-darkspear"] = {
             displayName = "Cùrlyfry-darkspear",
-            specKey = "",
+            specKey = "PALADIN_RETRIBUTION",
             rating = 862,
             rank = 781,
             wins = 9,
@@ -2171,7 +2464,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["dailyblues-tichondrius"] = {
             displayName = "Dailyblues-tichondrius",
-            specKey = "",
+            specKey = "DRUID_RESTORATION",
             rating = 1703,
             rank = 18,
             wins = 25,
@@ -2180,7 +2473,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["dairou-bleedinghollow"] = {
             displayName = "Dairou-bleeding-hollow",
-            specKey = "",
+            specKey = "WARRIOR_FURY",
             rating = 768,
             rank = 846,
             wins = 8,
@@ -2198,7 +2491,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["damshrek-sargeras"] = {
             displayName = "Damshrek-sargeras",
-            specKey = "",
+            specKey = "ROGUE_ASSASSINATION",
             rating = 1765,
             rank = 15,
             wins = 26,
@@ -2207,7 +2500,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["danaowns-spirestone"] = {
             displayName = "Danaowns-spirestone",
-            specKey = "",
+            specKey = "WARLOCK_DESTRUCTION",
             rating = 1341,
             rank = 230,
             wins = 14,
@@ -2216,7 +2509,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["dance-runetotem"] = {
             displayName = "Dance-runetotem",
-            specKey = "",
+            specKey = "ROGUE_SUBTLETY",
             rating = 959,
             rank = 572,
             wins = 10,
@@ -2261,7 +2554,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["dartolina-azralon"] = {
             displayName = "Dartolina-azralon",
-            specKey = "",
+            specKey = "PALADIN_HOLY",
             rating = 1559,
             rank = 155,
             wins = 17,
@@ -2270,7 +2563,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["dashaz-frostmane"] = {
             displayName = "Dashaz-frostmane",
-            specKey = "",
+            specKey = "PRIEST_DISCIPLINE",
             rating = 1056,
             rank = 382,
             wins = 11,
@@ -2279,7 +2572,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["dataseth-azralon"] = {
             displayName = "Dataseth-azralon",
-            specKey = "",
+            specKey = "HUNTER_BEASTMASTERY",
             rating = 768,
             rank = 846,
             wins = 8,
@@ -2288,7 +2581,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["davidsw-emeralddream"] = {
             displayName = "Davidsw-emerald-dream",
-            specKey = "",
+            specKey = "WARRIOR_ARMS",
             rating = 1560,
             rank = 154,
             wins = 18,
@@ -2297,7 +2590,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["dawx-arygos"] = {
             displayName = "Dawx-arygos",
-            specKey = "",
+            specKey = "ROGUE_SUBTLETY",
             rating = 1151,
             rank = 329,
             wins = 12,
@@ -2306,7 +2599,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["dayx-malganis"] = {
             displayName = "Dayx-malganis",
-            specKey = "",
+            specKey = "PRIEST_DISCIPLINE",
             rating = 1608,
             rank = 96,
             wins = 19,
@@ -2315,7 +2608,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["deathboundtv-kiljaeden"] = {
             displayName = "Deathboundtv-kiljaeden",
-            specKey = "",
+            specKey = "EVOKER_PRESERVATION",
             rating = 768,
             rank = 846,
             wins = 8,
@@ -2324,7 +2617,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["deathboundtv-sargeras"] = {
             displayName = "Deathboundtv-sargeras",
-            specKey = "",
+            specKey = "PALADIN_RETRIBUTION",
             rating = 767,
             rank = 983,
             wins = 8,
@@ -2333,7 +2626,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["deathsweep-tichondrius"] = {
             displayName = "Deathsweep-tichondrius",
-            specKey = "",
+            specKey = "DEMONHUNTER_HAVOC",
             rating = 863,
             rank = 751,
             wins = 9,
@@ -2342,7 +2635,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["decepper-area52"] = {
             displayName = "Decepper-area-52",
-            specKey = "",
+            specKey = "PRIEST_SHADOW",
             rating = 864,
             rank = 648,
             wins = 9,
@@ -2351,7 +2644,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["dechain-korgath"] = {
             displayName = "Dechain-korgath",
-            specKey = "",
+            specKey = "DEMONHUNTER_HAVOC",
             rating = 1573,
             rank = 143,
             wins = 19,
@@ -2360,7 +2653,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["delaolla-tichondrius"] = {
             displayName = "Delaolla-tichondrius",
-            specKey = "",
+            specKey = "ROGUE_ASSASSINATION",
             rating = 767,
             rank = 983,
             wins = 8,
@@ -2369,7 +2662,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["delinquent-demonsoul"] = {
             displayName = "Delinquent-demon-soul",
-            specKey = "",
+            specKey = "DEATHKNIGHT_UNHOLY",
             rating = 960,
             rank = 508,
             wins = 10,
@@ -2378,7 +2671,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["dematic-illidan"] = {
             displayName = "Dematic-illidan",
-            specKey = "",
+            specKey = "WARLOCK_DEMONOLOGY",
             rating = 768,
             rank = 846,
             wins = 8,
@@ -2387,7 +2680,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["demondust-sargeras"] = {
             displayName = "Demondust-sargeras",
-            specKey = "",
+            specKey = "SHAMAN_RESTORATION",
             rating = 1152,
             rank = 297,
             wins = 12,
@@ -2396,7 +2689,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["desamonk-wyrmrestaccord"] = {
             displayName = "Desamonk-wyrmrest-accord",
-            specKey = "",
+            specKey = "MONK_MISTWEAVER",
             rating = 767,
             rank = 983,
             wins = 8,
@@ -2405,7 +2698,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["deshmina-blackdragonflight"] = {
             displayName = "Deshmina-black-dragonflight",
-            specKey = "",
+            specKey = "PRIEST_DISCIPLINE",
             rating = 768,
             rank = 846,
             wins = 8,
@@ -2423,7 +2716,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["deuce-drenden"] = {
             displayName = "Deuce-drenden",
-            specKey = "",
+            specKey = "WARLOCK_DESTRUCTION",
             rating = 768,
             rank = 846,
             wins = 8,
@@ -2441,7 +2734,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["dinglespamx-sargeras"] = {
             displayName = "Dinglespamx-sargeras",
-            specKey = "",
+            specKey = "PRIEST_HOLY",
             rating = 768,
             rank = 846,
             wins = 8,
@@ -2450,7 +2743,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["dirtyelf-sargeras"] = {
             displayName = "Dirtyelf-sargeras",
-            specKey = "",
+            specKey = "ROGUE_OUTLAW",
             rating = 862,
             rank = 781,
             wins = 9,
@@ -2468,7 +2761,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["dislayer-khadgar"] = {
             displayName = "Dislayer-khadgar",
-            specKey = "",
+            specKey = "WARRIOR_ARMS",
             rating = 768,
             rank = 846,
             wins = 8,
@@ -2477,7 +2770,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["diz-darkspear"] = {
             displayName = "Diz-darkspear",
-            specKey = "",
+            specKey = "PRIEST_DISCIPLINE",
             rating = 954,
             rank = 638,
             wins = 10,
@@ -2486,7 +2779,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["diábolical-sargeras"] = {
             displayName = "Diábolical-sargeras",
-            specKey = "",
+            specKey = "WARLOCK_DESTRUCTION",
             rating = 1617,
             rank = 77,
             wins = 21,
@@ -2495,7 +2788,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["dkwinter-illidan"] = {
             displayName = "Dkwinter-illidan",
-            specKey = "",
+            specKey = "DEATHKNIGHT_BLOOD",
             rating = 864,
             rank = 648,
             wins = 9,
@@ -2504,7 +2797,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["dllfspice-tichondrius"] = {
             displayName = "Dllfspice-tichondrius",
-            specKey = "",
+            specKey = "EVOKER_PRESERVATION",
             rating = 1766,
             rank = 14,
             wins = 29,
@@ -2513,7 +2806,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["dodds-burningblade"] = {
             displayName = "Dodds-burning-blade",
-            specKey = "",
+            specKey = "PALADIN_RETRIBUTION",
             rating = 864,
             rank = 648,
             wins = 9,
@@ -2531,7 +2824,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["dopescopes-illidan"] = {
             displayName = "Dopescopes-illidan",
-            specKey = "",
+            specKey = "HUNTER_MARKSMANSHIP",
             rating = 828,
             rank = 844,
             wins = 9,
@@ -2549,7 +2842,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["doubt-eredar"] = {
             displayName = "Doubt-eredar",
-            specKey = "",
+            specKey = "PRIEST_DISCIPLINE",
             rating = 1512,
             rank = 184,
             wins = 16,
@@ -2558,7 +2851,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["dougyfreshx-illidan"] = {
             displayName = "Dougyfreshx-illidan",
-            specKey = "",
+            specKey = "PALADIN_HOLY",
             rating = 1152,
             rank = 297,
             wins = 12,
@@ -2567,7 +2860,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["dragoyero-ragnaros"] = {
             displayName = "Dragoyero-ragnaros",
-            specKey = "",
+            specKey = "EVOKER_PRESERVATION",
             rating = 1049,
             rank = 493,
             wins = 11,
@@ -2576,7 +2869,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["draxtabull-tichondrius"] = {
             displayName = "Draxtabull-tichondrius",
-            specKey = "",
+            specKey = "DEATHKNIGHT_UNHOLY",
             rating = 1618,
             rank = 76,
             wins = 21,
@@ -2585,7 +2878,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["drcaos-madoran"] = {
             displayName = "Drcaos-madoran",
-            specKey = "",
+            specKey = "PALADIN_HOLY",
             rating = 1246,
             rank = 274,
             wins = 13,
@@ -2594,7 +2887,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["drescor-arathor"] = {
             displayName = "Drescor-arathor",
-            specKey = "",
+            specKey = "WARRIOR_FURY",
             rating = 768,
             rank = 846,
             wins = 8,
@@ -2612,7 +2905,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["driedupworm-sargeras"] = {
             displayName = "Driedupworm-sargeras",
-            specKey = "",
+            specKey = "PRIEST_DISCIPLINE",
             rating = 960,
             rank = 508,
             wins = 10,
@@ -2630,7 +2923,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["drizzydizzy-malganis"] = {
             displayName = "Drizzydizzy-malganis",
-            specKey = "",
+            specKey = "ROGUE_ASSASSINATION",
             rating = 1437,
             rank = 199,
             wins = 15,
@@ -2639,7 +2932,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["drjacqueoff-dalaran"] = {
             displayName = "Drjacqueoff-dalaran",
-            specKey = "",
+            specKey = "MONK_MISTWEAVER",
             rating = 959,
             rank = 572,
             wins = 10,
@@ -2648,7 +2941,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["drlackz-malganis"] = {
             displayName = "Drlackz-malganis",
-            specKey = "",
+            specKey = "DRUID_RESTORATION",
             rating = 1055,
             rank = 432,
             wins = 11,
@@ -2657,7 +2950,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["drue-korgath"] = {
             displayName = "Drue-korgath",
-            specKey = "",
+            specKey = "HUNTER_MARKSMANSHIP",
             rating = 957,
             rank = 624,
             wins = 10,
@@ -2666,7 +2959,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["drugdilla-zuljin"] = {
             displayName = "Drugdilla-zuljin",
-            specKey = "",
+            specKey = "WARRIOR_ARMS",
             rating = 960,
             rank = 508,
             wins = 10,
@@ -2675,7 +2968,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["drxo-tichondrius"] = {
             displayName = "Drxo-tichondrius",
-            specKey = "",
+            specKey = "MONK_WINDWALKER",
             rating = 954,
             rank = 638,
             wins = 10,
@@ -2684,7 +2977,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["duality-nazjatar"] = {
             displayName = "Duality-nazjatar",
-            specKey = "",
+            specKey = "PRIEST_HOLY",
             rating = 1411,
             rank = 216,
             wins = 15,
@@ -2693,7 +2986,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["dualkor-goldrinn"] = {
             displayName = "Dualkor-goldrinn",
-            specKey = "",
+            specKey = "PALADIN_HOLY",
             rating = 768,
             rank = 846,
             wins = 8,
@@ -2702,7 +2995,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["duallkorejob-goldrinn"] = {
             displayName = "Duallkorejob-goldrinn",
-            specKey = "",
+            specKey = "PALADIN_HOLY",
             rating = 1557,
             rank = 157,
             wins = 17,
@@ -2711,7 +3004,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["dumbmuttxoxo-moonguard"] = {
             displayName = "Dumbmuttxoxo-moon-guard",
-            specKey = "",
+            specKey = "DRUID_RESTORATION",
             rating = 864,
             rank = 648,
             wins = 9,
@@ -2720,7 +3013,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["durrgan-emeralddream"] = {
             displayName = "Durrgan-emerald-dream",
-            specKey = "HUNTER_MARKSMANSHIP",
+            specKey = "",
             rating = 768,
             rank = 846,
             wins = 8,
@@ -2729,7 +3022,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["durzza-sargeras"] = {
             displayName = "Durzza-sargeras",
-            specKey = "",
+            specKey = "ROGUE_SUBTLETY",
             rating = 1343,
             rank = 219,
             wins = 14,
@@ -2738,7 +3031,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["duux-area52"] = {
             displayName = "Duux-area-52",
-            specKey = "",
+            specKey = "SHAMAN_ELEMENTAL",
             rating = 1247,
             rank = 263,
             wins = 13,
@@ -2747,7 +3040,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["dxzh-moonguard"] = {
             displayName = "Dxzh-moon-guard",
-            specKey = "",
+            specKey = "HUNTER_MARKSMANSHIP",
             rating = 1556,
             rank = 158,
             wins = 18,
@@ -2765,7 +3058,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["dylanww-stormrage"] = {
             displayName = "Dylanww-stormrage",
-            specKey = "",
+            specKey = "MONK_WINDWALKER",
             rating = 1152,
             rank = 297,
             wins = 12,
@@ -2783,7 +3076,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["dzdh-stormrage"] = {
             displayName = "Dzdh-stormrage",
-            specKey = "",
+            specKey = "DEMONHUNTER_HAVOC",
             rating = 768,
             rank = 846,
             wins = 8,
@@ -2792,7 +3085,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["dzdm-stormrage"] = {
             displayName = "Dzdm-stormrage",
-            specKey = "",
+            specKey = "MONK_WINDWALKER",
             rating = 1607,
             rank = 106,
             wins = 20,
@@ -2801,7 +3094,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["däzëd-stormrage"] = {
             displayName = "Däzëd-stormrage",
-            specKey = "",
+            specKey = "ROGUE_ASSASSINATION",
             rating = 768,
             rank = 846,
             wins = 8,
@@ -2810,7 +3103,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["déathstrøké-tichondrius"] = {
             displayName = "Déathstrøké-tichondrius",
-            specKey = "",
+            specKey = "PALADIN_RETRIBUTION",
             rating = 862,
             rank = 781,
             wins = 9,
@@ -2819,7 +3112,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["dïscîplè-ghostlands"] = {
             displayName = "Dïscîplè-ghostlands",
-            specKey = "PRIEST_DISCIPLINE",
+            specKey = "",
             rating = 768,
             rank = 846,
             wins = 8,
@@ -2828,7 +3121,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["ectoplasm-area52"] = {
             displayName = "Ectoplasm-area-52",
-            specKey = "",
+            specKey = "WARLOCK_DEMONOLOGY",
             rating = 862,
             rank = 781,
             wins = 9,
@@ -2837,7 +3130,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["edocx-tichondrius"] = {
             displayName = "Edocx-tichondrius",
-            specKey = "",
+            specKey = "ROGUE_SUBTLETY",
             rating = 864,
             rank = 648,
             wins = 9,
@@ -2846,7 +3139,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["ehnó-illidan"] = {
             displayName = "Ehnó-illidan",
-            specKey = "",
+            specKey = "HUNTER_BEASTMASTERY",
             rating = 768,
             rank = 846,
             wins = 8,
@@ -2855,7 +3148,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["elaiza-alexstrasza"] = {
             displayName = "Elaiza-alexstrasza",
-            specKey = "",
+            specKey = "PRIEST_DISCIPLINE",
             rating = 935,
             rank = 646,
             wins = 10,
@@ -2864,7 +3157,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["elfbrew-bleedinghollow"] = {
             displayName = "Elfbrew-bleeding-hollow",
-            specKey = "",
+            specKey = "MONK_MISTWEAVER",
             rating = 862,
             rank = 781,
             wins = 9,
@@ -2873,7 +3166,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["eli-scarletcrusade"] = {
             displayName = "Eli-scarlet-crusade",
-            specKey = "PRIEST_HOLY",
+            specKey = "",
             rating = 960,
             rank = 508,
             wins = 10,
@@ -2882,7 +3175,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["elinastra-tichondrius"] = {
             displayName = "Elinastra-tichondrius",
-            specKey = "",
+            specKey = "ROGUE_ASSASSINATION",
             rating = 1608,
             rank = 96,
             wins = 19,
@@ -2891,7 +3184,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["elvesnknives-stormrage"] = {
             displayName = "Elvesnknives-stormrage",
-            specKey = "",
+            specKey = "ROGUE_SUBTLETY",
             rating = 1152,
             rank = 297,
             wins = 12,
@@ -2900,7 +3193,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["elëktra-hydraxis"] = {
             displayName = "Elëktra-hydraxis",
-            specKey = "",
+            specKey = "ROGUE_SUBTLETY",
             rating = 1050,
             rank = 489,
             wins = 11,
@@ -2909,7 +3202,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["emmireth-moonguard"] = {
             displayName = "Emmireth-moon-guard",
-            specKey = "",
+            specKey = "EVOKER_PRESERVATION",
             rating = 1055,
             rank = 432,
             wins = 11,
@@ -2918,7 +3211,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["emotemp-chogall"] = {
             displayName = "Emotemp-chogall",
-            specKey = "",
+            specKey = "SHAMAN_ELEMENTAL",
             rating = 864,
             rank = 648,
             wins = 9,
@@ -2927,7 +3220,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["endcredits-stormrage"] = {
             displayName = "Endcredits-stormrage",
-            specKey = "",
+            specKey = "ROGUE_ASSASSINATION",
             rating = 1558,
             rank = 156,
             wins = 17,
@@ -2936,7 +3229,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["endeavour-illidan"] = {
             displayName = "Endeavour-illidan",
-            specKey = "",
+            specKey = "HUNTER_BEASTMASTERY",
             rating = 1056,
             rank = 382,
             wins = 11,
@@ -2945,7 +3238,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["endoriaxe-mannoroth"] = {
             displayName = "Endoriaxe-mannoroth",
-            specKey = "",
+            specKey = "DRUID_RESTORATION",
             rating = 1045,
             rank = 501,
             wins = 11,
@@ -2954,7 +3247,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["engle-arathor"] = {
             displayName = "Engle-arathor",
-            specKey = "",
+            specKey = "PRIEST_DISCIPLINE",
             rating = 768,
             rank = 846,
             wins = 8,
@@ -2963,7 +3256,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["entaza-turalyon"] = {
             displayName = "Entaza-turalyon",
-            specKey = "",
+            specKey = "HUNTER_SURVIVAL",
             rating = 768,
             rank = 846,
             wins = 8,
@@ -2981,7 +3274,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["enutrof-bleedinghollow"] = {
             displayName = "Enutrof-bleeding-hollow",
-            specKey = "",
+            specKey = "ROGUE_OUTLAW",
             rating = 861,
             rank = 803,
             wins = 9,
@@ -2999,7 +3292,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["envyion-sargeras"] = {
             displayName = "Envyion-sargeras",
-            specKey = "",
+            specKey = "PRIEST_SHADOW",
             rating = 1538,
             rank = 168,
             wins = 17,
@@ -3008,7 +3301,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["epididymis-echoisles"] = {
             displayName = "Epididymis-echo-isles",
-            specKey = "",
+            specKey = "ROGUE_SUBTLETY",
             rating = 1055,
             rank = 432,
             wins = 11,
@@ -3026,7 +3319,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["eugordrater-tichondrius"] = {
             displayName = "Eugordrater-tichondrius",
-            specKey = "",
+            specKey = "ROGUE_ASSASSINATION",
             rating = 1147,
             rank = 366,
             wins = 12,
@@ -3035,7 +3328,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["everlornqt-frostmourne"] = {
             displayName = "Everlornqt-frostmourne",
-            specKey = "",
+            specKey = "WARLOCK_AFFLICTION",
             rating = 1051,
             rank = 481,
             wins = 11,
@@ -3053,7 +3346,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["evnine-illidan"] = {
             displayName = "Evnine-illidan",
-            specKey = "",
+            specKey = "PALADIN_RETRIBUTION",
             rating = 956,
             rank = 632,
             wins = 10,
@@ -3062,7 +3355,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["evoketage-malganis"] = {
             displayName = "Evoketage-malganis",
-            specKey = "",
+            specKey = "EVOKER_AUGMENTATION",
             rating = 1152,
             rank = 297,
             wins = 12,
@@ -3098,7 +3391,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["eîri-sargeras"] = {
             displayName = "Eîri-sargeras",
-            specKey = "",
+            specKey = "PALADIN_HOLY",
             rating = 864,
             rank = 648,
             wins = 9,
@@ -3107,7 +3400,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["faermôrn-illidan"] = {
             displayName = "Faermôrn-illidan",
-            specKey = "",
+            specKey = "DRUID_RESTORATION",
             rating = 862,
             rank = 781,
             wins = 9,
@@ -3125,7 +3418,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["failside-kelthuzad"] = {
             displayName = "Failside-kelthuzad",
-            specKey = "PRIEST_HOLY",
+            specKey = "",
             rating = 768,
             rank = 846,
             wins = 8,
@@ -3134,7 +3427,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["fairyfloral-wyrmrestaccord"] = {
             displayName = "Fairyfloral-wyrmrest-accord",
-            specKey = "",
+            specKey = "MONK_MISTWEAVER",
             rating = 1421,
             rank = 214,
             wins = 15,
@@ -3143,7 +3436,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["fastkhaz-area52"] = {
             displayName = "Fastkhaz-area-52",
-            specKey = "",
+            specKey = "HUNTER_BEASTMASTERY",
             rating = 862,
             rank = 781,
             wins = 9,
@@ -3161,7 +3454,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["faxxax-area52"] = {
             displayName = "Faxxax-area-52",
-            specKey = "",
+            specKey = "MONK_MISTWEAVER",
             rating = 1055,
             rank = 432,
             wins = 11,
@@ -3179,7 +3472,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["feariocities-bleedinghollow"] = {
             displayName = "Feariocities-bleeding-hollow",
-            specKey = "",
+            specKey = "PRIEST_HOLY",
             rating = 1152,
             rank = 297,
             wins = 12,
@@ -3188,7 +3481,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["fearofgodd-sargeras"] = {
             displayName = "Fearofgodd-sargeras",
-            specKey = "",
+            specKey = "ROGUE_ASSASSINATION",
             rating = 1239,
             rank = 292,
             wins = 13,
@@ -3197,7 +3490,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["fearphreak-bleedinghollow"] = {
             displayName = "Fearphreak-bleeding-hollow",
-            specKey = "",
+            specKey = "WARLOCK_DESTRUCTION",
             rating = 863,
             rank = 751,
             wins = 9,
@@ -3206,7 +3499,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["feedback-darkspear"] = {
             displayName = "Feedback-darkspear",
-            specKey = "",
+            specKey = "MAGE_FROST",
             rating = 960,
             rank = 508,
             wins = 10,
@@ -3215,7 +3508,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["fionstiffana-tichondrius"] = {
             displayName = "Fionstiffana-tichondrius",
-            specKey = "",
+            specKey = "PRIEST_DISCIPLINE",
             rating = 768,
             rank = 846,
             wins = 8,
@@ -3224,7 +3517,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["firstdance-tichondrius"] = {
             displayName = "Firstdance-tichondrius",
-            specKey = "",
+            specKey = "ROGUE_SUBTLETY",
             rating = 1040,
             rank = 506,
             wins = 11,
@@ -3233,7 +3526,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["fivestarg-terokkar"] = {
             displayName = "Fivestarg-terokkar",
-            specKey = "",
+            specKey = "PRIEST_DISCIPLINE",
             rating = 1146,
             rank = 372,
             wins = 12,
@@ -3251,7 +3544,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["flapz-illidan"] = {
             displayName = "Flapz-illidan",
-            specKey = "",
+            specKey = "DRUID_BALANCE",
             rating = 863,
             rank = 751,
             wins = 9,
@@ -3260,7 +3553,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["flashv-barthilas"] = {
             displayName = "Flashv-barthilas",
-            specKey = "",
+            specKey = "PALADIN_HOLY",
             rating = 1340,
             rank = 234,
             wins = 14,
@@ -3269,7 +3562,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["flipprd-tichondrius"] = {
             displayName = "Flipprd-tichondrius",
-            specKey = "",
+            specKey = "WARRIOR_ARMS",
             rating = 1610,
             rank = 92,
             wins = 20,
@@ -3278,7 +3571,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["flowstate-mugthol"] = {
             displayName = "Flowstate-mugthol",
-            specKey = "",
+            specKey = "ROGUE_ASSASSINATION",
             rating = 1668,
             rank = 28,
             wins = 22,
@@ -3287,7 +3580,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["fléecy-tichondrius"] = {
             displayName = "Fléecy-tichondrius",
-            specKey = "",
+            specKey = "ROGUE_SUBTLETY",
             rating = 1646,
             rank = 45,
             wins = 21,
@@ -3296,7 +3589,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["folt-tichondrius"] = {
             displayName = "Folt-tichondrius",
-            specKey = "",
+            specKey = "DRUID_FERAL",
             rating = 1602,
             rank = 126,
             wins = 21,
@@ -3305,7 +3598,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["fookinghobo-sargeras"] = {
             displayName = "Fookinghobo-sargeras",
-            specKey = "",
+            specKey = "DRUID_BALANCE",
             rating = 1244,
             rank = 283,
             wins = 13,
@@ -3314,7 +3607,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["foozey-kelthuzad"] = {
             displayName = "Foozey-kelthuzad",
-            specKey = "",
+            specKey = "WARRIOR_ARMS",
             rating = 1056,
             rank = 382,
             wins = 11,
@@ -3323,7 +3616,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["forestfrenzy-emeralddream"] = {
             displayName = "Forestfrenzy-emerald-dream",
-            specKey = "DRUID_RESTORATION",
+            specKey = "",
             rating = 1608,
             rank = 96,
             wins = 19,
@@ -3341,7 +3634,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["framewogged-malganis"] = {
             displayName = "Framewogged-malganis",
-            specKey = "",
+            specKey = "PALADIN_HOLY",
             rating = 1152,
             rank = 297,
             wins = 12,
@@ -3350,7 +3643,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["freecog-moonguard"] = {
             displayName = "Freecog-moon-guard",
-            specKey = "",
+            specKey = "DRUID_RESTORATION",
             rating = 768,
             rank = 846,
             wins = 8,
@@ -3359,7 +3652,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["freijejüjü-bleedinghollow"] = {
             displayName = "Freijejüjü-bleeding-hollow",
-            specKey = "",
+            specKey = "SHAMAN_RESTORATION",
             rating = 1054,
             rank = 456,
             wins = 11,
@@ -3368,7 +3661,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["fremhi-stormrage"] = {
             displayName = "Fremhi-stormrage",
-            specKey = "",
+            specKey = "ROGUE_ASSASSINATION",
             rating = 1613,
             rank = 87,
             wins = 19,
@@ -3377,7 +3670,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["freshpjs-emeralddream"] = {
             displayName = "Freshpjs-emerald-dream",
-            specKey = "",
+            specKey = "DRUID_RESTORATION",
             rating = 958,
             rank = 610,
             wins = 10,
@@ -3386,7 +3679,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["freyil-sargeras"] = {
             displayName = "Freyil-sargeras",
-            specKey = "",
+            specKey = "HUNTER_BEASTMASTERY",
             rating = 863,
             rank = 751,
             wins = 9,
@@ -3395,7 +3688,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["frightknight-tichondrius"] = {
             displayName = "Frightknight-tichondrius",
-            specKey = "",
+            specKey = "DEATHKNIGHT_FROST",
             rating = 959,
             rank = 572,
             wins = 10,
@@ -3404,7 +3697,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["frozenbyte-sargeras"] = {
             displayName = "Frozenbyte-sargeras",
-            specKey = "",
+            specKey = "ROGUE_ASSASSINATION",
             rating = 1151,
             rank = 329,
             wins = 12,
@@ -3413,7 +3706,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["frozenmeows-tichondrius"] = {
             displayName = "Frozenmeows-tichondrius",
-            specKey = "",
+            specKey = "HUNTER_BEASTMASTERY",
             rating = 863,
             rank = 751,
             wins = 9,
@@ -3422,7 +3715,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["frãk-twistingnether"] = {
             displayName = "Frãk-twisting-nether",
-            specKey = "",
+            specKey = "MONK_MISTWEAVER",
             rating = 857,
             rank = 836,
             wins = 9,
@@ -3431,7 +3724,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["fröstyyqt-tichondrius"] = {
             displayName = "Fröstyyqt-tichondrius",
-            specKey = "",
+            specKey = "PALADIN_HOLY",
             rating = 864,
             rank = 648,
             wins = 9,
@@ -3440,7 +3733,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["fuden-illidan"] = {
             displayName = "Fuden-illidan",
-            specKey = "",
+            specKey = "PALADIN_RETRIBUTION",
             rating = 863,
             rank = 751,
             wins = 9,
@@ -3449,7 +3742,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["fuknak-illidan"] = {
             displayName = "Fuknak-illidan",
-            specKey = "",
+            specKey = "MONK_WINDWALKER",
             rating = 1627,
             rank = 64,
             wins = 20,
@@ -3458,7 +3751,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["fullbush-illidan"] = {
             displayName = "Fullbush-illidan",
-            specKey = "",
+            specKey = "PRIEST_HOLY",
             rating = 1581,
             rank = 137,
             wins = 18,
@@ -3467,7 +3760,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["fum-frostmourne"] = {
             displayName = "Fum-frostmourne",
-            specKey = "",
+            specKey = "SHAMAN_ENHANCEMENT",
             rating = 1439,
             rank = 195,
             wins = 15,
@@ -3476,7 +3769,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["fyne-kelthuzad"] = {
             displayName = "Fyne-kelthuzad",
-            specKey = "",
+            specKey = "PRIEST_DISCIPLINE",
             rating = 1150,
             rank = 339,
             wins = 12,
@@ -3485,7 +3778,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["fãte-tichondrius"] = {
             displayName = "Fãte-tichondrius",
-            specKey = "",
+            specKey = "ROGUE_SUBTLETY",
             rating = 768,
             rank = 846,
             wins = 8,
@@ -3494,7 +3787,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["fïstoffurry-tichondrius"] = {
             displayName = "Fïstoffurry-tichondrius",
-            specKey = "",
+            specKey = "MONK_WINDWALKER",
             rating = 864,
             rank = 648,
             wins = 9,
@@ -3503,7 +3796,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["garbagedruid-scilla"] = {
             displayName = "Garbagedruid-scilla",
-            specKey = "",
+            specKey = "DRUID_RESTORATION",
             rating = 863,
             rank = 751,
             wins = 9,
@@ -3512,7 +3805,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["garrahx-stormrage"] = {
             displayName = "Garrahx-stormrage",
-            specKey = "",
+            specKey = "PRIEST_DISCIPLINE",
             rating = 1565,
             rank = 148,
             wins = 19,
@@ -3521,7 +3814,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["gazekk-stormrage"] = {
             displayName = "Gazekk-stormrage",
-            specKey = "",
+            specKey = "WARLOCK_AFFLICTION",
             rating = 768,
             rank = 846,
             wins = 8,
@@ -3530,7 +3823,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["genghoul-darkiron"] = {
             displayName = "Genghoul-dark-iron",
-            specKey = "",
+            specKey = "PRIEST_DISCIPLINE",
             rating = 1043,
             rank = 504,
             wins = 11,
@@ -3539,7 +3832,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["genie-kelthuzad"] = {
             displayName = "Genie-kelthuzad",
-            specKey = "",
+            specKey = "PRIEST_HOLY",
             rating = 1341,
             rank = 230,
             wins = 14,
@@ -3548,7 +3841,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["gennarohunt-tichondrius"] = {
             displayName = "Gennarohunt-tichondrius",
-            specKey = "",
+            specKey = "HUNTER_BEASTMASTERY",
             rating = 1248,
             rank = 254,
             wins = 13,
@@ -3557,7 +3850,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["gennarohunts-tichondrius"] = {
             displayName = "Gennarohunts-tichondrius",
-            specKey = "",
+            specKey = "HUNTER_BEASTMASTERY",
             rating = 958,
             rank = 610,
             wins = 10,
@@ -3575,7 +3868,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["ggtrappedez-tichondrius"] = {
             displayName = "Ggtrappedez-tichondrius",
-            specKey = "",
+            specKey = "HUNTER_BEASTMASTERY",
             rating = 768,
             rank = 846,
             wins = 8,
@@ -3584,7 +3877,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["gharagon-senjin"] = {
             displayName = "Gharagon-senjin",
-            specKey = "",
+            specKey = "DRUID_RESTORATION",
             rating = 1144,
             rank = 376,
             wins = 12,
@@ -3602,7 +3895,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["glloom-dalaran"] = {
             displayName = "Glloom-dalaran",
-            specKey = "",
+            specKey = "EVOKER_PRESERVATION",
             rating = 1644,
             rank = 47,
             wins = 21,
@@ -3611,7 +3904,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["gloydius-illidan"] = {
             displayName = "Gloydius-illidan",
-            specKey = "",
+            specKey = "PRIEST_DISCIPLINE",
             rating = 768,
             rank = 846,
             wins = 8,
@@ -3620,7 +3913,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["gokkunqt-tichondrius"] = {
             displayName = "Gokkunqt-tichondrius",
-            specKey = "",
+            specKey = "MONK_WINDWALKER",
             rating = 864,
             rank = 648,
             wins = 9,
@@ -3629,7 +3922,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["goldenkitty-tichondrius"] = {
             displayName = "Goldenkitty-tichondrius",
-            specKey = "",
+            specKey = "SHAMAN_RESTORATION",
             rating = 1056,
             rank = 382,
             wins = 11,
@@ -3638,7 +3931,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["golff-bladesedge"] = {
             displayName = "Golff-blades-edge",
-            specKey = "",
+            specKey = "HUNTER_MARKSMANSHIP",
             rating = 950,
             rank = 642,
             wins = 10,
@@ -3647,7 +3940,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["goochiemon-nazgrel"] = {
             displayName = "Goochiemon-nazgrel",
-            specKey = "",
+            specKey = "HUNTER_BEASTMASTERY",
             rating = 767,
             rank = 983,
             wins = 8,
@@ -3656,7 +3949,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["goodbyes-tichondrius"] = {
             displayName = "Goodbyes-tichondrius",
-            specKey = "",
+            specKey = "WARLOCK_AFFLICTION",
             rating = 768,
             rank = 846,
             wins = 8,
@@ -3674,7 +3967,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["goyfist-khazmodan"] = {
             displayName = "Goyfist-khaz-modan",
-            specKey = "",
+            specKey = "MONK_WINDWALKER",
             rating = 864,
             rank = 648,
             wins = 9,
@@ -3683,7 +3976,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["gracexø-tichondrius"] = {
             displayName = "Gracexø-tichondrius",
-            specKey = "",
+            specKey = "MONK_MISTWEAVER",
             rating = 960,
             rank = 508,
             wins = 10,
@@ -3692,7 +3985,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["grai-bleedinghollow"] = {
             displayName = "Grai-bleeding-hollow",
-            specKey = "",
+            specKey = "EVOKER_DEVASTATION",
             rating = 861,
             rank = 803,
             wins = 9,
@@ -3701,7 +3994,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["gratiiens-zuljin"] = {
             displayName = "Gratiiens-zuljin",
-            specKey = "",
+            specKey = "SHAMAN_RESTORATION",
             rating = 864,
             rank = 648,
             wins = 9,
@@ -3719,7 +4012,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["grenadeslol-destromath"] = {
             displayName = "Grenadeslol-destromath",
-            specKey = "",
+            specKey = "ROGUE_OUTLAW",
             rating = 1056,
             rank = 382,
             wins = 11,
@@ -3728,7 +4021,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["grenzle-tichondrius"] = {
             displayName = "Grenzle-tichondrius",
-            specKey = "",
+            specKey = "SHAMAN_RESTORATION",
             rating = 1054,
             rank = 456,
             wins = 11,
@@ -3737,7 +4030,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["grimgrip-frostmane"] = {
             displayName = "Grimgrip-frostmane",
-            specKey = "WARRIOR_FURY",
+            specKey = "",
             rating = 768,
             rank = 846,
             wins = 8,
@@ -3746,7 +4039,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["grins-spirestone"] = {
             displayName = "Grins-spirestone",
-            specKey = "",
+            specKey = "DRUID_FERAL",
             rating = 1051,
             rank = 481,
             wins = 11,
@@ -3764,7 +4057,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["grunmonk-gallywix"] = {
             displayName = "Grunmonk-gallywix",
-            specKey = "",
+            specKey = "MONK_MISTWEAVER",
             rating = 1054,
             rank = 456,
             wins = 11,
@@ -3773,7 +4066,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["gscu-tichondrius"] = {
             displayName = "Gscu-tichondrius",
-            specKey = "",
+            specKey = "WARLOCK_DESTRUCTION",
             rating = 1056,
             rank = 382,
             wins = 11,
@@ -3791,7 +4084,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["gunwalk-tichondrius"] = {
             displayName = "Gunwalk-tichondrius",
-            specKey = "",
+            specKey = "HUNTER_MARKSMANSHIP",
             rating = 1527,
             rank = 178,
             wins = 17,
@@ -3800,7 +4093,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["gutrot-shadowsong"] = {
             displayName = "Gutrot-shadowsong",
-            specKey = "",
+            specKey = "MONK_MISTWEAVER",
             rating = 768,
             rank = 846,
             wins = 8,
@@ -3809,7 +4102,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["guyutë-sargeras"] = {
             displayName = "Guyutë-sargeras",
-            specKey = "",
+            specKey = "DRUID_RESTORATION",
             rating = 1331,
             rank = 245,
             wins = 14,
@@ -3827,7 +4120,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["hairyweaver-darkspear"] = {
             displayName = "Hairyweaver-darkspear",
-            specKey = "",
+            specKey = "MONK_WINDWALKER",
             rating = 1049,
             rank = 493,
             wins = 11,
@@ -3836,7 +4129,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["hananuki-stormrage"] = {
             displayName = "Hananuki-stormrage",
-            specKey = "",
+            specKey = "PRIEST_HOLY",
             rating = 958,
             rank = 610,
             wins = 10,
@@ -3845,7 +4138,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["hanon-tichondrius"] = {
             displayName = "Hanon-tichondrius",
-            specKey = "",
+            specKey = "ROGUE_SUBTLETY",
             rating = 960,
             rank = 508,
             wins = 10,
@@ -3854,7 +4147,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["hardtekk-illidan"] = {
             displayName = "Hardtekk-illidan",
-            specKey = "",
+            specKey = "DEMONHUNTER_HAVOC",
             rating = 1631,
             rank = 58,
             wins = 21,
@@ -3863,7 +4156,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["harshc-darrowmere"] = {
             displayName = "Harshc-darrowmere",
-            specKey = "",
+            specKey = "PRIEST_HOLY",
             rating = 1053,
             rank = 469,
             wins = 11,
@@ -3872,7 +4165,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["hattorikun-proudmoore"] = {
             displayName = "Hattorikun-proudmoore",
-            specKey = "",
+            specKey = "ROGUE_ASSASSINATION",
             rating = 864,
             rank = 648,
             wins = 9,
@@ -3881,7 +4174,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["hawkret-illidan"] = {
             displayName = "Hawkret-illidan",
-            specKey = "",
+            specKey = "PALADIN_RETRIBUTION",
             rating = 768,
             rank = 846,
             wins = 8,
@@ -3890,7 +4183,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["healingcat-tichondrius"] = {
             displayName = "Healingcat-tichondrius",
-            specKey = "",
+            specKey = "PRIEST_HOLY",
             rating = 1054,
             rank = 456,
             wins = 11,
@@ -3899,7 +4192,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["healingxdx-bleedinghollow"] = {
             displayName = "Healingxdx-bleeding-hollow",
-            specKey = "",
+            specKey = "PRIEST_DISCIPLINE",
             rating = 862,
             rank = 781,
             wins = 9,
@@ -3908,7 +4201,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["heartside-tichondrius"] = {
             displayName = "Heartside-tichondrius",
-            specKey = "",
+            specKey = "PALADIN_HOLY",
             rating = 1055,
             rank = 432,
             wins = 11,
@@ -3926,7 +4219,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["hevenessence-illidan"] = {
             displayName = "Hevenessence-illidan",
-            specKey = "",
+            specKey = "PALADIN_PROTECTION",
             rating = 1037,
             rank = 507,
             wins = 11,
@@ -3935,7 +4228,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["heål-tichondrius"] = {
             displayName = "Heål-tichondrius",
-            specKey = "",
+            specKey = "PRIEST_HOLY",
             rating = 1604,
             rank = 117,
             wins = 19,
@@ -3962,7 +4255,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["hinä-sargeras"] = {
             displayName = "Hinä-sargeras",
-            specKey = "",
+            specKey = "PRIEST_HOLY",
             rating = 1152,
             rank = 297,
             wins = 12,
@@ -3971,7 +4264,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["hitomila-tichondrius"] = {
             displayName = "Hitomila-tichondrius",
-            specKey = "",
+            specKey = "SHAMAN_RESTORATION",
             rating = 864,
             rank = 648,
             wins = 9,
@@ -3998,7 +4291,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["holykecti-tichondrius"] = {
             displayName = "Holykecti-tichondrius",
-            specKey = "",
+            specKey = "PRIEST_HOLY",
             rating = 959,
             rank = 572,
             wins = 10,
@@ -4007,7 +4300,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["holyshizerr-frostmane"] = {
             displayName = "Holyshizerr-frostmane",
-            specKey = "",
+            specKey = "PRIEST_SHADOW",
             rating = 1054,
             rank = 456,
             wins = 11,
@@ -4016,7 +4309,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["holyvengance-akama"] = {
             displayName = "Holyvengance-akama",
-            specKey = "",
+            specKey = "PRIEST_DISCIPLINE",
             rating = 1051,
             rank = 481,
             wins = 11,
@@ -4025,7 +4318,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["homeshealsya-gurubashi"] = {
             displayName = "Homeshealsya-gurubashi",
-            specKey = "",
+            specKey = "PRIEST_DISCIPLINE",
             rating = 767,
             rank = 983,
             wins = 8,
@@ -4034,7 +4327,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["horyx-zuljin"] = {
             displayName = "Horyx-zuljin",
-            specKey = "",
+            specKey = "ROGUE_ASSASSINATION",
             rating = 864,
             rank = 648,
             wins = 9,
@@ -4061,7 +4354,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["htm-bleedinghollow"] = {
             displayName = "Htm-bleeding-hollow",
-            specKey = "",
+            specKey = "DEMONHUNTER_HAVOC",
             rating = 864,
             rank = 648,
             wins = 9,
@@ -4070,7 +4363,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["hunterxd-alexstrasza"] = {
             displayName = "Hunterxd-alexstrasza",
-            specKey = "",
+            specKey = "PRIEST_HOLY",
             rating = 863,
             rank = 751,
             wins = 9,
@@ -4079,7 +4372,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["hydropønics-bloodscalp"] = {
             displayName = "Hydropønics-bloodscalp",
-            specKey = "",
+            specKey = "ROGUE_ASSASSINATION",
             rating = 864,
             rank = 648,
             wins = 9,
@@ -4088,7 +4381,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["hydryl-wyrmrestaccord"] = {
             displayName = "Hydryl-wyrmrest-accord",
-            specKey = "",
+            specKey = "ROGUE_ASSASSINATION",
             rating = 768,
             rank = 846,
             wins = 8,
@@ -4106,7 +4399,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["hèlfar-wyrmrestaccord"] = {
             displayName = "Hèlfar-wyrmrest-accord",
-            specKey = "",
+            specKey = "PALADIN_RETRIBUTION",
             rating = 959,
             rank = 572,
             wins = 10,
@@ -4115,7 +4408,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["hïghgrade-area52"] = {
             displayName = "Hïghgrade-area-52",
-            specKey = "",
+            specKey = "ROGUE_SUBTLETY",
             rating = 958,
             rank = 610,
             wins = 10,
@@ -4124,7 +4417,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["hótlinebling-kelthuzad"] = {
             displayName = "Hótlinebling-kelthuzad",
-            specKey = "",
+            specKey = "PALADIN_HOLY",
             rating = 1052,
             rank = 479,
             wins = 11,
@@ -4151,7 +4444,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["iarceny-tichondrius"] = {
             displayName = "Iarceny-tichondrius",
-            specKey = "",
+            specKey = "ROGUE_ASSASSINATION",
             rating = 862,
             rank = 781,
             wins = 9,
@@ -4160,7 +4453,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["ichikokomo-tichondrius"] = {
             displayName = "Ichikokomo-tichondrius",
-            specKey = "",
+            specKey = "HUNTER_BEASTMASTERY",
             rating = 1608,
             rank = 96,
             wins = 20,
@@ -4169,7 +4462,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["idowhatcdont-kelthuzad"] = {
             displayName = "Idowhatcdont-kelthuzad",
-            specKey = "",
+            specKey = "SHAMAN_RESTORATION",
             rating = 1148,
             rank = 358,
             wins = 12,
@@ -4178,7 +4471,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["iegoland-sargeras"] = {
             displayName = "Iegoland-sargeras",
-            specKey = "",
+            specKey = "PRIEST_HOLY",
             rating = 960,
             rank = 508,
             wins = 10,
@@ -4196,7 +4489,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["iintha-gurubashi"] = {
             displayName = "Iintha-gurubashi",
-            specKey = "",
+            specKey = "PRIEST_DISCIPLINE",
             rating = 957,
             rank = 624,
             wins = 10,
@@ -4205,7 +4498,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["illiteratex-area52"] = {
             displayName = "Illiteratex-area-52",
-            specKey = "",
+            specKey = "SHAMAN_RESTORATION",
             rating = 1055,
             rank = 432,
             wins = 11,
@@ -4214,7 +4507,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["illixx-area52"] = {
             displayName = "Illixx-area-52",
-            specKey = "",
+            specKey = "SHAMAN_RESTORATION",
             rating = 864,
             rank = 648,
             wins = 9,
@@ -4223,7 +4516,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["ilovekief-malganis"] = {
             displayName = "Ilovekief-malganis",
-            specKey = "",
+            specKey = "PRIEST_HOLY",
             rating = 1152,
             rank = 297,
             wins = 12,
@@ -4232,7 +4525,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["imbaack-stormrage"] = {
             displayName = "Imbaack-stormrage",
-            specKey = "",
+            specKey = "PRIEST_DISCIPLINE",
             rating = 960,
             rank = 508,
             wins = 10,
@@ -4241,7 +4534,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["imcrazyforu-bleedinghollow"] = {
             displayName = "Imcrazyforu-bleeding-hollow",
-            specKey = "",
+            specKey = "HUNTER_BEASTMASTERY",
             rating = 863,
             rank = 751,
             wins = 9,
@@ -4259,7 +4552,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["imperviously-area52"] = {
             displayName = "Imperviously-area-52",
-            specKey = "",
+            specKey = "HUNTER_MARKSMANSHIP",
             rating = 1247,
             rank = 263,
             wins = 13,
@@ -4268,7 +4561,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["incelslayèrx-sargeras"] = {
             displayName = "Incelslayèrx-sargeras",
-            specKey = "",
+            specKey = "PRIEST_SHADOW",
             rating = 1429,
             rank = 209,
             wins = 15,
@@ -4277,7 +4570,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["indoconqfarm-frostmourne"] = {
             displayName = "Indoconqfarm-frostmourne",
-            specKey = "",
+            specKey = "ROGUE_SUBTLETY",
             rating = 768,
             rank = 846,
             wins = 8,
@@ -4286,7 +4579,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["ineffaby-theunderbog"] = {
             displayName = "Ineffaby-the-underbog",
-            specKey = "",
+            specKey = "PRIEST_HOLY",
             rating = 768,
             rank = 846,
             wins = 8,
@@ -4295,7 +4588,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["inewigkeit-moonguard"] = {
             displayName = "Inewigkeit-moon-guard",
-            specKey = "",
+            specKey = "PRIEST_DISCIPLINE",
             rating = 1056,
             rank = 382,
             wins = 11,
@@ -4304,7 +4597,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["injeckx-tichondrius"] = {
             displayName = "Injeckx-tichondrius",
-            specKey = "",
+            specKey = "DRUID_RESTORATION",
             rating = 768,
             rank = 846,
             wins = 8,
@@ -4313,7 +4606,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["injxx-tichondrius"] = {
             displayName = "Injxx-tichondrius",
-            specKey = "",
+            specKey = "PRIEST_SHADOW",
             rating = 864,
             rank = 648,
             wins = 9,
@@ -4322,7 +4615,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["innerverse-tichondrius"] = {
             displayName = "Innerverse-tichondrius",
-            specKey = "",
+            specKey = "MONK_WINDWALKER",
             rating = 1056,
             rank = 382,
             wins = 11,
@@ -4331,7 +4624,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["inoheals-frostmourne"] = {
             displayName = "Inoheals-frostmourne",
-            specKey = "",
+            specKey = "PRIEST_DISCIPLINE",
             rating = 1502,
             rank = 187,
             wins = 17,
@@ -4340,7 +4633,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["inrad-stormrage"] = {
             displayName = "Inrad-stormrage",
-            specKey = "",
+            specKey = "PALADIN_RETRIBUTION",
             rating = 768,
             rank = 846,
             wins = 8,
@@ -4349,7 +4642,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["insecures-moonguard"] = {
             displayName = "Insecures-moon-guard",
-            specKey = "",
+            specKey = "WARRIOR_ARMS",
             rating = 1611,
             rank = 89,
             wins = 19,
@@ -4358,7 +4651,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["intervensham-illidan"] = {
             displayName = "Intervensham-illidan",
-            specKey = "",
+            specKey = "SHAMAN_RESTORATION",
             rating = 958,
             rank = 610,
             wins = 10,
@@ -4367,7 +4660,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["intervention-blackdragonflight"] = {
             displayName = "Intervention-black-dragonflight",
-            specKey = "",
+            specKey = "PRIEST_HOLY",
             rating = 1524,
             rank = 179,
             wins = 16,
@@ -4376,7 +4669,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["invoice-bloodscalp"] = {
             displayName = "Invoice-bloodscalp",
-            specKey = "",
+            specKey = "PRIEST_HOLY",
             rating = 1565,
             rank = 148,
             wins = 22,
@@ -4394,7 +4687,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["iq-tichondrius"] = {
             displayName = "Iq-tichondrius",
-            specKey = "",
+            specKey = "PRIEST_HOLY",
             rating = 1056,
             rank = 382,
             wins = 11,
@@ -4403,7 +4696,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["itdoor-magtheridon"] = {
             displayName = "Itdoor-magtheridon",
-            specKey = "",
+            specKey = "WARRIOR_FURY",
             rating = 861,
             rank = 803,
             wins = 9,
@@ -4412,7 +4705,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["itwasmee-tichondrius"] = {
             displayName = "Itwasmee-tichondrius",
-            specKey = "",
+            specKey = "HUNTER_BEASTMASTERY",
             rating = 768,
             rank = 846,
             wins = 8,
@@ -4430,7 +4723,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["iwdqtpietwog-drakthul"] = {
             displayName = "Iwdqtpietwog-drakthul",
-            specKey = "PRIEST_HOLY",
+            specKey = "",
             rating = 959,
             rank = 572,
             wins = 10,
@@ -4439,7 +4732,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["jabyn-blackwaterraiders"] = {
             displayName = "Jabyn-blackwater-raiders",
-            specKey = "",
+            specKey = "MONK_MISTWEAVER",
             rating = 864,
             rank = 648,
             wins = 9,
@@ -4448,7 +4741,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["jag-haomarush"] = {
             displayName = "Jag-haomarush",
-            specKey = "",
+            specKey = "SHAMAN_RESTORATION",
             rating = 767,
             rank = 983,
             wins = 8,
@@ -4457,7 +4750,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["jaykulina-bleedinghollow"] = {
             displayName = "Jaykulina-bleeding-hollow",
-            specKey = "",
+            specKey = "PRIEST_DISCIPLINE",
             rating = 767,
             rank = 983,
             wins = 8,
@@ -4466,7 +4759,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["jaysdisc-sargeras"] = {
             displayName = "Jaysdisc-sargeras",
-            specKey = "",
+            specKey = "PRIEST_DISCIPLINE",
             rating = 1696,
             rank = 20,
             wins = 25,
@@ -4475,7 +4768,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["jects-tichondrius"] = {
             displayName = "Jects-tichondrius",
-            specKey = "",
+            specKey = "ROGUE_ASSASSINATION",
             rating = 1055,
             rank = 432,
             wins = 11,
@@ -4484,7 +4777,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["jimbobhoe-frostmourne"] = {
             displayName = "Jimbobhoe-frostmourne",
-            specKey = "",
+            specKey = "PALADIN_RETRIBUTION",
             rating = 1056,
             rank = 382,
             wins = 11,
@@ -4502,7 +4795,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["johnonymous-malganis"] = {
             displayName = "Johnonymous-malganis",
-            specKey = "",
+            specKey = "ROGUE_ASSASSINATION",
             rating = 960,
             rank = 508,
             wins = 10,
@@ -4520,7 +4813,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["jordanqt-barthilas"] = {
             displayName = "Jordanqt-barthilas",
-            specKey = "",
+            specKey = "MONK_MISTWEAVER",
             rating = 1143,
             rank = 377,
             wins = 12,
@@ -4529,7 +4822,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["juiced-thunderhorn"] = {
             displayName = "Juiced-thunderhorn",
-            specKey = "",
+            specKey = "DEMONHUNTER_HAVOC",
             rating = 864,
             rank = 648,
             wins = 9,
@@ -4538,7 +4831,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["june-magtheridon"] = {
             displayName = "June-magtheridon",
-            specKey = "",
+            specKey = "HUNTER_SURVIVAL",
             rating = 1247,
             rank = 263,
             wins = 13,
@@ -4547,7 +4840,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["junglebush-frostmourne"] = {
             displayName = "Junglebush-frostmourne",
-            specKey = "",
+            specKey = "PRIEST_DISCIPLINE",
             rating = 864,
             rank = 648,
             wins = 9,
@@ -4556,7 +4849,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["jurseyshore-area52"] = {
             displayName = "Jurseyshore-area-52",
-            specKey = "",
+            specKey = "PALADIN_HOLY",
             rating = 1103,
             rank = 381,
             wins = 12,
@@ -4565,7 +4858,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["justßlaze-sargeras"] = {
             displayName = "Justßlaze-sargeras",
-            specKey = "",
+            specKey = "HUNTER_MARKSMANSHIP",
             rating = 859,
             rank = 827,
             wins = 9,
@@ -4583,7 +4876,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["jèricho-thrall"] = {
             displayName = "Jèricho-thrall",
-            specKey = "",
+            specKey = "MONK_MISTWEAVER",
             rating = 778,
             rank = 845,
             wins = 9,
@@ -4592,7 +4885,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["jübaa-azralon"] = {
             displayName = "Jübaa-azralon",
-            specKey = "",
+            specKey = "PRIEST_HOLY",
             rating = 958,
             rank = 610,
             wins = 10,
@@ -4610,7 +4903,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["kalioh-stormrage"] = {
             displayName = "Kalioh-stormrage",
-            specKey = "",
+            specKey = "WARRIOR_FURY",
             rating = 864,
             rank = 648,
             wins = 9,
@@ -4619,7 +4912,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["kalvish-dalaran"] = {
             displayName = "Kalvish-dalaran",
-            specKey = "",
+            specKey = "ROGUE_SUBTLETY",
             rating = 1648,
             rank = 43,
             wins = 21,
@@ -4637,7 +4930,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["kaoscaotico-stormrage"] = {
             displayName = "Kaoscaotico-stormrage",
-            specKey = "",
+            specKey = "WARLOCK_AFFLICTION",
             rating = 960,
             rank = 508,
             wins = 10,
@@ -4655,7 +4948,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["kasho-altarofstorms"] = {
             displayName = "Kasho-altar-of-storms",
-            specKey = "",
+            specKey = "MONK_MISTWEAVER",
             rating = 863,
             rank = 751,
             wins = 9,
@@ -4664,7 +4957,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["katheranna-stormrage"] = {
             displayName = "Katheranna-stormrage",
-            specKey = "",
+            specKey = "ROGUE_ASSASSINATION",
             rating = 1551,
             rank = 163,
             wins = 17,
@@ -4673,7 +4966,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["katie-malganis"] = {
             displayName = "Katie-malganis",
-            specKey = "",
+            specKey = "PALADIN_HOLY",
             rating = 960,
             rank = 508,
             wins = 10,
@@ -4682,7 +4975,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["kazzd-stormrage"] = {
             displayName = "Kazzd-stormrage",
-            specKey = "",
+            specKey = "DRUID_RESTORATION",
             rating = 863,
             rank = 751,
             wins = 9,
@@ -4691,7 +4984,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["kazzx-stormrage"] = {
             displayName = "Kazzx-stormrage",
-            specKey = "",
+            specKey = "HUNTER_MARKSMANSHIP",
             rating = 767,
             rank = 983,
             wins = 8,
@@ -4709,7 +5002,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["kelinao-sargeras"] = {
             displayName = "Kelinao-sargeras",
-            specKey = "",
+            specKey = "PALADIN_HOLY",
             rating = 1640,
             rank = 52,
             wins = 21,
@@ -4718,7 +5011,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["kemy-moonguard"] = {
             displayName = "Kemy-moon-guard",
-            specKey = "",
+            specKey = "DRUID_BALANCE",
             rating = 1245,
             rank = 279,
             wins = 13,
@@ -4727,7 +5020,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["kennz-sargeras"] = {
             displayName = "Kennz-sargeras",
-            specKey = "",
+            specKey = "PRIEST_DISCIPLINE",
             rating = 1055,
             rank = 432,
             wins = 11,
@@ -4736,7 +5029,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["kenstlols-tichondrius"] = {
             displayName = "Kenstlols-tichondrius",
-            specKey = "",
+            specKey = "WARRIOR_FURY",
             rating = 768,
             rank = 846,
             wins = 8,
@@ -4745,7 +5038,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["kev-drenden"] = {
             displayName = "Kev-drenden",
-            specKey = "",
+            specKey = "PALADIN_HOLY",
             rating = 768,
             rank = 846,
             wins = 8,
@@ -4754,7 +5047,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["key-zuluhed"] = {
             displayName = "Key-zuluhed",
-            specKey = "",
+            specKey = "PALADIN_HOLY",
             rating = 1150,
             rank = 339,
             wins = 12,
@@ -4781,7 +5074,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["khayd-stormrage"] = {
             displayName = "Khayd-stormrage",
-            specKey = "",
+            specKey = "ROGUE_ASSASSINATION",
             rating = 1152,
             rank = 297,
             wins = 12,
@@ -4790,7 +5083,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["khaydarin-sargeras"] = {
             displayName = "Khaydarin-sargeras",
-            specKey = "",
+            specKey = "HUNTER_BEASTMASTERY",
             rating = 864,
             rank = 648,
             wins = 9,
@@ -4799,7 +5092,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["khungfeu-sargeras"] = {
             displayName = "Khungfeu-sargeras",
-            specKey = "",
+            specKey = "MONK_WINDWALKER",
             rating = 1147,
             rank = 366,
             wins = 12,
@@ -4808,7 +5101,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["ki-korgath"] = {
             displayName = "Ki-korgath",
-            specKey = "",
+            specKey = "MONK_MISTWEAVER",
             rating = 862,
             rank = 781,
             wins = 9,
@@ -4817,7 +5110,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["kikioo-ragnaros"] = {
             displayName = "Kikioo-ragnaros",
-            specKey = "",
+            specKey = "PRIEST_DISCIPLINE",
             rating = 1213,
             rank = 296,
             wins = 13,
@@ -4826,7 +5119,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["killarina-dragonmaw"] = {
             displayName = "Killarina-dragonmaw",
-            specKey = "",
+            specKey = "HUNTER_BEASTMASTERY",
             rating = 1230,
             rank = 295,
             wins = 13,
@@ -4835,7 +5128,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["killbørn-azralon"] = {
             displayName = "Killbørn-azralon",
-            specKey = "",
+            specKey = "WARRIOR_ARMS",
             rating = 768,
             rank = 846,
             wins = 8,
@@ -4844,7 +5137,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["kissyface-illidan"] = {
             displayName = "Kissyface-illidan",
-            specKey = "",
+            specKey = "HUNTER_BEASTMASTERY",
             rating = 1054,
             rank = 456,
             wins = 11,
@@ -4853,7 +5146,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["kkohekmatyar-tichondrius"] = {
             displayName = "Kkohekmatyar-tichondrius",
-            specKey = "",
+            specKey = "PALADIN_HOLY",
             rating = 768,
             rank = 846,
             wins = 8,
@@ -4862,7 +5155,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["knottymutt-moonguard"] = {
             displayName = "Knottymutt-moon-guard",
-            specKey = "",
+            specKey = "ROGUE_ASSASSINATION",
             rating = 1056,
             rank = 382,
             wins = 11,
@@ -4871,7 +5164,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["kokohoney-tichondrius"] = {
             displayName = "Kokohoney-tichondrius",
-            specKey = "",
+            specKey = "PRIEST_HOLY",
             rating = 863,
             rank = 751,
             wins = 9,
@@ -4898,7 +5191,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["kosakî-proudmoore"] = {
             displayName = "Kosakî-proudmoore",
-            specKey = "",
+            specKey = "PALADIN_HOLY",
             rating = 1553,
             rank = 161,
             wins = 17,
@@ -4916,7 +5209,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["krankenwagen-stormrage"] = {
             displayName = "Krankenwagen-stormrage",
-            specKey = "",
+            specKey = "PALADIN_RETRIBUTION",
             rating = 1324,
             rank = 249,
             wins = 14,
@@ -4925,7 +5218,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["kritterx-illidan"] = {
             displayName = "Kritterx-illidan",
-            specKey = "",
+            specKey = "PALADIN_RETRIBUTION",
             rating = 864,
             rank = 648,
             wins = 9,
@@ -4943,7 +5236,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["kungfooze-area52"] = {
             displayName = "Kungfooze-area-52",
-            specKey = "",
+            specKey = "MONK_WINDWALKER",
             rating = 960,
             rank = 508,
             wins = 10,
@@ -4952,7 +5245,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["kungfuuk-sargeras"] = {
             displayName = "Kungfuuk-sargeras",
-            specKey = "",
+            specKey = "MONK_MISTWEAVER",
             rating = 1048,
             rank = 496,
             wins = 11,
@@ -4961,7 +5254,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["kurumî-proudmoore"] = {
             displayName = "Kurumî-proudmoore",
-            specKey = "",
+            specKey = "PRIEST_DISCIPLINE",
             rating = 768,
             rank = 846,
             wins = 8,
@@ -4970,7 +5263,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["kydrav-khadgar"] = {
             displayName = "Kydrav-khadgar",
-            specKey = "",
+            specKey = "WARRIOR_ARMS",
             rating = 768,
             rank = 846,
             wins = 8,
@@ -4979,7 +5272,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["kylorii-stormrage"] = {
             displayName = "Kylorii-stormrage",
-            specKey = "",
+            specKey = "PRIEST_HOLY",
             rating = 955,
             rank = 635,
             wins = 10,
@@ -4997,7 +5290,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["kájomef-stormrage"] = {
             displayName = "Kájomef-stormrage",
-            specKey = "",
+            specKey = "ROGUE_SUBTLETY",
             rating = 958,
             rank = 610,
             wins = 10,
@@ -5006,7 +5299,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["káorii-tichondrius"] = {
             displayName = "Káorii-tichondrius",
-            specKey = "",
+            specKey = "PALADIN_HOLY",
             rating = 1535,
             rank = 170,
             wins = 16,
@@ -5015,7 +5308,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["køtt-frostmourne"] = {
             displayName = "Køtt-frostmourne",
-            specKey = "",
+            specKey = "PRIEST_HOLY",
             rating = 959,
             rank = 572,
             wins = 10,
@@ -5042,7 +5335,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["lastresource-tichondrius"] = {
             displayName = "Lastresource-tichondrius",
-            specKey = "",
+            specKey = "PRIEST_DISCIPLINE",
             rating = 1247,
             rank = 263,
             wins = 13,
@@ -5051,7 +5344,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["late-darkspear"] = {
             displayName = "Late-darkspear",
-            specKey = "",
+            specKey = "PRIEST_HOLY",
             rating = 1339,
             rank = 235,
             wins = 14,
@@ -5060,7 +5353,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["latspread-bleedinghollow"] = {
             displayName = "Latspread-bleeding-hollow",
-            specKey = "",
+            specKey = "ROGUE_ASSASSINATION",
             rating = 954,
             rank = 638,
             wins = 10,
@@ -5069,7 +5362,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["layingpipe-sargeras"] = {
             displayName = "Layingpipe-sargeras",
-            specKey = "",
+            specKey = "MAGE_FIRE",
             rating = 864,
             rank = 648,
             wins = 9,
@@ -5078,7 +5371,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["leasherw-sargeras"] = {
             displayName = "Leasherw-sargeras",
-            specKey = "",
+            specKey = "WARRIOR_ARMS",
             rating = 1437,
             rank = 199,
             wins = 15,
@@ -5123,7 +5416,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["lilhuntt-tichondrius"] = {
             displayName = "Lilhuntt-tichondrius",
-            specKey = "",
+            specKey = "DEMONHUNTER_HAVOC",
             rating = 864,
             rank = 648,
             wins = 9,
@@ -5132,7 +5425,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["lilmager-tichondrius"] = {
             displayName = "Lilmager-tichondrius",
-            specKey = "",
+            specKey = "MAGE_FIRE",
             rating = 1056,
             rank = 382,
             wins = 11,
@@ -5141,7 +5434,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["liqùid-moonguard"] = {
             displayName = "Liqùid-moon-guard",
-            specKey = "",
+            specKey = "DEATHKNIGHT_UNHOLY",
             rating = 767,
             rank = 983,
             wins = 8,
@@ -5159,7 +5452,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["locklist-frostmourne"] = {
             displayName = "Locklist-frostmourne",
-            specKey = "",
+            specKey = "WARLOCK_DESTRUCTION",
             rating = 1638,
             rank = 53,
             wins = 20,
@@ -5177,7 +5470,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["lostvoidbee-stormrage"] = {
             displayName = "Lostvoidbee-stormrage",
-            specKey = "",
+            specKey = "PRIEST_DISCIPLINE",
             rating = 1429,
             rank = 209,
             wins = 15,
@@ -5186,7 +5479,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["loverimjobs-sargeras"] = {
             displayName = "Loverimjobs-sargeras",
-            specKey = "",
+            specKey = "MONK_MISTWEAVER",
             rating = 1916,
             rank = 7,
             wins = 39,
@@ -5204,7 +5497,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["lucidstorm-tichondrius"] = {
             displayName = "Lucidstorm-tichondrius",
-            specKey = "",
+            specKey = "ROGUE_ASSASSINATION",
             rating = 1239,
             rank = 292,
             wins = 13,
@@ -5213,7 +5506,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["lugobrious-korgath"] = {
             displayName = "Lugobrious-korgath",
-            specKey = "",
+            specKey = "WARRIOR_ARMS",
             rating = 864,
             rank = 648,
             wins = 9,
@@ -5222,7 +5515,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["lunayla-tichondrius"] = {
             displayName = "Lunayla-tichondrius",
-            specKey = "",
+            specKey = "PRIEST_DISCIPLINE",
             rating = 1660,
             rank = 35,
             wins = 24,
@@ -5231,7 +5524,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["lundyswung-doomhammer"] = {
             displayName = "Lundyswung-doomhammer",
-            specKey = "",
+            specKey = "WARRIOR_ARMS",
             rating = 768,
             rank = 846,
             wins = 8,
@@ -5240,7 +5533,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["luobai-tichondrius"] = {
             displayName = "Luobai-tichondrius",
-            specKey = "",
+            specKey = "PRIEST_SHADOW",
             rating = 862,
             rank = 781,
             wins = 9,
@@ -5249,7 +5542,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["lurler-tichondrius"] = {
             displayName = "Lurler-tichondrius",
-            specKey = "",
+            specKey = "MAGE_FROST",
             rating = 1242,
             rank = 289,
             wins = 13,
@@ -5258,7 +5551,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["lvladen-sargeras"] = {
             displayName = "Lvladen-sargeras",
-            specKey = "",
+            specKey = "PALADIN_RETRIBUTION",
             rating = 768,
             rank = 846,
             wins = 8,
@@ -5276,7 +5569,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["løyal-wyrmrestaccord"] = {
             displayName = "Løyal-wyrmrest-accord",
-            specKey = "",
+            specKey = "HUNTER_BEASTMASTERY",
             rating = 1150,
             rank = 339,
             wins = 12,
@@ -5285,7 +5578,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["mackstatus-kelthuzad"] = {
             displayName = "Mackstatus-kelthuzad",
-            specKey = "",
+            specKey = "PALADIN_HOLY",
             rating = 1056,
             rank = 382,
             wins = 11,
@@ -5294,7 +5587,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["mackthëknife-tichondrius"] = {
             displayName = "Mackthëknife-tichondrius",
-            specKey = "",
+            specKey = "EVOKER_PRESERVATION",
             rating = 1050,
             rank = 489,
             wins = 11,
@@ -5303,7 +5596,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["macoña-area52"] = {
             displayName = "Macoña-area-52",
-            specKey = "",
+            specKey = "DRUID_RESTORATION",
             rating = 768,
             rank = 846,
             wins = 8,
@@ -5312,7 +5605,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["maeveoliviae-stormrage"] = {
             displayName = "Maeveoliviae-stormrage",
-            specKey = "",
+            specKey = "PRIEST_DISCIPLINE",
             rating = 1151,
             rank = 329,
             wins = 12,
@@ -5330,7 +5623,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["makingitwork-sargeras"] = {
             displayName = "Makingitwork-sargeras",
-            specKey = "",
+            specKey = "DRUID_FERAL",
             rating = 1607,
             rank = 106,
             wins = 19,
@@ -5348,7 +5641,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["mangøblack-burninglegion"] = {
             displayName = "Mangøblack-burning-legion",
-            specKey = "",
+            specKey = "MONK_WINDWALKER",
             rating = 1670,
             rank = 26,
             wins = 22,
@@ -5357,7 +5650,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["manigold-illidan"] = {
             displayName = "Manigold-illidan",
-            specKey = "",
+            specKey = "DRUID_RESTORATION",
             rating = 1621,
             rank = 68,
             wins = 20,
@@ -5375,7 +5668,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["marky-magtheridon"] = {
             displayName = "Marky-magtheridon",
-            specKey = "",
+            specKey = "PRIEST_DISCIPLINE",
             rating = 768,
             rank = 846,
             wins = 8,
@@ -5393,7 +5686,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["marvdog-stormrage"] = {
             displayName = "Marvdog-stormrage",
-            specKey = "",
+            specKey = "DRUID_FERAL",
             rating = 864,
             rank = 648,
             wins = 9,
@@ -5411,7 +5704,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["matantu-zuljin"] = {
             displayName = "Matantu-zuljin",
-            specKey = "",
+            specKey = "MONK_WINDWALKER",
             rating = 960,
             rank = 508,
             wins = 10,
@@ -5420,7 +5713,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["maximilla-area52"] = {
             displayName = "Maximilla-area-52",
-            specKey = "",
+            specKey = "PRIEST_DISCIPLINE",
             rating = 1053,
             rank = 469,
             wins = 11,
@@ -5438,7 +5731,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["mcnastier-dunemaul"] = {
             displayName = "Mcnastier-dunemaul",
-            specKey = "",
+            specKey = "ROGUE_SUBTLETY",
             rating = 1643,
             rank = 48,
             wins = 22,
@@ -5447,7 +5740,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["mechachomby-stormrage"] = {
             displayName = "Mechachomby-stormrage",
-            specKey = "",
+            specKey = "WARRIOR_ARMS",
             rating = 959,
             rank = 572,
             wins = 10,
@@ -5456,7 +5749,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["medeiev-sargeras"] = {
             displayName = "Medeiev-sargeras",
-            specKey = "",
+            specKey = "EVOKER_PRESERVATION",
             rating = 1602,
             rank = 126,
             wins = 20,
@@ -5465,7 +5758,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["mehhxp-tichondrius"] = {
             displayName = "Mehhxp-tichondrius",
-            specKey = "",
+            specKey = "PRIEST_DISCIPLINE",
             rating = 1151,
             rank = 329,
             wins = 12,
@@ -5474,7 +5767,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["melooetta-illidan"] = {
             displayName = "Melooetta-illidan",
-            specKey = "",
+            specKey = "WARLOCK_AFFLICTION",
             rating = 768,
             rank = 846,
             wins = 8,
@@ -5483,7 +5776,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["melyon-tichondrius"] = {
             displayName = "Melyon-tichondrius",
-            specKey = "",
+            specKey = "MONK_MISTWEAVER",
             rating = 960,
             rank = 508,
             wins = 10,
@@ -5492,7 +5785,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["meowdegozaru-icecrown"] = {
             displayName = "Meowdegozaru-icecrown",
-            specKey = "",
+            specKey = "DRUID_RESTORATION",
             rating = 959,
             rank = 572,
             wins = 10,
@@ -5501,7 +5794,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["merp-arthas"] = {
             displayName = "Merp-arthas",
-            specKey = "",
+            specKey = "WARLOCK_AFFLICTION",
             rating = 1611,
             rank = 89,
             wins = 19,
@@ -5510,7 +5803,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["meshunt-tichondrius"] = {
             displayName = "Meshunt-tichondrius",
-            specKey = "",
+            specKey = "HUNTER_BEASTMASTERY",
             rating = 1604,
             rank = 117,
             wins = 21,
@@ -5519,7 +5812,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["mesidan-illidan"] = {
             displayName = "Mesidan-illidan",
-            specKey = "",
+            specKey = "DEMONHUNTER_HAVOC",
             rating = 1152,
             rank = 297,
             wins = 12,
@@ -5528,7 +5821,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["metafloyd-illidan"] = {
             displayName = "Metafloyd-illidan",
-            specKey = "",
+            specKey = "MONK_MISTWEAVER",
             rating = 1600,
             rank = 132,
             wins = 19,
@@ -5537,7 +5830,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["metals-azralon"] = {
             displayName = "Metals-azralon",
-            specKey = "",
+            specKey = "PRIEST_DISCIPLINE",
             rating = 864,
             rank = 648,
             wins = 9,
@@ -5546,7 +5839,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["metaphør-moonguard"] = {
             displayName = "Metaphør-moon-guard",
-            specKey = "",
+            specKey = "DRUID_FERAL",
             rating = 1496,
             rank = 188,
             wins = 18,
@@ -5573,7 +5866,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["michaela-illidan"] = {
             displayName = "Michaela-illidan",
-            specKey = "",
+            specKey = "PRIEST_SHADOW",
             rating = 863,
             rank = 751,
             wins = 9,
@@ -5609,7 +5902,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["mileslol-azgalor"] = {
             displayName = "Mileslol-azgalor",
-            specKey = "",
+            specKey = "PRIEST_SHADOW",
             rating = 1148,
             rank = 358,
             wins = 12,
@@ -5627,7 +5920,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["mimick-sargeras"] = {
             displayName = "Mimick-sargeras",
-            specKey = "",
+            specKey = "ROGUE_SUBTLETY",
             rating = 1651,
             rank = 42,
             wins = 22,
@@ -5636,7 +5929,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["mistakechild-tichondrius"] = {
             displayName = "Mistakechild-tichondrius",
-            specKey = "",
+            specKey = "PRIEST_HOLY",
             rating = 1487,
             rank = 189,
             wins = 18,
@@ -5645,7 +5938,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["mnzw-sargeras"] = {
             displayName = "Mnzw-sargeras",
-            specKey = "",
+            specKey = "WARRIOR_ARMS",
             rating = 768,
             rank = 846,
             wins = 8,
@@ -5654,7 +5947,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["molemeat-detheroc"] = {
             displayName = "Molemeat-detheroc",
-            specKey = "",
+            specKey = "DEMONHUNTER_HAVOC",
             rating = 960,
             rank = 508,
             wins = 10,
@@ -5663,7 +5956,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["monari-moonguard"] = {
             displayName = "Monari-moon-guard",
-            specKey = "",
+            specKey = "MONK_WINDWALKER",
             rating = 1248,
             rank = 254,
             wins = 13,
@@ -5672,7 +5965,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["mongomav-illidan"] = {
             displayName = "Mongomav-illidan",
-            specKey = "",
+            specKey = "DEMONHUNTER_HAVOC",
             rating = 768,
             rank = 846,
             wins = 8,
@@ -5681,7 +5974,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["mongrol-nazgrel"] = {
             displayName = "Mongrol-nazgrel",
-            specKey = "",
+            specKey = "MONK_MISTWEAVER",
             rating = 767,
             rank = 983,
             wins = 8,
@@ -5690,7 +5983,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["monsterwhite-azralon"] = {
             displayName = "Monsterwhite-azralon",
-            specKey = "",
+            specKey = "DEMONHUNTER_HAVOC",
             rating = 1056,
             rank = 382,
             wins = 11,
@@ -5699,7 +5992,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["moonsap-tichondrius"] = {
             displayName = "Moonsap-tichondrius",
-            specKey = "",
+            specKey = "ROGUE_SUBTLETY",
             rating = 863,
             rank = 751,
             wins = 9,
@@ -5708,7 +6001,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["mopvibes-ursin"] = {
             displayName = "Mopvibes-ursin",
-            specKey = "",
+            specKey = "PRIEST_SHADOW",
             rating = 1583,
             rank = 135,
             wins = 19,
@@ -5717,7 +6010,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["mshamjr-tichondrius"] = {
             displayName = "Mshamjr-tichondrius",
-            specKey = "",
+            specKey = "SHAMAN_RESTORATION",
             rating = 1562,
             rank = 153,
             wins = 18,
@@ -5726,7 +6019,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["mtix-tichondrius"] = {
             displayName = "Mtix-tichondrius",
-            specKey = "",
+            specKey = "PRIEST_DISCIPLINE",
             rating = 956,
             rank = 632,
             wins = 10,
@@ -5744,7 +6037,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["muggz-sargeras"] = {
             displayName = "Muggz-sargeras",
-            specKey = "",
+            specKey = "SHAMAN_RESTORATION",
             rating = 960,
             rank = 508,
             wins = 10,
@@ -5816,7 +6109,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["namek-tichondrius"] = {
             displayName = "Namek-tichondrius",
-            specKey = "",
+            specKey = "HUNTER_BEASTMASTERY",
             rating = 860,
             rank = 818,
             wins = 9,
@@ -5843,7 +6136,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["natooeasy-area52"] = {
             displayName = "Natooeasy-area-52",
-            specKey = "",
+            specKey = "DEMONHUNTER_HAVOC",
             rating = 1611,
             rank = 89,
             wins = 20,
@@ -5852,7 +6145,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["naughtyswipe-tichondrius"] = {
             displayName = "Naughtyswipe-tichondrius",
-            specKey = "",
+            specKey = "WARRIOR_ARMS",
             rating = 1575,
             rank = 141,
             wins = 18,
@@ -5861,7 +6154,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["needbuldak-malganis"] = {
             displayName = "Needbuldak-malganis",
-            specKey = "",
+            specKey = "ROGUE_SUBTLETY",
             rating = 1607,
             rank = 106,
             wins = 21,
@@ -5870,7 +6163,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["neekolas-lightbringer"] = {
             displayName = "Neekolas-lightbringer",
-            specKey = "",
+            specKey = "EVOKER_PRESERVATION",
             rating = 1605,
             rank = 114,
             wins = 20,
@@ -5879,7 +6172,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["nekopeepers-bloodfurnace"] = {
             displayName = "Nekopeepers-blood-furnace",
-            specKey = "",
+            specKey = "WARRIOR_ARMS",
             rating = 959,
             rank = 572,
             wins = 10,
@@ -5888,7 +6181,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["nekopets-tichondrius"] = {
             displayName = "Nekopets-tichondrius",
-            specKey = "",
+            specKey = "HUNTER_BEASTMASTERY",
             rating = 767,
             rank = 983,
             wins = 8,
@@ -5906,7 +6199,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["nenami-kelthuzad"] = {
             displayName = "Nenami-kelthuzad",
-            specKey = "",
+            specKey = "PRIEST_HOLY",
             rating = 768,
             rank = 846,
             wins = 8,
@@ -5915,7 +6208,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["neoinsanity-proudmoore"] = {
             displayName = "Neoinsanity-proudmoore",
-            specKey = "",
+            specKey = "DRUID_FERAL",
             rating = 1055,
             rank = 432,
             wins = 11,
@@ -5924,7 +6217,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["neurosurgeon-burningblade"] = {
             displayName = "Neurosurgeon-burning-blade",
-            specKey = "",
+            specKey = "SHAMAN_RESTORATION",
             rating = 864,
             rank = 648,
             wins = 9,
@@ -5933,7 +6226,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["neverfeignx-khazgoroth"] = {
             displayName = "Neverfeignx-khazgoroth",
-            specKey = "",
+            specKey = "HUNTER_BEASTMASTERY",
             rating = 768,
             rank = 846,
             wins = 8,
@@ -5951,7 +6244,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["nikkoo-aegwynn"] = {
             displayName = "Nikkoo-aegwynn",
-            specKey = "",
+            specKey = "MONK_MISTWEAVER",
             rating = 1432,
             rank = 206,
             wins = 15,
@@ -5960,7 +6253,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["nikomonk-aegwynn"] = {
             displayName = "Nikomonk-aegwynn",
-            specKey = "",
+            specKey = "MONK_MISTWEAVER",
             rating = 768,
             rank = 846,
             wins = 8,
@@ -5978,7 +6271,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["nirgnala-area52"] = {
             displayName = "Nirgnala-area-52",
-            specKey = "",
+            specKey = "DEMONHUNTER_HAVOC",
             rating = 1151,
             rank = 329,
             wins = 12,
@@ -5996,7 +6289,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["nojjmilk-tichondrius"] = {
             displayName = "Nojjmilk-tichondrius",
-            specKey = "WARRIOR_FURY",
+            specKey = "",
             rating = 767,
             rank = 983,
             wins = 8,
@@ -6005,7 +6298,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["nonamenoname-tichondrius"] = {
             displayName = "Nonamenoname-tichondrius",
-            specKey = "",
+            specKey = "PRIEST_DISCIPLINE",
             rating = 1678,
             rank = 25,
             wins = 23,
@@ -6014,7 +6307,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["notaglad-sargeras"] = {
             displayName = "Notaglad-sargeras",
-            specKey = "",
+            specKey = "DRUID_BALANCE",
             rating = 1055,
             rank = 432,
             wins = 11,
@@ -6023,7 +6316,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["notjay-tichondrius"] = {
             displayName = "Notjay-tichondrius",
-            specKey = "",
+            specKey = "DEMONHUNTER_DEVOURER",
             rating = 1725,
             rank = 17,
             wins = 24,
@@ -6032,7 +6325,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["notnotmes-tichondrius"] = {
             displayName = "Notnotmes-tichondrius",
-            specKey = "",
+            specKey = "WARRIOR_ARMS",
             rating = 1055,
             rank = 432,
             wins = 11,
@@ -6041,7 +6334,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["nottkuro-tichondrius"] = {
             displayName = "Nottkuro-tichondrius",
-            specKey = "",
+            specKey = "DRUID_GUARDIAN",
             rating = 1151,
             rank = 329,
             wins = 12,
@@ -6050,7 +6343,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["nowave-boulderfist"] = {
             displayName = "Nowave-boulderfist",
-            specKey = "",
+            specKey = "MONK_MISTWEAVER",
             rating = 860,
             rank = 818,
             wins = 9,
@@ -6059,7 +6352,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["nscloneabuse-thrall"] = {
             displayName = "Nscloneabuse-thrall",
-            specKey = "",
+            specKey = "DRUID_RESTORATION",
             rating = 955,
             rank = 635,
             wins = 10,
@@ -6068,7 +6361,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["ntp-stormrage"] = {
             displayName = "Ntp-stormrage",
-            specKey = "",
+            specKey = "PRIEST_HOLY",
             rating = 1343,
             rank = 219,
             wins = 14,
@@ -6077,7 +6370,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["nudithree-illidan"] = {
             displayName = "Nudithree-illidan",
-            specKey = "",
+            specKey = "PRIEST_DISCIPLINE",
             rating = 1150,
             rank = 339,
             wins = 12,
@@ -6086,7 +6379,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["nuggsdk-tichondrius"] = {
             displayName = "Nuggsdk-tichondrius",
-            specKey = "",
+            specKey = "DEATHKNIGHT_UNHOLY",
             rating = 1145,
             rank = 373,
             wins = 12,
@@ -6095,7 +6388,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["nuqipq-tichondrius"] = {
             displayName = "Nuqipq-tichondrius",
-            specKey = "",
+            specKey = "WARRIOR_ARMS",
             rating = 1056,
             rank = 382,
             wins = 11,
@@ -6113,7 +6406,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["nyjal-illidan"] = {
             displayName = "Nyjal-illidan",
-            specKey = "",
+            specKey = "DRUID_BALANCE",
             rating = 864,
             rank = 648,
             wins = 9,
@@ -6122,7 +6415,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["nyloras-illidan"] = {
             displayName = "Nyloras-illidan",
-            specKey = "",
+            specKey = "WARRIOR_PROTECTION",
             rating = 864,
             rank = 648,
             wins = 9,
@@ -6131,7 +6424,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["nåxah-bleedinghollow"] = {
             displayName = "Nåxah-bleeding-hollow",
-            specKey = "",
+            specKey = "DEMONHUNTER_HAVOC",
             rating = 1148,
             rank = 358,
             wins = 12,
@@ -6140,7 +6433,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["nébèl-zuljin"] = {
             displayName = "Nébèl-zuljin",
-            specKey = "",
+            specKey = "MONK_MISTWEAVER",
             rating = 958,
             rank = 610,
             wins = 10,
@@ -6167,7 +6460,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["nörthstår-tichondrius"] = {
             displayName = "Nörthstår-tichondrius",
-            specKey = "",
+            specKey = "MAGE_ARCANE",
             rating = 768,
             rank = 846,
             wins = 8,
@@ -6176,7 +6469,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["nümbers-area52"] = {
             displayName = "Nümbers-area-52",
-            specKey = "",
+            specKey = "DEMONHUNTER_HAVOC",
             rating = 1603,
             rank = 123,
             wins = 20,
@@ -6185,7 +6478,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["ocat-tichondrius"] = {
             displayName = "Ocat-tichondrius",
-            specKey = "",
+            specKey = "SHAMAN_ENHANCEMENT",
             rating = 1054,
             rank = 456,
             wins = 11,
@@ -6203,7 +6496,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["ogclasix-tichondrius"] = {
             displayName = "Ogclasix-tichondrius",
-            specKey = "",
+            specKey = "WARRIOR_ARMS",
             rating = 960,
             rank = 508,
             wins = 10,
@@ -6212,7 +6505,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["oh-anetheron"] = {
             displayName = "Oh-anetheron",
-            specKey = "",
+            specKey = "DEATHKNIGHT_BLOOD",
             rating = 1054,
             rank = 456,
             wins = 11,
@@ -6239,7 +6532,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["okhomie-tichondrius"] = {
             displayName = "Okhomie-tichondrius",
-            specKey = "",
+            specKey = "MONK_WINDWALKER",
             rating = 863,
             rank = 751,
             wins = 9,
@@ -6248,7 +6541,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["oldorio-moknathal"] = {
             displayName = "Oldorio-moknathal",
-            specKey = "",
+            specKey = "ROGUE_ASSASSINATION",
             rating = 957,
             rank = 624,
             wins = 10,
@@ -6257,7 +6550,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["omenx-emeralddream"] = {
             displayName = "Omenx-emerald-dream",
-            specKey = "",
+            specKey = "PRIEST_SHADOW",
             rating = 958,
             rank = 610,
             wins = 10,
@@ -6284,7 +6577,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["onemission-whisperwind"] = {
             displayName = "Onemission-whisperwind",
-            specKey = "",
+            specKey = "PRIEST_DISCIPLINE",
             rating = 957,
             rank = 624,
             wins = 10,
@@ -6293,7 +6586,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["onioutlawttv-sargeras"] = {
             displayName = "Onioutlawttv-sargeras",
-            specKey = "",
+            specKey = "PRIEST_HOLY",
             rating = 864,
             rank = 648,
             wins = 9,
@@ -6302,7 +6595,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["oojo-illidan"] = {
             displayName = "Oojo-illidan",
-            specKey = "",
+            specKey = "PRIEST_DISCIPLINE",
             rating = 1519,
             rank = 181,
             wins = 16,
@@ -6311,7 +6604,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["ootanari-illidan"] = {
             displayName = "Ootanari-illidan",
-            specKey = "",
+            specKey = "DRUID_RESTORATION",
             rating = 860,
             rank = 818,
             wins = 9,
@@ -6320,7 +6613,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["opendtcheka-stormrage"] = {
             displayName = "Opendtcheka-stormrage",
-            specKey = "",
+            specKey = "DRUID_RESTORATION",
             rating = 1051,
             rank = 481,
             wins = 11,
@@ -6329,7 +6622,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["orcins-emeralddream"] = {
             displayName = "Orcins-emerald-dream",
-            specKey = "",
+            specKey = "SHAMAN_RESTORATION",
             rating = 864,
             rank = 648,
             wins = 9,
@@ -6338,7 +6631,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["orcstrength-balnazzar"] = {
             displayName = "Orcstrength-balnazzar",
-            specKey = "",
+            specKey = "ROGUE_SUBTLETY",
             rating = 1245,
             rank = 279,
             wins = 13,
@@ -6347,7 +6640,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["oreë-tichondrius"] = {
             displayName = "Oreë-tichondrius",
-            specKey = "",
+            specKey = "PRIEST_DISCIPLINE",
             rating = 767,
             rank = 983,
             wins = 8,
@@ -6365,7 +6658,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["orphanww-bleedinghollow"] = {
             displayName = "Orphanww-bleeding-hollow",
-            specKey = "",
+            specKey = "MONK_WINDWALKER",
             rating = 1152,
             rank = 297,
             wins = 12,
@@ -6392,7 +6685,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["ozdagreat-tichondrius"] = {
             displayName = "Ozdagreat-tichondrius",
-            specKey = "",
+            specKey = "ROGUE_SUBTLETY",
             rating = 960,
             rank = 508,
             wins = 10,
@@ -6401,7 +6694,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["palmex-magtheridon"] = {
             displayName = "Palmex-magtheridon",
-            specKey = "",
+            specKey = "MONK_MISTWEAVER",
             rating = 864,
             rank = 648,
             wins = 9,
@@ -6410,7 +6703,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["papitoh-azralon"] = {
             displayName = "Papitoh-azralon",
-            specKey = "",
+            specKey = "DEMONHUNTER_DEVOURER",
             rating = 768,
             rank = 846,
             wins = 8,
@@ -6428,7 +6721,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["parishealton-anubarak"] = {
             displayName = "Parishealton-anubarak",
-            specKey = "",
+            specKey = "PRIEST_DISCIPLINE",
             rating = 960,
             rank = 508,
             wins = 10,
@@ -6437,7 +6730,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["pattrice-tichondrius"] = {
             displayName = "Pattrice-tichondrius",
-            specKey = "",
+            specKey = "HUNTER_SURVIVAL",
             rating = 864,
             rank = 648,
             wins = 9,
@@ -6446,7 +6739,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["pawgixo-moonguard"] = {
             displayName = "Pawgixo-moon-guard",
-            specKey = "",
+            specKey = "MONK_MISTWEAVER",
             rating = 1248,
             rank = 254,
             wins = 13,
@@ -6455,7 +6748,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["pebbelss-nesingwary"] = {
             displayName = "Pebbelss-nesingwary",
-            specKey = "",
+            specKey = "PRIEST_DISCIPLINE",
             rating = 960,
             rank = 508,
             wins = 10,
@@ -6464,7 +6757,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["peekychu-tichondrius"] = {
             displayName = "Peekychu-tichondrius",
-            specKey = "",
+            specKey = "MONK_MISTWEAVER",
             rating = 1148,
             rank = 358,
             wins = 12,
@@ -6482,7 +6775,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["pewnee-eonar"] = {
             displayName = "Pewnee-eonar",
-            specKey = "",
+            specKey = "EVOKER_DEVASTATION",
             rating = 960,
             rank = 508,
             wins = 10,
@@ -6491,7 +6784,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["pexist-tichondrius"] = {
             displayName = "Pexist-tichondrius",
-            specKey = "",
+            specKey = "PRIEST_DISCIPLINE",
             rating = 863,
             rank = 751,
             wins = 9,
@@ -6518,7 +6811,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["pherix-sargeras"] = {
             displayName = "Pherix-sargeras",
-            specKey = "",
+            specKey = "MAGE_FIRE",
             rating = 1152,
             rank = 297,
             wins = 12,
@@ -6527,7 +6820,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["phisha-kelthuzad"] = {
             displayName = "Phisha-kelthuzad",
-            specKey = "",
+            specKey = "WARLOCK_DESTRUCTION",
             rating = 768,
             rank = 846,
             wins = 8,
@@ -6536,7 +6829,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["pibbzeros-emeralddream"] = {
             displayName = "Pibbzeros-emerald-dream",
-            specKey = "",
+            specKey = "ROGUE_SUBTLETY",
             rating = 863,
             rank = 751,
             wins = 9,
@@ -6545,7 +6838,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["pigeonman-grizzlyhills"] = {
             displayName = "Pigeonman-grizzly-hills",
-            specKey = "",
+            specKey = "HUNTER_BEASTMASTERY",
             rating = 768,
             rank = 846,
             wins = 8,
@@ -6563,7 +6856,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["pizzagagte-dalaran"] = {
             displayName = "Pizzagagte-dalaran",
-            specKey = "",
+            specKey = "PRIEST_HOLY",
             rating = 1631,
             rank = 58,
             wins = 21,
@@ -6572,7 +6865,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["plaything-demonsoul"] = {
             displayName = "Plaything-demon-soul",
-            specKey = "",
+            specKey = "PALADIN_HOLY",
             rating = 1051,
             rank = 481,
             wins = 11,
@@ -6581,7 +6874,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["plumlet-area52"] = {
             displayName = "Plumlet-area-52",
-            specKey = "",
+            specKey = "DEATHKNIGHT_UNHOLY",
             rating = 864,
             rank = 648,
             wins = 9,
@@ -6590,7 +6883,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["plv-zuljin"] = {
             displayName = "Plv-zuljin",
-            specKey = "",
+            specKey = "ROGUE_SUBTLETY",
             rating = 862,
             rank = 781,
             wins = 9,
@@ -6617,7 +6910,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["poorandugly-kelthuzad"] = {
             displayName = "Poorandugly-kelthuzad",
-            specKey = "",
+            specKey = "PRIEST_HOLY",
             rating = 1431,
             rank = 207,
             wins = 15,
@@ -6626,7 +6919,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["popejeb-tichondrius"] = {
             displayName = "Popejeb-tichondrius",
-            specKey = "",
+            specKey = "PRIEST_HOLY",
             rating = 960,
             rank = 508,
             wins = 10,
@@ -6635,7 +6928,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["poppapal-dalaran"] = {
             displayName = "Poppapal-dalaran",
-            specKey = "",
+            specKey = "PALADIN_HOLY",
             rating = 864,
             rank = 648,
             wins = 9,
@@ -6644,7 +6937,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["porkstomper-illidan"] = {
             displayName = "Porkstomper-illidan",
-            specKey = "",
+            specKey = "HUNTER_BEASTMASTERY",
             rating = 1046,
             rank = 500,
             wins = 11,
@@ -6653,7 +6946,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["pororie-tichondrius"] = {
             displayName = "Pororie-tichondrius",
-            specKey = "",
+            specKey = "PRIEST_HOLY",
             rating = 960,
             rank = 508,
             wins = 10,
@@ -6662,7 +6955,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["postphysique-malganis"] = {
             displayName = "Postphysique-malganis",
-            specKey = "",
+            specKey = "ROGUE_ASSASSINATION",
             rating = 768,
             rank = 846,
             wins = 8,
@@ -6680,7 +6973,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["presheep-bleedinghollow"] = {
             displayName = "Presheep-bleeding-hollow",
-            specKey = "",
+            specKey = "MAGE_FIRE",
             rating = 1429,
             rank = 209,
             wins = 15,
@@ -6689,7 +6982,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["pressbloom-malganis"] = {
             displayName = "Pressbloom-malganis",
-            specKey = "",
+            specKey = "DRUID_RESTORATION",
             rating = 1051,
             rank = 481,
             wins = 11,
@@ -6698,7 +6991,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["presstab-tichondrius"] = {
             displayName = "Presstab-tichondrius",
-            specKey = "",
+            specKey = "WARLOCK_DEMONOLOGY",
             rating = 1614,
             rank = 85,
             wins = 20,
@@ -6707,7 +7000,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["pristorano-azralon"] = {
             displayName = "Pristorano-azralon",
-            specKey = "",
+            specKey = "PRIEST_DISCIPLINE",
             rating = 1053,
             rank = 469,
             wins = 11,
@@ -6716,7 +7009,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["prophet-shadowmoon"] = {
             displayName = "Prophet-shadowmoon",
-            specKey = "",
+            specKey = "PRIEST_HOLY",
             rating = 959,
             rank = 572,
             wins = 10,
@@ -6725,7 +7018,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["pstar-illidan"] = {
             displayName = "Pstar-illidan",
-            specKey = "",
+            specKey = "PRIEST_HOLY",
             rating = 864,
             rank = 648,
             wins = 9,
@@ -6734,7 +7027,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["psychx-kelthuzad"] = {
             displayName = "Psychx-kelthuzad",
-            specKey = "",
+            specKey = "PRIEST_DISCIPLINE",
             rating = 1152,
             rank = 297,
             wins = 12,
@@ -6743,7 +7036,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["psàlm-tichondrius"] = {
             displayName = "Psàlm-tichondrius",
-            specKey = "",
+            specKey = "PRIEST_DISCIPLINE",
             rating = 1152,
             rank = 297,
             wins = 12,
@@ -6752,7 +7045,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["psïren-quelthalas"] = {
             displayName = "Psïren-quelthalas",
-            specKey = "",
+            specKey = "PRIEST_HOLY",
             rating = 960,
             rank = 508,
             wins = 10,
@@ -6761,7 +7054,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["punchinator-eonar"] = {
             displayName = "Punchinator-eonar",
-            specKey = "",
+            specKey = "MONK_MISTWEAVER",
             rating = 768,
             rank = 846,
             wins = 8,
@@ -6770,7 +7063,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["purplelights-dawnbringer"] = {
             displayName = "Purplelights-dawnbringer",
-            specKey = "",
+            specKey = "WARRIOR_ARMS",
             rating = 851,
             rank = 842,
             wins = 9,
@@ -6779,7 +7072,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["putes-stormrage"] = {
             displayName = "Putes-stormrage",
-            specKey = "",
+            specKey = "PRIEST_HOLY",
             rating = 958,
             rank = 610,
             wins = 10,
@@ -6788,7 +7081,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["páïgèvêntürã-bleedinghollow"] = {
             displayName = "Páïgèvêntürã-bleeding-hollow",
-            specKey = "",
+            specKey = "ROGUE_ASSASSINATION",
             rating = 1056,
             rank = 382,
             wins = 11,
@@ -6797,7 +7090,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["pøstman-tichondrius"] = {
             displayName = "Pøstman-tichondrius",
-            specKey = "",
+            specKey = "DRUID_FERAL",
             rating = 1535,
             rank = 170,
             wins = 16,
@@ -6806,7 +7099,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["qtipped-kelthuzad"] = {
             displayName = "Qtipped-kelthuzad",
-            specKey = "",
+            specKey = "HUNTER_BEASTMASTERY",
             rating = 1620,
             rank = 71,
             wins = 20,
@@ -6824,7 +7117,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["ranch-darkspear"] = {
             displayName = "Ranch-darkspear",
-            specKey = "",
+            specKey = "DEATHKNIGHT_UNHOLY",
             rating = 1309,
             rank = 250,
             wins = 14,
@@ -6833,7 +7126,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["randomheal-dunemaul"] = {
             displayName = "Randomheal-dunemaul",
-            specKey = "",
+            specKey = "PRIEST_DISCIPLINE",
             rating = 1608,
             rank = 96,
             wins = 19,
@@ -6842,7 +7135,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["rapttors-zuljin"] = {
             displayName = "Rapttors-zuljin",
-            specKey = "",
+            specKey = "DRUID_RESTORATION",
             rating = 861,
             rank = 803,
             wins = 9,
@@ -6851,7 +7144,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["raxon-turalyon"] = {
             displayName = "Raxon-turalyon",
-            specKey = "",
+            specKey = "PRIEST_HOLY",
             rating = 768,
             rank = 846,
             wins = 8,
@@ -6869,7 +7162,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["readyforwar-sargeras"] = {
             displayName = "Readyforwar-sargeras",
-            specKey = "",
+            specKey = "PRIEST_HOLY",
             rating = 768,
             rank = 846,
             wins = 8,
@@ -6878,7 +7171,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["realdh-azralon"] = {
             displayName = "Realdh-azralon",
-            specKey = "",
+            specKey = "DEMONHUNTER_HAVOC",
             rating = 1615,
             rank = 84,
             wins = 20,
@@ -6887,7 +7180,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["redkiwi-illidan"] = {
             displayName = "Redkiwi-illidan",
-            specKey = "",
+            specKey = "PRIEST_DISCIPLINE",
             rating = 1608,
             rank = 96,
             wins = 20,
@@ -6914,7 +7207,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["relerocker-area52"] = {
             displayName = "Relerocker-area-52",
-            specKey = "",
+            specKey = "WARRIOR_PROTECTION",
             rating = 1056,
             rank = 382,
             wins = 11,
@@ -6923,7 +7216,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["reneymarjr-area52"] = {
             displayName = "Reneymarjr-area-52",
-            specKey = "DRUID_RESTORATION",
+            specKey = "",
             rating = 768,
             rank = 846,
             wins = 8,
@@ -6950,7 +7243,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["rennyxo-moonguard"] = {
             displayName = "Rennyxo-moon-guard",
-            specKey = "",
+            specKey = "DRUID_RESTORATION",
             rating = 859,
             rank = 827,
             wins = 9,
@@ -6959,7 +7252,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["reqzy-tichondrius"] = {
             displayName = "Reqzy-tichondrius",
-            specKey = "",
+            specKey = "ROGUE_ASSASSINATION",
             rating = 1339,
             rank = 235,
             wins = 14,
@@ -6968,7 +7261,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["restinpeep-sargeras"] = {
             displayName = "Restinpeep-sargeras",
-            specKey = "",
+            specKey = "MONK_WINDWALKER",
             rating = 959,
             rank = 572,
             wins = 10,
@@ -6977,7 +7270,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["resto-crushridge"] = {
             displayName = "Resto-crushridge",
-            specKey = "",
+            specKey = "DRUID_RESTORATION",
             rating = 768,
             rank = 846,
             wins = 8,
@@ -6986,7 +7279,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["resto-gurubashi"] = {
             displayName = "Resto-gurubashi",
-            specKey = "",
+            specKey = "DRUID_RESTORATION",
             rating = 1510,
             rank = 185,
             wins = 16,
@@ -6995,7 +7288,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["restobyte-moonguard"] = {
             displayName = "Restobyte-moon-guard",
-            specKey = "",
+            specKey = "SHAMAN_RESTORATION",
             rating = 864,
             rank = 648,
             wins = 9,
@@ -7004,7 +7297,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["retwarx-proudmoore"] = {
             displayName = "Retwarx-proudmoore",
-            specKey = "",
+            specKey = "WARRIOR_FURY",
             rating = 1683,
             rank = 22,
             wins = 24,
@@ -7013,7 +7306,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["reweina-sargeras"] = {
             displayName = "Reweina-sargeras",
-            specKey = "",
+            specKey = "PRIEST_SHADOW",
             rating = 1050,
             rank = 489,
             wins = 11,
@@ -7022,7 +7315,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["rezispacqt-icecrown"] = {
             displayName = "Rezispacqt-icecrown",
-            specKey = "",
+            specKey = "PALADIN_RETRIBUTION",
             rating = 959,
             rank = 572,
             wins = 10,
@@ -7031,7 +7324,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["rhod-hyjal"] = {
             displayName = "Rhod-hyjal",
-            specKey = "",
+            specKey = "HUNTER_BEASTMASTERY",
             rating = 863,
             rank = 751,
             wins = 9,
@@ -7058,7 +7351,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["riitzzxx-ragnaros"] = {
             displayName = "Riitzzxx-ragnaros",
-            specKey = "",
+            specKey = "PRIEST_DISCIPLINE",
             rating = 957,
             rank = 624,
             wins = 10,
@@ -7067,7 +7360,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["rikdon-wyrmrestaccord"] = {
             displayName = "Rikdon-wyrmrest-accord",
-            specKey = "",
+            specKey = "EVOKER_PRESERVATION",
             rating = 958,
             rank = 610,
             wins = 10,
@@ -7076,7 +7369,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["ripjeje-blackhand"] = {
             displayName = "Ripjeje-blackhand",
-            specKey = "",
+            specKey = "MAGE_FROST",
             rating = 960,
             rank = 508,
             wins = 10,
@@ -7085,7 +7378,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["ripperz-thrall"] = {
             displayName = "Ripperz-thrall",
-            specKey = "",
+            specKey = "HUNTER_MARKSMANSHIP",
             rating = 768,
             rank = 846,
             wins = 8,
@@ -7094,7 +7387,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["riptide-kiljaeden"] = {
             displayName = "Riptide-kiljaeden",
-            specKey = "",
+            specKey = "SHAMAN_ENHANCEMENT",
             rating = 1328,
             rank = 246,
             wins = 14,
@@ -7112,7 +7405,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["rlzpriest-tichondrius"] = {
             displayName = "Rlzpriest-tichondrius",
-            specKey = "",
+            specKey = "PRIEST_DISCIPLINE",
             rating = 768,
             rank = 846,
             wins = 8,
@@ -7121,7 +7414,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["roadrunna-windrunner"] = {
             displayName = "Roadrunna-windrunner",
-            specKey = "",
+            specKey = "MONK_MISTWEAVER",
             rating = 768,
             rank = 846,
             wins = 8,
@@ -7130,7 +7423,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["robin-undermine"] = {
             displayName = "Robin-undermine",
-            specKey = "",
+            specKey = "DRUID_RESTORATION",
             rating = 768,
             rank = 846,
             wins = 8,
@@ -7139,7 +7432,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["robotwo-illidan"] = {
             displayName = "Robotwo-illidan",
-            specKey = "",
+            specKey = "HUNTER_SURVIVAL",
             rating = 864,
             rank = 648,
             wins = 9,
@@ -7148,7 +7441,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["rockxtv-illidan"] = {
             displayName = "Rockxtv-illidan",
-            specKey = "",
+            specKey = "MONK_WINDWALKER",
             rating = 864,
             rank = 648,
             wins = 9,
@@ -7157,7 +7450,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["rollinbones-alexstrasza"] = {
             displayName = "Rollinbones-alexstrasza",
-            specKey = "",
+            specKey = "MONK_WINDWALKER",
             rating = 861,
             rank = 803,
             wins = 9,
@@ -7166,7 +7459,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["ronpauladina-stormrage"] = {
             displayName = "Ronpauladina-stormrage",
-            specKey = "",
+            specKey = "PALADIN_HOLY",
             rating = 1632,
             rank = 56,
             wins = 20,
@@ -7175,7 +7468,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["rotdank-korgath"] = {
             displayName = "Rotdank-korgath",
-            specKey = "",
+            specKey = "PRIEST_HOLY",
             rating = 1055,
             rank = 432,
             wins = 11,
@@ -7184,7 +7477,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["roxxadin-kelthuzad"] = {
             displayName = "Roxxadin-kelthuzad",
-            specKey = "",
+            specKey = "PALADIN_RETRIBUTION",
             rating = 860,
             rank = 818,
             wins = 9,
@@ -7193,7 +7486,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["rp-andorhal"] = {
             displayName = "Rp-andorhal",
-            specKey = "",
+            specKey = "ROGUE_SUBTLETY",
             rating = 860,
             rank = 818,
             wins = 9,
@@ -7202,7 +7495,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["rtd-frostmourne"] = {
             displayName = "Rtd-frostmourne",
-            specKey = "",
+            specKey = "HUNTER_BEASTMASTERY",
             rating = 1151,
             rank = 329,
             wins = 12,
@@ -7211,7 +7504,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["rukiyou-frostwolf"] = {
             displayName = "Rukiyou-frostwolf",
-            specKey = "",
+            specKey = "PRIEST_DISCIPLINE",
             rating = 1056,
             rank = 382,
             wins = 11,
@@ -7220,7 +7513,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["rumikpop-malganis"] = {
             displayName = "Rumikpop-malganis",
-            specKey = "",
+            specKey = "DEMONHUNTER_VENGEANCE",
             rating = 1152,
             rank = 297,
             wins = 12,
@@ -7229,7 +7522,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["rushiez-quelthalas"] = {
             displayName = "Rushiez-quelthalas",
-            specKey = "",
+            specKey = "MONK_MISTWEAVER",
             rating = 768,
             rank = 846,
             wins = 8,
@@ -7238,7 +7531,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["ráemonk-moonguard"] = {
             displayName = "Ráemonk-moon-guard",
-            specKey = "",
+            specKey = "MONK_MISTWEAVER",
             rating = 768,
             rank = 846,
             wins = 8,
@@ -7247,7 +7540,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["réý-sargeras"] = {
             displayName = "Réý-sargeras",
-            specKey = "",
+            specKey = "SHAMAN_RESTORATION",
             rating = 959,
             rank = 572,
             wins = 10,
@@ -7256,7 +7549,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["sacredsong-tichondrius"] = {
             displayName = "Sacredsong-tichondrius",
-            specKey = "",
+            specKey = "PALADIN_HOLY",
             rating = 1435,
             rank = 204,
             wins = 15,
@@ -7265,7 +7558,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["sacrider-emeralddream"] = {
             displayName = "Sacrider-emerald-dream",
-            specKey = "",
+            specKey = "PALADIN_HOLY",
             rating = 768,
             rank = 846,
             wins = 8,
@@ -7283,7 +7576,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["saeler-eitrigg"] = {
             displayName = "Saeler-eitrigg",
-            specKey = "",
+            specKey = "MAGE_ARCANE",
             rating = 960,
             rank = 508,
             wins = 10,
@@ -7292,7 +7585,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["sakuralove-emeralddream"] = {
             displayName = "Sakuralove-emerald-dream",
-            specKey = "",
+            specKey = "ROGUE_SUBTLETY",
             rating = 1336,
             rank = 239,
             wins = 14,
@@ -7301,7 +7594,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["salthouse-sargeras"] = {
             displayName = "Salthouse-sargeras",
-            specKey = "",
+            specKey = "WARRIOR_ARMS",
             rating = 1054,
             rank = 456,
             wins = 11,
@@ -7310,7 +7603,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["saltÿ-quelthalas"] = {
             displayName = "Saltÿ-quelthalas",
-            specKey = "",
+            specKey = "PALADIN_RETRIBUTION",
             rating = 1335,
             rank = 242,
             wins = 14,
@@ -7319,7 +7612,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["salvations-dunemaul"] = {
             displayName = "Salvations-dunemaul",
-            specKey = "",
+            specKey = "MONK_MISTWEAVER",
             rating = 960,
             rank = 508,
             wins = 10,
@@ -7328,7 +7621,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["sandorc-sargeras"] = {
             displayName = "Sandorc-sargeras",
-            specKey = "ROGUE_SUBTLETY",
+            specKey = "",
             rating = 1056,
             rank = 382,
             wins = 11,
@@ -7355,7 +7648,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["sapkick-veknilash"] = {
             displayName = "Sapkick-veknilash",
-            specKey = "",
+            specKey = "ROGUE_SUBTLETY",
             rating = 1556,
             rank = 158,
             wins = 18,
@@ -7373,7 +7666,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["saraxes-moonguard"] = {
             displayName = "Saraxes-moon-guard",
-            specKey = "PRIEST_HOLY",
+            specKey = "",
             rating = 768,
             rank = 846,
             wins = 8,
@@ -7382,7 +7675,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["saudita-stormrage"] = {
             displayName = "Saudita-stormrage",
-            specKey = "",
+            specKey = "PRIEST_DISCIPLINE",
             rating = 1336,
             rank = 239,
             wins = 14,
@@ -7400,7 +7693,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["scalasevtwo-illidan"] = {
             displayName = "Scalasevtwo-illidan",
-            specKey = "",
+            specKey = "HUNTER_BEASTMASTERY",
             rating = 859,
             rank = 827,
             wins = 9,
@@ -7409,7 +7702,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["scalebob-proudmoore"] = {
             displayName = "Scalebob-proudmoore",
-            specKey = "",
+            specKey = "EVOKER_DEVASTATION",
             rating = 852,
             rank = 840,
             wins = 9,
@@ -7427,7 +7720,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["scriest-tichondrius"] = {
             displayName = "Scriest-tichondrius",
-            specKey = "",
+            specKey = "PRIEST_SHADOW",
             rating = 1604,
             rank = 117,
             wins = 19,
@@ -7436,7 +7729,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["seleris-exodar"] = {
             displayName = "Seleris-exodar",
-            specKey = "",
+            specKey = "WARLOCK_DESTRUCTION",
             rating = 864,
             rank = 648,
             wins = 9,
@@ -7445,7 +7738,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["semvetax-alleria"] = {
             displayName = "Semvetax-alleria",
-            specKey = "",
+            specKey = "DRUID_FERAL",
             rating = 1056,
             rank = 382,
             wins = 11,
@@ -7454,7 +7747,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["sensitivthug-sargeras"] = {
             displayName = "Sensitivthug-sargeras",
-            specKey = "",
+            specKey = "HUNTER_MARKSMANSHIP",
             rating = 1662,
             rank = 34,
             wins = 22,
@@ -7481,7 +7774,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["shadxz-tichondrius"] = {
             displayName = "Shadxz-tichondrius",
-            specKey = "",
+            specKey = "MONK_WINDWALKER",
             rating = 1056,
             rank = 382,
             wins = 11,
@@ -7490,7 +7783,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["shamtastic-perenolde"] = {
             displayName = "Shamtastic-perenolde",
-            specKey = "",
+            specKey = "SHAMAN_RESTORATION",
             rating = 1143,
             rank = 377,
             wins = 12,
@@ -7499,7 +7792,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["shankédqt-illidan"] = {
             displayName = "Shankédqt-illidan",
-            specKey = "",
+            specKey = "ROGUE_SUBTLETY",
             rating = 1147,
             rank = 366,
             wins = 12,
@@ -7508,7 +7801,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["shards-illidan"] = {
             displayName = "Shards-illidan",
-            specKey = "",
+            specKey = "WARLOCK_AFFLICTION",
             rating = 1607,
             rank = 106,
             wins = 19,
@@ -7517,7 +7810,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["sharkzooka-illidan"] = {
             displayName = "Sharkzooka-illidan",
-            specKey = "",
+            specKey = "HUNTER_MARKSMANSHIP",
             rating = 1607,
             rank = 106,
             wins = 20,
@@ -7526,7 +7819,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["shayamalan-nerzhul"] = {
             displayName = "Shayamalan-nerzhul",
-            specKey = "",
+            specKey = "SHAMAN_RESTORATION",
             rating = 1338,
             rank = 238,
             wins = 14,
@@ -7535,7 +7828,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["shaymie-moonguard"] = {
             displayName = "Shaymie-moon-guard",
-            specKey = "",
+            specKey = "PRIEST_HOLY",
             rating = 1603,
             rank = 123,
             wins = 19,
@@ -7544,7 +7837,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["shirubamoya-wyrmrestaccord"] = {
             displayName = "Shirubamoya-wyrmrest-accord",
-            specKey = "",
+            specKey = "PRIEST_HOLY",
             rating = 768,
             rank = 846,
             wins = 8,
@@ -7553,7 +7846,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["shizükesa-stormrage"] = {
             displayName = "Shizükesa-stormrage",
-            specKey = "",
+            specKey = "MONK_MISTWEAVER",
             rating = 960,
             rank = 508,
             wins = 10,
@@ -7562,7 +7855,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["shiñobi-tichondrius"] = {
             displayName = "Shiñobi-tichondrius",
-            specKey = "",
+            specKey = "ROGUE_SUBTLETY",
             rating = 1534,
             rank = 173,
             wins = 17,
@@ -7571,7 +7864,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["shoop-saurfang"] = {
             displayName = "Shoop-saurfang",
-            specKey = "MAGE_ARCANE",
+            specKey = "",
             rating = 960,
             rank = 508,
             wins = 10,
@@ -7580,7 +7873,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["shufbrainrot-tichondrius"] = {
             displayName = "Shufbrainrot-tichondrius",
-            specKey = "",
+            specKey = "PALADIN_HOLY",
             rating = 1152,
             rank = 297,
             wins = 12,
@@ -7598,7 +7891,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["shukumei-aeriepeak"] = {
             displayName = "Shukumei-aerie-peak",
-            specKey = "",
+            specKey = "SHAMAN_ELEMENTAL",
             rating = 864,
             rank = 648,
             wins = 9,
@@ -7607,7 +7900,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["shukuméi-aeriepeak"] = {
             displayName = "Shukuméi-aerie-peak",
-            specKey = "",
+            specKey = "PALADIN_RETRIBUTION",
             rating = 864,
             rank = 648,
             wins = 9,
@@ -7625,7 +7918,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["shîntâ-ragnaros"] = {
             displayName = "Shîntâ-ragnaros",
-            specKey = "",
+            specKey = "WARRIOR_ARMS",
             rating = 959,
             rank = 572,
             wins = 10,
@@ -7652,7 +7945,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["silentpalm-sargeras"] = {
             displayName = "Silentpalm-sargeras",
-            specKey = "",
+            specKey = "MONK_WINDWALKER",
             rating = 1152,
             rank = 297,
             wins = 12,
@@ -7661,7 +7954,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["sinlol-kelthuzad"] = {
             displayName = "Sinlol-kelthuzad",
-            specKey = "",
+            specKey = "PRIEST_DISCIPLINE",
             rating = 858,
             rank = 834,
             wins = 9,
@@ -7670,7 +7963,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["sinofdeath-tichondrius"] = {
             displayName = "Sinofdeath-tichondrius",
-            specKey = "",
+            specKey = "PRIEST_HOLY",
             rating = 957,
             rank = 624,
             wins = 10,
@@ -7679,7 +7972,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["sixcombopts-area52"] = {
             displayName = "Sixcombopts-area-52",
-            specKey = "",
+            specKey = "ROGUE_SUBTLETY",
             rating = 1056,
             rank = 382,
             wins = 11,
@@ -7688,7 +7981,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["sixfiveirl-stormreaver"] = {
             displayName = "Sixfiveirl-stormreaver",
-            specKey = "",
+            specKey = "PRIEST_HOLY",
             rating = 958,
             rank = 610,
             wins = 10,
@@ -7697,7 +7990,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["sixmgs-stormrage"] = {
             displayName = "Sixmgs-stormrage",
-            specKey = "",
+            specKey = "SHAMAN_ENHANCEMENT",
             rating = 861,
             rank = 803,
             wins = 9,
@@ -7706,7 +7999,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["sizz-stormreaver"] = {
             displayName = "Sizz-stormreaver",
-            specKey = "",
+            specKey = "MAGE_FIRE",
             rating = 1152,
             rank = 297,
             wins = 12,
@@ -7715,7 +8008,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["skeena-tichondrius"] = {
             displayName = "Skeena-tichondrius",
-            specKey = "",
+            specKey = "HUNTER_SURVIVAL",
             rating = 1056,
             rank = 382,
             wins = 11,
@@ -7724,7 +8017,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["sketchymage-proudmoore"] = {
             displayName = "Sketchymage-proudmoore",
-            specKey = "",
+            specKey = "MAGE_FIRE",
             rating = 959,
             rank = 572,
             wins = 10,
@@ -7733,7 +8026,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["skiavi-sargeras"] = {
             displayName = "Skiavi-sargeras",
-            specKey = "",
+            specKey = "PRIEST_DISCIPLINE",
             rating = 862,
             rank = 781,
             wins = 9,
@@ -7742,7 +8035,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["skillshanks-tichondrius"] = {
             displayName = "Skillshanks-tichondrius",
-            specKey = "",
+            specKey = "PALADIN_HOLY",
             rating = 864,
             rank = 648,
             wins = 9,
@@ -7751,7 +8044,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["skryte-mannoroth"] = {
             displayName = "Skryte-mannoroth",
-            specKey = "",
+            specKey = "MAGE_FROST",
             rating = 1045,
             rank = 501,
             wins = 11,
@@ -7760,7 +8053,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["skyblood-sargeras"] = {
             displayName = "Skyblood-sargeras",
-            specKey = "",
+            specKey = "HUNTER_BEASTMASTERY",
             rating = 947,
             rank = 644,
             wins = 10,
@@ -7787,7 +8080,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["skyus-stormrage"] = {
             displayName = "Skyus-stormrage",
-            specKey = "",
+            specKey = "EVOKER_PRESERVATION",
             rating = 863,
             rank = 751,
             wins = 9,
@@ -7796,7 +8089,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["skýwalker-dalaran"] = {
             displayName = "Skýwalker-dalaran",
-            specKey = "",
+            specKey = "MAGE_FROST",
             rating = 1625,
             rank = 66,
             wins = 20,
@@ -7814,7 +8107,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["slantsix-tichondrius"] = {
             displayName = "Slantsix-tichondrius",
-            specKey = "",
+            specKey = "WARLOCK_DESTRUCTION",
             rating = 768,
             rank = 846,
             wins = 8,
@@ -7823,7 +8116,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["slayerpriest-tichondrius"] = {
             displayName = "Slayerpriest-tichondrius",
-            specKey = "",
+            specKey = "PRIEST_DISCIPLINE",
             rating = 1620,
             rank = 71,
             wins = 20,
@@ -7841,7 +8134,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["smallarms-malganis"] = {
             displayName = "Smallarms-malganis",
-            specKey = "",
+            specKey = "WARRIOR_ARMS",
             rating = 1246,
             rank = 274,
             wins = 13,
@@ -7859,7 +8152,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["smolders-illidan"] = {
             displayName = "Smolders-illidan",
-            specKey = "",
+            specKey = "PALADIN_RETRIBUTION",
             rating = 960,
             rank = 508,
             wins = 10,
@@ -7868,7 +8161,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["smxxn-tichondrius"] = {
             displayName = "Smxxn-tichondrius",
-            specKey = "",
+            specKey = "SHAMAN_ENHANCEMENT",
             rating = 768,
             rank = 846,
             wins = 8,
@@ -7877,7 +8170,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["sneakydemon-shadowsong"] = {
             displayName = "Sneakydemon-shadowsong",
-            specKey = "",
+            specKey = "ROGUE_OUTLAW",
             rating = 959,
             rank = 572,
             wins = 10,
@@ -7895,7 +8188,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["snky-tichondrius"] = {
             displayName = "Snky-tichondrius",
-            specKey = "",
+            specKey = "DRUID_FERAL",
             rating = 768,
             rank = 846,
             wins = 8,
@@ -7904,7 +8197,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["snmp-stormrage"] = {
             displayName = "Snmp-stormrage",
-            specKey = "",
+            specKey = "DRUID_FERAL",
             rating = 1053,
             rank = 469,
             wins = 11,
@@ -7922,7 +8215,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["sofax-tichondrius"] = {
             displayName = "Sofax-tichondrius",
-            specKey = "",
+            specKey = "PALADIN_HOLY",
             rating = 1646,
             rank = 45,
             wins = 21,
@@ -7931,7 +8224,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["softscars-illidan"] = {
             displayName = "Softscars-illidan",
-            specKey = "",
+            specKey = "MONK_MISTWEAVER",
             rating = 1426,
             rank = 212,
             wins = 15,
@@ -7940,7 +8233,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["solushun-sargeras"] = {
             displayName = "Solushun-sargeras",
-            specKey = "",
+            specKey = "DRUID_RESTORATION",
             rating = 1564,
             rank = 151,
             wins = 18,
@@ -7949,7 +8242,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["solushunx-sargeras"] = {
             displayName = "Solushunx-sargeras",
-            specKey = "",
+            specKey = "DRUID_RESTORATION",
             rating = 1152,
             rank = 297,
             wins = 12,
@@ -7958,7 +8251,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["sooey-wyrmrestaccord"] = {
             displayName = "Sooey-wyrmrest-accord",
-            specKey = "",
+            specKey = "DRUID_RESTORATION",
             rating = 1247,
             rank = 263,
             wins = 13,
@@ -7967,7 +8260,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["souldrift-malganis"] = {
             displayName = "Souldrift-malganis",
-            specKey = "",
+            specKey = "PRIEST_SHADOW",
             rating = 768,
             rank = 846,
             wins = 8,
@@ -7985,7 +8278,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["sovm-kelthuzad"] = {
             displayName = "Sovm-kelthuzad",
-            specKey = "",
+            specKey = "MAGE_FIRE",
             rating = 959,
             rank = 572,
             wins = 10,
@@ -7994,7 +8287,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["space-crushridge"] = {
             displayName = "Space-crushridge",
-            specKey = "",
+            specKey = "PALADIN_HOLY",
             rating = 1056,
             rank = 382,
             wins = 11,
@@ -8012,7 +8305,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["spicypri-proudmoore"] = {
             displayName = "Spicypri-proudmoore",
-            specKey = "",
+            specKey = "PRIEST_DISCIPLINE",
             rating = 864,
             rank = 648,
             wins = 9,
@@ -8021,7 +8314,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["spicywhite-tichondrius"] = {
             displayName = "Spicywhite-tichondrius",
-            specKey = "",
+            specKey = "WARLOCK_DEMONOLOGY",
             rating = 864,
             rank = 648,
             wins = 9,
@@ -8030,7 +8323,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["spins-terenas"] = {
             displayName = "Spins-terenas",
-            specKey = "MONK_WINDWALKER",
+            specKey = "",
             rating = 960,
             rank = 508,
             wins = 10,
@@ -8039,7 +8332,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["spooke-illidan"] = {
             displayName = "Spooke-illidan",
-            specKey = "",
+            specKey = "PRIEST_SHADOW",
             rating = 1147,
             rank = 366,
             wins = 12,
@@ -8048,7 +8341,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["spyrogodx-area52"] = {
             displayName = "Spyrogodx-area-52",
-            specKey = "",
+            specKey = "EVOKER_PRESERVATION",
             rating = 864,
             rank = 648,
             wins = 9,
@@ -8057,7 +8350,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["squatx-tichondrius"] = {
             displayName = "Squatx-tichondrius",
-            specKey = "",
+            specKey = "WARRIOR_ARMS",
             rating = 1044,
             rank = 503,
             wins = 11,
@@ -8066,7 +8359,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["squeemer-tichondrius"] = {
             displayName = "Squeemer-tichondrius",
-            specKey = "",
+            specKey = "PRIEST_DISCIPLINE",
             rating = 959,
             rank = 572,
             wins = 10,
@@ -8075,7 +8368,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["squishiefish-tichondrius"] = {
             displayName = "Squishiefish-tichondrius",
-            specKey = "",
+            specKey = "PRIEST_DISCIPLINE",
             rating = 959,
             rank = 572,
             wins = 10,
@@ -8093,7 +8386,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["ssibal-suramar"] = {
             displayName = "Ssibal-suramar",
-            specKey = "",
+            specKey = "WARLOCK_AFFLICTION",
             rating = 1810,
             rank = 11,
             wins = 30,
@@ -8102,7 +8395,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["staa-kelthuzad"] = {
             displayName = "Staa-kelthuzad",
-            specKey = "",
+            specKey = "PRIEST_HOLY",
             rating = 1620,
             rank = 71,
             wins = 20,
@@ -8111,7 +8404,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["stabbysweetz-zuljin"] = {
             displayName = "Stabbysweetz-zuljin",
-            specKey = "",
+            specKey = "ROGUE_OUTLAW",
             rating = 1150,
             rank = 339,
             wins = 12,
@@ -8120,7 +8413,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["starlinkgamr-dalaran"] = {
             displayName = "Starlinkgamr-dalaran",
-            specKey = "",
+            specKey = "ROGUE_ASSASSINATION",
             rating = 1152,
             rank = 297,
             wins = 12,
@@ -8129,7 +8422,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["starshiph-tichondrius"] = {
             displayName = "Starshiph-tichondrius",
-            specKey = "",
+            specKey = "HUNTER_BEASTMASTERY",
             rating = 1604,
             rank = 117,
             wins = 19,
@@ -8138,7 +8431,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["statespace-muradin"] = {
             displayName = "Statespace-muradin",
-            specKey = "",
+            specKey = "HUNTER_MARKSMANSHIP",
             rating = 1612,
             rank = 88,
             wins = 21,
@@ -8156,7 +8449,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["steal-moonguard"] = {
             displayName = "Steal-moon-guard",
-            specKey = "",
+            specKey = "ROGUE_ASSASSINATION",
             rating = 1697,
             rank = 19,
             wins = 23,
@@ -8174,7 +8467,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["stoneski-malganis"] = {
             displayName = "Stoneski-malganis",
-            specKey = "",
+            specKey = "HUNTER_MARKSMANSHIP",
             rating = 1056,
             rank = 382,
             wins = 11,
@@ -8183,7 +8476,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["stupid-deathwing"] = {
             displayName = "Stupid-deathwing",
-            specKey = "",
+            specKey = "PRIEST_HOLY",
             rating = 863,
             rank = 751,
             wins = 9,
@@ -8192,7 +8485,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["stupidmode-kelthuzad"] = {
             displayName = "Stupidmode-kelthuzad",
-            specKey = "",
+            specKey = "PALADIN_HOLY",
             rating = 1440,
             rank = 194,
             wins = 15,
@@ -8210,7 +8503,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["stícky-zuluhed"] = {
             displayName = "Stícky-zuluhed",
-            specKey = "",
+            specKey = "PRIEST_SHADOW",
             rating = 1053,
             rank = 469,
             wins = 11,
@@ -8228,7 +8521,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["sudou-tichondrius"] = {
             displayName = "Sudou-tichondrius",
-            specKey = "",
+            specKey = "DRUID_RESTORATION",
             rating = 932,
             rank = 647,
             wins = 10,
@@ -8237,7 +8530,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["sumerie-emeralddream"] = {
             displayName = "Sumerie-emerald-dream",
-            specKey = "",
+            specKey = "PRIEST_HOLY",
             rating = 1152,
             rank = 297,
             wins = 12,
@@ -8246,7 +8539,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["sunderedsoul-stormrage"] = {
             displayName = "Sunderedsoul-stormrage",
-            specKey = "",
+            specKey = "WARRIOR_ARMS",
             rating = 1244,
             rank = 283,
             wins = 13,
@@ -8255,7 +8548,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["sunshìnes-wyrmrestaccord"] = {
             displayName = "Sunshìnes-wyrmrest-accord",
-            specKey = "",
+            specKey = "MONK_MISTWEAVER",
             rating = 768,
             rank = 846,
             wins = 8,
@@ -8264,7 +8557,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["svw-tichondrius"] = {
             displayName = "Svw-tichondrius",
-            specKey = "",
+            specKey = "PRIEST_DISCIPLINE",
             rating = 1056,
             rank = 382,
             wins = 11,
@@ -8273,7 +8566,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["sweetjonesjr-ysera"] = {
             displayName = "Sweetjonesjr-ysera",
-            specKey = "",
+            specKey = "PALADIN_HOLY",
             rating = 864,
             rank = 648,
             wins = 9,
@@ -8282,7 +8575,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["swirv-area52"] = {
             displayName = "Swirv-area-52",
-            specKey = "",
+            specKey = "HUNTER_BEASTMASTERY",
             rating = 768,
             rank = 846,
             wins = 8,
@@ -8300,7 +8593,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["switchsermon-illidan"] = {
             displayName = "Switchsermon-illidan",
-            specKey = "",
+            specKey = "PRIEST_DISCIPLINE",
             rating = 861,
             rank = 803,
             wins = 9,
@@ -8309,7 +8602,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["swordfish-trollbane"] = {
             displayName = "Swordfish-trollbane",
-            specKey = "",
+            specKey = "PRIEST_HOLY",
             rating = 1629,
             rank = 62,
             wins = 24,
@@ -8318,7 +8611,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["swxxzy-quelthalas"] = {
             displayName = "Swxxzy-quelthalas",
-            specKey = "",
+            specKey = "DRUID_FERAL",
             rating = 960,
             rank = 508,
             wins = 10,
@@ -8327,7 +8620,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["syvarris-medivh"] = {
             displayName = "Syvarris-medivh",
-            specKey = "",
+            specKey = "HUNTER_SURVIVAL",
             rating = 1053,
             rank = 469,
             wins = 11,
@@ -8336,7 +8629,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["sñugglëz-illidan"] = {
             displayName = "Sñugglëz-illidan",
-            specKey = "",
+            specKey = "MONK_MISTWEAVER",
             rating = 768,
             rank = 846,
             wins = 8,
@@ -8363,7 +8656,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["taev-kiljaeden"] = {
             displayName = "Taev-kiljaeden",
-            specKey = "",
+            specKey = "PALADIN_HOLY",
             rating = 960,
             rank = 508,
             wins = 10,
@@ -8381,7 +8674,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["tamer-terenas"] = {
             displayName = "Tamer-terenas",
-            specKey = "",
+            specKey = "HUNTER_BEASTMASTERY",
             rating = 1050,
             rank = 489,
             wins = 11,
@@ -8390,7 +8683,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["tappy-proudmoore"] = {
             displayName = "Tappy-proudmoore",
-            specKey = "",
+            specKey = "EVOKER_DEVASTATION",
             rating = 1152,
             rank = 297,
             wins = 12,
@@ -8408,7 +8701,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["tatunga-tichondrius"] = {
             displayName = "Tatunga-tichondrius",
-            specKey = "",
+            specKey = "PRIEST_DISCIPLINE",
             rating = 1055,
             rank = 432,
             wins = 11,
@@ -8417,7 +8710,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["tawahka-hyjal"] = {
             displayName = "Tawahka-hyjal",
-            specKey = "",
+            specKey = "SHAMAN_RESTORATION",
             rating = 1048,
             rank = 496,
             wins = 11,
@@ -8435,7 +8728,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["tdales-kelthuzad"] = {
             displayName = "Tdales-kelthuzad",
-            specKey = "",
+            specKey = "PRIEST_HOLY",
             rating = 1342,
             rank = 227,
             wins = 14,
@@ -8444,7 +8737,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["tealanazar-korgath"] = {
             displayName = "Tealanazar-korgath",
-            specKey = "",
+            specKey = "EVOKER_PRESERVATION",
             rating = 768,
             rank = 846,
             wins = 8,
@@ -8453,7 +8746,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["teamz-wyrmrestaccord"] = {
             displayName = "Teamz-wyrmrest-accord",
-            specKey = "",
+            specKey = "PALADIN_HOLY",
             rating = 1150,
             rank = 339,
             wins = 12,
@@ -8462,7 +8755,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["tenpmhotdog-stormrage"] = {
             displayName = "Tenpmhotdog-stormrage",
-            specKey = "",
+            specKey = "DRUID_RESTORATION",
             rating = 936,
             rank = 645,
             wins = 10,
@@ -8471,7 +8764,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["tenvix-illidan"] = {
             displayName = "Tenvix-illidan",
-            specKey = "",
+            specKey = "PRIEST_DISCIPLINE",
             rating = 768,
             rank = 846,
             wins = 8,
@@ -8480,7 +8773,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["terkpla-tichondrius"] = {
             displayName = "Terkpla-tichondrius",
-            specKey = "",
+            specKey = "DRUID_RESTORATION",
             rating = 1563,
             rank = 152,
             wins = 18,
@@ -8489,7 +8782,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["themulletman-demonsoul"] = {
             displayName = "Themulletman-demon-soul",
-            specKey = "",
+            specKey = "WARLOCK_DESTRUCTION",
             rating = 1149,
             rank = 348,
             wins = 12,
@@ -8498,7 +8791,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["thenewrogue-tichondrius"] = {
             displayName = "Thenewrogue-tichondrius",
-            specKey = "",
+            specKey = "ROGUE_ASSASSINATION",
             rating = 1152,
             rank = 297,
             wins = 12,
@@ -8507,7 +8800,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["therogue-drenden"] = {
             displayName = "Therogue-drenden",
-            specKey = "",
+            specKey = "ROGUE_SUBTLETY",
             rating = 1055,
             rank = 432,
             wins = 11,
@@ -8516,7 +8809,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["thrator-wyrmrestaccord"] = {
             displayName = "Thrator-wyrmrest-accord",
-            specKey = "",
+            specKey = "WARRIOR_ARMS",
             rating = 864,
             rank = 648,
             wins = 9,
@@ -8525,7 +8818,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["throatgodess-tichondrius"] = {
             displayName = "Throatgodess-tichondrius",
-            specKey = "",
+            specKey = "PRIEST_DISCIPLINE",
             rating = 956,
             rank = 632,
             wins = 10,
@@ -8534,7 +8827,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["thss-illidan"] = {
             displayName = "Thss-illidan",
-            specKey = "",
+            specKey = "PRIEST_HOLY",
             rating = 1607,
             rank = 106,
             wins = 19,
@@ -8561,7 +8854,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["tirrony-tichondrius"] = {
             displayName = "Tirrony-tichondrius",
-            specKey = "",
+            specKey = "DRUID_BALANCE",
             rating = 862,
             rank = 781,
             wins = 9,
@@ -8570,7 +8863,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["tirêd-illidan"] = {
             displayName = "Tirêd-illidan",
-            specKey = "",
+            specKey = "SHAMAN_RESTORATION",
             rating = 864,
             rank = 648,
             wins = 9,
@@ -8579,7 +8872,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["tirëd-azuremyst"] = {
             displayName = "Tirëd-azuremyst",
-            specKey = "",
+            specKey = "PRIEST_DISCIPLINE",
             rating = 864,
             rank = 648,
             wins = 9,
@@ -8606,7 +8899,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["tobensz-sargeras"] = {
             displayName = "Tobensz-sargeras",
-            specKey = "",
+            specKey = "ROGUE_SUBTLETY",
             rating = 768,
             rank = 846,
             wins = 8,
@@ -8615,7 +8908,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["toddmolovski-frostmourne"] = {
             displayName = "Toddmolovski-frostmourne",
-            specKey = "",
+            specKey = "HUNTER_SURVIVAL",
             rating = 959,
             rank = 572,
             wins = 10,
@@ -8624,7 +8917,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["toetim-sargeras"] = {
             displayName = "Toetim-sargeras",
-            specKey = "",
+            specKey = "SHAMAN_RESTORATION",
             rating = 767,
             rank = 983,
             wins = 8,
@@ -8633,7 +8926,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["tokiiozen-sargeras"] = {
             displayName = "Tokiiozen-sargeras",
-            specKey = "",
+            specKey = "MONK_MISTWEAVER",
             rating = 855,
             rank = 837,
             wins = 9,
@@ -8642,7 +8935,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["toonah-area52"] = {
             displayName = "Toonah-area-52",
-            specKey = "",
+            specKey = "DRUID_RESTORATION",
             rating = 1608,
             rank = 96,
             wins = 19,
@@ -8660,7 +8953,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["topgtate-aegwynn"] = {
             displayName = "Topgtate-aegwynn",
-            specKey = "",
+            specKey = "HUNTER_BEASTMASTERY",
             rating = 1547,
             rank = 165,
             wins = 17,
@@ -8669,7 +8962,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["toryboltz-sargeras"] = {
             displayName = "Toryboltz-sargeras",
-            specKey = "",
+            specKey = "WARLOCK_DESTRUCTION",
             rating = 1247,
             rank = 263,
             wins = 13,
@@ -8678,7 +8971,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["toumia-tichondrius"] = {
             displayName = "Toumia-tichondrius",
-            specKey = "",
+            specKey = "ROGUE_ASSASSINATION",
             rating = 768,
             rank = 846,
             wins = 8,
@@ -8687,7 +8980,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["trainindummy-malganis"] = {
             displayName = "Trainindummy-malganis",
-            specKey = "",
+            specKey = "WARLOCK_AFFLICTION",
             rating = 768,
             rank = 846,
             wins = 8,
@@ -8696,7 +8989,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["trantis-tichondrius"] = {
             displayName = "Trantis-tichondrius",
-            specKey = "",
+            specKey = "EVOKER_PRESERVATION",
             rating = 768,
             rank = 846,
             wins = 8,
@@ -8705,7 +8998,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["trapbois-tichondrius"] = {
             displayName = "Trapbois-tichondrius",
-            specKey = "",
+            specKey = "WARRIOR_ARMS",
             rating = 959,
             rank = 572,
             wins = 10,
@@ -8714,7 +9007,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["trapflex-barthilas"] = {
             displayName = "Trapflex-barthilas",
-            specKey = "",
+            specKey = "HUNTER_BEASTMASTERY",
             rating = 1240,
             rank = 291,
             wins = 13,
@@ -8723,7 +9016,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["trapzlt-wyrmrestaccord"] = {
             displayName = "Trapzlt-wyrmrest-accord",
-            specKey = "",
+            specKey = "HUNTER_SURVIVAL",
             rating = 960,
             rank = 508,
             wins = 10,
@@ -8732,7 +9025,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["travisteez-illidan"] = {
             displayName = "Travisteez-illidan",
-            specKey = "",
+            specKey = "PRIEST_HOLY",
             rating = 1823,
             rank = 8,
             wins = 33,
@@ -8741,7 +9034,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["tribbey-area52"] = {
             displayName = "Tribbey-area-52",
-            specKey = "",
+            specKey = "PRIEST_HOLY",
             rating = 1147,
             rank = 366,
             wins = 12,
@@ -8750,7 +9043,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["trollbadinha-area52"] = {
             displayName = "Trollbadinha-area-52",
-            specKey = "",
+            specKey = "WARRIOR_ARMS",
             rating = 960,
             rank = 508,
             wins = 10,
@@ -8759,7 +9052,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["turec-illidan"] = {
             displayName = "Turec-illidan",
-            specKey = "",
+            specKey = "ROGUE_SUBTLETY",
             rating = 1054,
             rank = 456,
             wins = 11,
@@ -8768,7 +9061,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["twichy-tichondrius"] = {
             displayName = "Twichy-tichondrius",
-            specKey = "",
+            specKey = "PALADIN_HOLY",
             rating = 1149,
             rank = 348,
             wins = 12,
@@ -8777,7 +9070,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["twopawshakur-sargeras"] = {
             displayName = "Twopawshakur-sargeras",
-            specKey = "",
+            specKey = "DRUID_FERAL",
             rating = 959,
             rank = 572,
             wins = 10,
@@ -8786,7 +9079,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["twotacolips-illidan"] = {
             displayName = "Twotacolips-illidan",
-            specKey = "",
+            specKey = "WARLOCK_AFFLICTION",
             rating = 864,
             rank = 648,
             wins = 9,
@@ -8795,7 +9088,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["tx-demonsoul"] = {
             displayName = "Tx-demon-soul",
-            specKey = "",
+            specKey = "DEATHKNIGHT_UNHOLY",
             rating = 960,
             rank = 508,
             wins = 10,
@@ -8804,7 +9097,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["tái-tichondrius"] = {
             displayName = "Tái-tichondrius",
-            specKey = "",
+            specKey = "DRUID_RESTORATION",
             rating = 1056,
             rank = 382,
             wins = 11,
@@ -8813,7 +9106,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["tëki-illidan"] = {
             displayName = "Tëki-illidan",
-            specKey = "",
+            specKey = "DEMONHUNTER_HAVOC",
             rating = 1149,
             rank = 348,
             wins = 12,
@@ -8822,7 +9115,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["tôpdadwôrld-sargeras"] = {
             displayName = "Tôpdadwôrld-sargeras",
-            specKey = "",
+            specKey = "DRUID_BALANCE",
             rating = 959,
             rank = 572,
             wins = 10,
@@ -8840,7 +9133,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["udogs-frostmourne"] = {
             displayName = "Udogs-frostmourne",
-            specKey = "",
+            specKey = "DRUID_RESTORATION",
             rating = 860,
             rank = 818,
             wins = 9,
@@ -8849,7 +9142,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["udungoofedd-theunderbog"] = {
             displayName = "Udungoofedd-the-underbog",
-            specKey = "",
+            specKey = "SHAMAN_RESTORATION",
             rating = 1609,
             rank = 95,
             wins = 20,
@@ -8858,7 +9151,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["uglukz-tichondrius"] = {
             displayName = "Uglukz-tichondrius",
-            specKey = "",
+            specKey = "WARRIOR_ARMS",
             rating = 958,
             rank = 610,
             wins = 10,
@@ -8867,7 +9160,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["umreehz-stormrage"] = {
             displayName = "Umreehz-stormrage",
-            specKey = "",
+            specKey = "MONK_WINDWALKER",
             rating = 1056,
             rank = 382,
             wins = 11,
@@ -8876,7 +9169,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["undeadp-tichondrius"] = {
             displayName = "Undeadp-tichondrius",
-            specKey = "",
+            specKey = "PRIEST_DISCIPLINE",
             rating = 768,
             rank = 846,
             wins = 8,
@@ -8885,7 +9178,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["unjusthunt-magtheridon"] = {
             displayName = "Unjusthunt-magtheridon",
-            specKey = "",
+            specKey = "DEMONHUNTER_HAVOC",
             rating = 864,
             rank = 648,
             wins = 9,
@@ -8894,7 +9187,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["unsubbedd-sargeras"] = {
             displayName = "Unsubbedd-sargeras",
-            specKey = "",
+            specKey = "PRIEST_HOLY",
             rating = 768,
             rank = 846,
             wins = 8,
@@ -8903,7 +9196,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["urdem-moonguard"] = {
             displayName = "Urdem-moon-guard",
-            specKey = "",
+            specKey = "WARRIOR_ARMS",
             rating = 864,
             rank = 648,
             wins = 9,
@@ -8912,7 +9205,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["usedefensive-area52"] = {
             displayName = "Usedefensive-area-52",
-            specKey = "",
+            specKey = "PRIEST_DISCIPLINE",
             rating = 863,
             rank = 751,
             wins = 9,
@@ -8930,7 +9223,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["valliean-illidan"] = {
             displayName = "Valliean-illidan",
-            specKey = "",
+            specKey = "ROGUE_ASSASSINATION",
             rating = 768,
             rank = 846,
             wins = 8,
@@ -8939,7 +9232,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["vampthyr-stormrage"] = {
             displayName = "Vampthyr-stormrage",
-            specKey = "",
+            specKey = "WARLOCK_DEMONOLOGY",
             rating = 859,
             rank = 827,
             wins = 9,
@@ -8966,7 +9259,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["varyags-emeralddream"] = {
             displayName = "Varyags-emerald-dream",
-            specKey = "",
+            specKey = "SHAMAN_ENHANCEMENT",
             rating = 767,
             rank = 983,
             wins = 8,
@@ -8984,7 +9277,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["vendarith-kiljaeden"] = {
             displayName = "Vendarith-kiljaeden",
-            specKey = "",
+            specKey = "ROGUE_SUBTLETY",
             rating = 861,
             rank = 803,
             wins = 9,
@@ -8993,7 +9286,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["verkara-stormrage"] = {
             displayName = "Verkara-stormrage",
-            specKey = "",
+            specKey = "DRUID_RESTORATION",
             rating = 767,
             rank = 983,
             wins = 8,
@@ -9002,7 +9295,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["vertîgo-tichondrius"] = {
             displayName = "Vertîgo-tichondrius",
-            specKey = "",
+            specKey = "MONK_WINDWALKER",
             rating = 1054,
             rank = 456,
             wins = 11,
@@ -9011,7 +9304,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["verv-boulderfist"] = {
             displayName = "Verv-boulderfist",
-            specKey = "",
+            specKey = "MONK_MISTWEAVER",
             rating = 864,
             rank = 648,
             wins = 9,
@@ -9029,7 +9322,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["vexed-illidan"] = {
             displayName = "Vexed-illidan",
-            specKey = "",
+            specKey = "MONK_MISTWEAVER",
             rating = 1056,
             rank = 382,
             wins = 11,
@@ -9056,7 +9349,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["voidcc-tichondrius"] = {
             displayName = "Voidcc-tichondrius",
-            specKey = "",
+            specKey = "PRIEST_HOLY",
             rating = 768,
             rank = 846,
             wins = 8,
@@ -9074,7 +9367,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["voidgauntlet-proudmoore"] = {
             displayName = "Voidgauntlet-proudmoore",
-            specKey = "",
+            specKey = "PRIEST_HOLY",
             rating = 1247,
             rank = 263,
             wins = 13,
@@ -9083,7 +9376,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["voidqnarisha-tichondrius"] = {
             displayName = "Voidqnarisha-tichondrius",
-            specKey = "",
+            specKey = "PRIEST_HOLY",
             rating = 1530,
             rank = 176,
             wins = 17,
@@ -9092,7 +9385,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["volkova-altarofstorms"] = {
             displayName = "Volkova-altar-of-storms",
-            specKey = "",
+            specKey = "ROGUE_ASSASSINATION",
             rating = 864,
             rank = 648,
             wins = 9,
@@ -9110,7 +9403,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["vpé-sargeras"] = {
             displayName = "Vpé-sargeras",
-            specKey = "",
+            specKey = "WARRIOR_ARMS",
             rating = 1683,
             rank = 22,
             wins = 24,
@@ -9119,7 +9412,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["vx-trollbane"] = {
             displayName = "Vx-trollbane",
-            specKey = "",
+            specKey = "DRUID_RESTORATION",
             rating = 959,
             rank = 572,
             wins = 10,
@@ -9137,7 +9430,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["vèganghøul-barthilas"] = {
             displayName = "Vèganghøul-barthilas",
-            specKey = "",
+            specKey = "PALADIN_HOLY",
             rating = 1439,
             rank = 195,
             wins = 15,
@@ -9146,7 +9439,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["wackranger-drakthul"] = {
             displayName = "Wackranger-drakthul",
-            specKey = "",
+            specKey = "PALADIN_HOLY",
             rating = 768,
             rank = 846,
             wins = 8,
@@ -9155,7 +9448,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["wafflebandit-kelthuzad"] = {
             displayName = "Wafflebandit-kelthuzad",
-            specKey = "",
+            specKey = "MAGE_FIRE",
             rating = 959,
             rank = 572,
             wins = 10,
@@ -9164,7 +9457,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["waggs-illidan"] = {
             displayName = "Waggs-illidan",
-            specKey = "",
+            specKey = "DRUID_FERAL",
             rating = 957,
             rank = 624,
             wins = 10,
@@ -9173,7 +9466,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["waifu-area52"] = {
             displayName = "Waifu-area-52",
-            specKey = "",
+            specKey = "PALADIN_HOLY",
             rating = 1603,
             rank = 123,
             wins = 19,
@@ -9182,7 +9475,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["wakeenphnx-tichondrius"] = {
             displayName = "Wakeenphnx-tichondrius",
-            specKey = "",
+            specKey = "DRUID_BALANCE",
             rating = 768,
             rank = 846,
             wins = 8,
@@ -9191,7 +9484,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["waleresc-tichondrius"] = {
             displayName = "Waleresc-tichondrius",
-            specKey = "",
+            specKey = "PRIEST_DISCIPLINE",
             rating = 1503,
             rank = 186,
             wins = 16,
@@ -9200,7 +9493,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["watersheep-emeralddream"] = {
             displayName = "Watersheep-emerald-dream",
-            specKey = "",
+            specKey = "MONK_MISTWEAVER",
             rating = 2002,
             rank = 3,
             wins = 44,
@@ -9227,7 +9520,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["wes-gorefiend"] = {
             displayName = "Wes-gorefiend",
-            specKey = "",
+            specKey = "MONK_WINDWALKER",
             rating = 1152,
             rank = 297,
             wins = 12,
@@ -9254,7 +9547,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["whoopinfeet-tichondrius"] = {
             displayName = "Whoopinfeet-tichondrius",
-            specKey = "",
+            specKey = "ROGUE_ASSASSINATION",
             rating = 1149,
             rank = 348,
             wins = 12,
@@ -9272,7 +9565,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["wildspeaker-burninglegion"] = {
             displayName = "Wildspeaker-burning-legion",
-            specKey = "",
+            specKey = "ROGUE_ASSASSINATION",
             rating = 864,
             rank = 648,
             wins = 9,
@@ -9281,7 +9574,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["winkemoji-thrall"] = {
             displayName = "Winkemoji-thrall",
-            specKey = "",
+            specKey = "MONK_WINDWALKER",
             rating = 1056,
             rank = 382,
             wins = 11,
@@ -9299,7 +9592,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["wochtlaets-blackdragonflight"] = {
             displayName = "Wochtlaets-black-dragonflight",
-            specKey = "",
+            specKey = "ROGUE_SUBTLETY",
             rating = 768,
             rank = 846,
             wins = 8,
@@ -9308,7 +9601,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["woolxd-tichondrius"] = {
             displayName = "Woolxd-tichondrius",
-            specKey = "",
+            specKey = "PRIEST_DISCIPLINE",
             rating = 1152,
             rank = 297,
             wins = 12,
@@ -9317,7 +9610,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["worldtaker-emeralddream"] = {
             displayName = "Worldtaker-emerald-dream",
-            specKey = "",
+            specKey = "DEATHKNIGHT_UNHOLY",
             rating = 768,
             rank = 846,
             wins = 8,
@@ -9326,7 +9619,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["worships-zuljin"] = {
             displayName = "Worships-zuljin",
-            specKey = "",
+            specKey = "PRIEST_HOLY",
             rating = 1518,
             rank = 183,
             wins = 16,
@@ -9335,7 +9628,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["worstdpsna-kelthuzad"] = {
             displayName = "Worstdpsna-kelthuzad",
-            specKey = "",
+            specKey = "ROGUE_ASSASSINATION",
             rating = 1148,
             rank = 358,
             wins = 12,
@@ -9353,7 +9646,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["wtsgoldpst-arthas"] = {
             displayName = "Wtsgoldpst-arthas",
-            specKey = "",
+            specKey = "HUNTER_SURVIVAL",
             rating = 864,
             rank = 648,
             wins = 9,
@@ -9362,7 +9655,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["wuser-terokkar"] = {
             displayName = "Wuser-terokkar",
-            specKey = "",
+            specKey = "DRUID_FERAL",
             rating = 768,
             rank = 846,
             wins = 8,
@@ -9371,7 +9664,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["wynrys-stormrage"] = {
             displayName = "Wynrys-stormrage",
-            specKey = "",
+            specKey = "MAGE_ARCANE",
             rating = 855,
             rank = 837,
             wins = 9,
@@ -9380,7 +9673,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["wîsa-moonguard"] = {
             displayName = "Wîsa-moon-guard",
-            specKey = "",
+            specKey = "PRIEST_DISCIPLINE",
             rating = 1056,
             rank = 382,
             wins = 11,
@@ -9389,7 +9682,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["xandon-stormrage"] = {
             displayName = "Xandon-stormrage",
-            specKey = "HUNTER_BEASTMASTERY",
+            specKey = "",
             rating = 864,
             rank = 648,
             wins = 9,
@@ -9398,7 +9691,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["xm-sargeras"] = {
             displayName = "Xm-sargeras",
-            specKey = "",
+            specKey = "ROGUE_ASSASSINATION",
             rating = 1148,
             rank = 358,
             wins = 12,
@@ -9416,7 +9709,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["xsynthy-tichondrius"] = {
             displayName = "Xsynthy-tichondrius",
-            specKey = "",
+            specKey = "ROGUE_SUBTLETY",
             rating = 960,
             rank = 508,
             wins = 10,
@@ -9425,7 +9718,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["xtremeorc-area52"] = {
             displayName = "Xtremeorc-area-52",
-            specKey = "",
+            specKey = "SHAMAN_RESTORATION",
             rating = 864,
             rank = 648,
             wins = 9,
@@ -9434,7 +9727,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["xyän-bleedinghollow"] = {
             displayName = "Xyän-bleeding-hollow",
-            specKey = "",
+            specKey = "MONK_WINDWALKER",
             rating = 1056,
             rank = 382,
             wins = 11,
@@ -9443,7 +9736,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["xànn-barthilas"] = {
             displayName = "Xànn-barthilas",
-            specKey = "",
+            specKey = "WARRIOR_ARMS",
             rating = 862,
             rank = 781,
             wins = 9,
@@ -9452,7 +9745,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["yayobabyy-tichondrius"] = {
             displayName = "Yayobabyy-tichondrius",
-            specKey = "",
+            specKey = "SHAMAN_RESTORATION",
             rating = 1152,
             rank = 297,
             wins = 12,
@@ -9461,7 +9754,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["yeowh-illidan"] = {
             displayName = "Yeowh-illidan",
-            specKey = "",
+            specKey = "PRIEST_HOLY",
             rating = 1655,
             rank = 38,
             wins = 29,
@@ -9479,7 +9772,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["yeshuasaves-stormrage"] = {
             displayName = "Yeshuasaves-stormrage",
-            specKey = "",
+            specKey = "DRUID_FERAL",
             rating = 864,
             rank = 648,
             wins = 9,
@@ -9488,7 +9781,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["yeshuasaveu-stormrage"] = {
             displayName = "Yeshuasaveu-stormrage",
-            specKey = "",
+            specKey = "PRIEST_HOLY",
             rating = 1629,
             rank = 62,
             wins = 22,
@@ -9497,7 +9790,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["yibz-tichondrius"] = {
             displayName = "Yibz-tichondrius",
-            specKey = "",
+            specKey = "MONK_MISTWEAVER",
             rating = 1048,
             rank = 496,
             wins = 11,
@@ -9506,7 +9799,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["yokoshukumeì-aeriepeak"] = {
             displayName = "Yokoshukumeì-aerie-peak",
-            specKey = "",
+            specKey = "PRIEST_HOLY",
             rating = 1151,
             rank = 329,
             wins = 12,
@@ -9515,7 +9808,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["youngkarl-tichondrius"] = {
             displayName = "Youngkarl-tichondrius",
-            specKey = "",
+            specKey = "PRIEST_HOLY",
             rating = 1689,
             rank = 21,
             wins = 23,
@@ -9524,7 +9817,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["youyong-shadowsong"] = {
             displayName = "Youyong-shadowsong",
-            specKey = "",
+            specKey = "WARRIOR_ARMS",
             rating = 864,
             rank = 648,
             wins = 9,
@@ -9533,7 +9826,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["ysl-aegwynn"] = {
             displayName = "Ysl-aegwynn",
-            specKey = "",
+            specKey = "DEMONHUNTER_HAVOC",
             rating = 1055,
             rank = 432,
             wins = 11,
@@ -9542,7 +9835,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["yøüwillßlèéd-sargeras"] = {
             displayName = "Yøüwillßlèéd-sargeras",
-            specKey = "",
+            specKey = "DRUID_FERAL",
             rating = 1243,
             rank = 288,
             wins = 13,
@@ -9551,7 +9844,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["zaef-kelthuzad"] = {
             displayName = "Zaef-kelthuzad",
-            specKey = "",
+            specKey = "WARLOCK_DESTRUCTION",
             rating = 1054,
             rank = 456,
             wins = 11,
@@ -9560,7 +9853,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["zaepray-moonrunner"] = {
             displayName = "Zaepray-moonrunner",
-            specKey = "",
+            specKey = "PRIEST_DISCIPLINE",
             rating = 768,
             rank = 846,
             wins = 8,
@@ -9569,7 +9862,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["zahmanetv-tichondrius"] = {
             displayName = "Zahmanetv-tichondrius",
-            specKey = "",
+            specKey = "ROGUE_ASSASSINATION",
             rating = 1053,
             rank = 469,
             wins = 11,
@@ -9596,7 +9889,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["zayd-dragonblight"] = {
             displayName = "Zayd-dragonblight",
-            specKey = "",
+            specKey = "DRUID_BALANCE",
             rating = 863,
             rank = 751,
             wins = 9,
@@ -9605,7 +9898,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["zaynerys-dalaran"] = {
             displayName = "Zaynerys-dalaran",
-            specKey = "",
+            specKey = "MAGE_FROST",
             rating = 959,
             rank = 572,
             wins = 10,
@@ -9614,7 +9907,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["zein-ursin"] = {
             displayName = "Zein-ursin",
-            specKey = "",
+            specKey = "WARRIOR_ARMS",
             rating = 1248,
             rank = 254,
             wins = 13,
@@ -9623,7 +9916,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["zervez-tichondrius"] = {
             displayName = "Zervez-tichondrius",
-            specKey = "",
+            specKey = "PALADIN_HOLY",
             rating = 768,
             rank = 846,
             wins = 8,
@@ -9632,7 +9925,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["zeusqt-velen"] = {
             displayName = "Zeusqt-velen",
-            specKey = "",
+            specKey = "DRUID_BALANCE",
             rating = 960,
             rank = 508,
             wins = 10,
@@ -9641,7 +9934,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["zife-ursin"] = {
             displayName = "Zife-ursin",
-            specKey = "",
+            specKey = "MONK_WINDWALKER",
             rating = 1150,
             rank = 339,
             wins = 12,
@@ -9650,7 +9943,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["zitto-ragnaros"] = {
             displayName = "Zitto-ragnaros",
-            specKey = "",
+            specKey = "HUNTER_MARKSMANSHIP",
             rating = 1333,
             rank = 243,
             wins = 15,
@@ -9668,7 +9961,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["zodiiak-tichondrius"] = {
             displayName = "Zodiiak-tichondrius",
-            specKey = "",
+            specKey = "WARRIOR_ARMS",
             rating = 1145,
             rank = 373,
             wins = 12,
@@ -9677,7 +9970,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["zokorzik-area52"] = {
             displayName = "Zokorzik-area-52",
-            specKey = "",
+            specKey = "MAGE_FROST",
             rating = 1055,
             rank = 432,
             wins = 11,
@@ -9686,7 +9979,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["zugtony-frostmane"] = {
             displayName = "Zugtony-frostmane",
-            specKey = "",
+            specKey = "MONK_MISTWEAVER",
             rating = 851,
             rank = 842,
             wins = 9,
@@ -9695,7 +9988,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["zunniez-tichondrius"] = {
             displayName = "Zunniez-tichondrius",
-            specKey = "",
+            specKey = "PRIEST_DISCIPLINE",
             rating = 1656,
             rank = 37,
             wins = 22,
@@ -9704,7 +9997,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["zyi-hyjal"] = {
             displayName = "Zyi-hyjal",
-            specKey = "",
+            specKey = "SHAMAN_RESTORATION",
             rating = 1247,
             rank = 263,
             wins = 13,
@@ -9713,7 +10006,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["zðldyck-tichondrius"] = {
             displayName = "Zðldyck-tichondrius",
-            specKey = "",
+            specKey = "ROGUE_SUBTLETY",
             rating = 1344,
             rank = 217,
             wins = 14,
@@ -9722,7 +10015,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["ßladesong-moonguard"] = {
             displayName = "ßladesong-moon-guard",
-            specKey = "",
+            specKey = "WARRIOR_FURY",
             rating = 1056,
             rank = 382,
             wins = 11,
@@ -9740,7 +10033,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["ßowmance-area52"] = {
             displayName = "ßowmance-area-52",
-            specKey = "",
+            specKey = "HUNTER_BEASTMASTERY",
             rating = 1631,
             rank = 58,
             wins = 21,
@@ -9749,7 +10042,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["æú-area52"] = {
             displayName = "Æú-area-52",
-            specKey = "",
+            specKey = "PRIEST_SHADOW",
             rating = 1604,
             rank = 117,
             wins = 19,
@@ -9758,7 +10051,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["çhloe-azgalor"] = {
             displayName = "Çhloe-azgalor",
-            specKey = "",
+            specKey = "PRIEST_DISCIPLINE",
             rating = 1052,
             rank = 479,
             wins = 11,
@@ -9767,7 +10060,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["çurtdiesel-tichondrius"] = {
             displayName = "Çurtdiesel-tichondrius",
-            specKey = "MONK_MISTWEAVER",
+            specKey = "",
             rating = 767,
             rank = 983,
             wins = 8,
@@ -9803,7 +10096,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["öff-tichondrius"] = {
             displayName = "Öff-tichondrius",
-            specKey = "",
+            specKey = "DRUID_FERAL",
             rating = 959,
             rank = 572,
             wins = 10,
@@ -9812,7 +10105,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["ööf-dunemaul"] = {
             displayName = "Ööf-dunemaul",
-            specKey = "",
+            specKey = "MAGE_FROST",
             rating = 1643,
             rank = 48,
             wins = 22,
