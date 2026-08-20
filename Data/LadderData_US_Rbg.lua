@@ -7,7 +7,7 @@ PvPLedgerLadderData.US.rbg = {
     bracket = "rbg",
     season = 42,
     snapshotDate = "2026-08-20",
-    generatedAt = "2026-08-20T10:00:20Z",
+    generatedAt = "2026-08-20T10:39:31Z",
     source = "blizzard-api+seramate",
     overall = {
         listedCount = 365,
@@ -165,9 +165,9 @@ PvPLedgerLadderData.US.rbg = {
         },
         ["PALADIN"] = {
             listedCount = 22,
-            avgListedRating = 454.9,
-            medianListedRating = 383.8,
-            top100Avg = 454.9,
+            avgListedRating = 493.4,
+            medianListedRating = 479.5,
+            top100Avg = 493.4,
             highest = 1339,
             buckets = {
                 ["100-199"] = 10,
@@ -524,22 +524,23 @@ PvPLedgerLadderData.US.rbg = {
             },
         },
         ["PALADIN_HOLY"] = {
-            listedCount = 4,
-            avgListedRating = 431.8,
-            medianListedRating = 383.5,
-            top100Avg = 431.8,
-            highest = 768,
+            listedCount = 5,
+            avgListedRating = 537.2,
+            medianListedRating = 575,
+            top100Avg = 537.2,
+            highest = 959,
             buckets = {
                 ["100-199"] = 2,
                 ["500-599"] = 1,
                 ["700-799"] = 1,
+                ["900-999"] = 1,
             },
         },
         ["PALADIN_RETRIBUTION"] = {
-            listedCount = 18,
-            avgListedRating = 477.9,
-            medianListedRating = 384.0,
-            top100Avg = 477.9,
+            listedCount = 17,
+            avgListedRating = 449.6,
+            medianListedRating = 384,
+            top100Avg = 449.6,
             highest = 1339,
             buckets = {
                 ["100-199"] = 8,
@@ -547,7 +548,7 @@ PvPLedgerLadderData.US.rbg = {
                 ["1300-1399"] = 1,
                 ["300-399"] = 4,
                 ["500-599"] = 2,
-                ["900-999"] = 2,
+                ["900-999"] = 1,
             },
         },
         ["PRIEST_DISCIPLINE"] = {
@@ -1982,7 +1983,7 @@ PvPLedgerLadderData.US.rbg = {
         },
         ["hennessey-bleedinghollow"] = {
             displayName = "Hennessey-bleeding-hollow",
-            specKey = "PALADIN_RETRIBUTION",
+            specKey = "PALADIN_HOLY",
             rating = 959,
             rank = 49,
             wins = 5,
