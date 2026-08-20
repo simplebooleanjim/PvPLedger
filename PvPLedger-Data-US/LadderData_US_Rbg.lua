@@ -2,12 +2,12 @@
 PvPLedgerLadderData = PvPLedgerLadderData or {}
 PvPLedgerLadderData.US = PvPLedgerLadderData.US or {}
 PvPLedgerLadderData.US.rbg = {
-    snapshotId = "us-rbg-s42-2026-08-19",
+    snapshotId = "us-rbg-s42-2026-08-20",
     region = "US",
     bracket = "rbg",
     season = 42,
-    snapshotDate = "2026-08-19",
-    generatedAt = "2026-08-19T23:47:25Z",
+    snapshotDate = "2026-08-20",
+    generatedAt = "2026-08-20T01:11:37Z",
     source = "blizzard-api+seramate",
     overall = {
         listedCount = 278,
@@ -125,9 +125,9 @@ PvPLedgerLadderData.US.rbg = {
         },
         ["MAGE"] = {
             listedCount = 15,
-            avgListedRating = 406.4,
-            medianListedRating = 288.0,
-            top100Avg = 406.4,
+            avgListedRating = 416,
+            medianListedRating = 384,
+            top100Avg = 416,
             highest = 768,
             buckets = {
                 ["100-199"] = 5,
@@ -406,14 +406,14 @@ PvPLedgerLadderData.US.rbg = {
             },
         },
         ["MAGE_ARCANE"] = {
-            listedCount = 6,
+            listedCount = 7,
             avgListedRating = 384,
-            medianListedRating = 288.0,
+            medianListedRating = 384,
             top100Avg = 384,
             highest = 768,
             buckets = {
                 ["100-199"] = 3,
-                ["300-399"] = 1,
+                ["300-399"] = 2,
                 ["500-599"] = 1,
                 ["700-799"] = 1,
             },
@@ -431,13 +431,13 @@ PvPLedgerLadderData.US.rbg = {
             },
         },
         ["MAGE_FROST"] = {
-            listedCount = 5,
-            avgListedRating = 499.2,
-            medianListedRating = 384,
-            top100Avg = 499.2,
+            listedCount = 4,
+            avgListedRating = 528,
+            medianListedRating = 480.0,
+            top100Avg = 528,
             highest = 768,
             buckets = {
-                ["300-399"] = 3,
+                ["300-399"] = 2,
                 ["500-599"] = 1,
                 ["700-799"] = 1,
             },
@@ -1210,7 +1210,7 @@ PvPLedgerLadderData.US.rbg = {
         },
         ["diegoneally-hyjal"] = {
             displayName = "Diegoneally-hyjal",
-            specKey = "MAGE_FROST",
+            specKey = "MAGE_ARCANE",
             rating = 384,
             rank = 93,
             wins = 2,
