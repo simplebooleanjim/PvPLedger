@@ -7,7 +7,7 @@ PvPLedgerLadderData.US.rbg = {
     bracket = "rbg",
     season = 42,
     snapshotDate = "2026-08-20",
-    generatedAt = "2026-08-20T21:32:32Z",
+    generatedAt = "2026-08-20T22:01:49Z",
     source = "blizzard-api+seramate",
     overall = {
         listedCount = 365,
@@ -1780,7 +1780,7 @@ PvPLedgerLadderData.US.rbg = {
             rank = 263,
             wins = 1,
             losses = 1,
-            faction = "HORDE",
+            faction = "ALLIANCE",
         },
         ["fortitud-tichondrius"] = {
             displayName = "Fortitud-tichondrius",
