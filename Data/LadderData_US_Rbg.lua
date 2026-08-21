@@ -2,12 +2,12 @@
 PvPLedgerLadderData = PvPLedgerLadderData or {}
 PvPLedgerLadderData.US = PvPLedgerLadderData.US or {}
 PvPLedgerLadderData.US.rbg = {
-    snapshotId = "us-rbg-s42-2026-08-20",
+    snapshotId = "us-rbg-s42-2026-08-21",
     region = "US",
     bracket = "rbg",
     season = 42,
-    snapshotDate = "2026-08-20",
-    generatedAt = "2026-08-20T23:40:39Z",
+    snapshotDate = "2026-08-21",
+    generatedAt = "2026-08-21T00:00:35Z",
     source = "blizzard-api+seramate",
     overall = {
         listedCount = 365,
@@ -197,9 +197,9 @@ PvPLedgerLadderData.US.rbg = {
         },
         ["ROGUE"] = {
             listedCount = 26,
-            avgListedRating = 567.8,
-            medianListedRating = 384,
-            top100Avg = 567.8,
+            avgListedRating = 558.6,
+            medianListedRating = 384.0,
+            top100Avg = 558.6,
             highest = 1544,
             buckets = {
                 ["100-199"] = 4,
@@ -595,10 +595,10 @@ PvPLedgerLadderData.US.rbg = {
             },
         },
         ["ROGUE_ASSASSINATION"] = {
-            listedCount = 9,
-            avgListedRating = 877.4,
-            medianListedRating = 768,
-            top100Avg = 877.4,
+            listedCount = 10,
+            avgListedRating = 866.5,
+            medianListedRating = 768.0,
+            top100Avg = 866.5,
             highest = 1536,
             buckets = {
                 ["100-199"] = 2,
@@ -606,7 +606,7 @@ PvPLedgerLadderData.US.rbg = {
                 ["1300-1399"] = 2,
                 ["1500-1599"] = 1,
                 ["500-599"] = 1,
-                ["700-799"] = 2,
+                ["700-799"] = 3,
             },
         },
         ["ROGUE_OUTLAW"] = {
@@ -621,17 +621,16 @@ PvPLedgerLadderData.US.rbg = {
             },
         },
         ["ROGUE_SUBTLETY"] = {
-            listedCount = 15,
-            avgListedRating = 537.9,
-            medianListedRating = 384,
-            top100Avg = 537.9,
+            listedCount = 14,
+            avgListedRating = 521.4,
+            medianListedRating = 384.0,
+            top100Avg = 521.4,
             highest = 1544,
             buckets = {
                 ["100-199"] = 1,
                 ["1300-1399"] = 1,
                 ["1500-1599"] = 1,
                 ["300-399"] = 11,
-                ["700-799"] = 1,
             },
         },
         ["SHAMAN_ELEMENTAL"] = {
@@ -1827,7 +1826,7 @@ PvPLedgerLadderData.US.rbg = {
         },
         ["ghostelf-ragnaros"] = {
             displayName = "Ghostelf-ragnaros",
-            specKey = "ROGUE_SUBTLETY",
+            specKey = "ROGUE_ASSASSINATION",
             rating = 768,
             rank = 59,
             wins = 4,
