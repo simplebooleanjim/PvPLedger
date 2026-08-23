@@ -7,7 +7,7 @@ PvPLedgerLadderData.US.rbg = {
     bracket = "rbg",
     season = 42,
     snapshotDate = "2026-08-23",
-    generatedAt = "2026-08-23T05:45:10Z",
+    generatedAt = "2026-08-23T06:15:36Z",
     source = "blizzard-api+seramate",
     overall = {
         listedCount = 865,
@@ -120,10 +120,10 @@ PvPLedgerLadderData.US.rbg = {
             },
         },
         ["EVOKER"] = {
-            listedCount = 68,
-            avgListedRating = 905.9,
-            medianListedRating = 946,
-            top100Avg = 905.9,
+            listedCount = 67,
+            avgListedRating = 905.7,
+            medianListedRating = 857.0,
+            top100Avg = 905.7,
             highest = 1740,
             buckets = {
                 ["100-199"] = 10,
@@ -137,7 +137,7 @@ PvPLedgerLadderData.US.rbg = {
                 ["300-399"] = 12,
                 ["500-599"] = 9,
                 ["700-799"] = 12,
-                ["900-999"] = 6,
+                ["900-999"] = 5,
             },
         },
         ["HUNTER"] = {
@@ -472,10 +472,10 @@ PvPLedgerLadderData.US.rbg = {
             },
         },
         ["EVOKER_DEVASTATION"] = {
-            listedCount = 29,
-            avgListedRating = 941.3,
-            medianListedRating = 946,
-            top100Avg = 941.3,
+            listedCount = 28,
+            avgListedRating = 940.8,
+            medianListedRating = 857.0,
+            top100Avg = 940.8,
             highest = 1740,
             buckets = {
                 ["100-199"] = 2,
@@ -487,7 +487,7 @@ PvPLedgerLadderData.US.rbg = {
                 ["300-399"] = 4,
                 ["500-599"] = 2,
                 ["700-799"] = 6,
-                ["900-999"] = 6,
+                ["900-999"] = 5,
             },
         },
         ["EVOKER_PRESERVATION"] = {
@@ -2826,7 +2826,7 @@ PvPLedgerLadderData.US.rbg = {
         },
         ["dragonstonks-moonguard"] = {
             displayName = "Dragonstonks-moon-guard",
-            specKey = "EVOKER_DEVASTATION",
+            specKey = "",
             rating = 958,
             rank = 198,
             wins = 5,
