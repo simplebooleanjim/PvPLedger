@@ -7,7 +7,7 @@ PvPLedgerLadderData.US.arena2v2 = {
     bracket = "arena2v2",
     season = 42,
     snapshotDate = "2026-08-26",
-    generatedAt = "2026-08-26T06:00:29Z",
+    generatedAt = "2026-08-26T07:02:45Z",
     source = "blizzard-api+seramate",
     overall = {
         listedCount = 1006,
@@ -165,9 +165,9 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["PALADIN"] = {
             listedCount = 95,
-            avgListedRating = 1739.7,
-            medianListedRating = 1701.5,
-            top100Avg = 1739.7,
+            avgListedRating = 1739.6,
+            medianListedRating = 1705.2,
+            top100Avg = 1739.6,
             highest = 2309,
             buckets = {
                 ["1600-1699"] = 45,
@@ -476,13 +476,13 @@ PvPLedgerLadderData.US.arena2v2 = {
             },
         },
         ["PALADIN_HOLY"] = {
-            listedCount = 82,
-            avgListedRating = 1772.8,
-            medianListedRating = 1726.0,
-            top100Avg = 1772.8,
+            listedCount = 81,
+            avgListedRating = 1773.8,
+            medianListedRating = 1728,
+            top100Avg = 1773.8,
             highest = 2309,
             buckets = {
-                ["1600-1699"] = 37,
+                ["1600-1699"] = 36,
                 ["1700-1799"] = 15,
                 ["1800-1899"] = 20,
                 ["1900-1999"] = 4,
@@ -493,13 +493,13 @@ PvPLedgerLadderData.US.arena2v2 = {
             },
         },
         ["PALADIN_RETRIBUTION"] = {
-            listedCount = 13,
-            avgListedRating = 1706.5,
-            medianListedRating = 1677,
-            top100Avg = 1706.5,
+            listedCount = 14,
+            avgListedRating = 1705.4,
+            medianListedRating = 1682.5,
+            top100Avg = 1705.4,
             highest = 1899,
             buckets = {
-                ["1600-1699"] = 8,
+                ["1600-1699"] = 9,
                 ["1700-1799"] = 3,
                 ["1800-1899"] = 2,
             },
@@ -4839,7 +4839,7 @@ PvPLedgerLadderData.US.arena2v2 = {
         },
         ["kî-proudmoore"] = {
             displayName = "Kî-proudmoore",
-            specKey = "PALADIN_HOLY",
+            specKey = "PALADIN_RETRIBUTION",
             rating = 1692,
             rank = 623,
             wins = 25,
