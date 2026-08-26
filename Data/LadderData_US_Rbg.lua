@@ -7,7 +7,7 @@ PvPLedgerLadderData.US.rbg = {
     bracket = "rbg",
     season = 42,
     snapshotDate = "2026-08-26",
-    generatedAt = "2026-08-26T08:54:54Z",
+    generatedAt = "2026-08-26T09:41:05Z",
     source = "blizzard-api+seramate",
     overall = {
         listedCount = 1186,
@@ -235,9 +235,9 @@ PvPLedgerLadderData.US.rbg = {
         },
         ["PRIEST"] = {
             listedCount = 200,
-            avgListedRating = 827.6,
+            avgListedRating = 828.8,
             medianListedRating = 768.0,
-            top100Avg = 840.6,
+            top100Avg = 839.2,
             highest = 1921,
             buckets = {
                 ["100-199"] = 20,
@@ -319,10 +319,10 @@ PvPLedgerLadderData.US.rbg = {
             },
         },
         ["WARRIOR"] = {
-            listedCount = 73,
-            avgListedRating = 882.9,
+            listedCount = 74,
+            avgListedRating = 883.8,
             medianListedRating = 856.5,
-            top100Avg = 882.9,
+            top100Avg = 883.8,
             highest = 1790,
             buckets = {
                 ["100-199"] = 8,
@@ -336,7 +336,7 @@ PvPLedgerLadderData.US.rbg = {
                 ["300-399"] = 18,
                 ["500-599"] = 10,
                 ["700-799"] = 5,
-                ["900-999"] = 5,
+                ["900-999"] = 6,
             },
         },
     },
@@ -746,10 +746,10 @@ PvPLedgerLadderData.US.rbg = {
             },
         },
         ["PRIEST_DISCIPLINE"] = {
-            listedCount = 71,
-            avgListedRating = 704.2,
-            medianListedRating = 575,
-            top100Avg = 704.2,
+            listedCount = 72,
+            avgListedRating = 707.7,
+            medianListedRating = 575.5,
+            top100Avg = 707.7,
             highest = 1727,
             buckets = {
                 ["100-199"] = 14,
@@ -763,14 +763,14 @@ PvPLedgerLadderData.US.rbg = {
                 ["300-399"] = 17,
                 ["500-599"] = 16,
                 ["700-799"] = 3,
-                ["900-999"] = 2,
+                ["900-999"] = 3,
             },
         },
         ["PRIEST_HOLY"] = {
-            listedCount = 105,
-            avgListedRating = 972.9,
-            medianListedRating = 955,
-            top100Avg = 1011.9,
+            listedCount = 104,
+            avgListedRating = 973.0,
+            medianListedRating = 955.0,
+            top100Avg = 1004.2,
             highest = 1921,
             buckets = {
                 ["100-199"] = 5,
@@ -787,7 +787,7 @@ PvPLedgerLadderData.US.rbg = {
                 ["300-399"] = 16,
                 ["500-599"] = 17,
                 ["700-799"] = 12,
-                ["900-999"] = 9,
+                ["900-999"] = 8,
             },
         },
         ["PRIEST_SHADOW"] = {
@@ -961,10 +961,10 @@ PvPLedgerLadderData.US.rbg = {
             },
         },
         ["WARRIOR_ARMS"] = {
-            listedCount = 47,
-            avgListedRating = 825.4,
-            medianListedRating = 576,
-            top100Avg = 825.4,
+            listedCount = 48,
+            avgListedRating = 828.2,
+            medianListedRating = 576.0,
+            top100Avg = 828.2,
             highest = 1790,
             buckets = {
                 ["100-199"] = 5,
@@ -976,7 +976,7 @@ PvPLedgerLadderData.US.rbg = {
                 ["300-399"] = 11,
                 ["500-599"] = 9,
                 ["700-799"] = 3,
-                ["900-999"] = 3,
+                ["900-999"] = 4,
             },
         },
         ["WARRIOR_FURY"] = {
@@ -3705,7 +3705,7 @@ PvPLedgerLadderData.US.rbg = {
         },
         ["endearing-stormrage"] = {
             displayName = "Endearing-stormrage",
-            specKey = "PRIEST_HOLY",
+            specKey = "PRIEST_DISCIPLINE",
             rating = 959,
             rank = 346,
             wins = 5,
@@ -6486,7 +6486,7 @@ PvPLedgerLadderData.US.rbg = {
         },
         ["lowkeyglað-tichondrius"] = {
             displayName = "Lowkeyglað-tichondrius",
-            specKey = "",
+            specKey = "WARRIOR_ARMS",
             rating = 960,
             rank = 328,
             wins = 5,
