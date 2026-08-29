@@ -7,7 +7,7 @@ PvPLedgerLadderData.US.rbg = {
     bracket = "rbg",
     season = 42,
     snapshotDate = "2026-08-29",
-    generatedAt = "2026-08-29T10:04:39Z",
+    generatedAt = "2026-08-29T15:04:47Z",
     source = "blizzard-api",
     overall = {
         listedCount = 1135,
@@ -1420,7 +1420,7 @@ PvPLedgerLadderData.US.rbg = {
             rating = 765,
             rank = 656,
             wins = 4,
-            losses = 5,
+            losses = 6,
             faction = "ALLIANCE",
         },
         ["celestiâl-kelthuzad"] = {
@@ -3013,7 +3013,7 @@ PvPLedgerLadderData.US.rbg = {
             rating = 1553,
             rank = 163,
             wins = 10,
-            losses = 9,
+            losses = 10,
             faction = "ALLIANCE",
         },
         ["filip-thunderlord"] = {
@@ -3751,7 +3751,7 @@ PvPLedgerLadderData.US.rbg = {
             rating = 765,
             rank = 656,
             wins = 4,
-            losses = 5,
+            losses = 7,
             faction = "ALLIANCE",
         },
         ["happybunny-tichondrius"] = {
@@ -3832,7 +3832,7 @@ PvPLedgerLadderData.US.rbg = {
             rating = 1579,
             rank = 138,
             wins = 11,
-            losses = 14,
+            losses = 15,
             faction = "HORDE",
         },
         ["hlf-tichondrius"] = {
@@ -4030,7 +4030,7 @@ PvPLedgerLadderData.US.rbg = {
             rating = 384,
             rank = 899,
             wins = 2,
-            losses = 3,
+            losses = 5,
             faction = "ALLIANCE",
         },
         ["hydraz-lothar"] = {
@@ -4552,7 +4552,7 @@ PvPLedgerLadderData.US.rbg = {
             rating = 575,
             rank = 830,
             wins = 3,
-            losses = 4,
+            losses = 6,
             faction = "ALLIANCE",
         },
         ["josciel-ragnaros"] = {
@@ -5452,7 +5452,7 @@ PvPLedgerLadderData.US.rbg = {
             rating = 1702,
             rank = 53,
             wins = 18,
-            losses = 11,
+            losses = 12,
             faction = "ALLIANCE",
         },
         ["madgibbs-area52"] = {
@@ -5803,7 +5803,7 @@ PvPLedgerLadderData.US.rbg = {
             rating = 384,
             rank = 899,
             wins = 2,
-            losses = 4,
+            losses = 5,
             faction = "ALLIANCE",
         },
         ["mithràndìr-tichondrius"] = {
@@ -5956,7 +5956,7 @@ PvPLedgerLadderData.US.rbg = {
             rating = 765,
             rank = 656,
             wins = 4,
-            losses = 5,
+            losses = 7,
             faction = "ALLIANCE",
         },
         ["myfurion-sargeras"] = {
@@ -6424,7 +6424,7 @@ PvPLedgerLadderData.US.rbg = {
             rating = 575,
             rank = 830,
             wins = 3,
-            losses = 4,
+            losses = 6,
             faction = "HORDE",
         },
         ["okbye-sargeras"] = {
@@ -6802,7 +6802,7 @@ PvPLedgerLadderData.US.rbg = {
             rating = 1144,
             rank = 412,
             wins = 6,
-            losses = 5,
+            losses = 6,
             faction = "ALLIANCE",
         },
         ["pollyw-tichondrius"] = {
@@ -6964,7 +6964,7 @@ PvPLedgerLadderData.US.rbg = {
             rating = 576,
             rank = 705,
             wins = 3,
-            losses = 1,
+            losses = 2,
             faction = "HORDE",
         },
         ["putsandcalls-bleedinghollow"] = {
@@ -7036,7 +7036,7 @@ PvPLedgerLadderData.US.rbg = {
             rating = 952,
             rank = 534,
             wins = 5,
-            losses = 5,
+            losses = 6,
             faction = "ALLIANCE",
         },
         ["püblîçtøïlët-bleedinghollow"] = {
@@ -7504,7 +7504,7 @@ PvPLedgerLadderData.US.rbg = {
             rating = 768,
             rank = 560,
             wins = 4,
-            losses = 6,
+            losses = 7,
             faction = "ALLIANCE",
         },
         ["ryzox-arthas"] = {
@@ -9781,7 +9781,7 @@ PvPLedgerLadderData.US.rbg = {
             rating = 1692,
             rank = 57,
             wins = 11,
-            losses = 7,
+            losses = 8,
             faction = "ALLIANCE",
         },
         ["xylvanä-kiljaeden"] = {
@@ -9835,7 +9835,7 @@ PvPLedgerLadderData.US.rbg = {
             rating = 765,
             rank = 656,
             wins = 4,
-            losses = 5,
+            losses = 7,
             faction = "ALLIANCE",
         },
         ["yepbeef-tichondrius"] = {
