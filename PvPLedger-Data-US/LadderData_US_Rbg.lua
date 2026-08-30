@@ -7,7 +7,7 @@ PvPLedgerLadderData.US.rbg = {
     bracket = "rbg",
     season = 42,
     snapshotDate = "2026-08-30",
-    generatedAt = "2026-08-30T12:58:38Z",
+    generatedAt = "2026-08-30T17:17:53Z",
     source = "blizzard-api",
     overall = {
         listedCount = 1237,
@@ -5941,15 +5941,6 @@ PvPLedgerLadderData.US.rbg = {
             losses = 4,
             faction = "HORDE",
         },
-        ["maldorn-moonguard"] = {
-            displayName = "Maldorn-moon-guard",
-            specKey = "",
-            rating = 1081,
-            rank = 530,
-            wins = 6,
-            losses = 10,
-            faction = "ALLIANCE",
-        },
         ["malístra-lothar"] = {
             displayName = "Malístra-lothar",
             specKey = "",
@@ -8586,6 +8577,15 @@ PvPLedgerLadderData.US.rbg = {
             wins = 2,
             losses = 3,
             faction = "HORDE",
+        },
+        ["shortroot-moonguard"] = {
+            displayName = "Shortroot-moon-guard",
+            specKey = "",
+            rating = 1081,
+            rank = 530,
+            wins = 6,
+            losses = 10,
+            faction = "ALLIANCE",
         },
         ["shortsqueaks-tichondrius"] = {
             displayName = "Shortsqueaks-tichondrius",
