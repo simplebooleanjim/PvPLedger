@@ -2,12 +2,12 @@
 PvPLedgerLadderData = PvPLedgerLadderData or {}
 PvPLedgerLadderData.US = PvPLedgerLadderData.US or {}
 PvPLedgerLadderData.US.rbg = {
-    snapshotId = "us-rbg-s42-2026-08-31",
+    snapshotId = "us-rbg-s42-2026-09-01",
     region = "US",
     bracket = "rbg",
     season = 42,
-    snapshotDate = "2026-08-31",
-    generatedAt = "2026-08-31T20:17:59Z",
+    snapshotDate = "2026-09-01",
+    generatedAt = "2026-09-01T00:00:21Z",
     source = "blizzard-api",
     overall = {
         listedCount = 1032,
@@ -5830,7 +5830,7 @@ PvPLedgerLadderData.US.rbg = {
             rank = 848,
             wins = 3,
             losses = 4,
-            faction = "HORDE",
+            faction = "ALLIANCE",
         },
         ["onlyfiends-tichondrius"] = {
             displayName = "Onlyfiends-tichondrius",
