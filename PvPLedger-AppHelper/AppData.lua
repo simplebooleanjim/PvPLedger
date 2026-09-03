@@ -3,19 +3,19 @@
 --- DO NOT EDIT MANUALLY.
 PVL_AppHelperPendingSnapshots = PVL_AppHelperPendingSnapshots or {}
 PVL_AppHelperSyncInfo = {
-    lastSync = 1788391202,
-    generatedAt = "2026-09-02T23:20:02Z",
+    lastSync = 1788398324,
+    generatedAt = "2026-09-03T01:18:44Z",
     region = "US",
     source = "collector",
 }
 
 PVL_AppHelperPendingSnapshots.arena2v2 = {
-    snapshotId = "us-arena2v2-s42-2026-09-02",
+    snapshotId = "us-arena2v2-s42-2026-09-03",
     region = "US",
     bracket = "arena2v2",
     season = 42,
-    snapshotDate = "2026-09-02",
-    generatedAt = "2026-09-02T23:20:00Z",
+    snapshotDate = "2026-09-03",
+    generatedAt = "2026-09-03T01:18:41Z",
     source = "blizzard-api",
     overall = {
         listedCount = 1004,
@@ -9115,12 +9115,12 @@ PVL_AppHelperPendingSnapshots.arena2v2 = {
 }
 
 PVL_AppHelperPendingSnapshots.arena3v3 = {
-    snapshotId = "us-arena3v3-s42-2026-09-02",
+    snapshotId = "us-arena3v3-s42-2026-09-03",
     region = "US",
     bracket = "arena3v3",
     season = 42,
-    snapshotDate = "2026-09-02",
-    generatedAt = "2026-09-02T23:20:01Z",
+    snapshotDate = "2026-09-03",
+    generatedAt = "2026-09-03T01:18:43Z",
     source = "blizzard-api",
     overall = {
         listedCount = 1006,
@@ -18236,12 +18236,12 @@ PVL_AppHelperPendingSnapshots.arena3v3 = {
 }
 
 PVL_AppHelperPendingSnapshots.blitz = {
-    snapshotId = "us-blitz-s42-2026-09-02",
+    snapshotId = "us-blitz-s42-2026-09-03",
     region = "US",
     bracket = "blitz",
     season = 42,
-    snapshotDate = "2026-09-02",
-    generatedAt = "2026-09-02T23:19:32Z",
+    snapshotDate = "2026-09-03",
+    generatedAt = "2026-09-03T01:18:06Z",
     source = "blizzard-api",
     overall = {
         listedCount = 26310,
@@ -239776,12 +239776,12 @@ PVL_AppHelperPendingSnapshots.blitz = {
 }
 
 PVL_AppHelperPendingSnapshots.rbg = {
-    snapshotId = "us-rbg-s42-2026-09-02",
+    snapshotId = "us-rbg-s42-2026-09-03",
     region = "US",
     bracket = "rbg",
     season = 42,
-    snapshotDate = "2026-09-02",
-    generatedAt = "2026-09-02T23:19:58Z",
+    snapshotDate = "2026-09-03",
+    generatedAt = "2026-09-03T01:18:39Z",
     source = "blizzard-api",
     overall = {
         listedCount = 1045,
@@ -249256,12 +249256,12 @@ PVL_AppHelperPendingSnapshots.rbg = {
 }
 
 PVL_AppHelperPendingSnapshots.shuffle = {
-    snapshotId = "us-shuffle-s42-2026-09-02",
+    snapshotId = "us-shuffle-s42-2026-09-03",
     region = "US",
     bracket = "shuffle",
     season = 42,
-    snapshotDate = "2026-09-02",
-    generatedAt = "2026-09-02T23:19:57Z",
+    snapshotDate = "2026-09-03",
+    generatedAt = "2026-09-03T01:18:37Z",
     source = "blizzard-api",
     overall = {
         listedCount = 31743,
