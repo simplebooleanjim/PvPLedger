@@ -7,7 +7,7 @@ PvPLedgerLadderData.US.rbg = {
     bracket = "rbg",
     season = 42,
     snapshotDate = "2026-09-04",
-    generatedAt = "2026-09-04T10:42:56Z",
+    generatedAt = "2026-09-04T14:34:24Z",
     source = "blizzard-api",
     overall = {
         listedCount = 1119,
@@ -2825,15 +2825,6 @@ PvPLedgerLadderData.US.rbg = {
             rank = 601,
             wins = 6,
             losses = 6,
-            faction = "ALLIANCE",
-        },
-        ["fckallyall-sargeras"] = {
-            displayName = "Fckallyall-sargeras",
-            specKey = "",
-            rating = 1592,
-            rank = 217,
-            wins = 45,
-            losses = 39,
             faction = "ALLIANCE",
         },
         ["feefiifoofum-kiljaeden"] = {
@@ -6705,6 +6696,15 @@ PvPLedgerLadderData.US.rbg = {
             wins = 7,
             losses = 5,
             faction = "HORDE",
+        },
+        ["playerqbwmgl-sargeras"] = {
+            displayName = "PlayerQBWMGL-sargeras",
+            specKey = "",
+            rating = 1592,
+            rank = 217,
+            wins = 45,
+            losses = 39,
+            faction = "ALLIANCE",
         },
         ["plexx-zuluhed"] = {
             displayName = "Plexx-zuluhed",
