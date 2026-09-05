@@ -7,7 +7,7 @@ PvPLedgerLadderData.US.rbg = {
     bracket = "rbg",
     season = 42,
     snapshotDate = "2026-09-05",
-    generatedAt = "2026-09-05T08:50:59Z",
+    generatedAt = "2026-09-05T12:25:16Z",
     source = "blizzard-api",
     overall = {
         listedCount = 1008,
@@ -1113,7 +1113,7 @@ PvPLedgerLadderData.US.rbg = {
             rating = 1719,
             rank = 90,
             wins = 21,
-            losses = 11,
+            losses = 12,
             faction = "HORDE",
         },
         ["canonized-destromath"] = {
@@ -3084,7 +3084,7 @@ PvPLedgerLadderData.US.rbg = {
             rating = 1685,
             rank = 117,
             wins = 17,
-            losses = 10,
+            losses = 11,
             faction = "ALLIANCE",
         },
         ["goxer-quelthalas"] = {
@@ -7026,7 +7026,7 @@ PvPLedgerLadderData.US.rbg = {
             rating = 1341,
             rank = 545,
             wins = 7,
-            losses = 3,
+            losses = 4,
             faction = "ALLIANCE",
         },
         ["sheladîn-illidan"] = {
