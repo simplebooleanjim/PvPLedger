@@ -7,7 +7,7 @@ PvPLedgerLadderData.US.rbg = {
     bracket = "rbg",
     season = 42,
     snapshotDate = "2026-09-08",
-    generatedAt = "2026-09-08T09:57:37Z",
+    generatedAt = "2026-09-08T14:17:38Z",
     source = "blizzard-api",
     overall = {
         listedCount = 1000,
@@ -330,7 +330,7 @@ PvPLedgerLadderData.US.rbg = {
             rating = 1854,
             rank = 50,
             wins = 25,
-            losses = 16,
+            losses = 17,
             faction = "HORDE",
         },
         ["arbeon-emeralddream"] = {
@@ -3561,7 +3561,7 @@ PvPLedgerLadderData.US.rbg = {
             rating = 1914,
             rank = 38,
             wins = 27,
-            losses = 17,
+            losses = 18,
             faction = "ALLIANCE",
         },
         ["ieve-wyrmrestaccord"] = {
@@ -7215,7 +7215,7 @@ PvPLedgerLadderData.US.rbg = {
             rating = 1871,
             rank = 45,
             wins = 30,
-            losses = 15,
+            losses = 16,
             faction = "ALLIANCE",
         },
         ["smókespíce-bleedinghollow"] = {
@@ -8700,7 +8700,7 @@ PvPLedgerLadderData.US.rbg = {
             rating = 1740,
             rank = 109,
             wins = 21,
-            losses = 13,
+            losses = 14,
             faction = "HORDE",
         },
         ["yepkubzy-tichondrius"] = {
