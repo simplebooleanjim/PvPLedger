@@ -7,7 +7,7 @@ PvPLedgerLadderData.US.rbg = {
     bracket = "rbg",
     season = 42,
     snapshotDate = "2026-09-09",
-    generatedAt = "2026-09-09T11:43:51Z",
+    generatedAt = "2026-09-09T15:19:21Z",
     source = "blizzard-api",
     overall = {
         listedCount = 1002,
@@ -331,7 +331,7 @@ PvPLedgerLadderData.US.rbg = {
             rank = 49,
             wins = 28,
             losses = 17,
-            faction = "HORDE",
+            faction = "ALLIANCE",
         },
         ["arbeon-emeralddream"] = {
             displayName = "Arbeon-emerald-dream",
