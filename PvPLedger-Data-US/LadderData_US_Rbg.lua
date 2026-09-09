@@ -7,7 +7,7 @@ PvPLedgerLadderData.US.rbg = {
     bracket = "rbg",
     season = 42,
     snapshotDate = "2026-09-09",
-    generatedAt = "2026-09-09T06:24:57Z",
+    generatedAt = "2026-09-09T11:43:51Z",
     source = "blizzard-api",
     overall = {
         listedCount = 1002,
@@ -1266,7 +1266,7 @@ PvPLedgerLadderData.US.rbg = {
             rating = 954,
             rank = 977,
             wins = 5,
-            losses = 9,
+            losses = 11,
             faction = "HORDE",
         },
         ["chooroh-sargeras"] = {
@@ -1392,7 +1392,7 @@ PvPLedgerLadderData.US.rbg = {
             rating = 1599,
             rank = 278,
             wins = 15,
-            losses = 17,
+            losses = 20,
             faction = "ALLIANCE",
         },
         ["clown-lethon"] = {
@@ -1869,7 +1869,7 @@ PvPLedgerLadderData.US.rbg = {
             rating = 957,
             rank = 948,
             wins = 5,
-            losses = 5,
+            losses = 6,
             faction = "HORDE",
         },
         ["dewtide-kaelthas"] = {
@@ -1905,7 +1905,7 @@ PvPLedgerLadderData.US.rbg = {
             rating = 1149,
             rank = 787,
             wins = 6,
-            losses = 1,
+            losses = 2,
             faction = "HORDE",
         },
         ["dinaboluarte-sargeras"] = {
@@ -1923,7 +1923,7 @@ PvPLedgerLadderData.US.rbg = {
             rating = 1576,
             rank = 325,
             wins = 15,
-            losses = 18,
+            losses = 19,
             faction = "ALLIANCE",
         },
         ["dissmisser-thrall"] = {
@@ -3129,7 +3129,7 @@ PvPLedgerLadderData.US.rbg = {
             rating = 1743,
             rank = 113,
             wins = 22,
-            losses = 14,
+            losses = 15,
             faction = "ALLIANCE",
         },
         ["goxer-quelthalas"] = {
@@ -3345,7 +3345,7 @@ PvPLedgerLadderData.US.rbg = {
             rating = 1142,
             rank = 828,
             wins = 6,
-            losses = 14,
+            losses = 15,
             faction = "HORDE",
         },
         ["healrstealr-tichondrius"] = {
@@ -3570,7 +3570,7 @@ PvPLedgerLadderData.US.rbg = {
             rating = 1914,
             rank = 39,
             wins = 27,
-            losses = 18,
+            losses = 19,
             faction = "ALLIANCE",
         },
         ["ieve-wyrmrestaccord"] = {
@@ -4896,8 +4896,8 @@ PvPLedgerLadderData.US.rbg = {
             losses = 7,
             faction = "ALLIANCE",
         },
-        ["mandyfîre-ragnaros"] = {
-            displayName = "Mandyfîre-ragnaros",
+        ["mandyfîre-quelthalas"] = {
+            displayName = "Mandyfîre-quelthalas",
             specKey = "",
             rating = 1588,
             rank = 299,
@@ -5046,7 +5046,7 @@ PvPLedgerLadderData.US.rbg = {
             rating = 1835,
             rank = 69,
             wins = 23,
-            losses = 15,
+            losses = 16,
             faction = "ALLIANCE",
         },
         ["meowchi-zuljin"] = {
@@ -5622,7 +5622,7 @@ PvPLedgerLadderData.US.rbg = {
             rating = 1558,
             rank = 369,
             wins = 14,
-            losses = 15,
+            losses = 16,
             faction = "ALLIANCE",
         },
         ["nyassae-thunderhorn"] = {
