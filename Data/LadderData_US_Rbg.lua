@@ -7,7 +7,7 @@ PvPLedgerLadderData.US.rbg = {
     bracket = "rbg",
     season = 42,
     snapshotDate = "2026-09-10",
-    generatedAt = "2026-09-10T06:34:43Z",
+    generatedAt = "2026-09-10T11:51:00Z",
     source = "blizzard-api",
     overall = {
         listedCount = 1000,
@@ -258,7 +258,7 @@ PvPLedgerLadderData.US.rbg = {
             rating = 1333,
             rank = 709,
             wins = 7,
-            losses = 2,
+            losses = 3,
             faction = "ALLIANCE",
         },
         ["ammally-tichondrius"] = {
@@ -1122,7 +1122,7 @@ PvPLedgerLadderData.US.rbg = {
             rating = 1812,
             rank = 82,
             wins = 29,
-            losses = 19,
+            losses = 20,
             faction = "ALLIANCE",
         },
         ["catalog-deathwing"] = {
@@ -1851,7 +1851,7 @@ PvPLedgerLadderData.US.rbg = {
             rating = 1149,
             rank = 811,
             wins = 6,
-            losses = 2,
+            losses = 4,
             faction = "HORDE",
         },
         ["dinaboluarte-sargeras"] = {
@@ -1869,7 +1869,7 @@ PvPLedgerLadderData.US.rbg = {
             rating = 1576,
             rank = 341,
             wins = 15,
-            losses = 19,
+            losses = 20,
             faction = "ALLIANCE",
         },
         ["dissmisser-thrall"] = {
