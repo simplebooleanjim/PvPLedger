@@ -7,7 +7,7 @@ PvPLedgerLadderData.US.rbg = {
     bracket = "rbg",
     season = 42,
     snapshotDate = "2026-09-14",
-    generatedAt = "2026-09-14T13:41:12Z",
+    generatedAt = "2026-09-14T18:53:01Z",
     source = "blizzard-api",
     overall = {
         listedCount = 1001,
@@ -7270,6 +7270,15 @@ PvPLedgerLadderData.US.rbg = {
             losses = 8,
             faction = "HORDE",
         },
+        ["softmoosey-maiev"] = {
+            displayName = "Softmoosey-maiev",
+            specKey = "",
+            rating = 1148,
+            rank = 943,
+            wins = 6,
+            losses = 12,
+            faction = "ALLIANCE",
+        },
         ["soggywaffles-nerzhul"] = {
             displayName = "Soggywaffles-nerzhul",
             specKey = "",
@@ -8645,15 +8654,6 @@ PvPLedgerLadderData.US.rbg = {
             rank = 116,
             wins = 21,
             losses = 18,
-            faction = "ALLIANCE",
-        },
-        ["xul-maiev"] = {
-            displayName = "Xul-maiev",
-            specKey = "",
-            rating = 1148,
-            rank = 943,
-            wins = 6,
-            losses = 12,
             faction = "ALLIANCE",
         },
         ["xylvanä-kiljaeden"] = {
