@@ -7,7 +7,7 @@ PvPLedgerLadderData.US.rbg = {
     bracket = "rbg",
     season = 42,
     snapshotDate = "2026-09-14",
-    generatedAt = "2026-09-14T06:46:16Z",
+    generatedAt = "2026-09-14T13:41:12Z",
     source = "blizzard-api",
     overall = {
         listedCount = 1001,
@@ -697,7 +697,7 @@ PvPLedgerLadderData.US.rbg = {
             rating = 1145,
             rank = 960,
             wins = 6,
-            losses = 7,
+            losses = 8,
             faction = "ALLIANCE",
         },
         ["blackpotato-bleedinghollow"] = {
@@ -808,15 +808,6 @@ PvPLedgerLadderData.US.rbg = {
             losses = 6,
             faction = "ALLIANCE",
         },
-        ["boosting-emeralddream"] = {
-            displayName = "Boosting-emerald-dream",
-            specKey = "",
-            rating = 1864,
-            rank = 74,
-            wins = 50,
-            losses = 40,
-            faction = "HORDE",
-        },
         ["booyahhka-darkspear"] = {
             displayName = "Booyahhka-darkspear",
             specKey = "",
@@ -895,7 +886,7 @@ PvPLedgerLadderData.US.rbg = {
             rating = 1408,
             rank = 755,
             wins = 8,
-            losses = 3,
+            losses = 5,
             faction = "HORDE",
         },
         ["brutalgodz-thrall"] = {
@@ -4855,7 +4846,7 @@ PvPLedgerLadderData.US.rbg = {
             rating = 1145,
             rank = 960,
             wins = 6,
-            losses = 6,
+            losses = 7,
             faction = "ALLIANCE",
         },
         ["maxel-stormrage"] = {
@@ -6009,6 +6000,15 @@ PvPLedgerLadderData.US.rbg = {
             wins = 15,
             losses = 11,
             faction = "ALLIANCE",
+        },
+        ["plsplayd-emeralddream"] = {
+            displayName = "Plsplayd-emerald-dream",
+            specKey = "",
+            rating = 1864,
+            rank = 74,
+            wins = 50,
+            losses = 40,
+            faction = "HORDE",
         },
         ["plázh-ragnaros"] = {
             displayName = "Plázh-ragnaros",
@@ -9076,7 +9076,7 @@ PvPLedgerLadderData.US.rbg = {
             rating = 1327,
             rank = 832,
             wins = 7,
-            losses = 9,
+            losses = 11,
             faction = "HORDE",
         },
     },
