@@ -7,7 +7,7 @@ PvPLedgerLadderData.US.rbg = {
     bracket = "rbg",
     season = 42,
     snapshotDate = "2026-09-16",
-    generatedAt = "2026-09-16T10:11:57Z",
+    generatedAt = "2026-09-16T14:59:54Z",
     source = "blizzard-api",
     overall = {
         listedCount = 1003,
@@ -850,7 +850,7 @@ PvPLedgerLadderData.US.rbg = {
             rating = 1797,
             rank = 116,
             wins = 24,
-            losses = 18,
+            losses = 20,
             faction = "ALLIANCE",
         },
         ["boxrockin-tichondrius"] = {
@@ -3955,7 +3955,7 @@ PvPLedgerLadderData.US.rbg = {
             rating = 1151,
             rank = 946,
             wins = 6,
-            losses = 5,
+            losses = 7,
             faction = "HORDE",
         },
         ["kakui-laughingskull"] = {
@@ -6502,7 +6502,7 @@ PvPLedgerLadderData.US.rbg = {
             rating = 1802,
             rank = 115,
             wins = 26,
-            losses = 21,
+            losses = 23,
             faction = "ALLIANCE",
         },
         ["rotbodi-emeralddream"] = {
@@ -8473,7 +8473,7 @@ PvPLedgerLadderData.US.rbg = {
             rating = 1287,
             rank = 904,
             wins = 7,
-            losses = 8,
+            losses = 9,
             faction = "ALLIANCE",
         },
         ["whiteowll-blackdragonflight"] = {
@@ -8671,7 +8671,7 @@ PvPLedgerLadderData.US.rbg = {
             rating = 1713,
             rank = 179,
             wins = 18,
-            losses = 10,
+            losses = 12,
             faction = "ALLIANCE",
         },
         ["yeahsu-tichondrius"] = {
