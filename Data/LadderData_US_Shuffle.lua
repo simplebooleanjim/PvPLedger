@@ -2,12 +2,12 @@
 PvPLedgerLadderData = PvPLedgerLadderData or {}
 PvPLedgerLadderData.US = PvPLedgerLadderData.US or {}
 PvPLedgerLadderData.US.shuffle = {
-    snapshotId = "us-shuffle-s42-2026-09-16",
+    snapshotId = "us-shuffle-s42-2026-09-17",
     region = "US",
     bracket = "shuffle",
     season = 42,
-    snapshotDate = "2026-09-16",
-    generatedAt = "2026-09-16T21:54:51Z",
+    snapshotDate = "2026-09-17",
+    generatedAt = "2026-09-17T00:09:15Z",
     source = "blizzard-api",
     overall = {
         listedCount = 33316,
