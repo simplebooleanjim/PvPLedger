@@ -7,7 +7,7 @@ PvPLedgerLadderData.US.rbg = {
     bracket = "rbg",
     season = 42,
     snapshotDate = "2026-09-18",
-    generatedAt = "2026-09-18T08:30:38Z",
+    generatedAt = "2026-09-18T13:07:28Z",
     source = "blizzard-api",
     overall = {
         listedCount = 1004,
@@ -850,7 +850,7 @@ PvPLedgerLadderData.US.rbg = {
             rating = 1797,
             rank = 122,
             wins = 24,
-            losses = 20,
+            losses = 21,
             faction = "ALLIANCE",
         },
         ["boxrockin-tichondrius"] = {
@@ -3343,7 +3343,7 @@ PvPLedgerLadderData.US.rbg = {
             rating = 1897,
             rank = 72,
             wins = 53,
-            losses = 49,
+            losses = 50,
             faction = "ALLIANCE",
         },
         ["hoyi-zuljin"] = {
@@ -4765,7 +4765,7 @@ PvPLedgerLadderData.US.rbg = {
             rating = 1765,
             rank = 145,
             wins = 18,
-            losses = 14,
+            losses = 15,
             faction = "ALLIANCE",
         },
         ["maenstor-emeralddream"] = {
@@ -8689,7 +8689,7 @@ PvPLedgerLadderData.US.rbg = {
             rating = 1713,
             rank = 183,
             wins = 18,
-            losses = 12,
+            losses = 13,
             faction = "ALLIANCE",
         },
         ["yeahsu-tichondrius"] = {
