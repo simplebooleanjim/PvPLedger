@@ -7,7 +7,7 @@ PvPLedgerLadderData.US.rbg = {
     bracket = "rbg",
     season = 42,
     snapshotDate = "2026-09-21",
-    generatedAt = "2026-09-21T11:07:34Z",
+    generatedAt = "2026-09-21T17:04:33Z",
     source = "blizzard-api",
     overall = {
         listedCount = 1000,
@@ -859,15 +859,6 @@ PvPLedgerLadderData.US.rbg = {
             rank = 212,
             wins = 35,
             losses = 40,
-            faction = "ALLIANCE",
-        },
-        ["bossdru-tichondrius"] = {
-            displayName = "Bossdru-tichondrius",
-            specKey = "",
-            rating = 1797,
-            rank = 142,
-            wins = 24,
-            losses = 21,
             faction = "ALLIANCE",
         },
         ["boxrockin-tichondrius"] = {
@@ -7592,6 +7583,15 @@ PvPLedgerLadderData.US.rbg = {
             wins = 8,
             losses = 11,
             faction = "HORDE",
+        },
+        ["terrisupbad-tichondrius"] = {
+            displayName = "Terrisupbad-tichondrius",
+            specKey = "",
+            rating = 1797,
+            rank = 142,
+            wins = 24,
+            losses = 21,
+            faction = "ALLIANCE",
         },
         ["testicold-akama"] = {
             displayName = "Testicold-akama",
