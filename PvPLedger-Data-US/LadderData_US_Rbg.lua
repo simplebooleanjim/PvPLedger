@@ -7,7 +7,7 @@ PvPLedgerLadderData.US.rbg = {
     bracket = "rbg",
     season = 42,
     snapshotDate = "2026-09-25",
-    generatedAt = "2026-09-25T12:46:33Z",
+    generatedAt = "2026-09-25T17:48:00Z",
     source = "blizzard-api",
     overall = {
         listedCount = 1001,
@@ -5991,6 +5991,15 @@ PvPLedgerLadderData.US.rbg = {
             losses = 14,
             faction = "HORDE",
         },
+        ["playerrbzdbw-stormrage"] = {
+            displayName = "PlayerRBZDBW-stormrage",
+            specKey = "",
+            rating = 1691,
+            rank = 283,
+            wins = 16,
+            losses = 15,
+            faction = "ALLIANCE",
+        },
         ["plexx-zuluhed"] = {
             displayName = "Plexx-zuluhed",
             specKey = "",
@@ -7970,15 +7979,6 @@ PvPLedgerLadderData.US.rbg = {
             wins = 43,
             losses = 26,
             faction = "HORDE",
-        },
-        ["treesome-stormrage"] = {
-            displayName = "Treesome-stormrage",
-            specKey = "",
-            rating = 1691,
-            rank = 283,
-            wins = 16,
-            losses = 15,
-            faction = "ALLIANCE",
         },
         ["tribbey-area52"] = {
             displayName = "Tribbey-area-52",
