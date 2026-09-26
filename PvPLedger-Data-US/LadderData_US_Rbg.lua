@@ -7,7 +7,7 @@ PvPLedgerLadderData.US.rbg = {
     bracket = "rbg",
     season = 42,
     snapshotDate = "2026-09-26",
-    generatedAt = "2026-09-26T09:28:37Z",
+    generatedAt = "2026-09-26T13:50:11Z",
     source = "blizzard-api",
     overall = {
         listedCount = 1000,
@@ -5874,6 +5874,15 @@ PvPLedgerLadderData.US.rbg = {
             losses = 16,
             faction = "ALLIANCE",
         },
+        ["phatedra-tichondrius"] = {
+            displayName = "Phatedra-tichondrius",
+            specKey = "",
+            rating = 1539,
+            rank = 761,
+            wins = 9,
+            losses = 5,
+            faction = "ALLIANCE",
+        },
         ["phateud-tichondrius"] = {
             displayName = "Phateud-tichondrius",
             specKey = "",
@@ -5882,15 +5891,6 @@ PvPLedgerLadderData.US.rbg = {
             wins = 21,
             losses = 25,
             faction = "HORDE",
-        },
-        ["phatevoid-tichondrius"] = {
-            displayName = "Phatevoid-tichondrius",
-            specKey = "",
-            rating = 1539,
-            rank = 761,
-            wins = 9,
-            losses = 5,
-            faction = "ALLIANCE",
         },
         ["phìlly-tichondrius"] = {
             displayName = "Phìlly-tichondrius",
