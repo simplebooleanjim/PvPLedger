@@ -7,7 +7,7 @@ PvPLedgerLadderData.US.rbg = {
     bracket = "rbg",
     season = 42,
     snapshotDate = "2026-09-29",
-    generatedAt = "2026-09-29T07:27:45Z",
+    generatedAt = "2026-09-29T14:16:02Z",
     source = "blizzard-api",
     overall = {
         listedCount = 1000,
@@ -344,7 +344,7 @@ PvPLedgerLadderData.US.rbg = {
             rating = 2072,
             rank = 55,
             wins = 44,
-            losses = 32,
+            losses = 33,
             faction = "ALLIANCE",
         },
         ["arröws-cairne"] = {
@@ -650,7 +650,7 @@ PvPLedgerLadderData.US.rbg = {
             rating = 1528,
             rank = 860,
             wins = 32,
-            losses = 47,
+            losses = 48,
             faction = "ALLIANCE",
         },
         ["bigpop-dalaran"] = {
@@ -740,7 +740,7 @@ PvPLedgerLadderData.US.rbg = {
             rating = 2235,
             rank = 22,
             wins = 76,
-            losses = 46,
+            losses = 47,
             faction = "HORDE",
         },
         ["blôôdy-ragnaros"] = {
@@ -956,7 +956,7 @@ PvPLedgerLadderData.US.rbg = {
             rating = 2152,
             rank = 38,
             wins = 55,
-            losses = 37,
+            losses = 38,
             faction = "HORDE",
         },
         ["calculator-tichondrius"] = {
@@ -1037,7 +1037,7 @@ PvPLedgerLadderData.US.rbg = {
             rating = 2172,
             rank = 34,
             wins = 57,
-            losses = 35,
+            losses = 36,
             faction = "ALLIANCE",
         },
         ["catalog-deathwing"] = {
@@ -1145,7 +1145,7 @@ PvPLedgerLadderData.US.rbg = {
             rating = 1571,
             rank = 727,
             wins = 11,
-            losses = 4,
+            losses = 6,
             faction = "HORDE",
         },
         ["chooroh-sargeras"] = {
@@ -1469,7 +1469,7 @@ PvPLedgerLadderData.US.rbg = {
             rating = 1717,
             rank = 302,
             wins = 30,
-            losses = 20,
+            losses = 21,
             faction = "ALLIANCE",
         },
         ["cryptson-zuluhed"] = {
@@ -1541,7 +1541,7 @@ PvPLedgerLadderData.US.rbg = {
             rating = 1739,
             rank = 265,
             wins = 19,
-            losses = 23,
+            losses = 24,
             faction = "HORDE",
         },
         ["dace-spinebreaker"] = {
@@ -1631,7 +1631,7 @@ PvPLedgerLadderData.US.rbg = {
             rating = 1911,
             rank = 112,
             wins = 36,
-            losses = 30,
+            losses = 31,
             faction = "ALLIANCE",
         },
         ["dashikì-tichondrius"] = {
@@ -1721,7 +1721,7 @@ PvPLedgerLadderData.US.rbg = {
             rating = 1643,
             rank = 490,
             wins = 61,
-            losses = 74,
+            losses = 78,
             faction = "HORDE",
         },
         ["deptofwar-sargeras"] = {
@@ -2342,7 +2342,7 @@ PvPLedgerLadderData.US.rbg = {
             rating = 1639,
             rank = 509,
             wins = 41,
-            losses = 53,
+            losses = 54,
             faction = "ALLIANCE",
         },
         ["esciel-ragnaros"] = {
@@ -2450,7 +2450,7 @@ PvPLedgerLadderData.US.rbg = {
             rating = 1590,
             rank = 659,
             wins = 30,
-            losses = 40,
+            losses = 41,
             faction = "ALLIANCE",
         },
         ["felonyangel-moonguard"] = {
@@ -2684,7 +2684,7 @@ PvPLedgerLadderData.US.rbg = {
             rating = 1719,
             rank = 299,
             wins = 66,
-            losses = 80,
+            losses = 81,
             faction = "HORDE",
         },
         ["freakuency-sargeras"] = {
@@ -3143,7 +3143,7 @@ PvPLedgerLadderData.US.rbg = {
             rating = 2224,
             rank = 25,
             wins = 64,
-            losses = 41,
+            losses = 42,
             faction = "ALLIANCE",
         },
         ["hasciel-ragnaros"] = {
@@ -3242,7 +3242,7 @@ PvPLedgerLadderData.US.rbg = {
             rating = 1639,
             rank = 509,
             wins = 16,
-            losses = 30,
+            losses = 31,
             faction = "HORDE",
         },
         ["holyboomer-illidan"] = {
@@ -3287,7 +3287,7 @@ PvPLedgerLadderData.US.rbg = {
             rating = 2312,
             rank = 15,
             wins = 77,
-            losses = 41,
+            losses = 42,
             faction = "HORDE",
         },
         ["hordeslayer-mannoroth"] = {
@@ -3323,7 +3323,7 @@ PvPLedgerLadderData.US.rbg = {
             rating = 2089,
             rank = 48,
             wins = 71,
-            losses = 65,
+            losses = 66,
             faction = "ALLIANCE",
         },
         ["hoyi-zuljin"] = {
@@ -3656,7 +3656,7 @@ PvPLedgerLadderData.US.rbg = {
             rating = 1537,
             rank = 831,
             wins = 13,
-            losses = 37,
+            losses = 38,
             faction = "ALLIANCE",
         },
         ["jahseh-tichondrius"] = {
@@ -3836,7 +3836,7 @@ PvPLedgerLadderData.US.rbg = {
             rating = 1949,
             rank = 94,
             wins = 31,
-            losses = 14,
+            losses = 15,
             faction = "HORDE",
         },
         ["josepher-maelstrom"] = {
@@ -3917,7 +3917,7 @@ PvPLedgerLadderData.US.rbg = {
             rating = 1574,
             rank = 712,
             wins = 38,
-            losses = 46,
+            losses = 47,
             faction = "HORDE",
         },
         ["kakui-laughingskull"] = {
@@ -4178,7 +4178,7 @@ PvPLedgerLadderData.US.rbg = {
             rating = 2224,
             rank = 25,
             wins = 64,
-            losses = 41,
+            losses = 42,
             faction = "ALLIANCE",
         },
         ["krusholy-tichondrius"] = {
@@ -4367,7 +4367,7 @@ PvPLedgerLadderData.US.rbg = {
             rating = 2211,
             rank = 29,
             wins = 90,
-            losses = 51,
+            losses = 52,
             faction = "HORDE",
         },
         ["lhpitts-whisperwind"] = {
@@ -4700,7 +4700,7 @@ PvPLedgerLadderData.US.rbg = {
             rating = 1876,
             rank = 134,
             wins = 25,
-            losses = 18,
+            losses = 19,
             faction = "ALLIANCE",
         },
         ["maenstor-emeralddream"] = {
@@ -5015,7 +5015,7 @@ PvPLedgerLadderData.US.rbg = {
             rating = 2122,
             rank = 42,
             wins = 46,
-            losses = 22,
+            losses = 23,
             faction = "HORDE",
         },
         ["moistkfc-tichondrius"] = {
@@ -5663,7 +5663,7 @@ PvPLedgerLadderData.US.rbg = {
             rating = 1580,
             rank = 686,
             wins = 48,
-            losses = 56,
+            losses = 57,
             faction = "HORDE",
         },
         ["orchíd-lightbringer"] = {
@@ -5969,7 +5969,7 @@ PvPLedgerLadderData.US.rbg = {
             rating = 1639,
             rank = 509,
             wins = 11,
-            losses = 5,
+            losses = 6,
             faction = "ALLIANCE",
         },
         ["plsplayd-emeralddream"] = {
@@ -6077,7 +6077,7 @@ PvPLedgerLadderData.US.rbg = {
             rating = 2102,
             rank = 45,
             wins = 47,
-            losses = 30,
+            losses = 32,
             faction = "HORDE",
         },
         ["psychologyx-tichondrius"] = {
@@ -6311,7 +6311,7 @@ PvPLedgerLadderData.US.rbg = {
             rating = 1822,
             rank = 187,
             wins = 23,
-            losses = 23,
+            losses = 24,
             faction = "ALLIANCE",
         },
         ["ravikk-crushridge"] = {
@@ -6554,7 +6554,7 @@ PvPLedgerLadderData.US.rbg = {
             rating = 1843,
             rank = 163,
             wins = 23,
-            losses = 7,
+            losses = 8,
             faction = "HORDE",
         },
         ["rxcoachxo-tichondrius"] = {
@@ -7130,7 +7130,7 @@ PvPLedgerLadderData.US.rbg = {
             rating = 2268,
             rank = 17,
             wins = 96,
-            losses = 61,
+            losses = 62,
             faction = "HORDE",
         },
         ["slymurderzz-bleedinghollow"] = {
@@ -7580,7 +7580,7 @@ PvPLedgerLadderData.US.rbg = {
             rating = 1752,
             rank = 254,
             wins = 31,
-            losses = 33,
+            losses = 34,
             faction = "HORDE",
         },
         ["templet-tichondrius"] = {
@@ -7724,7 +7724,7 @@ PvPLedgerLadderData.US.rbg = {
             rating = 1579,
             rank = 692,
             wins = 48,
-            losses = 56,
+            losses = 57,
             faction = "HORDE",
         },
         ["thïngtwø-malganis"] = {
@@ -7841,7 +7841,7 @@ PvPLedgerLadderData.US.rbg = {
             rating = 1633,
             rank = 529,
             wins = 12,
-            losses = 16,
+            losses = 17,
             faction = "ALLIANCE",
         },
         ["totemanus-kelthuzad"] = {
@@ -8192,7 +8192,7 @@ PvPLedgerLadderData.US.rbg = {
             rating = 1552,
             rank = 777,
             wins = 9,
-            losses = 6,
+            losses = 7,
             faction = "HORDE",
         },
         ["venician-kelthuzad"] = {
@@ -8768,7 +8768,7 @@ PvPLedgerLadderData.US.rbg = {
             rating = 1589,
             rank = 661,
             wins = 17,
-            losses = 20,
+            losses = 24,
             faction = "ALLIANCE",
         },
         ["zarîa-moonguard"] = {
@@ -8822,7 +8822,7 @@ PvPLedgerLadderData.US.rbg = {
             rating = 1860,
             rank = 147,
             wins = 22,
-            losses = 27,
+            losses = 28,
             faction = "ALLIANCE",
         },
         ["zeoh-tichondrius"] = {
@@ -8921,7 +8921,7 @@ PvPLedgerLadderData.US.rbg = {
             rating = 2184,
             rank = 32,
             wins = 52,
-            losses = 41,
+            losses = 43,
             faction = "ALLIANCE",
         },
         ["älexander-ragnaros"] = {
