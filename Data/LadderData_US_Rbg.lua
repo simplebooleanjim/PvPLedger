@@ -7,7 +7,7 @@ PvPLedgerLadderData.US.rbg = {
     bracket = "rbg",
     season = 42,
     snapshotDate = "2026-09-30",
-    generatedAt = "2026-09-30T08:34:40Z",
+    generatedAt = "2026-09-30T15:20:35Z",
     source = "blizzard-api",
     overall = {
         listedCount = 1000,
@@ -750,7 +750,7 @@ PvPLedgerLadderData.US.rbg = {
             rating = 2293,
             rank = 19,
             wins = 79,
-            losses = 50,
+            losses = 51,
             faction = "HORDE",
         },
         ["blôôdy-ragnaros"] = {
@@ -966,7 +966,7 @@ PvPLedgerLadderData.US.rbg = {
             rating = 2214,
             rank = 34,
             wins = 58,
-            losses = 41,
+            losses = 42,
             faction = "HORDE",
         },
         ["calculator-tichondrius"] = {
@@ -1300,15 +1300,6 @@ PvPLedgerLadderData.US.rbg = {
             rank = 913,
             wins = 8,
             losses = 3,
-            faction = "ALLIANCE",
-        },
-        ["clonethis-gurubashi"] = {
-            displayName = "Clonethis-gurubashi",
-            specKey = "",
-            rating = 1847,
-            rank = 167,
-            wins = 23,
-            losses = 10,
             faction = "ALLIANCE",
         },
         ["clown-lethon"] = {
@@ -1740,7 +1731,7 @@ PvPLedgerLadderData.US.rbg = {
             rating = 1717,
             rank = 312,
             wins = 65,
-            losses = 78,
+            losses = 79,
             faction = "HORDE",
         },
         ["deptofwar-sargeras"] = {
@@ -1794,7 +1785,7 @@ PvPLedgerLadderData.US.rbg = {
             rating = 1527,
             rank = 875,
             wins = 8,
-            losses = 6,
+            losses = 7,
             faction = "ALLIANCE",
         },
         ["dinaboluarte-sargeras"] = {
@@ -3153,7 +3144,7 @@ PvPLedgerLadderData.US.rbg = {
             rating = 2282,
             rank = 20,
             wins = 67,
-            losses = 45,
+            losses = 46,
             faction = "ALLIANCE",
         },
         ["hasciel-ragnaros"] = {
@@ -3189,7 +3180,7 @@ PvPLedgerLadderData.US.rbg = {
             rating = 1687,
             rank = 389,
             wins = 14,
-            losses = 19,
+            losses = 20,
             faction = "HORDE",
         },
         ["healrstealr-tichondrius"] = {
@@ -3297,7 +3288,7 @@ PvPLedgerLadderData.US.rbg = {
             rating = 2365,
             rank = 11,
             wins = 80,
-            losses = 45,
+            losses = 46,
             faction = "HORDE",
         },
         ["hordeslayer-mannoroth"] = {
@@ -4206,7 +4197,7 @@ PvPLedgerLadderData.US.rbg = {
             rating = 2282,
             rank = 20,
             wins = 67,
-            losses = 45,
+            losses = 46,
             faction = "ALLIANCE",
         },
         ["kullateral-bloodhoof"] = {
@@ -7377,6 +7368,15 @@ PvPLedgerLadderData.US.rbg = {
             losses = 32,
             faction = "HORDE",
         },
+        ["starfall-gurubashi"] = {
+            displayName = "Starfall-gurubashi",
+            specKey = "",
+            rating = 1847,
+            rank = 167,
+            wins = 23,
+            losses = 10,
+            faction = "ALLIANCE",
+        },
         ["stargoddess-illidan"] = {
             displayName = "Stargoddess-illidan",
             specKey = "",
@@ -8562,7 +8562,7 @@ PvPLedgerLadderData.US.rbg = {
             rating = 1886,
             rank = 135,
             wins = 23,
-            losses = 13,
+            losses = 14,
             faction = "HORDE",
         },
         ["xendawg-stormrage"] = {
