@@ -7,7 +7,7 @@ PvPLedgerLadderData.US.rbg = {
     bracket = "rbg",
     season = 42,
     snapshotDate = "2026-10-02",
-    generatedAt = "2026-10-02T14:01:31Z",
+    generatedAt = "2026-10-02T19:19:18Z",
     source = "blizzard-api",
     overall = {
         listedCount = 1000,
@@ -2389,7 +2389,7 @@ PvPLedgerLadderData.US.rbg = {
             rank = 532,
             wins = 19,
             losses = 21,
-            faction = "ALLIANCE",
+            faction = "HORDE",
         },
         ["extrazesty-sargeras"] = {
             displayName = "Extrazesty-sargeras",
