@@ -7,7 +7,7 @@ PvPLedgerLadderData.US.rbg = {
     bracket = "rbg",
     season = 42,
     snapshotDate = "2026-10-07",
-    generatedAt = "2026-10-07T06:00:33Z",
+    generatedAt = "2026-10-07T13:11:00Z",
     source = "blizzard-api",
     overall = {
         listedCount = 1001,
@@ -273,7 +273,7 @@ PvPLedgerLadderData.US.rbg = {
             rating = 1641,
             rank = 623,
             wins = 13,
-            losses = 21,
+            losses = 23,
             faction = "ALLIANCE",
         },
         ["aniva-ragnaros"] = {
@@ -498,7 +498,7 @@ PvPLedgerLadderData.US.rbg = {
             rating = 1646,
             rank = 602,
             wins = 19,
-            losses = 26,
+            losses = 28,
             faction = "ALLIANCE",
         },
         ["badpug-emeralddream"] = {
@@ -696,7 +696,7 @@ PvPLedgerLadderData.US.rbg = {
             rating = 1635,
             rank = 642,
             wins = 14,
-            losses = 31,
+            losses = 33,
             faction = "HORDE",
         },
         ["bloody-ragnaros"] = {
@@ -1092,7 +1092,7 @@ PvPLedgerLadderData.US.rbg = {
             rating = 1603,
             rank = 748,
             wins = 11,
-            losses = 10,
+            losses = 12,
             faction = "HORDE",
         },
         ["champìgnon-zuljin"] = {
@@ -3369,7 +3369,7 @@ PvPLedgerLadderData.US.rbg = {
             rating = 1764,
             rank = 324,
             wins = 19,
-            losses = 12,
+            losses = 13,
             faction = "HORDE",
         },
         ["hìt-ragnaros"] = {
@@ -3801,7 +3801,7 @@ PvPLedgerLadderData.US.rbg = {
             rating = 1821,
             rank = 252,
             wins = 22,
-            losses = 19,
+            losses = 21,
             faction = "ALLIANCE",
         },
         ["jimmypop-malganis"] = {
