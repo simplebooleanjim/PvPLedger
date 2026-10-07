@@ -7,7 +7,7 @@ PvPLedgerLadderData.US.rbg = {
     bracket = "rbg",
     season = 42,
     snapshotDate = "2026-10-07",
-    generatedAt = "2026-10-07T13:11:00Z",
+    generatedAt = "2026-10-07T19:21:21Z",
     source = "blizzard-api",
     overall = {
         listedCount = 1001,
@@ -724,15 +724,6 @@ PvPLedgerLadderData.US.rbg = {
             rank = 611,
             wins = 15,
             losses = 17,
-            faction = "HORDE",
-        },
-        ["bobsheeper-tichondrius"] = {
-            displayName = "Bobsheeper-tichondrius",
-            specKey = "",
-            rating = 1594,
-            rank = 768,
-            wins = 12,
-            losses = 20,
             faction = "HORDE",
         },
         ["bobthehefty-area52"] = {
@@ -4532,6 +4523,15 @@ PvPLedgerLadderData.US.rbg = {
             wins = 28,
             losses = 24,
             faction = "ALLIANCE",
+        },
+        ["lionslaya-tichondrius"] = {
+            displayName = "Lionslaya-tichondrius",
+            specKey = "",
+            rating = 1594,
+            rank = 768,
+            wins = 12,
+            losses = 20,
+            faction = "HORDE",
         },
         ["locoo-ragnaros"] = {
             displayName = "Locoo-ragnaros",
