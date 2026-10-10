@@ -7,7 +7,7 @@ PvPLedgerLadderData.US.rbg = {
     bracket = "rbg",
     season = 42,
     snapshotDate = "2026-10-10",
-    generatedAt = "2026-10-10T07:07:39Z",
+    generatedAt = "2026-10-10T13:42:05Z",
     source = "blizzard-api",
     overall = {
         listedCount = 1004,
@@ -1452,7 +1452,7 @@ PvPLedgerLadderData.US.rbg = {
             rating = 1661,
             rank = 599,
             wins = 40,
-            losses = 53,
+            losses = 54,
             faction = "HORDE",
         },
         ["crumgetsome-cairne"] = {
@@ -2793,7 +2793,7 @@ PvPLedgerLadderData.US.rbg = {
             rating = 1969,
             rank = 129,
             wins = 31,
-            losses = 26,
+            losses = 29,
             faction = "HORDE",
         },
         ["gaelinae-moonguard"] = {
@@ -4827,7 +4827,7 @@ PvPLedgerLadderData.US.rbg = {
             rating = 2085,
             rank = 82,
             wins = 59,
-            losses = 47,
+            losses = 50,
             faction = "ALLIANCE",
         },
         ["mariomario-tichondrius"] = {
@@ -6510,7 +6510,7 @@ PvPLedgerLadderData.US.rbg = {
             rating = 1642,
             rank = 659,
             wins = 36,
-            losses = 48,
+            losses = 49,
             faction = "ALLIANCE",
         },
         ["rockstãr-drakkari"] = {
@@ -8148,7 +8148,7 @@ PvPLedgerLadderData.US.rbg = {
             rating = 1678,
             rank = 560,
             wins = 13,
-            losses = 19,
+            losses = 20,
             faction = "ALLIANCE",
         },
         ["vanelzz-illidan"] = {
@@ -8436,7 +8436,7 @@ PvPLedgerLadderData.US.rbg = {
             rating = 2158,
             rank = 62,
             wins = 86,
-            losses = 65,
+            losses = 66,
             faction = "ALLIANCE",
         },
         ["whiteorchid-lightbringer"] = {
@@ -8841,7 +8841,7 @@ PvPLedgerLadderData.US.rbg = {
             rating = 1992,
             rank = 113,
             wins = 40,
-            losses = 27,
+            losses = 28,
             faction = "HORDE",
         },
         ["zenzohx-tichondrius"] = {
