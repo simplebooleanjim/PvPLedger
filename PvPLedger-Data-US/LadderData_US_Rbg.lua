@@ -2,12 +2,12 @@
 PvPLedgerLadderData = PvPLedgerLadderData or {}
 PvPLedgerLadderData.US = PvPLedgerLadderData.US or {}
 PvPLedgerLadderData.US.rbg = {
-    snapshotId = "us-rbg-s42-2026-10-10",
+    snapshotId = "us-rbg-s42-2026-10-11",
     region = "US",
     bracket = "rbg",
     season = 42,
-    snapshotDate = "2026-10-10",
-    generatedAt = "2026-10-10T21:44:59Z",
+    snapshotDate = "2026-10-11",
+    generatedAt = "2026-10-11T00:32:43Z",
     source = "blizzard-api",
     overall = {
         listedCount = 1005,
@@ -4101,6 +4101,15 @@ PvPLedgerLadderData.US.rbg = {
             losses = 39,
             faction = "HORDE",
         },
+        ["kekkeroni-tichondrius"] = {
+            displayName = "Kekkeroni-tichondrius",
+            specKey = "",
+            rating = 2189,
+            rank = 51,
+            wins = 64,
+            losses = 47,
+            faction = "ALLIANCE",
+        },
         ["keltarget-malganis"] = {
             displayName = "Keltarget-malganis",
             specKey = "",
@@ -7466,15 +7475,6 @@ PvPLedgerLadderData.US.rbg = {
             wins = 45,
             losses = 13,
             faction = "HORDE",
-        },
-        ["studweiser-tichondrius"] = {
-            displayName = "Studweiser-tichondrius",
-            specKey = "",
-            rating = 2189,
-            rank = 51,
-            wins = 64,
-            losses = 47,
-            faction = "ALLIANCE",
         },
         ["stärscrëäm-darkspear"] = {
             displayName = "Stärscrëäm-darkspear",
