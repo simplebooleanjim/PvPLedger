@@ -7,7 +7,7 @@ PvPLedgerLadderData.US.rbg = {
     bracket = "rbg",
     season = 42,
     snapshotDate = "2026-10-12",
-    generatedAt = "2026-10-12T08:00:55Z",
+    generatedAt = "2026-10-12T17:45:55Z",
     source = "blizzard-api",
     overall = {
         listedCount = 1003,
@@ -867,7 +867,7 @@ PvPLedgerLadderData.US.rbg = {
             rating = 1739,
             rank = 443,
             wins = 45,
-            losses = 50,
+            losses = 51,
             faction = "ALLIANCE",
         },
         ["bruincub-silverhand"] = {
@@ -1047,7 +1047,7 @@ PvPLedgerLadderData.US.rbg = {
             rating = 2398,
             rank = 25,
             wins = 74,
-            losses = 55,
+            losses = 56,
             faction = "ALLIANCE",
         },
         ["catalog-deathwing"] = {
@@ -1389,7 +1389,7 @@ PvPLedgerLadderData.US.rbg = {
             rating = 2277,
             rank = 42,
             wins = 48,
-            losses = 35,
+            losses = 36,
             faction = "ALLIANCE",
         },
         ["cronington-bleedinghollow"] = {
@@ -1434,7 +1434,7 @@ PvPLedgerLadderData.US.rbg = {
             rating = 1694,
             rank = 552,
             wins = 29,
-            losses = 31,
+            losses = 33,
             faction = "HORDE",
         },
         ["crunchybacon-area52"] = {
@@ -1983,7 +1983,7 @@ PvPLedgerLadderData.US.rbg = {
             rating = 1628,
             rank = 737,
             wins = 19,
-            losses = 27,
+            losses = 28,
             faction = "ALLIANCE",
         },
         ["drgoblinbutt-tichondrius"] = {
@@ -2370,7 +2370,7 @@ PvPLedgerLadderData.US.rbg = {
             rating = 1642,
             rank = 689,
             wins = 16,
-            losses = 16,
+            losses = 17,
             faction = "ALLIANCE",
         },
         ["fallensöul-tichondrius"] = {
@@ -2604,7 +2604,7 @@ PvPLedgerLadderData.US.rbg = {
             rating = 1767,
             rank = 395,
             wins = 16,
-            losses = 16,
+            losses = 17,
             faction = "ALLIANCE",
         },
         ["foenemgrave-bleedinghollow"] = {
@@ -2982,7 +2982,7 @@ PvPLedgerLadderData.US.rbg = {
             rating = 1809,
             rank = 325,
             wins = 24,
-            losses = 19,
+            losses = 20,
             faction = "HORDE",
         },
         ["greenmedicz-tichondrius"] = {
@@ -3018,7 +3018,7 @@ PvPLedgerLadderData.US.rbg = {
             rating = 1882,
             rank = 224,
             wins = 52,
-            losses = 50,
+            losses = 51,
             faction = "ALLIANCE",
         },
         ["gromár-ragnaros"] = {
@@ -3234,7 +3234,7 @@ PvPLedgerLadderData.US.rbg = {
             rating = 1835,
             rank = 289,
             wins = 33,
-            losses = 24,
+            losses = 25,
             faction = "ALLIANCE",
         },
         ["holymythic-tichondrius"] = {
@@ -4431,7 +4431,7 @@ PvPLedgerLadderData.US.rbg = {
             rating = 2323,
             rank = 37,
             wins = 71,
-            losses = 48,
+            losses = 49,
             faction = "ALLIANCE",
         },
         ["lesßehonest-thrall"] = {
@@ -6609,7 +6609,7 @@ PvPLedgerLadderData.US.rbg = {
             rating = 2233,
             rank = 50,
             wins = 43,
-            losses = 27,
+            losses = 28,
             faction = "HORDE",
         },
         ["rxcoachxo-tichondrius"] = {
@@ -8049,7 +8049,7 @@ PvPLedgerLadderData.US.rbg = {
             rating = 1661,
             rank = 627,
             wins = 20,
-            losses = 33,
+            losses = 34,
             faction = "ALLIANCE",
         },
         ["täter-bleedinghollow"] = {
@@ -8436,7 +8436,7 @@ PvPLedgerLadderData.US.rbg = {
             rating = 1842,
             rank = 277,
             wins = 21,
-            losses = 13,
+            losses = 14,
             faction = "ALLIANCE",
         },
         ["whiteowll-blackdragonflight"] = {
