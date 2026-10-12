@@ -2,12 +2,12 @@
 PvPLedgerLadderData = PvPLedgerLadderData or {}
 PvPLedgerLadderData.US = PvPLedgerLadderData.US or {}
 PvPLedgerLadderData.US.rbg = {
-    snapshotId = "us-rbg-s42-2026-10-11",
+    snapshotId = "us-rbg-s42-2026-10-12",
     region = "US",
     bracket = "rbg",
     season = 42,
-    snapshotDate = "2026-10-11",
-    generatedAt = "2026-10-11T22:17:21Z",
+    snapshotDate = "2026-10-12",
+    generatedAt = "2026-10-12T01:33:59Z",
     source = "blizzard-api",
     overall = {
         listedCount = 1000,
@@ -2955,7 +2955,7 @@ PvPLedgerLadderData.US.rbg = {
             rating = 1537,
             rank = 985,
             wins = 9,
-            losses = 7,
+            losses = 8,
             faction = "HORDE",
         },
         ["grassdaddya-tichondrius"] = {
