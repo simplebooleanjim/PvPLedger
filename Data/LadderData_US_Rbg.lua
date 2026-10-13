@@ -7,7 +7,7 @@ PvPLedgerLadderData.US.rbg = {
     bracket = "rbg",
     season = 42,
     snapshotDate = "2026-10-13",
-    generatedAt = "2026-10-13T05:42:05Z",
+    generatedAt = "2026-10-13T12:58:44Z",
     source = "blizzard-api",
     overall = {
         listedCount = 1003,
@@ -453,7 +453,7 @@ PvPLedgerLadderData.US.rbg = {
             rating = 1691,
             rank = 566,
             wins = 13,
-            losses = 19,
+            losses = 20,
             faction = "ALLIANCE",
         },
         ["azgraz-bloodscalp"] = {
@@ -1182,7 +1182,7 @@ PvPLedgerLadderData.US.rbg = {
             rating = 1994,
             rank = 134,
             wins = 32,
-            losses = 44,
+            losses = 45,
             faction = "ALLIANCE",
         },
         ["chromehearts-windrunner"] = {
@@ -1461,7 +1461,7 @@ PvPLedgerLadderData.US.rbg = {
             rating = 1774,
             rank = 387,
             wins = 33,
-            losses = 25,
+            losses = 26,
             faction = "ALLIANCE",
         },
         ["cryptson-zuluhed"] = {
@@ -3918,7 +3918,7 @@ PvPLedgerLadderData.US.rbg = {
             rating = 1960,
             rank = 157,
             wins = 34,
-            losses = 23,
+            losses = 24,
             faction = "HORDE",
         },
         ["junglejaped-tichondrius"] = {
@@ -5754,7 +5754,7 @@ PvPLedgerLadderData.US.rbg = {
             rating = 1727,
             rank = 473,
             wins = 57,
-            losses = 65,
+            losses = 66,
             faction = "HORDE",
         },
         ["orchíd-lightbringer"] = {
@@ -5763,7 +5763,7 @@ PvPLedgerLadderData.US.rbg = {
             rating = 1820,
             rank = 313,
             wins = 23,
-            losses = 34,
+            losses = 35,
             faction = "ALLIANCE",
         },
         ["ozsandlbs-tichondrius"] = {
@@ -7761,7 +7761,7 @@ PvPLedgerLadderData.US.rbg = {
             rating = 1726,
             rank = 479,
             wins = 57,
-            losses = 68,
+            losses = 69,
             faction = "HORDE",
         },
         ["thïngtwø-malganis"] = {
