@@ -7,7 +7,7 @@ PvPLedgerLadderData.US.rbg = {
     bracket = "rbg",
     season = 42,
     snapshotDate = "2026-10-14",
-    generatedAt = "2026-10-14T07:38:39Z",
+    generatedAt = "2026-10-14T13:06:20Z",
     source = "blizzard-api",
     overall = {
         listedCount = 1000,
@@ -4387,7 +4387,7 @@ PvPLedgerLadderData.US.rbg = {
             rating = 2032,
             rank = 114,
             wins = 29,
-            losses = 16,
+            losses = 17,
             faction = "ALLIANCE",
         },
         ["legendary-ragnaros"] = {
@@ -8671,7 +8671,7 @@ PvPLedgerLadderData.US.rbg = {
             rating = 1782,
             rank = 381,
             wins = 19,
-            losses = 20,
+            losses = 21,
             faction = "ALLIANCE",
         },
         ["yggdråsil-tichondrius"] = {
@@ -8923,7 +8923,7 @@ PvPLedgerLadderData.US.rbg = {
             rating = 2249,
             rank = 49,
             wins = 48,
-            losses = 43,
+            losses = 44,
             faction = "ALLIANCE",
         },
         ["árereas-tichondrius"] = {
