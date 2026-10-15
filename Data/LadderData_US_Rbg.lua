@@ -2,12 +2,12 @@
 PvPLedgerLadderData = PvPLedgerLadderData or {}
 PvPLedgerLadderData.US = PvPLedgerLadderData.US or {}
 PvPLedgerLadderData.US.rbg = {
-    snapshotId = "us-rbg-s42-2026-10-14",
+    snapshotId = "us-rbg-s42-2026-10-15",
     region = "US",
     bracket = "rbg",
     season = 42,
-    snapshotDate = "2026-10-14",
-    generatedAt = "2026-10-14T21:41:24Z",
+    snapshotDate = "2026-10-15",
+    generatedAt = "2026-10-15T00:08:35Z",
     source = "blizzard-api",
     overall = {
         listedCount = 1000,
