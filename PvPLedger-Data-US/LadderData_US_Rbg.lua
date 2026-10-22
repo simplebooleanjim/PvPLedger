@@ -7,7 +7,7 @@ PvPLedgerLadderData.US.rbg = {
     bracket = "rbg",
     season = 42,
     snapshotDate = "2026-10-22",
-    generatedAt = "2026-10-22T06:25:00Z",
+    generatedAt = "2026-10-22T12:15:16Z",
     source = "blizzard-api",
     overall = {
         listedCount = 1004,
@@ -1075,7 +1075,7 @@ PvPLedgerLadderData.US.rbg = {
             rating = 2045,
             rank = 145,
             wins = 56,
-            losses = 61,
+            losses = 63,
             faction = "HORDE",
         },
         ["caýde-bleedinghollow"] = {
@@ -2209,7 +2209,7 @@ PvPLedgerLadderData.US.rbg = {
             rating = 1568,
             rank = 987,
             wins = 10,
-            losses = 18,
+            losses = 19,
             faction = "HORDE",
         },
         ["emory-hydraxis"] = {
@@ -2281,7 +2281,7 @@ PvPLedgerLadderData.US.rbg = {
             rating = 2055,
             rank = 139,
             wins = 46,
-            losses = 50,
+            losses = 52,
             faction = "ALLIANCE",
         },
         ["erso-hellscream"] = {
@@ -2785,7 +2785,7 @@ PvPLedgerLadderData.US.rbg = {
             rating = 2110,
             rank = 107,
             wins = 38,
-            losses = 33,
+            losses = 34,
             faction = "HORDE",
         },
         ["gaelinae-moonguard"] = {
@@ -3118,7 +3118,7 @@ PvPLedgerLadderData.US.rbg = {
             rating = 1810,
             rank = 406,
             wins = 17,
-            losses = 15,
+            losses = 17,
             faction = "HORDE",
         },
         ["hammereight-bonechewer"] = {
@@ -3478,7 +3478,7 @@ PvPLedgerLadderData.US.rbg = {
             rating = 1819,
             rank = 391,
             wins = 22,
-            losses = 20,
+            losses = 21,
             faction = "HORDE",
         },
         ["ilovedä-tichondrius"] = {
@@ -3784,7 +3784,7 @@ PvPLedgerLadderData.US.rbg = {
             rating = 1848,
             rank = 344,
             wins = 24,
-            losses = 4,
+            losses = 5,
             faction = "ALLIANCE",
         },
         ["jcleave-tichondrius"] = {
@@ -4333,7 +4333,7 @@ PvPLedgerLadderData.US.rbg = {
             rating = 1617,
             rank = 842,
             wins = 12,
-            losses = 8,
+            losses = 10,
             faction = "ALLIANCE",
         },
         ["labelia-area52"] = {
@@ -5035,7 +5035,7 @@ PvPLedgerLadderData.US.rbg = {
             rating = 2422,
             rank = 41,
             wins = 73,
-            losses = 47,
+            losses = 48,
             faction = "HORDE",
         },
         ["metalmangoo-dalaran"] = {
@@ -6385,7 +6385,7 @@ PvPLedgerLadderData.US.rbg = {
             rating = 1826,
             rank = 381,
             wins = 26,
-            losses = 28,
+            losses = 30,
             faction = "ALLIANCE",
         },
         ["raizen-tanaris"] = {
@@ -6754,7 +6754,7 @@ PvPLedgerLadderData.US.rbg = {
             rating = 2332,
             rank = 51,
             wins = 78,
-            losses = 49,
+            losses = 50,
             faction = "ALLIANCE",
         },
         ["rëngo-ragnaros"] = {
@@ -8140,7 +8140,7 @@ PvPLedgerLadderData.US.rbg = {
             rating = 1626,
             rank = 818,
             wins = 14,
-            losses = 22,
+            losses = 23,
             faction = "HORDE",
         },
         ["tótem-ragnaros"] = {
@@ -8761,7 +8761,7 @@ PvPLedgerLadderData.US.rbg = {
             rating = 2015,
             rank = 170,
             wins = 44,
-            losses = 51,
+            losses = 53,
             faction = "ALLIANCE",
         },
         ["yyv-malganis"] = {
@@ -8941,7 +8941,7 @@ PvPLedgerLadderData.US.rbg = {
             rating = 2254,
             rank = 60,
             wins = 54,
-            losses = 36,
+            losses = 37,
             faction = "HORDE",
         },
         ["àragon-quelthalas"] = {
@@ -8959,7 +8959,7 @@ PvPLedgerLadderData.US.rbg = {
             rating = 2023,
             rank = 161,
             wins = 40,
-            losses = 33,
+            losses = 35,
             faction = "ALLIANCE",
         },
         ["áníí-quelthalas"] = {
