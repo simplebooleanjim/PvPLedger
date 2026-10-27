@@ -7,7 +7,7 @@ PvPLedgerLadderData.US.arena2v2 = {
     bracket = "arena2v2",
     season = 42,
     snapshotDate = "2026-10-27",
-    generatedAt = "2026-10-27T10:47:55Z",
+    generatedAt = "2026-10-27T16:13:47Z",
     source = "blizzard-api",
     overall = {
         listedCount = 1001,
@@ -38,7 +38,7 @@ PvPLedgerLadderData.US.arena2v2 = {
             ["2900-2999"] = 3,
             ["3000-3099"] = 3,
         },
-        ratedPopulation = 5016,
+        ratedPopulation = 5018,
         titleCutoffs = {
             {
                 pct = 0.1,
@@ -3574,7 +3574,7 @@ PvPLedgerLadderData.US.arena2v2 = {
             rating = 2325,
             rank = 372,
             wins = 63,
-            losses = 33,
+            losses = 34,
             faction = "ALLIANCE",
         },
         ["integrityone-kelthuzad"] = {
