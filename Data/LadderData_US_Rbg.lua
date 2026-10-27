@@ -7,7 +7,7 @@ PvPLedgerLadderData.US.rbg = {
     bracket = "rbg",
     season = 42,
     snapshotDate = "2026-10-27",
-    generatedAt = "2026-10-27T05:24:15Z",
+    generatedAt = "2026-10-27T10:47:53Z",
     source = "blizzard-api",
     overall = {
         listedCount = 1001,
@@ -194,7 +194,7 @@ PvPLedgerLadderData.US.rbg = {
             rating = 1842,
             rank = 398,
             wins = 19,
-            losses = 23,
+            losses = 26,
             faction = "ALLIANCE",
         },
         ["alantie-dalaran"] = {
@@ -374,7 +374,7 @@ PvPLedgerLadderData.US.rbg = {
             rating = 2055,
             rank = 171,
             wins = 41,
-            losses = 33,
+            losses = 35,
             faction = "ALLIANCE",
         },
         ["astørãl-moonguard"] = {
@@ -1310,7 +1310,7 @@ PvPLedgerLadderData.US.rbg = {
             rating = 1901,
             rank = 313,
             wins = 26,
-            losses = 20,
+            losses = 22,
             faction = "ALLIANCE",
         },
         ["colømbo-nemesis"] = {
@@ -1508,7 +1508,7 @@ PvPLedgerLadderData.US.rbg = {
             rating = 2103,
             rank = 141,
             wins = 41,
-            losses = 34,
+            losses = 36,
             faction = "ALLIANCE",
         },
         ["cãno-quelthalas"] = {
@@ -1895,7 +1895,7 @@ PvPLedgerLadderData.US.rbg = {
             rating = 2126,
             rank = 126,
             wins = 64,
-            losses = 45,
+            losses = 47,
             faction = "HORDE",
         },
         ["dragonshox-tichondrius"] = {
@@ -3956,7 +3956,7 @@ PvPLedgerLadderData.US.rbg = {
             rating = 1821,
             rank = 437,
             wins = 54,
-            losses = 58,
+            losses = 60,
             faction = "HORDE",
         },
         ["kakui-laughingskull"] = {
@@ -6305,7 +6305,7 @@ PvPLedgerLadderData.US.rbg = {
             rating = 1672,
             rank = 737,
             wins = 17,
-            losses = 28,
+            losses = 29,
             faction = "HORDE",
         },
         ["queexd-tichondrius"] = {
@@ -6341,7 +6341,7 @@ PvPLedgerLadderData.US.rbg = {
             rating = 2072,
             rank = 163,
             wins = 53,
-            losses = 49,
+            losses = 51,
             faction = "ALLIANCE",
         },
         ["qùíck-destromath"] = {
@@ -6782,7 +6782,7 @@ PvPLedgerLadderData.US.rbg = {
             rating = 1583,
             rank = 981,
             wins = 11,
-            losses = 10,
+            losses = 11,
             faction = "ALLIANCE",
         },
         ["safewurd-sargeras"] = {
@@ -6845,7 +6845,7 @@ PvPLedgerLadderData.US.rbg = {
             rating = 1981,
             rank = 220,
             wins = 45,
-            losses = 44,
+            losses = 47,
             faction = "ALLIANCE",
         },
         ["sanare-ragnaros"] = {
@@ -7556,7 +7556,7 @@ PvPLedgerLadderData.US.rbg = {
             rating = 1943,
             rank = 263,
             wins = 40,
-            losses = 31,
+            losses = 34,
             faction = "ALLIANCE",
         },
         ["sãrah-emeralddream"] = {
@@ -8141,7 +8141,7 @@ PvPLedgerLadderData.US.rbg = {
             rating = 1639,
             rank = 831,
             wins = 15,
-            losses = 24,
+            losses = 25,
             faction = "HORDE",
         },
         ["tótem-ragnaros"] = {
@@ -8159,7 +8159,7 @@ PvPLedgerLadderData.US.rbg = {
             rating = 2144,
             rank = 115,
             wins = 59,
-            losses = 38,
+            losses = 40,
             faction = "HORDE",
         },
         ["umbramortìs-tichondrius"] = {
