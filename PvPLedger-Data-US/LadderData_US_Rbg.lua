@@ -7,7 +7,7 @@ PvPLedgerLadderData.US.rbg = {
     bracket = "rbg",
     season = 42,
     snapshotDate = "2026-10-31",
-    generatedAt = "2026-10-31T17:52:58Z",
+    generatedAt = "2026-10-31T21:04:05Z",
     source = "blizzard-api",
     overall = {
         listedCount = 1000,
@@ -502,6 +502,15 @@ PvPLedgerLadderData.US.rbg = {
             wins = 39,
             losses = 76,
             faction = "ALLIANCE",
+        },
+        ["badassmidget-tichondrius"] = {
+            displayName = "Badassmidget-tichondrius",
+            specKey = "",
+            rating = 1823,
+            rank = 466,
+            wins = 26,
+            losses = 30,
+            faction = "HORDE",
         },
         ["badpug-emeralddream"] = {
             displayName = "Badpug-emerald-dream",
@@ -6063,15 +6072,6 @@ PvPLedgerLadderData.US.rbg = {
             rank = 216,
             wins = 37,
             losses = 35,
-            faction = "HORDE",
-        },
-        ["playerhysyfj-tichondrius"] = {
-            displayName = "PlayerHYSYFJ-tichondrius",
-            specKey = "",
-            rating = 1823,
-            rank = 466,
-            wins = 26,
-            losses = 30,
             faction = "HORDE",
         },
         ["plexx-zuluhed"] = {
