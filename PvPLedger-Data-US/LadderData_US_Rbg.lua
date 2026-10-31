@@ -7,7 +7,7 @@ PvPLedgerLadderData.US.rbg = {
     bracket = "rbg",
     season = 42,
     snapshotDate = "2026-10-31",
-    generatedAt = "2026-10-31T13:21:01Z",
+    generatedAt = "2026-10-31T17:52:58Z",
     source = "blizzard-api",
     overall = {
         listedCount = 1000,
@@ -502,15 +502,6 @@ PvPLedgerLadderData.US.rbg = {
             wins = 39,
             losses = 76,
             faction = "ALLIANCE",
-        },
-        ["badassmidget-tichondrius"] = {
-            displayName = "Badassmidget-tichondrius",
-            specKey = "",
-            rating = 1823,
-            rank = 466,
-            wins = 26,
-            losses = 30,
-            faction = "HORDE",
         },
         ["badpug-emeralddream"] = {
             displayName = "Badpug-emerald-dream",
@@ -2724,6 +2715,15 @@ PvPLedgerLadderData.US.rbg = {
             rank = 902,
             wins = 13,
             losses = 8,
+            faction = "ALLIANCE",
+        },
+        ["fuhmduck-icecrown"] = {
+            displayName = "Fuhmduck-icecrown",
+            specKey = "",
+            rating = 1917,
+            rank = 312,
+            wins = 53,
+            losses = 60,
             faction = "ALLIANCE",
         },
         ["fundercats-eonar"] = {
@@ -6065,6 +6065,15 @@ PvPLedgerLadderData.US.rbg = {
             losses = 35,
             faction = "HORDE",
         },
+        ["playerhysyfj-tichondrius"] = {
+            displayName = "PlayerHYSYFJ-tichondrius",
+            specKey = "",
+            rating = 1823,
+            rank = 466,
+            wins = 26,
+            losses = 30,
+            faction = "HORDE",
+        },
         ["plexx-zuluhed"] = {
             displayName = "Plexx-zuluhed",
             specKey = "",
@@ -6531,15 +6540,6 @@ PvPLedgerLadderData.US.rbg = {
             rank = 545,
             wins = 22,
             losses = 14,
-            faction = "ALLIANCE",
-        },
-        ["rocknmage-icecrown"] = {
-            displayName = "Rocknmage-icecrown",
-            specKey = "",
-            rating = 1917,
-            rank = 312,
-            wins = 53,
-            losses = 60,
             faction = "ALLIANCE",
         },
         ["rodeboy-ragnaros"] = {
