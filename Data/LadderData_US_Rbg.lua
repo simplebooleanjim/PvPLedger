@@ -7,7 +7,7 @@ PvPLedgerLadderData.US.rbg = {
     bracket = "rbg",
     season = 42,
     snapshotDate = "2026-11-02",
-    generatedAt = "2026-11-02T08:20:29Z",
+    generatedAt = "2026-11-02T18:41:16Z",
     source = "blizzard-api",
     overall = {
         listedCount = 1000,
@@ -2219,7 +2219,7 @@ PvPLedgerLadderData.US.rbg = {
             rating = 1878,
             rank = 389,
             wins = 61,
-            losses = 75,
+            losses = 76,
             faction = "ALLIANCE",
         },
         ["esciel-ragnaros"] = {
@@ -7826,7 +7826,7 @@ PvPLedgerLadderData.US.rbg = {
             rating = 1836,
             rank = 457,
             wins = 66,
-            losses = 82,
+            losses = 83,
             faction = "HORDE",
         },
         ["thïngtwø-malganis"] = {
