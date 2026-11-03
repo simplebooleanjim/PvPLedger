@@ -7,7 +7,7 @@ PvPLedgerLadderData.US.rbg = {
     bracket = "rbg",
     season = 42,
     snapshotDate = "2026-11-03",
-    generatedAt = "2026-11-03T08:20:39Z",
+    generatedAt = "2026-11-03T16:26:58Z",
     source = "blizzard-api",
     overall = {
         listedCount = 1000,
@@ -5876,6 +5876,15 @@ PvPLedgerLadderData.US.rbg = {
             losses = 23,
             faction = "ALLIANCE",
         },
+        ["pastafarians-area52"] = {
+            displayName = "Pastafarians-area-52",
+            specKey = "",
+            rating = 1639,
+            rank = 873,
+            wins = 18,
+            losses = 18,
+            faction = "ALLIANCE",
+        },
         ["paulse-rexxar"] = {
             displayName = "Paulse-rexxar",
             specKey = "",
@@ -8034,15 +8043,6 @@ PvPLedgerLadderData.US.rbg = {
             rank = 737,
             wins = 16,
             losses = 15,
-            faction = "ALLIANCE",
-        },
-        ["tribbey-area52"] = {
-            displayName = "Tribbey-area-52",
-            specKey = "",
-            rating = 1639,
-            rank = 873,
-            wins = 18,
-            losses = 18,
             faction = "ALLIANCE",
         },
         ["trinitystar-zuljin"] = {
