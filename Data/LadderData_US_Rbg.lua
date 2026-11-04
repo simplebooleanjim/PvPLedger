@@ -7,7 +7,7 @@ PvPLedgerLadderData.US.rbg = {
     bracket = "rbg",
     season = 42,
     snapshotDate = "2026-11-04",
-    generatedAt = "2026-11-04T08:41:46Z",
+    generatedAt = "2026-11-04T16:36:20Z",
     source = "blizzard-api",
     overall = {
         listedCount = 1003,
@@ -2435,7 +2435,7 @@ PvPLedgerLadderData.US.rbg = {
             rating = 1669,
             rank = 799,
             wins = 14,
-            losses = 14,
+            losses = 15,
             faction = "HORDE",
         },
         ["firethatmage-sargeras"] = {
@@ -2903,7 +2903,7 @@ PvPLedgerLadderData.US.rbg = {
             rating = 2262,
             rank = 90,
             wins = 42,
-            losses = 15,
+            losses = 16,
             faction = "ALLIANCE",
         },
         ["gixsawdot-illidan"] = {
@@ -6269,7 +6269,7 @@ PvPLedgerLadderData.US.rbg = {
             rating = 1917,
             rank = 343,
             wins = 45,
-            losses = 56,
+            losses = 57,
             faction = "ALLIANCE",
         },
         ["pìous-shadowcouncil"] = {
@@ -6683,7 +6683,7 @@ PvPLedgerLadderData.US.rbg = {
             rating = 2558,
             rank = 36,
             wins = 64,
-            losses = 41,
+            losses = 42,
             faction = "HORDE",
         },
         ["rykinia-turalyon"] = {
