@@ -7,7 +7,7 @@ PvPLedgerLadderData.US.rbg = {
     bracket = "rbg",
     season = 42,
     snapshotDate = "2026-11-11",
-    generatedAt = "2026-11-11T16:59:20Z",
+    generatedAt = "2026-11-11T23:24:26Z",
     source = "blizzard-api",
     overall = {
         listedCount = 1000,
@@ -3634,15 +3634,6 @@ PvPLedgerLadderData.US.rbg = {
             losses = 67,
             faction = "HORDE",
         },
-        ["irrîtate-illidan"] = {
-            displayName = "Irrîtate-illidan",
-            specKey = "",
-            rating = 1650,
-            rank = 858,
-            wins = 14,
-            losses = 12,
-            faction = "ALLIANCE",
-        },
         ["isabel-shandris"] = {
             displayName = "Isabel-shandris",
             specKey = "",
@@ -3668,6 +3659,15 @@ PvPLedgerLadderData.US.rbg = {
             rank = 681,
             wins = 20,
             losses = 24,
+            faction = "ALLIANCE",
+        },
+        ["itsfìne-illidan"] = {
+            displayName = "Itsfìne-illidan",
+            specKey = "",
+            rating = 1650,
+            rank = 858,
+            wins = 14,
+            losses = 12,
             faction = "ALLIANCE",
         },
         ["içhigo-eitrigg"] = {
