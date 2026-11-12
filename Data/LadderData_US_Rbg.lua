@@ -7,7 +7,7 @@ PvPLedgerLadderData.US.rbg = {
     bracket = "rbg",
     season = 42,
     snapshotDate = "2026-11-12",
-    generatedAt = "2026-11-12T12:43:31Z",
+    generatedAt = "2026-11-12T20:29:42Z",
     source = "blizzard-api",
     overall = {
         listedCount = 1000,
@@ -6064,6 +6064,15 @@ PvPLedgerLadderData.US.rbg = {
             losses = 35,
             faction = "HORDE",
         },
+        ["playergqtqkn-tichondrius"] = {
+            displayName = "PlayerGQTQKN-tichondrius",
+            specKey = "",
+            rating = 1660,
+            rank = 826,
+            wins = 14,
+            losses = 22,
+            faction = "HORDE",
+        },
         ["plexx-zuluhed"] = {
             displayName = "Plexx-zuluhed",
             specKey = "",
@@ -7809,15 +7818,6 @@ PvPLedgerLadderData.US.rbg = {
             wins = 20,
             losses = 14,
             faction = "ALLIANCE",
-        },
-        ["thitaporn-tichondrius"] = {
-            displayName = "Thitaporn-tichondrius",
-            specKey = "",
-            rating = 1660,
-            rank = 826,
-            wins = 14,
-            losses = 22,
-            faction = "HORDE",
         },
         ["thomuss-darkspear"] = {
             displayName = "Thomuss-darkspear",
