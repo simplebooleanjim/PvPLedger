@@ -7,7 +7,7 @@ PvPLedgerLadderData.US.rbg = {
     bracket = "rbg",
     season = 42,
     snapshotDate = "2026-11-13",
-    generatedAt = "2026-11-13T08:31:48Z",
+    generatedAt = "2026-11-13T16:45:18Z",
     source = "blizzard-api",
     overall = {
         listedCount = 1001,
@@ -1237,7 +1237,7 @@ PvPLedgerLadderData.US.rbg = {
             rating = 1764,
             rank = 601,
             wins = 20,
-            losses = 14,
+            losses = 16,
             faction = "ALLIANCE",
         },
         ["cirranisx-stormrage"] = {
@@ -2137,7 +2137,7 @@ PvPLedgerLadderData.US.rbg = {
             rating = 1783,
             rank = 559,
             wins = 14,
-            losses = 9,
+            losses = 10,
             faction = "ALLIANCE",
         },
         ["elojitos-illidan"] = {
