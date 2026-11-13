@@ -2,12 +2,12 @@
 PvPLedgerLadderData = PvPLedgerLadderData or {}
 PvPLedgerLadderData.US = PvPLedgerLadderData.US or {}
 PvPLedgerLadderData.US.rbg = {
-    snapshotId = "us-rbg-s42-2026-11-12",
+    snapshotId = "us-rbg-s42-2026-11-13",
     region = "US",
     bracket = "rbg",
     season = 42,
-    snapshotDate = "2026-11-12",
-    generatedAt = "2026-11-12T20:29:42Z",
+    snapshotDate = "2026-11-13",
+    generatedAt = "2026-11-13T01:26:12Z",
     source = "blizzard-api",
     overall = {
         listedCount = 1000,
@@ -2445,15 +2445,6 @@ PvPLedgerLadderData.US.rbg = {
             wins = 35,
             losses = 26,
             faction = "ALLIANCE",
-        },
-        ["finalbxss-area52"] = {
-            displayName = "Finalbxss-area-52",
-            specKey = "",
-            rating = 1669,
-            rank = 803,
-            wins = 14,
-            losses = 15,
-            faction = "HORDE",
         },
         ["firethatmage-sargeras"] = {
             displayName = "Firethatmage-sargeras",
@@ -6064,15 +6055,6 @@ PvPLedgerLadderData.US.rbg = {
             losses = 35,
             faction = "HORDE",
         },
-        ["playergqtqkn-tichondrius"] = {
-            displayName = "PlayerGQTQKN-tichondrius",
-            specKey = "",
-            rating = 1660,
-            rank = 826,
-            wins = 14,
-            losses = 22,
-            faction = "HORDE",
-        },
         ["plexx-zuluhed"] = {
             displayName = "Plexx-zuluhed",
             specKey = "",
@@ -7819,6 +7801,15 @@ PvPLedgerLadderData.US.rbg = {
             losses = 14,
             faction = "ALLIANCE",
         },
+        ["thitaporn-tichondrius"] = {
+            displayName = "Thitaporn-tichondrius",
+            specKey = "",
+            rating = 1660,
+            rank = 826,
+            wins = 14,
+            losses = 22,
+            faction = "HORDE",
+        },
         ["thomuss-darkspear"] = {
             displayName = "Thomuss-darkspear",
             specKey = "",
@@ -7970,6 +7961,15 @@ PvPLedgerLadderData.US.rbg = {
             rank = 78,
             wins = 60,
             losses = 47,
+            faction = "HORDE",
+        },
+        ["toysoljah-area52"] = {
+            displayName = "Toysoljah-area-52",
+            specKey = "",
+            rating = 1809,
+            rank = 517,
+            wins = 20,
+            losses = 13,
             faction = "HORDE",
         },
         ["trappintwo-sargeras"] = {
@@ -8434,10 +8434,10 @@ PvPLedgerLadderData.US.rbg = {
         ["walkdxwn-area52"] = {
             displayName = "Walkdxwn-area-52",
             specKey = "",
-            rating = 1809,
-            rank = 517,
-            wins = 20,
-            losses = 13,
+            rating = 1669,
+            rank = 803,
+            wins = 14,
+            losses = 15,
             faction = "HORDE",
         },
         ["walterwhite-bleedinghollow"] = {
