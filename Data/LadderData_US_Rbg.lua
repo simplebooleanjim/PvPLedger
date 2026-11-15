@@ -7,7 +7,7 @@ PvPLedgerLadderData.US.rbg = {
     bracket = "rbg",
     season = 42,
     snapshotDate = "2026-11-15",
-    generatedAt = "2026-11-15T19:54:58Z",
+    generatedAt = "2026-11-15T23:46:49Z",
     source = "blizzard-api",
     overall = {
         listedCount = 1004,
@@ -41,7 +41,7 @@ PvPLedgerLadderData.US.rbg = {
             ["2700-2799"] = 3,
             ["2800-2899"] = 4,
         },
-        ratedPopulation = 1667,
+        ratedPopulation = 1687,
         titleCutoffs = {
             {
                 pct = 0.1,
