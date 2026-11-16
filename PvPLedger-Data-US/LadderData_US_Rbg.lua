@@ -7,7 +7,7 @@ PvPLedgerLadderData.US.rbg = {
     bracket = "rbg",
     season = 42,
     snapshotDate = "2026-11-16",
-    generatedAt = "2026-11-16T05:00:31Z",
+    generatedAt = "2026-11-16T13:30:55Z",
     source = "blizzard-api",
     overall = {
         listedCount = 1001,
@@ -733,7 +733,7 @@ PvPLedgerLadderData.US.rbg = {
             rating = 1900,
             rank = 388,
             wins = 49,
-            losses = 63,
+            losses = 64,
             faction = "HORDE",
         },
         ["bludechami-ragnaros"] = {
@@ -2164,7 +2164,7 @@ PvPLedgerLadderData.US.rbg = {
             rating = 1666,
             rank = 821,
             wins = 15,
-            losses = 28,
+            losses = 29,
             faction = "HORDE",
         },
         ["emhyras-moonguard"] = {
@@ -2454,6 +2454,15 @@ PvPLedgerLadderData.US.rbg = {
             wins = 35,
             losses = 26,
             faction = "ALLIANCE",
+        },
+        ["finalbxss-area52"] = {
+            displayName = "Finalbxss-area-52",
+            specKey = "",
+            rating = 1809,
+            rank = 527,
+            wins = 20,
+            losses = 13,
+            faction = "HORDE",
         },
         ["firethatmage-sargeras"] = {
             displayName = "Firethatmage-sargeras",
@@ -3433,7 +3442,7 @@ PvPLedgerLadderData.US.rbg = {
             rating = 1927,
             rank = 346,
             wins = 38,
-            losses = 45,
+            losses = 46,
             faction = "ALLIANCE",
         },
         ["hÿdrax-quelthalas"] = {
@@ -4054,7 +4063,7 @@ PvPLedgerLadderData.US.rbg = {
             rating = 1888,
             rank = 403,
             wins = 46,
-            losses = 53,
+            losses = 54,
             faction = "ALLIANCE",
         },
         ["kamero-moonguard"] = {
@@ -5467,7 +5476,7 @@ PvPLedgerLadderData.US.rbg = {
             rating = 1788,
             rank = 556,
             wins = 17,
-            losses = 36,
+            losses = 37,
             faction = "HORDE",
         },
         ["neruda-ragnaros"] = {
@@ -7204,7 +7213,7 @@ PvPLedgerLadderData.US.rbg = {
             rating = 2118,
             rank = 168,
             wins = 221,
-            losses = 234,
+            losses = 235,
             faction = "HORDE",
         },
         ["slughörn-moonguard"] = {
@@ -7762,7 +7771,7 @@ PvPLedgerLadderData.US.rbg = {
             rating = 2320,
             rank = 74,
             wins = 60,
-            losses = 38,
+            losses = 39,
             faction = "ALLIANCE",
         },
         ["thankjake-moonguard"] = {
@@ -7990,15 +7999,6 @@ PvPLedgerLadderData.US.rbg = {
             losses = 47,
             faction = "HORDE",
         },
-        ["toysoljah-area52"] = {
-            displayName = "Toysoljah-area-52",
-            specKey = "",
-            rating = 1809,
-            rank = 527,
-            wins = 20,
-            losses = 13,
-            faction = "HORDE",
-        },
         ["trappintwo-sargeras"] = {
             displayName = "Trappintwo-sargeras",
             specKey = "",
@@ -8158,7 +8158,7 @@ PvPLedgerLadderData.US.rbg = {
             rating = 1796,
             rank = 547,
             wins = 24,
-            losses = 39,
+            losses = 40,
             faction = "HORDE",
         },
         ["täter-bleedinghollow"] = {
