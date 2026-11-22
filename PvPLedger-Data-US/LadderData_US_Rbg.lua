@@ -7,7 +7,7 @@ PvPLedgerLadderData.US.rbg = {
     bracket = "rbg",
     season = 42,
     snapshotDate = "2026-11-22",
-    generatedAt = "2026-11-22T06:47:41Z",
+    generatedAt = "2026-11-22T15:04:11Z",
     source = "blizzard-api",
     overall = {
         listedCount = 1000,
@@ -112,7 +112,7 @@ PvPLedgerLadderData.US.rbg = {
             rating = 2001,
             rank = 277,
             wins = 59,
-            losses = 68,
+            losses = 70,
             faction = "HORDE",
         },
         ["aerryn-stormrage"] = {
@@ -850,7 +850,7 @@ PvPLedgerLadderData.US.rbg = {
             rating = 1950,
             rank = 327,
             wins = 32,
-            losses = 29,
+            losses = 31,
             faction = "HORDE",
         },
         ["briarweald-wyrmrestaccord"] = {
@@ -1183,7 +1183,7 @@ PvPLedgerLadderData.US.rbg = {
             rating = 2030,
             rank = 253,
             wins = 37,
-            losses = 26,
+            losses = 28,
             faction = "HORDE",
         },
         ["chooroh-sargeras"] = {
@@ -1399,7 +1399,7 @@ PvPLedgerLadderData.US.rbg = {
             rating = 2062,
             rank = 224,
             wins = 63,
-            losses = 69,
+            losses = 71,
             faction = "HORDE",
         },
         ["crumgetsome-cairne"] = {
@@ -1696,7 +1696,7 @@ PvPLedgerLadderData.US.rbg = {
             rating = 1849,
             rank = 464,
             wins = 67,
-            losses = 87,
+            losses = 88,
             faction = "ALLIANCE",
         },
         ["destinemoon-emeralddream"] = {
@@ -1840,7 +1840,7 @@ PvPLedgerLadderData.US.rbg = {
             rating = 2068,
             rank = 218,
             wins = 41,
-            losses = 32,
+            losses = 34,
             faction = "HORDE",
         },
         ["dracomcfly-quelthalas"] = {
@@ -1966,7 +1966,7 @@ PvPLedgerLadderData.US.rbg = {
             rating = 1617,
             rank = 959,
             wins = 12,
-            losses = 12,
+            losses = 14,
             faction = "ALLIANCE",
         },
         ["drutulu-aeriepeak"] = {
@@ -2758,7 +2758,7 @@ PvPLedgerLadderData.US.rbg = {
             rating = 2004,
             rank = 274,
             wins = 59,
-            losses = 67,
+            losses = 69,
             faction = "ALLIANCE",
         },
         ["fundercats-eonar"] = {
@@ -3280,7 +3280,7 @@ PvPLedgerLadderData.US.rbg = {
             rating = 2077,
             rank = 207,
             wins = 38,
-            losses = 35,
+            losses = 36,
             faction = "HORDE",
         },
         ["hoonster-tichondrius"] = {
@@ -5017,7 +5017,7 @@ PvPLedgerLadderData.US.rbg = {
             rating = 1734,
             rank = 664,
             wins = 19,
-            losses = 23,
+            losses = 25,
             faction = "HORDE",
         },
         ["melody-blackrock"] = {
@@ -5719,7 +5719,7 @@ PvPLedgerLadderData.US.rbg = {
             rating = 2079,
             rank = 204,
             wins = 54,
-            losses = 63,
+            losses = 64,
             faction = "HORDE",
         },
         ["okbye-sargeras"] = {
@@ -5890,7 +5890,7 @@ PvPLedgerLadderData.US.rbg = {
             rating = 2028,
             rank = 254,
             wins = 36,
-            losses = 28,
+            losses = 29,
             faction = "ALLIANCE",
         },
         ["pastafarians-area52"] = {
@@ -5998,7 +5998,7 @@ PvPLedgerLadderData.US.rbg = {
             rating = 1975,
             rank = 299,
             wins = 38,
-            losses = 33,
+            losses = 34,
             faction = "ALLIANCE",
         },
         ["phateud-tichondrius"] = {
@@ -6187,7 +6187,7 @@ PvPLedgerLadderData.US.rbg = {
             rating = 1975,
             rank = 299,
             wins = 51,
-            losses = 57,
+            losses = 59,
             faction = "ALLIANCE",
         },
         ["présidénta-nerzhul"] = {
@@ -7141,7 +7141,7 @@ PvPLedgerLadderData.US.rbg = {
             rating = 2113,
             rank = 177,
             wins = 58,
-            losses = 51,
+            losses = 53,
             faction = "HORDE",
         },
         ["skylartko-tichondrius"] = {
@@ -7420,7 +7420,7 @@ PvPLedgerLadderData.US.rbg = {
             rating = 2002,
             rank = 276,
             wins = 54,
-            losses = 59,
+            losses = 61,
             faction = "ALLIANCE",
         },
         ["sproldruid-tichondrius"] = {
@@ -7681,7 +7681,7 @@ PvPLedgerLadderData.US.rbg = {
             rating = 2073,
             rank = 211,
             wins = 48,
-            losses = 41,
+            losses = 43,
             faction = "HORDE",
         },
         ["tarrekx-stormrage"] = {
@@ -7816,7 +7816,7 @@ PvPLedgerLadderData.US.rbg = {
             rating = 1781,
             rank = 577,
             wins = 20,
-            losses = 14,
+            losses = 15,
             faction = "ALLIANCE",
         },
         ["thitaporn-tichondrius"] = {
@@ -8411,7 +8411,7 @@ PvPLedgerLadderData.US.rbg = {
             rank = 266,
             wins = 32,
             losses = 32,
-            faction = "ALLIANCE",
+            faction = "HORDE",
         },
         ["vìllâìn-tichondrius"] = {
             displayName = "Vìllâìn-tichondrius",
