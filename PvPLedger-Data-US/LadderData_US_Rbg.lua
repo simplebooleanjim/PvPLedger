@@ -7,7 +7,7 @@ PvPLedgerLadderData.US.rbg = {
     bracket = "rbg",
     season = 42,
     snapshotDate = "2026-11-27",
-    generatedAt = "2026-11-27T03:10:13Z",
+    generatedAt = "2026-11-27T12:19:35Z",
     source = "blizzard-api",
     overall = {
         listedCount = 1001,
@@ -8440,14 +8440,14 @@ PvPLedgerLadderData.US.rbg = {
             losses = 16,
             faction = "ALLIANCE",
         },
-        ["walkdxwn-area52"] = {
-            displayName = "Walkdxwn-area-52",
+        ["walkdown-grizzlyhills"] = {
+            displayName = "Walkdown-grizzly-hills",
             specKey = "",
             rating = 1736,
             rank = 659,
             wins = 17,
             losses = 19,
-            faction = "HORDE",
+            faction = "ALLIANCE",
         },
         ["walterwhite-bleedinghollow"] = {
             displayName = "Walterwhite-bleeding-hollow",
